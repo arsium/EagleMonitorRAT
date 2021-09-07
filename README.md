@@ -57,3 +57,5 @@ Preview :
 ![Image description](https://i.postimg.cc/yYyQb2cD/Capture-d-cran-82.png)
 ![Image description](https://i.postimg.cc/rsCJ7tdB/Capture-d-cran-83.png)
 ![Image description](https://i.postimg.cc/vHbXfXkb/Capture-d-cran-84.png)
+
+I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
