@@ -1,6 +1,17 @@
 # EagleMonitor
 Remote Access Tool Written In C#
 
+Depencencies : 
+
+* MRG.Controls.UI (UI)
+* XanderUI (UI)
+* Siticone.UI (UI)
+* dnlib (builder)
+* Newtonsoft.Json (configuration)
+* BouncyCastle (file manager encryption/decryption)
+* Compression : http://www.quicklz.com/download.html
+* RSM : https://bhf.im/threads/438711/
+
 Features :
 * Encrypted Communication with RSM
 * Stub only 28KB and easily encryptable
