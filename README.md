@@ -56,7 +56,7 @@ Features :
 * BSOD
 * Disable Mouse
 * Disable Keyboard
-* Get Privileges [Se]
+* Get Privileges [Se] -> see logs to check if the privilege has been gotten.
 * WebCam Capture
 * Shutdown
 * Reboot
