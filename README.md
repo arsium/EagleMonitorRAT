@@ -1,5 +1,5 @@
 # Eagle Monitor
-Fast & Lightweight Remote Access Tool Written In C#. Consider this as an upgrade of HorusEyesRat.
+Fast, lightweight & easily customizable remote access tool written in C#. Consider this as an upgrade of HorusEyesRat.
 
 Depencencies : 
 
@@ -63,7 +63,7 @@ Note :
 * UI Bugs
 * Dark theme in construction
 * Need to improve & finish logs system
-* No more options will be added to the builder
+* No more options will be added to the builder. If you want more, you will have to do it yourself.
 * If you want to build it, please use only release mode. I configure it to make plugin directly put next to Eagle Monitor.
 
 Preview :
