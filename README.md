@@ -14,7 +14,7 @@ Depencencies :
 * WebCam : inspired by AsyncRat
 
 Features :
-* Encrypted Communication with RSM
+* Encrypted & Compressed Communication with RSM
 * Stub only 28KB and easily encryptable
 * Confirurable with JSON
 * Multi listeners
