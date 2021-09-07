@@ -1,5 +1,5 @@
 # EagleMonitor
-Fast & Lightweight Remote Access Tool Written In C#
+Fast & Lightweight Remote Access Tool Written In C#. Consider this as an upgrade of HorusEyesRat.
 
 Depencencies : 
 
@@ -11,6 +11,7 @@ Depencencies :
 * BouncyCastle (file manager encryption/decryption)
 * Compression : http://www.quicklz.com/download.html
 * RSM : https://bhf.im/threads/438711/
+* WebCam : inspired by AsyncRat
 
 Features :
 * Encrypted Communication with RSM
