@@ -49,7 +49,7 @@ Features :
 
 Note : 
 * UI Bugs
-* To improve logs system
+* Need to improve & finish logs system
 * No more options will be added to the builder
 
 Preview :
