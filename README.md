@@ -15,7 +15,9 @@ Depencencies :
 * WebCam : inspired by AsyncRat
 
 Features :
+* Supports DNS (No-IP for example)
 * Encrypted & Compressed Communication with RSM
+* Packet Serialization
 * Stub only 28KB and easily encryptable
 * Installable in task scheduler
 * Confirurable with JSON
