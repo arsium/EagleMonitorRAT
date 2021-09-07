@@ -19,9 +19,9 @@ Features :
 * Confirurable with JSON
 * Multi listeners
 * MultiThreaded & Parallel
-* Pass Recovery
-* Hist Recovery
-* Wifi pass recovery
+* Passords Recovery
+* History Recovery
+* Wifi passwords recovery
 * Automatic saves recovery
 * Process manager
 * Kill Proc
