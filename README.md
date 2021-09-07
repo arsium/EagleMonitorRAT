@@ -1,4 +1,4 @@
-# EagleMonitor
+# Eagle Monitor
 Fast & Lightweight Remote Access Tool Written In C#. Consider this as an upgrade of HorusEyesRat.
 
 Depencencies : 
