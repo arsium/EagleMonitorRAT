@@ -11,6 +11,7 @@ Depencencies :
 * BouncyCastle (file manager encryption/decryption) : https://www.bouncycastle.org/
 * Compression : http://www.quicklz.com/download.html
 * RSM : https://bhf.im/threads/438711/
+* Load native dll and pe : https://github.com/schellingb/DLLFromMemory-net
 * WebCam : inspired by AsyncRat
 
 Features :
