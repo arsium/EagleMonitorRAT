@@ -45,7 +45,7 @@ Features :
 * Hide & Show Taskbar
 * Change Wallpaper
 * Execute Dll native in memory
-* Execute Exe native in memory
+* Execute native PE in memory
 * Execute Shellcode in memory
 * Execute Managed dll in memory
 * ScreenLocker
