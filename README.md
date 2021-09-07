@@ -64,13 +64,14 @@ Features :
 * Suspend
 * Hibernate
 
-Note : 
+Notes : 
 * UI Bugs
 * Dark theme in construction
 * Need to improve & finish logs system
 * No more options will be added to the builder. If you want more, you will have to do it yourself.
 * If you want to build the solution, please use only release mode. I configured it to directly build plugins next to Eagle Monitor.
 * For stub and some plugins, depencies are put inside with CosturaFody.
+* New features I will probably add : keyloggers, get system details, set client's priority....
 
 Preview :
 
