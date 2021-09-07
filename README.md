@@ -17,6 +17,7 @@ Depencencies :
 Features :
 * Encrypted & Compressed Communication with RSM
 * Stub only 28KB and easily encryptable
+* Installable in task scheduler
 * Confirurable with JSON
 * Multi listeners
 * MultiThreaded & Parallel
