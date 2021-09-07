@@ -1,0 +1,7 @@
+F:\Personal\ShellCodeLoader\PayloadCSharp\bin\x64\Release\PayloadCSharp.exe.config
+F:\Personal\ShellCodeLoader\PayloadCSharp\bin\x64\Release\PayloadCSharp.exe
+F:\Personal\ShellCodeLoader\PayloadCSharp\bin\x64\Release\PayloadCSharp.pdb
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\x64\Release\PayloadCSharp.csproj.CoreCompileInputs.cache
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\x64\Release\PayloadCSharp.exe
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\x64\Release\PayloadCSharp.pdb
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\x64\Release\PayloadCSharp.csproj.AssemblyReference.cache

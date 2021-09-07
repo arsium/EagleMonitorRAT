@@ -1,0 +1,2 @@
+Convert any file from any language (exe or dll)
+donut.exe %Path_to_your_exe_or_dll_file%

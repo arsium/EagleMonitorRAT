@@ -1,0 +1,30 @@
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\dnlib.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\IPAPI.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\NativeAPI.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Newtonsoft.Json.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Shared.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Newtonsoft.Json.xml
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.AssemblyReference.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.BuilderForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.DownloadFileForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.ExecuteForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.FileManagerForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.HistoryForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Main.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.MiscellaneousForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.NotificationForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.PasswordsForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.ProcessManagerForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.RemoteDesktopForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.WebCamForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.WifiForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Properties.Resources.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.StartForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.GenerateResource.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.CopyComplete
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.AboutForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Eagle Monitor REV1.exe.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Eagle Monitor REV1.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor REV1.exe.config
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor REV1.exe

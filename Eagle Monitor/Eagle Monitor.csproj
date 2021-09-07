@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F2512CE-68B5-4B6F-8909-463DE65DC6A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Eagle_Monitor</RootNamespace>
+    <AssemblyName>Eagle Monitor REV1</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Eagle_Monitor.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>eagle2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib">
+      <HintPath>..\Dlls\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MRG.Controls.UI">
+      <HintPath>C:\Users\mehdi\Documents\UI Dlls Working\MRG.Controls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.UI, Version=1.0.0.3, Culture=neutral, PublicKeyToken=da23b5286e22db85, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XanderUI">
+      <HintPath>C:\Users\mehdi\Desktop\UI\XanderUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\Client.cs" />
+    <Compile Include="Clients\Country.cs" />
+    <Compile Include="Clients\DataUtilities.cs" />
+    <Compile Include="Clients\SenderClient.cs" />
+    <Compile Include="Controls\ControlsDrawing.cs" />
+    <Compile Include="Controls\FormPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MetroDropShadow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\WindowsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WindowsProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WindowsTabControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuilderForm.Designer.cs">
+      <DependentUpon>BuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DownloadFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DownloadFileForm.Designer.cs">
+      <DependentUpon>DownloadFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExecuteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExecuteForm.Designer.cs">
+      <DependentUpon>ExecuteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileManagerForm.Designer.cs">
+      <DependentUpon>FileManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MiscellaneousForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MiscellaneousForm.Designer.cs">
+      <DependentUpon>MiscellaneousForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PasswordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordsForm.Designer.cs">
+      <DependentUpon>PasswordsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcessManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcessManagerForm.Designer.cs">
+      <DependentUpon>ProcessManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoteDesktopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoteDesktopForm.Designer.cs">
+      <DependentUpon>RemoteDesktopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebCamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebCamForm.Designer.cs">
+      <DependentUpon>WebCamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WifiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WifiForm.Designer.cs">
+      <DependentUpon>WifiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\BuilderHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Servers\Server.cs" />
+    <Compile Include="Forms\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Utilities.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuilderForm.resx">
+      <DependentUpon>BuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DownloadFileForm.resx">
+      <DependentUpon>DownloadFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExecuteForm.resx">
+      <DependentUpon>ExecuteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileManagerForm.resx">
+      <DependentUpon>FileManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MiscellaneousForm.resx">
+      <DependentUpon>MiscellaneousForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordsForm.resx">
+      <DependentUpon>PasswordsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcessManagerForm.resx">
+      <DependentUpon>ProcessManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoteDesktopForm.resx">
+      <DependentUpon>RemoteDesktopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebCamForm.resx">
+      <DependentUpon>WebCamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WifiForm.resx">
+      <DependentUpon>WifiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IPAPI\IPAPI.csproj">
+      <Project>{A169555D-4E8F-45F5-8B79-FE6F919B7C80}</Project>
+      <Name>IPAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NativeAPI\NativeAPI.csproj">
+      <Project>{22485099-27c3-4a3d-81db-d54e2b2c7017}</Project>
+      <Name>NativeAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{3658c502-b336-4cd4-8f55-80aa0105a8c2}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Clock_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_wi-fi_logo_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="eagle2.ico" />
+    <Content Include="icons8_coat_of_arms_of_russia.ico" />
+    <Content Include="Nano_demons_transperent_logo403x403.ico" />
+    <None Include="Resources\icons8_uninstall_programs_32.png" />
+    <None Include="Resources\shell32_263.ico" />
+    <None Include="Resources\shell32_24.ico" />
+    <None Include="Resources\eagle2.png" />
+    <None Include="Resources\imageres_5301.ico" />
+    <None Include="Resources\imageres_169.ico" />
+    <None Include="Resources\imageres_184.ico" />
+    <None Include="Resources\shell32_235.ico" />
+    <None Include="Resources\imageres_183.ico" />
+    <None Include="Resources\icons8_unlock_32.png" />
+    <None Include="Resources\icons8_lock_32.png" />
+    <None Include="Resources\DDORes_2555.ico" />
+    <None Include="Resources\Nano_demons_transperent_logo403x403.png" />
+    <None Include="Resources\icons8_box_important_32.png" />
+    <None Include="Resources\icons8_tasklist_32.png" />
+    <None Include="Resources\icons8_save_as_32.png" />
+    <None Include="Resources\icons8_blue_screen_of_death_32.png" />
+    <None Include="Resources\Nano_demons_transperent_logo.png" />
+    <None Include="Resources\icons8_control_panel_32.png" />
+    <None Include="Resources\icons8_c++_32.png" />
+    <None Include="Resources\icons8_c_sharp_logo_32.png" />
+    <None Include="Resources\imageres_111.ico" />
+    <None Include="Resources\icons8_rename_32.png" />
+    <None Include="Resources\icons8_eye_32.png" />
+    <None Include="Resources\icons8_invisible_32.png" />
+    <None Include="Resources\icons8_maximize_window_32.png" />
+    <None Include="Resources\icons8_minimize_window_32.png" />
+    <None Include="Resources\shell32_241.ico" />
+    <None Include="Resources\icons8_upload_32.png" />
+    <None Include="Resources\ieframe_31079.ico" />
+    <None Include="Resources\shell32_153.ico" />
+    <None Include="Resources\setupapi_32.ico" />
+    <None Include="Resources\imageres_34.ico" />
+    <None Include="Resources\icons8_minus_32.png" />
+    <None Include="Resources\icons8_add_32.png" />
+    <None Include="Resources\icons8_showing_video_frames_32.png" />
+    <None Include="Resources\icons8_not_sending_video_frames_32.png" />
+    <None Include="Resources\icons8_memory_slot_32.png" />
+    <None Include="Resources\icons8_hibernate_32.png" />
+    <None Include="Resources\icons8_sleep_32.png" />
+    <None Include="Resources\SHELL32_2_35.ico" />
+    <None Include="Resources\dmdskres_455.ico" />
+    <None Include="Resources\imageres_151.ico" />
+    <None Include="Resources\imageres_15.ico" />
+    <None Include="Resources\icons8_double_down_32.png" />
+    <None Include="Resources\icons8_delete_bin_32.png" />
+    <None Include="Resources\explorer_ICO_MYCOMPUTER.ico" />
+    <None Include="Resources\icons8_delete_document_32.png" />
+    <None Include="Resources\icons8_double_right_32.png" />
+    <None Include="Resources\icons8_double_left_32.png" />
+    <None Include="Resources\icons8_file_explorer_32.png" />
+    <None Include="Resources\icons8_folder_32.png" />
+    <None Include="Resources\icons8_skull_32.png" />
+    <None Include="Resources\icons8_circled_play_32.png" />
+    <None Include="Resources\icons8_type_32.png" />
+    <None Include="Resources\icons8_resume_button_32.png" />
+    <None Include="Resources\icons8_pause_button_32.png" />
+    <None Include="Resources\icons8_replay_32.png" />
+    <None Include="Resources\icons8_system_task_32.png" />
+    <None Include="Resources\icons8_desktop_32.png" />
+    <None Include="Resources\icons8_customer_32.png" />
+    <None Include="Resources\icons8_lightning_bolt_32.png" />
+    <None Include="Resources\icons8_sign_out_32.png" />
+    <None Include="Resources\icons8_restart_32.png" />
+    <None Include="Resources\icons8_shutdown_32.png" />
+    <None Include="Resources\icons8_cancel_32.png" />
+    <None Include="Resources\icons8_coat_of_arms_of_russia_32.png" />
+    <None Include="Resources\icons8_coat_of_arms_of_russia_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

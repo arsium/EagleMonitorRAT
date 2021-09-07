@@ -1,0 +1,14 @@
+F:\Personal\Eagle Monitor\bin\Release\Plugins\FileManager.dll.config
+F:\Personal\Eagle Monitor\bin\Release\Plugins\FileManager.dll
+F:\Personal\Eagle Monitor\bin\Release\Plugins\FileManager.pdb
+F:\Personal\Eagle Monitor\FileManager\obj\Release\FileManager.csprojAssemblyReference.cache
+F:\Personal\Eagle Monitor\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\FileManager\obj\Release\FileManager.dll
+F:\Personal\Eagle Monitor\FileManager\obj\Release\FileManager.pdb
+F:\Personal\Eagle Monitor\FileManager\obj\Release\FileManager.csproj.CopyComplete
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\FileManager.dll.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\FileManager.dll
+F:\Personal\Eagle Monitor\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Plugins\FileManager\obj\Release\FileManager.dll
+F:\Personal\Eagle Monitor\Plugins\FileManager\obj\Release\FileManager.csproj.Fody.CopyLocal.cache
+F:\Personal\Eagle Monitor\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache

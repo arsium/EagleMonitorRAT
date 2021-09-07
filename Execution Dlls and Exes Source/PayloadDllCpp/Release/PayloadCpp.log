@@ -1,0 +1,2 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: Le répertoire intermédiaire (Release\) contient des fichiers partagés provenant d'un autre projet (PayloadCpp.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
+  PayloadCpp.vcxproj -> F:\Personal\Eagle Monitor\Execution Dlls and Exes Source\Release\PayloadDllCpp.dll

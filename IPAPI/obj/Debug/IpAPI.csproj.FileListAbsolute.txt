@@ -1,0 +1,10 @@
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\bin\Debug\IpAPI.dll
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\bin\Debug\IpAPI.pdb
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\obj\Debug\IpAPI.csprojAssemblyReference.cache
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\obj\Debug\IpAPI.csproj.CoreCompileInputs.cache
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\obj\Debug\IpAPI.csproj.CopyComplete
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\obj\Debug\IpAPI.dll
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\obj\Debug\IpAPI.pdb
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\bin\Debug\Leaf.xNet.xml
+C:\Users\mehdi\source\repos\GetCountries\IpAPI\obj\Debug\IpAPI.csproj.Fody.CopyLocal.cache

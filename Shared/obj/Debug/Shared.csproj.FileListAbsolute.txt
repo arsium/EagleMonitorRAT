@@ -1,0 +1,6 @@
+F:\Project C#\Infected Monitor\Infected Monitor\Shared\bin\Debug\Shared.dll
+F:\Project C#\Infected Monitor\Infected Monitor\Shared\bin\Debug\Shared.pdb
+F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Debug\Shared.dll
+F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Debug\Shared.pdb
+F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Debug\Shared.csprojAssemblyReference.cache

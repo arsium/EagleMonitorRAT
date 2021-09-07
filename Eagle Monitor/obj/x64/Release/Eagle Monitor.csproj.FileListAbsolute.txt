@@ -1,0 +1,15 @@
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\Eagle Monitor.exe.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\Eagle Monitor.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\Eagle Monitor.pdb
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\IPAPI.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\Shared.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\IPAPI.pdb
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\x64\Release\Shared.pdb
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle_Monitor.Main.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle_Monitor.Properties.Resources.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle_Monitor.StartForm.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle Monitor.csproj.GenerateResource.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle Monitor.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle Monitor.csproj.CopyComplete
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle Monitor.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\x64\Release\Eagle Monitor.pdb

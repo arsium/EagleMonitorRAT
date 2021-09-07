@@ -1,0 +1,6 @@
+F:\Personal\ShellCodeLoader\PayloadCSharp\bin\Debug\PayloadCSharp.exe.config
+F:\Personal\ShellCodeLoader\PayloadCSharp\bin\Debug\PayloadCSharp.exe
+F:\Personal\ShellCodeLoader\PayloadCSharp\bin\Debug\PayloadCSharp.pdb
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\Debug\PayloadCSharp.csproj.CoreCompileInputs.cache
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\Debug\PayloadCSharp.exe
+F:\Personal\ShellCodeLoader\PayloadCSharp\obj\Debug\PayloadCSharp.pdb

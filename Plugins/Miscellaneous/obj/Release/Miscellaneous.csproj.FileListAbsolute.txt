@@ -1,0 +1,16 @@
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\bin\Release\Miscellaneous.dll
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\bin\Release\Miscellaneous.pdb
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\bin\Release\Shared.dll
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\bin\Release\Shared.pdb
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.csprojAssemblyReference.cache
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.pdb
+F:\Project C#\Infected Monitor\Infected Monitor\Infected Monitor\bin\Release\Plugins\Miscellaneous.dll
+F:\Project C#\Infected Monitor\Infected Monitor\Infected Monitor\bin\Release\Plugins\Miscellaneous.pdb
+F:\Project C#\Infected Monitor\Infected Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.Fody.CopyLocal.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\Miscellaneous.dll
+F:\Personal\Eagle Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+F:\Personal\Eagle Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.Fody.CopyLocal.cache
+F:\Personal\Eagle Monitor\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.AssemblyReference.cache

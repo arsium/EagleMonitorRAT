@@ -1,0 +1,12 @@
+F:\Personal\Eagle Monitor\Client\obj\Release\Client.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Client\bin\Release\Client.exe.config
+F:\Personal\Eagle Monitor\Client\bin\Release\Client.exe
+F:\Personal\Eagle Monitor\Client\bin\Release\Client.pdb
+F:\Personal\Eagle Monitor\Client\obj\Release\Client.exe
+F:\Personal\Eagle Monitor\Client\obj\Release\Client.csproj.Fody.CopyLocal.cache
+F:\Personal\Eagle Monitor\bin\Release\Stubs\Client.exe.config
+F:\Personal\Eagle Monitor\bin\Release\Stubs\Client.exe
+F:\Personal\Eagle Monitor\bin\Release\Stubs\Client.pdb
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Stubs\Client.exe.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Stubs\Client.exe
+F:\Personal\Eagle Monitor\Client\obj\Release\Client.csproj.AssemblyReference.cache

@@ -1,0 +1,11 @@
+F:\Personal\Eagle Monitor\Plugins\Execute\bin\Release\Execute.dll.config
+F:\Personal\Eagle Monitor\Plugins\Execute\bin\Release\Execute.dll
+F:\Personal\Eagle Monitor\Plugins\Execute\bin\Release\Execute.pdb
+F:\Personal\Eagle Monitor\Plugins\Execute\bin\Release\Shared.dll
+F:\Personal\Eagle Monitor\Plugins\Execute\bin\Release\Shared.pdb
+F:\Personal\Eagle Monitor\Plugins\Execute\obj\Release\Execute.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Plugins\Execute\obj\Release\Execute.csproj.CopyComplete
+F:\Personal\Eagle Monitor\Plugins\Execute\obj\Release\Execute.dll
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\Execute.dll.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\Execute.dll
+F:\Personal\Eagle Monitor\Plugins\Execute\obj\Release\Execute.csproj.AssemblyReference.cache

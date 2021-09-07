@@ -1,0 +1,9 @@
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Debug\Eagle Monitor.csprojAssemblyReference.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Debug\Eagle_Monitor.Properties.Resources.resources
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.GenerateResource.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Debug\Eagle Monitor.exe.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Debug\Eagle Monitor.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Debug\Eagle Monitor.pdb
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Debug\Eagle Monitor.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Debug\Eagle Monitor.pdb

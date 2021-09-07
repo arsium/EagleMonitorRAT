@@ -1,0 +1,6 @@
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\ProcessManager.dll.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\ProcessManager.dll
+F:\Personal\Eagle Monitor\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+F:\Personal\Eagle Monitor\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+F:\Personal\Eagle Monitor\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+F:\Personal\Eagle Monitor\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache

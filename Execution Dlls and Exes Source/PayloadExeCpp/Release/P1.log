@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: Le répertoire intermédiaire (Release\) contient des fichiers partagés provenant d'un autre projet (P1.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
+  Source.cpp
+F:\Personal\Eagle Monitor\Execution Dlls and Exes Source\PayloadExeCpp\Source.cpp(7,1): warning C4326: le type de retour de 'main' doit être 'int' au lieu de 'void'
+  Génération de code en cours
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  P1.vcxproj -> F:\Personal\Eagle Monitor\Execution Dlls and Exes Source\Release\PayloadExeCpp.exe
