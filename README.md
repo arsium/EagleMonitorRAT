@@ -1,5 +1,5 @@
 # EagleMonitor
-Remote Access Tool Written In C#
+Fast & Lightweight Remote Access Tool Written In C#
 
 Depencencies : 
 
