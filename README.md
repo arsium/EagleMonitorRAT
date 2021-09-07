@@ -63,6 +63,7 @@ Note :
 * UI Bugs
 * Need to improve & finish logs system
 * No more options will be added to the builder
+* If you want to build it, please use only release mode. I configure it to make plugin directly put next to Eagle Monitor.
 
 Preview :
 
