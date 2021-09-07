@@ -8,7 +8,7 @@ Depencencies :
 * Siticone.UI (UI)
 * dnlib (builder)
 * Newtonsoft.Json (configuration)
-* BouncyCastle (file manager encryption/decryption)
+* BouncyCastle (file manager encryption/decryption) : https://www.bouncycastle.org/
 * Compression : http://www.quicklz.com/download.html
 * RSM : https://bhf.im/threads/438711/
 * WebCam : inspired by AsyncRat
