@@ -47,5 +47,5 @@ Features :
 * Hibernate
 
 Note : 
--UI Bugs
--To improve logs system
+* UI Bugs
+* To improve logs system
