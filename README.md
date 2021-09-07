@@ -51,3 +51,9 @@ Note :
 * UI Bugs
 * To improve logs system
 * No more options will be added to the builder
+
+Preview :
+
+![Image description](https://i.postimg.cc/yYyQb2cD/Capture-d-cran-82.png)
+![Image description](https://i.postimg.cc/rsCJ7tdB/Capture-d-cran-83.png)
+![Image description](https://i.postimg.cc/vHbXfXkb/Capture-d-cran-84.png)
