@@ -64,7 +64,7 @@ Note :
 * Dark theme in construction
 * Need to improve & finish logs system
 * No more options will be added to the builder. If you want more, you will have to do it yourself.
-* If you want to build the solution, please use only release mode. I configured it to directly build next to Eagle Monitor.
+* If you want to build the solution, please use only release mode. I configured it to directly build plugins next to Eagle Monitor.
 
 Preview :
 
