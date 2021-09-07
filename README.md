@@ -19,6 +19,7 @@ Features :
 * Confirurable with JSON
 * Multi listeners
 * MultiThreaded & Parallel
+* Mass & On connected tasks
 * Passords Recovery
 * History Recovery
 * Wifi passwords recovery
