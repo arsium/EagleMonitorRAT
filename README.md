@@ -3,6 +3,7 @@ Remote Access Tool Written In C#
 
 Features :
 * Encrypted Communication with RSM
+* Stub only 28KB and easily encryptable
 * Confirurable with JSON
 * Multi listeners
 * MultiThreaded & Parallel
@@ -49,3 +50,4 @@ Features :
 Note : 
 * UI Bugs
 * To improve logs system
+* No more options will be added to the builder
