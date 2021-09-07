@@ -70,6 +70,7 @@ Note :
 * Need to improve & finish logs system
 * No more options will be added to the builder. If you want more, you will have to do it yourself.
 * If you want to build the solution, please use only release mode. I configured it to directly build plugins next to Eagle Monitor.
+* For stub and some plugins, depencies are put inside with CosturaFody.
 
 Preview :
 
