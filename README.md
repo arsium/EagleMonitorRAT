@@ -12,7 +12,7 @@ Depencencies :
 * Compression : http://www.quicklz.com/download.html
 * RSM : https://bhf.im/threads/438711/
 * Load native dll and pe : https://github.com/schellingb/DLLFromMemory-net
-* WebCam : inspired by AsyncRat
+* WebCam : inspired by AsyncRat : https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs
 
 Features :
 * Supports DNS (No-IP for example)
