@@ -81,9 +81,11 @@ Preview :
 
 Edit :
 Many stupid people said it can't connect to server but if you don't add port it's logic :
-Right Click on listview in startform : 
-(And if it does not work , disable your firewall or add an exception)
+Right Click on listview in startform (And if it does not work , disable your firewall or add an exception) : 
+
 ![Image description](https://i.postimg.cc/kgX5YwdT/Capture-d-cran-85.png)
+
+
 
 I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
 
