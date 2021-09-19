@@ -82,7 +82,7 @@ Preview :
 ![Image description](https://i.postimg.cc/vHbXfXkb/Capture-d-cran-84.png)
 
 Edit :
-Many stupid people said it can't connect to server but if you don't add port it's logic :
+Many people said it can't connect to server :
 Right Click on listview in startform (And if it does not work , disable your firewall or add an exception) : 
 
 ![Image description](https://i.postimg.cc/kgX5YwdT/Capture-d-cran-85.png)
