@@ -4,7 +4,7 @@ Fast, lightweight & easily customizable remote access tool written in C#. Consid
 Inspirations & Sources :
 
 * Wifi Passwords Grabber : [SharpWifiGrabber](https://github.com/r3nhat/SharpWifiGrabber)
-* Chromium Passwords Grabber : [Chromium Recovery]https://github.com/arsium/Chrome-Password-Recovery) is a fork of https://github.com/0xfd3/Chrome-Password-Recovery
+* Chromium Passwords Grabber : [Chromium Recovery](https://github.com/arsium/Chrome-Password-Recovery) is a fork of https://github.com/0xfd3/Chrome-Password-Recovery
 * Chromium History Grabber : [Chromium History](https://github.com/arsium/ChromeHistory)
 * Load unmanaged dll in stub : [DLLFromMemory](https://github.com/arsium/DLLFromMemory-CSharp) is a fork of https://github.com/schellingb/DLLFromMemory-net
 * ShellCode Loader : [ShellCodeLoaderCSharp](https://github.com/arsium/ShellCodeLoaderCSharp)
