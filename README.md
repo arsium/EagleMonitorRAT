@@ -1,4 +1,5 @@
 # Eagle Monitor RAT
+Next update : december-january
 Fast, lightweight & easily customizable remote access tool written in C#. Consider this as an upgrade of HorusEyesRat which was written in VB.NET. 
 
 Inspirations & Sources :
