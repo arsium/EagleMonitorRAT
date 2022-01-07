@@ -60,7 +60,7 @@ Features :
 * Hide & Show Desktop Icons
 * Hide & Show Taskbar
 * Change Wallpaper
-* Run in memory: native Dll, native PE, Shellcode, Managed dll
+* Run in memory -> native Dll, native PE, Shellcode, Managed dll
 * ScreenLocker
 * BSOD
 * Disable Mouse
