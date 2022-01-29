@@ -43,6 +43,7 @@ Features :
 * Kill Proc
 * Suspend Proc
 * Resume Proc
+* Inject ShellCode in Processes [2 different types]
 * Change Windows Title
 * Minimize Window
 * Maximize Window
@@ -71,6 +72,8 @@ Features :
 * Log out
 * Suspend
 * Hibernate
+* CPU & OS Information
+* Audio : Volume Up & Down + Mute
 
 Notes : 
 * UI Bugs
