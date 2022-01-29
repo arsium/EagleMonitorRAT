@@ -29,6 +29,7 @@ namespace Eagle_Monitor.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordsForm));
             this.labelSize = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +40,13 @@ namespace Eagle_Monitor.Forms
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.passwordsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.getPasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savePasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.maximizeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.minimizeButton = new Eagle_Monitor.Controls.WindowsButton();
+            this.passwordsContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSize
@@ -88,6 +93,7 @@ namespace Eagle_Monitor.Forms
             // 
             // passwordsListView
             // 
+            this.passwordsListView.BackColor = System.Drawing.Color.White;
             this.passwordsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -95,6 +101,7 @@ namespace Eagle_Monitor.Forms
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.passwordsListView.ContextMenuStrip = this.passwordsContextMenuStrip;
             this.passwordsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.passwordsListView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.passwordsListView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -129,6 +136,36 @@ namespace Eagle_Monitor.Forms
             // columnHeader5
             // 
             this.columnHeader5.Text = "";
+            // 
+            // passwordsContextMenuStrip
+            // 
+            this.passwordsContextMenuStrip.DropShadowEnabled = false;
+            this.passwordsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.passwordsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.getPasswordsToolStripMenuItem,
+            this.savePasswordsToolStripMenuItem});
+            this.passwordsContextMenuStrip.Name = "contextMenuStrip1";
+            this.passwordsContextMenuStrip.Size = new System.Drawing.Size(165, 64);
+            // 
+            // getPasswordsToolStripMenuItem
+            // 
+            this.getPasswordsToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.getPasswordsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.getPasswordsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_grand_master_key_32;
+            this.getPasswordsToolStripMenuItem.Name = "getPasswordsToolStripMenuItem";
+            this.getPasswordsToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
+            this.getPasswordsToolStripMenuItem.Text = "Get Passwords";
+            this.getPasswordsToolStripMenuItem.Click += new System.EventHandler(this.getPasswordsToolStripMenuItem_Click);
+            // 
+            // savePasswordsToolStripMenuItem
+            // 
+            this.savePasswordsToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.savePasswordsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.savePasswordsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_microsoft_excel_2019_32;
+            this.savePasswordsToolStripMenuItem.Name = "savePasswordsToolStripMenuItem";
+            this.savePasswordsToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
+            this.savePasswordsToolStripMenuItem.Text = "Save Passwords";
+            this.savePasswordsToolStripMenuItem.Click += new System.EventHandler(this.savePasswordsToolStripMenuItem_Click);
             // 
             // closeButton
             // 
@@ -205,6 +242,7 @@ namespace Eagle_Monitor.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PasswordsForm";
             this.Load += new System.EventHandler(this.PasswordsForm_Load);
+            this.passwordsContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +262,8 @@ namespace Eagle_Monitor.Forms
         public System.Windows.Forms.Label labelSize;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ContextMenuStrip passwordsContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem getPasswordsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savePasswordsToolStripMenuItem;
     }
 }

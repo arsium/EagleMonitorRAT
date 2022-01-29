@@ -41,8 +41,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="WMILib">
+      <HintPath>..\..\Dlls\WMILib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DLLFromMemory.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Launch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

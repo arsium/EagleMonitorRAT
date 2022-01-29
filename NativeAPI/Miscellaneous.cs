@@ -25,6 +25,12 @@ namespace NativeAPI
         public const uint SPIF_UPDATEINIFILE = 0x01;
         public const uint SPIF_SENDWININICHANGE = 0x02;
 
+        public const int APPCOMMAND_VOLUME_MUTE = 0x80000;
+        public const int APPCOMMAND_VOLUME_DOWN = 0x90000;
+        public const int APPCOMMAND_VOLUME_UP = 0xA0000;
+        public const int WM_APPCOMMAND = 0x319;
+
+
         [DllImport("user32.dll", EntryPoint = "ShowWindow", ExactSpelling = false, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern bool ShowWindow(IntPtr hwnd, int nCmdShow);
         [DllImport("user32.dll", EntryPoint = "FindWindowEx", ExactSpelling = false, CharSet = CharSet.Auto, SetLastError = true)]
@@ -62,6 +68,10 @@ namespace NativeAPI
         public extern static IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public extern static IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public extern static IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, int lParam);
+
 
         [DllImport("user32.dll")]
         public extern static IntPtr PostMessage(IntPtr hWnd, WM_Message Msg, SC_Message wParam, IntPtr lParam);

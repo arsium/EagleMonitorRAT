@@ -17,5 +17,5 @@ F:\Personal\Eagle Monitor\Infected Monitor\bin\Release\Plugins\Recovery.pdb
 F:\Personal\Eagle Monitor\Plugins\Recovery\obj\Release\Recovery.csproj.CoreCompileInputs.cache
 F:\Personal\Eagle Monitor\Plugins\Recovery\obj\Release\Recovery.dll
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\Recovery.dll
-F:\Personal\Eagle Monitor\Plugins\Recovery\obj\Release\Recovery.csproj.CopyComplete
 F:\Personal\Eagle Monitor\Plugins\Recovery\obj\Release\Recovery.csproj.AssemblyReference.cache
+F:\Personal\Eagle Monitor\Plugins\Recovery\obj\Release\Recovery.csproj.CopyComplete

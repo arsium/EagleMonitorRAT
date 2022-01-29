@@ -4,6 +4,6 @@ F:\Project C#\Infected Monitor\Infected Monitor\NativeAPI\obj\Release\NativeAPI.
 F:\Project C#\Infected Monitor\Infected Monitor\NativeAPI\obj\Release\NativeAPI.dll
 F:\Project C#\Infected Monitor\Infected Monitor\NativeAPI\obj\Release\NativeAPI.pdb
 F:\Personal\Eagle Monitor\NativeAPI\bin\Release\NativeAPI.dll
-F:\Personal\Eagle Monitor\NativeAPI\obj\Release\NativeAPI.csproj.AssemblyReference.cache
 F:\Personal\Eagle Monitor\NativeAPI\obj\Release\NativeAPI.csproj.CoreCompileInputs.cache
 F:\Personal\Eagle Monitor\NativeAPI\obj\Release\NativeAPI.dll
+F:\Personal\Eagle Monitor\NativeAPI\obj\Release\NativeAPI.csproj.AssemblyReference.cache

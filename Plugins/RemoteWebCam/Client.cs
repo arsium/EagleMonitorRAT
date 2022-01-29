@@ -41,7 +41,7 @@ namespace Plugin
                         Data data = Shared.Serializer.Deserialize(dataReceived);
                         switch (data.Type)
                         {
-                            case PacketTypes.PacketType.STOP_CAPTURE_CAMERA:
+                            case PacketType.STOP_CAPTURE_CAMERA:
                                 Functions.hasToCapture = false;
                                 break;
                         }

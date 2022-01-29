@@ -1,0 +1,7 @@
+﻿  dllmain.cpp
+     Création de la bibliothèque ..\..\Eagle Monitor\bin\Release\Plugins\CPU64.lib et de l'objet ..\..\Eagle Monitor\bin\Release\Plugins\CPU64.exp
+  Génération de code en cours
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 303 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  CPU.vcxproj -> F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\CPU64.dll

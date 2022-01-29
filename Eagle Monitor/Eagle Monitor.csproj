@@ -7,7 +7,7 @@
     <ProjectGuid>{1F2512CE-68B5-4B6F-8909-463DE65DC6A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Eagle_Monitor</RootNamespace>
-    <AssemblyName>Eagle Monitor REV1</AssemblyName>
+    <AssemblyName>Eagle Monitor RAT REV2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -160,6 +160,12 @@
     <Compile Include="Forms\HistoryForm.Designer.cs">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InformationForm.Designer.cs">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InformationForm.resx">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,10 +298,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IPAPI\IPAPI.csproj">
-      <Project>{A169555D-4E8F-45F5-8B79-FE6F919B7C80}</Project>
-      <Name>IPAPI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NativeAPI\NativeAPI.csproj">
       <Project>{22485099-27c3-4a3d-81db-d54e2b2c7017}</Project>
       <Name>NativeAPI</Name>
@@ -312,6 +317,20 @@
     <Content Include="eagle2.ico" />
     <Content Include="icons8_coat_of_arms_of_russia.ico" />
     <Content Include="Nano_demons_transperent_logo403x403.ico" />
+    <None Include="Resources\icons8_play_32.png" />
+    <None Include="Resources\icons8_tiles_32.png" />
+    <None Include="Resources\icons8_small_icons_32.png" />
+    <None Include="Resources\icons8_navigation_toolbar_bottom_32.png" />
+    <None Include="Resources\icons8_info_32.png" />
+    <None Include="Resources\icons8_microsoft_excel_2019_32.png" />
+    <None Include="Resources\icons8_transfer_32.png" />
+    <None Include="Resources\icons8_memory_mslot_32.png" />
+    <None Include="Resources\imageres_1111.ico" />
+    <None Include="Resources\shell32_16783.ico" />
+    <None Include="Resources\icons8_amd_32.png" />
+    <None Include="Resources\97971_intel_icon.png" />
+    <None Include="Resources\icons8_processor_32.png" />
+    <None Include="Resources\icons8_poison_32.png" />
     <None Include="Resources\icons8_uninstall_programs_32.png" />
     <None Include="Resources\shell32_263.ico" />
     <None Include="Resources\shell32_24.ico" />
@@ -324,12 +343,10 @@
     <None Include="Resources\icons8_unlock_32.png" />
     <None Include="Resources\icons8_lock_32.png" />
     <None Include="Resources\DDORes_2555.ico" />
-    <None Include="Resources\Nano_demons_transperent_logo403x403.png" />
     <None Include="Resources\icons8_box_important_32.png" />
     <None Include="Resources\icons8_tasklist_32.png" />
     <None Include="Resources\icons8_save_as_32.png" />
     <None Include="Resources\icons8_blue_screen_of_death_32.png" />
-    <None Include="Resources\Nano_demons_transperent_logo.png" />
     <None Include="Resources\icons8_control_panel_32.png" />
     <None Include="Resources\icons8_c++_32.png" />
     <None Include="Resources\icons8_c_sharp_logo_32.png" />

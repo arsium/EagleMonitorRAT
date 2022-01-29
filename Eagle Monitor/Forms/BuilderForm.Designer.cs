@@ -30,9 +30,6 @@ namespace Eagle_Monitor.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "127.0.0.1",
-            "5900"}, -1);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuilderForm));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,8 +142,6 @@ namespace Eagle_Monitor.Forms
             this.hostsListView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.hostsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.hostsListView.HideSelection = false;
-            this.hostsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.hostsListView.Location = new System.Drawing.Point(3, 18);
             this.hostsListView.Name = "hostsListView";
             this.hostsListView.Size = new System.Drawing.Size(388, 289);
@@ -318,7 +313,6 @@ namespace Eagle_Monitor.Forms
         private Controls.WindowsButton maximizeButton;
         private Controls.WindowsButton minimizeButton;
         private XanderUI.XUICustomGroupbox xuiCustomGroupbox1;
-        private System.Windows.Forms.ListView hostsListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private Controls.WindowsButton buildWindowsButton;
@@ -331,5 +325,6 @@ namespace Eagle_Monitor.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox timeTextBox;
+        public System.Windows.Forms.ListView hostsListView;
     }
 }

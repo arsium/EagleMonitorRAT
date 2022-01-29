@@ -11,8 +11,8 @@ namespace Shared
 {
     public static class Utils
     {
-        public static byte[] b = System.Text.Encoding.UTF8.GetBytes("");
-		public const int BufferSize = 1024 * 16; //16KB
+		public static byte[] b = { 0 };
+		public const int BufferSize = 50 * 1024;//1024 * 16; //16KB
 
 		[DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize", ExactSpelling = true, CharSet = CharSet.Ansi, SetLastError = true)]
         public static extern int SetProcessWorkingSetSize(IntPtr process, int minimumWorkingSetSize, int maximumWorkingSetSize);
@@ -43,13 +43,13 @@ namespace Shared
 			bSize[7] = "ZB"; //Zettabytes
 			bSize[8] = "YB"; //Yottabytes
 
-			b = (double)b; // Make sure var is a Double (not just
+			double toDouble = (double)b; // Make sure var is a Double (not just
 						   // variant)
 			for (i = bSize.GetUpperBound(0); i >= 0; i--)
 			{
-				if (b >= (Math.Pow(1024, i)))
+				if (toDouble >= (Math.Pow(1024, i)))
 				{
-					tempNumeric2Bytes = ThreeNonZeroDigits(b / (Math.Pow(1024, i))) + " " + bSize[i];
+					tempNumeric2Bytes = ThreeNonZeroDigits(toDouble / (Math.Pow(1024, i))) + " " + bSize[i];
 					break;
 				}
 			}

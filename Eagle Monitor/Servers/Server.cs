@@ -40,6 +40,7 @@ namespace Eagle_Monitor
             {
                 try
                 {
+
                     Clients.Client C = new Clients.Client(S.Accept());
                     C.S.ReceiveBufferSize = Shared.Utils.BufferSize;
                     C.S.SendBufferSize = Shared.Utils.BufferSize;

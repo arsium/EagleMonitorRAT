@@ -1,7 +1,11 @@
 ﻿using Eagle_Monitor.Controls;
+using Eagle_Monitor.Helpers;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -35,11 +39,27 @@ namespace Eagle_Monitor.Forms
             Helpers.BuilderHelper B = new Helpers.BuilderHelper();
             if (taskNameTextBox.Enabled == false)
                 taskNameTextBox.Text = "";
+
+
             B.Build(bits64CheckBox.Checked, S.ToString(), taskNameTextBox.Text, timeTextBox.Text);
+
+            BuilderHelper.builderSetting = new BuilderHelper.BuilderSetting();
+            BuilderHelper.builderSetting.hostBuilder = new List<string>();
+            BuilderHelper.builderSetting.hostPortBuilder = new List<int>();
+
+            foreach (ListViewItem I in hostsListView.Items) 
+            {
+                BuilderHelper.builderSetting.hostBuilder.Add(I.Text);
+                BuilderHelper.builderSetting.hostPortBuilder.Add(int.Parse(I.SubItems[1].Text));
+            }
+            string savedSettings = JsonConvert.SerializeObject(BuilderHelper.builderSetting);
+            File.WriteAllText(Utilities.GPath + "\\builder.json", savedSettings);
+
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            hostsListView.Items.Clear();
             this.Close();
         }
 

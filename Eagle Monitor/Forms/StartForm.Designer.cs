@@ -169,6 +169,7 @@ namespace Eagle_Monitor
             // 
             this.windowsProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.windowsProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.windowsProgressBar1.Location = new System.Drawing.Point(6, 371);
             this.windowsProgressBar1.Name = "windowsProgressBar1";
             this.windowsProgressBar1.Size = new System.Drawing.Size(476, 31);
@@ -191,7 +192,7 @@ namespace Eagle_Monitor
             // 
             this.keyTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.keyTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.keyTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.keyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.keyTextBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.keyTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -199,7 +200,6 @@ namespace Eagle_Monitor
             this.keyTextBox.Name = "keyTextBox";
             this.keyTextBox.Size = new System.Drawing.Size(476, 15);
             this.keyTextBox.TabIndex = 9;
-            this.keyTextBox.Text = "ThisIsMyKey";
             this.keyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // StartForm

@@ -106,7 +106,7 @@ namespace Plugin
 						break;
 
 					case Algorithm.SM4:
-					//	DoIt = new BCEngine(new Org.BouncyCastle.Crypto.Engines.SM, encrypt);
+					//	DoIt = new BCEngine(new Org.BouncyCastle.Crypto.Engines.SM, encrypt);// bug with this algo
 						break;
 
 					case Algorithm.Tea:

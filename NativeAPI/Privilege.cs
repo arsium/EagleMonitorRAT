@@ -1,10 +1,16 @@
 ﻿using System.Runtime.InteropServices;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
 namespace NativeAPI
 {
 	public enum NTSTATUS : uint
 	{
-		STATUS_SUCCESS
+		STATUS_SUCCESS,
+		STATUS_INFO_LENGTH_MISMATCH = 0xC0000004
 	}
 
 	public enum _PRIVILEGES : int

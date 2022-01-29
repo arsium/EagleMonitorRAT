@@ -19,7 +19,7 @@ namespace Eagle_Monitor.Properties {
     // à l'aide d'un outil, tel que ResGen ou Visual Studio.
     // Pour ajouter ou supprimer un membre, modifiez votre fichier .ResX, puis réexécutez ResGen
     // avec l'option /str ou régénérez votre projet VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,16 @@ namespace Eagle_Monitor.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _97971_intel_icon {
+            get {
+                object obj = ResourceManager.GetObject("97971_intel_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -106,6 +116,16 @@ namespace Eagle_Monitor.Properties {
         internal static System.Drawing.Bitmap icons8_add_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_add_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_amd_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_amd_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,6 +363,16 @@ namespace Eagle_Monitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_info_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_info_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_invisible_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_invisible_32", resourceCulture);
@@ -383,9 +413,29 @@ namespace Eagle_Monitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_memory_mslot_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_memory_mslot_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_memory_slot_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_memory_slot_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_microsoft_excel_2019_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_microsoft_excel_2019_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +463,16 @@ namespace Eagle_Monitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_navigation_toolbar_bottom_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_navigation_toolbar_bottom_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_not_sending_video_frames_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_not_sending_video_frames_32", resourceCulture);
@@ -426,6 +486,36 @@ namespace Eagle_Monitor.Properties {
         internal static System.Drawing.Bitmap icons8_pause_button_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_pause_button_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_play_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_play_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_poison_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_poison_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_processor_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_processor_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,6 +623,16 @@ namespace Eagle_Monitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_small_icons_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_small_icons_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_system_task_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_system_task_32", resourceCulture);
@@ -556,6 +656,26 @@ namespace Eagle_Monitor.Properties {
         internal static System.Drawing.Bitmap icons8_thin_client_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_thin_client_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tiles_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_tiles_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_transfer_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_transfer_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -633,6 +753,16 @@ namespace Eagle_Monitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imageres_1111 {
+            get {
+                object obj = ResourceManager.GetObject("imageres_1111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imageres_15 {
             get {
                 object obj = ResourceManager.GetObject("imageres_15", resourceCulture);
@@ -683,26 +813,6 @@ namespace Eagle_Monitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Nano_demons_transperent_logo {
-            get {
-                object obj = ResourceManager.GetObject("Nano_demons_transperent_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Nano_demons_transperent_logo403x403 {
-            get {
-                object obj = ResourceManager.GetObject("Nano_demons_transperent_logo403x403", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap setupapi_32 {
             get {
                 object obj = ResourceManager.GetObject("setupapi_32", resourceCulture);
@@ -716,6 +826,16 @@ namespace Eagle_Monitor.Properties {
         internal static System.Drawing.Bitmap shell32_153 {
             get {
                 object obj = ResourceManager.GetObject("shell32_153", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shell32_16783 {
+            get {
+                object obj = ResourceManager.GetObject("shell32_16783", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

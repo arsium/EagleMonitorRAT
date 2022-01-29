@@ -40,6 +40,7 @@ namespace Eagle_Monitor
             this.processManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteDesktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.computerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscellaneousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.injectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,23 +68,6 @@ namespace Eagle_Monitor
             this.windowsTabControls1 = new Eagle_Monitor.Controls.WindowsTabControls();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.builderPictureBox = new System.Windows.Forms.PictureBox();
-            this.hibernatePictureBox = new System.Windows.Forms.PictureBox();
-            this.suspendPictureBox = new System.Windows.Forms.PictureBox();
-            this.logOutPictureBox = new System.Windows.Forms.PictureBox();
-            this.rebootPictureBox = new System.Windows.Forms.PictureBox();
-            this.shutDownPictureBox = new System.Windows.Forms.PictureBox();
-            this.closeClientPictureBox = new System.Windows.Forms.PictureBox();
-            this.webCamPictureBox = new System.Windows.Forms.PictureBox();
-            this.panelPictureBox = new System.Windows.Forms.PictureBox();
-            this.injectionPictureBox = new System.Windows.Forms.PictureBox();
-            this.remoteDesktopPictureBox = new System.Windows.Forms.PictureBox();
-            this.processManagerPictureBox = new System.Windows.Forms.PictureBox();
-            this.wifiRecoveryPictureBox = new System.Windows.Forms.PictureBox();
-            this.historyRecoveryPictureBox = new System.Windows.Forms.PictureBox();
-            this.passwordsRecoveryPictureBox = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.fileManagerPictureBox = new System.Windows.Forms.PictureBox();
             this.clientsListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -102,6 +86,7 @@ namespace Eagle_Monitor
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.xuiCustomGroupbox1 = new XanderUI.XUICustomGroupbox();
@@ -146,22 +131,6 @@ namespace Eagle_Monitor
             this.windowsTabControls1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.builderPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hibernatePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suspendPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rebootPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shutDownPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeClientPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webCamPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.injectionPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.remoteDesktopPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.processManagerPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wifiRecoveryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyRecoveryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordsRecoveryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileManagerPictureBox)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -182,7 +151,7 @@ namespace Eagle_Monitor
             // 
             this.clientMenuStrip.DropShadowEnabled = false;
             this.clientMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.clientMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.clientMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.clientMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.recoveryToolStripMenuItem,
             this.desktopControlToolStripMenuItem,
@@ -193,7 +162,7 @@ namespace Eagle_Monitor
             this.testNewFeaturesToolStripMenuItem});
             this.clientMenuStrip.Name = "contextMenuStrip1";
             this.clientMenuStrip.ShowItemToolTips = false;
-            this.clientMenuStrip.Size = new System.Drawing.Size(193, 254);
+            this.clientMenuStrip.Size = new System.Drawing.Size(176, 204);
             // 
             // recoveryToolStripMenuItem
             // 
@@ -207,7 +176,7 @@ namespace Eagle_Monitor
             this.recoveryToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_data_recovery_32;
             this.recoveryToolStripMenuItem.Name = "recoveryToolStripMenuItem";
             this.recoveryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.recoveryToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.recoveryToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
             this.recoveryToolStripMenuItem.Text = "Recovery";
             // 
             // passwordsToolStripMenuItem
@@ -246,13 +215,14 @@ namespace Eagle_Monitor
             this.desktopControlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.processManagerToolStripMenuItem,
             this.fileManagerToolStripMenuItem,
-            this.remoteDesktopToolStripMenuItem});
+            this.remoteDesktopToolStripMenuItem,
+            this.computerInformationToolStripMenuItem});
             this.desktopControlToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.desktopControlToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.desktopControlToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_desktop_32;
             this.desktopControlToolStripMenuItem.Name = "desktopControlToolStripMenuItem";
             this.desktopControlToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.desktopControlToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.desktopControlToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
             this.desktopControlToolStripMenuItem.Text = "Desktop Control";
             // 
             // processManagerToolStripMenuItem
@@ -261,7 +231,7 @@ namespace Eagle_Monitor
             this.processManagerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.processManagerToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_system_task_32;
             this.processManagerToolStripMenuItem.Name = "processManagerToolStripMenuItem";
-            this.processManagerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.processManagerToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.processManagerToolStripMenuItem.Text = "Process Manager";
             this.processManagerToolStripMenuItem.Click += new System.EventHandler(this.processManagerToolStripMenuItem_Click);
             // 
@@ -271,7 +241,7 @@ namespace Eagle_Monitor
             this.fileManagerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fileManagerToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.explorer_ICO_MYCOMPUTER;
             this.fileManagerToolStripMenuItem.Name = "fileManagerToolStripMenuItem";
-            this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.fileManagerToolStripMenuItem.Text = "File Manager";
             this.fileManagerToolStripMenuItem.Click += new System.EventHandler(this.fileManagerToolStripMenuItem_Click);
             // 
@@ -281,9 +251,19 @@ namespace Eagle_Monitor
             this.remoteDesktopToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.remoteDesktopToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.SHELL32_2_35;
             this.remoteDesktopToolStripMenuItem.Name = "remoteDesktopToolStripMenuItem";
-            this.remoteDesktopToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.remoteDesktopToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.remoteDesktopToolStripMenuItem.Text = "Remote Desktop";
             this.remoteDesktopToolStripMenuItem.Click += new System.EventHandler(this.remoteDesktopToolStripMenuItem_Click);
+            // 
+            // computerInformationToolStripMenuItem
+            // 
+            this.computerInformationToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.computerInformationToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.computerInformationToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_16783;
+            this.computerInformationToolStripMenuItem.Name = "computerInformationToolStripMenuItem";
+            this.computerInformationToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.computerInformationToolStripMenuItem.Text = "Computer Information";
+            this.computerInformationToolStripMenuItem.Click += new System.EventHandler(this.computerInformationToolStripMenuItem_Click);
             // 
             // miscellaneousToolStripMenuItem
             // 
@@ -297,7 +277,7 @@ namespace Eagle_Monitor
             this.miscellaneousToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_153;
             this.miscellaneousToolStripMenuItem.Name = "miscellaneousToolStripMenuItem";
             this.miscellaneousToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.miscellaneousToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.miscellaneousToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
             this.miscellaneousToolStripMenuItem.Text = "Miscellaneous";
             // 
             // injectionToolStripMenuItem
@@ -306,8 +286,8 @@ namespace Eagle_Monitor
             this.injectionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.injectionToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_memory_slot_32;
             this.injectionToolStripMenuItem.Name = "injectionToolStripMenuItem";
-            this.injectionToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.injectionToolStripMenuItem.Text = "In-Memory Execution";
+            this.injectionToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.injectionToolStripMenuItem.Text = "Run in memory";
             this.injectionToolStripMenuItem.Click += new System.EventHandler(this.injectionToolStripMenuItem_Click);
             // 
             // panelToolStripMenuItem
@@ -316,7 +296,7 @@ namespace Eagle_Monitor
             this.panelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_control_panel_32;
             this.panelToolStripMenuItem.Name = "panelToolStripMenuItem";
-            this.panelToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.panelToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.panelToolStripMenuItem.Text = "Panel";
             this.panelToolStripMenuItem.Click += new System.EventHandler(this.panelToolStripMenuItem_Click);
             // 
@@ -326,7 +306,7 @@ namespace Eagle_Monitor
             this.webCamToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.webCamToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.DDORes_2555;
             this.webCamToolStripMenuItem.Name = "webCamToolStripMenuItem";
-            this.webCamToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.webCamToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.webCamToolStripMenuItem.Text = "WebCam";
             this.webCamToolStripMenuItem.Click += new System.EventHandler(this.webCamToolStripMenuItem_Click);
             // 
@@ -341,7 +321,7 @@ namespace Eagle_Monitor
             this.serverControlToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_thin_client_32;
             this.serverControlToolStripMenuItem.Name = "serverControlToolStripMenuItem";
             this.serverControlToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.serverControlToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.serverControlToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
             this.serverControlToolStripMenuItem.Text = "Server Control";
             // 
             // clientToolStripMenuItem
@@ -353,7 +333,7 @@ namespace Eagle_Monitor
             this.clientToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.clientToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_customer_32;
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            this.clientToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.clientToolStripMenuItem.Text = "Client";
             // 
             // closeToolStripMenuItem
@@ -362,7 +342,7 @@ namespace Eagle_Monitor
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.closeToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_cancel_32;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(214, 34);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -372,7 +352,7 @@ namespace Eagle_Monitor
             this.uninstallTaskSchedulerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uninstallTaskSchedulerToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_uninstall_programs_32;
             this.uninstallTaskSchedulerToolStripMenuItem.Name = "uninstallTaskSchedulerToolStripMenuItem";
-            this.uninstallTaskSchedulerToolStripMenuItem.Size = new System.Drawing.Size(214, 34);
+            this.uninstallTaskSchedulerToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.uninstallTaskSchedulerToolStripMenuItem.Text = "Uninstall [TaskScheduler]";
             this.uninstallTaskSchedulerToolStripMenuItem.Click += new System.EventHandler(this.uninstallTaskSchedulerToolStripMenuItem_Click);
             // 
@@ -388,7 +368,7 @@ namespace Eagle_Monitor
             this.powerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.powerToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_lightning_bolt_32;
             this.powerToolStripMenuItem.Name = "powerToolStripMenuItem";
-            this.powerToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.powerToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.powerToolStripMenuItem.Text = "Power";
             // 
             // shutdownToolStripMenuItem
@@ -445,10 +425,10 @@ namespace Eagle_Monitor
             // 
             this.builderToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.builderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.builderToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_111;
+            this.builderToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_1111;
             this.builderToolStripMenuItem.Name = "builderToolStripMenuItem";
             this.builderToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.builderToolStripMenuItem.Size = new System.Drawing.Size(192, 32);
+            this.builderToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
             this.builderToolStripMenuItem.Text = "Builder";
             this.builderToolStripMenuItem.Click += new System.EventHandler(this.builderToolStripMenuItem_Click);
             // 
@@ -456,9 +436,9 @@ namespace Eagle_Monitor
             // 
             this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aboutToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_263;
+            this.aboutToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_24;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -468,8 +448,9 @@ namespace Eagle_Monitor
             this.test1ToolStripMenuItem,
             this.test2ToolStripMenuItem});
             this.testNewFeaturesToolStripMenuItem.Name = "testNewFeaturesToolStripMenuItem";
-            this.testNewFeaturesToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.testNewFeaturesToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
             this.testNewFeaturesToolStripMenuItem.Text = "Test New Features";
+            this.testNewFeaturesToolStripMenuItem.Visible = false;
             // 
             // test1ToolStripMenuItem
             // 
@@ -499,9 +480,9 @@ namespace Eagle_Monitor
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(35, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Eagle Monitor REV1";
+            this.label1.Text = "Eagle Monitor RAT REV2";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // closeButton
@@ -514,7 +495,7 @@ namespace Eagle_Monitor
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.closeButton.Location = new System.Drawing.Point(1079, 0);
+            this.closeButton.Location = new System.Drawing.Point(1246, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(33, 30);
             this.closeButton.TabIndex = 8;
@@ -532,7 +513,7 @@ namespace Eagle_Monitor
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.maximizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.maximizeButton.Location = new System.Drawing.Point(1045, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(1212, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.Size = new System.Drawing.Size(33, 30);
             this.maximizeButton.TabIndex = 7;
@@ -550,7 +531,7 @@ namespace Eagle_Monitor
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.minimizeButton.Location = new System.Drawing.Point(1011, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(1178, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(33, 30);
             this.minimizeButton.TabIndex = 6;
@@ -574,7 +555,7 @@ namespace Eagle_Monitor
             this.windowsTabControls1.Location = new System.Drawing.Point(3, 30);
             this.windowsTabControls1.Name = "windowsTabControls1";
             this.windowsTabControls1.SelectedIndex = 0;
-            this.windowsTabControls1.Size = new System.Drawing.Size(1109, 540);
+            this.windowsTabControls1.Size = new System.Drawing.Size(1276, 540);
             this.windowsTabControls1.TabIndex = 0;
             this.windowsTabControls1.UncloseTabIndexs = null;
             // 
@@ -584,224 +565,20 @@ namespace Eagle_Monitor
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1101, 482);
+            this.tabPage1.Size = new System.Drawing.Size(1268, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clients";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.builderPictureBox);
-            this.panel3.Controls.Add(this.hibernatePictureBox);
-            this.panel3.Controls.Add(this.suspendPictureBox);
-            this.panel3.Controls.Add(this.logOutPictureBox);
-            this.panel3.Controls.Add(this.rebootPictureBox);
-            this.panel3.Controls.Add(this.shutDownPictureBox);
-            this.panel3.Controls.Add(this.closeClientPictureBox);
-            this.panel3.Controls.Add(this.webCamPictureBox);
-            this.panel3.Controls.Add(this.panelPictureBox);
-            this.panel3.Controls.Add(this.injectionPictureBox);
-            this.panel3.Controls.Add(this.remoteDesktopPictureBox);
-            this.panel3.Controls.Add(this.processManagerPictureBox);
-            this.panel3.Controls.Add(this.wifiRecoveryPictureBox);
-            this.panel3.Controls.Add(this.historyRecoveryPictureBox);
-            this.panel3.Controls.Add(this.passwordsRecoveryPictureBox);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.fileManagerPictureBox);
             this.panel3.Controls.Add(this.clientsListView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(3, 36, 3, 3);
-            this.panel3.Size = new System.Drawing.Size(1101, 482);
+            this.panel3.Padding = new System.Windows.Forms.Padding(3);
+            this.panel3.Size = new System.Drawing.Size(1268, 482);
             this.panel3.TabIndex = 1;
-            // 
-            // builderPictureBox
-            // 
-            this.builderPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.builderPictureBox.Image = global::Eagle_Monitor.Properties.Resources.imageres_111;
-            this.builderPictureBox.Location = new System.Drawing.Point(1070, 2);
-            this.builderPictureBox.Name = "builderPictureBox";
-            this.builderPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.builderPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.builderPictureBox.TabIndex = 17;
-            this.builderPictureBox.TabStop = false;
-            this.builderPictureBox.Click += new System.EventHandler(this.builderPictureBox_Click);
-            // 
-            // hibernatePictureBox
-            // 
-            this.hibernatePictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_hibernate_32;
-            this.hibernatePictureBox.Location = new System.Drawing.Point(482, 3);
-            this.hibernatePictureBox.Name = "hibernatePictureBox";
-            this.hibernatePictureBox.Size = new System.Drawing.Size(28, 28);
-            this.hibernatePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hibernatePictureBox.TabIndex = 16;
-            this.hibernatePictureBox.TabStop = false;
-            this.hibernatePictureBox.Click += new System.EventHandler(this.hibernatePictureBox_Click);
-            // 
-            // suspendPictureBox
-            // 
-            this.suspendPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_sleep_32;
-            this.suspendPictureBox.Location = new System.Drawing.Point(448, 3);
-            this.suspendPictureBox.Name = "suspendPictureBox";
-            this.suspendPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.suspendPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.suspendPictureBox.TabIndex = 15;
-            this.suspendPictureBox.TabStop = false;
-            this.suspendPictureBox.Click += new System.EventHandler(this.suspendPictureBox_Click);
-            // 
-            // logOutPictureBox
-            // 
-            this.logOutPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_sign_out_32;
-            this.logOutPictureBox.Location = new System.Drawing.Point(414, 3);
-            this.logOutPictureBox.Name = "logOutPictureBox";
-            this.logOutPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.logOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logOutPictureBox.TabIndex = 14;
-            this.logOutPictureBox.TabStop = false;
-            this.logOutPictureBox.Click += new System.EventHandler(this.logOutPictureBox_Click);
-            // 
-            // rebootPictureBox
-            // 
-            this.rebootPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_restart_32;
-            this.rebootPictureBox.Location = new System.Drawing.Point(380, 3);
-            this.rebootPictureBox.Name = "rebootPictureBox";
-            this.rebootPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.rebootPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rebootPictureBox.TabIndex = 13;
-            this.rebootPictureBox.TabStop = false;
-            this.rebootPictureBox.Click += new System.EventHandler(this.rebootPictureBox_Click);
-            // 
-            // shutDownPictureBox
-            // 
-            this.shutDownPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_shutdown_32;
-            this.shutDownPictureBox.Location = new System.Drawing.Point(346, 3);
-            this.shutDownPictureBox.Name = "shutDownPictureBox";
-            this.shutDownPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.shutDownPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.shutDownPictureBox.TabIndex = 12;
-            this.shutDownPictureBox.TabStop = false;
-            this.shutDownPictureBox.Click += new System.EventHandler(this.shutDownPictureBox_Click);
-            // 
-            // closeClientPictureBox
-            // 
-            this.closeClientPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_cancel_32;
-            this.closeClientPictureBox.Location = new System.Drawing.Point(312, 3);
-            this.closeClientPictureBox.Name = "closeClientPictureBox";
-            this.closeClientPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.closeClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeClientPictureBox.TabIndex = 11;
-            this.closeClientPictureBox.TabStop = false;
-            this.closeClientPictureBox.Click += new System.EventHandler(this.closeClientPictureBox_Click);
-            // 
-            // webCamPictureBox
-            // 
-            this.webCamPictureBox.Image = global::Eagle_Monitor.Properties.Resources.DDORes_2555;
-            this.webCamPictureBox.Location = new System.Drawing.Point(278, 3);
-            this.webCamPictureBox.Name = "webCamPictureBox";
-            this.webCamPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.webCamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.webCamPictureBox.TabIndex = 10;
-            this.webCamPictureBox.TabStop = false;
-            this.webCamPictureBox.Click += new System.EventHandler(this.webCamPictureBox_Click);
-            // 
-            // panelPictureBox
-            // 
-            this.panelPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_control_panel_32;
-            this.panelPictureBox.Location = new System.Drawing.Point(244, 3);
-            this.panelPictureBox.Name = "panelPictureBox";
-            this.panelPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.panelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.panelPictureBox.TabIndex = 9;
-            this.panelPictureBox.TabStop = false;
-            this.panelPictureBox.Click += new System.EventHandler(this.panelPictureBox_Click);
-            // 
-            // injectionPictureBox
-            // 
-            this.injectionPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_memory_slot_32;
-            this.injectionPictureBox.Location = new System.Drawing.Point(210, 3);
-            this.injectionPictureBox.Name = "injectionPictureBox";
-            this.injectionPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.injectionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.injectionPictureBox.TabIndex = 8;
-            this.injectionPictureBox.TabStop = false;
-            this.injectionPictureBox.Click += new System.EventHandler(this.injectionPictureBox_Click);
-            // 
-            // remoteDesktopPictureBox
-            // 
-            this.remoteDesktopPictureBox.Image = global::Eagle_Monitor.Properties.Resources.SHELL32_2_35;
-            this.remoteDesktopPictureBox.Location = new System.Drawing.Point(176, 3);
-            this.remoteDesktopPictureBox.Name = "remoteDesktopPictureBox";
-            this.remoteDesktopPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.remoteDesktopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.remoteDesktopPictureBox.TabIndex = 7;
-            this.remoteDesktopPictureBox.TabStop = false;
-            this.remoteDesktopPictureBox.Click += new System.EventHandler(this.remoteDesktopPictureBox_Click);
-            // 
-            // processManagerPictureBox
-            // 
-            this.processManagerPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_system_task_32;
-            this.processManagerPictureBox.Location = new System.Drawing.Point(108, 3);
-            this.processManagerPictureBox.Name = "processManagerPictureBox";
-            this.processManagerPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.processManagerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.processManagerPictureBox.TabIndex = 6;
-            this.processManagerPictureBox.TabStop = false;
-            this.processManagerPictureBox.Click += new System.EventHandler(this.processManagerPictureBox_Click);
-            // 
-            // wifiRecoveryPictureBox
-            // 
-            this.wifiRecoveryPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_wi_fi_logo_32;
-            this.wifiRecoveryPictureBox.Location = new System.Drawing.Point(74, 3);
-            this.wifiRecoveryPictureBox.Name = "wifiRecoveryPictureBox";
-            this.wifiRecoveryPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.wifiRecoveryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.wifiRecoveryPictureBox.TabIndex = 5;
-            this.wifiRecoveryPictureBox.TabStop = false;
-            this.wifiRecoveryPictureBox.Click += new System.EventHandler(this.wifiRecoveryPictureBox_Click);
-            // 
-            // historyRecoveryPictureBox
-            // 
-            this.historyRecoveryPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_Clock_32;
-            this.historyRecoveryPictureBox.Location = new System.Drawing.Point(40, 3);
-            this.historyRecoveryPictureBox.Name = "historyRecoveryPictureBox";
-            this.historyRecoveryPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.historyRecoveryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.historyRecoveryPictureBox.TabIndex = 4;
-            this.historyRecoveryPictureBox.TabStop = false;
-            this.historyRecoveryPictureBox.Click += new System.EventHandler(this.historyRecoveryPictureBox_Click);
-            // 
-            // passwordsRecoveryPictureBox
-            // 
-            this.passwordsRecoveryPictureBox.Image = global::Eagle_Monitor.Properties.Resources.icons8_grand_master_key_32;
-            this.passwordsRecoveryPictureBox.Location = new System.Drawing.Point(6, 3);
-            this.passwordsRecoveryPictureBox.Name = "passwordsRecoveryPictureBox";
-            this.passwordsRecoveryPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.passwordsRecoveryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.passwordsRecoveryPictureBox.TabIndex = 3;
-            this.passwordsRecoveryPictureBox.TabStop = false;
-            this.passwordsRecoveryPictureBox.Click += new System.EventHandler(this.passwordsRecoveryPictureBox_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panel5.Location = new System.Drawing.Point(0, 32);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1101, 3);
-            this.panel5.TabIndex = 2;
-            // 
-            // fileManagerPictureBox
-            // 
-            this.fileManagerPictureBox.Image = global::Eagle_Monitor.Properties.Resources.explorer_ICO_MYCOMPUTER;
-            this.fileManagerPictureBox.Location = new System.Drawing.Point(142, 3);
-            this.fileManagerPictureBox.Name = "fileManagerPictureBox";
-            this.fileManagerPictureBox.Size = new System.Drawing.Size(28, 28);
-            this.fileManagerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fileManagerPictureBox.TabIndex = 1;
-            this.fileManagerPictureBox.TabStop = false;
-            this.fileManagerPictureBox.Click += new System.EventHandler(this.fileManagerPictureBox_Click);
             // 
             // clientsListView
             // 
@@ -823,10 +600,10 @@ namespace Eagle_Monitor
             this.clientsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientsListView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.clientsListView.HideSelection = false;
-            this.clientsListView.Location = new System.Drawing.Point(3, 36);
+            this.clientsListView.Location = new System.Drawing.Point(3, 3);
             this.clientsListView.MultiSelect = false;
             this.clientsListView.Name = "clientsListView";
-            this.clientsListView.Size = new System.Drawing.Size(1095, 443);
+            this.clientsListView.Size = new System.Drawing.Size(1262, 476);
             this.clientsListView.SmallImageList = this.countryImageList;
             this.clientsListView.TabIndex = 0;
             this.clientsListView.UseCompatibleStateImageBehavior = false;
@@ -891,7 +668,7 @@ namespace Eagle_Monitor
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1101, 482);
+            this.tabPage2.Size = new System.Drawing.Size(1268, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Logs";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -908,7 +685,7 @@ namespace Eagle_Monitor
             this.logsListView.HideSelection = false;
             this.logsListView.Location = new System.Drawing.Point(0, 0);
             this.logsListView.Name = "logsListView";
-            this.logsListView.Size = new System.Drawing.Size(1101, 482);
+            this.logsListView.Size = new System.Drawing.Size(1268, 482);
             this.logsListView.TabIndex = 0;
             this.logsListView.UseCompatibleStateImageBehavior = false;
             this.logsListView.View = System.Windows.Forms.View.Details;
@@ -923,7 +700,7 @@ namespace Eagle_Monitor
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(3);
-            this.panel4.Size = new System.Drawing.Size(1101, 482);
+            this.panel4.Size = new System.Drawing.Size(1268, 482);
             this.panel4.TabIndex = 1;
             // 
             // tabPage5
@@ -932,24 +709,34 @@ namespace Eagle_Monitor
             this.tabPage5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabPage5.Location = new System.Drawing.Point(4, 54);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1101, 482);
+            this.tabPage5.Size = new System.Drawing.Size(1268, 482);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Additional Settings";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1101, 482);
+            this.panel7.Size = new System.Drawing.Size(1268, 482);
             this.panel7.TabIndex = 12;
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(1104, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(164, 482);
+            this.panel9.TabIndex = 11;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -974,7 +761,6 @@ namespace Eagle_Monitor
             this.xuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(239)))));
             this.xuiCustomGroupbox1.BorderWidth = 1;
             this.xuiCustomGroupbox1.Controls.Add(this.tasksListView);
-            this.xuiCustomGroupbox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xuiCustomGroupbox1.Location = new System.Drawing.Point(3, 3);
             this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
             this.xuiCustomGroupbox1.ShowText = true;
@@ -1024,7 +810,7 @@ namespace Eagle_Monitor
             // 
             this.tasksContextMenuStrip.DropShadowEnabled = false;
             this.tasksContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.tasksContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.tasksContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tasksContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.passwordsRecoveryToolStripMenuItem,
             this.wifiPasswordsRecoveryToolStripMenuItem,
@@ -1034,7 +820,7 @@ namespace Eagle_Monitor
             this.removeTaskToolStripMenuItem,
             this.saveTasksToolStripMenuItem});
             this.tasksContextMenuStrip.Name = "tasksContextMenuStrip";
-            this.tasksContextMenuStrip.Size = new System.Drawing.Size(221, 242);
+            this.tasksContextMenuStrip.Size = new System.Drawing.Size(217, 214);
             // 
             // passwordsRecoveryToolStripMenuItem
             // 
@@ -1042,7 +828,7 @@ namespace Eagle_Monitor
             this.passwordsRecoveryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.passwordsRecoveryToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_grand_master_key_32;
             this.passwordsRecoveryToolStripMenuItem.Name = "passwordsRecoveryToolStripMenuItem";
-            this.passwordsRecoveryToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.passwordsRecoveryToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.passwordsRecoveryToolStripMenuItem.Text = "Passwords Recovery";
             this.passwordsRecoveryToolStripMenuItem.Click += new System.EventHandler(this.passwordsRecoveryToolStripMenuItem_Click);
             // 
@@ -1052,7 +838,7 @@ namespace Eagle_Monitor
             this.wifiPasswordsRecoveryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wifiPasswordsRecoveryToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_wi_fi_logo_32;
             this.wifiPasswordsRecoveryToolStripMenuItem.Name = "wifiPasswordsRecoveryToolStripMenuItem";
-            this.wifiPasswordsRecoveryToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.wifiPasswordsRecoveryToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.wifiPasswordsRecoveryToolStripMenuItem.Text = "Wifi Passwords Recovery";
             this.wifiPasswordsRecoveryToolStripMenuItem.Click += new System.EventHandler(this.wifiPasswordsRecoveryToolStripMenuItem_Click);
             // 
@@ -1062,7 +848,7 @@ namespace Eagle_Monitor
             this.dllInjectionManagedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dllInjectionManagedToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_c_sharp_logo_32;
             this.dllInjectionManagedToolStripMenuItem.Name = "dllInjectionManagedToolStripMenuItem";
-            this.dllInjectionManagedToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.dllInjectionManagedToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.dllInjectionManagedToolStripMenuItem.Text = "Dll Injection [Managed]";
             this.dllInjectionManagedToolStripMenuItem.Click += new System.EventHandler(this.dllInjectionManagedToolStripMenuItem_Click);
             // 
@@ -1072,7 +858,7 @@ namespace Eagle_Monitor
             this.dllInjectionUnmanagedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dllInjectionUnmanagedToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_c___32;
             this.dllInjectionUnmanagedToolStripMenuItem.Name = "dllInjectionUnmanagedToolStripMenuItem";
-            this.dllInjectionUnmanagedToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.dllInjectionUnmanagedToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.dllInjectionUnmanagedToolStripMenuItem.Text = "Dll Injection [Unmanaged]";
             this.dllInjectionUnmanagedToolStripMenuItem.Click += new System.EventHandler(this.dllInjectionUnmanagedToolStripMenuItem_Click);
             // 
@@ -1080,9 +866,9 @@ namespace Eagle_Monitor
             // 
             this.bSODToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.bSODToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bSODToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_blue_screen_of_death_32;
+            this.bSODToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_poison_32;
             this.bSODToolStripMenuItem.Name = "bSODToolStripMenuItem";
-            this.bSODToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.bSODToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.bSODToolStripMenuItem.Text = "BSOD";
             this.bSODToolStripMenuItem.Click += new System.EventHandler(this.bSODToolStripMenuItem_Click);
             // 
@@ -1092,7 +878,7 @@ namespace Eagle_Monitor
             this.removeTaskToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.removeTaskToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_minus_32;
             this.removeTaskToolStripMenuItem.Name = "removeTaskToolStripMenuItem";
-            this.removeTaskToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.removeTaskToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.removeTaskToolStripMenuItem.Text = "Remove Task";
             this.removeTaskToolStripMenuItem.Click += new System.EventHandler(this.removeTaskToolStripMenuItem_Click);
             // 
@@ -1102,7 +888,7 @@ namespace Eagle_Monitor
             this.saveTasksToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.saveTasksToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_save_as_32;
             this.saveTasksToolStripMenuItem.Name = "saveTasksToolStripMenuItem";
-            this.saveTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.saveTasksToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.saveTasksToolStripMenuItem.Text = "Save Tasks";
             this.saveTasksToolStripMenuItem.Click += new System.EventHandler(this.saveTasksToolStripMenuItem_Click);
             // 
@@ -1256,7 +1042,7 @@ namespace Eagle_Monitor
             this.tabPage6.Controls.Add(this.panel2);
             this.tabPage6.Location = new System.Drawing.Point(4, 54);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1101, 482);
+            this.tabPage6.Size = new System.Drawing.Size(1268, 482);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Mass Tasks";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1268,7 +1054,7 @@ namespace Eagle_Monitor
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(3);
-            this.panel2.Size = new System.Drawing.Size(1101, 482);
+            this.panel2.Size = new System.Drawing.Size(1268, 482);
             this.panel2.TabIndex = 2;
             // 
             // xuiCustomGroupbox2
@@ -1280,7 +1066,7 @@ namespace Eagle_Monitor
             this.xuiCustomGroupbox2.Location = new System.Drawing.Point(3, 3);
             this.xuiCustomGroupbox2.Name = "xuiCustomGroupbox2";
             this.xuiCustomGroupbox2.ShowText = true;
-            this.xuiCustomGroupbox2.Size = new System.Drawing.Size(1095, 476);
+            this.xuiCustomGroupbox2.Size = new System.Drawing.Size(1262, 476);
             this.xuiCustomGroupbox2.TabIndex = 1;
             this.xuiCustomGroupbox2.TabStop = false;
             this.xuiCustomGroupbox2.Text = "Mass Tasks";
@@ -1302,7 +1088,7 @@ namespace Eagle_Monitor
             this.massListView.Location = new System.Drawing.Point(3, 18);
             this.massListView.Name = "massListView";
             this.massListView.Scrollable = false;
-            this.massListView.Size = new System.Drawing.Size(1089, 455);
+            this.massListView.Size = new System.Drawing.Size(1256, 455);
             this.massListView.TabIndex = 3;
             this.massListView.UseCompatibleStateImageBehavior = false;
             this.massListView.View = System.Windows.Forms.View.Details;
@@ -1326,7 +1112,7 @@ namespace Eagle_Monitor
             // 
             this.massContextMenuStrip.DropShadowEnabled = false;
             this.massContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.massContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.massContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.massContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.passwordsMassRecoveryToolStripMenuItem,
             this.wifiPasswordsRecoveryMassToolStripMenuItem_Click,
@@ -1336,7 +1122,7 @@ namespace Eagle_Monitor
             this.removeTaskMassToolStripMenuItem,
             this.launchToolStripMenuItem});
             this.massContextMenuStrip.Name = "tasksContextMenuStrip";
-            this.massContextMenuStrip.Size = new System.Drawing.Size(221, 242);
+            this.massContextMenuStrip.Size = new System.Drawing.Size(217, 236);
             // 
             // passwordsMassRecoveryToolStripMenuItem
             // 
@@ -1344,7 +1130,7 @@ namespace Eagle_Monitor
             this.passwordsMassRecoveryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.passwordsMassRecoveryToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_grand_master_key_32;
             this.passwordsMassRecoveryToolStripMenuItem.Name = "passwordsMassRecoveryToolStripMenuItem";
-            this.passwordsMassRecoveryToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.passwordsMassRecoveryToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.passwordsMassRecoveryToolStripMenuItem.Text = "Passwords Recovery";
             this.passwordsMassRecoveryToolStripMenuItem.Click += new System.EventHandler(this.passwordsMassRecoveryToolStripMenuItem_Click);
             // 
@@ -1354,7 +1140,7 @@ namespace Eagle_Monitor
             this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.Image = global::Eagle_Monitor.Properties.Resources.icons8_wi_fi_logo_32;
             this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.Name = "wifiPasswordsRecoveryMassToolStripMenuItem_Click";
-            this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.Size = new System.Drawing.Size(220, 34);
+            this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.Size = new System.Drawing.Size(216, 30);
             this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.Text = "Wifi Passwords Recovery";
             this.wifiPasswordsRecoveryMassToolStripMenuItem_Click.Click += new System.EventHandler(this.wifiPasswordsRecoveryMassToolStripMenuItem_Click_Click);
             // 
@@ -1364,7 +1150,7 @@ namespace Eagle_Monitor
             this.dllInjectionManagedMassToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dllInjectionManagedMassToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_c_sharp_logo_32;
             this.dllInjectionManagedMassToolStripMenuItem.Name = "dllInjectionManagedMassToolStripMenuItem";
-            this.dllInjectionManagedMassToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.dllInjectionManagedMassToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.dllInjectionManagedMassToolStripMenuItem.Text = "Dll Injection [Managed]";
             this.dllInjectionManagedMassToolStripMenuItem.Click += new System.EventHandler(this.dllInjectionManagedMassToolStripMenuItem_Click);
             // 
@@ -1374,7 +1160,7 @@ namespace Eagle_Monitor
             this.dllInjectionUnmanagedMassToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dllInjectionUnmanagedMassToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_c___32;
             this.dllInjectionUnmanagedMassToolStripMenuItem.Name = "dllInjectionUnmanagedMassToolStripMenuItem";
-            this.dllInjectionUnmanagedMassToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.dllInjectionUnmanagedMassToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.dllInjectionUnmanagedMassToolStripMenuItem.Text = "Dll Injection [Unmanaged]";
             this.dllInjectionUnmanagedMassToolStripMenuItem.Click += new System.EventHandler(this.dllInjectionUnmanagedMassToolStripMenuItem_Click);
             // 
@@ -1382,9 +1168,9 @@ namespace Eagle_Monitor
             // 
             this.bSODMassToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.bSODMassToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bSODMassToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_blue_screen_of_death_32;
+            this.bSODMassToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_poison_32;
             this.bSODMassToolStripMenuItem.Name = "bSODMassToolStripMenuItem";
-            this.bSODMassToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.bSODMassToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.bSODMassToolStripMenuItem.Text = "BSOD";
             this.bSODMassToolStripMenuItem.Click += new System.EventHandler(this.bSODMassToolStripMenuItem_Click);
             // 
@@ -1394,7 +1180,7 @@ namespace Eagle_Monitor
             this.removeTaskMassToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.removeTaskMassToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_minus_32;
             this.removeTaskMassToolStripMenuItem.Name = "removeTaskMassToolStripMenuItem";
-            this.removeTaskMassToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.removeTaskMassToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.removeTaskMassToolStripMenuItem.Text = "Remove Task";
             this.removeTaskMassToolStripMenuItem.Click += new System.EventHandler(this.removeTaskMassToolStripMenuItem_Click);
             // 
@@ -1402,9 +1188,9 @@ namespace Eagle_Monitor
             // 
             this.launchToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.launchToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.launchToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_tasklist_32;
+            this.launchToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_play_32;
             this.launchToolStripMenuItem.Name = "launchToolStripMenuItem";
-            this.launchToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.launchToolStripMenuItem.Size = new System.Drawing.Size(216, 30);
             this.launchToolStripMenuItem.Text = "Launch Task";
             this.launchToolStripMenuItem.Click += new System.EventHandler(this.launchToolStripMenuItem_Click);
             // 
@@ -1413,11 +1199,11 @@ namespace Eagle_Monitor
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(7, 573);
+            this.label2.Location = new System.Drawing.Point(3, 569);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(110, 15);
             this.label2.TabIndex = 11;
             this.label2.Text = "Released by Arsium";
             // 
@@ -1437,7 +1223,7 @@ namespace Eagle_Monitor
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1115, 596);
+            this.ClientSize = new System.Drawing.Size(1282, 596);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.label1);
@@ -1459,28 +1245,13 @@ namespace Eagle_Monitor
             this.windowsTabControls1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.builderPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hibernatePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suspendPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rebootPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shutDownPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeClientPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webCamPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.injectionPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.remoteDesktopPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.processManagerPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wifiRecoveryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyRecoveryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordsRecoveryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileManagerPictureBox)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.xuiCustomGroupbox1.ResumeLayout(false);
+            this.xuiCustomGroupbox1.PerformLayout();
             this.tasksContextMenuStrip.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.xuiCustomGroupbox3.ResumeLayout(false);
@@ -1488,6 +1259,7 @@ namespace Eagle_Monitor
             this.tabPage6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.xuiCustomGroupbox2.ResumeLayout(false);
+            this.xuiCustomGroupbox2.PerformLayout();
             this.massContextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -1507,11 +1279,8 @@ namespace Eagle_Monitor
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.TabPage tabPage2;
         public System.Windows.Forms.ListView clientsListView;
         private System.Windows.Forms.ToolStripMenuItem recoveryToolStripMenuItem;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        public System.Windows.Forms.ListView logsListView;
         public System.Windows.Forms.ImageList countryImageList;
         private Controls.WindowsButton closeButton;
         private Controls.WindowsButton maximizeButton;
@@ -1555,7 +1324,6 @@ namespace Eagle_Monitor
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel panel2;
         public Controls.WindowsTabControls windowsTabControls1;
-        public System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.ToolStripMenuItem passwordsToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem wifiToolStripMenuItem;
@@ -1581,25 +1349,6 @@ namespace Eagle_Monitor
         public System.Windows.Forms.ComboBox keySizeComboBox;
         public System.Windows.Forms.ComboBox algoComboBox;
         private Controls.WindowsButton generateKeyButton;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel5;
-        public System.Windows.Forms.PictureBox fileManagerPictureBox;
-        public System.Windows.Forms.PictureBox processManagerPictureBox;
-        public System.Windows.Forms.PictureBox wifiRecoveryPictureBox;
-        public System.Windows.Forms.PictureBox historyRecoveryPictureBox;
-        public System.Windows.Forms.PictureBox passwordsRecoveryPictureBox;
-        public System.Windows.Forms.PictureBox webCamPictureBox;
-        public System.Windows.Forms.PictureBox panelPictureBox;
-        public System.Windows.Forms.PictureBox injectionPictureBox;
-        public System.Windows.Forms.PictureBox remoteDesktopPictureBox;
-        public System.Windows.Forms.PictureBox hibernatePictureBox;
-        public System.Windows.Forms.PictureBox suspendPictureBox;
-        public System.Windows.Forms.PictureBox logOutPictureBox;
-        public System.Windows.Forms.PictureBox rebootPictureBox;
-        public System.Windows.Forms.PictureBox shutDownPictureBox;
-        public System.Windows.Forms.PictureBox closeClientPictureBox;
-        public System.Windows.Forms.PictureBox builderPictureBox;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
@@ -1607,5 +1356,13 @@ namespace Eagle_Monitor
         public System.Windows.Forms.TextBox keyTextBox;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uninstallTaskSchedulerToolStripMenuItem;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.ToolStripMenuItem computerInformationToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage2;
+        public System.Windows.Forms.ListView logsListView;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        public System.Windows.Forms.Panel panel4;
     }
 }

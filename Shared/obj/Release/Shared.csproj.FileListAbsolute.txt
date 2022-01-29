@@ -4,6 +4,5 @@ F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Release\Shared.csproj
 F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Release\Shared.dll
 F:\Project C#\Infected Monitor\Infected Monitor\Shared\obj\Release\Shared.pdb
 F:\Personal\Eagle Monitor\Shared\bin\Release\Shared.dll
-F:\Personal\Eagle Monitor\Shared\obj\Release\Shared.csproj.AssemblyReference.cache
 F:\Personal\Eagle Monitor\Shared\obj\Release\Shared.csproj.CoreCompileInputs.cache
 F:\Personal\Eagle Monitor\Shared\obj\Release\Shared.dll

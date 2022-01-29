@@ -39,12 +39,10 @@ namespace Eagle_Monitor.Forms
             this.hideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeWallPaperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelSize = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
-            this.desktopPictureBox = new System.Windows.Forms.PictureBox();
             this.formatComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +51,8 @@ namespace Eagle_Monitor.Forms
             this.closeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.maximizeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.minimizeButton = new Eagle_Monitor.Controls.WindowsButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.desktopPictureBox = new System.Windows.Forms.PictureBox();
             this.remoteDesktopContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desktopPictureBox)).BeginInit();
@@ -61,12 +61,13 @@ namespace Eagle_Monitor.Forms
             // remoteDesktopContextMenuStrip
             // 
             this.remoteDesktopContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.remoteDesktopContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.remoteDesktopContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.taskBarToolStripMenuItem,
             this.desktopIconsToolStripMenuItem,
             this.changeWallPaperToolStripMenuItem});
             this.remoteDesktopContextMenuStrip.Name = "contextMenuStrip1";
-            this.remoteDesktopContextMenuStrip.Size = new System.Drawing.Size(170, 70);
+            this.remoteDesktopContextMenuStrip.Size = new System.Drawing.Size(178, 94);
             // 
             // taskBarToolStripMenuItem
             // 
@@ -75,16 +76,18 @@ namespace Eagle_Monitor.Forms
             this.hideToolStripMenuItem,
             this.showToolStripMenuItem});
             this.taskBarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.taskBarToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_navigation_toolbar_bottom_32;
             this.taskBarToolStripMenuItem.Name = "taskBarToolStripMenuItem";
-            this.taskBarToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.taskBarToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
             this.taskBarToolStripMenuItem.Text = "TaskBar";
             // 
             // hideToolStripMenuItem
             // 
             this.hideToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.hideToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.hideToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_invisible_32;
             this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
-            this.hideToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.hideToolStripMenuItem.Text = "Hide";
             this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
             // 
@@ -92,8 +95,9 @@ namespace Eagle_Monitor.Forms
             // 
             this.showToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.showToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.showToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_eye_32;
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
@@ -104,16 +108,18 @@ namespace Eagle_Monitor.Forms
             this.hideToolStripMenuItem1,
             this.showToolStripMenuItem1});
             this.desktopIconsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.desktopIconsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_small_icons_32;
             this.desktopIconsToolStripMenuItem.Name = "desktopIconsToolStripMenuItem";
-            this.desktopIconsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.desktopIconsToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
             this.desktopIconsToolStripMenuItem.Text = "Desktop Icons";
             // 
             // hideToolStripMenuItem1
             // 
             this.hideToolStripMenuItem1.BackColor = System.Drawing.Color.White;
             this.hideToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.hideToolStripMenuItem1.Image = global::Eagle_Monitor.Properties.Resources.icons8_invisible_32;
             this.hideToolStripMenuItem1.Name = "hideToolStripMenuItem1";
-            this.hideToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.hideToolStripMenuItem1.Size = new System.Drawing.Size(188, 30);
             this.hideToolStripMenuItem1.Text = "Hide";
             this.hideToolStripMenuItem1.Click += new System.EventHandler(this.hideToolStripMenuItem1_Click);
             // 
@@ -121,8 +127,9 @@ namespace Eagle_Monitor.Forms
             // 
             this.showToolStripMenuItem1.BackColor = System.Drawing.Color.White;
             this.showToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.showToolStripMenuItem1.Image = global::Eagle_Monitor.Properties.Resources.icons8_eye_32;
             this.showToolStripMenuItem1.Name = "showToolStripMenuItem1";
-            this.showToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem1.Size = new System.Drawing.Size(188, 30);
             this.showToolStripMenuItem1.Text = "Show";
             this.showToolStripMenuItem1.Click += new System.EventHandler(this.showToolStripMenuItem1_Click);
             // 
@@ -130,20 +137,11 @@ namespace Eagle_Monitor.Forms
             // 
             this.changeWallPaperToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.changeWallPaperToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.changeWallPaperToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_tiles_32;
             this.changeWallPaperToolStripMenuItem.Name = "changeWallPaperToolStripMenuItem";
-            this.changeWallPaperToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.changeWallPaperToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
             this.changeWallPaperToolStripMenuItem.Text = "Change WallPaper";
             this.changeWallPaperToolStripMenuItem.Click += new System.EventHandler(this.changeWallPaperToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Eagle_Monitor.Properties.Resources.icons8_not_sending_video_frames_32;
-            this.pictureBox1.Location = new System.Drawing.Point(167, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
             // 
             // checkBox1
             // 
@@ -197,17 +195,6 @@ namespace Eagle_Monitor.Forms
             this.loadingCircle1.TabIndex = 23;
             this.loadingCircle1.Text = "loadingCircle1";
             this.loadingCircle1.Visible = false;
-            // 
-            // desktopPictureBox
-            // 
-            this.desktopPictureBox.ContextMenuStrip = this.remoteDesktopContextMenuStrip;
-            this.desktopPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.desktopPictureBox.Location = new System.Drawing.Point(3, 90);
-            this.desktopPictureBox.Name = "desktopPictureBox";
-            this.desktopPictureBox.Size = new System.Drawing.Size(629, 293);
-            this.desktopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.desktopPictureBox.TabIndex = 4;
-            this.desktopPictureBox.TabStop = false;
             // 
             // formatComboBox
             // 
@@ -324,6 +311,27 @@ namespace Eagle_Monitor.Forms
             this.minimizeButton.Text = "-";
             this.minimizeButton.UseVisualStyleBackColor = false;
             this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Eagle_Monitor.Properties.Resources.icons8_not_sending_video_frames_32;
+            this.pictureBox1.Location = new System.Drawing.Point(167, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
+            // desktopPictureBox
+            // 
+            this.desktopPictureBox.ContextMenuStrip = this.remoteDesktopContextMenuStrip;
+            this.desktopPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.desktopPictureBox.Location = new System.Drawing.Point(3, 90);
+            this.desktopPictureBox.Name = "desktopPictureBox";
+            this.desktopPictureBox.Size = new System.Drawing.Size(629, 293);
+            this.desktopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.desktopPictureBox.TabIndex = 4;
+            this.desktopPictureBox.TabStop = false;
             // 
             // RemoteDesktopForm
             // 

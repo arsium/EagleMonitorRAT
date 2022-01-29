@@ -12,7 +12,7 @@ using System.Windows.Forms;
 || github : https://github.com/arsium       ||
 */
 
-#pragma warning disable CS0197 // L'utilisation d'un champ d'une classe de marshaling par référence en tant que valeur ref ou out, ou la prise de son adresse, peut provoquer une exception runtime
+#pragma warning disable CS0197
 namespace Eagle_Monitor
 { 
     //Some of those functions come directly from stackoverflow or other sources
@@ -151,6 +151,8 @@ namespace Eagle_Monitor
         {
             if (DarkTheme)
             {
+               /* StartForm.M.panel5.BackColor = Color.FromArgb(64, 64, 64);
+
                 StartForm.M.clientsListView.BackColor = Color.FromArgb(30, 30, 30);
                 StartForm.M.clientsListView.ForeColor = Color.FromArgb(205, 205, 205);
 
@@ -162,6 +164,18 @@ namespace Eagle_Monitor
 
                 StartForm.M.logsListView.BackColor = Color.FromArgb(30, 30, 30);
                 StartForm.M.logsListView.ForeColor = Color.FromArgb(205, 205, 205);
+
+                StartForm.M.algoComboBox.BackColor = Color.FromArgb(30, 30, 30);
+                StartForm.M.algoComboBox.ForeColor = Color.FromArgb(205, 205, 205);
+
+                StartForm.M.keyTextBox.BackColor = Color.FromArgb(30, 30, 30);
+                StartForm.M.keyTextBox.ForeColor = Color.FromArgb(205, 205, 205);
+
+                StartForm.M.keySizeComboBox.BackColor = Color.FromArgb(30, 30, 30);
+                StartForm.M.keySizeComboBox.ForeColor = Color.FromArgb(205, 205, 205);
+
+                StartForm.M.label3.ForeColor = Color.FromArgb(205, 205, 205);
+                StartForm.M.label4.ForeColor = Color.FromArgb(205, 205, 205);
 
                 ControlsDrawing.colorListViewHeader(ref StartForm.M.clientsListView, Color.FromArgb(30, 30, 30), Color.FromArgb(205, 205, 205), Color.FromArgb(60, 60, 60));
                 ControlsDrawing.colorListViewHeader(ref StartForm.M.tasksListView, Color.FromArgb(30, 30, 30), Color.FromArgb(205, 205, 205), Color.FromArgb(60, 60, 60));
@@ -256,6 +270,7 @@ namespace Eagle_Monitor
                 StartForm.M.clientMenuStrip.Renderer = new ToolStripProfessionalRenderer(new ControlsDrawing.DarkMenuColorTable());
                 StartForm.M.tasksContextMenuStrip.Renderer = new ToolStripProfessionalRenderer(new ControlsDrawing.DarkMenuColorTable());
                 StartForm.M.massContextMenuStrip.Renderer = new ToolStripProfessionalRenderer(new ControlsDrawing.DarkMenuColorTable());
+               */
             }
             else
             {
@@ -364,311 +379,6 @@ namespace Eagle_Monitor
                 StartForm.M.tasksContextMenuStrip.Renderer = new ToolStripProfessionalRenderer(new ControlsDrawing.LightMenuColorTable());
                 StartForm.M.massContextMenuStrip.Renderer = new ToolStripProfessionalRenderer(new ControlsDrawing.LightMenuColorTable());
 
-
-                StartForm.M.passwordsRecoveryPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.passwordsRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.passwordsRecoveryPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.passwordsRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.passwordsRecoveryPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.passwordsRecoveryPictureBox, eventMouse)
-                );
-                StartForm.M.passwordsRecoveryPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.passwordsRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.historyRecoveryPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.historyRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.historyRecoveryPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.historyRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.historyRecoveryPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.historyRecoveryPictureBox, eventMouse)
-                );
-                StartForm.M.historyRecoveryPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.historyRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.wifiRecoveryPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.wifiRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.wifiRecoveryPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.wifiRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.wifiRecoveryPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.wifiRecoveryPictureBox, eventMouse)
-                );
-                StartForm.M.wifiRecoveryPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.wifiRecoveryPictureBox, eventMouse)
-                );
-
-                StartForm.M.processManagerPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.processManagerPictureBox, eventMouse)
-                );
-
-                StartForm.M.processManagerPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.processManagerPictureBox, eventMouse)
-                );
-
-                StartForm.M.processManagerPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.processManagerPictureBox, eventMouse)
-                );
-                StartForm.M.processManagerPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.processManagerPictureBox, eventMouse)
-                );
-
-                StartForm.M.fileManagerPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.fileManagerPictureBox, eventMouse)
-                );
-
-                StartForm.M.fileManagerPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.fileManagerPictureBox, eventMouse)
-                );
-
-                StartForm.M.fileManagerPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.fileManagerPictureBox, eventMouse)
-                );
-                StartForm.M.fileManagerPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.fileManagerPictureBox, eventMouse)
-                );
-
-                StartForm.M.remoteDesktopPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.remoteDesktopPictureBox, eventMouse)
-                );
-
-                StartForm.M.remoteDesktopPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.remoteDesktopPictureBox, eventMouse)
-                );
-
-                StartForm.M.remoteDesktopPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.remoteDesktopPictureBox, eventMouse)
-                );
-                StartForm.M.remoteDesktopPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.remoteDesktopPictureBox, eventMouse)
-                );
-
-                StartForm.M.injectionPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.injectionPictureBox, eventMouse)
-                );
-
-                StartForm.M.injectionPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.injectionPictureBox, eventMouse)
-                );
-
-                StartForm.M.injectionPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.injectionPictureBox, eventMouse)
-                );
-                StartForm.M.injectionPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.injectionPictureBox, eventMouse)
-                );
-
-
-                StartForm.M.panelPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.panelPictureBox, eventMouse)
-                );
-
-                StartForm.M.panelPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.panelPictureBox, eventMouse)
-                );
-
-                StartForm.M.panelPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.panelPictureBox, eventMouse)
-                );
-                StartForm.M.panelPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.panelPictureBox, eventMouse)
-                );
-
-                StartForm.M.webCamPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.webCamPictureBox, eventMouse)
-                );
-
-                StartForm.M.webCamPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.webCamPictureBox, eventMouse)
-                );
-
-                StartForm.M.webCamPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.webCamPictureBox, eventMouse)
-                );
-                StartForm.M.webCamPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.webCamPictureBox, eventMouse)
-                );
-
-                StartForm.M.closeClientPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.closeClientPictureBox, eventMouse)
-                );
-
-                StartForm.M.closeClientPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.closeClientPictureBox, eventMouse)
-                );
-
-                StartForm.M.closeClientPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.closeClientPictureBox, eventMouse)
-                );
-                StartForm.M.closeClientPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.closeClientPictureBox, eventMouse)
-                );
-
-                StartForm.M.shutDownPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.shutDownPictureBox, eventMouse)
-                );
-
-                StartForm.M.shutDownPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.shutDownPictureBox, eventMouse)
-                );
-
-                StartForm.M.shutDownPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.shutDownPictureBox, eventMouse)
-                );
-                StartForm.M.shutDownPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.shutDownPictureBox, eventMouse)
-                );
-
-                StartForm.M.rebootPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.rebootPictureBox, eventMouse)
-                );
-
-                StartForm.M.rebootPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.rebootPictureBox, eventMouse)
-                );
-
-                StartForm.M.rebootPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.rebootPictureBox, eventMouse)
-                );
-                StartForm.M.rebootPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.rebootPictureBox, eventMouse)
-                );
-
-                StartForm.M.logOutPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.logOutPictureBox, eventMouse)
-                );
-
-                StartForm.M.logOutPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.logOutPictureBox, eventMouse)
-                );
-
-                StartForm.M.logOutPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.logOutPictureBox, eventMouse)
-                );
-                StartForm.M.logOutPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.logOutPictureBox, eventMouse)
-                );
-
-                StartForm.M.suspendPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.suspendPictureBox, eventMouse)
-                );
-
-                StartForm.M.suspendPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.suspendPictureBox, eventMouse)
-                );
-
-                StartForm.M.suspendPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.suspendPictureBox, eventMouse)
-                );
-                StartForm.M.suspendPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.suspendPictureBox, eventMouse)
-                );
-
-                StartForm.M.hibernatePictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.hibernatePictureBox, eventMouse)
-                );
-
-                StartForm.M.hibernatePictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.hibernatePictureBox, eventMouse)
-                );
-
-                StartForm.M.hibernatePictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.hibernatePictureBox, eventMouse)
-                );
-                StartForm.M.hibernatePictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.hibernatePictureBox, eventMouse)
-                );
-
-                StartForm.M.builderPictureBox.MouseHover += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.HoverPictureBox(StartForm.M.builderPictureBox, eventMouse)
-                );
-
-                StartForm.M.builderPictureBox.MouseDown += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.DownPictureBox(StartForm.M.builderPictureBox, eventMouse)
-                );
-
-                StartForm.M.builderPictureBox.MouseUp += new MouseEventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.builderPictureBox, eventMouse)
-                );
-                StartForm.M.builderPictureBox.MouseLeave += new EventHandler
-                (
-                    (picBox, eventMouse) => ControlsDrawing.UpPictureBox(StartForm.M.builderPictureBox, eventMouse)
-                );
             }
         }
     }
@@ -683,6 +393,15 @@ namespace Eagle_Monitor
         public static byte[] Execute = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\Execute.dll"), 1);
         public static byte[] WebCam = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\RemoteWebCam.dll"), 1);
         public static byte[] FileEncryption = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\FileEncryption.dll"), 1);
+
+        public static byte[] CPUInformation = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\CPU.dll"), 1);
+        public static byte[] CPUInformation_64 = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\CPU64.dll"), 1);
+    }
+
+    public static class ShellCodePlugins 
+    {
+        public static byte[] ProcessCrash_32 = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\ProcessCrash32.bin"), 1);
+        public static byte[] ProcessCrash_64 = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utilities.GPath + "\\Plugins\\ProcessCrash64.bin"), 1);
     }
 
     public class Settings 

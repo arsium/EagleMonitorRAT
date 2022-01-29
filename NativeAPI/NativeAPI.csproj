@@ -47,6 +47,7 @@
     <Compile Include="File.cs" />
     <Compile Include="Folder.cs" />
     <Compile Include="Hook.cs" />
+    <Compile Include="Information.cs" />
     <Compile Include="Miscellaneous.cs" />
     <Compile Include="Privilege.cs" />
     <Compile Include="Process.cs" />

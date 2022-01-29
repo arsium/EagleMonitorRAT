@@ -9,7 +9,7 @@ namespace Eagle_Monitor.Clients
 {
     public static class Country
     {
-		public static string CountryInformation(string IP, ref IPAPI.IP ClientDetails)
+		/*public static string CountryInformation(string IP, ref IPAPI.IP ClientDetails)
 		{
 			try
 			{
@@ -28,6 +28,6 @@ namespace Eagle_Monitor.Clients
 			{
 				return "NOCONNORLOCALIP";
 			}
-		}
+		}*/
 	}
 }

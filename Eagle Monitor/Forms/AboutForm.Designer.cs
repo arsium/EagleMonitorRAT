@@ -32,6 +32,8 @@ namespace Eagle_Monitor.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.closeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // closeButton
@@ -44,7 +46,7 @@ namespace Eagle_Monitor.Forms
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.closeButton.Location = new System.Drawing.Point(313, -1);
+            this.closeButton.Location = new System.Drawing.Point(330, -1);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(33, 30);
             this.closeButton.TabIndex = 26;
@@ -54,21 +56,49 @@ namespace Eagle_Monitor.Forms
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(3, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 184);
+            this.label1.Size = new System.Drawing.Size(360, 184);
             this.label1.TabIndex = 27;
             this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // label2
+            // 
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(3, 216);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(360, 26);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "SRC : https://github.com/arsium/EagleMonitorRAT\r\n";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(3, 242);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(360, 26);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Contact : https://infected-zone.com/members/5/";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(349, 219);
+            this.ClientSize = new System.Drawing.Size(366, 278);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -86,5 +116,7 @@ namespace Eagle_Monitor.Forms
 
         private Controls.WindowsButton closeButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

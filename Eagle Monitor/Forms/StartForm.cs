@@ -1,4 +1,5 @@
 ﻿using Eagle_Monitor.Controls;
+using Eagle_Monitor.Helpers;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using System;
@@ -6,7 +7,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +29,22 @@ namespace Eagle_Monitor
 
         private void StartForm_Load(object sender, EventArgs e)
         {
+            //Utilities.DarkTheme = true;
             Utilities.AnimateWindow(this.Handle, 500, Utilities.dwFlags.AW_BLEND);
+
+            
+
+            if (File.Exists(Utilities.GPath + "\\builder.json"))
+            {
+                string json = System.IO.File.ReadAllText(Utilities.GPath + "\\builder.json");
+                BuilderHelper.builderSetting = JsonConvert.DeserializeObject<BuilderHelper.BuilderSetting>(json);
+            }
+            else 
+            {
+                BuilderHelper.builderSetting = new BuilderHelper.BuilderSetting();
+                BuilderHelper.builderSetting.hostBuilder = new List<string>();
+                BuilderHelper.builderSetting.hostPortBuilder = new List<int>();
+            }
 
             if (File.Exists(Utilities.GPath + "\\config.json"))
             {

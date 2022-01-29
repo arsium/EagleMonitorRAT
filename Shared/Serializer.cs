@@ -3,6 +3,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading;
 
 /* 
 || AUTHOR Arsium ||
@@ -19,9 +20,8 @@ namespace Shared
         {
             public string HWID { get; set; }
             public string IP_Origin { get; set; }
-            public PacketTypes.PacketType Type { get; set; }
+            public PacketType Type { get; set; }
             public byte[] Plugin;
-            //public object[] Misc;
             public dynamic DataReturn;
             public ReturnError returnError { get; set; }
         }
@@ -41,7 +41,7 @@ namespace Shared
                 _BinaryFormatter.Serialize(_MemoryStream, _object);
                 bytes = _MemoryStream.ToArray();
             }
-            return Shared.Compressor.QuickLZ.Compress(bytes,1);
+            return Compressor.QuickLZ.Compress(bytes,1);
         }
 
         public static Data Deserialize(this byte[] _byteArray)
@@ -55,9 +55,9 @@ namespace Shared
             return ReturnValue;
         }
 
-        public static int SendData(Socket S, byte[] data)
+        public static int SendData(Socket S, byte[] data, bool download = false)
         {
-            lock (S)
+            lock(S)
             {
                 int total = 0;
                 int size = data.Length;
@@ -68,6 +68,8 @@ namespace Shared
                 int sent = S.Send(datasize);
                 while (total < size)
                 {
+                    if (download)
+                        Thread.Sleep(75);//avoid DDOS network while downloading file
                     sent = S.Send(data, total, size, SocketFlags.None);
                     total += sent;
                     datalft -= sent;

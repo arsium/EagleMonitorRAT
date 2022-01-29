@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compressor.cs" />
-    <Compile Include="Properties\Encryption.cs" />
+    <Compile Include="Encryption.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="PacketTypes.cs" />
     <Compile Include="Serializer.cs" />

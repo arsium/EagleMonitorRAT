@@ -423,7 +423,9 @@ namespace Shared
                                 hash = (int)(((fetch >> 12) ^ fetch) & (HASH_VALUES - 1));
                                 hashtable[hash] = last_hashed;
                                 hash_counter[hash] = 1;
+#pragma warning disable CS0675 // Opérateur OU au niveau du bit utilisé sur un opérande de signe étendu
                                 fetch = (uint)(fetch >> 8 & 0xffff | destination[last_hashed + 3] << 16);
+#pragma warning restore CS0675 // Opérateur OU au niveau du bit utilisé sur un opérande de signe étendu
                             }
                             fetch = (uint)(source[src] | (source[src + 1] << 8) | (source[src + 2] << 16));
                         }
@@ -452,11 +454,14 @@ namespace Shared
                                     hashtable[hash] = last_hashed;
                                     hash_counter[hash] = 1;
                                 }
+#pragma warning disable CS0675 // Opérateur OU au niveau du bit utilisé sur un opérande de signe étendu
                                 fetch = (uint)(fetch >> 8 & 0xffff | source[src + 2] << 16);
                             }
                             else
                             {
+
                                 fetch = (uint)(fetch >> 8 & 0xffff | source[src + 2] << 16 | source[src + 3] << 24);
+#pragma warning restore CS0675 // Opérateur OU au niveau du bit utilisé sur un opérande de signe étendu
                             }
                         }
                         else

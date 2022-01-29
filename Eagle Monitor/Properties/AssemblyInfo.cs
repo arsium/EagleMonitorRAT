@@ -6,13 +6,13 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("Eagle Monitor REV1")]
+[assembly: AssemblyTitle("Eagle Monitor RAT REV2")]
 [assembly: AssemblyDescription("Remote Access Tool Made With Love")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("The Remote Industry")]
 [assembly: AssemblyProduct("Eagle Monitor")]
-[assembly: AssemblyCopyright("Arsium ©  2021")]
-[assembly: AssemblyTrademark("Arsium ©  2021")]
+[assembly: AssemblyCopyright("Arsium ©  2022")]
+[assembly: AssemblyTrademark("Arsium ©  2022")]
 [assembly: AssemblyCulture("")]
 
 // L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
 [assembly: NeutralResourcesLanguage("en-US")]

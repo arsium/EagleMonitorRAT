@@ -32,18 +32,6 @@ namespace Eagle_Monitor.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManagerForm));
             this.fileManagerMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.labelPath = new System.Windows.Forms.Label();
-            this.disksComboBox = new System.Windows.Forms.ComboBox();
-            this.labelSize = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
-            this.filesListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.closeButton = new Eagle_Monitor.Controls.WindowsButton();
-            this.maximizeButton = new Eagle_Monitor.Controls.WindowsButton();
-            this.minimizeButton = new Eagle_Monitor.Controls.WindowsButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,14 +51,27 @@ namespace Eagle_Monitor.Forms
             this.desktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelPath = new System.Windows.Forms.Label();
+            this.disksComboBox = new System.Windows.Forms.ComboBox();
+            this.labelSize = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.filesListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.closeButton = new Eagle_Monitor.Controls.WindowsButton();
+            this.maximizeButton = new Eagle_Monitor.Controls.WindowsButton();
+            this.minimizeButton = new Eagle_Monitor.Controls.WindowsButton();
             this.fileManagerMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // fileManagerMenuStrip
             // 
+            this.fileManagerMenuStrip.DropShadowEnabled = false;
             this.fileManagerMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.fileManagerMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.fileManagerMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.fileManagerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem,
             this.goToolStripMenuItem,
@@ -78,7 +79,221 @@ namespace Eagle_Monitor.Forms
             this.fileToolStripMenuItem,
             this.shortCutToolStripMenuItem});
             this.fileManagerMenuStrip.Name = "fileManagerMenuStrip";
-            this.fileManagerMenuStrip.Size = new System.Drawing.Size(193, 196);
+            this.fileManagerMenuStrip.Size = new System.Drawing.Size(129, 154);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.refreshToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentDirectoryToolStripMenuItem,
+            this.allToolStripMenuItem});
+            this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.refreshToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_replay_32;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            // 
+            // currentDirectoryToolStripMenuItem
+            // 
+            this.currentDirectoryToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.currentDirectoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.currentDirectoryToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_folder_32;
+            this.currentDirectoryToolStripMenuItem.Name = "currentDirectoryToolStripMenuItem";
+            this.currentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.currentDirectoryToolStripMenuItem.Text = "Current Directory";
+            this.currentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.currentDirectoryToolStripMenuItem_Click);
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.allToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.allToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.dmdskres_455;
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.allToolStripMenuItem.Text = "All";
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
+            // 
+            // goToolStripMenuItem
+            // 
+            this.goToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.goToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.goToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_double_right_32;
+            this.goToolStripMenuItem.Name = "goToolStripMenuItem";
+            this.goToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
+            this.goToolStripMenuItem.Text = "Go";
+            this.goToolStripMenuItem.Click += new System.EventHandler(this.goToolStripMenuItem_Click);
+            // 
+            // backToolStripMenuItem
+            // 
+            this.backToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.backToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_double_left_32;
+            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
+            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem,
+            this.downloadToolStripMenuItem,
+            this.uploadToolStripMenuItem,
+            this.renameToolStripMenuItem,
+            this.launchToolStripMenuItem,
+            this.encryptToolStripMenuItem,
+            this.decryptToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.deleteToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.ieframe_31079;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // downloadToolStripMenuItem
+            // 
+            this.downloadToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.downloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.downloadToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_double_down_32;
+            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.downloadToolStripMenuItem.Text = "Download";
+            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
+            // 
+            // uploadToolStripMenuItem
+            // 
+            this.uploadToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.uploadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentToolStripMenuItem,
+            this.selectedToolStripMenuItem});
+            this.uploadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.uploadToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_upload_32;
+            this.uploadToolStripMenuItem.Name = "uploadToolStripMenuItem";
+            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.uploadToolStripMenuItem.Text = "Upload";
+            // 
+            // currentToolStripMenuItem
+            // 
+            this.currentToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.currentToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.currentToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_folder_32;
+            this.currentToolStripMenuItem.Name = "currentToolStripMenuItem";
+            this.currentToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.currentToolStripMenuItem.Text = "Current  Folder";
+            this.currentToolStripMenuItem.Click += new System.EventHandler(this.currentToolStripMenuItem_Click);
+            // 
+            // selectedToolStripMenuItem
+            // 
+            this.selectedToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.selectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.selectedToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_folder_32;
+            this.selectedToolStripMenuItem.Name = "selectedToolStripMenuItem";
+            this.selectedToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.selectedToolStripMenuItem.Text = "Selected Folder";
+            this.selectedToolStripMenuItem.Click += new System.EventHandler(this.selectedFolderToolStripMenuItem_Click);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.renameToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_rename_32;
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.renameToolStripMenuItem.Text = "Rename";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
+            // 
+            // launchToolStripMenuItem
+            // 
+            this.launchToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.launchToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.launchToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_241;
+            this.launchToolStripMenuItem.Name = "launchToolStripMenuItem";
+            this.launchToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.launchToolStripMenuItem.Text = "Launch";
+            this.launchToolStripMenuItem.Click += new System.EventHandler(this.launchToolStripMenuItem_Click);
+            // 
+            // encryptToolStripMenuItem
+            // 
+            this.encryptToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.encryptToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.encryptToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_lock_32;
+            this.encryptToolStripMenuItem.Name = "encryptToolStripMenuItem";
+            this.encryptToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.encryptToolStripMenuItem.Text = "Encrypt";
+            this.encryptToolStripMenuItem.Click += new System.EventHandler(this.encryptToolStripMenuItem_Click);
+            // 
+            // decryptToolStripMenuItem
+            // 
+            this.decryptToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.decryptToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.decryptToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_unlock_32;
+            this.decryptToolStripMenuItem.Name = "decryptToolStripMenuItem";
+            this.decryptToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
+            this.decryptToolStripMenuItem.Text = "Decrypt";
+            this.decryptToolStripMenuItem.Click += new System.EventHandler(this.decryptToolStripMenuItem_Click);
+            // 
+            // shortCutToolStripMenuItem
+            // 
+            this.shortCutToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.shortCutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.desktopToolStripMenuItem,
+            this.documentsToolStripMenuItem,
+            this.downloadsToolStripMenuItem});
+            this.shortCutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.shortCutToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_5301;
+            this.shortCutToolStripMenuItem.Name = "shortCutToolStripMenuItem";
+            this.shortCutToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
+            this.shortCutToolStripMenuItem.Text = "ShortCut";
+            // 
+            // desktopToolStripMenuItem
+            // 
+            this.desktopToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.desktopToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.desktopToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_183;
+            this.desktopToolStripMenuItem.Name = "desktopToolStripMenuItem";
+            this.desktopToolStripMenuItem.Size = new System.Drawing.Size(141, 30);
+            this.desktopToolStripMenuItem.Text = "Desktop";
+            this.desktopToolStripMenuItem.Click += new System.EventHandler(this.desktopToolStripMenuItem_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.documentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.documentsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_235;
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(141, 30);
+            this.documentsToolStripMenuItem.Text = "Documents";
+            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
+            // 
+            // downloadsToolStripMenuItem
+            // 
+            this.downloadsToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.downloadsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.downloadsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_184;
+            this.downloadsToolStripMenuItem.Name = "downloadsToolStripMenuItem";
+            this.downloadsToolStripMenuItem.Size = new System.Drawing.Size(141, 30);
+            this.downloadsToolStripMenuItem.Text = "Downloads";
+            this.downloadsToolStripMenuItem.Click += new System.EventHandler(this.downloadsToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Eagle_Monitor.Properties.Resources.dmdskres_455;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // labelPath
             // 
@@ -145,6 +360,7 @@ namespace Eagle_Monitor.Forms
             // 
             // filesListView
             // 
+            this.filesListView.BackColor = System.Drawing.Color.White;
             this.filesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -223,220 +439,6 @@ namespace Eagle_Monitor.Forms
             this.minimizeButton.Text = "-";
             this.minimizeButton.UseVisualStyleBackColor = false;
             this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Eagle_Monitor.Properties.Resources.dmdskres_455;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.refreshToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentDirectoryToolStripMenuItem,
-            this.allToolStripMenuItem});
-            this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.refreshToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_replay_32;
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            // 
-            // currentDirectoryToolStripMenuItem
-            // 
-            this.currentDirectoryToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.currentDirectoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.currentDirectoryToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_folder_32;
-            this.currentDirectoryToolStripMenuItem.Name = "currentDirectoryToolStripMenuItem";
-            this.currentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(174, 34);
-            this.currentDirectoryToolStripMenuItem.Text = "Current Directory";
-            this.currentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.currentDirectoryToolStripMenuItem_Click);
-            // 
-            // allToolStripMenuItem
-            // 
-            this.allToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.allToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.allToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.dmdskres_455;
-            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(174, 34);
-            this.allToolStripMenuItem.Text = "All";
-            this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
-            // 
-            // goToolStripMenuItem
-            // 
-            this.goToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.goToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.goToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_double_right_32;
-            this.goToolStripMenuItem.Name = "goToolStripMenuItem";
-            this.goToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.goToolStripMenuItem.Text = "Go";
-            this.goToolStripMenuItem.Click += new System.EventHandler(this.goToolStripMenuItem_Click);
-            // 
-            // backToolStripMenuItem
-            // 
-            this.backToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.backToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.backToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_double_left_32;
-            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.backToolStripMenuItem.Text = "Back";
-            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem,
-            this.downloadToolStripMenuItem,
-            this.uploadToolStripMenuItem,
-            this.renameToolStripMenuItem,
-            this.launchToolStripMenuItem,
-            this.encryptToolStripMenuItem,
-            this.decryptToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.deleteToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.ieframe_31079;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // downloadToolStripMenuItem
-            // 
-            this.downloadToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.downloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.downloadToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_double_down_32;
-            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.downloadToolStripMenuItem.Text = "Download";
-            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
-            // 
-            // uploadToolStripMenuItem
-            // 
-            this.uploadToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.uploadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentToolStripMenuItem,
-            this.selectedToolStripMenuItem});
-            this.uploadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.uploadToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_upload_32;
-            this.uploadToolStripMenuItem.Name = "uploadToolStripMenuItem";
-            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.uploadToolStripMenuItem.Text = "Upload";
-            // 
-            // currentToolStripMenuItem
-            // 
-            this.currentToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.currentToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.currentToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_folder_32;
-            this.currentToolStripMenuItem.Name = "currentToolStripMenuItem";
-            this.currentToolStripMenuItem.Size = new System.Drawing.Size(165, 34);
-            this.currentToolStripMenuItem.Text = "Current  Folder";
-            this.currentToolStripMenuItem.Click += new System.EventHandler(this.currentToolStripMenuItem_Click);
-            // 
-            // selectedToolStripMenuItem
-            // 
-            this.selectedToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.selectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.selectedToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_folder_32;
-            this.selectedToolStripMenuItem.Name = "selectedToolStripMenuItem";
-            this.selectedToolStripMenuItem.Size = new System.Drawing.Size(165, 34);
-            this.selectedToolStripMenuItem.Text = "Selected Folder";
-            this.selectedToolStripMenuItem.Click += new System.EventHandler(this.selectedFolderToolStripMenuItem_Click);
-            // 
-            // renameToolStripMenuItem
-            // 
-            this.renameToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.renameToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_rename_32;
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.renameToolStripMenuItem.Text = "Rename";
-            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
-            // 
-            // launchToolStripMenuItem
-            // 
-            this.launchToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.launchToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.launchToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_241;
-            this.launchToolStripMenuItem.Name = "launchToolStripMenuItem";
-            this.launchToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.launchToolStripMenuItem.Text = "Launch";
-            this.launchToolStripMenuItem.Click += new System.EventHandler(this.launchToolStripMenuItem_Click);
-            // 
-            // encryptToolStripMenuItem
-            // 
-            this.encryptToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.encryptToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.encryptToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_lock_32;
-            this.encryptToolStripMenuItem.Name = "encryptToolStripMenuItem";
-            this.encryptToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.encryptToolStripMenuItem.Text = "Encrypt";
-            this.encryptToolStripMenuItem.Click += new System.EventHandler(this.encryptToolStripMenuItem_Click);
-            // 
-            // decryptToolStripMenuItem
-            // 
-            this.decryptToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.decryptToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.decryptToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_unlock_32;
-            this.decryptToolStripMenuItem.Name = "decryptToolStripMenuItem";
-            this.decryptToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
-            this.decryptToolStripMenuItem.Text = "Decrypt";
-            this.decryptToolStripMenuItem.Click += new System.EventHandler(this.decryptToolStripMenuItem_Click);
-            // 
-            // shortCutToolStripMenuItem
-            // 
-            this.shortCutToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.shortCutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.desktopToolStripMenuItem,
-            this.documentsToolStripMenuItem,
-            this.downloadsToolStripMenuItem});
-            this.shortCutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.shortCutToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_5301;
-            this.shortCutToolStripMenuItem.Name = "shortCutToolStripMenuItem";
-            this.shortCutToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.shortCutToolStripMenuItem.Text = "ShortCut";
-            // 
-            // desktopToolStripMenuItem
-            // 
-            this.desktopToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.desktopToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.desktopToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_183;
-            this.desktopToolStripMenuItem.Name = "desktopToolStripMenuItem";
-            this.desktopToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.desktopToolStripMenuItem.Text = "Desktop";
-            this.desktopToolStripMenuItem.Click += new System.EventHandler(this.desktopToolStripMenuItem_Click);
-            // 
-            // documentsToolStripMenuItem
-            // 
-            this.documentsToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.documentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.documentsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.shell32_235;
-            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
-            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.documentsToolStripMenuItem.Text = "Documents";
-            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
-            // 
-            // downloadsToolStripMenuItem
-            // 
-            this.downloadsToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.downloadsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.downloadsToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.imageres_184;
-            this.downloadsToolStripMenuItem.Name = "downloadsToolStripMenuItem";
-            this.downloadsToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.downloadsToolStripMenuItem.Text = "Downloads";
-            this.downloadsToolStripMenuItem.Click += new System.EventHandler(this.downloadsToolStripMenuItem_Click);
             // 
             // FileManagerForm
             // 

@@ -85,13 +85,13 @@ namespace Eagle_Monitor.Forms
             // managedContextMenuStrip
             // 
             this.managedContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.managedContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.managedContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.managedContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.removeToolStripMenuItem,
             this.injectToolStripMenuItem});
             this.managedContextMenuStrip.Name = "managedContextMenuStrip";
-            this.managedContextMenuStrip.Size = new System.Drawing.Size(127, 106);
+            this.managedContextMenuStrip.Size = new System.Drawing.Size(123, 94);
             // 
             // addToolStripMenuItem
             // 
@@ -99,7 +99,7 @@ namespace Eagle_Monitor.Forms
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_add_32;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(126, 34);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(122, 30);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
@@ -109,7 +109,7 @@ namespace Eagle_Monitor.Forms
             this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.removeToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.icons8_minus_32;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(126, 34);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(122, 30);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -119,20 +119,20 @@ namespace Eagle_Monitor.Forms
             this.injectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.injectToolStripMenuItem.Image = global::Eagle_Monitor.Properties.Resources.setupapi_32;
             this.injectToolStripMenuItem.Name = "injectToolStripMenuItem";
-            this.injectToolStripMenuItem.Size = new System.Drawing.Size(126, 34);
+            this.injectToolStripMenuItem.Size = new System.Drawing.Size(122, 30);
             this.injectToolStripMenuItem.Text = "Inject";
             this.injectToolStripMenuItem.Click += new System.EventHandler(this.injectToolStripMenuItem_Click);
             // 
             // unmanagedContextMenuStrip
             // 
             this.unmanagedContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.unmanagedContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.unmanagedContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.unmanagedContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem1,
             this.removeToolStripMenuItem1,
             this.injectToolStripMenuItem1});
             this.unmanagedContextMenuStrip.Name = "contextMenuStrip1";
-            this.unmanagedContextMenuStrip.Size = new System.Drawing.Size(127, 106);
+            this.unmanagedContextMenuStrip.Size = new System.Drawing.Size(123, 94);
             // 
             // addToolStripMenuItem1
             // 
@@ -141,7 +141,7 @@ namespace Eagle_Monitor.Forms
             this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addToolStripMenuItem1.Image = global::Eagle_Monitor.Properties.Resources.icons8_add_32;
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(126, 34);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(122, 30);
             this.addToolStripMenuItem1.Text = "Add";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
@@ -152,7 +152,7 @@ namespace Eagle_Monitor.Forms
             this.removeToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.removeToolStripMenuItem1.Image = global::Eagle_Monitor.Properties.Resources.icons8_minus_32;
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(126, 34);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(122, 30);
             this.removeToolStripMenuItem1.Text = "Remove";
             this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
             // 
@@ -163,7 +163,7 @@ namespace Eagle_Monitor.Forms
             this.injectToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.injectToolStripMenuItem1.Image = global::Eagle_Monitor.Properties.Resources.setupapi_32;
             this.injectToolStripMenuItem1.Name = "injectToolStripMenuItem1";
-            this.injectToolStripMenuItem1.Size = new System.Drawing.Size(126, 34);
+            this.injectToolStripMenuItem1.Size = new System.Drawing.Size(122, 30);
             this.injectToolStripMenuItem1.Text = "Inject";
             this.injectToolStripMenuItem1.Click += new System.EventHandler(this.injectToolStripMenuItem1_Click);
             // 
@@ -406,13 +406,13 @@ namespace Eagle_Monitor.Forms
             // shellCodeContextMenuStrip
             // 
             this.shellCodeContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.shellCodeContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.shellCodeContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.shellCodeContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.shellCodeContextMenuStrip.Name = "contextMenuStrip1";
-            this.shellCodeContextMenuStrip.Size = new System.Drawing.Size(127, 106);
+            this.shellCodeContextMenuStrip.Size = new System.Drawing.Size(123, 94);
             // 
             // toolStripMenuItem1
             // 
@@ -421,7 +421,7 @@ namespace Eagle_Monitor.Forms
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem1.Image = global::Eagle_Monitor.Properties.Resources.icons8_add_32;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(126, 34);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 30);
             this.toolStripMenuItem1.Text = "Add";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -432,7 +432,7 @@ namespace Eagle_Monitor.Forms
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem2.Image = global::Eagle_Monitor.Properties.Resources.icons8_minus_32;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(126, 34);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(122, 30);
             this.toolStripMenuItem2.Text = "Remove";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -443,7 +443,7 @@ namespace Eagle_Monitor.Forms
             this.toolStripMenuItem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem3.Image = global::Eagle_Monitor.Properties.Resources.setupapi_32;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(126, 34);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(122, 30);
             this.toolStripMenuItem3.Text = "Inject";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -489,13 +489,13 @@ namespace Eagle_Monitor.Forms
             // nativePEContextMenuStrip
             // 
             this.nativePEContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.nativePEContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.nativePEContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.nativePEContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem4,
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.nativePEContextMenuStrip.Name = "contextMenuStrip1";
-            this.nativePEContextMenuStrip.Size = new System.Drawing.Size(193, 128);
+            this.nativePEContextMenuStrip.Size = new System.Drawing.Size(123, 94);
             // 
             // toolStripMenuItem4
             // 
@@ -504,7 +504,7 @@ namespace Eagle_Monitor.Forms
             this.toolStripMenuItem4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem4.Image = global::Eagle_Monitor.Properties.Resources.icons8_add_32;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(192, 34);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(122, 30);
             this.toolStripMenuItem4.Text = "Add";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -515,7 +515,7 @@ namespace Eagle_Monitor.Forms
             this.toolStripMenuItem5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem5.Image = global::Eagle_Monitor.Properties.Resources.icons8_minus_32;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(192, 34);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(122, 30);
             this.toolStripMenuItem5.Text = "Remove";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
@@ -526,7 +526,7 @@ namespace Eagle_Monitor.Forms
             this.toolStripMenuItem6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripMenuItem6.Image = global::Eagle_Monitor.Properties.Resources.setupapi_32;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(192, 34);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(122, 30);
             this.toolStripMenuItem6.Text = "Inject";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 

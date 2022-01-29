@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,16 @@ namespace Eagle_Monitor.Forms
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/arsium/EagleMonitorRAT");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://infected-zone.com/members/5/");
         }
     }
 }

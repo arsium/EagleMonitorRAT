@@ -1,6 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
+
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
 
 namespace NativeAPI
 {

@@ -2,6 +2,6 @@ F:\Personal\Eagle Monitor\Plugins\RemoteWebCam\obj\Release\RemoteWebCam.csproj.A
 F:\Personal\Eagle Monitor\Plugins\RemoteWebCam\obj\Release\RemoteWebCam.csproj.CoreCompileInputs.cache
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\RemoteWebCam.dll
 F:\Personal\Eagle Monitor\Plugins\RemoteWebCam\obj\Release\RemoteWebCam.csproj.Fody.CopyLocal.cache
-F:\Personal\Eagle Monitor\Plugins\RemoteWebCam\obj\Release\RemoteWebCam.csproj.CopyComplete
 F:\Personal\Eagle Monitor\Plugins\RemoteWebCam\obj\Release\RemoteWebCam.dll
 F:\Personal\Eagle Monitor\Eagle Monitor\bin\Release\Plugins\RemoteWebCam.dll.config
+F:\Personal\Eagle Monitor\Plugins\RemoteWebCam\obj\Release\RemoteWebCam.csproj.CopyComplete
