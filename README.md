@@ -1,6 +1,8 @@
 # Eagle Monitor RAT | Next level remote access tool
 Fast, lightweight & easily customizable remote access tool written in C#. Consider this as an upgrade of HorusEyesRat which was written in VB.NET. 
 
+# Planned to be reworked in a few months
+
 Inspirations & Sources :
 
 * Wifi Passwords Grabber : [SharpWifiGrabber](https://github.com/r3nhat/SharpWifiGrabber)
