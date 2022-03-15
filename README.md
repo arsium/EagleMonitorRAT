@@ -13,6 +13,8 @@ What will be reworked ?
 * New features 
 * Network & serialization rework
 
+# Current Version
+
 Inspirations & Sources :
 
 * Wifi Passwords Grabber : [SharpWifiGrabber](https://github.com/r3nhat/SharpWifiGrabber)
