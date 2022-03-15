@@ -3,6 +3,11 @@ Fast, lightweight & easily customizable remote access tool written in C#. Consid
 
 # Planned to be reworked in a few months
 
+Why did I choose to rework it ?
+I learnt new ways to works and cleaner about many different things.
+
+What will be reworked ? 
+
 * Rework async method
 * UI improvements
 * New features 
