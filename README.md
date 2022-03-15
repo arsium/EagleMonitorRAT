@@ -3,6 +3,11 @@ Fast, lightweight & easily customizable remote access tool written in C#. Consid
 
 # Planned to be reworked in a few months
 
+* Rework async method
+* UI improvements
+* New features 
+* Network & serialization rework
+
 Inspirations & Sources :
 
 * Wifi Passwords Grabber : [SharpWifiGrabber](https://github.com/r3nhat/SharpWifiGrabber)
