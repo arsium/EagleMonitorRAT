@@ -24,7 +24,7 @@ Inspirations & Sources :
 * ShellCode Loader : [ShellCodeLoaderCSharp](https://github.com/arsium/ShellCodeLoaderCSharp)
 * File Encryption : [BouncyCastle](https://bouncycastle.org/)
 
-Under BSD-3-Clause [LICENSE](https://github.com/arsium/EagleMonitor/blob/main/LICENSE).
+Under MIT [LICENSE](https://github.com/arsium/EagleMonitor/blob/main/LICENSE).
 
 Depencencies : 
 
