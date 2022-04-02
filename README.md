@@ -13,9 +13,6 @@ What will be reworked ?
 * New features 
 * Network & serialization rework
 
-Soon 
-![Image description](https://i.postimg.cc/Vvq0pFHC/Eagle-Monitor-Reborn.png)
-
 # Current Version
 
 Inspirations & Sources :
