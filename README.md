@@ -8,10 +8,14 @@ I learnt new ways to work and cleaner approaches about many different things.
 
 What will be reworked ? 
 
-* Rework async method
 * UI 
-* New features 
-* Network & serialization rework
+* Packets system
+* Client
+* Plugins (all)
+* New features (logs, keyloggers, network information)
+* Automation tasks
+* Settings
+* Threads and asynchronous calls
 
 # Current Version
 
