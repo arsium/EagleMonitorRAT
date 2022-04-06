@@ -1,0 +1,18 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\bin\Release\ClientDll.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\bin\Release\ClientDll.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\obj\Release\ClientDll.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\obj\Release\ClientDll.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\obj\Release\ClientDll.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\obj\Release\ClientDll.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\ClientDll\obj\Release\ClientDll.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\bin\Release\ClientDll.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\ClientDll.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientDll\obj\Release\ClientDll.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\ClientDll.dll

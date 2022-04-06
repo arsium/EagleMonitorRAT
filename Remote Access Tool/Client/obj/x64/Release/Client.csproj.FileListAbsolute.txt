@@ -1,0 +1,5 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\Client64.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\x64\Release\Client.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\x64\Release\Client.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\x64\Release\Client.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\x64\Release\Client64.exe

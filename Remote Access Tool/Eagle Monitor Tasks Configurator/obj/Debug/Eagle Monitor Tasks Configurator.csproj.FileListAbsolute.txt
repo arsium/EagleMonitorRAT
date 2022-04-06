@@ -1,0 +1,16 @@
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Eagle Monitor Tasks Configurator.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle_Monitor_Tasks_Configurator.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.GenerateResource.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle_Monitor_Tasks_Configurator.Main.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Eagle Monitor Tasks Configurator.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle_Monitor_Tasks_Configurator.Main.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle_Monitor_Tasks_Configurator.Properties.Resources.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.GenerateResource.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor Tasks Configurator\obj\Debug\Eagle Monitor Tasks Configurator.exe

@@ -1,0 +1,10 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\Cryptography.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\Cryptography.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Debug\Cryptography.dll

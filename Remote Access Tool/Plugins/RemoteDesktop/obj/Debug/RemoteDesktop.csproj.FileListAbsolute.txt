@@ -1,0 +1,10 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\RemoteDesktop.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\RemoteDesktop.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Debug\RemoteDesktop.dll

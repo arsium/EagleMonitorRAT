@@ -1,0 +1,25 @@
+F:\Personal\DesyncOps\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\bin\Debug\Plugins\Keylogger.dll
+F:\Personal\DesyncOps\Keylogger\obj\Debug\Keylogger.dll
+F:\Personal\DesyncOps\Keylogger\obj\Debug\Keylogger.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll
+F:\Personal\DesyncOps\Remote Access Tool\bin\Debug\Plugins\Keylogger.dll
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\bin\Debug\Plugins\Keylogger.dll
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\Keylogger.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\Keylogger.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll

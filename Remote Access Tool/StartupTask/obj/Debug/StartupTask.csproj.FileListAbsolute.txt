@@ -1,0 +1,16 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\StartupTask\bin\Debug\StartupTask.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\StartupTask\bin\Debug\StartupTask.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\StartupTask\obj\Debug\StartupTask.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\StartupTask\obj\Debug\StartupTask.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\StartupTask\obj\Debug\StartupTask.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\StartupTask\obj\Debug\StartupTask.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\bin\Debug\StartupTask.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\bin\Debug\StartupTask.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.pdb
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\bin\Debug\StartupTask.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\StartupTask\obj\Debug\StartupTask.dll

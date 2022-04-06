@@ -1,0 +1,44 @@
+F:\Personal\RansomTiTan\Client\bin\Debug\Client.exe.config
+F:\Personal\RansomTiTan\Client\bin\Debug\Client.exe
+F:\Personal\RansomTiTan\Client\bin\Debug\Client.pdb
+F:\Personal\RansomTiTan\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+F:\Personal\RansomTiTan\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+F:\Personal\RansomTiTan\Client\obj\Debug\Client.exe
+F:\Personal\RansomTiTan\Client\obj\Debug\Client.pdb
+F:\Personal\RansomTiTan\Client\bin\Debug\PacketLib.dll
+F:\Personal\RansomTiTan\Client\bin\Debug\PacketLib.pdb
+F:\Personal\RansomTiTan\Client\obj\Debug\Client.csproj.CopyComplete
+F:\Personal\DesyncFlow\Client\bin\Debug\Client.exe.config
+F:\Personal\DesyncFlow\Client\bin\Debug\Client.exe
+F:\Personal\DesyncFlow\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+F:\Personal\DesyncFlow\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncFlow\Client\obj\Debug\Client.exe
+F:\Personal\DesyncFlow\Client\obj\Debug\Client.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\Client\bin\Debug\Client.exe.config
+F:\Personal\DesyncOps\Client\bin\Debug\Client.exe
+F:\Personal\DesyncOps\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\Client\obj\Debug\Client.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\Client\obj\Debug\Client.exe
+F:\Personal\DesyncOps\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.exe
+F:\Personal\DesyncOps\Remote Access Tool\Client\bin\Debug\Client.exe.config
+F:\Personal\DesyncOps\Remote Access Tool\Client\bin\Debug\Client.exe
+F:\Personal\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Client\bin\Debug\Client.exe.config
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Client\bin\Debug\Client.exe
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Client\obj\Debug\Client.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\bin\Debug\Client.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\bin\Debug\Client.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Debug\Client.exe

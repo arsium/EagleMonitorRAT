@@ -1,0 +1,16 @@
+F:\Personal\DesyncOps\bin\Release\Plugins\FileManager.dll
+F:\Personal\DesyncOps\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\FileManager\obj\Release\FileManager.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\FileManager\obj\Release\FileManager.dll
+F:\Personal\DesyncOps\FileManager\obj\Release\FileManager.csproj.CopyComplete
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\FileManager.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\FileManager.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.dll

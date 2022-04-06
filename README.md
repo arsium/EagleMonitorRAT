@@ -1,112 +1,128 @@
-# Eagle Monitor RAT | Next level remote access tool
-Fast, lightweight & easily customizable remote access tool written in C#. Consider this as an upgrade of HorusEyesRat which was written in VB.NET. 
 
-# Planned to be reworked in a few weeks
+# Eagle Monitor RAT Reborn
 
-Why did I choose to rework it ?
-I learnt new ways to work and cleaner approaches about many different things.
+Fast, lightweight & easily customizable remote access tool written in C#.  
+<br/>Consider this as an upgrade of HorusEyesRat which was written in VB.NET.
 
-What will be reworked ? 
+## Why did I choose to rework it ?
 
-* UI 
+As I said, I learnt new things to make my code cleaner and a better networking management.
+
+## New things will be added in the future ?
+
+Of course. I plan to add features when I find them interesting to add. Please don't spam issue section with new features. If you really want a specific feature, you will have to add it by yourself. A wiki section will be written to show you how to add your own features.
+
+## What's been reworked ?
+
+* Whole UI (datagridview instead of listview, dark theme...)
 * Packets system
-* Client
-* Plugins (all)
-* New features (logs, keyloggers, network information)
-* Automation tasks
+* All plugins
+* Server side and packets handling
+* Client side and packets handdling
+* Native Imports
 * Settings
-* Threads and asynchronous calls
+* Builder
+* Automation tasks
+* Mass tasks
+* Memory execution
+* Asynchronous operations
+* Use of threads (when needed)
+* Wifi recovery removed
 
-# Current Version
+## What's new ?
 
-Inspirations & Sources :
+* Logs system
+* Keylogger (offline and realtime)
+* Network information (IPV4)
+* Client writtent both in VB and C#
+* An installer for deployment
+* Notification sound
 
-* Wifi Passwords Grabber : [SharpWifiGrabber](https://github.com/r3nhat/SharpWifiGrabber)
-* Chromium Passwords Grabber : [Chromium Recovery](https://github.com/arsium/Chrome-Password-Recovery) is a fork of https://github.com/0xfd3/Chrome-Password-Recovery
-* Chromium History Grabber : [Chromium History](https://github.com/arsium/ChromeHistory)
-* Load unmanaged dll in stub : [DLLFromMemory](https://github.com/arsium/DLLFromMemory-CSharp) is a fork of https://github.com/schellingb/DLLFromMemory-net
-* ShellCode Loader : [ShellCodeLoaderCSharp](https://github.com/arsium/ShellCodeLoaderCSharp)
-* File Encryption : [BouncyCastle](https://bouncycastle.org/)
+## Current features
 
-Under MIT [LICENSE](https://github.com/arsium/EagleMonitor/blob/main/LICENSE).
-
-Depencencies : 
-
-* MRG.Controls.UI (UI)
-* XanderUI (UI)
-* Siticone.UI (UI)
-* dnlib (builder)
-* Newtonsoft.Json (configuration)
-* BouncyCastle (file manager encryption/decryption) : https://www.bouncycastle.org/
-* Compression : http://www.quicklz.com/download.html
-* RSM : https://bhf.im/threads/438711/
-* Load native dll and pe : https://github.com/schellingb/DLLFromMemory-net
-* WebCam : inspired by AsyncRat : https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs
-
-Features :
-* Supports DNS (No-IP for example)
-* Encrypted & Compressed Communication with RSM
-* Packet Serialization
-* Stub only 28KB and easily encryptable
-* Installable in task scheduler
-* Confirurable with JSON
-* Multi listeners
-* MultiThreaded & Parallel
-* Mass & On connected tasks
-* Passords Recovery
-* History Recovery
-* Wifi passwords recovery
-* Automatic saves recovery
-* Process manager
-* Kill Proc
-* Suspend Proc
-* Resume Proc
-* Inject ShellCode in Processes [2 different types]
-* Change Windows Title
-* Minimize Window
-* Maximize Window
-* Show Window 
-* Hide Window
-* Delete File
-* Download File
-* Launch File
-* Upload File
-* Rename File
-* Encrypt File -> +- 25 algo (symmetric)
-* Decrypt File
-* Remote Desktop
-* Hide & Show Desktop Icons
-* Hide & Show Taskbar
-* Change Wallpaper
-* Run in memory -> native Dll, native PE, Shellcode, Managed dll
-* ScreenLocker
+* Clients written in C# and VB (32 and 64 bit)
+* Passwords recovery (automatically saved)
+* History recovery (automatically saved)
+* Blur screenlocker
+* Remote camera viewer (+ save pictures)
+* Remote desktop viewer (+ save pictures)
+* Process manager 
+* Kill process (native techniques)
+* Suspend process
+* Resume process
+* (shellcode) Process injection (NtWriteVirtualMemory + NtCreateThreadEx)
+* (shellcode) Process injection (NtMapViewOfSection + NtCreateThreadEx)
+* Shutdown system
+* Reboot system
+* Suspend system
+* Hibernate system
+* Log out user
 * BSOD
-* Disable Mouse
-* Disable Keyboard
-* Get Privileges [Se] -> see logs to check if the privilege has been gotten.
-* WebCam Capture
-* Shutdown
-* Reboot
-* Log out
-* Suspend
-* Hibernate
-* CPU & OS Information
-* Audio : Volume Up & Down + Mute
+* Lock workstation
+* Offline keylogger (automatically saved)
+* Realtime keylogger (automatically saved)
+* (current client) Managed pe execution
+* (current client) Unmanaged pe execution
+* (current client) Managed dll execution
+* (current client) Unmanaged dll execution
+* (current client) Shellcode execution
+* Audio up
+* Audio down
+* Hide + show taskbar
+* Hide + show desktop icons
+* Set wallpaper
+* File manager
+* Delete file
+* Download file
+* Rename file
+* Shortcuts (download, desktop and documents paths)
+* Logs ((automatically saved))
+* Mass Tasks
 
-Notes : 
-* UI Bugs
-* Need to improve & finish logs system
-* No more options will be added to the builder. If you want more, you will have to do it yourself.
-* If you want to build the solution, please use only release mode. I configured it to directly build plugins next to Eagle Monitor.
-* For stub and some plugins, depencies are put inside with CosturaFody.
-* New features I will probably add : keyloggers, get system details, set client's priority....
+## External depencencies
 
-Preview :
+* MRG.Controls.UI 
+* XanderUI 
+* GunaUI 
+* dnlib 
+* Newtonsoft.Json
+* BouncyCastle
 
-![Image description](https://i.postimg.cc/kgX5YwdT/Capture-d-cran-85.png)
-![Image description](https://i.postimg.cc/rsCJ7tdB/Capture-d-cran-83.png)
-![Image description](https://i.postimg.cc/vHbXfXkb/Capture-d-cran-84.png)
+## Notes
 
+* All saved stuff (logs, passwords...) are saved in csv format except offline keylogger
+* All external dlls used are in folder "DLLs + Package"
+* This remote access tool can also be used as stealer & payloads loader.
+* Build the project in "release mode" only
+* If you update with installer, you will have to backup your configs + logs (.dat, .json, Logs folder)
+* Under license (MIT + Commons Clause)
+
+## Technical information
+
+* Communication encrypted with RSM encryption (https://bhf.im/threads/438711/)
+* Packets compressed with QuickLZ (http://www.quicklz.com/download.html)
+* Automation tasks saved with binary format
+* Settings saved with JSON format
+
+## Inspirations
+
+* Webcam plugins : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs)
+* Keylogger (modded) : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/LimeLogger/LimeLogger/Packet.cs)
+* Unmanaged pe and dlls : [schellingb](https://github.com/schellingb/DLLFromMemory-net)
+
+## TODO
+
+* Encryption/Decryption for folders and files
+* Dlls (C# and VB) 
+
+## Known bugs
+
+* Self destruct method (currently disabled)
+
+## Interface 
+
+![PIC1](https://github.com/arsium/EagleMonitorRAT/IMG/PIC1.png)
+![PIC2](https://github.com/arsium/EagleMonitorRAT/IMG/PIC1.png)
 
 I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
 

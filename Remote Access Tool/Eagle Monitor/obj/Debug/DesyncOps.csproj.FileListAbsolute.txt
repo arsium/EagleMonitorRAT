@@ -1,0 +1,87 @@
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.csproj.AssemblyReference.cache
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.csproj.SuggestedBindingRedirects.cache
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.Controls.BlurForm.resources
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.Controls.FormPattern.resources
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.Main.resources
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.PortForm.resources
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.Properties.Resources.resources
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.csproj.GenerateResource.cache
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncFlow.exe
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncFlow.pdb
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\DesyncFlow.exe.config
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\DesyncFlow.exe
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\DesyncFlow.pdb
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\Guna.UI2.dll
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\Newtonsoft.Json.dll
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\PacketLib.dll
+F:\Personal\DesyncFlow\DesyncFlow\bin\Debug\Newtonsoft.Json.xml
+F:\Personal\DesyncFlow\DesyncFlow\obj\Debug\DesyncOps.csproj.CopyComplete
+F:\Personal\DesyncOps\bin\Debug\DesyncOps.exe.config
+F:\Personal\DesyncOps\bin\Debug\DesyncOps.exe
+F:\Personal\DesyncOps\bin\Debug\DesyncOps.pdb
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.csproj.SuggestedBindingRedirects.cache
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Controls.BlurForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Controls.FormPattern.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.DownloadFileForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.FileManagerForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.LoginForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Main.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.PasswordsForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.ProcessManagerForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Properties.Resources.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.csproj.GenerateResource.cache
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.csproj.CopyComplete
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.exe
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.pdb
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.KeyloggerForm.resources
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\DesyncOps\obj\Debug\DesyncOps.Forms.LogForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Controls.BlurForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Controls.FormPattern.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.DownloadFileForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.FileManagerForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.KeyloggerForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.LogForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Main.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.PasswordsForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.ProcessManagerForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Properties.Resources.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.GenerateResource.cache
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.exe
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.pdb
+F:\Personal\DesyncOps\Remote Access Tool\bin\Debug\DesyncOps.exe.config
+F:\Personal\DesyncOps\Remote Access Tool\bin\Debug\DesyncOps.exe
+F:\Personal\DesyncOps\Remote Access Tool\bin\Debug\DesyncOps.pdb
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.CopyComplete
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.MemoryExecutionForm.resources
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.SuggestedBindingRedirects.cache
+F:\Personal\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.MassForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\bin\Debug\DesyncOps.exe.config
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\bin\Debug\DesyncOps.exe
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\bin\Debug\DesyncOps.pdb
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.SuggestedBindingRedirects.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Controls.BlurForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Controls.FormPattern.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.DownloadFileForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.FileManagerForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.KeyloggerForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.LogForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Main.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.MassForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.MemoryExecutionForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.PasswordsForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Forms.ProcessManagerForm.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.Properties.Resources.resources
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.GenerateResource.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.csproj.CopyComplete
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.exe
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\DesyncOps\obj\Debug\DesyncOps.pdb

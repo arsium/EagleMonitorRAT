@@ -1,0 +1,26 @@
+F:\Personal\RansomTiTan\Client\bin\Release\Client.exe.config
+F:\Personal\RansomTiTan\Client\bin\Release\Client.exe
+F:\Personal\RansomTiTan\Client\bin\Release\PacketLib.dll
+F:\Personal\RansomTiTan\Client\bin\Release\PacketLib.pdb
+F:\Personal\RansomTiTan\Client\obj\Release\Client.csproj.AssemblyReference.cache
+F:\Personal\RansomTiTan\Client\obj\Release\Client.csproj.CoreCompileInputs.cache
+F:\Personal\RansomTiTan\Client\obj\Release\Client.csproj.CopyComplete
+F:\Personal\RansomTiTan\Client\obj\Release\Client.exe
+F:\Personal\DesyncOps\Client\obj\Release\Client.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\Client\obj\Release\Client.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\Client\obj\Release\Client.exe
+F:\Personal\DesyncOps\Client\bin\Release\Client.exe.config
+F:\Personal\DesyncOps\Client\bin\Release\Client.exe
+F:\Personal\DesyncOps\Client\obj\Release\Client.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\bin\Release\Client.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\bin\Release\Client.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Client\obj\Release\Client.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\Client.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\Client.exe

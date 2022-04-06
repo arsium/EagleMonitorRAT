@@ -1,0 +1,10 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\bin\Release\OffKeylogger.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OffKeylogger.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\bin\Release\OffKeylogger.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OffKeylogger.dll

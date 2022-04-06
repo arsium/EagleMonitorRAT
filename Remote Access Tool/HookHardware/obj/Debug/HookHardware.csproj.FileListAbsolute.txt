@@ -1,0 +1,10 @@
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\bin\Debug\HookHardware.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\bin\Debug\HookHardware.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\bin\Debug\HookHardware.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.pdb

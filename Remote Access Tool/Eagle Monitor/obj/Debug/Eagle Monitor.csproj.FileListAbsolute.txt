@@ -1,0 +1,71 @@
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Controls.BlurForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Controls.FormPattern.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.DownloadFileForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.FileManagerForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.KeyloggerForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.LogForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.MassForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.MemoryExecutionForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.PasswordsForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.ProcessManagerForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.csproj.GenerateResource.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Main.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.csproj.CopyComplete
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.pdb
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\Eagle Monitor.csproj.SuggestedBindingRedirects.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\DesyncOps\obj\Debug\EagleMonitor.Forms.HistoryForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.SuggestedBindingRedirects.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Controls.BlurForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Controls.FormPattern.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.DownloadFileForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.FileManagerForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.HistoryForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.KeyloggerForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.LogForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Main.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.MassForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.MemoryExecutionForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.MiscellaneousForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.PasswordsForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.ProcessManagerForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Properties.Resources.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.GenerateResource.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.CopyComplete
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.RemoteDesktopForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.RemoteCamera.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.InformationForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Eagle Monitor.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.SuggestedBindingRedirects.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Controls.BlurForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Controls.FormPattern.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.DownloadFileForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.FileManagerForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.HistoryForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.InformationForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.KeyloggerForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.LogForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Main.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.MassForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.MemoryExecutionForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.MiscellaneousForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.PasswordsForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.ProcessManagerForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.RemoteCamera.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Forms.RemoteDesktopForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\EagleMonitor.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.GenerateResource.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.csproj.CopyComplete
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Eagle Monitor RAT Reborn.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Debug\Eagle Monitor RAT Reborn.exe

@@ -1,0 +1,36 @@
+F:\Personal\DesyncFlow\FileManager\bin\Debug\FileManager.dll
+F:\Personal\DesyncFlow\FileManager\bin\Debug\FileManager.pdb
+F:\Personal\DesyncFlow\FileManager\bin\Debug\PacketLib.dll
+F:\Personal\DesyncFlow\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+F:\Personal\DesyncFlow\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncFlow\FileManager\obj\Debug\FileManager.csproj.CopyComplete
+F:\Personal\DesyncFlow\FileManager\obj\Debug\FileManager.dll
+F:\Personal\DesyncFlow\FileManager\obj\Debug\FileManager.pdb
+F:\Personal\DesyncOps\FileManager\bin\Debug\FileManager.dll
+F:\Personal\DesyncOps\FileManager\bin\Debug\FileManager.pdb
+F:\Personal\DesyncOps\FileManager\bin\Debug\PacketLib.dll
+F:\Personal\DesyncOps\bin\Debug\Plugins\FileManager.dll
+F:\Personal\DesyncOps\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+F:\Personal\DesyncOps\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\FileManager\obj\Debug\FileManager.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\FileManager\obj\Debug\FileManager.dll
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll
+F:\Personal\DesyncOps\Remote Access Tool\bin\Debug\Plugins\FileManager.dll
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.Fody.CopyLocal.cache
+F:\Personal\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\bin\Debug\Plugins\FileManager.dll
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\DesyncOps\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\FileManager.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\FileManager.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll

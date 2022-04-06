@@ -1,0 +1,16 @@
+F:\Personal\RansomTiTan\RansomTiTan\bin\Release\RansomTiTan.exe.config
+F:\Personal\RansomTiTan\RansomTiTan\bin\Release\RansomTiTan.exe
+F:\Personal\RansomTiTan\RansomTiTan\bin\Release\RansomTiTan.pdb
+F:\Personal\RansomTiTan\RansomTiTan\bin\Release\Guna.UI2.dll
+F:\Personal\RansomTiTan\RansomTiTan\bin\Release\PacketLib.dll
+F:\Personal\RansomTiTan\RansomTiTan\bin\Release\PacketLib.pdb
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.csproj.AssemblyReference.cache
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.csproj.SuggestedBindingRedirects.cache
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.Main.resources
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.PortForm.resources
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.Properties.Resources.resources
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.csproj.GenerateResource.cache
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.csproj.CoreCompileInputs.cache
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.csproj.CopyComplete
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.exe
+F:\Personal\RansomTiTan\RansomTiTan\obj\Release\RansomTiTan.pdb

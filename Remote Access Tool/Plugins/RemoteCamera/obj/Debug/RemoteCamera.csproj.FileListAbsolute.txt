@@ -1,0 +1,14 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\bin\Debug\RemoteCamera.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\bin\Debug\RemoteCamera.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\RemoteCamera.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CopyComplete
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Debug\Plugins\RemoteCamera.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CopyComplete
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.dll

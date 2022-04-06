@@ -1,0 +1,12 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\bin\Release\ClientVB.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.vbproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.vbproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.vbproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\bin\Release\ClientVB.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.vbproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.vbproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.vbproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVB\obj\Release\ClientVB.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\ClientVB.exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\ClientVB.exe

@@ -1,0 +1,14 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\Information.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\Information.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.dll
