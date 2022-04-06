@@ -121,8 +121,8 @@ Of course. I plan to add features when I find them interesting to add. Please do
 
 ## Interface 
 
-![PIC1](https://github.com/arsium/EagleMonitorRAT/IMG/PIC1.png)
-![PIC2](https://github.com/arsium/EagleMonitorRAT/IMG/PIC1.png)
+![PIC1](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/PIC1.png?raw=true)
+![PIC2](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/PIC2.png?raw=true)
 
 I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
 
