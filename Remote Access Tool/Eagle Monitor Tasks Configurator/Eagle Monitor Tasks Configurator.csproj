@@ -104,6 +104,7 @@
     <None Include="Resources\save%402x.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\type-binary%402x.png" />
     <Content Include="task.ico" />
   </ItemGroup>
   <ItemGroup>

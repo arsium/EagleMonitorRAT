@@ -89,5 +89,15 @@ namespace Eagle_Monitor_Tasks_Configurator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap type_binary_2x {
+            get {
+                object obj = ResourceManager.GetObject("type-binary@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

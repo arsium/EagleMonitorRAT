@@ -382,6 +382,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\type-binary%402x.png" />
     <None Include="Resources\trash%402x.png" />
     <None Include="Resources\button-help%402x.png" />
     <None Include="Resources\folder-user%402x.png" />

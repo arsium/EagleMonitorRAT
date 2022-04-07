@@ -136,18 +136,20 @@
             // 
             // portCustomContextMenuStrip
             // 
+            this.portCustomContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.portCustomContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem1,
             this.removeToolStripMenuItem});
             this.portCustomContextMenuStrip.Name = "portCustomContextMenuStrip";
-            this.portCustomContextMenuStrip.Size = new System.Drawing.Size(118, 48);
+            this.portCustomContextMenuStrip.Size = new System.Drawing.Size(197, 102);
             // 
             // addToolStripMenuItem1
             // 
             this.addToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.addToolStripMenuItem1.Image = global::EagleMonitor_Configurator.Properties.Resources.symbol_plus_2x;
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.addToolStripMenuItem1.Text = "Add";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
@@ -155,8 +157,9 @@
             // 
             this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.removeToolStripMenuItem.Image = global::EagleMonitor_Configurator.Properties.Resources.symbol_minus_2x;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 

@@ -29,7 +29,6 @@ namespace EagleMonitor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemoryExecutionForm));
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -41,7 +40,7 @@ namespace EagleMonitor.Forms
             this.addPayloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendPayloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.label1 = new System.Windows.Forms.Label();
             this.memExecContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +136,7 @@ namespace EagleMonitor.Forms
             // 
             this.addPayloadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.addPayloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.addPayloadToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.type_binary_2x;
             this.addPayloadToolStripMenuItem.Name = "addPayloadToolStripMenuItem";
             this.addPayloadToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
             this.addPayloadToolStripMenuItem.Text = "Add Payload";

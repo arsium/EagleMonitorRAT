@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -41,7 +40,7 @@
             this.historyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.passwordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.taskContextMenuStrip.SuspendLayout();
@@ -157,6 +156,7 @@
             // 
             this.payloadExecutionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.payloadExecutionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.payloadExecutionToolStripMenuItem.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.type_binary_2x;
             this.payloadExecutionToolStripMenuItem.Name = "payloadExecutionToolStripMenuItem";
             this.payloadExecutionToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.payloadExecutionToolStripMenuItem.Text = "Payload Execution";
