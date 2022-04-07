@@ -70,6 +70,7 @@
     <Reference Include="mscorlib" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.vb" />
     <Compile Include="EntryClass.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -87,6 +88,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Networking\ClientHandler.vb" />
+    <Compile Include="Networking\PacketHandler.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -41,7 +41,10 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="EntryClass.cs" />
+    <Compile Include="Networking\ClientHandler.cs" />
+    <Compile Include="Networking\PacketHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
