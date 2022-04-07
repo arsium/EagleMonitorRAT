@@ -118,6 +118,8 @@ Of course. I plan to add features when I find them interesting to add. Please do
 ## Known bugs
 
 * Self destruct method (currently disabled)
+* Drag & Drop payloads (because explorer is not open with admin rights whereas Eagle yes)
+* Out of index (when 0 camera)
 
 ## Interface 
 
