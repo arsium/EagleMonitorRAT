@@ -123,6 +123,7 @@ Client.EntryClass.Main()
 
 * Encryption/Decryption for folders and files
 * Wiki to make your own plugins
+* Some code improvements and refractoring
 
 ## Known bugs
 
