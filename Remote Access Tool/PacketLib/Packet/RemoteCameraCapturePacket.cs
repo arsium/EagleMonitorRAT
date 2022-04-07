@@ -29,6 +29,8 @@ namespace PacketLib.Packet
         public string status { get; set; }
         public string datePacketStatus { get; set; }
 
+        public int quality { get; set; }
+        public int index { get; set; }
         public byte[] cameraCapture { get; set; }
         public int timeMS { get; set; }
     }

@@ -23,7 +23,10 @@ namespace EagleMonitor.PacketParser
                     {
                         ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].remoteCamera.camerasGuna2ComboBox.Items.Add(camera);
                     }
-                    ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].remoteCamera.camerasGuna2ComboBox.SelectedIndex = 0;
+                   
+                    if(remoteCameraPacket.cameras.Count > 0)
+                        ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].remoteCamera.camerasGuna2ComboBox.SelectedIndex = 0;
+
                     remoteCameraPacket = null;
                 }));
                 return;

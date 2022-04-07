@@ -38,6 +38,7 @@ namespace EagleMonitor.Forms
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.memExecContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
+            this.addPayloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendPayloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -126,15 +127,25 @@ namespace EagleMonitor.Forms
             // 
             this.memExecContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.memExecContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPayloadToolStripMenuItem,
             this.sendPayloadToolStripMenuItem,
             this.removeFromListToolStripMenuItem});
             this.memExecContextMenuStrip.Name = "customContextMenuStrip1";
-            this.memExecContextMenuStrip.Size = new System.Drawing.Size(182, 72);
+            this.memExecContextMenuStrip.Size = new System.Drawing.Size(182, 106);
+            // 
+            // addPayloadToolStripMenuItem
+            // 
+            this.addPayloadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.addPayloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.addPayloadToolStripMenuItem.Name = "addPayloadToolStripMenuItem";
+            this.addPayloadToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
+            this.addPayloadToolStripMenuItem.Text = "Add Payload";
+            this.addPayloadToolStripMenuItem.Click += new System.EventHandler(this.addPayloadToolStripMenuItem_Click);
             // 
             // sendPayloadToolStripMenuItem
             // 
-            this.sendPayloadToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.sendPayloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.sendPayloadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.sendPayloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.sendPayloadToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.memory_2x;
             this.sendPayloadToolStripMenuItem.Name = "sendPayloadToolStripMenuItem";
             this.sendPayloadToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
@@ -143,8 +154,8 @@ namespace EagleMonitor.Forms
             // 
             // removeFromListToolStripMenuItem
             // 
-            this.removeFromListToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.removeFromListToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.removeFromListToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.removeFromListToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.removeFromListToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.close_2x;
             this.removeFromListToolStripMenuItem.Name = "removeFromListToolStripMenuItem";
             this.removeFromListToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
@@ -209,5 +220,6 @@ namespace EagleMonitor.Forms
         private System.Windows.Forms.ToolStripMenuItem sendPayloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem addPayloadToolStripMenuItem;
     }
 }

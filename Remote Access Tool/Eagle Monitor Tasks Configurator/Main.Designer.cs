@@ -37,6 +37,7 @@
             this.taskListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.taskContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
+            this.payloadExecutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.passwordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,11 +146,21 @@
             // 
             this.taskContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.taskContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.payloadExecutionToolStripMenuItem,
             this.historyToolStripMenuItem1,
             this.passwordsToolStripMenuItem,
             this.saveTasksToolStripMenuItem1});
             this.taskContextMenuStrip.Name = "taskContextMenuStrip";
-            this.taskContextMenuStrip.Size = new System.Drawing.Size(146, 118);
+            this.taskContextMenuStrip.Size = new System.Drawing.Size(197, 178);
+            // 
+            // payloadExecutionToolStripMenuItem
+            // 
+            this.payloadExecutionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.payloadExecutionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.payloadExecutionToolStripMenuItem.Name = "payloadExecutionToolStripMenuItem";
+            this.payloadExecutionToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.payloadExecutionToolStripMenuItem.Text = "Payload Execution";
+            this.payloadExecutionToolStripMenuItem.Click += new System.EventHandler(this.payloadExecutionToolStripMenuItem_Click);
             // 
             // historyToolStripMenuItem1
             // 
@@ -157,7 +168,7 @@
             this.historyToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.historyToolStripMenuItem1.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.history_2x;
             this.historyToolStripMenuItem1.Name = "historyToolStripMenuItem1";
-            this.historyToolStripMenuItem1.Size = new System.Drawing.Size(145, 38);
+            this.historyToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.historyToolStripMenuItem1.Text = "History ";
             this.historyToolStripMenuItem1.Click += new System.EventHandler(this.historyToolStripMenuItem1_Click);
             // 
@@ -167,7 +178,7 @@
             this.passwordsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.passwordsToolStripMenuItem.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.control_password_2x;
             this.passwordsToolStripMenuItem.Name = "passwordsToolStripMenuItem";
-            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(145, 38);
+            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.passwordsToolStripMenuItem.Text = "Passwords";
             this.passwordsToolStripMenuItem.Click += new System.EventHandler(this.passwordsToolStripMenuItem_Click);
             // 
@@ -177,7 +188,7 @@
             this.saveTasksToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.saveTasksToolStripMenuItem1.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.save_2x;
             this.saveTasksToolStripMenuItem1.Name = "saveTasksToolStripMenuItem1";
-            this.saveTasksToolStripMenuItem1.Size = new System.Drawing.Size(145, 38);
+            this.saveTasksToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.saveTasksToolStripMenuItem1.Text = "Save Tasks";
             this.saveTasksToolStripMenuItem1.Click += new System.EventHandler(this.saveTasksToolStripMenuItem1_Click);
             // 
@@ -244,6 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem passwordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveTasksToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem payloadExecutionToolStripMenuItem;
     }
 }
 

@@ -45,6 +45,7 @@
             this.showPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCurrentPcitureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.qualityGuna2TrackBar = new Guna.UI2.WinForms.Guna2TrackBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cameraViewerPictureBox)).BeginInit();
             this.settingsContextMenuStrip.SuspendLayout();
@@ -106,6 +107,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.qualityGuna2TrackBar);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.intervalGuna2TextBox);
             this.panel1.Controls.Add(this.label2);
@@ -290,6 +292,17 @@
             this.loadingCircle1.Text = "loadingCircle1";
             this.loadingCircle1.Visible = false;
             // 
+            // qualityGuna2TrackBar
+            // 
+            this.qualityGuna2TrackBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.qualityGuna2TrackBar.HoverState.Parent = this.qualityGuna2TrackBar;
+            this.qualityGuna2TrackBar.IndicateFocus = false;
+            this.qualityGuna2TrackBar.Location = new System.Drawing.Point(641, 18);
+            this.qualityGuna2TrackBar.Name = "qualityGuna2TrackBar";
+            this.qualityGuna2TrackBar.Size = new System.Drawing.Size(115, 20);
+            this.qualityGuna2TrackBar.TabIndex = 53;
+            this.qualityGuna2TrackBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            // 
             // RemoteCamera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +347,6 @@
         private System.Windows.Forms.ToolStripMenuItem showPanelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCurrentPcitureToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2TrackBar qualityGuna2TrackBar;
     }
 }

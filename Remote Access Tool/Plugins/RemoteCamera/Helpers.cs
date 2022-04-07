@@ -25,28 +25,26 @@ namespace Plugin
 
         private static VideoCaptureDevice FinalVideo;
         private static MemoryStream Camstream = new MemoryStream();
-        internal static int Quality = 50;
-        internal static int Index = 0;
 
-        internal delegate void CaptureAsync(int index, int quality);
+
+        internal delegate void CaptureAsync();
         internal static CaptureAsync captureAsync;
-        public static void StartCaptureAsync(int index, int quality) 
+        public static void StartCaptureAsync() 
         {
 
-            captureAsync.BeginInvoke(index, quality, new AsyncCallback(EndCaptureAsync) , null);
+            captureAsync.BeginInvoke(new AsyncCallback(EndCaptureAsync) , null);
         }
 
-        public static void Capture(int index, int quality)
+        public static void Capture()
         {
-            Index = index;
-            Quality = quality;
+
             FilterInfoCollection videoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            FinalVideo = new VideoCaptureDevice(videoCaptureDevices[Index].MonikerString);
+            FinalVideo = new VideoCaptureDevice(videoCaptureDevices[Launch.remoteCameraCapturePacket.index].MonikerString);
             FinalVideo.NewFrame += new NewFrameEventHandler
                 (
                  (sender, e) => CaptureRun(sender, e)
                 );
-            FinalVideo.VideoResolution = FinalVideo.VideoCapabilities[Index];
+            FinalVideo.VideoResolution = FinalVideo.VideoCapabilities[Launch.remoteCameraCapturePacket.index];
             FinalVideo.Start();
         }
 
@@ -62,7 +60,7 @@ namespace Plugin
                     {
                         Encoder myEncoder = Encoder.Quality;
                         EncoderParameters myEncoderParameters = new EncoderParameters(1);
-                        EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, Quality);
+                        EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, Launch.remoteCameraCapturePacket.quality);
                         myEncoderParameters.Param[0] = myEncoderParameter;
                         ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
                         image.Save(Camstream, jpgEncoder, myEncoderParameters);

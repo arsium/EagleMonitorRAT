@@ -82,7 +82,7 @@ namespace Plugin
                 Receive();
                 if (Launch.cameraCapture == true) 
                 {
-                    Helpers.StartCaptureAsync(0, 50);
+                    Helpers.StartCaptureAsync();
                 }
                     //Helpers.Capture(0, 50);
                 //CaptureDesktop();

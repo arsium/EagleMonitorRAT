@@ -64,14 +64,12 @@ namespace EagleMonitor_Configurator
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             saveSetting();
-            Process.Start("Eagle Monitor RAT Reborn.exe");
             Utils.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
             saveSetting();
-            Process.Start("Eagle Monitor RAT Reborn.exe");
             Utils.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
         }
 

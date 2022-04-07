@@ -13,7 +13,7 @@ namespace EagleMonitor.Controls
         public CustomContextMenuStrip() : base()
         {
             this.Renderer = new ToolStripProfessionalRenderer(new LightMenuColorTable());
-            SetStyle(ControlStyles.DoubleBuffer, true); 
+            SetStyle(ControlStyles.DoubleBuffer, true);
             UpdateStyles();
         }
 
@@ -24,7 +24,7 @@ namespace EagleMonitor.Controls
             {
                 CreateParams cp = base.CreateParams;
                 //cp.ClassStyle |= CS_DROPSHADOW;  ADD
-                cp.ClassStyle &= ~ CS_DROPSHADOW; //REMOVE
+                cp.ClassStyle &= ~CS_DROPSHADOW; //REMOVE
                 return cp;
             }
         }
@@ -38,7 +38,7 @@ namespace EagleMonitor.Controls
             }
             public override Color MenuBorder
             {
-                get { return Color.White; }
+                get { return Color.FromArgb(45, 45, 45); }
             }
             public override Color MenuItemBorder
             {
@@ -52,19 +52,19 @@ namespace EagleMonitor.Controls
             }
             public override Color MenuItemSelectedGradientBegin
             {
-                get { return Color.White; }
+                get { return Color.FromArgb(45, 45, 45); }
             }
             public override Color MenuItemSelectedGradientEnd
             {
-                get { return Color.White; }
+                get { return Color.FromArgb(45, 45, 45); }
             }
             public override Color MenuStripGradientBegin
             {
-                get { return Color.White; }
+                get { return Color.FromArgb(45, 45, 45); }
             }
             public override Color MenuStripGradientEnd
             {
-                get { return Color.White; }
+                get { return Color.FromArgb(45, 45, 45); }
             }
             public override Color ImageMarginGradientBegin
             {

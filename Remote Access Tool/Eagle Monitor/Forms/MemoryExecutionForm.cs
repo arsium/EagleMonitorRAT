@@ -128,6 +128,56 @@ namespace EagleMonitor.Forms
             }
         }
 
+        private void addPayloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()) 
+            {
+                if (ofd.ShowDialog() == DialogResult.OK) {
+                    foreach (string file in ofd.FileNames)
+                    {
+                        ListViewItem payload = new ListViewItem(Miscellaneous.SplitPath(file));
+                        payload.Tag = file;
+
+                        string payloadType = Microsoft.VisualBasic.Interaction.InputBox("Payload type :" +
+                            "\nMANAGED_DLL  =    0" +
+                            "\nMANAGED_EXE  =    1" +
+                            "\nNATIVE_DLL   =    2" +
+                            "\nNATIVE_EXE   =    3" +
+                            "\nSHELLCODE    =    4", file);
+
+                        switch ((PayloadType)ushort.Parse(payloadType))
+                        {
+                            case PayloadType.MANAGED_DLL:
+                                payload.ImageIndex = 1;
+                                break;
+
+                            case PayloadType.NATIVE_DLL:
+                                payload.ImageIndex = 1;
+                                break;
+
+                            case PayloadType.MANAGED_EXE:
+                                payload.ImageIndex = 0;
+                                break;
+
+                            case PayloadType.NATIVE_EXE:
+                                payload.ImageIndex = 0;
+                                break;
+
+                            case PayloadType.SHELLCODE:
+                                payload.ImageIndex = 2;
+                                break;
+
+                            default:
+                                return;
+
+                        }
+                        payload.SubItems.Add(((PayloadType)ushort.Parse(payloadType)).ToString());
+                        listView1.Items.Add(payload);
+                    }
+                }
+            }
+        }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();

