@@ -122,6 +122,7 @@ Client.EntryClass.Main()
 ## TODO
 
 * Encryption/Decryption for folders and files
+* Wiki to make your own plugins
 
 ## Known bugs
 
