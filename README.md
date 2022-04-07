@@ -105,6 +105,14 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Automation tasks saved with binary format
 * Settings saved with JSON format
 
+##DLLs
+
+Dlls are same as exe. You have to change the config class.
+The entrypoint should be called as follows :
+
+```cs
+Client.EntryClass.Main()
+```
 ## Inspirations
 
 * Webcam plugins : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs)
@@ -114,7 +122,6 @@ Of course. I plan to add features when I find them interesting to add. Please do
 ## TODO
 
 * Encryption/Decryption for folders and files
-* Dlls (C# and VB) 
 
 ## Known bugs
 
