@@ -105,7 +105,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Automation tasks saved with binary format
 * Settings saved with JSON format
 
-##DLLs
+## DLLs
 
 Dlls are same as exe. You have to change the config class.
 The entrypoint should be called as follows :
