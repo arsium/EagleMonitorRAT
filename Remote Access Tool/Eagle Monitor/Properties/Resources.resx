@@ -151,8 +151,8 @@
   <data name="button-info@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-info@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alarm-central-unit@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alarm-central-unit@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer-network-wireless-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-network-wireless-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="using-namespace@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\using-namespace@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,9 +196,6 @@
   <data name="window-picture_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\window-picture_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="big-data-people@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\big-data-people@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="file-binary@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-binary@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,9 +226,6 @@
   <data name="eagle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eagle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="key@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="github@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\github@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,14 +244,14 @@
   <data name="process@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\process@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trash@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="computer-network-wireless-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-network-wireless-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_1008" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_1008.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -270,6 +264,9 @@
   </data>
   <data name="control@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_110.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,6 +286,9 @@
   <data name="cloud-data-storage@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloud-data-storage@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="alarm-central-unit@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alarm-central-unit@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="folder-open@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-open@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -297,6 +297,9 @@
   </data>
   <data name="button-arrow-left@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-arrow-left@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button-add@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button-add@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bug@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bug@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,10 +313,10 @@
   <data name="computer-network-wireless-green@2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-network-wireless-green@2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="big-data-people@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\big-data-people@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="type-binary@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\type-binary@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button-remove@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button-remove@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

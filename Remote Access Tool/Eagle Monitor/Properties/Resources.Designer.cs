@@ -123,6 +123,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_add_2x {
+            get {
+                object obj = ResourceManager.GetObject("button-add@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_arrow_left_2x {
             get {
                 object obj = ResourceManager.GetObject("button-arrow-left@2x", resourceCulture);
@@ -196,6 +206,16 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap button_on_off_grey_2x {
             get {
                 object obj = ResourceManager.GetObject("button-on-off-grey@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_remove_2x {
+            get {
+                object obj = ResourceManager.GetObject("button-remove@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -656,16 +676,6 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap trash_full_2x {
             get {
                 object obj = ResourceManager.GetObject("trash-full@2x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap type_binary_2x {
-            get {
-                object obj = ResourceManager.GetObject("type-binary@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -43,7 +43,6 @@ namespace EagleMonitor
             {
                 string json = System.IO.File.ReadAllText(Miscellaneous.GPath + "\\config.json");
                 Miscellaneous.settings = JsonConvert.DeserializeObject<Settings>(json);
-                label2.Text = "Listening on : { ";
                 foreach (int p in Miscellaneous.settings.ports)
                 {
                     new Thread(() =>
@@ -51,12 +50,7 @@ namespace EagleMonitor
                         Server s = new Server();
                         s.Listen(p);
                     }).Start();
-
-                    label2.Text += p.ToString() + ", ";
                 }
-
-                label2.Text = label2.Text.Remove(label2.Text.Length - 2, 2);
-                label2.Text += " }";
             }
             else 
             {
@@ -73,6 +67,15 @@ namespace EagleMonitor
         private void SettingsLoaded(IAsyncResult ar) 
         {
             loadSettings.EndInvoke(ar);
+
+           label2.Text = "Listening on : { ";
+            foreach (int p in Miscellaneous.settings.ports)
+            {
+                label2.Text += p.ToString() + ", ";
+            }
+
+            label2.Text = label2.Text.Remove(label2.Text.Length - 2, 2);
+            label2.Text += " }";
         }
 
         private string PerformanceCalculator()

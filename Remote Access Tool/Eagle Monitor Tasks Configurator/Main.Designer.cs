@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -40,7 +41,8 @@
             this.historyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.passwordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.removeTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.taskContextMenuStrip.SuspendLayout();
@@ -148,17 +150,18 @@
             this.payloadExecutionToolStripMenuItem,
             this.historyToolStripMenuItem1,
             this.passwordsToolStripMenuItem,
-            this.saveTasksToolStripMenuItem1});
+            this.saveTasksToolStripMenuItem1,
+            this.removeTaskToolStripMenuItem});
             this.taskContextMenuStrip.Name = "taskContextMenuStrip";
-            this.taskContextMenuStrip.Size = new System.Drawing.Size(197, 178);
+            this.taskContextMenuStrip.Size = new System.Drawing.Size(188, 194);
             // 
             // payloadExecutionToolStripMenuItem
             // 
             this.payloadExecutionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.payloadExecutionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.payloadExecutionToolStripMenuItem.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.type_binary_2x;
+            this.payloadExecutionToolStripMenuItem.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.memory_2x;
             this.payloadExecutionToolStripMenuItem.Name = "payloadExecutionToolStripMenuItem";
-            this.payloadExecutionToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.payloadExecutionToolStripMenuItem.Size = new System.Drawing.Size(187, 38);
             this.payloadExecutionToolStripMenuItem.Text = "Payload Execution";
             this.payloadExecutionToolStripMenuItem.Click += new System.EventHandler(this.payloadExecutionToolStripMenuItem_Click);
             // 
@@ -168,7 +171,7 @@
             this.historyToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.historyToolStripMenuItem1.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.history_2x;
             this.historyToolStripMenuItem1.Name = "historyToolStripMenuItem1";
-            this.historyToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.historyToolStripMenuItem1.Size = new System.Drawing.Size(187, 38);
             this.historyToolStripMenuItem1.Text = "History ";
             this.historyToolStripMenuItem1.Click += new System.EventHandler(this.historyToolStripMenuItem1_Click);
             // 
@@ -178,7 +181,7 @@
             this.passwordsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.passwordsToolStripMenuItem.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.control_password_2x;
             this.passwordsToolStripMenuItem.Name = "passwordsToolStripMenuItem";
-            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(187, 38);
             this.passwordsToolStripMenuItem.Text = "Passwords";
             this.passwordsToolStripMenuItem.Click += new System.EventHandler(this.passwordsToolStripMenuItem_Click);
             // 
@@ -188,19 +191,25 @@
             this.saveTasksToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.saveTasksToolStripMenuItem1.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.save_2x;
             this.saveTasksToolStripMenuItem1.Name = "saveTasksToolStripMenuItem1";
-            this.saveTasksToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.saveTasksToolStripMenuItem1.Size = new System.Drawing.Size(187, 38);
             this.saveTasksToolStripMenuItem1.Text = "Save Tasks";
             this.saveTasksToolStripMenuItem1.Click += new System.EventHandler(this.saveTasksToolStripMenuItem1_Click);
             // 
+            // removeTaskToolStripMenuItem
+            // 
+            this.removeTaskToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.removeTaskToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.removeTaskToolStripMenuItem.Image = global::Eagle_Monitor_Tasks_Configurator.Properties.Resources.button_remove_2x;
+            this.removeTaskToolStripMenuItem.Name = "removeTaskToolStripMenuItem";
+            this.removeTaskToolStripMenuItem.Size = new System.Drawing.Size(187, 38);
+            this.removeTaskToolStripMenuItem.Text = "Remove task";
+            this.removeTaskToolStripMenuItem.Click += new System.EventHandler(this.removeTaskToolStripMenuItem_Click);
+            // 
             // imageList1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(32, 32);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "executable@2x.png");
-            this.imageList1.Images.SetKeyName(1, "file-dll@2x.png");
-            this.imageList1.Images.SetKeyName(2, "file-binary@2x.png");
-            this.imageList1.Images.SetKeyName(3, "history@2x.png");
-            this.imageList1.Images.SetKeyName(4, "control-password@2x.png");
             // 
             // label1
             // 
@@ -247,8 +256,6 @@
         private Guna.UI2.WinForms.Guna2Button maximizeButton;
         private Guna.UI2.WinForms.Guna2Button minimizeButton;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private System.Windows.Forms.ListView taskListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label1;
         private EagleMonitor.Controls.CustomContextMenuStrip taskContextMenuStrip;
@@ -256,6 +263,9 @@
         private System.Windows.Forms.ToolStripMenuItem passwordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveTasksToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem payloadExecutionToolStripMenuItem;
+        private System.Windows.Forms.ListView taskListView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ToolStripMenuItem removeTaskToolStripMenuItem;
     }
 }
 

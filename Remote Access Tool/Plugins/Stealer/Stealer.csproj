@@ -42,9 +42,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chromium.cs" />
+    <Compile Include="ChromiumRecovery.cs" />
     <Compile Include="ClientHandler.cs" />
-    <Compile Include="FireFox.cs" />
+    <Compile Include="FireFoxRecovery.cs" />
     <Compile Include="History.cs" />
     <Compile Include="Launch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

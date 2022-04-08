@@ -63,9 +63,49 @@ namespace Eagle_Monitor_Tasks_Configurator.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_remove_2x {
+            get {
+                object obj = ResourceManager.GetObject("button-remove@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap control_password_2x {
             get {
                 object obj = ResourceManager.GetObject("control-password@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap executable_2x {
+            get {
+                object obj = ResourceManager.GetObject("executable_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_binary_2x {
+            get {
+                object obj = ResourceManager.GetObject("file_binary_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_dll_2x {
+            get {
+                object obj = ResourceManager.GetObject("file_dll_2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +123,9 @@ namespace Eagle_Monitor_Tasks_Configurator.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap save_2x {
+        internal static System.Drawing.Bitmap memory_2x {
             get {
-                object obj = ResourceManager.GetObject("save@2x", resourceCulture);
+                object obj = ResourceManager.GetObject("memory@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +133,9 @@ namespace Eagle_Monitor_Tasks_Configurator.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap type_binary_2x {
+        internal static System.Drawing.Bitmap save_2x {
             get {
-                object obj = ResourceManager.GetObject("type-binary@2x", resourceCulture);
+                object obj = ResourceManager.GetObject("save@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
