@@ -128,7 +128,6 @@ Client.EntryClass.Main()
 ## Known bugs
 
 * Self destruct method (currently disabled)
-* Date Format for all saving stuff (logs, keystroke, passwords, history)
 
 ## Interface 
 
