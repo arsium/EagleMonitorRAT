@@ -128,6 +128,7 @@ Client.EntryClass.Main()
 ## Known bugs
 
 * Self destruct method (currently disabled)
+* Saved logs or file with date
 
 ## Interface 
 
