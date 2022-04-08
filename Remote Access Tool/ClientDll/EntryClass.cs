@@ -1,6 +1,11 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
 
 namespace Client
 {
