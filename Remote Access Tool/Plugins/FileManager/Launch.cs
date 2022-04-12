@@ -16,7 +16,6 @@ namespace Plugin
         public static void Main(LoadingAPI loadingAPI)
         {
             string filePath;
-
             switch (loadingAPI.currentPacket.packetType) 
             {
                 case PacketType.FM_GET_DISK:

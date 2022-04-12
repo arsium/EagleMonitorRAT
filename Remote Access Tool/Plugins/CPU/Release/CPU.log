@@ -1,1 +1,8 @@
-﻿  CPU.vcxproj -> D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\CPU\bin\Release\CPU.dll
+﻿  pch.cpp
+  dllmain.cpp
+     Création de la bibliothèque bin\Release\CPU.lib et de l'objet bin\Release\CPU.exp
+  Génération de code en cours
+  Previous IPDB not found, fall back to full compilation.
+  All 303 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  CPU.vcxproj -> D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\CPU\bin\Release\CPU.dll

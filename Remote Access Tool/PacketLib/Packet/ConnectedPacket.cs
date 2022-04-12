@@ -44,8 +44,5 @@ namespace PacketLib.Packet
         public string RegionName { get; }
         public string RegionFlag { get; }
         public bool keylogOffline { get; set; }
-
-        //ONLY USED IN SERVER SIDE !!!
-        public string clientStatus { get; set; }
     }
 }

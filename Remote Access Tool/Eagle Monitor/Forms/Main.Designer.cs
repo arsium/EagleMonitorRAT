@@ -349,7 +349,8 @@
             this.historyToolStripMenuItem,
             this.autofillToolStripMenuItem});
             this.recoveryContextMenuStrip.Name = "customContextMenuStrip1";
-            this.recoveryContextMenuStrip.Size = new System.Drawing.Size(193, 128);
+            this.recoveryContextMenuStrip.OwnerItem = this.toolStripMenuItem1;
+            this.recoveryContextMenuStrip.Size = new System.Drawing.Size(141, 106);
             // 
             // passwordsToolStripMenuItem
             // 
@@ -357,7 +358,7 @@
             this.passwordsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.passwordsToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.control_password_2x;
             this.passwordsToolStripMenuItem.Name = "passwordsToolStripMenuItem";
-            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
             this.passwordsToolStripMenuItem.Text = "Passwords";
             this.passwordsToolStripMenuItem.Click += new System.EventHandler(this.passwordsToolStripMenuItem_Click);
             // 
@@ -367,7 +368,7 @@
             this.historyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.historyToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.history_2x;
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
@@ -377,7 +378,7 @@
             this.autofillToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.autofillToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.fill_auto_2x;
             this.autofillToolStripMenuItem.Name = "autofillToolStripMenuItem";
-            this.autofillToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.autofillToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
             this.autofillToolStripMenuItem.Text = "Autofill";
             this.autofillToolStripMenuItem.Click += new System.EventHandler(this.autofillToolStripMenuItem_Click);
             // 
@@ -680,7 +681,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.label2.Location = new System.Drawing.Point(115, 21);
+            this.label2.Location = new System.Drawing.Point(121, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 3;
@@ -706,7 +707,7 @@
             // 
             this.labelPerformance.AutoSize = true;
             this.labelPerformance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.labelPerformance.Location = new System.Drawing.Point(3, 21);
+            this.labelPerformance.Location = new System.Drawing.Point(3, 23);
             this.labelPerformance.Name = "labelPerformance";
             this.labelPerformance.Size = new System.Drawing.Size(57, 13);
             this.labelPerformance.TabIndex = 1;

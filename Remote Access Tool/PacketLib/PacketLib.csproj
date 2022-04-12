@@ -47,6 +47,7 @@
     <Compile Include="Interface\IPacket.cs" />
     <Compile Include="PacketHeader.cs" />
     <Compile Include="Packet\AutofillPacket.cs" />
+    <Compile Include="Packet\BaseIpPacket.cs" />
     <Compile Include="Packet\CryptographyPacket.cs" />
     <Compile Include="Packet\InformationPacket.cs" />
     <Compile Include="Packet\KeylogOfflinePacket.cs" />

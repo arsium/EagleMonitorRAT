@@ -21,7 +21,7 @@ namespace EagleMonitor.PacketParser
                     {
                         clientHandler.processManagerForm.processDataGridView.Rows.Remove(clientHandler.processManagerForm.processDataGridView.Rows[packet.rowIndex]);
 
-                        packet = null;
+                        //packet = null;
                     }));
                     return;
                 }
