@@ -1,4 +1,4 @@
-﻿using EagleMonitor.PacketParser;
+using EagleMonitor.PacketParser;
 using PacketLib;
 using PacketLib.Packet;
 using System;
@@ -59,7 +59,7 @@ namespace EagleMonitor.Networking
                         break;
 
                     case PacketType.CONNECTED:
-                        row.Cells["Column5"].Value = ((ConnectedPacket)packet).clientStatus;
+                        //row.Cells["Column5"].Value = ((ConnectedPacket)packet).clientStatus;
                         //This provokes key not found in dictionary
                         //ClientHandler.ClientHandlersList[packet.baseIp].clientStatus;
                         break;
