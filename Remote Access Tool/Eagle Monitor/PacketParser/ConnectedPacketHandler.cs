@@ -1,4 +1,4 @@
-﻿using EagleMonitor.Networking;
+using EagleMonitor.Networking;
 using EagleMonitor.Utils;
 using Eagle_Monitor_Tasks_Configurator;
 using PacketLib.Packet;
@@ -36,13 +36,13 @@ namespace EagleMonitor.PacketParser
                 if (!Directory.Exists(Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID))
                 {
                     Directory.CreateDirectory(Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID);
-                    connectedPacket.clientStatus = "New Client";
-                    clientHandler.clientStatus = "New Client";
+                    //connectedPacket.clientStatus = "New Client";
+                    //clientHandler.clientStatus = "New Client";
                 }
                 else
                 {
-                    clientHandler.clientStatus = "Old Client";
-                    connectedPacket.clientStatus = "Old Client";
+                   // clientHandler.clientStatus = "Old Client";
+                    //connectedPacket.clientStatus = "Old Client";
                 }
 
                 clientHandler.clientPath = Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID;
