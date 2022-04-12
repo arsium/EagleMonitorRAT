@@ -46,6 +46,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Clients written in C# and VB (32 and 64 bit)
 * Passwords recovery (automatically saved)
 * History recovery (automatically saved)
+* Autofill recovery (automatically saved)
 * Blur screenlocker
 * Remote camera viewer (+ save pictures)
 * Remote desktop viewer (+ save pictures)
