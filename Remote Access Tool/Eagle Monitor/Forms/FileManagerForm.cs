@@ -118,24 +118,18 @@ namespace EagleMonitor.Forms
             //TODO 2 : ProgressBar ?
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")// && fileListView.SelectedItems.Count == 1)
+                if (selected.Tag.ToString() == "FILE")
                 {
                     string fileToDownload = labelPath.Text + selected.Text;
 
-                    DownloadFileForm downloadFileForm = new DownloadFileForm
+                    DownloadFileForm downloadFileForm = new DownloadFileForm(fileToDownload, this.clientHandler.IP)
                     {
                         Text = fileToDownload
                     };
+
                     downloadFileForm.label1.Text = Miscellaneous.SplitPath(fileToDownload);
                     downloadFileForm.Show();
-                    files.Add(Miscellaneous.SplitPath(fileToDownload), downloadFileForm);
-
-                    DownloadFilePacket dowloadFilePacket = new DownloadFilePacket(fileToDownload)
-                    {
-                        plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
-                    };
-                    clientHandler.SendPacket(dowloadFilePacket);
-
+                    //files
                 }
             }
         }

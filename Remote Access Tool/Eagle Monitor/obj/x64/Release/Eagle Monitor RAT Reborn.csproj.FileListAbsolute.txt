@@ -52,3 +52,4 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn.csproj.CopyComplete
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn (x64).exe
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.AutofillForm.resources

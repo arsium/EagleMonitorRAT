@@ -104,18 +104,19 @@ Namespace Client
 			Try
 				Dim total As Integer = 0
 				Dim recv As Integer
-				Dim datasize(3) As Byte
+				Dim header(4) As Byte
 				socket.Poll(-1, SelectMode.SelectRead)
-				recv = socket.Receive(datasize, 0, 4, 0)
-				Dim size As Integer = BitConverter.ToInt32(datasize, 0)
+				recv = socket.Receive(header, 0, 5, 0)
+
+				Dim size As Integer = BitConverter.ToInt32(New Byte(3) {header(0), header(1), header(2), header(3)}, 0)
+				Dim packetType As PacketType = CType(header(4), PacketType)
+
 				Dim dataleft As Integer = size
 				Dim data(size - 1) As Byte
 				Do While total < size
-
 					recv = socket.Receive(data, total, dataleft, 0)
 					total += recv
 					dataleft -= recv
-
 				Loop
 
 				Return data
@@ -157,15 +158,25 @@ Namespace Client
 					Dim total As Integer = 0
 					Dim size As Integer = encryptedData.Length
 					Dim datalft As Integer = size
-					Dim datasize(3) As Byte
+					Dim header(4) As Byte
 					socket.Poll(-1, SelectMode.SelectWrite)
-					datasize = BitConverter.GetBytes(size)
-					Dim sent As Integer = socket.Send(datasize)
+
+					Dim temp() As Byte = BitConverter.GetBytes(size)
+
+					header(0) = temp(0)
+					header(1) = temp(1)
+					header(2) = temp(2)
+					header(3) = temp(3)
+					header(4) = CByte(Math.Truncate(data.packetType))
+
+					Dim sent As Integer = socket.Send(header)
+
 					Do While total < size
 						sent = socket.Send(encryptedData, total, size, SocketFlags.None)
 						total += sent
 						datalft -= sent
 					Loop
+
 					Return total
 				End SyncLock
 			Catch e1 As Exception

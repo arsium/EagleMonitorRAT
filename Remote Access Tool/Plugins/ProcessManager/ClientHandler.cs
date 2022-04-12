@@ -79,10 +79,19 @@ namespace Plugin
                     int total = 0;
                     int size = encryptedData.Length;
                     int datalft = size;
-                    byte[] datasize = new byte[4];
+                    byte[] header = new byte[5];
                     socket.Poll(-1, SelectMode.SelectWrite);
-                    datasize = BitConverter.GetBytes(size);
-                    int sent = socket.Send(datasize);
+
+                    byte[] temp = BitConverter.GetBytes(size);
+
+                    header[0] = temp[0];
+                    header[1] = temp[1];
+                    header[2] = temp[2];
+                    header[3] = temp[3];
+                    header[4] = (byte)data.packetType;
+
+                    int sent = socket.Send(header);
+
                     while (total < size)
                     {
                         sent = socket.Send(encryptedData, total, size, SocketFlags.None);

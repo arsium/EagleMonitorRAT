@@ -38,5 +38,6 @@ namespace PacketLib.Packet
 
         public string fileName { get; set; }
         public byte[] file { get; set; }
+        public int size { get; set; }
     }
 }

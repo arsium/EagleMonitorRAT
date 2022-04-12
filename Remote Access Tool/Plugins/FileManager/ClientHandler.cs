@@ -1,6 +1,7 @@
 ﻿using PacketLib;
 using PacketLib.Utils;
 using System;
+using System.Collections.Generic;
 using System.Net.Sockets;
 
 /* 
@@ -18,6 +19,7 @@ namespace Plugin
         public string HWID { get; set; }
         public string baseIp { get; set; }
         public string key { get; set; }
+        public bool closeClient { get; set; }
 
 
         public delegate bool ConnectAsync();
@@ -79,17 +81,26 @@ namespace Plugin
                     int total = 0;
                     int size = encryptedData.Length;
                     int datalft = size;
-                    byte[] datasize = new byte[4];
+                    byte[] header = new byte[5];
                     socket.Poll(-1, SelectMode.SelectWrite);
-                    datasize = BitConverter.GetBytes(size);
-                    int sent = socket.Send(datasize);
+
+                    byte[] temp = BitConverter.GetBytes(size);
+
+                    header[0] = temp[0];
+                    header[1] = temp[1];
+                    header[2] = temp[2];
+                    header[3] = temp[3];
+                    header[4] = (byte)data.packetType;
+
+                    int sent = socket.Send(header);
+
                     while (total < size)
                     {
                         sent = socket.Send(encryptedData, total, size, SocketFlags.None);
                         total += sent;
                         datalft -= sent;
                     }
-                    return total;
+                    return size;
                 }
             }
             catch (Exception)
@@ -100,17 +111,9 @@ namespace Plugin
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
-            int length = sendDataAsync.EndInvoke(ar);
+            int size = sendDataAsync.EndInvoke(ar);
             if (Connected)
-            {
-                if (length != 0)//TODO : LOGS
-                {
-                    //MessageBox.Show("Data sent ! + length = " + length.ToString());
-                }
-                else 
-                {
-                    //MessageBox.Show("Error while sending data + length =" + length.ToString());
-                }
+            {      
 
             }
             this.Dispose();

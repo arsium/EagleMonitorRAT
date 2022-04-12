@@ -42,6 +42,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChromiumAutofill.cs" />
     <Compile Include="ChromiumRecovery.cs" />
     <Compile Include="ClientHandler.cs" />
     <Compile Include="FireFoxRecovery.cs" />

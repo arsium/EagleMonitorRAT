@@ -36,13 +36,13 @@
             this.portListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.portCustomContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keyGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.saveGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.notificationSoundGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GroupBox1.SuspendLayout();
             this.portCustomContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +143,26 @@
             this.portCustomContextMenuStrip.Name = "portCustomContextMenuStrip";
             this.portCustomContextMenuStrip.Size = new System.Drawing.Size(134, 80);
             // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.addToolStripMenuItem1.Image = global::EagleMonitor_Configurator.Properties.Resources.button_add_2x;
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(133, 38);
+            this.addToolStripMenuItem1.Text = "Add";
+            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.removeToolStripMenuItem.Image = global::EagleMonitor_Configurator.Properties.Resources.button_remove_2x;
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(133, 38);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
             // keyGuna2TextBox
             // 
             this.keyGuna2TextBox.Animated = true;
@@ -166,7 +186,7 @@
             this.keyGuna2TextBox.Name = "keyGuna2TextBox";
             this.keyGuna2TextBox.PasswordChar = '\0';
             this.keyGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
-            this.keyGuna2TextBox.PlaceholderText = "key";
+            this.keyGuna2TextBox.PlaceholderText = "...";
             this.keyGuna2TextBox.SelectedText = "";
             this.keyGuna2TextBox.ShadowDecoration.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Size = new System.Drawing.Size(790, 36);
@@ -226,26 +246,6 @@
             this.notificationSoundGuna2CheckBox.UncheckedState.BorderRadius = 0;
             this.notificationSoundGuna2CheckBox.UncheckedState.BorderThickness = 0;
             this.notificationSoundGuna2CheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            // 
-            // addToolStripMenuItem1
-            // 
-            this.addToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.addToolStripMenuItem1.Image = global::EagleMonitor_Configurator.Properties.Resources.button_add_2x;
-            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(133, 38);
-            this.addToolStripMenuItem1.Text = "Add";
-            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.removeToolStripMenuItem.Image = global::EagleMonitor_Configurator.Properties.Resources.button_remove_2x;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(133, 38);
-            this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // Main
             // 

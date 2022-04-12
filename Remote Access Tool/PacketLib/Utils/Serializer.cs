@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -21,19 +22,30 @@ namespace PacketLib.Utils
                 _BinaryFormatter.Serialize(_MemoryStream, _object);
                 bytes = _MemoryStream.ToArray();
             }
-            return Encryption.RSMEncrypt(Compressor.QuickLZ.Compress(bytes, 1), Encoding.Unicode.GetBytes(key));//bytes;
+            bytes = Encryption.RSMEncrypt(Compressor.QuickLZ.Compress(bytes, 1), Encoding.Unicode.GetBytes(key));
+            return bytes;
         }
 
-        public static IPacket DeserializePacket(this byte[] _byteArray, string key)
+        public static IPacket DeserializePacket(this byte[] _byteArray, string key)//, out int sizePacket)
         {
             IPacket ReturnValue;
-            //using (var _MemoryStream = new MemoryStream((_byteArray)))
+            //sizePacket = _byteArray.Length;
             using (var _MemoryStream = new MemoryStream(Compressor.QuickLZ.Decompress(Encryption.RSMDecrypt(_byteArray, Encoding.Unicode.GetBytes(key)))))
             {
                 IFormatter _BinaryFormatter = new BinaryFormatter();
                 ReturnValue = (IPacket)_BinaryFormatter.Deserialize(_MemoryStream);
             }
             return ReturnValue;
+        }
+
+        public static PacketHeader ConvertBytesToHeader(this byte[] _byteArray)
+        {
+            if (_byteArray.Length != 8)
+                return null;
+            PacketHeader header = new PacketHeader();
+            header.size = BitConverter.ToInt32(new byte[4] { _byteArray[0], _byteArray[1], _byteArray[2], _byteArray[3] }, 0);
+            header.packetId = BitConverter.ToInt32(new byte[4] { _byteArray[4], _byteArray[5], _byteArray[6], _byteArray[7] }, 0);
+            return header;
         }
     }
 }

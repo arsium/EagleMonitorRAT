@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>false</DebugSymbols>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -44,6 +45,8 @@
   <ItemGroup>
     <Compile Include="LoadingAPI.cs" />
     <Compile Include="Interface\IPacket.cs" />
+    <Compile Include="PacketHeader.cs" />
+    <Compile Include="Packet\AutofillPacket.cs" />
     <Compile Include="Packet\CryptographyPacket.cs" />
     <Compile Include="Packet\InformationPacket.cs" />
     <Compile Include="Packet\KeylogOfflinePacket.cs" />

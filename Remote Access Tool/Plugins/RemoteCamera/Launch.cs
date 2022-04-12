@@ -33,7 +33,7 @@ namespace Plugin
                     clientHandlerGetCam.ConnectStart();
                     RemoteCameraPacket remoteCameraPacket = new RemoteCameraPacket(GetCameras.GetListCameras(), baseIp, HWID);
                     while (!clientHandlerGetCam.Connected)
-                        Thread.Sleep(1000);
+                        Thread.Sleep(125);
                     clientHandlerGetCam.SendPacket(remoteCameraPacket);
                     break;
 

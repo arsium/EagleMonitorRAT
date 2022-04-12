@@ -165,6 +165,12 @@
     <Compile Include="Forms\MiscellaneousForm.Designer.cs">
       <DependentUpon>MiscellaneousForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AutofillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutofillForm.Designer.cs">
+      <DependentUpon>AutofillForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PasswordsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,7 @@
     <Compile Include="Networking\StartupTaskWorker.cs" />
     <Compile Include="Networking\StaticPacketHandler.cs" />
     <Compile Include="Networking\PacketHandler.cs" />
+    <Compile Include="PacketParser\AutofillPacketParser.cs" />
     <Compile Include="PacketParser\ConnectedPacketHandler.cs" />
     <Compile Include="PacketParser\DeleteFilePacketHandler.cs" />
     <Compile Include="PacketParser\DisksPacketHandler.cs" />
@@ -254,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MiscellaneousForm.resx">
       <DependentUpon>MiscellaneousForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutofillForm.resx">
+      <DependentUpon>AutofillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PasswordsForm.resx">
       <DependentUpon>PasswordsForm.cs</DependentUpon>
@@ -382,6 +392,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\fill-auto%402x.png" />
     <None Include="Resources\button-remove%402x.png" />
     <None Include="Resources\button-add%402x.png" />
     <None Include="Resources\trash%402x.png" />

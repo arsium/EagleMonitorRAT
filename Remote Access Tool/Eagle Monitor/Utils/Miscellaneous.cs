@@ -146,7 +146,7 @@ namespace EagleMonitor.Utils
             }
         }
 
-        internal static void ToCSV(List<object[]> password, string filePath, string[] columnName)
+        internal static void ToCSV(List<object[]> elemList, string filePath, string[] columnNames)
         {
             using (StreamWriter sw = new StreamWriter(filePath, false, System.Text.Encoding.Default))
             {
@@ -154,14 +154,15 @@ namespace EagleMonitor.Utils
                 // sw.Write(string.Format("{0};", "Username"));
                 // sw.Write(string.Format("{0};", "Password"));
                 // sw.Write(string.Format("{0};", "Application"));
-
-                sw.Write(string.Format("{0};", columnName[0]));
+                foreach(string columnName in columnNames)
+                    sw.Write(string.Format("{0};", columnName));
+                /*sw.Write(string.Format("{0};", columnName[0]));
                 sw.Write(string.Format("{0};", columnName[1]));
                 sw.Write(string.Format("{0};", columnName[2]));
-                sw.Write(string.Format("{0};", columnName[3]));
+                sw.Write(string.Format("{0};", columnName[3]));*/
                 sw.WriteLine("");
 
-                foreach (object[] item in password)
+                foreach (object[] item in elemList)
                 {
                     foreach (object item2 in item)
                         sw.Write(string.Format("{0};", item2.ToString()));

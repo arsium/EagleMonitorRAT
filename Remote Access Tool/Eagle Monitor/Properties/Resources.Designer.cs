@@ -393,6 +393,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fill_auto_2x {
+            get {
+                object obj = ResourceManager.GetObject("fill-auto@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_doc_2x {
             get {
                 object obj = ResourceManager.GetObject("folder-doc@2x", resourceCulture);

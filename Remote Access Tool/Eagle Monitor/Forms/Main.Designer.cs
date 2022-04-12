@@ -55,6 +55,7 @@
             this.recoveryContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.passwordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autofillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.desktopContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.fileManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +70,7 @@
             this.clientToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.closeStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.powerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.powerContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.shutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +94,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.uninstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.clientCustomContextMenuStrip.SuspendLayout();
             this.recoveryContextMenuStrip.SuspendLayout();
@@ -345,10 +346,10 @@
             this.recoveryContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.recoveryContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.passwordsToolStripMenuItem,
-            this.historyToolStripMenuItem});
+            this.historyToolStripMenuItem,
+            this.autofillToolStripMenuItem});
             this.recoveryContextMenuStrip.Name = "customContextMenuStrip1";
-            this.recoveryContextMenuStrip.OwnerItem = this.toolStripMenuItem1;
-            this.recoveryContextMenuStrip.Size = new System.Drawing.Size(141, 72);
+            this.recoveryContextMenuStrip.Size = new System.Drawing.Size(193, 128);
             // 
             // passwordsToolStripMenuItem
             // 
@@ -356,7 +357,7 @@
             this.passwordsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.passwordsToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.control_password_2x;
             this.passwordsToolStripMenuItem.Name = "passwordsToolStripMenuItem";
-            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
+            this.passwordsToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.passwordsToolStripMenuItem.Text = "Passwords";
             this.passwordsToolStripMenuItem.Click += new System.EventHandler(this.passwordsToolStripMenuItem_Click);
             // 
@@ -366,9 +367,19 @@
             this.historyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.historyToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.history_2x;
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+            // 
+            // autofillToolStripMenuItem
+            // 
+            this.autofillToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.autofillToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.autofillToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.fill_auto_2x;
+            this.autofillToolStripMenuItem.Name = "autofillToolStripMenuItem";
+            this.autofillToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.autofillToolStripMenuItem.Text = "Autofill";
+            this.autofillToolStripMenuItem.Click += new System.EventHandler(this.autofillToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -391,6 +402,7 @@
             this.remoteDesktopToolStripMenuItem,
             this.remoteWebcamToolStripMenuItem});
             this.desktopContextMenuStrip.Name = "customContextMenuStrip1";
+            this.desktopContextMenuStrip.OwnerItem = this.toolStripMenuItem2;
             this.desktopContextMenuStrip.Size = new System.Drawing.Size(174, 174);
             // 
             // fileManagerToolStripMenuItem
@@ -502,7 +514,8 @@
             this.uninstallToolStripMenuItem,
             this.powerToolStripMenuItem});
             this.clientContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientContextMenuStrip.Size = new System.Drawing.Size(193, 128);
+            this.clientContextMenuStrip.OwnerItem = this.clientToolStripMenuItem1;
+            this.clientContextMenuStrip.Size = new System.Drawing.Size(133, 106);
             // 
             // closeStripMenuItem
             // 
@@ -510,9 +523,19 @@
             this.closeStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.closeStripMenuItem.Image = global::EagleMonitor.Properties.Resources.close_2x;
             this.closeStripMenuItem.Name = "closeStripMenuItem";
-            this.closeStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.closeStripMenuItem.Size = new System.Drawing.Size(132, 34);
             this.closeStripMenuItem.Text = "Close";
             this.closeStripMenuItem.Click += new System.EventHandler(this.closeStripMenuItem_Click);
+            // 
+            // uninstallToolStripMenuItem
+            // 
+            this.uninstallToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.uninstallToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.uninstallToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.trash_2x;
+            this.uninstallToolStripMenuItem.Name = "uninstallToolStripMenuItem";
+            this.uninstallToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
+            this.uninstallToolStripMenuItem.Text = "Uninstall";
+            this.uninstallToolStripMenuItem.Click += new System.EventHandler(this.uninstallToolStripMenuItem_Click);
             // 
             // powerToolStripMenuItem
             // 
@@ -521,7 +544,7 @@
             this.powerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.powerToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.event_1_5x;
             this.powerToolStripMenuItem.Name = "powerToolStripMenuItem";
-            this.powerToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.powerToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
             this.powerToolStripMenuItem.Text = "Power";
             // 
             // powerContextMenuStrip
@@ -754,16 +777,6 @@
             this.guna2VScrollBar1.TabIndex = 7;
             this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
-            // uninstallToolStripMenuItem
-            // 
-            this.uninstallToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.uninstallToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.uninstallToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.trash_2x;
-            this.uninstallToolStripMenuItem.Name = "uninstallToolStripMenuItem";
-            this.uninstallToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.uninstallToolStripMenuItem.Text = "Uninstall";
-            this.uninstallToolStripMenuItem.Click += new System.EventHandler(this.uninstallToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,6 +878,7 @@
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem uninstallToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem;
     }
 }
 

