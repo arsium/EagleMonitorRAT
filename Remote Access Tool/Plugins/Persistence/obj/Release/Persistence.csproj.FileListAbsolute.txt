@@ -1,0 +1,8 @@
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\bin\Release\Persistence.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\obj\Release\Persistence.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\obj\Release\Persistence.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\obj\Release\Persistence.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\bin\Release\Persistence.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\obj\Release\Persistence.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\obj\Release\Persistence.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Persistence\obj\Release\Persistence.dll
