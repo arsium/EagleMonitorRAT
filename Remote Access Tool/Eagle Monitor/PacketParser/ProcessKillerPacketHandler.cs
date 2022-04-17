@@ -17,16 +17,13 @@ namespace EagleMonitor.PacketParser
             {
                 if (packet.killed)
                 {
-                    clientHandler.processManagerForm.BeginInvoke((MethodInvoker)(() => 
+                    clientHandler.processManagerForm.BeginInvoke((MethodInvoker)(() =>
                     {
                         clientHandler.processManagerForm.processDataGridView.Rows.Remove(clientHandler.processManagerForm.processDataGridView.Rows[packet.rowIndex]);
-
-                        //packet = null;
                     }));
-                    return;
                 }
             }
-            catch {}
+            catch { }
         }
     }
 }

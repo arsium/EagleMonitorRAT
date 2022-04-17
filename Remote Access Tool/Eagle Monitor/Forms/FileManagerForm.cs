@@ -138,7 +138,7 @@ namespace EagleMonitor.Forms
         {
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")// && fileListView.SelectedItems.Count == 1)
+                if (selected.Tag.ToString() == "FILE")
                 {
                     string fileToDelete = labelPath.Text + selected.Text;
 
@@ -155,7 +155,7 @@ namespace EagleMonitor.Forms
         {
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")// && fileListView.SelectedItems.Count == 1)
+                if (selected.Tag.ToString() == "FILE")
                 {
                     string fileToStart = labelPath.Text + selected.Text;
 
@@ -172,7 +172,7 @@ namespace EagleMonitor.Forms
         {
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")// && fileListView.SelectedItems.Count == 1)
+                if (selected.Tag.ToString() == "FILE")
                 {
                     string fileToRename = labelPath.Text + selected.Text;
 

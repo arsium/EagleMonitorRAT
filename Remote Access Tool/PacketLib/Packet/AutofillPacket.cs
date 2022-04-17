@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
 namespace PacketLib.Packet
 {
     [Serializable]

@@ -31,6 +31,9 @@ namespace Plugin
                     HookHardware.Global.UnhookMouse();
                     break;
 
+                default:
+                    return;
+
             }
             Miscellaneous.CleanMemory();
         }

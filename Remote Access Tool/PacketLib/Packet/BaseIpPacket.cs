@@ -1,5 +1,10 @@
 ﻿using System;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
 namespace PacketLib.Packet
 {
     [Serializable]

@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.captureGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.viewerPictureBox)).BeginInit();
             this.settingsContextMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -296,7 +297,7 @@
             // 
             this.loadingCircle1.Active = false;
             this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.White;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.loadingCircle1.InnerCircleRadius = 5;
             this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
             this.loadingCircle1.Name = "loadingCircle1";
@@ -310,12 +311,24 @@
             this.loadingCircle1.Text = "loadingCircle1";
             this.loadingCircle1.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(41, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(235, 32);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Eagle Monitor RAT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // RemoteDesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(687, 364);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.loadingCircle1);
             this.Controls.Add(this.viewerPictureBox);
             this.Controls.Add(this.panel1);
@@ -354,5 +367,6 @@
         private System.Windows.Forms.ToolStripMenuItem showPanelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCurrentPcitureToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label3;
     }
 }

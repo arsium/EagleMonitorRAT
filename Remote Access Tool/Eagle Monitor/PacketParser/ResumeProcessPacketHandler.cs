@@ -21,10 +21,7 @@ namespace EagleMonitor.PacketParser
                     clientHandler.processManagerForm.BeginInvoke((MethodInvoker)(() =>
                     {
                         clientHandler.processManagerForm.processDataGridView.Rows[resumeProcessPacket.rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(45, 45, 45);
-
-                        resumeProcessPacket = null;
                     }));
-                    return;
                 }
             }
             catch { }

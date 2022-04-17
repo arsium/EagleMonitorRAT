@@ -4,11 +4,17 @@ using EagleMonitor.Utils;
 using System;
 using System.Windows.Forms;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
 namespace EagleMonitor.Forms
 {
     public partial class PasswordsForm : FormPattern
     {
         private ClientHandler clientHandler { get; set; }
+
         internal PasswordsForm(ClientHandler clientHandler)
         {
             this.clientHandler = clientHandler;

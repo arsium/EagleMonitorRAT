@@ -48,10 +48,7 @@ namespace EagleMonitor.PacketParser
                         }
 
                         clientHandler.processManagerForm.loadingCircle1.Visible = false;
-                        clientHandler.processManagerForm.loadingCircle1.Active = false;
-
-                        processManagerPacket = null;
-
+                        clientHandler.processManagerForm.loadingCircle1.Active = false;             
                     }));
                     return;
                 }

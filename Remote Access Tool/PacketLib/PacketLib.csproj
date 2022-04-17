@@ -51,6 +51,9 @@
     <Compile Include="Packet\CryptographyPacket.cs" />
     <Compile Include="Packet\InformationPacket.cs" />
     <Compile Include="Packet\KeylogOfflinePacket.cs" />
+    <Compile Include="Packet\KeywordsPacket.cs" />
+    <Compile Include="Packet\RemoteAudioCapturePacket.cs" />
+    <Compile Include="Packet\RemoteAudioPacket.cs" />
     <Compile Include="Packet\RemoteCameraCapturePacket.cs" />
     <Compile Include="Packet\RenameFilePacket.cs" />
     <Compile Include="Packet\ShortCutFileManagersPacket.cs" />

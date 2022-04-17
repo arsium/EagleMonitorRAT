@@ -37,12 +37,12 @@
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             this.loadingCircle1.Active = true;
             this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.White;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.loadingCircle1.InnerCircleRadius = 5;
             this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
             this.loadingCircle1.Name = "loadingCircle1";
@@ -172,21 +172,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.TabStop = false;
             // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
-            this.guna2VScrollBar1.TabIndex = 37;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -224,6 +209,21 @@
             this.Column5.HeaderText = "Last date used";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2VScrollBar1.HoverState.Parent = null;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
+            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
+            this.guna2VScrollBar1.TabIndex = 37;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
             // AutofillForm
             // 

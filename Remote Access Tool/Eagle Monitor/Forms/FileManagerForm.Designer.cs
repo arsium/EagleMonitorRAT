@@ -55,6 +55,7 @@
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.label1 = new System.Windows.Forms.Label();
             this.fileContextMenuStrip.SuspendLayout();
             this.filesContextMenuStrip.SuspendLayout();
             this.folderShortCutContextMenuStrip.SuspendLayout();
@@ -133,6 +134,7 @@
             this.deleteToolStripMenuItem,
             this.launchToolStripMenuItem});
             this.filesContextMenuStrip.Name = "fileContextMenuStrip";
+            this.filesContextMenuStrip.OwnerItem = this.filesToolStripMenuItem;
             this.filesContextMenuStrip.Size = new System.Drawing.Size(141, 140);
             // 
             // downloadToolStripMenuItem
@@ -195,6 +197,7 @@
             this.documentsShortCutStripMenuItem,
             this.userProfileToolStripMenuItem});
             this.folderShortCutContextMenuStrip.Name = "fileContextMenuStrip";
+            this.folderShortCutContextMenuStrip.OwnerItem = this.shortCutsToolStripMenuItem;
             this.folderShortCutContextMenuStrip.Size = new System.Drawing.Size(146, 140);
             // 
             // downloadShortCutStripMenuItem
@@ -349,7 +352,7 @@
             // 
             this.loadingCircle1.Active = true;
             this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.White;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.loadingCircle1.InnerCircleRadius = 5;
             this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
             this.loadingCircle1.Name = "loadingCircle1";
@@ -362,12 +365,24 @@
             this.loadingCircle1.TabIndex = 35;
             this.loadingCircle1.Text = "loadingCircle1";
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(41, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Eagle Monitor RAT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FileManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1026, 401);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.loadingCircle1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.maximizeButton);
@@ -418,5 +433,6 @@
         private System.Windows.Forms.ToolStripMenuItem desktopShortCutStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentsShortCutStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userProfileToolStripMenuItem;
+        public System.Windows.Forms.Label label1;
     }
 }

@@ -36,6 +36,9 @@ namespace Plugin
                 case PacketType.MEM_EXEC_MANAGED_PE:
                     ManagedExe.LoadExe(decompressed);
                     break;
+
+                default:
+                    return;
             }
             Miscellaneous.CleanMemory();
         }

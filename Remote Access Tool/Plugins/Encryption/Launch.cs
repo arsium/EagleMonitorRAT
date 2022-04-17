@@ -29,6 +29,9 @@ namespace Plugin
                     else
                         new Helpers.FileOperator(cryptographyPacket, loadingAPI.host, loadingAPI.key, false);
                     break;
+
+                default:
+                    return;
             }
             Miscellaneous.CleanMemory();
         }

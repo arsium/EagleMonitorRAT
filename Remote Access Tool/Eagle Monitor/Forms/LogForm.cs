@@ -1,14 +1,12 @@
 ﻿using EagleMonitor.Controls;
 using EagleMonitor.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
 
 namespace EagleMonitor.Forms
 {

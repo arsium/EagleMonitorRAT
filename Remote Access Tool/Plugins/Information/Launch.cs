@@ -30,6 +30,9 @@ namespace Plugin
                     InformationPacket informationPacket = new InformationPacket(information, NetworkInformation.SocketConnectionIPV4.GetAllTcpConnections(), NetworkInformation.SocketConnectionIPV4.GetAllUdpConnections(), loadingAPI.baseIp, loadingAPI.HWID);
                     ClientSender(loadingAPI.host, loadingAPI.key, informationPacket);
                     break;
+
+                default:
+                    return;
             }
             Miscellaneous.CleanMemory();
         }

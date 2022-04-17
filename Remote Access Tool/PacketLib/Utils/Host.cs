@@ -15,7 +15,7 @@ namespace PacketLib.Utils
         public bool connected { get; set; }
         public Host(string host, string port)
         {
-            this.host = host;//CheckDNS(host);
+            this.host = CheckDNS(host);
             this.port = int.Parse(port);
         }
         public static string CheckDNS(string url)

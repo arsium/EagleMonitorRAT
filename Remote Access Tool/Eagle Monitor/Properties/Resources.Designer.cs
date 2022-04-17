@@ -303,6 +303,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap control_text_box_large_2x {
+            get {
+                object obj = ResourceManager.GetObject("control-text-box_large@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap debug_restart_2x {
             get {
                 object obj = ResourceManager.GetObject("debug-restart@2x", resourceCulture);
@@ -596,6 +606,16 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap memory_2x1 {
             get {
                 object obj = ResourceManager.GetObject("memory@2x1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microphone_large_2x {
+            get {
+                object obj = ResourceManager.GetObject("microphone_large@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

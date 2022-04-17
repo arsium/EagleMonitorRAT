@@ -17,12 +17,10 @@ namespace EagleMonitor.PacketParser
                 {
                     ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.hasAlreadyConnected = true;
                     ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.viewerPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteViewerPacket.desktopPicture));
-                    //ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.keystrokeRichTextBox.AppendText(keylogPacket.keyStroke);
-                    remoteViewerPacket = null;
                 }));
                 return;
             }
-            catch(Exception ex) { MessageBox.Show(ex.ToString()); }
+            catch { }
         }
     }
 }

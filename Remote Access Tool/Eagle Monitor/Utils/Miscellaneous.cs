@@ -110,10 +110,15 @@ namespace EagleMonitor.Utils
         {
             using (StreamWriter sw = new StreamWriter(filePath, false, System.Text.Encoding.Default))
             {
-                sw.Write(string.Format("{0};", dataGridView.Columns[0].HeaderText));
-                sw.Write(string.Format("{0};", dataGridView.Columns[1].HeaderText));
-                sw.Write(string.Format("{0};", dataGridView.Columns[2].HeaderText));
-                sw.Write(string.Format("{0};", dataGridView.Columns[3].HeaderText));
+                /* sw.Write(string.Format("{0};", dataGridView.Columns[0].HeaderText));
+                 sw.Write(string.Format("{0};", dataGridView.Columns[1].HeaderText));
+                 sw.Write(string.Format("{0};", dataGridView.Columns[2].HeaderText));
+                 sw.Write(string.Format("{0};", dataGridView.Columns[3].HeaderText));*/
+
+                foreach (DataGridViewColumn column in dataGridView.Columns)
+                    sw.Write(string.Format("{0};", column.HeaderText));
+
+
                 sw.WriteLine("");
 
                 foreach (DataGridViewRow item in dataGridView.Rows)
@@ -129,12 +134,15 @@ namespace EagleMonitor.Utils
         {
             using (StreamWriter sw = new StreamWriter(GPath + "\\Logs\\" + Utils.Miscellaneous.DateFormater() + ".csv", false, System.Text.Encoding.Default))
             {
-                sw.Write(string.Format("{0};", dataGridView.Columns[0].HeaderText));
+                /*sw.Write(string.Format("{0};", dataGridView.Columns[0].HeaderText));
                 sw.Write(string.Format("{0};", dataGridView.Columns[1].HeaderText));
                 sw.Write(string.Format("{0};", dataGridView.Columns[2].HeaderText));
                 sw.Write(string.Format("{0};", dataGridView.Columns[3].HeaderText));
                 sw.Write(string.Format("{0};", dataGridView.Columns[4].HeaderText));
-                sw.Write(string.Format("{0};", dataGridView.Columns[5].HeaderText));
+                sw.Write(string.Format("{0};", dataGridView.Columns[5].HeaderText));*/
+                foreach(DataGridViewColumn column in dataGridView.Columns)
+                    sw.Write(string.Format("{0};", column.HeaderText));
+
                 sw.WriteLine("");
 
                 foreach (DataGridViewRow item in dataGridView.Rows)

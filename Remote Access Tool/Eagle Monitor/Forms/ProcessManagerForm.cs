@@ -16,6 +16,7 @@ namespace EagleMonitor.Forms
     public partial class ProcessManagerForm : FormPattern
     {
         private ClientHandler clientHandler { get; set; }
+
         internal ProcessManagerForm(ClientHandler clientHandler)
         {
             this.clientHandler = clientHandler;
@@ -27,33 +28,8 @@ namespace EagleMonitor.Forms
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(processDataGridView, guna2VScrollBar1, true);
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void maximizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void killProcessToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*  foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
-            {
-                string IP = dataGridViewRow.Cells[2].Value.ToString();*/
             foreach (DataGridViewRow selected in processDataGridView.SelectedRows)
             {
                 int procId = int.Parse(selected.Cells[1].Value.ToString());
@@ -142,6 +118,28 @@ namespace EagleMonitor.Forms
                     processDataGridView.CurrentCell = null;
                 }
             }
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

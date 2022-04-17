@@ -1,5 +1,6 @@
 ﻿using EagleMonitor.Forms;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 /* 
@@ -11,6 +12,20 @@ namespace EagleMonitor
 {
     internal static class Program
     {
+
+        private static void MemCleaner()
+        {
+            Thread.Sleep(30000);
+            PacketLib.Utils.Miscellaneous.CleanMemory();
+        }
+        private static void EndMemoryCleaner(IAsyncResult ar)
+        {
+            memoryCleaner.EndInvoke(ar);
+            memoryCleaner.BeginInvoke(new AsyncCallback(EndMemoryCleaner), null);
+        }
+
+        private delegate void MemoryCleaner();
+        private static MemoryCleaner memoryCleaner;
         [STAThread]
         static void Main()
         {
@@ -19,11 +34,14 @@ namespace EagleMonitor
             AppContext.SetSwitch("Switch.UseLegacyAccessibilityFeatures", true);    //remove auto header selected with full row selected in datagridview
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            memoryCleaner = new MemoryCleaner(MemCleaner);
+            memoryCleaner.BeginInvoke(new AsyncCallback(EndMemoryCleaner), null);
             mainForm = new Main();
             logForm = new LogForm();
             massForm = new MassForm();
             Program.logForm.Show();
             Application.Run(mainForm);
+
         }
 
         internal static MassForm massForm { get; set; }

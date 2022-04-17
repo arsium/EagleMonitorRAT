@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.keystrokeRichTextBox = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,12 +176,24 @@
             this.panel3.Size = new System.Drawing.Size(788, 325);
             this.panel3.TabIndex = 44;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Eagle Monitor RAT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // KeyloggerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.startKeylogGuna2Button);
@@ -213,5 +226,6 @@
         public System.Windows.Forms.RichTextBox keystrokeRichTextBox;
         private System.Windows.Forms.Panel panel3;
         public Guna.UI2.WinForms.Guna2Button startKeylogGuna2Button;
+        public System.Windows.Forms.Label label1;
     }
 }

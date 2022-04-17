@@ -17,7 +17,6 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.MiscellaneousForm.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.PasswordsForm.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.ProcessManagerForm.resources
-D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteCamera.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteDesktopForm.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Properties.Resources.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn.csproj.GenerateResource.cache
@@ -53,3 +52,6 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn.csproj.CopyComplete
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn (x64).exe
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.AutofillForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.KeywordsForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteAudioForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteCameraForm.resources

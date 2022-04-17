@@ -65,6 +65,9 @@ namespace Plugin
                     shortCutFileManagersPacket.path = newPath;
                     ClientSender(loadingAPI.host, loadingAPI.key, shortCutFileManagersPacket);
                     break;
+
+                default:
+                    return;
             }
             Miscellaneous.CleanMemory();
         }

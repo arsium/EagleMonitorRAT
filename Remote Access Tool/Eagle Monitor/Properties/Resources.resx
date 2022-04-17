@@ -151,8 +151,8 @@
   <data name="button-info@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-info@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button-on-off-2@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button-on-off-2@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fill-auto@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fill-auto@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="using-namespace@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\using-namespace@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,11 +223,17 @@
   <data name="imageres_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_15.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="control@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="processes@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\processes@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eagle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eagle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button-on-off-2@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button-on-off-2@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="github@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\github@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +253,8 @@
   <data name="process@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\process@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="key@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trash@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,11 +271,8 @@
   <data name="btn-grey-play-pause@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn-grey-play-pause@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="control@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\control@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_110.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,6 +307,9 @@
   <data name="button-add@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-add@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="microphone_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microphone_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bug@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bug@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,7 +325,7 @@
   <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fill-auto@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fill-auto@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="control-text-box_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control-text-box_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

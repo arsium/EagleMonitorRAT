@@ -65,11 +65,7 @@ namespace EagleMonitor.PacketParser
 
                         clientHandler.fileManagerForm.loadingCircle1.Visible = false;
                         clientHandler.fileManagerForm.loadingCircle1.Active = false;
-
-                        shortCutFileManagersPacket = null;
                     }));
-
-                    return;
                 }
                 catch { }
             }).Start();

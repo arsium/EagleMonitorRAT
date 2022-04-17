@@ -17,12 +17,12 @@ namespace EagleMonitor.Forms
     public partial class MemoryExecutionForm : FormPattern
     {
         internal ClientHandler clientHandler { get; set; }
+
         internal MemoryExecutionForm(ClientHandler clientHandler)
         {
             this.clientHandler = clientHandler;
             InitializeComponent();
         }
-
 
         private enum PayloadType : ushort 
         {

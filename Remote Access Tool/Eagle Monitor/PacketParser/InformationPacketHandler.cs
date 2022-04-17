@@ -70,10 +70,7 @@ namespace EagleMonitor.PacketParser
 
                         clientHandler.informationForm.loadingCircle1.Visible = false;
                         clientHandler.informationForm.loadingCircle1.Active = false;
-
-                        informationPacket = null;
                     }));
-                    return;
                 }
                 catch { }
             }).Start();

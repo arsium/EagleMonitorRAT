@@ -49,7 +49,7 @@
             // 
             this.loadingCircle1.Active = true;
             this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.White;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.loadingCircle1.InnerCircleRadius = 5;
             this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
             this.loadingCircle1.Name = "loadingCircle1";
@@ -66,7 +66,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(38, 0);
+            this.label1.Location = new System.Drawing.Point(41, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 32);
             this.label1.TabIndex = 8;

