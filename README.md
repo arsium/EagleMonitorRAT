@@ -93,6 +93,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * dnlib 
 * Newtonsoft.Json
 * BouncyCastle
+* NAudio
 
 ## Notes
 
@@ -109,6 +110,8 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Packets compressed with QuickLZ (http://www.quicklz.com/download.html)
 * Automation tasks saved with binary format
 * Settings saved with JSON format
+* Server .NET 4.8
+* Client .NET 4.5
 
 ## DLLs
 
