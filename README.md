@@ -47,9 +47,11 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Passwords recovery (automatically saved)
 * History recovery (automatically saved)
 * Autofill recovery (automatically saved)
+* Keywords recovery (automatically saved)
 * Blur screenlocker
 * Remote camera viewer (+ save pictures)
 * Remote desktop viewer (+ save pictures)
+* Remote microphone (automatically saved)
 * Process manager 
 * Kill process (native techniques)
 * Suspend process
