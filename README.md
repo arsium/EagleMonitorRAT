@@ -136,6 +136,7 @@ Client.EntryClass.Main()
 ## Known bugs
 
 * Self destruct method (currently disabled)
+* Bug with CPU information in x64 client
 
 ## Interface 
 
