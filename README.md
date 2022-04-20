@@ -81,6 +81,8 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Delete file
 * Download file
 * Rename file
+* Upload file
+* Get information (CPU, hardware, system)
 * Shortcuts (download, desktop and documents paths)
 * Logs ((automatically saved))
 * Mass Tasks
