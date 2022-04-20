@@ -1,4 +1,5 @@
 ﻿using EagleMonitor.Config;
+using PacketLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace EagleMonitor.Utils
     {
         internal static string GPath = Application.StartupPath;
         internal static Settings settings;
+
         static Miscellaneous()
         {
             settings = new Settings();

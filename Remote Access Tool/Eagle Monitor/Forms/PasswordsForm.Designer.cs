@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordsForm));
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
             this.label1 = new System.Windows.Forms.Label();
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -41,9 +42,23 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2VScrollBar1.HoverState.Parent = null;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
+            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
+            this.guna2VScrollBar1.TabIndex = 37;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
             // loadingCircle1
             // 
@@ -64,14 +79,17 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(41, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.Size = new System.Drawing.Size(644, 32);
             this.label1.TabIndex = 8;
             this.label1.Text = "Eagle Monitor RAT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // closeButton
             // 
@@ -201,21 +219,6 @@
             this.Column4.HeaderText = "Application";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
-            this.guna2VScrollBar1.TabIndex = 37;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
             // PasswordsForm
             // 

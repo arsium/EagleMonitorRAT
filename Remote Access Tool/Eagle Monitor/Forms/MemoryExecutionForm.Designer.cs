@@ -31,9 +31,8 @@ namespace EagleMonitor.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemoryExecutionForm));
-            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,65 +40,34 @@ namespace EagleMonitor.Forms
             this.addPayloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendPayloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.memExecContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // closeButton
+            // imageList1
             // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(642, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.TabIndex = 40;
-            this.closeButton.Text = "╳";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "executable@2x.png");
+            this.imageList1.Images.SetKeyName(1, "file-dll@2x.png");
+            this.imageList1.Images.SetKeyName(2, "file-binary@2x.png");
             // 
-            // maximizeButton
+            // label2
             // 
-            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(604, 0);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
-            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.maximizeButton.TabIndex = 39;
-            this.maximizeButton.Text = "🗖";
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(566, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.minimizeButton.TabIndex = 38;
-            this.minimizeButton.Text = "🗕";
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(557, 32);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Eagle Monitor RAT";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // listView1
             // 
@@ -164,14 +132,6 @@ namespace EagleMonitor.Forms
             this.removeFromListToolStripMenuItem.Text = "Remove From List";
             this.removeFromListToolStripMenuItem.Click += new System.EventHandler(this.removeFromListToolStripMenuItem_Click);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "executable@2x.png");
-            this.imageList1.Images.SetKeyName(1, "file-dll@2x.png");
-            this.imageList1.Images.SetKeyName(2, "file-binary@2x.png");
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -184,16 +144,59 @@ namespace EagleMonitor.Forms
             this.label1.Text = "Note: Drag and drop payload";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // closeButton
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 32);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Eagle Monitor RAT";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.Animated = true;
+            this.closeButton.CheckedState.Parent = this.closeButton;
+            this.closeButton.CustomImages.Parent = this.closeButton;
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.HoverState.Parent = this.closeButton;
+            this.closeButton.Location = new System.Drawing.Point(642, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.ShadowDecoration.Enabled = true;
+            this.closeButton.ShadowDecoration.Parent = this.closeButton;
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 40;
+            this.closeButton.Text = "╳";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton.Animated = true;
+            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
+            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
+            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maximizeButton.ForeColor = System.Drawing.Color.White;
+            this.maximizeButton.HoverState.Parent = this.maximizeButton;
+            this.maximizeButton.Location = new System.Drawing.Point(604, 0);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.ShadowDecoration.Enabled = true;
+            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
+            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
+            this.maximizeButton.TabIndex = 39;
+            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.Animated = true;
+            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
+            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.HoverState.Parent = this.minimizeButton;
+            this.minimizeButton.Location = new System.Drawing.Point(566, 0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.ShadowDecoration.Enabled = true;
+            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
+            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
+            this.minimizeButton.TabIndex = 38;
+            this.minimizeButton.Text = "🗕";
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // MemoryExecutionForm
             // 

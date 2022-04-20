@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\CPU\bin\Release\CPU64.dll</FullPath>
+      <FullPath>D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\CPU64.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

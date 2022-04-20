@@ -201,14 +201,17 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(41, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 32);
+            this.label2.Size = new System.Drawing.Size(247, 32);
             this.label2.TabIndex = 48;
             this.label2.Text = "Eagle Monitor RAT";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // label4
             // 

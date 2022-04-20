@@ -18,3 +18,4 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVBDll\obj\Release\ClientVBDll.vbproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVBDll\obj\Release\ClientVBDll.dll
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Stubs\ClientVBDll.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\ClientVBDll\obj\Release\ClientVBDll.vbproj.CopyComplete

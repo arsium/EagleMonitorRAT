@@ -593,7 +593,7 @@ namespace EagleMonitor
                 finally 
                 {
                     ClientHandler.ClientHandlersList[IP].remoteCameraForm.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].fullName;
-                    ClientHandler.ClientHandlersList[IP].remoteDesktopForm.label3.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].remoteCameraForm.label3.Text = "Remote Webcam: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
@@ -749,6 +749,12 @@ namespace EagleMonitor
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
         }
     }
 }

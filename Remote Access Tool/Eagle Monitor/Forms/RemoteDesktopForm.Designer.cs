@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoteDesktopForm));
-            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
             this.viewerPictureBox = new System.Windows.Forms.PictureBox();
             this.settingsContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.hidePanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCurrentPcitureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mouseGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.panel2 = new System.Windows.Forms.Panel();
             this.intervalGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,66 +45,46 @@
             this.formatGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.captureGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
-            this.label3 = new System.Windows.Forms.Label();
+            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.keyboardGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.viewerPictureBox)).BeginInit();
             this.settingsContextMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // closeButton
+            // label3
             // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(652, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.TabIndex = 40;
-            this.closeButton.Text = "╳";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(41, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(736, 32);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Eagle Monitor RAT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
             // 
-            // maximizeButton
+            // loadingCircle1
             // 
-            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(614, 0);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
-            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.maximizeButton.TabIndex = 39;
-            this.maximizeButton.Text = "🗖";
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(576, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.minimizeButton.TabIndex = 38;
-            this.minimizeButton.Text = "🗕";
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.loadingCircle1.Active = false;
+            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.loadingCircle1.InnerCircleRadius = 5;
+            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
+            this.loadingCircle1.Name = "loadingCircle1";
+            this.loadingCircle1.NumberSpoke = 12;
+            this.loadingCircle1.OuterCircleRadius = 11;
+            this.loadingCircle1.RotationSpeed = 100;
+            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
+            this.loadingCircle1.SpokeThickness = 2;
+            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
+            this.loadingCircle1.TabIndex = 45;
+            this.loadingCircle1.Text = "loadingCircle1";
+            this.loadingCircle1.Visible = false;
             // 
             // viewerPictureBox
             // 
@@ -112,11 +92,14 @@
             this.viewerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewerPictureBox.Location = new System.Drawing.Point(3, 85);
             this.viewerPictureBox.Name = "viewerPictureBox";
-            this.viewerPictureBox.Size = new System.Drawing.Size(681, 276);
+            this.viewerPictureBox.Size = new System.Drawing.Size(888, 276);
             this.viewerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.viewerPictureBox.TabIndex = 41;
             this.viewerPictureBox.TabStop = false;
             this.viewerPictureBox.SizeChanged += new System.EventHandler(this.viewerPictureBox_SizeChanged);
+            this.viewerPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.viewerPictureBox_MouseDown);
+            this.viewerPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.viewerPictureBox_MouseMove);
+            this.viewerPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.viewerPictureBox_MouseUp);
             // 
             // settingsContextMenuStrip
             // 
@@ -161,6 +144,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.keyboardGuna2ToggleSwitch);
+            this.panel1.Controls.Add(this.mouseGuna2ToggleSwitch);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.intervalGuna2TextBox);
             this.panel1.Controls.Add(this.label2);
@@ -171,8 +156,27 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 53);
+            this.panel1.Size = new System.Drawing.Size(888, 53);
             this.panel1.TabIndex = 44;
+            // 
+            // mouseGuna2ToggleSwitch
+            // 
+            this.mouseGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.mouseGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.mouseGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.CheckedState.Parent = this.mouseGuna2ToggleSwitch;
+            this.mouseGuna2ToggleSwitch.Location = new System.Drawing.Point(636, 18);
+            this.mouseGuna2ToggleSwitch.Name = "mouseGuna2ToggleSwitch";
+            this.mouseGuna2ToggleSwitch.ShadowDecoration.Parent = this.mouseGuna2ToggleSwitch;
+            this.mouseGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
+            this.mouseGuna2ToggleSwitch.TabIndex = 52;
+            this.mouseGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.mouseGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.mouseGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.mouseGuna2ToggleSwitch.UncheckedState.Parent = this.mouseGuna2ToggleSwitch;
+            this.mouseGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.mouseGuna2ToggleSwitch_CheckedChanged);
             // 
             // panel2
             // 
@@ -180,7 +184,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 5);
+            this.panel2.Size = new System.Drawing.Size(888, 5);
             this.panel2.TabIndex = 51;
             // 
             // intervalGuna2TextBox
@@ -293,41 +297,85 @@
             this.captureGuna2ToggleSwitch.UncheckedState.Parent = this.captureGuna2ToggleSwitch;
             this.captureGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.captureGuna2ToggleSwitch_CheckedChanged);
             // 
-            // loadingCircle1
+            // closeButton
             // 
-            this.loadingCircle1.Active = false;
-            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.loadingCircle1.InnerCircleRadius = 5;
-            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
-            this.loadingCircle1.Name = "loadingCircle1";
-            this.loadingCircle1.NumberSpoke = 12;
-            this.loadingCircle1.OuterCircleRadius = 11;
-            this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
-            this.loadingCircle1.SpokeThickness = 2;
-            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
-            this.loadingCircle1.TabIndex = 45;
-            this.loadingCircle1.Text = "loadingCircle1";
-            this.loadingCircle1.Visible = false;
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.Animated = true;
+            this.closeButton.CheckedState.Parent = this.closeButton;
+            this.closeButton.CustomImages.Parent = this.closeButton;
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.HoverState.Parent = this.closeButton;
+            this.closeButton.Location = new System.Drawing.Point(859, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.ShadowDecoration.Enabled = true;
+            this.closeButton.ShadowDecoration.Parent = this.closeButton;
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 40;
+            this.closeButton.Text = "╳";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // label3
+            // maximizeButton
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(41, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 32);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Eagle Monitor RAT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton.Animated = true;
+            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
+            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
+            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maximizeButton.ForeColor = System.Drawing.Color.White;
+            this.maximizeButton.HoverState.Parent = this.maximizeButton;
+            this.maximizeButton.Location = new System.Drawing.Point(821, 0);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.ShadowDecoration.Enabled = true;
+            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
+            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
+            this.maximizeButton.TabIndex = 39;
+            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.Animated = true;
+            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
+            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.HoverState.Parent = this.minimizeButton;
+            this.minimizeButton.Location = new System.Drawing.Point(783, 0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.ShadowDecoration.Enabled = true;
+            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
+            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
+            this.minimizeButton.TabIndex = 38;
+            this.minimizeButton.Text = "🗕";
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            // 
+            // keyboardGuna2ToggleSwitch
+            // 
+            this.keyboardGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.keyboardGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.keyboardGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.CheckedState.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.Location = new System.Drawing.Point(688, 18);
+            this.keyboardGuna2ToggleSwitch.Name = "keyboardGuna2ToggleSwitch";
+            this.keyboardGuna2ToggleSwitch.ShadowDecoration.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
+            this.keyboardGuna2ToggleSwitch.TabIndex = 53;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.keyboardGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.keyboardGuna2ToggleSwitch_CheckedChanged);
             // 
             // RemoteDesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(687, 364);
+            this.ClientSize = new System.Drawing.Size(894, 364);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loadingCircle1);
             this.Controls.Add(this.viewerPictureBox);
@@ -368,5 +416,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveCurrentPcitureToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch mouseGuna2ToggleSwitch;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch keyboardGuna2ToggleSwitch;
     }
 }

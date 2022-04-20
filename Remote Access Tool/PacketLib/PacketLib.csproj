@@ -58,6 +58,7 @@
     <Compile Include="Packet\RenameFilePacket.cs" />
     <Compile Include="Packet\ShortCutFileManagersPacket.cs" />
     <Compile Include="Packet\UninstallPacket.cs" />
+    <Compile Include="Packet\UploadFilePacket.cs" />
     <Compile Include="Packet\WallPaperPacket.cs" />
     <Compile Include="Packet\ClosePacket.cs" />
     <Compile Include="Packet\ConnectedPacket.cs" />

@@ -41,6 +41,7 @@
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.launchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shortCutsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderShortCutContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.downloadShortCutStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,10 +133,11 @@
             this.downloadToolStripMenuItem,
             this.renameToolStripMenuItem,
             this.deleteToolStripMenuItem,
-            this.launchToolStripMenuItem});
+            this.launchToolStripMenuItem,
+            this.uploadToolStripMenuItem});
             this.filesContextMenuStrip.Name = "fileContextMenuStrip";
             this.filesContextMenuStrip.OwnerItem = this.filesToolStripMenuItem;
-            this.filesContextMenuStrip.Size = new System.Drawing.Size(141, 140);
+            this.filesContextMenuStrip.Size = new System.Drawing.Size(141, 174);
             // 
             // downloadToolStripMenuItem
             // 
@@ -176,6 +178,16 @@
             this.launchToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
             this.launchToolStripMenuItem.Text = "Launch";
             this.launchToolStripMenuItem.Click += new System.EventHandler(this.launchToolStripMenuItem_Click);
+            // 
+            // uploadToolStripMenuItem
+            // 
+            this.uploadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.uploadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.uploadToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.upload_large_2x;
+            this.uploadToolStripMenuItem.Name = "uploadToolStripMenuItem";
+            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
+            this.uploadToolStripMenuItem.Text = "Upload";
+            this.uploadToolStripMenuItem.Click += new System.EventHandler(this.uploadToolStripMenuItem_Click);
             // 
             // shortCutsToolStripMenuItem
             // 
@@ -367,14 +379,17 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(41, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.Size = new System.Drawing.Size(868, 32);
             this.label1.TabIndex = 36;
             this.label1.Text = "Eagle Monitor RAT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // FileManagerForm
             // 
@@ -434,5 +449,6 @@
         private System.Windows.Forms.ToolStripMenuItem documentsShortCutStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userProfileToolStripMenuItem;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem uploadToolStripMenuItem;
     }
 }

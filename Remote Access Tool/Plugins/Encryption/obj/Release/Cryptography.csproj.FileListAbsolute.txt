@@ -8,3 +8,4 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Release\Cryptography.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Release\Cryptography.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Release\Cryptography.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Encryption\obj\Release\Cryptography.csproj.CopyComplete

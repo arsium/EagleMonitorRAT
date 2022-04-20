@@ -776,6 +776,7 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Eagle Monitor RAT Reborn Rev3";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // pictureBox1
             // 

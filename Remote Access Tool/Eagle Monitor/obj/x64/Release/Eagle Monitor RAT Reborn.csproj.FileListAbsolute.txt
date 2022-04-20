@@ -43,7 +43,6 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.MiscellaneousForm.resources
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.PasswordsForm.resources
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.ProcessManagerForm.resources
-E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteCamera.resources
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteDesktopForm.resources
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Properties.Resources.resources
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\Eagle Monitor RAT Reborn.csproj.GenerateResource.cache
@@ -55,3 +54,7 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.KeywordsForm.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteAudioForm.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteCameraForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.KeywordsForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.AutofillForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteAudioForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\x64\Release\EagleMonitor.Forms.RemoteCameraForm.resources

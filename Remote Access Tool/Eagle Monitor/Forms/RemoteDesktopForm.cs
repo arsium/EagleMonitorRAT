@@ -20,7 +20,8 @@ namespace EagleMonitor.Forms
         public bool hasAlreadyConnected { get; set; }
         private string baseIp { get; set; }
         private int currentPanelHeight { get; set; }
-
+        internal bool enabledMouse { get; set; }
+        internal bool enableKeyboard { get; set; }
         internal RemoteDesktopForm(string baseIp)
         {
             this.baseIp = baseIp;
@@ -56,6 +57,22 @@ namespace EagleMonitor.Forms
                 remoteViewerPacket.baseIp = this.baseIp;
                 this.clientHandler.SendPacket(remoteViewerPacket);
             }
+        }
+
+        private void mouseGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (mouseGuna2ToggleSwitch.Checked)
+                this.enabledMouse = true;
+            else
+                this.enabledMouse = false;
+        }
+
+        private void keyboardGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (keyboardGuna2ToggleSwitch.Checked)
+                this.enableKeyboard = true;
+            else
+                this.enableKeyboard = false;
         }
 
         private void qualityGuna2TrackBar_ValueChanged(object sender, EventArgs e)
@@ -135,6 +152,23 @@ namespace EagleMonitor.Forms
             }
         }
 
+
+        private void viewerPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void viewerPictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void viewerPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+
         private void hidePanelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Thread(() =>
@@ -196,6 +230,12 @@ namespace EagleMonitor.Forms
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
         }
     }
 }

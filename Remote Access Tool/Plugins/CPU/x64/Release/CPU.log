@@ -1,8 +1,6 @@
-﻿  pch.cpp
-  dllmain.cpp
-     Création de la bibliothèque bin\Release\CPU64.lib et de l'objet bin\Release\CPU64.exp
+﻿     Création de la bibliothèque ..\..\bin\Release\Plugins\CPU64.lib et de l'objet ..\..\bin\Release\Plugins\CPU64.exp
   Génération de code en cours
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
   All 303 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
-  CPU.vcxproj -> D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\CPU\bin\Release\CPU64.dll
+  CPU.vcxproj -> D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\CPU64.dll

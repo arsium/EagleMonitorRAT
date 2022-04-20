@@ -23,6 +23,7 @@ namespace PacketLib.Packet
         FM_START_FILE =                 9,
         FM_RENAME_FILE =                46,
         FM_SHORTCUT_PATH  =             51,
+        FM_UPLOAD_FILE =                58,
 
         PM_GET_PROCESSES =              10,
         PM_KILL_PROCESS =               11,

@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoteCameraForm));
-            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.cameraViewerPictureBox = new System.Windows.Forms.PictureBox();
+            this.settingsContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
+            this.hidePanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCurrentPcitureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.qualityGuna2TrackBar = new Guna.UI2.WinForms.Guna2TrackBar();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,71 +44,97 @@
             this.camerasGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.captureGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.cameraViewerPictureBox = new System.Windows.Forms.PictureBox();
-            this.settingsContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
-            this.hidePanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCurrentPcitureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.cameraViewerPictureBox)).BeginInit();
             this.settingsContextMenuStrip.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // closeButton
+            // label3
             // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(765, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.TabIndex = 43;
-            this.closeButton.Text = "╳";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(41, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(642, 32);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Eagle Monitor RAT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
             // 
-            // maximizeButton
+            // loadingCircle1
             // 
-            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(727, 0);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
-            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.maximizeButton.TabIndex = 42;
-            this.maximizeButton.Text = "🗖";
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            this.loadingCircle1.Active = false;
+            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.loadingCircle1.InnerCircleRadius = 5;
+            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
+            this.loadingCircle1.Name = "loadingCircle1";
+            this.loadingCircle1.NumberSpoke = 12;
+            this.loadingCircle1.OuterCircleRadius = 11;
+            this.loadingCircle1.RotationSpeed = 100;
+            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
+            this.loadingCircle1.SpokeThickness = 2;
+            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
+            this.loadingCircle1.TabIndex = 47;
+            this.loadingCircle1.Text = "loadingCircle1";
+            this.loadingCircle1.Visible = false;
             // 
-            // minimizeButton
+            // cameraViewerPictureBox
             // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(689, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.minimizeButton.TabIndex = 41;
-            this.minimizeButton.Text = "🗕";
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.cameraViewerPictureBox.ContextMenuStrip = this.settingsContextMenuStrip;
+            this.cameraViewerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cameraViewerPictureBox.Location = new System.Drawing.Point(3, 85);
+            this.cameraViewerPictureBox.Name = "cameraViewerPictureBox";
+            this.cameraViewerPictureBox.Size = new System.Drawing.Size(794, 362);
+            this.cameraViewerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cameraViewerPictureBox.TabIndex = 46;
+            this.cameraViewerPictureBox.TabStop = false;
+            // 
+            // settingsContextMenuStrip
+            // 
+            this.settingsContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.settingsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.settingsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hidePanelToolStripMenuItem,
+            this.showPanelToolStripMenuItem,
+            this.saveCurrentPcitureToolStripMenuItem});
+            this.settingsContextMenuStrip.Name = "customContextMenuStrip1";
+            this.settingsContextMenuStrip.Size = new System.Drawing.Size(189, 106);
+            // 
+            // hidePanelToolStripMenuItem
+            // 
+            this.hidePanelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.hidePanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.hidePanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_hide_large_2x;
+            this.hidePanelToolStripMenuItem.Name = "hidePanelToolStripMenuItem";
+            this.hidePanelToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.hidePanelToolStripMenuItem.Text = "Hide Settings";
+            this.hidePanelToolStripMenuItem.Click += new System.EventHandler(this.hidePanelToolStripMenuItem_Click);
+            // 
+            // showPanelToolStripMenuItem
+            // 
+            this.showPanelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.showPanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.showPanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_large_2x;
+            this.showPanelToolStripMenuItem.Name = "showPanelToolStripMenuItem";
+            this.showPanelToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.showPanelToolStripMenuItem.Text = "Show Settings";
+            this.showPanelToolStripMenuItem.Click += new System.EventHandler(this.showPanelToolStripMenuItem_Click);
+            // 
+            // saveCurrentPcitureToolStripMenuItem
+            // 
+            this.saveCurrentPcitureToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.saveCurrentPcitureToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.saveCurrentPcitureToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_picture_large_2x;
+            this.saveCurrentPcitureToolStripMenuItem.Name = "saveCurrentPcitureToolStripMenuItem";
+            this.saveCurrentPcitureToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.saveCurrentPcitureToolStripMenuItem.Text = "Save current picture";
+            this.saveCurrentPcitureToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentPcitureToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -234,86 +264,59 @@
             this.captureGuna2ToggleSwitch.UncheckedState.Parent = this.captureGuna2ToggleSwitch;
             this.captureGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.captureGuna2ToggleSwitch_CheckedChanged);
             // 
-            // cameraViewerPictureBox
+            // closeButton
             // 
-            this.cameraViewerPictureBox.ContextMenuStrip = this.settingsContextMenuStrip;
-            this.cameraViewerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cameraViewerPictureBox.Location = new System.Drawing.Point(3, 85);
-            this.cameraViewerPictureBox.Name = "cameraViewerPictureBox";
-            this.cameraViewerPictureBox.Size = new System.Drawing.Size(794, 362);
-            this.cameraViewerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cameraViewerPictureBox.TabIndex = 46;
-            this.cameraViewerPictureBox.TabStop = false;
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.Animated = true;
+            this.closeButton.CheckedState.Parent = this.closeButton;
+            this.closeButton.CustomImages.Parent = this.closeButton;
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.HoverState.Parent = this.closeButton;
+            this.closeButton.Location = new System.Drawing.Point(765, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.ShadowDecoration.Enabled = true;
+            this.closeButton.ShadowDecoration.Parent = this.closeButton;
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 43;
+            this.closeButton.Text = "╳";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // settingsContextMenuStrip
+            // maximizeButton
             // 
-            this.settingsContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.settingsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
-            this.settingsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hidePanelToolStripMenuItem,
-            this.showPanelToolStripMenuItem,
-            this.saveCurrentPcitureToolStripMenuItem});
-            this.settingsContextMenuStrip.Name = "customContextMenuStrip1";
-            this.settingsContextMenuStrip.Size = new System.Drawing.Size(189, 106);
+            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton.Animated = true;
+            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
+            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
+            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maximizeButton.ForeColor = System.Drawing.Color.White;
+            this.maximizeButton.HoverState.Parent = this.maximizeButton;
+            this.maximizeButton.Location = new System.Drawing.Point(727, 0);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.ShadowDecoration.Enabled = true;
+            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
+            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
+            this.maximizeButton.TabIndex = 42;
+            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
-            // hidePanelToolStripMenuItem
+            // minimizeButton
             // 
-            this.hidePanelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.hidePanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.hidePanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_hide_large_2x;
-            this.hidePanelToolStripMenuItem.Name = "hidePanelToolStripMenuItem";
-            this.hidePanelToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
-            this.hidePanelToolStripMenuItem.Text = "Hide Settings";
-            this.hidePanelToolStripMenuItem.Click += new System.EventHandler(this.hidePanelToolStripMenuItem_Click);
-            // 
-            // showPanelToolStripMenuItem
-            // 
-            this.showPanelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.showPanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.showPanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_large_2x;
-            this.showPanelToolStripMenuItem.Name = "showPanelToolStripMenuItem";
-            this.showPanelToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
-            this.showPanelToolStripMenuItem.Text = "Show Settings";
-            this.showPanelToolStripMenuItem.Click += new System.EventHandler(this.showPanelToolStripMenuItem_Click);
-            // 
-            // saveCurrentPcitureToolStripMenuItem
-            // 
-            this.saveCurrentPcitureToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.saveCurrentPcitureToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.saveCurrentPcitureToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_picture_large_2x;
-            this.saveCurrentPcitureToolStripMenuItem.Name = "saveCurrentPcitureToolStripMenuItem";
-            this.saveCurrentPcitureToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
-            this.saveCurrentPcitureToolStripMenuItem.Text = "Save current picture";
-            this.saveCurrentPcitureToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentPcitureToolStripMenuItem_Click);
-            // 
-            // loadingCircle1
-            // 
-            this.loadingCircle1.Active = false;
-            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.loadingCircle1.InnerCircleRadius = 5;
-            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
-            this.loadingCircle1.Name = "loadingCircle1";
-            this.loadingCircle1.NumberSpoke = 12;
-            this.loadingCircle1.OuterCircleRadius = 11;
-            this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
-            this.loadingCircle1.SpokeThickness = 2;
-            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
-            this.loadingCircle1.TabIndex = 47;
-            this.loadingCircle1.Text = "loadingCircle1";
-            this.loadingCircle1.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(41, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 32);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Eagle Monitor RAT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.Animated = true;
+            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
+            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.HoverState.Parent = this.minimizeButton;
+            this.minimizeButton.Location = new System.Drawing.Point(689, 0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.ShadowDecoration.Enabled = true;
+            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
+            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
+            this.minimizeButton.TabIndex = 41;
+            this.minimizeButton.Text = "🗕";
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // RemoteCameraForm
             // 
@@ -335,9 +338,9 @@
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.Text = "RemoteCamera";
             this.Shown += new System.EventHandler(this.RemoteCamera_Shown);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cameraViewerPictureBox)).EndInit();
             this.settingsContextMenuStrip.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

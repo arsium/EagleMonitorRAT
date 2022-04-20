@@ -417,6 +417,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\upload_large%402x.png" />
     <None Include="Resources\control-text-box_large%402x.png" />
     <None Include="Resources\microphone_large%402x.png" />
     <None Include="Resources\fill-auto%402x.png" />

@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shorcuts.cs" />
     <Compile Include="StartFile.cs" />
+    <Compile Include="UploadFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PacketLib\PacketLib.csproj">

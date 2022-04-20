@@ -97,5 +97,11 @@ namespace EagleMonitor.Forms
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
+        }
     }
 }

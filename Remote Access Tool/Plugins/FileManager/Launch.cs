@@ -66,6 +66,12 @@ namespace Plugin
                     ClientSender(loadingAPI.host, loadingAPI.key, shortCutFileManagersPacket);
                     break;
 
+                case PacketType.FM_UPLOAD_FILE:
+                    UploadFilePacket uploadFilePacketReceived = (UploadFilePacket)loadingAPI.currentPacket;
+                    UploadFilePacket uploadFilePacket = new UploadFilePacket(uploadFilePacketReceived.path, UploadFile.WriteUploadedFile(uploadFilePacketReceived.path, Compressor.QuickLZ.Decompress(uploadFilePacketReceived.file)), loadingAPI.baseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.host, loadingAPI.key, uploadFilePacket);
+                    break;
+
                 default:
                     return;
             }

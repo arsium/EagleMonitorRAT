@@ -1,4 +1,5 @@
 ﻿using EagleMonitor.PacketParser;
+using EagleMonitor.Utils;
 using PacketLib;
 using PacketLib.Packet;
 using System;
@@ -57,9 +58,9 @@ namespace EagleMonitor.Networking
 
                     case PacketType.FM_DELETE_FILE:
                         if (((DeleteFilePacket)packet).deleted == true)
-                            row.Cells["Column5"].Value = ((DeleteFilePacket)packet).path;
+                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " DELETED";
                         else
-                            row.Cells["Column5"].Value = ((DeleteFilePacket)packet).path + " NOT DELETED";
+                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " NOT DELETED";
                         break;
 
                     case PacketType.FM_START_FILE:
@@ -76,6 +77,13 @@ namespace EagleMonitor.Networking
 
                     case PacketType.FM_SHORTCUT_PATH:
                         row.Cells["Column5"].Value = ((ShortCutFileManagersPacket)packet).shortCuts;
+                        break;
+
+                    case PacketType.FM_UPLOAD_FILE:
+                        if (((UploadFilePacket)packet).uploaded == true)
+                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " UPLOADED";
+                        else
+                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " NOT UPLOADED";
                         break;
                 }
                 Program.logForm.dataGridView1.ClearSelection();

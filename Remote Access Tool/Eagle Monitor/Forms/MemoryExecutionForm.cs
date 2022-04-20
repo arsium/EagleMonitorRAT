@@ -204,5 +204,11 @@ namespace EagleMonitor.Forms
         {
 
         }
+
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
+        }
     }
 }

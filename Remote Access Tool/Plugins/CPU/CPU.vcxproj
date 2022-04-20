@@ -76,14 +76,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>bin\Release\</OutDir>
+    <OutDir>..\..\bin\Release\Plugins\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>bin\Release\</OutDir>
+    <OutDir>..\..\bin\Release\Plugins\</OutDir>
     <AssemblyName>CPU64</AssemblyName>
     <TargetName>$(ProjectName)64</TargetName>
   </PropertyGroup>

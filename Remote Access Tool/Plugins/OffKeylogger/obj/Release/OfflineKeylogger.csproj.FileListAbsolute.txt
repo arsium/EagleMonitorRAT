@@ -8,3 +8,7 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OffKeylogger.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\bin\Release\Costura.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\bin\Release\PacketLib.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\bin\Release\Costura.xml
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\OffKeylogger\obj\Release\OfflineKeylogger.csproj.CopyComplete

@@ -32,10 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationForm));
-            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,82 +48,62 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1TCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2TCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2VScrollBar3 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
+            this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.guna2GroupBox4.SuspendLayout();
+            this.guna2GroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // closeButton
+            // label5
             // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(1159, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.TabIndex = 40;
-            this.closeButton.Text = "╳";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(41, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(899, 32);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Eagle Monitor RAT";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label5_MouseDown);
             // 
-            // maximizeButton
+            // loadingCircle1
             // 
-            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(1121, 0);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
-            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.maximizeButton.TabIndex = 39;
-            this.maximizeButton.Text = "🗖";
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(1083, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.minimizeButton.TabIndex = 38;
-            this.minimizeButton.Text = "🗕";
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.loadingCircle1.Active = true;
+            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.loadingCircle1.InnerCircleRadius = 5;
+            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
+            this.loadingCircle1.Name = "loadingCircle1";
+            this.loadingCircle1.NumberSpoke = 12;
+            this.loadingCircle1.OuterCircleRadius = 11;
+            this.loadingCircle1.RotationSpeed = 100;
+            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
+            this.loadingCircle1.SpokeThickness = 2;
+            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
+            this.loadingCircle1.TabIndex = 42;
+            this.loadingCircle1.Text = "loadingCircle1";
             // 
             // guna2GroupBox1
             // 
@@ -136,11 +117,11 @@
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(6, 35);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(6, 45);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(424, 338);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(273, 387);
             this.guna2GroupBox1.TabIndex = 41;
             this.guna2GroupBox1.Text = "CPU";
             // 
@@ -150,12 +131,12 @@
             this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2VScrollBar2.HoverState.Parent = null;
             this.guna2VScrollBar2.LargeChange = 10;
-            this.guna2VScrollBar2.Location = new System.Drawing.Point(403, 91);
+            this.guna2VScrollBar2.Location = new System.Drawing.Point(252, 91);
             this.guna2VScrollBar2.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar2.Name = "guna2VScrollBar2";
             this.guna2VScrollBar2.PressedState.Parent = this.guna2VScrollBar2;
             this.guna2VScrollBar2.ScrollbarSize = 18;
-            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 244);
+            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 293);
             this.guna2VScrollBar2.TabIndex = 44;
             this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
@@ -196,7 +177,7 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 26;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(418, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(267, 293);
             this.dataGridView1.TabIndex = 43;
             this.dataGridView1.TabStop = false;
             // 
@@ -227,7 +208,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.panel1.Location = new System.Drawing.Point(3, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 49);
+            this.panel1.Size = new System.Drawing.Size(267, 49);
             this.panel1.TabIndex = 42;
             // 
             // panel2
@@ -236,7 +217,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 5);
+            this.panel2.Size = new System.Drawing.Size(267, 5);
             this.panel2.TabIndex = 52;
             // 
             // label4
@@ -279,43 +260,97 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "CPU Brand :";
             // 
-            // loadingCircle1
+            // closeButton
             // 
-            this.loadingCircle1.Active = true;
-            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.loadingCircle1.InnerCircleRadius = 5;
-            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
-            this.loadingCircle1.Name = "loadingCircle1";
-            this.loadingCircle1.NumberSpoke = 12;
-            this.loadingCircle1.OuterCircleRadius = 11;
-            this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
-            this.loadingCircle1.SpokeThickness = 2;
-            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
-            this.loadingCircle1.TabIndex = 42;
-            this.loadingCircle1.Text = "loadingCircle1";
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.Animated = true;
+            this.closeButton.CheckedState.Parent = this.closeButton;
+            this.closeButton.CustomImages.Parent = this.closeButton;
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.HoverState.Parent = this.closeButton;
+            this.closeButton.Location = new System.Drawing.Point(1022, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.ShadowDecoration.Enabled = true;
+            this.closeButton.ShadowDecoration.Parent = this.closeButton;
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 40;
+            this.closeButton.Text = "╳";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton.Animated = true;
+            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
+            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
+            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maximizeButton.ForeColor = System.Drawing.Color.White;
+            this.maximizeButton.HoverState.Parent = this.maximizeButton;
+            this.maximizeButton.Location = new System.Drawing.Point(984, 0);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.ShadowDecoration.Enabled = true;
+            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
+            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
+            this.maximizeButton.TabIndex = 39;
+            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.Animated = true;
+            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
+            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.HoverState.Parent = this.minimizeButton;
+            this.minimizeButton.Location = new System.Drawing.Point(946, 0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.ShadowDecoration.Enabled = true;
+            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
+            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
+            this.minimizeButton.TabIndex = 38;
+            this.minimizeButton.Text = "🗕";
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // guna2GroupBox2
             // 
-            this.guna2GroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2GroupBox2.Controls.Add(this.guna2VScrollBar1);
-            this.guna2GroupBox2.Controls.Add(this.dataGridView2);
-            this.guna2GroupBox2.Controls.Add(this.panel3);
+            this.guna2GroupBox2.Controls.Add(this.guna2GroupBox3);
+            this.guna2GroupBox2.Controls.Add(this.guna2GroupBox1);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(436, 35);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(6, 38);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(752, 338);
-            this.guna2GroupBox2.TabIndex = 44;
-            this.guna2GroupBox2.Text = "Network Connections (IPV4):";
+            this.guna2GroupBox2.Size = new System.Drawing.Size(633, 438);
+            this.guna2GroupBox2.TabIndex = 45;
+            this.guna2GroupBox2.Text = "Hardware";
+            // 
+            // guna2GroupBox3
+            // 
+            this.guna2GroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox3.Controls.Add(this.guna2VScrollBar1);
+            this.guna2GroupBox3.Controls.Add(this.dataGridView2);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2GroupBox3.Location = new System.Drawing.Point(285, 45);
+            this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
+            this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
+            this.guna2GroupBox3.Size = new System.Drawing.Size(342, 387);
+            this.guna2GroupBox3.TabIndex = 45;
+            this.guna2GroupBox3.Text = "Other";
             // 
             // guna2VScrollBar1
             // 
@@ -323,12 +358,12 @@
             this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2VScrollBar1.HoverState.Parent = null;
             this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(731, 58);
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(321, 42);
             this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
             this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
             this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 277);
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 342);
             this.guna2VScrollBar1.TabIndex = 44;
             this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
@@ -352,19 +387,13 @@
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeight = 30;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1TCP,
-            this.Column2TCP,
             this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
+            this.Column4});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.White;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 58);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 42);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
@@ -375,101 +404,147 @@
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowTemplate.Height = 26;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(746, 277);
+            this.dataGridView2.Size = new System.Drawing.Size(336, 342);
             this.dataGridView2.TabIndex = 43;
             this.dataGridView2.TabStop = false;
             // 
-            // Column1TCP
-            // 
-            this.Column1TCP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1TCP.FillWeight = 15F;
-            this.Column1TCP.HeaderText = "Process ID";
-            this.Column1TCP.Name = "Column1TCP";
-            this.Column1TCP.ReadOnly = true;
-            // 
-            // Column2TCP
-            // 
-            this.Column2TCP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2TCP.FillWeight = 15F;
-            this.Column2TCP.HeaderText = "Process Name";
-            this.Column2TCP.Name = "Column2TCP";
-            this.Column2TCP.ReadOnly = true;
-            // 
             // Column3
             // 
-            this.Column3.HeaderText = "Local Address";
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.FillWeight = 15F;
+            this.Column3.HeaderText = "Component";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Local Port";
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.FillWeight = 25F;
+            this.Column4.HeaderText = "Value";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // guna2GroupBox4
+            // 
+            this.guna2GroupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox4.Controls.Add(this.guna2GroupBox5);
+            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2GroupBox4.Location = new System.Drawing.Point(645, 38);
+            this.guna2GroupBox4.Name = "guna2GroupBox4";
+            this.guna2GroupBox4.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
+            this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
+            this.guna2GroupBox4.Size = new System.Drawing.Size(406, 438);
+            this.guna2GroupBox4.TabIndex = 46;
+            this.guna2GroupBox4.Text = "System";
+            // 
+            // guna2GroupBox5
+            // 
+            this.guna2GroupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox5.Controls.Add(this.guna2VScrollBar3);
+            this.guna2GroupBox5.Controls.Add(this.dataGridView3);
+            this.guna2GroupBox5.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.guna2GroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2GroupBox5.Location = new System.Drawing.Point(6, 45);
+            this.guna2GroupBox5.Name = "guna2GroupBox5";
+            this.guna2GroupBox5.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
+            this.guna2GroupBox5.ShadowDecoration.Parent = this.guna2GroupBox5;
+            this.guna2GroupBox5.Size = new System.Drawing.Size(394, 387);
+            this.guna2GroupBox5.TabIndex = 45;
+            this.guna2GroupBox5.Text = "System";
+            // 
+            // guna2VScrollBar3
+            // 
+            this.guna2VScrollBar3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2VScrollBar3.HoverState.Parent = null;
+            this.guna2VScrollBar3.LargeChange = 10;
+            this.guna2VScrollBar3.Location = new System.Drawing.Point(373, 42);
+            this.guna2VScrollBar3.MouseWheelBarPartitions = 10;
+            this.guna2VScrollBar3.Name = "guna2VScrollBar3";
+            this.guna2VScrollBar3.PressedState.Parent = this.guna2VScrollBar3;
+            this.guna2VScrollBar3.ScrollbarSize = 18;
+            this.guna2VScrollBar3.Size = new System.Drawing.Size(18, 342);
+            this.guna2VScrollBar3.TabIndex = 44;
+            this.guna2VScrollBar3.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView3.ColumnHeadersHeight = 30;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6});
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView3.EnableHeadersVisualStyles = false;
+            this.dataGridView3.GridColor = System.Drawing.Color.White;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView3.RowTemplate.Height = 26;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(388, 342);
+            this.dataGridView3.TabIndex = 43;
+            this.dataGridView3.TabStop = false;
+            // 
             // Column5
             // 
-            this.Column5.HeaderText = "Remote Address";
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.FillWeight = 15F;
+            this.Column5.HeaderText = "Information";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Remote Port";
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.FillWeight = 25F;
+            this.Column6.HeaderText = "Value";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Status";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Protocol";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 42);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(746, 16);
-            this.panel3.TabIndex = 42;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(746, 5);
-            this.panel4.TabIndex = 52;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(41, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(235, 32);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Eagle Monitor RAT";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1194, 380);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(1057, 482);
+            this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox2);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.loadingCircle1);
-            this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.maximizeButton);
             this.Controls.Add(this.minimizeButton);
@@ -486,8 +561,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2GroupBox2.ResumeLayout(false);
+            this.guna2GroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.guna2GroupBox4.ResumeLayout(false);
+            this.guna2GroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,20 +586,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         public MRG.Controls.UI.LoadingCircle loadingCircle1;
+        public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar2;
+        public System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
+        public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1TCP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2TCP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox5;
+        public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar3;
+        public System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar2;
-        public Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
-        public System.Windows.Forms.Label label5;
     }
 }

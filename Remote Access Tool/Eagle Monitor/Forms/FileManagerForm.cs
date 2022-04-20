@@ -206,6 +206,42 @@ namespace EagleMonitor.Forms
             };
             clientHandler.SendPacket(shortCutFileManagersPacket);
         }
+        private void uploadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fileListView.SelectedItems.Count == 0 || fileListView.SelectedItems[0].Tag.ToString() == "FILE")
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog())
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        string fileName = Miscellaneous.SplitPath(ofd.FileName);
+                        string path = labelPath.Text + fileName;
+                        UploadFilePacket uploadFilePacket = new UploadFilePacket(path, Compressor.QuickLZ.Compress(File.ReadAllBytes(ofd.FileName), 1))
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
+                        };
+                        clientHandler.SendPacket(uploadFilePacket);
+                    }
+                }
+            }
+            else if (fileListView.SelectedItems[0].Tag.ToString() == "FOLDER")
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog())
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        string fileName = Miscellaneous.SplitPath(ofd.FileName);
+                        string path = labelPath.Text + fileListView.SelectedItems[0].Text + "\\" + fileName;
+                        UploadFilePacket uploadFilePacket = new UploadFilePacket(path, Compressor.QuickLZ.Compress(File.ReadAllBytes(ofd.FileName), 1))
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
+                        };
+                        clientHandler.SendPacket(uploadFilePacket);
+                    }
+                }
+            }
+        }
+
         private void desktopShortCutStripMenuItem_Click(object sender, EventArgs e)
         {
             this.loadingCircle1.Visible = true;
@@ -259,6 +295,12 @@ namespace EagleMonitor.Forms
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
         }
     }
 }

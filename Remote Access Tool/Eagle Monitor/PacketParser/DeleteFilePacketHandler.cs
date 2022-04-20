@@ -22,7 +22,11 @@ namespace EagleMonitor.PacketParser
                     {
                         clientHandler.fileManagerForm.BeginInvoke((MethodInvoker)(() =>
                         {
-                            clientHandler.fileManagerForm.fileListView.Items[deleteFilePacket.name].Remove();
+                            try
+                            {
+                                clientHandler.fileManagerForm.fileListView.Items[deleteFilePacket.name].Remove();
+                            }
+                            catch { }
                         }));
                     }
                 }

@@ -34,6 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcessManagerForm));
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
+            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.processDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,16 +56,110 @@
             this.injectionCustomContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
             this.classicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.loadingCircle1 = new MRG.Controls.UI.LoadingCircle();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.processDataGridView)).BeginInit();
             this.processContextMenuStrip.SuspendLayout();
             this.injectionCustomContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(41, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(642, 32);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Eagle Monitor RAT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2VScrollBar1.HoverState.Parent = null;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
+            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
+            this.guna2VScrollBar1.TabIndex = 39;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            // 
+            // loadingCircle1
+            // 
+            this.loadingCircle1.Active = true;
+            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
+            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.loadingCircle1.InnerCircleRadius = 5;
+            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
+            this.loadingCircle1.Name = "loadingCircle1";
+            this.loadingCircle1.NumberSpoke = 12;
+            this.loadingCircle1.OuterCircleRadius = 11;
+            this.loadingCircle1.RotationSpeed = 100;
+            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
+            this.loadingCircle1.SpokeThickness = 2;
+            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
+            this.loadingCircle1.TabIndex = 38;
+            this.loadingCircle1.Text = "loadingCircle1";
+            // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.Animated = true;
+            this.closeButton.CheckedState.Parent = this.closeButton;
+            this.closeButton.CustomImages.Parent = this.closeButton;
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.HoverState.Parent = this.closeButton;
+            this.closeButton.Location = new System.Drawing.Point(765, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.ShadowDecoration.Enabled = true;
+            this.closeButton.ShadowDecoration.Parent = this.closeButton;
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 37;
+            this.closeButton.Text = "╳";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton.Animated = true;
+            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
+            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
+            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maximizeButton.ForeColor = System.Drawing.Color.White;
+            this.maximizeButton.HoverState.Parent = this.maximizeButton;
+            this.maximizeButton.Location = new System.Drawing.Point(727, 0);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.ShadowDecoration.Enabled = true;
+            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
+            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
+            this.maximizeButton.TabIndex = 36;
+            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.Animated = true;
+            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
+            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.HoverState.Parent = this.minimizeButton;
+            this.minimizeButton.Location = new System.Drawing.Point(689, 0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.ShadowDecoration.Enabled = true;
+            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
+            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
+            this.minimizeButton.TabIndex = 35;
+            this.minimizeButton.Text = "🗕";
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // processDataGridView
             // 
@@ -261,103 +361,6 @@
             this.mapViewToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
             this.mapViewToolStripMenuItem.Text = "Map View";
             this.mapViewToolStripMenuItem.Click += new System.EventHandler(this.mapViewToolStripMenuItem_Click);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(765, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.TabIndex = 37;
-            this.closeButton.Text = "╳";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // maximizeButton
-            // 
-            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(727, 0);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
-            this.maximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.maximizeButton.TabIndex = 36;
-            this.maximizeButton.Text = "🗖";
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(689, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.minimizeButton.TabIndex = 35;
-            this.minimizeButton.Text = "🗕";
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
-            // 
-            // loadingCircle1
-            // 
-            this.loadingCircle1.Active = true;
-            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.loadingCircle1.InnerCircleRadius = 5;
-            this.loadingCircle1.Location = new System.Drawing.Point(3, 0);
-            this.loadingCircle1.Name = "loadingCircle1";
-            this.loadingCircle1.NumberSpoke = 12;
-            this.loadingCircle1.OuterCircleRadius = 11;
-            this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(32, 32);
-            this.loadingCircle1.SpokeThickness = 2;
-            this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
-            this.loadingCircle1.TabIndex = 38;
-            this.loadingCircle1.Text = "loadingCircle1";
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
-            this.guna2VScrollBar1.TabIndex = 39;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 32);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Eagle Monitor RAT";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProcessManagerForm
             // 

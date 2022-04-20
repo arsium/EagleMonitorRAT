@@ -8,3 +8,4 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CopyComplete
