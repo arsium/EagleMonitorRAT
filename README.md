@@ -143,6 +143,7 @@ Client.EntryClass.Main()
 ## Known bugs
 
 * Self destruct method (currently disabled)
+* Bugs with big files (file manager -> download)
 
 ## Interface 
 
