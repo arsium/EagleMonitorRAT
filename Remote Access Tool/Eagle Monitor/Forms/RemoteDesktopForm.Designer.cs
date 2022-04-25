@@ -37,6 +37,10 @@
             this.showPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCurrentPcitureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.keyboardGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.mouseGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.panel2 = new System.Windows.Forms.Panel();
             this.intervalGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +52,6 @@
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.keyboardGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.viewerPictureBox)).BeginInit();
             this.settingsContextMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,7 +65,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(41, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(736, 32);
+            this.label3.Size = new System.Drawing.Size(399, 32);
             this.label3.TabIndex = 46;
             this.label3.Text = "Eagle Monitor RAT";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,11 +91,10 @@
             // 
             // viewerPictureBox
             // 
-            this.viewerPictureBox.ContextMenuStrip = this.settingsContextMenuStrip;
             this.viewerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewerPictureBox.Location = new System.Drawing.Point(3, 85);
+            this.viewerPictureBox.Location = new System.Drawing.Point(3, 129);
             this.viewerPictureBox.Name = "viewerPictureBox";
-            this.viewerPictureBox.Size = new System.Drawing.Size(888, 276);
+            this.viewerPictureBox.Size = new System.Drawing.Size(551, 232);
             this.viewerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.viewerPictureBox.TabIndex = 41;
             this.viewerPictureBox.TabStop = false;
@@ -104,13 +106,13 @@
             // settingsContextMenuStrip
             // 
             this.settingsContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.settingsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.settingsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.settingsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hidePanelToolStripMenuItem,
             this.showPanelToolStripMenuItem,
             this.saveCurrentPcitureToolStripMenuItem});
             this.settingsContextMenuStrip.Name = "customContextMenuStrip1";
-            this.settingsContextMenuStrip.Size = new System.Drawing.Size(189, 106);
+            this.settingsContextMenuStrip.Size = new System.Drawing.Size(193, 118);
             // 
             // hidePanelToolStripMenuItem
             // 
@@ -118,7 +120,7 @@
             this.hidePanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.hidePanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_hide_large_2x;
             this.hidePanelToolStripMenuItem.Name = "hidePanelToolStripMenuItem";
-            this.hidePanelToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.hidePanelToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
             this.hidePanelToolStripMenuItem.Text = "Hide Settings";
             this.hidePanelToolStripMenuItem.Click += new System.EventHandler(this.hidePanelToolStripMenuItem_Click);
             // 
@@ -128,7 +130,7 @@
             this.showPanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.showPanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_large_2x;
             this.showPanelToolStripMenuItem.Name = "showPanelToolStripMenuItem";
-            this.showPanelToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.showPanelToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
             this.showPanelToolStripMenuItem.Text = "Show Settings";
             this.showPanelToolStripMenuItem.Click += new System.EventHandler(this.showPanelToolStripMenuItem_Click);
             // 
@@ -138,12 +140,16 @@
             this.saveCurrentPcitureToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.saveCurrentPcitureToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_picture_large_2x;
             this.saveCurrentPcitureToolStripMenuItem.Name = "saveCurrentPcitureToolStripMenuItem";
-            this.saveCurrentPcitureToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.saveCurrentPcitureToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
             this.saveCurrentPcitureToolStripMenuItem.Text = "Save current picture";
             this.saveCurrentPcitureToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentPcitureToolStripMenuItem_Click);
             // 
             // panel1
             // 
+            this.panel1.ContextMenuStrip = this.settingsContextMenuStrip;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.keyboardGuna2ToggleSwitch);
             this.panel1.Controls.Add(this.mouseGuna2ToggleSwitch);
             this.panel1.Controls.Add(this.panel2);
@@ -156,8 +162,54 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(888, 53);
+            this.panel1.Size = new System.Drawing.Size(551, 97);
             this.panel1.TabIndex = 44;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(249, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 36);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Quality:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(311, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 36);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Keyboard:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(203, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 36);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "Mouse:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // keyboardGuna2ToggleSwitch
+            // 
+            this.keyboardGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.keyboardGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.keyboardGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.CheckedState.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.Location = new System.Drawing.Point(376, 59);
+            this.keyboardGuna2ToggleSwitch.Name = "keyboardGuna2ToggleSwitch";
+            this.keyboardGuna2ToggleSwitch.ShadowDecoration.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
+            this.keyboardGuna2ToggleSwitch.TabIndex = 53;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.keyboardGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.keyboardGuna2ToggleSwitch.UncheckedState.Parent = this.keyboardGuna2ToggleSwitch;
+            this.keyboardGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.keyboardGuna2ToggleSwitch_CheckedChanged);
             // 
             // mouseGuna2ToggleSwitch
             // 
@@ -166,7 +218,7 @@
             this.mouseGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.mouseGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.mouseGuna2ToggleSwitch.CheckedState.Parent = this.mouseGuna2ToggleSwitch;
-            this.mouseGuna2ToggleSwitch.Location = new System.Drawing.Point(636, 18);
+            this.mouseGuna2ToggleSwitch.Location = new System.Drawing.Point(260, 59);
             this.mouseGuna2ToggleSwitch.Name = "mouseGuna2ToggleSwitch";
             this.mouseGuna2ToggleSwitch.ShadowDecoration.Parent = this.mouseGuna2ToggleSwitch;
             this.mouseGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
@@ -182,9 +234,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 48);
+            this.panel2.Location = new System.Drawing.Point(0, 92);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(888, 5);
+            this.panel2.Size = new System.Drawing.Size(551, 5);
             this.panel2.TabIndex = 51;
             // 
             // intervalGuna2TextBox
@@ -207,22 +259,22 @@
             this.intervalGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.intervalGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.intervalGuna2TextBox.HoverState.Parent = this.intervalGuna2TextBox;
-            this.intervalGuna2TextBox.Location = new System.Drawing.Point(430, 7);
+            this.intervalGuna2TextBox.Location = new System.Drawing.Point(62, 49);
             this.intervalGuna2TextBox.Name = "intervalGuna2TextBox";
             this.intervalGuna2TextBox.PasswordChar = '\0';
             this.intervalGuna2TextBox.PlaceholderText = "";
             this.intervalGuna2TextBox.SelectedText = "";
             this.intervalGuna2TextBox.SelectionStart = 2;
             this.intervalGuna2TextBox.ShadowDecoration.Parent = this.intervalGuna2TextBox;
-            this.intervalGuna2TextBox.Size = new System.Drawing.Size(200, 36);
+            this.intervalGuna2TextBox.Size = new System.Drawing.Size(135, 36);
             this.intervalGuna2TextBox.TabIndex = 50;
             this.intervalGuna2TextBox.TextChanged += new System.EventHandler(this.intervalGuna2TextBox_TextChanged);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(381, 7);
+            this.label2.Location = new System.Drawing.Point(3, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 34);
+            this.label2.Size = new System.Drawing.Size(59, 39);
             this.label2.TabIndex = 49;
             this.label2.Text = "Interval:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,9 +284,9 @@
             this.qualityGuna2TrackBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.qualityGuna2TrackBar.HoverState.Parent = this.qualityGuna2TrackBar;
             this.qualityGuna2TrackBar.IndicateFocus = false;
-            this.qualityGuna2TrackBar.Location = new System.Drawing.Point(249, 18);
+            this.qualityGuna2TrackBar.Location = new System.Drawing.Point(314, 16);
             this.qualityGuna2TrackBar.Name = "qualityGuna2TrackBar";
-            this.qualityGuna2TrackBar.Size = new System.Drawing.Size(115, 20);
+            this.qualityGuna2TrackBar.Size = new System.Drawing.Size(97, 20);
             this.qualityGuna2TrackBar.TabIndex = 47;
             this.qualityGuna2TrackBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.qualityGuna2TrackBar.ValueChanged += new System.EventHandler(this.qualityGuna2TrackBar_ValueChanged);
@@ -271,9 +323,9 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 34);
+            this.label1.Size = new System.Drawing.Size(59, 36);
             this.label1.TabIndex = 45;
             this.label1.Text = "Capture:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,7 +337,7 @@
             this.captureGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.captureGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.captureGuna2ToggleSwitch.CheckedState.Parent = this.captureGuna2ToggleSwitch;
-            this.captureGuna2ToggleSwitch.Location = new System.Drawing.Point(62, 18);
+            this.captureGuna2ToggleSwitch.Location = new System.Drawing.Point(62, 16);
             this.captureGuna2ToggleSwitch.Name = "captureGuna2ToggleSwitch";
             this.captureGuna2ToggleSwitch.ShadowDecoration.Parent = this.captureGuna2ToggleSwitch;
             this.captureGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
@@ -306,7 +358,7 @@
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(859, 0);
+            this.closeButton.Location = new System.Drawing.Point(522, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
@@ -324,7 +376,7 @@
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
             this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(821, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(484, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
             this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
@@ -342,7 +394,7 @@
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
             this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(783, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(446, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
             this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
@@ -351,31 +403,12 @@
             this.minimizeButton.Text = "🗕";
             this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
-            // keyboardGuna2ToggleSwitch
-            // 
-            this.keyboardGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyboardGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyboardGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.CheckedState.Parent = this.keyboardGuna2ToggleSwitch;
-            this.keyboardGuna2ToggleSwitch.Location = new System.Drawing.Point(688, 18);
-            this.keyboardGuna2ToggleSwitch.Name = "keyboardGuna2ToggleSwitch";
-            this.keyboardGuna2ToggleSwitch.ShadowDecoration.Parent = this.keyboardGuna2ToggleSwitch;
-            this.keyboardGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
-            this.keyboardGuna2ToggleSwitch.TabIndex = 53;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.keyboardGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.Parent = this.keyboardGuna2ToggleSwitch;
-            this.keyboardGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.keyboardGuna2ToggleSwitch_CheckedChanged);
-            // 
             // RemoteDesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(894, 364);
+            this.ClientSize = new System.Drawing.Size(557, 364);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loadingCircle1);
             this.Controls.Add(this.viewerPictureBox);
@@ -386,9 +419,12 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "RemoteDesktopForm";
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.Text = "RemoteDesktopForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemoteDesktopForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RemoteDesktopForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.viewerPictureBox)).EndInit();
             this.settingsContextMenuStrip.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -418,5 +454,8 @@
         public System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ToggleSwitch mouseGuna2ToggleSwitch;
         private Guna.UI2.WinForms.Guna2ToggleSwitch keyboardGuna2ToggleSwitch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

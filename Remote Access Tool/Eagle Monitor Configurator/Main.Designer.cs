@@ -43,6 +43,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.notificationSoundGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.flagsPackGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.portCustomContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -113,7 +115,7 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Padding = new System.Windows.Forms.Padding(2, 40, 2, 2);
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(790, 296);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(790, 277);
             this.guna2GroupBox1.TabIndex = 6;
             this.guna2GroupBox1.Text = "Ports";
             // 
@@ -129,7 +131,7 @@
             this.portListView.HideSelection = false;
             this.portListView.Location = new System.Drawing.Point(2, 40);
             this.portListView.Name = "portListView";
-            this.portListView.Size = new System.Drawing.Size(786, 254);
+            this.portListView.Size = new System.Drawing.Size(786, 235);
             this.portListView.TabIndex = 0;
             this.portListView.UseCompatibleStateImageBehavior = false;
             this.portListView.View = System.Windows.Forms.View.Tile;
@@ -237,7 +239,7 @@
             this.notificationSoundGuna2CheckBox.CheckedState.BorderThickness = 0;
             this.notificationSoundGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.notificationSoundGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.notificationSoundGuna2CheckBox.Location = new System.Drawing.Point(7, 334);
+            this.notificationSoundGuna2CheckBox.Location = new System.Drawing.Point(5, 325);
             this.notificationSoundGuna2CheckBox.Name = "notificationSoundGuna2CheckBox";
             this.notificationSoundGuna2CheckBox.Size = new System.Drawing.Size(124, 17);
             this.notificationSoundGuna2CheckBox.TabIndex = 1;
@@ -247,6 +249,45 @@
             this.notificationSoundGuna2CheckBox.UncheckedState.BorderThickness = 0;
             this.notificationSoundGuna2CheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             // 
+            // flagsPackGuna2ComboBox
+            // 
+            this.flagsPackGuna2ComboBox.Animated = true;
+            this.flagsPackGuna2ComboBox.AutoRoundedCorners = true;
+            this.flagsPackGuna2ComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.flagsPackGuna2ComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.flagsPackGuna2ComboBox.BorderRadius = 17;
+            this.flagsPackGuna2ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.flagsPackGuna2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.flagsPackGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.flagsPackGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.flagsPackGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.flagsPackGuna2ComboBox.FocusedState.Parent = this.flagsPackGuna2ComboBox;
+            this.flagsPackGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.flagsPackGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.flagsPackGuna2ComboBox.HoverState.Parent = this.flagsPackGuna2ComboBox;
+            this.flagsPackGuna2ComboBox.ItemHeight = 30;
+            this.flagsPackGuna2ComboBox.Items.AddRange(new object[] {
+            "FlagsBase",
+            "FlagsPack1",
+            "FlagsPack2",
+            "FlagsPack3"});
+            this.flagsPackGuna2ComboBox.ItemsAppearance.Parent = this.flagsPackGuna2ComboBox;
+            this.flagsPackGuna2ComboBox.Location = new System.Drawing.Point(224, 315);
+            this.flagsPackGuna2ComboBox.Name = "flagsPackGuna2ComboBox";
+            this.flagsPackGuna2ComboBox.ShadowDecoration.Parent = this.flagsPackGuna2ComboBox;
+            this.flagsPackGuna2ComboBox.Size = new System.Drawing.Size(275, 36);
+            this.flagsPackGuna2ComboBox.TabIndex = 47;
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.label1.Location = new System.Drawing.Point(135, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Flags Pack :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +295,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flagsPackGuna2ComboBox);
             this.Controls.Add(this.notificationSoundGuna2CheckBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.keyGuna2TextBox);
@@ -269,7 +312,7 @@
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(5, 32, 5, 5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configurator";
+            this.Text = "Eagle Monitor RAT Reborn Configurator";
             this.Load += new System.EventHandler(this.Main_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.portCustomContextMenuStrip.ResumeLayout(false);
@@ -293,6 +336,8 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2CheckBox notificationSoundGuna2CheckBox;
+        public Guna.UI2.WinForms.Guna2ComboBox flagsPackGuna2ComboBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

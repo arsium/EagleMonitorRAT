@@ -7,6 +7,7 @@
 
 namespace Plugin
 {
+    //TODO : get file size and read offset instead of reading whole file
     internal class DownloadFile
     {
         internal static byte[] ReadFile(string path)
@@ -16,7 +17,11 @@ namespace Plugin
             {
                 result = System.IO.File.ReadAllBytes(path);
             }
-            catch{}
+            catch(Exception ex)
+            {
+                //OUT-OF-MEMORY for big file
+                //MessageBox.Show(ex.ToString());
+            }
             return result;
         }
     }

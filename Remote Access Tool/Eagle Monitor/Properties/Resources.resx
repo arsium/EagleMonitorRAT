@@ -121,8 +121,14 @@
   <data name="imageres_78" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_78.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="action-repeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\action-repeat.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="select-picture@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\select-picture@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upload_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upload_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="key-card@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key-card@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,8 +139,14 @@
   <data name="button-help@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-help@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imageres_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="computer-network-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-network-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash-full@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-full@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button-on-off@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-on-off@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +163,8 @@
   <data name="button-info@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-info@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button-on-off-2@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button-on-off-2@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fill-auto@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fill-auto@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="using-namespace@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\using-namespace@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +181,11 @@
   <data name="event@1.5x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\event@1.5x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trash-full@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash-full@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dmdskres_373" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dmdskres_373.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imageres_99" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_99.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder-user@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-user@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +214,9 @@
   <data name="window-picture_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\window-picture_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="big-data-people@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\big-data-people@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="file-binary@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-binary@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,11 +241,17 @@
   <data name="imageres_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_15.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="control@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="processes@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\processes@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eagle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eagle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button-on-off-2@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button-on-off-2@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="github@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\github@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,11 +259,14 @@
   <data name="internet-browser-chrome@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\internet-browser-chrome@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imageres_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_150.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lock-application@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock-application@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button-remove@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-remove@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,17 +274,14 @@
   <data name="process@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\process@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="key@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trash@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer-network-wireless-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-network-wireless-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer-network-wireless-green@2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-network-wireless-green@2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_1008" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_1008.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,20 +292,20 @@
   <data name="btn-grey-play-pause@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn-grey-play-pause@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="control@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\control@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fill-auto@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fill-auto@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dmdskres_372" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dmdskres_372.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_110.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder-vertical-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-vertical-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imageres_1023" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_1023.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button-arrow-right@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-arrow-right@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,16 +343,16 @@
   <data name="control-password@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control-password@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exit@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer-network-wireless-green@2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-network-wireless-green@2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer-network-wireless-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-network-wireless-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="big-data-people@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\big-data-people@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upload_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\upload_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chat_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

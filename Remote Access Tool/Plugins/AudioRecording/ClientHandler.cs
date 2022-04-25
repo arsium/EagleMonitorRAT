@@ -163,6 +163,7 @@ namespace Plugin
                     hasToExit = true;
                     Launch.audioCapture = false;
                     Helpers.StopStreamAudio();
+                    //this.Dispose();
                     break;
             }
         }

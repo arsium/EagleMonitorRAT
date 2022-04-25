@@ -78,7 +78,6 @@
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DownloadFileForm";
-            this.Load += new System.EventHandler(this.DownloadFileForm_Load);
             this.Shown += new System.EventHandler(this.DownloadFileForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

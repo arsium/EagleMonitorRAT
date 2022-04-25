@@ -110,7 +110,10 @@ namespace Plugin
 
                 proc.processId = p.Id;
                 proc.processName = p.ProcessName;
-                proc.processWindowTitle = p.MainWindowTitle;
+                if(p.MainWindowTitle == "")
+                    proc.processWindowTitle = "N/A";
+                else
+                    proc.processWindowTitle = p.MainWindowTitle;
                 proc.processWindowHandle = p.MainWindowHandle.ToString();
 
                 try

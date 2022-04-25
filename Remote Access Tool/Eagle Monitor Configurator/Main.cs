@@ -44,6 +44,7 @@ namespace EagleMonitor_Configurator
                     portListView.Items.Add(p.ToString());
                 }
                 notificationSoundGuna2CheckBox.Checked = settings.notificationSound;
+                flagsPackGuna2ComboBox.Text = settings.flagsPackName;
             }
         }
 
@@ -52,6 +53,7 @@ namespace EagleMonitor_Configurator
             settings.ports = new List<int>();
             settings.key = keyGuna2TextBox.Text;
             settings.notificationSound = notificationSoundGuna2CheckBox.Checked;
+            settings.flagsPackName = flagsPackGuna2ComboBox.Text;
             foreach (ListViewItem I in portListView.Items)
             {
                 settings.ports.Add(int.Parse(I.Text));

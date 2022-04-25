@@ -272,7 +272,7 @@
             // processContextMenuStrip
             // 
             this.processContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.processContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.processContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.processContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem,
             this.killProcessToolStripMenuItem,
@@ -280,7 +280,7 @@
             this.resumeToolStripMenuItem,
             this.injectionToolStripMenuItem});
             this.processContextMenuStrip.Name = "processContextMenuStrip";
-            this.processContextMenuStrip.Size = new System.Drawing.Size(185, 174);
+            this.processContextMenuStrip.Size = new System.Drawing.Size(197, 216);
             // 
             // refreshToolStripMenuItem
             // 
@@ -288,7 +288,7 @@
             this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.refreshToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.action_repeat_2x;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -298,7 +298,7 @@
             this.killProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.killProcessToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.close_2x;
             this.killProcessToolStripMenuItem.Name = "killProcessToolStripMenuItem";
-            this.killProcessToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.killProcessToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.killProcessToolStripMenuItem.Text = "Kill Process";
             this.killProcessToolStripMenuItem.Click += new System.EventHandler(this.killProcessToolStripMenuItem_Click);
             // 
@@ -308,7 +308,7 @@
             this.suspendToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.suspendToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.btn_grey_play_pause_2x;
             this.suspendToolStripMenuItem.Name = "suspendToolStripMenuItem";
-            this.suspendToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.suspendToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.suspendToolStripMenuItem.Text = "Suspend Process";
             this.suspendToolStripMenuItem.Click += new System.EventHandler(this.suspendToolStripMenuItem_Click);
             // 
@@ -318,7 +318,7 @@
             this.resumeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.resumeToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.btn_grey_play_2x;
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.resumeToolStripMenuItem.Text = "Resume Process";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
@@ -329,19 +329,18 @@
             this.injectionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.injectionToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.file_binary_2x;
             this.injectionToolStripMenuItem.Name = "injectionToolStripMenuItem";
-            this.injectionToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.injectionToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.injectionToolStripMenuItem.Text = "Shellcode Injection";
             // 
             // injectionCustomContextMenuStrip
             // 
             this.injectionCustomContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.injectionCustomContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.injectionCustomContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.injectionCustomContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.classicToolStripMenuItem,
             this.mapViewToolStripMenuItem});
             this.injectionCustomContextMenuStrip.Name = "processContextMenuStrip";
-            this.injectionCustomContextMenuStrip.OwnerItem = this.injectionToolStripMenuItem;
-            this.injectionCustomContextMenuStrip.Size = new System.Drawing.Size(138, 72);
+            this.injectionCustomContextMenuStrip.Size = new System.Drawing.Size(142, 80);
             // 
             // classicToolStripMenuItem
             // 
@@ -349,7 +348,7 @@
             this.classicToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.classicToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.memory_2x1;
             this.classicToolStripMenuItem.Name = "classicToolStripMenuItem";
-            this.classicToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
+            this.classicToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.classicToolStripMenuItem.Text = "Classic";
             this.classicToolStripMenuItem.Click += new System.EventHandler(this.classicToolStripMenuItem_Click);
             // 
@@ -358,7 +357,7 @@
             this.mapViewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.mapViewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.mapViewToolStripMenuItem.Name = "mapViewToolStripMenuItem";
-            this.mapViewToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
+            this.mapViewToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.mapViewToolStripMenuItem.Text = "Map View";
             this.mapViewToolStripMenuItem.Click += new System.EventHandler(this.mapViewToolStripMenuItem_Click);
             // 

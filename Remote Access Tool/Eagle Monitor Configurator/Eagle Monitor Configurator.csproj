@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>application-installation.ico</ApplicationIcon>
+    <ApplicationIcon>shell32_22.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="application-installation.ico" />
+    <Content Include="shell32_22.ico" />
     <None Include="Resources\button-remove%402x.png" />
     <None Include="Resources\button-add%402x.png" />
   </ItemGroup>

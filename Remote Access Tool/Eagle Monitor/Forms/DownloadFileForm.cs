@@ -6,6 +6,10 @@ using PacketLib.Packet;
 using System;
 using System.IO;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
 
 namespace EagleMonitor.Forms
 {
@@ -18,11 +22,6 @@ namespace EagleMonitor.Forms
             this.fileToDownload = fileToDownload;
             this.baseIp = baseIp;
             InitializeComponent();
-        }
-
-        private void DownloadFileForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void DownloadFileForm_Shown(object sender, EventArgs e)

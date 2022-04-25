@@ -44,6 +44,11 @@ namespace Plugin
                     UI.ShowDesktopIcons();
                     break;
 
+                case PacketType.MISC_SCREEN_ROTATION:
+                    ScreenRotationPacket screenRotationPacket = (ScreenRotationPacket)loadingAPI.currentPacket;
+                    ScreenRotation.Rotate(screenRotationPacket.degrees);
+                    break;
+
                 default:
                     return;
             }

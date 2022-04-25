@@ -50,7 +50,6 @@ namespace EagleMonitor.Forms
                     remoteCameraCapturePacket.quality = qualityGuna2TrackBar.Value;
                     this.loadingCircle1.Visible = true;
                     this.loadingCircle1.Active = true;
-
                     ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteCameraCapturePacket);
                 }
             }
@@ -58,7 +57,6 @@ namespace EagleMonitor.Forms
             {
                 this.loadingCircle1.Visible = false;
                 this.loadingCircle1.Active = false;
-
                 RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF);
                 this.clientHandler.SendPacket(remoteCameraCapturePacket);
             }

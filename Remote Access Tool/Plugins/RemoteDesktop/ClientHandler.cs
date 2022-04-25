@@ -2,6 +2,7 @@
 using PacketLib.Packet;
 using PacketLib.Utils;
 using System;
+using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 
@@ -21,6 +22,9 @@ namespace Plugin
         public string baseIp { get; set; }
         public string key { get; set; }
         public bool hasToExit { get; set; }
+
+        internal int hResol;
+        internal int vResol;
 
         public delegate bool ConnectAsync();
         private delegate int SendDataAsync(IPacket data);
@@ -164,6 +168,54 @@ namespace Plugin
 
                 case PacketType.RM_VIEW_OFF:
                     hasToExit = true;
+                    this.Dispose();
+                    break;
+
+                case PacketType.RM_KEYBOARD:
+                    RemoteKeyboardPacket remoteKeyboardPacket = (RemoteKeyboardPacket)packet;
+                    KeyboardHelper.KeyPress(remoteKeyboardPacket.keyCode, remoteKeyboardPacket.isDown);
+                    break;
+
+                case PacketType.RM_MOUSE:
+                    RemoteMousePacket mousePacket = (RemoteMousePacket)packet;
+                    switch (mousePacket.mouseTypeAction) 
+                    {
+                        case RemoteMousePacket.MouseTypeAction.LEFT_DOWN:
+                            MouseHelper.MouseLeftClick(new System.Drawing.Point(mousePacket.x, mousePacket.y), true);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.LEFT_UP:
+                            MouseHelper.MouseLeftClick(new System.Drawing.Point(mousePacket.x, mousePacket.y), false);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.RIGHT_DOWN:
+                            MouseHelper.MouseRightClick(new System.Drawing.Point(mousePacket.x, mousePacket.y), true);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.RIGHT_UP:
+                            MouseHelper.MouseRightClick(new System.Drawing.Point(mousePacket.x, mousePacket.y), false);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.MOVE_MOUSE:
+                            MouseHelper.MouseMove(new System.Drawing.Point(mousePacket.x, mousePacket.y));
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.MOVE_WHEEL_UP:
+                            MouseHelper.MouseScroll(new System.Drawing.Point(mousePacket.x, mousePacket.y), false);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.MOVE_WHEEL_DOWN:
+                            MouseHelper.MouseScroll(new System.Drawing.Point(mousePacket.x, mousePacket.y), true);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.MIDDLE_UP:
+                            MouseHelper.MiddleMouseClick(new System.Drawing.Point(mousePacket.x, mousePacket.y), false);
+                            break;
+
+                        case RemoteMousePacket.MouseTypeAction.MIDDLE_DOWN:
+                            MouseHelper.MiddleMouseClick(new System.Drawing.Point(mousePacket.x, mousePacket.y), true);
+                            break;
+                    }
                     break;
             }
         }
@@ -196,13 +248,29 @@ namespace Plugin
 
                     int sent = socket.Send(header);
 
-                    while (total < size)
+                    if (size > 1000000)
                     {
-                        sent = socket.Send(encryptedData, total, size, SocketFlags.None);
-                        total += sent;
-                        datalft -= sent;
+                        using (MemoryStream memoryStream = new MemoryStream(encryptedData))
+                        {
+                            int read = 0;
+                            memoryStream.Position = 0;
+                            byte[] chunk = new byte[50 * 1000];
+                            while ((read = memoryStream.Read(chunk, 0, chunk.Length)) > 0)
+                            {
+                                socket.Send(chunk, 0, read, SocketFlags.None);
+                            }
+                        }
                     }
-                    return total;
+                    else
+                    {
+                        while (total < size)
+                        {
+                            sent = socket.Send(encryptedData, total, size, SocketFlags.None);
+                            total += sent;
+                            datalft -= sent;
+                        }
+                    }
+                    return size;
                 }
             }
             catch (Exception)
@@ -213,7 +281,8 @@ namespace Plugin
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
-            int length = sendDataAsync.EndInvoke(ar);
+            //int length = sendDataAsync.EndInvoke(ar);
+            sendDataAsync.EndInvoke(ar);
         }
 
 
@@ -228,21 +297,24 @@ namespace Plugin
             if (!hasToExit)
                 captureDesktop.BeginInvoke(new AsyncCallback(EndDesktopPicture), null);
             else
-                this.Dispose();
+                return;
         }
 
         public byte[] DesktopPicture() 
         {
-            return Compressor.QuickLZ.Compress(Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format), 1);
+            return Compressor.QuickLZ.Compress(Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol), 1);
         }
 
         public void EndDesktopPicture(IAsyncResult ar) 
         {
             byte[] desktopPicture = captureDesktop.EndInvoke(ar);
 
-            RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON, Launch.baseIp, Launch.HWID);
-
-            remoteViewerPacket.desktopPicture = desktopPicture;
+            RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON, Launch.baseIp, Launch.HWID)
+            {
+                desktopPicture = desktopPicture,
+                hResol = hResol,
+                vResol = vResol
+            };
 
             if (!hasToExit)
             {

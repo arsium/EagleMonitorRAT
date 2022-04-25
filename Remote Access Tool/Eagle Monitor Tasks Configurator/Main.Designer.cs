@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -42,7 +41,7 @@
             this.passwordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.taskContextMenuStrip.SuspendLayout();
@@ -240,7 +239,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
-            this.Text = "Task Configurator";
+            this.Text = "Eagle Monitor RAT Reborn Tasks Configurator";
             this.Load += new System.EventHandler(this.Main_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.guna2GroupBox1.ResumeLayout(false);

@@ -12,5 +12,6 @@ namespace EagleMonitor.Config
         public List<int> ports { get; set; }
         public string key { get; set; }
         public bool notificationSound { get; set; }
+        public string flagsPackName { get; set; }
     }
 }

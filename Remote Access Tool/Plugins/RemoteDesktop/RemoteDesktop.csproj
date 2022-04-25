@@ -45,7 +45,9 @@
     <Compile Include="ClientHandler.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Imports.cs" />
+    <Compile Include="KeyboardHelper.cs" />
     <Compile Include="Launch.cs" />
+    <Compile Include="MouseHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

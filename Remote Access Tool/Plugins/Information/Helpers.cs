@@ -6,7 +6,7 @@ using static PacketLib.Packet.SystemInformation;
 /* 
 || AUTHOR Arsium ||
 || github : https://github.com/arsium       ||
-|| Inspiration : QuasarRAT
+|| Inspiration : QuasarRAT  ||
 */
 
 namespace Plugin

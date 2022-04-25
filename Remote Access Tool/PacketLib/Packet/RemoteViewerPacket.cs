@@ -35,5 +35,8 @@ namespace PacketLib.Packet
         public int quality { get; set; }
         public string format { get; set; }
         public int timeMS { get; set; }
+
+        public int vResol { get; set; }
+        public int hResol { get; set; } 
     }
 }

@@ -1,7 +1,6 @@
 ﻿using PacketLib;
 using PacketLib.Packet;
 using PacketLib.Utils;
-using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||

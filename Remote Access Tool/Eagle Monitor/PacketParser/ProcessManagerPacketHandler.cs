@@ -36,9 +36,8 @@ namespace EagleMonitor.PacketParser
                             }
                             else
                             {
-
                                 row.Cells["Column1"].Value = resized;
-                            }//DesyncOps.Properties.Resources.executable_2x;}
+                            }
 
                             row.Cells["Column2"].Value = proc.processId.ToString();
                             row.Cells["Column3"].Value = proc.processName;

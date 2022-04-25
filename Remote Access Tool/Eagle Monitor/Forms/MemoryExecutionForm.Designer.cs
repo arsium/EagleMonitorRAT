@@ -94,13 +94,13 @@ namespace EagleMonitor.Forms
             // 
             // memExecContextMenuStrip
             // 
-            this.memExecContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.memExecContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.memExecContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addPayloadToolStripMenuItem,
             this.sendPayloadToolStripMenuItem,
             this.removeFromListToolStripMenuItem});
             this.memExecContextMenuStrip.Name = "customContextMenuStrip1";
-            this.memExecContextMenuStrip.Size = new System.Drawing.Size(182, 106);
+            this.memExecContextMenuStrip.Size = new System.Drawing.Size(186, 118);
             // 
             // addPayloadToolStripMenuItem
             // 
@@ -108,7 +108,7 @@ namespace EagleMonitor.Forms
             this.addPayloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.addPayloadToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.button_add_2x;
             this.addPayloadToolStripMenuItem.Name = "addPayloadToolStripMenuItem";
-            this.addPayloadToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
+            this.addPayloadToolStripMenuItem.Size = new System.Drawing.Size(185, 38);
             this.addPayloadToolStripMenuItem.Text = "Add Payload";
             this.addPayloadToolStripMenuItem.Click += new System.EventHandler(this.addPayloadToolStripMenuItem_Click);
             // 
@@ -118,7 +118,7 @@ namespace EagleMonitor.Forms
             this.sendPayloadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.sendPayloadToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.memory_2x;
             this.sendPayloadToolStripMenuItem.Name = "sendPayloadToolStripMenuItem";
-            this.sendPayloadToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
+            this.sendPayloadToolStripMenuItem.Size = new System.Drawing.Size(185, 38);
             this.sendPayloadToolStripMenuItem.Text = "Send And Execute";
             this.sendPayloadToolStripMenuItem.Click += new System.EventHandler(this.sendPayloadToolStripMenuItem_Click);
             // 
@@ -128,7 +128,7 @@ namespace EagleMonitor.Forms
             this.removeFromListToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.removeFromListToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.button_remove_2x;
             this.removeFromListToolStripMenuItem.Name = "removeFromListToolStripMenuItem";
-            this.removeFromListToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
+            this.removeFromListToolStripMenuItem.Size = new System.Drawing.Size(185, 38);
             this.removeFromListToolStripMenuItem.Text = "Remove From List";
             this.removeFromListToolStripMenuItem.Click += new System.EventHandler(this.removeFromListToolStripMenuItem_Click);
             // 

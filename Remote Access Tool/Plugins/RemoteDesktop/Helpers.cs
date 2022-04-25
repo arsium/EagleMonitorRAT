@@ -36,11 +36,14 @@ namespace Plugin
 			return null;
 		}
 
-		internal static byte[] Capture(int width, int height, int quality, string format, short screen = 0)
+		internal static byte[] Capture(int width, int height, int quality, string format, ref int vResol, ref int hResol, short screen = 0)
 		{
 			try
 			{
 				Bitmap img = new Bitmap(Screen.AllScreens[screen].Bounds.Width, Screen.AllScreens[screen].Bounds.Height);
+
+				hResol = Screen.AllScreens[screen].Bounds.Width;
+				vResol = Screen.AllScreens[screen].Bounds.Height;
 
 				Graphics graphics = Graphics.FromImage(img);
 

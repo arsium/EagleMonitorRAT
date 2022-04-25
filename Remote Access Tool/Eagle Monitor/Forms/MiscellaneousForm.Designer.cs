@@ -54,9 +54,13 @@
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.degreesGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.rotateScreenGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
+            this.guna2GroupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -443,12 +447,73 @@
             this.minimizeButton.Text = "🗕";
             this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
+            // guna2GroupBox4
+            // 
+            this.guna2GroupBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox4.Controls.Add(this.rotateScreenGuna2Button);
+            this.guna2GroupBox4.Controls.Add(this.degreesGuna2ComboBox);
+            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2GroupBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2GroupBox4.Location = new System.Drawing.Point(6, 303);
+            this.guna2GroupBox4.Name = "guna2GroupBox4";
+            this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
+            this.guna2GroupBox4.Size = new System.Drawing.Size(575, 102);
+            this.guna2GroupBox4.TabIndex = 60;
+            this.guna2GroupBox4.Text = "Screen";
+            // 
+            // degreesGuna2ComboBox
+            // 
+            this.degreesGuna2ComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.degreesGuna2ComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.degreesGuna2ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.degreesGuna2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.degreesGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.degreesGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.degreesGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.degreesGuna2ComboBox.FocusedState.Parent = this.degreesGuna2ComboBox;
+            this.degreesGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.degreesGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.degreesGuna2ComboBox.HoverState.Parent = this.degreesGuna2ComboBox;
+            this.degreesGuna2ComboBox.ItemHeight = 30;
+            this.degreesGuna2ComboBox.Items.AddRange(new object[] {
+            "0",
+            "90",
+            "180",
+            "270"});
+            this.degreesGuna2ComboBox.ItemsAppearance.Parent = this.degreesGuna2ComboBox;
+            this.degreesGuna2ComboBox.Location = new System.Drawing.Point(6, 53);
+            this.degreesGuna2ComboBox.Name = "degreesGuna2ComboBox";
+            this.degreesGuna2ComboBox.ShadowDecoration.Parent = this.degreesGuna2ComboBox;
+            this.degreesGuna2ComboBox.Size = new System.Drawing.Size(245, 36);
+            this.degreesGuna2ComboBox.StartIndex = 0;
+            this.degreesGuna2ComboBox.TabIndex = 1;
+            // 
+            // rotateScreenGuna2Button
+            // 
+            this.rotateScreenGuna2Button.Animated = true;
+            this.rotateScreenGuna2Button.BackColor = System.Drawing.Color.Transparent;
+            this.rotateScreenGuna2Button.CheckedState.Parent = this.rotateScreenGuna2Button;
+            this.rotateScreenGuna2Button.CustomImages.Parent = this.rotateScreenGuna2Button;
+            this.rotateScreenGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.rotateScreenGuna2Button.ForeColor = System.Drawing.Color.White;
+            this.rotateScreenGuna2Button.HoverState.Parent = this.rotateScreenGuna2Button;
+            this.rotateScreenGuna2Button.Location = new System.Drawing.Point(275, 53);
+            this.rotateScreenGuna2Button.Name = "rotateScreenGuna2Button";
+            this.rotateScreenGuna2Button.ShadowDecoration.Parent = this.rotateScreenGuna2Button;
+            this.rotateScreenGuna2Button.Size = new System.Drawing.Size(282, 36);
+            this.rotateScreenGuna2Button.TabIndex = 60;
+            this.rotateScreenGuna2Button.Text = "Rotate";
+            this.rotateScreenGuna2Button.Click += new System.EventHandler(this.rotateScreenGuna2Button_Click);
+            // 
             // MiscellaneousForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(591, 309);
+            this.ClientSize = new System.Drawing.Size(591, 414);
+            this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
@@ -466,6 +531,7 @@
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            this.guna2GroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -497,5 +563,8 @@
         private Guna.UI2.WinForms.Guna2Button showDesktopIconsGuna2Button;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
+        private Guna.UI2.WinForms.Guna2ComboBox degreesGuna2ComboBox;
+        private Guna.UI2.WinForms.Guna2Button rotateScreenGuna2Button;
     }
 }

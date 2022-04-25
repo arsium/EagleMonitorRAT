@@ -63,6 +63,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap action_repeat {
+            get {
+                object obj = ResourceManager.GetObject("action-repeat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap action_repeat_2x {
             get {
                 object obj = ResourceManager.GetObject("action-repeat@2x", resourceCulture);
@@ -233,6 +243,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chat_large_2x {
+            get {
+                object obj = ResourceManager.GetObject("chat_large@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_2x {
             get {
                 object obj = ResourceManager.GetObject("close@2x", resourceCulture);
@@ -317,6 +337,26 @@ namespace EagleMonitor.Properties {
             get {
                 object obj = ResourceManager.GetObject("debug-restart@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon dmdskres_372 {
+            get {
+                object obj = ResourceManager.GetObject("dmdskres_372", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon dmdskres_373 {
+            get {
+                object obj = ResourceManager.GetObject("dmdskres_373", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -503,6 +543,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imageres_1023 {
+            get {
+                object obj = ResourceManager.GetObject("imageres_1023", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imageres_110 {
             get {
                 object obj = ResourceManager.GetObject("imageres_110", resourceCulture);
@@ -523,9 +573,39 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imageres_150 {
+            get {
+                object obj = ResourceManager.GetObject("imageres_150", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon imageres_4 {
+            get {
+                object obj = ResourceManager.GetObject("imageres_4", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imageres_78 {
             get {
                 object obj = ResourceManager.GetObject("imageres_78", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imageres_99 {
+            get {
+                object obj = ResourceManager.GetObject("imageres_99", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

