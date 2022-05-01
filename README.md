@@ -54,6 +54,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Remote keyboard
 * Remote mouse
 * Remote chat
+* Remote DotNet Code Execution
 * Process manager 
 * Kill process (native techniques)
 * Suspend process (native techniques)
