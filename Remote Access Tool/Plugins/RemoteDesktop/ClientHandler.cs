@@ -74,6 +74,7 @@ namespace Plugin
         public void EndConnect(IAsyncResult ar)
         {
             Connected = connectAsync.EndInvoke(ar);
+
             if (hasToExit)
             {
                 return;
@@ -154,7 +155,8 @@ namespace Plugin
         public void EndPacketRead(IAsyncResult ar)
         {
             IPacket packet = readPacketAsync.EndInvoke(ar);
-            if(packet != null)
+
+            if (packet != null)
                 ParsePacket(packet);
         }
 
@@ -288,12 +290,6 @@ namespace Plugin
 
         public void CaptureDesktop() 
         {
-            /*new Thread(() =>
-            {
-                if (!hasToExit)
-                    captureDesktop.BeginInvoke(new AsyncCallback(EndDesktopPicture), null);
-            }).Start();*/
-
             if (!hasToExit)
                 captureDesktop.BeginInvoke(new AsyncCallback(EndDesktopPicture), null);
             else
@@ -302,12 +298,15 @@ namespace Plugin
 
         public byte[] DesktopPicture() 
         {
-            return Compressor.QuickLZ.Compress(Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol), 1);
+            //return Compressor.QuickLZ.Compress(Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol), 1);
+            return Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol);
         }
 
         public void EndDesktopPicture(IAsyncResult ar) 
         {
+            ar.AsyncWaitHandle.WaitOne();
             byte[] desktopPicture = captureDesktop.EndInvoke(ar);
+            ar.AsyncWaitHandle.Close();
 
             RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON, Launch.baseIp, Launch.HWID)
             {

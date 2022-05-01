@@ -105,7 +105,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="application-installation.ico" />
+    <None Include="Resources\eagle2.png" />
     <Content Include="shell32_22.ico" />
     <None Include="Resources\button-remove%402x.png" />
     <None Include="Resources\button-add%402x.png" />

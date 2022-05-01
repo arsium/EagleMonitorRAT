@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 using System.Windows.Forms;
 
 /* 
@@ -28,6 +29,7 @@ namespace EagleMonitor
         //private delegate Task <ClientHandler> AcceptClient();
         private delegate ClientHandler AcceptClient();
         private readonly AcceptClient acceptClient;
+
         internal Server() : base()
         {
             this.stopServer = false;
@@ -67,6 +69,7 @@ namespace EagleMonitor
         private void EndAcceptedClient(IAsyncResult ar) 
         {
             acceptClient.EndInvoke(ar);
+
             if (!stopServer)
                 AcceptClientAsync();
             else

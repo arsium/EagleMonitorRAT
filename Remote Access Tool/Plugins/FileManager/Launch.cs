@@ -32,7 +32,8 @@ namespace Plugin
 
                 case PacketType.FM_DOWNLOAD_FILE:
                     filePath = ((DownloadFilePacket)loadingAPI.currentPacket).fileName;
-                    DownloadFilePacket downloadFilePacket = new DownloadFilePacket(DownloadFile.ReadFile(filePath), filePath, loadingAPI.baseIp, loadingAPI.HWID);
+                    byte[] fileRead = DownloadFile.ReadFile(filePath);
+                    DownloadFilePacket downloadFilePacket = new DownloadFilePacket(fileRead, filePath, loadingAPI.baseIp, loadingAPI.HWID);
                     ClientSender(loadingAPI.host, loadingAPI.key, downloadFilePacket);
                     break;
 

@@ -66,6 +66,7 @@
             this.remoteWebcamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteMicrophoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remoteCodeExecutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscealleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.massTaskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.memoryExecutionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -323,6 +324,7 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.chatToolStripMenuItem,
+            this.remoteCodeExecutionToolStripMenuItem,
             this.miscealleToolStripMenuItem,
             this.massTaskToolStripMenuItem1,
             this.memoryExecutionToolStripMenuItem1,
@@ -332,7 +334,7 @@
             this.test123ToolStripMenuItem,
             this.test456ToolStripMenuItem});
             this.clientCustomContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 444);
+            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 460);
             // 
             // toolStripMenuItem1
             // 
@@ -354,7 +356,6 @@
             this.autofillToolStripMenuItem,
             this.keywordsToolStripMenuItem});
             this.recoveryContextMenuStrip.Name = "customContextMenuStrip1";
-            this.recoveryContextMenuStrip.OwnerItem = this.toolStripMenuItem1;
             this.recoveryContextMenuStrip.Size = new System.Drawing.Size(141, 140);
             // 
             // passwordsToolStripMenuItem
@@ -492,6 +493,16 @@
             this.chatToolStripMenuItem.Text = "Chat";
             this.chatToolStripMenuItem.Click += new System.EventHandler(this.chatToolStripMenuItem_Click);
             // 
+            // remoteCodeExecutionToolStripMenuItem
+            // 
+            this.remoteCodeExecutionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.remoteCodeExecutionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.remoteCodeExecutionToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.source_code_net_large_2x;
+            this.remoteCodeExecutionToolStripMenuItem.Name = "remoteCodeExecutionToolStripMenuItem";
+            this.remoteCodeExecutionToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.remoteCodeExecutionToolStripMenuItem.Text = ".NET Code Execution";
+            this.remoteCodeExecutionToolStripMenuItem.Click += new System.EventHandler(this.remoteCodeExecutionToolStripMenuItem_Click);
+            // 
             // miscealleToolStripMenuItem
             // 
             this.miscealleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -551,6 +562,7 @@
             this.uninstallToolStripMenuItem,
             this.powerToolStripMenuItem});
             this.clientContextMenuStrip.Name = "customContextMenuStrip1";
+            this.clientContextMenuStrip.OwnerItem = this.clientToolStripMenuItem1;
             this.clientContextMenuStrip.Size = new System.Drawing.Size(133, 106);
             // 
             // closeStripMenuItem
@@ -596,6 +608,7 @@
             this.hibernateToolStripMenuItem,
             this.suspendToolStripMenuItem});
             this.powerContextMenuStrip.Name = "customContextMenuStrip1";
+            this.powerContextMenuStrip.OwnerItem = this.powerToolStripMenuItem;
             this.powerContextMenuStrip.Size = new System.Drawing.Size(177, 242);
             // 
             // shutdownToolStripMenuItem
@@ -918,6 +931,7 @@
         private System.Windows.Forms.ToolStripMenuItem keywordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remoteMicrophoneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem remoteCodeExecutionToolStripMenuItem;
     }
 }
 

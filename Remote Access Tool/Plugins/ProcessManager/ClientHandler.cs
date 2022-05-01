@@ -58,6 +58,7 @@ namespace Plugin
         public void EndConnect(IAsyncResult ar)
         {
             Connected = connectAsync.EndInvoke(ar);
+
             if (!Connected)
             {
                 ConnectStart();
@@ -127,6 +128,7 @@ namespace Plugin
         private void SendDataCompleted(IAsyncResult ar)
         {
             int length = sendDataAsync.EndInvoke(ar);
+
             if (Connected)
             {
                 if (length != 0)//TODO : LOGS

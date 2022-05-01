@@ -40,6 +40,10 @@
     <Compile Include="Imports.cs" />
     <Compile Include="Launch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry.cs" />
+    <Compile Include="SelfDestruct.cs" />
+    <Compile Include="StartupFolder.cs" />
+    <Compile Include="TaskScheduler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

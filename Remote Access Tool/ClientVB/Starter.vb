@@ -55,7 +55,7 @@ Namespace Client
         End Sub
 
         Public Shared Sub MakeInstall()
-            Persistence.Launch.StartUpTaskScheduler(Config.time, Config.taskName)
+            Persistence.TaskScheduler.StartUpTaskScheduler(Config.time, Config.taskName)
         End Sub
     End Class
 End Namespace

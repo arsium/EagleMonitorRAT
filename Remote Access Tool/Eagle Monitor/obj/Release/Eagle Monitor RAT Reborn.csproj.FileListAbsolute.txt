@@ -58,3 +58,4 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Release\EagleMonitor.Forms.RemoteCameraForm.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Release\EagleMonitor.Forms.RemoteChatForm.resources
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Release\EagleMonitor.Forms.RemoteChatForm.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Eagle Monitor\obj\Release\EagleMonitor.RemoteCodeForm.resources

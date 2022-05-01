@@ -111,7 +111,6 @@
     <None Include="Resources\file-dll%402x.png" />
     <None Include="Resources\memory%402x.png" />
     <None Include="Resources\button-remove%402x.png" />
-    <Content Include="task.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StartupTask\StartupTask.csproj">

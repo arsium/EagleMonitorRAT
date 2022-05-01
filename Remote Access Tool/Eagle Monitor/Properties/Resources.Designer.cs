@@ -773,6 +773,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap source_code_net_large_2x {
+            get {
+                object obj = ResourceManager.GetObject("source-code-net_large@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trash_2x {
             get {
                 object obj = ResourceManager.GetObject("trash@2x", resourceCulture);

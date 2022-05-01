@@ -15,6 +15,8 @@ namespace Plugin
         #region "user32"
         private const string user32 = "user32.dll";
         [DllImport(user32)]
+        internal static extern bool DrawIcon(IntPtr hDC, int X, int Y, IntPtr hIcon);
+        [DllImport(user32)]
         internal static extern bool GetCursorInfo(ref CURSORINFOHELPER pci);
         [DllImport(user32)]
         internal static extern bool GetCursorPos(out Point lpPoint);

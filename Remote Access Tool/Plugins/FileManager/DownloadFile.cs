@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.IO;
 
 /* 
 || AUTHOR Arsium ||
@@ -7,7 +7,6 @@
 
 namespace Plugin
 {
-    //TODO : get file size and read offset instead of reading whole file
     internal class DownloadFile
     {
         internal static byte[] ReadFile(string path)
@@ -15,13 +14,13 @@ namespace Plugin
             byte[] result = null;
             try
             {
-                result = System.IO.File.ReadAllBytes(path);
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+                result = new byte[fs.Length];
+                fs.Read(result, 0, (int)fs.Length);
+                fs.Close();
+                fs.Dispose();
             }
-            catch(Exception ex)
-            {
-                //OUT-OF-MEMORY for big file
-                //MessageBox.Show(ex.ToString());
-            }
+            catch { }
             return result;
         }
     }

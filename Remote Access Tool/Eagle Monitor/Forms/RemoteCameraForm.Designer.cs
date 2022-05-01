@@ -37,13 +37,12 @@
             this.showPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCurrentPcitureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.captureGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.qualityGuna2TrackBar = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.intervalGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.camerasGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.captureGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
@@ -88,9 +87,9 @@
             // 
             this.cameraViewerPictureBox.ContextMenuStrip = this.settingsContextMenuStrip;
             this.cameraViewerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cameraViewerPictureBox.Location = new System.Drawing.Point(3, 85);
+            this.cameraViewerPictureBox.Location = new System.Drawing.Point(3, 79);
             this.cameraViewerPictureBox.Name = "cameraViewerPictureBox";
-            this.cameraViewerPictureBox.Size = new System.Drawing.Size(794, 362);
+            this.cameraViewerPictureBox.Size = new System.Drawing.Size(794, 368);
             this.cameraViewerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cameraViewerPictureBox.TabIndex = 46;
             this.cameraViewerPictureBox.TabStop = false;
@@ -138,82 +137,69 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.captureGuna2ToggleSwitch);
             this.panel1.Controls.Add(this.qualityGuna2TrackBar);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.intervalGuna2TextBox);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.camerasGuna2ComboBox);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.captureGuna2ToggleSwitch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 53);
+            this.panel1.Size = new System.Drawing.Size(794, 47);
             this.panel1.TabIndex = 45;
+            // 
+            // captureGuna2ToggleSwitch
+            // 
+            this.captureGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.captureGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.captureGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.captureGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.captureGuna2ToggleSwitch.CheckedState.Parent = this.captureGuna2ToggleSwitch;
+            this.captureGuna2ToggleSwitch.Location = new System.Drawing.Point(56, 11);
+            this.captureGuna2ToggleSwitch.Name = "captureGuna2ToggleSwitch";
+            this.captureGuna2ToggleSwitch.ShadowDecoration.Parent = this.captureGuna2ToggleSwitch;
+            this.captureGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
+            this.captureGuna2ToggleSwitch.TabIndex = 44;
+            this.captureGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.captureGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.captureGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.captureGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.captureGuna2ToggleSwitch.UncheckedState.Parent = this.captureGuna2ToggleSwitch;
+            this.captureGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.captureGuna2ToggleSwitch_CheckedChanged);
             // 
             // qualityGuna2TrackBar
             // 
             this.qualityGuna2TrackBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.qualityGuna2TrackBar.HoverState.Parent = this.qualityGuna2TrackBar;
             this.qualityGuna2TrackBar.IndicateFocus = false;
-            this.qualityGuna2TrackBar.Location = new System.Drawing.Point(641, 18);
+            this.qualityGuna2TrackBar.Location = new System.Drawing.Point(147, 12);
             this.qualityGuna2TrackBar.Name = "qualityGuna2TrackBar";
             this.qualityGuna2TrackBar.Size = new System.Drawing.Size(115, 20);
             this.qualityGuna2TrackBar.TabIndex = 53;
             this.qualityGuna2TrackBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(97, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 20);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Quality:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 48);
+            this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(794, 5);
             this.panel2.TabIndex = 52;
             // 
-            // intervalGuna2TextBox
-            // 
-            this.intervalGuna2TextBox.Animated = true;
-            this.intervalGuna2TextBox.AutoRoundedCorners = true;
-            this.intervalGuna2TextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.intervalGuna2TextBox.BorderRadius = 17;
-            this.intervalGuna2TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.intervalGuna2TextBox.DefaultText = "30";
-            this.intervalGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.intervalGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.intervalGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.intervalGuna2TextBox.DisabledState.Parent = this.intervalGuna2TextBox;
-            this.intervalGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.intervalGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.intervalGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.intervalGuna2TextBox.FocusedState.Parent = this.intervalGuna2TextBox;
-            this.intervalGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.intervalGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.intervalGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.intervalGuna2TextBox.HoverState.Parent = this.intervalGuna2TextBox;
-            this.intervalGuna2TextBox.Location = new System.Drawing.Point(433, 7);
-            this.intervalGuna2TextBox.Name = "intervalGuna2TextBox";
-            this.intervalGuna2TextBox.PasswordChar = '\0';
-            this.intervalGuna2TextBox.PlaceholderText = "";
-            this.intervalGuna2TextBox.SelectedText = "";
-            this.intervalGuna2TextBox.SelectionStart = 2;
-            this.intervalGuna2TextBox.ShadowDecoration.Parent = this.intervalGuna2TextBox;
-            this.intervalGuna2TextBox.Size = new System.Drawing.Size(200, 36);
-            this.intervalGuna2TextBox.TabIndex = 48;
-            this.intervalGuna2TextBox.TextChanged += new System.EventHandler(this.intervalGuna2TextBox_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.label2.Location = new System.Drawing.Point(384, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 34);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Interval:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // camerasGuna2ComboBox
             // 
+            this.camerasGuna2ComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.camerasGuna2ComboBox.Animated = true;
             this.camerasGuna2ComboBox.AutoRoundedCorners = true;
             this.camerasGuna2ComboBox.BackColor = System.Drawing.Color.Transparent;
@@ -230,39 +216,20 @@
             this.camerasGuna2ComboBox.HoverState.Parent = this.camerasGuna2ComboBox;
             this.camerasGuna2ComboBox.ItemHeight = 30;
             this.camerasGuna2ComboBox.ItemsAppearance.Parent = this.camerasGuna2ComboBox;
-            this.camerasGuna2ComboBox.Location = new System.Drawing.Point(103, 7);
+            this.camerasGuna2ComboBox.Location = new System.Drawing.Point(268, 3);
             this.camerasGuna2ComboBox.Name = "camerasGuna2ComboBox";
             this.camerasGuna2ComboBox.ShadowDecoration.Parent = this.camerasGuna2ComboBox;
-            this.camerasGuna2ComboBox.Size = new System.Drawing.Size(275, 36);
+            this.camerasGuna2ComboBox.Size = new System.Drawing.Size(523, 36);
             this.camerasGuna2ComboBox.TabIndex = 46;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 34);
             this.label1.TabIndex = 45;
             this.label1.Text = "Capture:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // captureGuna2ToggleSwitch
-            // 
-            this.captureGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.captureGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.captureGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.captureGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.captureGuna2ToggleSwitch.CheckedState.Parent = this.captureGuna2ToggleSwitch;
-            this.captureGuna2ToggleSwitch.Location = new System.Drawing.Point(62, 18);
-            this.captureGuna2ToggleSwitch.Name = "captureGuna2ToggleSwitch";
-            this.captureGuna2ToggleSwitch.ShadowDecoration.Parent = this.captureGuna2ToggleSwitch;
-            this.captureGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
-            this.captureGuna2ToggleSwitch.TabIndex = 44;
-            this.captureGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.captureGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.captureGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.captureGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.captureGuna2ToggleSwitch.UncheckedState.Parent = this.captureGuna2ToggleSwitch;
-            this.captureGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.captureGuna2ToggleSwitch_CheckedChanged);
             // 
             // closeButton
             // 
@@ -356,8 +323,6 @@
         public System.Windows.Forms.PictureBox cameraViewerPictureBox;
         public Guna.UI2.WinForms.Guna2ComboBox camerasGuna2ComboBox;
         public MRG.Controls.UI.LoadingCircle loadingCircle1;
-        private Guna.UI2.WinForms.Guna2TextBox intervalGuna2TextBox;
-        private System.Windows.Forms.Label label2;
         private Controls.CustomContextMenuStrip settingsContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem hidePanelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showPanelToolStripMenuItem;
@@ -365,5 +330,6 @@
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2TrackBar qualityGuna2TrackBar;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
     }
 }

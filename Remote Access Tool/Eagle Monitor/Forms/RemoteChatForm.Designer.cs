@@ -37,6 +37,7 @@
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.messageGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // messageRichTextBox
@@ -186,12 +187,27 @@
             this.messageGuna2TextBox.Size = new System.Drawing.Size(551, 25);
             this.messageGuna2TextBox.TabIndex = 13;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(446, 32);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Eagle Monitor RAT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
+            // 
             // RemoteChatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(564, 290);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.messageGuna2TextBox);
             this.Controls.Add(this.messageRichTextBox);
             this.Controls.Add(this.sendMsgGuna2Button);
@@ -221,5 +237,6 @@
         private Guna.UI2.WinForms.Guna2Button sendMsgGuna2Button;
         internal System.Windows.Forms.RichTextBox messageRichTextBox;
         private Guna.UI2.WinForms.Guna2TextBox messageGuna2TextBox;
+        public System.Windows.Forms.Label label3;
     }
 }

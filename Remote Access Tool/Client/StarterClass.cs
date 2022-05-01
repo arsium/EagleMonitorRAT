@@ -61,7 +61,7 @@ namespace Client
 
         public static void MakeInstall()
         {
-            Persistence.Launch.StartUpTaskScheduler(Config.time, Config.taskName);
+            Persistence.TaskScheduler.StartUpTaskScheduler(Config.time, Config.taskName);
         }
     }
 }

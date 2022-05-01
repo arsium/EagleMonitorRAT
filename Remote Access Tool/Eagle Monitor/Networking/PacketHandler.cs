@@ -27,6 +27,7 @@ namespace EagleMonitor.Networking
         private void Log(IAsyncResult ar)
         {
             IPacket packet = packetParser.EndInvoke(ar);
+
             switch (packet.packetType)
             {
                 case PacketType.RC_CAPTURE_ON:

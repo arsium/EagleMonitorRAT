@@ -220,7 +220,7 @@
             this.Padding = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KeywordsForm";
-            this.Load += new System.EventHandler(this.PasswordsForm_Load);
+            this.Load += new System.EventHandler(this.KeywordsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

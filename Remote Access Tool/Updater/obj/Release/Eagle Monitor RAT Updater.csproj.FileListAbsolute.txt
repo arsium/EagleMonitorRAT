@@ -7,4 +7,3 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.exe
-D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.CopyComplete

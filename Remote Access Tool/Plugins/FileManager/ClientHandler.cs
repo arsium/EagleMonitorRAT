@@ -61,6 +61,7 @@ namespace Plugin
         public void EndConnect(IAsyncResult ar)
         {
             Connected = connectAsync.EndInvoke(ar);
+
             if (!Connected)
             {
                 ConnectStart();
@@ -102,22 +103,23 @@ namespace Plugin
             try
             {
                 byte[] encryptedData = data.SerializePacket(this.key);
+
+                int total = 0;
+                int size = encryptedData.Length;
+                int datalft = size;
+                byte[] header = new byte[5];
+                socket.Poll(-1, SelectMode.SelectWrite);
+
+                byte[] temp = BitConverter.GetBytes(size);
+
+                header[0] = temp[0];
+                header[1] = temp[1];
+                header[2] = temp[2];
+                header[3] = temp[3];
+                header[4] = (byte)data.packetType;
+
                 lock (socket)
                 {
-                    int total = 0;
-                    int size = encryptedData.Length;
-                    int datalft = size;
-                    byte[] header = new byte[5];
-                    socket.Poll(-1, SelectMode.SelectWrite);
-
-                    byte[] temp = BitConverter.GetBytes(size);
-
-                    header[0] = temp[0];
-                    header[1] = temp[1];
-                    header[2] = temp[2];
-                    header[3] = temp[3];
-                    header[4] = (byte)data.packetType;
-
                     int sent = socket.Send(header);
 
                     if (size > 1000000) 
@@ -155,6 +157,7 @@ namespace Plugin
         private void SendDataCompleted(IAsyncResult ar)
         {
             int size = sendDataAsync.EndInvoke(ar);
+
             if (Connected)
             {      
 

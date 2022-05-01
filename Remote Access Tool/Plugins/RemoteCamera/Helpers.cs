@@ -90,7 +90,9 @@ namespace Plugin
 
         private static void EndCaptureAsync(IAsyncResult ar) 
         {
+            ar.AsyncWaitHandle.WaitOne();
             captureAsync.EndInvoke(ar);
+            ar.AsyncWaitHandle.Close();
         }
 
         internal static void StopStreamCamera() 

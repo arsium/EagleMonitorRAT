@@ -79,6 +79,7 @@ namespace Client
         public void EndConnect(IAsyncResult ar) 
         {
             Connected = connectAsync.EndInvoke(ar);
+
             if (Connected)
             {
                 ConnectedPacket connectionPacket = new ConnectedPacket();

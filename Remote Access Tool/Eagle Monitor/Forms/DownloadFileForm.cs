@@ -34,5 +34,11 @@ namespace EagleMonitor.Forms
             };
             ClientHandler.ClientHandlersList[this.baseIp].SendPacket(dowloadFilePacket);
         }
+
+        private void label1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
+        }
     }
 }

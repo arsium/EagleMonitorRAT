@@ -16,7 +16,8 @@ namespace EagleMonitor.PacketParser
                 ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.BeginInvoke((MethodInvoker)(() =>
                 {
                     ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.hasAlreadyConnected = true;
-                    ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.viewerPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteViewerPacket.desktopPicture));
+                    //ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.viewerPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteViewerPacket.desktopPicture));
+                    ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.viewerPictureBox.Image = ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture);
                     ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.hResol = remoteViewerPacket.hResol;
                     ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].remoteDesktopForm.vResol = remoteViewerPacket.vResol;
                 }));

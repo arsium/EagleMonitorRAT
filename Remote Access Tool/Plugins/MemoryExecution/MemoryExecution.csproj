@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DLLFromMemory.cs" />
+    <Compile Include="DotNetCode.cs" />
     <Compile Include="Launch.cs" />
     <Compile Include="ManagedDll.cs" />
     <Compile Include="ManagedExe.cs" />

