@@ -4,7 +4,8 @@
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
 Consider this as an upgrade of HorusEyesRat which was written in Visual Basic .NET.
 As in the old good times, I decided to write a client in Visual Basic .NET.
-
+<br>
+Issue section removed because of spamming & abusing.
 
 
 
