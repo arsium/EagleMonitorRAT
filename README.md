@@ -4,12 +4,11 @@
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
 Consider this as an upgrade of HorusEyesRat which was written in Visual Basic .NET.
 As in the old good times, I decided to write a client in Visual Basic .NET.
-Also, many people ask for help with installation or errors. I'm not a client service support.
-If you have any issue with Eagle, open an issue in the right section explaining the problem and how I can reproduce the issue myself.
-</br>
-Also, stop spamming issue section with that kind of request : "can you add hvnc ?" or "can you add reverse proxy ?".
-</br>
-If you have a brain you can add them yourself. A wiki page will be written to add your own features if you're not satisfied with current ones.
+
+
+
+
+
 
 ## Why did I choose to rework it ?
 
