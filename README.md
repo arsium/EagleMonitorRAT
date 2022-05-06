@@ -1,5 +1,5 @@
 
-# Eagle Monitor RAT Reborn
+# Eagle Monitor RAT Reborn | Open Source Remote Access Tool
 
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
 Consider this as an upgrade of HorusEyesRat which was written in Visual Basic .NET.
