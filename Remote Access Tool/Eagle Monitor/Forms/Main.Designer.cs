@@ -85,8 +85,6 @@
             this.hibernateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suspendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.test123ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.test456ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -330,11 +328,9 @@
             this.memoryExecutionToolStripMenuItem1,
             this.informationToolStripMenuItem1,
             this.clientToolStripMenuItem1,
-            this.aboutToolStripMenuItem,
-            this.test123ToolStripMenuItem,
-            this.test456ToolStripMenuItem});
+            this.aboutToolStripMenuItem});
             this.clientCustomContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 460);
+            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 406);
             // 
             // toolStripMenuItem1
             // 
@@ -421,6 +417,7 @@
             this.remoteWebcamToolStripMenuItem,
             this.remoteMicrophoneToolStripMenuItem});
             this.desktopContextMenuStrip.Name = "customContextMenuStrip1";
+            this.desktopContextMenuStrip.OwnerItem = this.toolStripMenuItem2;
             this.desktopContextMenuStrip.Size = new System.Drawing.Size(192, 208);
             // 
             // fileManagerToolStripMenuItem
@@ -691,26 +688,6 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // test123ToolStripMenuItem
-            // 
-            this.test123ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.test123ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.test123ToolStripMenuItem.Name = "test123ToolStripMenuItem";
-            this.test123ToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
-            this.test123ToolStripMenuItem.Text = "Test123";
-            this.test123ToolStripMenuItem.Visible = false;
-            this.test123ToolStripMenuItem.Click += new System.EventHandler(this.test123ToolStripMenuItem_Click);
-            // 
-            // test456ToolStripMenuItem
-            // 
-            this.test456ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.test456ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.test456ToolStripMenuItem.Name = "test456ToolStripMenuItem";
-            this.test456ToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
-            this.test456ToolStripMenuItem.Text = "Test456";
-            this.test456ToolStripMenuItem.Visible = false;
-            this.test456ToolStripMenuItem.Click += new System.EventHandler(this.test456ToolStripMenuItem_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -810,6 +787,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // guna2VScrollBar1
             // 
@@ -921,8 +899,6 @@
         private System.Windows.Forms.ToolStripMenuItem memoryExecutionToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem test123ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem test456ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private System.Windows.Forms.Label label2;

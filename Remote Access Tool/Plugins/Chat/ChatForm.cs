@@ -145,19 +145,19 @@ namespace Plugin
 
 		}
 
-		protected override CreateParams CreateParams
-		{
-			get
-			{
-				CreateParams cp = base.CreateParams;
-				const int CS_NOCLOSE = 0x200;
-				cp.ClassStyle |= CS_NOCLOSE;
-				return cp;
-			}
-		}
-
         private void ChatForm_Load(object sender, EventArgs e)
         {
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                const int CS_NOCLOSE = 0x200;
+                cp.ClassStyle |= CS_NOCLOSE;
+                return cp;
+            }
         }
 
         private void ChatForm_Shown(object sender, EventArgs e)
@@ -166,8 +166,8 @@ namespace Plugin
             this.msgRichTextBox.AppendText("You : Connected !" + "\n");
 
             RemoteChatPacket chatPacket = new RemoteChatPacket("User : Connected !" + "\n");
-            chatPacket.baseIp = Launch.baseIp;
-            chatPacket.HWID = Launch.HWID;
+            chatPacket.baseIp = Launch.clientHandler.baseIp;
+            chatPacket.HWID = Launch.clientHandler.HWID;
             this.msgRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
             Launch.clientHandler.SendPacket(chatPacket);
         }
@@ -177,8 +177,8 @@ namespace Plugin
             this.msgRichTextBox.SelectionColor = Color.FromArgb(66, 182, 245);
             this.msgRichTextBox.AppendText($"You : {messageGuna2TextBox.Text}" + "\n");
             RemoteChatPacket chatPacket = new RemoteChatPacket($"User : {messageGuna2TextBox.Text}" + "\n");
-            chatPacket.baseIp = Launch.baseIp;
-            chatPacket.HWID = Launch.HWID;
+            chatPacket.baseIp = Launch.clientHandler.baseIp;
+            chatPacket.HWID = Launch.clientHandler.HWID;
             this.msgRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
             Launch.clientHandler.SendPacket(chatPacket);
         }

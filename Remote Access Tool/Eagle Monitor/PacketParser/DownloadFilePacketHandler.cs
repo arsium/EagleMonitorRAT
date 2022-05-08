@@ -1,6 +1,10 @@
-﻿using EagleMonitor.Networking;
+﻿using EagleMonitor.Forms;
+using EagleMonitor.Networking;
 using EagleMonitor.Utils;
 using PacketLib.Packet;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -13,34 +17,36 @@ namespace EagleMonitor.PacketParser
     {
         public DownloadFilePacketHandler(DownloadFilePacket downloadFilePacket, ClientHandler clientHandler) : base()
         {
-            try
+            string formName = downloadFilePacket.baseIp + ":" + Miscellaneous.SplitPath(downloadFilePacket.fileName);
+
+            FileManagerForm.downloadForms[formName].BeginInvoke((MethodInvoker)(() => 
             {
-                if (downloadFilePacket.file == null)
+                using (var stream = new FileStream(ClientHandler.ClientHandlersList[downloadFilePacket.baseIp].clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), FileMode.Append))
                 {
-                    clientHandler.fileManagerForm.files[Miscellaneous.SplitPath(downloadFilePacket.fileName)].Close();
-                    clientHandler.fileManagerForm.files.Remove(Miscellaneous.SplitPath(downloadFilePacket.fileName));
-                    return;
+                    stream.Write(downloadFilePacket.file, 0, downloadFilePacket.file.Length);
                 }
 
-                if (clientHandler.fileManagerForm != null)
+                FileManagerForm.downloadForms[formName].clientHandler = clientHandler;
+                FileManagerForm.downloadForms[formName].currentDownloaded += downloadFilePacket.file.Length;
+                FileManagerForm.downloadForms[formName].guna2ProgressBar1.Value += downloadFilePacket.file.Length;
+
+                decimal pourcentage = (decimal)FileManagerForm.downloadForms[formName].currentDownloaded / FileManagerForm.downloadForms[formName].totalSize;
+                decimal final = Decimal.Round(pourcentage * 100, 2);
+
+                FileManagerForm.downloadForms[formName].label2.Text = $"{final}%";
+
+                FileManagerForm.downloadForms[formName].labelSize.Text = $"{Miscellaneous.Numeric2Bytes(FileManagerForm.downloadForms[formName].currentDownloaded)} / {Miscellaneous.Numeric2Bytes(FileManagerForm.downloadForms[formName].totalSize)}";
+
+                if (FileManagerForm.downloadForms[formName].currentDownloaded == FileManagerForm.downloadForms[formName].totalSize)
                 {
-                    if (clientHandler.fileManagerForm.files != null)
-                    {
-                        if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Downloaded Files\\"))
-                            System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
-                        System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
-                        clientHandler.fileManagerForm.files[Miscellaneous.SplitPath(downloadFilePacket.fileName)].Close();
-                        clientHandler.fileManagerForm.files.Remove(Miscellaneous.SplitPath(downloadFilePacket.fileName));
-                    }
+                    FileManagerForm.downloadForms[formName].Close();
+                    FileManagerForm.downloadForms.Remove(formName);
+                    clientHandler.Dispose();
                 }
-                else
-                {
-                    if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Downloaded Files\\"))
-                        System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files");
-                    System.IO.File.WriteAllBytes(clientHandler.clientPath + "\\Downloaded Files\\" + Miscellaneous.SplitPath(downloadFilePacket.fileName), downloadFilePacket.file);
-                }
-            }
-            catch { }
+
+                downloadFilePacket.file = null;
+
+            }));
         }
     }
 }

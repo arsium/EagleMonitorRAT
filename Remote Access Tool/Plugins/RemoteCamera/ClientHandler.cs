@@ -35,11 +35,13 @@ namespace Plugin
         public ReadDataAsync readDataAsync;
         public ReadPacketAsync readPacketAsync;
 
-        public ClientHandler(Host host, string key) : base()
+        public ClientHandler(Host host, string key, string baseIp, string HWID) : base()
         {
             this.hasToExit = false;
             this.host = host;
             this.key = key;
+            this.HWID = HWID;
+            this.baseIp = baseIp;
             sendDataAsync = new SendDataAsync(SendData);
             readDataAsync = new ReadDataAsync(ReceiveData);
             readPacketAsync = new ReadPacketAsync(PacketParser);
@@ -140,7 +142,7 @@ namespace Plugin
         {
             try
             {
-                return BufferPacket.DeserializePacket(Launch.key);
+                return BufferPacket.DeserializePacket(this.key);
             }
             catch (Exception)
             { return null; }

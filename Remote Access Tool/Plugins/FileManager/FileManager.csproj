@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="ClientHandler.cs" />
     <Compile Include="DeleteFile.cs" />
-    <Compile Include="DownloadFile.cs" />
+    <Compile Include="DownloadClientHandler.cs" />
     <Compile Include="GetDisks.cs" />
     <Compile Include="GetFilesAndDirs.cs" />
     <Compile Include="Imports.cs" />

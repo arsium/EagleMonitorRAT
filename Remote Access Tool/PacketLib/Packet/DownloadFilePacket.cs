@@ -14,7 +14,6 @@ namespace PacketLib.Packet
         public DownloadFilePacket(string path) : base()
         {
             this.packetType = PacketType.FM_DOWNLOAD_FILE;
-
             this.fileName = path;
         }
 

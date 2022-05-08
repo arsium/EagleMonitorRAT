@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientHandler.cs" />
-    <Compile Include="Helpers.cs" />
+    <Compile Include="CaptureHelpers.cs" />
     <Compile Include="Imports.cs" />
     <Compile Include="KeyboardHelper.cs" />
     <Compile Include="Launch.cs" />

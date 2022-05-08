@@ -17,8 +17,6 @@ namespace EagleMonitor.PacketParser
         {
             new Thread(() =>
             {
-                if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\History\\"))
-                    System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\History");
                 if (historyPacket.historyList != null)
                 {
                     try

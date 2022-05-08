@@ -140,8 +140,6 @@ namespace Client
                 readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
             
             Receive();
-            
-            //Task.Run(() => PacketParser(data));
         }
 
 

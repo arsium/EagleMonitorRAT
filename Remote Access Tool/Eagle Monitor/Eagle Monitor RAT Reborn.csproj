@@ -222,11 +222,10 @@
       <DependentUpon>RemoteDesktopForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Networking\ClientHandler.cs" />
-    <Compile Include="Networking\StartupTaskWorker.cs" />
-    <Compile Include="Networking\StaticPacketHandler.cs" />
+    <Compile Include="Networking\StartupTaskHandler.cs" />
     <Compile Include="Networking\PacketHandler.cs" />
-    <Compile Include="PacketParser\AutofillPacketParser.cs" />
-    <Compile Include="PacketParser\ChatPacketParser.cs" />
+    <Compile Include="PacketParser\AutofillPacketHandler.cs" />
+    <Compile Include="PacketParser\ChatPacketHandler.cs" />
     <Compile Include="PacketParser\ConnectedPacketHandler.cs" />
     <Compile Include="PacketParser\DeleteFilePacketHandler.cs" />
     <Compile Include="PacketParser\DisksPacketHandler.cs" />
@@ -251,7 +250,7 @@
     <Compile Include="PacketParser\SuspendProcessPacketHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Networking\Server.cs" />
+    <Compile Include="Networking\ServerHandler.cs" />
     <Compile Include="Forms\RemoteCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>

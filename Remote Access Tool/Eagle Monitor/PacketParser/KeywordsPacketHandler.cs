@@ -18,8 +18,6 @@ namespace EagleMonitor.PacketParser
         {
             new Thread(() =>
             {
-                if (!System.IO.Directory.Exists(clientHandler.clientPath + "\\Keywords\\"))
-                    System.IO.Directory.CreateDirectory(clientHandler.clientPath + "\\Keywords");
                 if (keywordsPacket.keywordsList != null)
                 {
                     try

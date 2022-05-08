@@ -47,7 +47,7 @@ namespace EagleMonitor
                 {
                     new Thread(() =>
                     {
-                        Server s = new Server();
+                        ServerHandler s = new ServerHandler();
                         s.Listen(p);
                     }).Start();
                 }
@@ -56,7 +56,6 @@ namespace EagleMonitor
             {
                 Process proc = Process.Start("Eagle Monitor Configurator.exe");
                 Miscellaneous.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
-                proc.WaitForExit();
             }
         }
         private void SettingsLoaded(IAsyncResult ar) 
@@ -64,6 +63,7 @@ namespace EagleMonitor
             loadSettings.EndInvoke(ar);
             this.BeginInvoke((MethodInvoker)(() =>
             {
+                this.label1.Text = $"Eagle Monitor RAT Reborn V{AboutForm.CoreAssembly.Version}";
                 this.label2.Text = "Listening on : { ";
                 foreach (int p in Miscellaneous.settings.ports)
                 {
@@ -749,19 +749,8 @@ namespace EagleMonitor
             new AboutForm().Show();
         }
 
-        private void test123ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void test456ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
-            //TODO : Saves the logs
             Miscellaneous.ToCSV(Program.logForm.dataGridView1);
             Miscellaneous.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
         }
@@ -784,6 +773,12 @@ namespace EagleMonitor
         }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.FindForm().Handle, 161, 2, 0);
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.FindForm().Handle, 161, 2, 0);

