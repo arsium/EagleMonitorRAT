@@ -152,7 +152,6 @@ Client.EntryClass.Main()
 
 ## Interface 
 
-![PIC1](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/3.png?raw=true)
 ![PIC2](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/2.png?raw=true)
 ![PIC3](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/6.png?raw=true)
 ![PIC4](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/7.png?raw=true)
