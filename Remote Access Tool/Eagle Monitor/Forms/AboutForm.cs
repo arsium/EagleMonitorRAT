@@ -30,7 +30,7 @@ namespace EagleMonitor.Forms
             RowsAdder("Name", CoreAssembly.Name);
             RowsAdder("Version", CoreAssembly.Version.ToString());
             RowsAdder("Author", "Arsium");
-            RowsAdder("License", "MIT");
+            RowsAdder("License", "AGPL-3.0");
             RowsAdder("Source", "https://github.com/arsium/EagleMonitorRAT");
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell = null;

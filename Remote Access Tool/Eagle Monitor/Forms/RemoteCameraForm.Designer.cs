@@ -155,24 +155,18 @@
             this.captureGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.captureGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.captureGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.captureGuna2ToggleSwitch.CheckedState.Parent = this.captureGuna2ToggleSwitch;
             this.captureGuna2ToggleSwitch.Location = new System.Drawing.Point(56, 11);
             this.captureGuna2ToggleSwitch.Name = "captureGuna2ToggleSwitch";
-            this.captureGuna2ToggleSwitch.ShadowDecoration.Parent = this.captureGuna2ToggleSwitch;
             this.captureGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
             this.captureGuna2ToggleSwitch.TabIndex = 44;
             this.captureGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.captureGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.captureGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.captureGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.captureGuna2ToggleSwitch.UncheckedState.Parent = this.captureGuna2ToggleSwitch;
             this.captureGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.captureGuna2ToggleSwitch_CheckedChanged);
             // 
             // qualityGuna2TrackBar
             // 
-            this.qualityGuna2TrackBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.qualityGuna2TrackBar.HoverState.Parent = this.qualityGuna2TrackBar;
-            this.qualityGuna2TrackBar.IndicateFocus = false;
             this.qualityGuna2TrackBar.Location = new System.Drawing.Point(147, 12);
             this.qualityGuna2TrackBar.Name = "qualityGuna2TrackBar";
             this.qualityGuna2TrackBar.Size = new System.Drawing.Size(115, 20);
@@ -210,15 +204,11 @@
             this.camerasGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.camerasGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.camerasGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.camerasGuna2ComboBox.FocusedState.Parent = this.camerasGuna2ComboBox;
             this.camerasGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.camerasGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.camerasGuna2ComboBox.HoverState.Parent = this.camerasGuna2ComboBox;
             this.camerasGuna2ComboBox.ItemHeight = 30;
-            this.camerasGuna2ComboBox.ItemsAppearance.Parent = this.camerasGuna2ComboBox;
             this.camerasGuna2ComboBox.Location = new System.Drawing.Point(268, 3);
             this.camerasGuna2ComboBox.Name = "camerasGuna2ComboBox";
-            this.camerasGuna2ComboBox.ShadowDecoration.Parent = this.camerasGuna2ComboBox;
             this.camerasGuna2ComboBox.Size = new System.Drawing.Size(523, 36);
             this.camerasGuna2ComboBox.TabIndex = 46;
             // 
@@ -235,15 +225,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(765, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 43;
             this.closeButton.Text = "╳";
@@ -253,33 +239,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(727, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 42;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(689, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 41;
             this.minimizeButton.Text = "🗕";

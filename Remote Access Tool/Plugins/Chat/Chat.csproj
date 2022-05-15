@@ -38,7 +38,7 @@
       <HintPath>..\..\..\packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>C:\Users\Arsium\Documents\DLL UI\Guna 2.0.1.4\Guna.UI2.dll</HintPath>
+      <HintPath>..\..\DLLs + Package\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />

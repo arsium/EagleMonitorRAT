@@ -36,6 +36,8 @@
             this.portListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.portCustomContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keyGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.saveGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GroupBox1.SuspendLayout();
             this.portCustomContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,15 +56,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(763, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 5;
             this.closeButton.Text = "╳";
@@ -74,33 +70,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(725, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 4;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(687, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 3;
             this.minimizeButton.Text = "🗕";
@@ -117,7 +105,6 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(5, 32);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Padding = new System.Windows.Forms.Padding(2, 40, 2, 2);
-            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(790, 277);
             this.guna2GroupBox1.TabIndex = 6;
             this.guna2GroupBox1.Text = "Ports";
@@ -148,6 +135,26 @@
             this.portCustomContextMenuStrip.Name = "portCustomContextMenuStrip";
             this.portCustomContextMenuStrip.Size = new System.Drawing.Size(134, 80);
             // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.addToolStripMenuItem1.Image = global::EagleMonitor_Configurator.Properties.Resources.button_add_2x;
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(133, 38);
+            this.addToolStripMenuItem1.Text = "Add";
+            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.removeToolStripMenuItem.Image = global::EagleMonitor_Configurator.Properties.Resources.button_remove_2x;
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(133, 38);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
             // keyGuna2TextBox
             // 
             this.keyGuna2TextBox.Animated = true;
@@ -157,40 +164,32 @@
             this.keyGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.keyGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.keyGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.keyGuna2TextBox.DisabledState.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.keyGuna2TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.keyGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.keyGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyGuna2TextBox.FocusedState.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.keyGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.keyGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyGuna2TextBox.HoverState.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Location = new System.Drawing.Point(5, 367);
             this.keyGuna2TextBox.Name = "keyGuna2TextBox";
             this.keyGuna2TextBox.PasswordChar = '\0';
             this.keyGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.keyGuna2TextBox.PlaceholderText = "...";
             this.keyGuna2TextBox.SelectedText = "";
-            this.keyGuna2TextBox.ShadowDecoration.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Size = new System.Drawing.Size(790, 36);
             this.keyGuna2TextBox.TabIndex = 7;
             // 
             // saveGuna2Button
             // 
             this.saveGuna2Button.Animated = true;
-            this.saveGuna2Button.CheckedState.Parent = this.saveGuna2Button;
-            this.saveGuna2Button.CustomImages.Parent = this.saveGuna2Button;
             this.saveGuna2Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.saveGuna2Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.saveGuna2Button.HoverState.Parent = this.saveGuna2Button;
             this.saveGuna2Button.Location = new System.Drawing.Point(5, 413);
             this.saveGuna2Button.Margin = new System.Windows.Forms.Padding(0);
             this.saveGuna2Button.Name = "saveGuna2Button";
             this.saveGuna2Button.ShadowDecoration.Enabled = true;
-            this.saveGuna2Button.ShadowDecoration.Parent = this.saveGuna2Button;
             this.saveGuna2Button.Size = new System.Drawing.Size(790, 32);
             this.saveGuna2Button.TabIndex = 8;
             this.saveGuna2Button.Text = "Save Settings !";
@@ -244,20 +243,16 @@
             this.flagsPackGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.flagsPackGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.flagsPackGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.flagsPackGuna2ComboBox.FocusedState.Parent = this.flagsPackGuna2ComboBox;
             this.flagsPackGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.flagsPackGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.flagsPackGuna2ComboBox.HoverState.Parent = this.flagsPackGuna2ComboBox;
             this.flagsPackGuna2ComboBox.ItemHeight = 30;
             this.flagsPackGuna2ComboBox.Items.AddRange(new object[] {
             "FlagsBase",
             "FlagsPack1",
             "FlagsPack2",
             "FlagsPack3"});
-            this.flagsPackGuna2ComboBox.ItemsAppearance.Parent = this.flagsPackGuna2ComboBox;
             this.flagsPackGuna2ComboBox.Location = new System.Drawing.Point(224, 315);
             this.flagsPackGuna2ComboBox.Name = "flagsPackGuna2ComboBox";
-            this.flagsPackGuna2ComboBox.ShadowDecoration.Parent = this.flagsPackGuna2ComboBox;
             this.flagsPackGuna2ComboBox.Size = new System.Drawing.Size(275, 36);
             this.flagsPackGuna2ComboBox.TabIndex = 47;
             // 
@@ -291,26 +286,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 49;
             this.pictureBox2.TabStop = false;
-            // 
-            // addToolStripMenuItem1
-            // 
-            this.addToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.addToolStripMenuItem1.Image = global::EagleMonitor_Configurator.Properties.Resources.button_add_2x;
-            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(133, 38);
-            this.addToolStripMenuItem1.Text = "Add";
-            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.removeToolStripMenuItem.Image = global::EagleMonitor_Configurator.Properties.Resources.button_remove_2x;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(133, 38);
-            this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // Main
             // 

@@ -42,6 +42,9 @@
             // 
             // messageRichTextBox
             // 
+            this.messageRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.messageRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.messageRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.messageRichTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -57,15 +60,11 @@
             this.sendMsgGuna2Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sendMsgGuna2Button.Animated = true;
-            this.sendMsgGuna2Button.CheckedState.Parent = this.sendMsgGuna2Button;
-            this.sendMsgGuna2Button.CustomImages.Parent = this.sendMsgGuna2Button;
             this.sendMsgGuna2Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendMsgGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.sendMsgGuna2Button.HoverState.Parent = this.sendMsgGuna2Button;
             this.sendMsgGuna2Button.Location = new System.Drawing.Point(281, 38);
             this.sendMsgGuna2Button.Name = "sendMsgGuna2Button";
             this.sendMsgGuna2Button.ShadowDecoration.Enabled = true;
-            this.sendMsgGuna2Button.ShadowDecoration.Parent = this.sendMsgGuna2Button;
             this.sendMsgGuna2Button.Size = new System.Drawing.Size(276, 32);
             this.sendMsgGuna2Button.TabIndex = 8;
             this.sendMsgGuna2Button.Text = "Send message";
@@ -74,15 +73,11 @@
             // stopGuna2Button
             // 
             this.stopGuna2Button.Animated = true;
-            this.stopGuna2Button.CheckedState.Parent = this.stopGuna2Button;
-            this.stopGuna2Button.CustomImages.Parent = this.stopGuna2Button;
             this.stopGuna2Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.stopGuna2Button.HoverState.Parent = this.stopGuna2Button;
             this.stopGuna2Button.Location = new System.Drawing.Point(144, 38);
             this.stopGuna2Button.Name = "stopGuna2Button";
             this.stopGuna2Button.ShadowDecoration.Enabled = true;
-            this.stopGuna2Button.ShadowDecoration.Parent = this.stopGuna2Button;
             this.stopGuna2Button.Size = new System.Drawing.Size(131, 32);
             this.stopGuna2Button.TabIndex = 7;
             this.stopGuna2Button.Text = "Stop chat";
@@ -91,15 +86,11 @@
             // startGuna2Button
             // 
             this.startGuna2Button.Animated = true;
-            this.startGuna2Button.CheckedState.Parent = this.startGuna2Button;
-            this.startGuna2Button.CustomImages.Parent = this.startGuna2Button;
             this.startGuna2Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.startGuna2Button.HoverState.Parent = this.startGuna2Button;
             this.startGuna2Button.Location = new System.Drawing.Point(7, 38);
             this.startGuna2Button.Name = "startGuna2Button";
             this.startGuna2Button.ShadowDecoration.Enabled = true;
-            this.startGuna2Button.ShadowDecoration.Parent = this.startGuna2Button;
             this.startGuna2Button.Size = new System.Drawing.Size(131, 32);
             this.startGuna2Button.TabIndex = 6;
             this.startGuna2Button.Text = "Start chat";
@@ -109,15 +100,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(531, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 5;
             this.closeButton.Text = "╳";
@@ -127,33 +114,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(493, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 4;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(455, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 3;
             this.minimizeButton.Text = "🗕";
@@ -169,21 +148,17 @@
             this.messageGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.messageGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.messageGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.messageGuna2TextBox.DisabledState.Parent = this.messageGuna2TextBox;
             this.messageGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.messageGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.messageGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.messageGuna2TextBox.FocusedState.Parent = this.messageGuna2TextBox;
             this.messageGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.messageGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.messageGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.messageGuna2TextBox.HoverState.Parent = this.messageGuna2TextBox;
             this.messageGuna2TextBox.Location = new System.Drawing.Point(7, 76);
             this.messageGuna2TextBox.Name = "messageGuna2TextBox";
             this.messageGuna2TextBox.PasswordChar = '\0';
             this.messageGuna2TextBox.PlaceholderText = "Message...";
             this.messageGuna2TextBox.SelectedText = "";
-            this.messageGuna2TextBox.ShadowDecoration.Parent = this.messageGuna2TextBox;
             this.messageGuna2TextBox.Size = new System.Drawing.Size(551, 25);
             this.messageGuna2TextBox.TabIndex = 13;
             // 

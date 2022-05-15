@@ -63,6 +63,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_statement_large_2x {
+            get {
+                object obj = ResourceManager.GetObject("account-statement_large@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap action_repeat {
             get {
                 object obj = ResourceManager.GetObject("action-repeat", resourceCulture);
@@ -341,6 +351,16 @@ namespace EagleMonitor.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dfrgui_130 {
+            get {
+                object obj = ResourceManager.GetObject("dfrgui_130", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
         internal static System.Drawing.Icon dmdskres_372 {
@@ -376,6 +396,16 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap eagle2 {
             get {
                 object obj = ResourceManager.GetObject("eagle2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eagle21 {
+            get {
+                object obj = ResourceManager.GetObject("eagle21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +546,16 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap history_2x {
             get {
                 object obj = ResourceManager.GetObject("history@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8__net_or___dot_net___a_software_framework_developed_by_microsoft_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-.net-or-__dot-net__-a-software-framework-developed-by-microsoft-96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -856,6 +896,16 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap window_picture_large_2x {
             get {
                 object obj = ResourceManager.GetObject("window-picture_large@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wmploc_29614 {
+            get {
+                object obj = ResourceManager.GetObject("wmploc_29614", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

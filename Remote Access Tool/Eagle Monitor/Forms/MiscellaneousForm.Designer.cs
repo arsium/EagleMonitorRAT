@@ -55,8 +55,8 @@
             this.maximizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.degreesGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.rotateScreenGuna2Button = new Guna.UI2.WinForms.Guna2Button();
+            this.degreesGuna2ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -90,7 +90,6 @@
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2GroupBox3.Location = new System.Drawing.Point(6, 144);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
             this.guna2GroupBox3.Size = new System.Drawing.Size(269, 153);
             this.guna2GroupBox3.TabIndex = 50;
             this.guna2GroupBox3.Text = "Hardware";
@@ -110,17 +109,14 @@
             this.keyboardGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.keyboardGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.keyboardGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.CheckedState.Parent = this.keyboardGuna2ToggleSwitch;
             this.keyboardGuna2ToggleSwitch.Location = new System.Drawing.Point(86, 97);
             this.keyboardGuna2ToggleSwitch.Name = "keyboardGuna2ToggleSwitch";
-            this.keyboardGuna2ToggleSwitch.ShadowDecoration.Parent = this.keyboardGuna2ToggleSwitch;
             this.keyboardGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
             this.keyboardGuna2ToggleSwitch.TabIndex = 54;
             this.keyboardGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.keyboardGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.keyboardGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.keyboardGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.keyboardGuna2ToggleSwitch.UncheckedState.Parent = this.keyboardGuna2ToggleSwitch;
             this.keyboardGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.keyboardGuna2ToggleSwitch_CheckedChanged);
             // 
             // label6
@@ -138,17 +134,14 @@
             this.mouseGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.mouseGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.mouseGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.mouseGuna2ToggleSwitch.CheckedState.Parent = this.mouseGuna2ToggleSwitch;
             this.mouseGuna2ToggleSwitch.Location = new System.Drawing.Point(86, 55);
             this.mouseGuna2ToggleSwitch.Name = "mouseGuna2ToggleSwitch";
-            this.mouseGuna2ToggleSwitch.ShadowDecoration.Parent = this.mouseGuna2ToggleSwitch;
             this.mouseGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
             this.mouseGuna2ToggleSwitch.TabIndex = 52;
             this.mouseGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.mouseGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.mouseGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.mouseGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.mouseGuna2ToggleSwitch.UncheckedState.Parent = this.mouseGuna2ToggleSwitch;
             this.mouseGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.mouseGuna2ToggleSwitch_CheckedChanged);
             // 
             // guna2GroupBox2
@@ -170,7 +163,6 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(281, 35);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
             this.guna2GroupBox2.Size = new System.Drawing.Size(300, 262);
             this.guna2GroupBox2.TabIndex = 49;
             this.guna2GroupBox2.Text = "UI";
@@ -179,14 +171,10 @@
             // 
             this.hideDesktopIconsGuna2Button.Animated = true;
             this.hideDesktopIconsGuna2Button.BackColor = System.Drawing.Color.Transparent;
-            this.hideDesktopIconsGuna2Button.CheckedState.Parent = this.hideDesktopIconsGuna2Button;
-            this.hideDesktopIconsGuna2Button.CustomImages.Parent = this.hideDesktopIconsGuna2Button;
             this.hideDesktopIconsGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.hideDesktopIconsGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.hideDesktopIconsGuna2Button.HoverState.Parent = this.hideDesktopIconsGuna2Button;
             this.hideDesktopIconsGuna2Button.Location = new System.Drawing.Point(95, 191);
             this.hideDesktopIconsGuna2Button.Name = "hideDesktopIconsGuna2Button";
-            this.hideDesktopIconsGuna2Button.ShadowDecoration.Parent = this.hideDesktopIconsGuna2Button;
             this.hideDesktopIconsGuna2Button.Size = new System.Drawing.Size(90, 38);
             this.hideDesktopIconsGuna2Button.TabIndex = 57;
             this.hideDesktopIconsGuna2Button.Text = "Hide";
@@ -196,14 +184,10 @@
             // 
             this.showDesktopIconsGuna2Button.Animated = true;
             this.showDesktopIconsGuna2Button.BackColor = System.Drawing.Color.Transparent;
-            this.showDesktopIconsGuna2Button.CheckedState.Parent = this.showDesktopIconsGuna2Button;
-            this.showDesktopIconsGuna2Button.CustomImages.Parent = this.showDesktopIconsGuna2Button;
             this.showDesktopIconsGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.showDesktopIconsGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.showDesktopIconsGuna2Button.HoverState.Parent = this.showDesktopIconsGuna2Button;
             this.showDesktopIconsGuna2Button.Location = new System.Drawing.Point(192, 191);
             this.showDesktopIconsGuna2Button.Name = "showDesktopIconsGuna2Button";
-            this.showDesktopIconsGuna2Button.ShadowDecoration.Parent = this.showDesktopIconsGuna2Button;
             this.showDesktopIconsGuna2Button.Size = new System.Drawing.Size(90, 38);
             this.showDesktopIconsGuna2Button.TabIndex = 58;
             this.showDesktopIconsGuna2Button.Text = "Show";
@@ -225,17 +209,14 @@
             this.screenLockerGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.screenLockerGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.screenLockerGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.screenLockerGuna2ToggleSwitch.CheckedState.Parent = this.screenLockerGuna2ToggleSwitch;
             this.screenLockerGuna2ToggleSwitch.Location = new System.Drawing.Point(95, 160);
             this.screenLockerGuna2ToggleSwitch.Name = "screenLockerGuna2ToggleSwitch";
-            this.screenLockerGuna2ToggleSwitch.ShadowDecoration.Parent = this.screenLockerGuna2ToggleSwitch;
             this.screenLockerGuna2ToggleSwitch.Size = new System.Drawing.Size(47, 23);
             this.screenLockerGuna2ToggleSwitch.TabIndex = 55;
             this.screenLockerGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.screenLockerGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.screenLockerGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.screenLockerGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.screenLockerGuna2ToggleSwitch.UncheckedState.Parent = this.screenLockerGuna2ToggleSwitch;
             this.screenLockerGuna2ToggleSwitch.CheckedChanged += new System.EventHandler(this.screenLockerGuna2ToggleSwitch_CheckedChanged);
             // 
             // label8
@@ -262,14 +243,10 @@
             // 
             this.wallpaperGuna2Button.Animated = true;
             this.wallpaperGuna2Button.BackColor = System.Drawing.Color.Transparent;
-            this.wallpaperGuna2Button.CheckedState.Parent = this.wallpaperGuna2Button;
-            this.wallpaperGuna2Button.CustomImages.Parent = this.wallpaperGuna2Button;
             this.wallpaperGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.wallpaperGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.wallpaperGuna2Button.HoverState.Parent = this.wallpaperGuna2Button;
             this.wallpaperGuna2Button.Location = new System.Drawing.Point(95, 102);
             this.wallpaperGuna2Button.Name = "wallpaperGuna2Button";
-            this.wallpaperGuna2Button.ShadowDecoration.Parent = this.wallpaperGuna2Button;
             this.wallpaperGuna2Button.Size = new System.Drawing.Size(187, 38);
             this.wallpaperGuna2Button.TabIndex = 48;
             this.wallpaperGuna2Button.Text = "Change";
@@ -279,14 +256,10 @@
             // 
             this.hideTaskBarGuna2Button.Animated = true;
             this.hideTaskBarGuna2Button.BackColor = System.Drawing.Color.Transparent;
-            this.hideTaskBarGuna2Button.CheckedState.Parent = this.hideTaskBarGuna2Button;
-            this.hideTaskBarGuna2Button.CustomImages.Parent = this.hideTaskBarGuna2Button;
             this.hideTaskBarGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.hideTaskBarGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.hideTaskBarGuna2Button.HoverState.Parent = this.hideTaskBarGuna2Button;
             this.hideTaskBarGuna2Button.Location = new System.Drawing.Point(95, 48);
             this.hideTaskBarGuna2Button.Name = "hideTaskBarGuna2Button";
-            this.hideTaskBarGuna2Button.ShadowDecoration.Parent = this.hideTaskBarGuna2Button;
             this.hideTaskBarGuna2Button.Size = new System.Drawing.Size(90, 38);
             this.hideTaskBarGuna2Button.TabIndex = 47;
             this.hideTaskBarGuna2Button.Text = "Hide";
@@ -296,14 +269,10 @@
             // 
             this.showTaskBarGuna2Button.Animated = true;
             this.showTaskBarGuna2Button.BackColor = System.Drawing.Color.Transparent;
-            this.showTaskBarGuna2Button.CheckedState.Parent = this.showTaskBarGuna2Button;
-            this.showTaskBarGuna2Button.CustomImages.Parent = this.showTaskBarGuna2Button;
             this.showTaskBarGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.showTaskBarGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.showTaskBarGuna2Button.HoverState.Parent = this.showTaskBarGuna2Button;
             this.showTaskBarGuna2Button.Location = new System.Drawing.Point(192, 48);
             this.showTaskBarGuna2Button.Name = "showTaskBarGuna2Button";
-            this.showTaskBarGuna2Button.ShadowDecoration.Parent = this.showTaskBarGuna2Button;
             this.showTaskBarGuna2Button.Size = new System.Drawing.Size(90, 38);
             this.showTaskBarGuna2Button.TabIndex = 47;
             this.showTaskBarGuna2Button.Text = "Show";
@@ -332,7 +301,6 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(6, 35);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(268, 103);
             this.guna2GroupBox1.TabIndex = 48;
             this.guna2GroupBox1.Text = "Audio";
@@ -361,14 +329,10 @@
             this.increaseVolGuna2Button.AutoRoundedCorners = true;
             this.increaseVolGuna2Button.BackColor = System.Drawing.Color.Transparent;
             this.increaseVolGuna2Button.BorderRadius = 18;
-            this.increaseVolGuna2Button.CheckedState.Parent = this.increaseVolGuna2Button;
-            this.increaseVolGuna2Button.CustomImages.Parent = this.increaseVolGuna2Button;
             this.increaseVolGuna2Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.increaseVolGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.increaseVolGuna2Button.HoverState.Parent = this.increaseVolGuna2Button;
             this.increaseVolGuna2Button.Location = new System.Drawing.Point(196, 48);
             this.increaseVolGuna2Button.Name = "increaseVolGuna2Button";
-            this.increaseVolGuna2Button.ShadowDecoration.Parent = this.increaseVolGuna2Button;
             this.increaseVolGuna2Button.Size = new System.Drawing.Size(38, 38);
             this.increaseVolGuna2Button.TabIndex = 46;
             this.increaseVolGuna2Button.Text = "+";
@@ -380,14 +344,10 @@
             this.decreaseVolGuna2Button.AutoRoundedCorners = true;
             this.decreaseVolGuna2Button.BackColor = System.Drawing.Color.Transparent;
             this.decreaseVolGuna2Button.BorderRadius = 18;
-            this.decreaseVolGuna2Button.CheckedState.Parent = this.decreaseVolGuna2Button;
-            this.decreaseVolGuna2Button.CustomImages.Parent = this.decreaseVolGuna2Button;
             this.decreaseVolGuna2Button.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.decreaseVolGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.decreaseVolGuna2Button.HoverState.Parent = this.decreaseVolGuna2Button;
             this.decreaseVolGuna2Button.Location = new System.Drawing.Point(74, 48);
             this.decreaseVolGuna2Button.Name = "decreaseVolGuna2Button";
-            this.decreaseVolGuna2Button.ShadowDecoration.Parent = this.decreaseVolGuna2Button;
             this.decreaseVolGuna2Button.Size = new System.Drawing.Size(38, 38);
             this.decreaseVolGuna2Button.TabIndex = 45;
             this.decreaseVolGuna2Button.Text = "-";
@@ -397,15 +357,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(556, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 43;
             this.closeButton.Text = "╳";
@@ -415,33 +371,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(518, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 42;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(480, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 41;
             this.minimizeButton.Text = "🗕";
@@ -458,10 +406,22 @@
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2GroupBox4.Location = new System.Drawing.Point(6, 303);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
             this.guna2GroupBox4.Size = new System.Drawing.Size(575, 102);
             this.guna2GroupBox4.TabIndex = 60;
             this.guna2GroupBox4.Text = "Screen";
+            // 
+            // rotateScreenGuna2Button
+            // 
+            this.rotateScreenGuna2Button.Animated = true;
+            this.rotateScreenGuna2Button.BackColor = System.Drawing.Color.Transparent;
+            this.rotateScreenGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.rotateScreenGuna2Button.ForeColor = System.Drawing.Color.White;
+            this.rotateScreenGuna2Button.Location = new System.Drawing.Point(275, 53);
+            this.rotateScreenGuna2Button.Name = "rotateScreenGuna2Button";
+            this.rotateScreenGuna2Button.Size = new System.Drawing.Size(282, 36);
+            this.rotateScreenGuna2Button.TabIndex = 60;
+            this.rotateScreenGuna2Button.Text = "Rotate";
+            this.rotateScreenGuna2Button.Click += new System.EventHandler(this.rotateScreenGuna2Button_Click);
             // 
             // degreesGuna2ComboBox
             // 
@@ -472,40 +432,19 @@
             this.degreesGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.degreesGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.degreesGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.degreesGuna2ComboBox.FocusedState.Parent = this.degreesGuna2ComboBox;
             this.degreesGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.degreesGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.degreesGuna2ComboBox.HoverState.Parent = this.degreesGuna2ComboBox;
             this.degreesGuna2ComboBox.ItemHeight = 30;
             this.degreesGuna2ComboBox.Items.AddRange(new object[] {
             "0",
             "90",
             "180",
             "270"});
-            this.degreesGuna2ComboBox.ItemsAppearance.Parent = this.degreesGuna2ComboBox;
             this.degreesGuna2ComboBox.Location = new System.Drawing.Point(6, 53);
             this.degreesGuna2ComboBox.Name = "degreesGuna2ComboBox";
-            this.degreesGuna2ComboBox.ShadowDecoration.Parent = this.degreesGuna2ComboBox;
             this.degreesGuna2ComboBox.Size = new System.Drawing.Size(245, 36);
             this.degreesGuna2ComboBox.StartIndex = 0;
             this.degreesGuna2ComboBox.TabIndex = 1;
-            // 
-            // rotateScreenGuna2Button
-            // 
-            this.rotateScreenGuna2Button.Animated = true;
-            this.rotateScreenGuna2Button.BackColor = System.Drawing.Color.Transparent;
-            this.rotateScreenGuna2Button.CheckedState.Parent = this.rotateScreenGuna2Button;
-            this.rotateScreenGuna2Button.CustomImages.Parent = this.rotateScreenGuna2Button;
-            this.rotateScreenGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rotateScreenGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.rotateScreenGuna2Button.HoverState.Parent = this.rotateScreenGuna2Button;
-            this.rotateScreenGuna2Button.Location = new System.Drawing.Point(275, 53);
-            this.rotateScreenGuna2Button.Name = "rotateScreenGuna2Button";
-            this.rotateScreenGuna2Button.ShadowDecoration.Parent = this.rotateScreenGuna2Button;
-            this.rotateScreenGuna2Button.Size = new System.Drawing.Size(282, 36);
-            this.rotateScreenGuna2Button.TabIndex = 60;
-            this.rotateScreenGuna2Button.Text = "Rotate";
-            this.rotateScreenGuna2Button.Click += new System.EventHandler(this.rotateScreenGuna2Button_Click);
             // 
             // MiscellaneousForm
             // 

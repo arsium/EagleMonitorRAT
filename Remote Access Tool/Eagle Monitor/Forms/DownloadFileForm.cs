@@ -28,7 +28,7 @@ namespace EagleMonitor.Forms
             this.totalSize = totalSize;
             this.fileToDownload = fileToDownload;
             this.baseIp = baseIp;
-            FileManagerForm.downloadForms.Add(this.Name, this);
+            ClientHandler.ClientHandlersList[baseIp].downloadForms.Add(this.Name, this);
             InitializeComponent();
         }
 

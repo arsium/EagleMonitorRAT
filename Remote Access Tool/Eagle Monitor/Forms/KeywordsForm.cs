@@ -23,7 +23,6 @@ namespace EagleMonitor.Forms
             InitializeComponent();
         }
 
-
         private void KeywordsForm_Load(object sender, EventArgs e)
         {
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView1, guna2VScrollBar1, true);

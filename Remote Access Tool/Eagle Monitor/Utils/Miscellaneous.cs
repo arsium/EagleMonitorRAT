@@ -1,4 +1,5 @@
 ﻿using EagleMonitor.Config;
+using EagleMonitor.Controls;
 using PacketLib;
 using System;
 using System.Collections.Generic;
@@ -51,12 +52,11 @@ namespace EagleMonitor.Utils
             aProp.SetValue(dataGridView, true, null);
         }
 
-        internal static void CloseForm(Form any)
+        internal static void CloseForm(FormPattern any)
         {
             try
             {
-                if(any != null)
-                    any.Close();
+                any.Close();
             }
             catch { }
         }

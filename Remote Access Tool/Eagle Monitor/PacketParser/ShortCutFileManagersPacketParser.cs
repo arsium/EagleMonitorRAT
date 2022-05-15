@@ -53,7 +53,7 @@ namespace EagleMonitor.PacketParser
                             imageList.Images.Add(x.ToString(), btm);
                             ListViewItem listViewItem = new ListViewItem(file[0].ToString());
                             listViewItem.SubItems.Add(Utils.Miscellaneous.Numeric2Bytes((long)file[2]));
-                            listViewItem.Tag = "FILE";
+                            listViewItem.Tag = file[2];
                             listViewItem.Name = file[0].ToString();
                             listViewItem.ImageKey = x.ToString();
                             clientHandler.fileManagerForm.fileListView.Items.Add(listViewItem);

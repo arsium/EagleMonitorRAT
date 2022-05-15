@@ -5,7 +5,6 @@ using PacketLib;
 using PacketLib.Packet;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
@@ -19,11 +18,6 @@ namespace EagleMonitor.Forms
 {
     public partial class FileManagerForm : FormPattern
     {
-        internal static Dictionary<string, DownloadFileForm> downloadForms;
-        static FileManagerForm()
-        {
-            downloadForms = new Dictionary<string, DownloadFileForm>();
-        }
 
         private ClientHandler clientHandler { get; set; }
 

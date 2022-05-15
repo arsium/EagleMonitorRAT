@@ -30,6 +30,18 @@ namespace EagleMonitor.Networking
             startupTaskExisting = false;
         }
 
+        internal static void CheckSettingsAgain() 
+        {
+            if (File.Exists(Miscellaneous.GPath + "\\startuptask.dat"))
+            {
+                startupTaskExisting = true;
+                byte[] serialized = File.ReadAllBytes(Miscellaneous.GPath + "\\startuptask.dat");
+                allTask = serialized.DeserializeTask();
+                return;
+            }
+            startupTaskExisting = false;
+        }
+
         private delegate void TaskWorker(ITasks task, ClientHandler client);
         private TaskWorker worker;
 

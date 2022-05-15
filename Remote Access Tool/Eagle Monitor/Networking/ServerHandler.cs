@@ -17,7 +17,7 @@ namespace EagleMonitor
         private readonly static List<ServerHandler> Servers;
         internal static int CurrentServersNumber { get { return Servers.Count; } }
 
-        static ServerHandler() 
+        static ServerHandler()
         {
             Servers = new List<ServerHandler>();
         }
@@ -45,7 +45,7 @@ namespace EagleMonitor
             {
                 socket.Bind(endPoint);
                 socket.Listen(int.MaxValue);
-                AcceptClientAsync();      
+                AcceptClientAsync();
                 return true;
             }
             catch (Exception ex)
@@ -65,7 +65,7 @@ namespace EagleMonitor
             return new ClientHandler(socket.Accept(), this.serverPort);
         }
 
-        private void EndAcceptedClient(IAsyncResult ar) 
+        private void EndAcceptedClient(IAsyncResult ar)
         {
             acceptClient.EndInvoke(ar);
 
@@ -73,16 +73,15 @@ namespace EagleMonitor
                 AcceptClientAsync();
             else
             {
-                this.Dispose();
+                this.socket.Dispose();
                 return;
             }
         }
 
-        public void Dispose()
+        public void Dispose() 
         {
-            socket.Shutdown(SocketShutdown.Both);
-            socket.Close();
-            socket.Dispose();
+            if(socket != null)
+                socket.Dispose();
         }
     }
 }

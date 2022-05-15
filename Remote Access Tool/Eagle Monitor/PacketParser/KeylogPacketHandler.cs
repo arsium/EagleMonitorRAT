@@ -13,7 +13,6 @@ namespace EagleMonitor.PacketParser
     {
         public KeylogPacketHandler(KeylogPacket keylogPacket, ClientHandler clientHandler) 
         {
-            //client handler not from list !!!!!
             try
             {
                 ClientHandler.ClientHandlersList[keylogPacket.baseIp].keyloggerForm.BeginInvoke((MethodInvoker)(() =>

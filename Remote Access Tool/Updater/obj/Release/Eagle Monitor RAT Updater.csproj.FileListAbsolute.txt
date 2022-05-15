@@ -7,3 +7,12 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Eagle Monitor RAT Updater.exe
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\EagleMonitor.Controls.FormPattern.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Updater.Main.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Updater.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.GenerateResource.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.csproj.Fody.CopyLocal.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Updater\obj\Release\Eagle Monitor RAT Updater.exe

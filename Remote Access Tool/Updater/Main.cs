@@ -39,13 +39,15 @@ namespace Updater
 
                 int[] localVersion = Utils.VersionSplitter(CoreAssembly.Version.ToString());
 
+                //MessageBox.Show(json[0].body);
+
                 if (githubVersion[0] == localVersion[0]
                     && githubVersion[1] == localVersion[1]
                     && githubVersion[2] == localVersion[2]
                     && githubVersion[3] == localVersion[3]
                     )
                 {
-                    MessageBox.Show("You're updated !");
+                    //MessageBox.Show("You're updated !");
                     Environment.Exit(0);
                 }
                 else if (githubVersion[0] >= localVersion[0]
@@ -55,7 +57,9 @@ namespace Updater
                     )
                 {
                     newVersion = json[0].tag_name;
-                    MessageBox.Show($"A new update is available ! {json[0].tag_name}");
+                    DialogResult r = MessageBox.Show(this, $"A new update is available {json[0].tag_name} ! Do you want to update now ?", "Eagle Monitor RAT Updater", MessageBoxButtons.YesNo);
+                    if(r != DialogResult.Yes)
+                        Environment.Exit(0);
                 }
                 else
                 {

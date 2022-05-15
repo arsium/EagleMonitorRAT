@@ -79,12 +79,10 @@
             // 
             this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
+            this.guna2VScrollBar1.InUpdate = false;
             this.guna2VScrollBar1.LargeChange = 10;
             this.guna2VScrollBar1.Location = new System.Drawing.Point(779, 32);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
             this.guna2VScrollBar1.ScrollbarSize = 18;
             this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 415);
             this.guna2VScrollBar1.TabIndex = 39;
@@ -111,15 +109,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(765, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 37;
             this.closeButton.Text = "╳";
@@ -129,33 +123,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(727, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 36;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(689, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 35;
             this.minimizeButton.Text = "🗕";
@@ -280,7 +266,7 @@
             this.resumeToolStripMenuItem,
             this.injectionToolStripMenuItem});
             this.processContextMenuStrip.Name = "processContextMenuStrip";
-            this.processContextMenuStrip.Size = new System.Drawing.Size(197, 216);
+            this.processContextMenuStrip.Size = new System.Drawing.Size(189, 194);
             // 
             // refreshToolStripMenuItem
             // 
@@ -288,7 +274,7 @@
             this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.refreshToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.action_repeat_2x;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(188, 38);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -298,7 +284,7 @@
             this.killProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.killProcessToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.close_2x;
             this.killProcessToolStripMenuItem.Name = "killProcessToolStripMenuItem";
-            this.killProcessToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.killProcessToolStripMenuItem.Size = new System.Drawing.Size(188, 38);
             this.killProcessToolStripMenuItem.Text = "Kill Process";
             this.killProcessToolStripMenuItem.Click += new System.EventHandler(this.killProcessToolStripMenuItem_Click);
             // 
@@ -308,7 +294,7 @@
             this.suspendToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.suspendToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.btn_grey_play_pause_2x;
             this.suspendToolStripMenuItem.Name = "suspendToolStripMenuItem";
-            this.suspendToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.suspendToolStripMenuItem.Size = new System.Drawing.Size(188, 38);
             this.suspendToolStripMenuItem.Text = "Suspend Process";
             this.suspendToolStripMenuItem.Click += new System.EventHandler(this.suspendToolStripMenuItem_Click);
             // 
@@ -318,7 +304,7 @@
             this.resumeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.resumeToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.btn_grey_play_2x;
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(188, 38);
             this.resumeToolStripMenuItem.Text = "Resume Process";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
@@ -329,7 +315,7 @@
             this.injectionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.injectionToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.file_binary_2x;
             this.injectionToolStripMenuItem.Name = "injectionToolStripMenuItem";
-            this.injectionToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.injectionToolStripMenuItem.Size = new System.Drawing.Size(188, 38);
             this.injectionToolStripMenuItem.Text = "Shellcode Injection";
             // 
             // injectionCustomContextMenuStrip
@@ -340,6 +326,7 @@
             this.classicToolStripMenuItem,
             this.mapViewToolStripMenuItem});
             this.injectionCustomContextMenuStrip.Name = "processContextMenuStrip";
+            this.injectionCustomContextMenuStrip.OwnerItem = this.injectionToolStripMenuItem;
             this.injectionCustomContextMenuStrip.Size = new System.Drawing.Size(142, 80);
             // 
             // classicToolStripMenuItem

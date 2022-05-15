@@ -65,18 +65,14 @@
             this.languageComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.languageComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.languageComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.languageComboBox.FocusedState.Parent = this.languageComboBox;
             this.languageComboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.languageComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.languageComboBox.HoverState.Parent = this.languageComboBox;
             this.languageComboBox.ItemHeight = 30;
             this.languageComboBox.Items.AddRange(new object[] {
             "C#",
             "VB"});
-            this.languageComboBox.ItemsAppearance.Parent = this.languageComboBox;
             this.languageComboBox.Location = new System.Drawing.Point(6, 40);
             this.languageComboBox.Name = "languageComboBox";
-            this.languageComboBox.ShadowDecoration.Parent = this.languageComboBox;
             this.languageComboBox.Size = new System.Drawing.Size(79, 36);
             this.languageComboBox.StartIndex = 0;
             this.languageComboBox.TabIndex = 27;
@@ -107,6 +103,7 @@
             this.codeTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.codeTextBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.codeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeTextBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.codeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.codeTextBox.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.codeTextBox.IsReplaceMode = false;
@@ -235,15 +232,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(716, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 46;
             this.closeButton.Text = "╳";
@@ -253,33 +246,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(678, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 45;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(640, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 44;
             this.minimizeButton.Text = "🗕";
@@ -288,15 +273,11 @@
             // testGuna2Button
             // 
             this.testGuna2Button.Animated = true;
-            this.testGuna2Button.CheckedState.Parent = this.testGuna2Button;
-            this.testGuna2Button.CustomImages.Parent = this.testGuna2Button;
             this.testGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.testGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.testGuna2Button.HoverState.Parent = this.testGuna2Button;
             this.testGuna2Button.Location = new System.Drawing.Point(191, 40);
             this.testGuna2Button.Name = "testGuna2Button";
             this.testGuna2Button.ShadowDecoration.Enabled = true;
-            this.testGuna2Button.ShadowDecoration.Parent = this.testGuna2Button;
             this.testGuna2Button.Size = new System.Drawing.Size(90, 36);
             this.testGuna2Button.TabIndex = 47;
             this.testGuna2Button.Text = "Test";
@@ -305,15 +286,11 @@
             // sendGuna2Button
             // 
             this.sendGuna2Button.Animated = true;
-            this.sendGuna2Button.CheckedState.Parent = this.sendGuna2Button;
-            this.sendGuna2Button.CustomImages.Parent = this.sendGuna2Button;
             this.sendGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.sendGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.sendGuna2Button.HoverState.Parent = this.sendGuna2Button;
             this.sendGuna2Button.Location = new System.Drawing.Point(287, 40);
             this.sendGuna2Button.Name = "sendGuna2Button";
             this.sendGuna2Button.ShadowDecoration.Enabled = true;
-            this.sendGuna2Button.ShadowDecoration.Parent = this.sendGuna2Button;
             this.sendGuna2Button.Size = new System.Drawing.Size(90, 36);
             this.sendGuna2Button.TabIndex = 48;
             this.sendGuna2Button.Text = "Send !";
@@ -343,19 +320,15 @@
             this.platformGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.platformGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.platformGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.platformGuna2ComboBox.FocusedState.Parent = this.platformGuna2ComboBox;
             this.platformGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.platformGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.platformGuna2ComboBox.HoverState.Parent = this.platformGuna2ComboBox;
             this.platformGuna2ComboBox.ItemHeight = 30;
             this.platformGuna2ComboBox.Items.AddRange(new object[] {
             "x86",
             "x64",
             "anycpu"});
-            this.platformGuna2ComboBox.ItemsAppearance.Parent = this.platformGuna2ComboBox;
             this.platformGuna2ComboBox.Location = new System.Drawing.Point(91, 40);
             this.platformGuna2ComboBox.Name = "platformGuna2ComboBox";
-            this.platformGuna2ComboBox.ShadowDecoration.Parent = this.platformGuna2ComboBox;
             this.platformGuna2ComboBox.Size = new System.Drawing.Size(94, 36);
             this.platformGuna2ComboBox.StartIndex = 2;
             this.platformGuna2ComboBox.TabIndex = 50;

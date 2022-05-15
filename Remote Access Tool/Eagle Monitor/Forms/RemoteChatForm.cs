@@ -49,14 +49,13 @@ namespace EagleMonitor.Forms
             }
         }
 
-        private async void stopGuna2Button_Click(object sender, EventArgs e)
+        private void stopGuna2Button_Click(object sender, EventArgs e)
         {
             if (hasAlreadyConnected)
             {
                 RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF);
                 chatPacket.baseIp = baseIp;
-                await Task.Run(() => clientHandler.SendPacket(chatPacket));
-                await Task.Run(() => clientHandler.Dispose());
+                this.clientHandler.SendPacket(chatPacket);
                 hasAlreadyConnected = false;
                 startGuna2Button.Enabled = true;
                 stopGuna2Button.Enabled = false;
@@ -78,6 +77,12 @@ namespace EagleMonitor.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            if (hasAlreadyConnected)
+            {
+                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF);
+                chatPacket.baseIp = baseIp;
+                this.clientHandler.SendPacket(chatPacket);
+            }
             this.Close();
         }
 

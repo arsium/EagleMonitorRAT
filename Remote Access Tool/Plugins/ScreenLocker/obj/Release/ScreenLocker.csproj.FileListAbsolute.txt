@@ -8,4 +8,7 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll
-E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CopyComplete
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache

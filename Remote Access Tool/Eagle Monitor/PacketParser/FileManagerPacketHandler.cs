@@ -14,7 +14,7 @@ namespace EagleMonitor.PacketParser
     internal class FileManagerPacketHandler
     {
         public FileManagerPacketHandler(FileManagerPacket fileManagerPacket, ClientHandler clientHandler)
-        {
+        {     
             new Thread(() =>
             {
                 try

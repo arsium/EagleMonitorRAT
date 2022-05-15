@@ -72,6 +72,9 @@
     <Reference Include="Guna.UI2">
       <HintPath>..\DLLs + Package\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Leaf.xNet">
+      <HintPath>..\DLLs + Package\Leaf.xNet.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MRG.Controls.UI">
       <HintPath>..\DLLs + Package\MRG.Controls.UI.dll</HintPath>
@@ -258,6 +261,7 @@
       <DependentUpon>RemoteCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\AudioHelpers.cs" />
+    <Compile Include="Utils\GitHubAPI.cs" />
     <Compile Include="Utils\Miscellaneous.cs" />
     <EmbeddedResource Include="Controls\BlurForm.resx">
       <DependentUpon>BlurForm.cs</DependentUpon>
@@ -440,6 +444,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\account-statement_large%402x.png" />
+    <None Include="Resources\wmploc_29614.ico" />
+    <None Include="Resources\eagle21.png" />
+    <None Include="Resources\dfrgui_130.ico" />
+    <None Include="Resources\icons8-.net-or-__dot-net__-a-software-framework-developed-by-microsoft-96.png" />
     <None Include="Resources\source-code-net_large%402x.png" />
     <None Include="Resources\chat_large%402x.png" />
     <None Include="Resources\action-repeat.ico" />

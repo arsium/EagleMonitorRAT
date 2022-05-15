@@ -101,15 +101,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(731, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 11;
             this.closeButton.Text = "╳";
@@ -119,33 +115,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(693, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 10;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(655, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 9;
             this.minimizeButton.Text = "🗕";
@@ -169,7 +157,6 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Padding = new System.Windows.Forms.Padding(2, 40, 2, 2);
-            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(746, 243);
             this.guna2GroupBox1.TabIndex = 12;
             this.guna2GroupBox1.Text = "Network";
@@ -194,22 +181,18 @@
             this.keyGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.keyGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.keyGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.keyGuna2TextBox.DisabledState.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.keyGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.keyGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyGuna2TextBox.FocusedState.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.keyGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.keyGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.keyGuna2TextBox.HoverState.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Location = new System.Drawing.Point(96, 159);
             this.keyGuna2TextBox.Name = "keyGuna2TextBox";
             this.keyGuna2TextBox.PasswordChar = '\0';
             this.keyGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.keyGuna2TextBox.PlaceholderText = "...";
             this.keyGuna2TextBox.SelectedText = "";
-            this.keyGuna2TextBox.ShadowDecoration.Parent = this.keyGuna2TextBox;
             this.keyGuna2TextBox.Size = new System.Drawing.Size(645, 36);
             this.keyGuna2TextBox.TabIndex = 17;
             // 
@@ -233,22 +216,18 @@
             this.portGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.portGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.portGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.portGuna2TextBox.DisabledState.Parent = this.portGuna2TextBox;
             this.portGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.portGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.portGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.portGuna2TextBox.FocusedState.Parent = this.portGuna2TextBox;
             this.portGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.portGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.portGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.portGuna2TextBox.HoverState.Parent = this.portGuna2TextBox;
             this.portGuna2TextBox.Location = new System.Drawing.Point(96, 117);
             this.portGuna2TextBox.Name = "portGuna2TextBox";
             this.portGuna2TextBox.PasswordChar = '\0';
             this.portGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.portGuna2TextBox.PlaceholderText = "...";
             this.portGuna2TextBox.SelectedText = "";
-            this.portGuna2TextBox.ShadowDecoration.Parent = this.portGuna2TextBox;
             this.portGuna2TextBox.Size = new System.Drawing.Size(645, 36);
             this.portGuna2TextBox.TabIndex = 15;
             // 
@@ -272,22 +251,18 @@
             this.dnsGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.dnsGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.dnsGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.dnsGuna2TextBox.DisabledState.Parent = this.dnsGuna2TextBox;
             this.dnsGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.dnsGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dnsGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dnsGuna2TextBox.FocusedState.Parent = this.dnsGuna2TextBox;
             this.dnsGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dnsGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.dnsGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dnsGuna2TextBox.HoverState.Parent = this.dnsGuna2TextBox;
             this.dnsGuna2TextBox.Location = new System.Drawing.Point(96, 75);
             this.dnsGuna2TextBox.Name = "dnsGuna2TextBox";
             this.dnsGuna2TextBox.PasswordChar = '\0';
             this.dnsGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.dnsGuna2TextBox.PlaceholderText = "...";
             this.dnsGuna2TextBox.SelectedText = "";
-            this.dnsGuna2TextBox.ShadowDecoration.Parent = this.dnsGuna2TextBox;
             this.dnsGuna2TextBox.Size = new System.Drawing.Size(645, 36);
             this.dnsGuna2TextBox.TabIndex = 13;
             // 
@@ -311,7 +286,6 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(3, 3);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Padding = new System.Windows.Forms.Padding(2, 40, 2, 2);
-            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
             this.guna2GroupBox2.Size = new System.Drawing.Size(746, 243);
             this.guna2GroupBox2.TabIndex = 17;
             this.guna2GroupBox2.Text = "Miscellaneous";
@@ -381,23 +355,19 @@
             this.taskNameGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.taskNameGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.taskNameGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.taskNameGuna2TextBox.DisabledState.Parent = this.taskNameGuna2TextBox;
             this.taskNameGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.taskNameGuna2TextBox.Enabled = false;
             this.taskNameGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.taskNameGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.taskNameGuna2TextBox.FocusedState.Parent = this.taskNameGuna2TextBox;
             this.taskNameGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.taskNameGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.taskNameGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.taskNameGuna2TextBox.HoverState.Parent = this.taskNameGuna2TextBox;
             this.taskNameGuna2TextBox.Location = new System.Drawing.Point(95, 116);
             this.taskNameGuna2TextBox.Name = "taskNameGuna2TextBox";
             this.taskNameGuna2TextBox.PasswordChar = '\0';
             this.taskNameGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.taskNameGuna2TextBox.PlaceholderText = "...";
             this.taskNameGuna2TextBox.SelectedText = "";
-            this.taskNameGuna2TextBox.ShadowDecoration.Parent = this.taskNameGuna2TextBox;
             this.taskNameGuna2TextBox.Size = new System.Drawing.Size(643, 36);
             this.taskNameGuna2TextBox.TabIndex = 13;
             // 
@@ -440,23 +410,19 @@
             this.timeTaskGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.timeTaskGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.timeTaskGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.timeTaskGuna2TextBox.DisabledState.Parent = this.timeTaskGuna2TextBox;
             this.timeTaskGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.timeTaskGuna2TextBox.Enabled = false;
             this.timeTaskGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.timeTaskGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.timeTaskGuna2TextBox.FocusedState.Parent = this.timeTaskGuna2TextBox;
             this.timeTaskGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.timeTaskGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.timeTaskGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.timeTaskGuna2TextBox.HoverState.Parent = this.timeTaskGuna2TextBox;
             this.timeTaskGuna2TextBox.Location = new System.Drawing.Point(95, 164);
             this.timeTaskGuna2TextBox.Name = "timeTaskGuna2TextBox";
             this.timeTaskGuna2TextBox.PasswordChar = '\0';
             this.timeTaskGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.timeTaskGuna2TextBox.PlaceholderText = "...";
             this.timeTaskGuna2TextBox.SelectedText = "";
-            this.timeTaskGuna2TextBox.ShadowDecoration.Parent = this.timeTaskGuna2TextBox;
             this.timeTaskGuna2TextBox.Size = new System.Drawing.Size(643, 36);
             this.timeTaskGuna2TextBox.TabIndex = 15;
             // 
@@ -472,15 +438,11 @@
             // buildGuna2Button
             // 
             this.buildGuna2Button.Animated = true;
-            this.buildGuna2Button.CheckedState.Parent = this.buildGuna2Button;
-            this.buildGuna2Button.CustomImages.Parent = this.buildGuna2Button;
             this.buildGuna2Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buildGuna2Button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buildGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.buildGuna2Button.HoverState.Parent = this.buildGuna2Button;
             this.buildGuna2Button.Location = new System.Drawing.Point(3, 214);
             this.buildGuna2Button.Name = "buildGuna2Button";
-            this.buildGuna2Button.ShadowDecoration.Parent = this.buildGuna2Button;
             this.buildGuna2Button.Size = new System.Drawing.Size(746, 32);
             this.buildGuna2Button.TabIndex = 18;
             this.buildGuna2Button.Text = "Build !";
@@ -594,14 +556,10 @@
             this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button2.Animated = true;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Location = new System.Drawing.Point(149, 196);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(173, 17);
             this.guna2Button2.TabIndex = 33;
             this.guna2Button2.Text = "Browse icon";
@@ -631,14 +589,10 @@
             this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button1.Animated = true;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Location = new System.Drawing.Point(35, 226);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(692, 17);
             this.guna2Button1.TabIndex = 30;
             this.guna2Button1.Text = "Random information";
@@ -655,22 +609,18 @@
             this.productGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.productGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.productGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.productGuna2TextBox.DisabledState.Parent = this.productGuna2TextBox;
             this.productGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.productGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.productGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productGuna2TextBox.FocusedState.Parent = this.productGuna2TextBox;
             this.productGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.productGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.productGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productGuna2TextBox.HoverState.Parent = this.productGuna2TextBox;
             this.productGuna2TextBox.Location = new System.Drawing.Point(110, 10);
             this.productGuna2TextBox.Name = "productGuna2TextBox";
             this.productGuna2TextBox.PasswordChar = '\0';
             this.productGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.productGuna2TextBox.PlaceholderText = "...";
             this.productGuna2TextBox.SelectedText = "";
-            this.productGuna2TextBox.ShadowDecoration.Parent = this.productGuna2TextBox;
             this.productGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.productGuna2TextBox.TabIndex = 15;
             // 
@@ -685,22 +635,18 @@
             this.productVersionGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.productVersionGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.productVersionGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.productVersionGuna2TextBox.DisabledState.Parent = this.productVersionGuna2TextBox;
             this.productVersionGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.productVersionGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.productVersionGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productVersionGuna2TextBox.FocusedState.Parent = this.productVersionGuna2TextBox;
             this.productVersionGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.productVersionGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.productVersionGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productVersionGuna2TextBox.HoverState.Parent = this.productVersionGuna2TextBox;
             this.productVersionGuna2TextBox.Location = new System.Drawing.Point(477, 94);
             this.productVersionGuna2TextBox.Name = "productVersionGuna2TextBox";
             this.productVersionGuna2TextBox.PasswordChar = '\0';
             this.productVersionGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.productVersionGuna2TextBox.PlaceholderText = "...";
             this.productVersionGuna2TextBox.SelectedText = "";
-            this.productVersionGuna2TextBox.ShadowDecoration.Parent = this.productVersionGuna2TextBox;
             this.productVersionGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.productVersionGuna2TextBox.TabIndex = 27;
             // 
@@ -724,22 +670,18 @@
             this.filenameGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.filenameGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.filenameGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.filenameGuna2TextBox.DisabledState.Parent = this.filenameGuna2TextBox;
             this.filenameGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.filenameGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.filenameGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.filenameGuna2TextBox.FocusedState.Parent = this.filenameGuna2TextBox;
             this.filenameGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.filenameGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.filenameGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.filenameGuna2TextBox.HoverState.Parent = this.filenameGuna2TextBox;
             this.filenameGuna2TextBox.Location = new System.Drawing.Point(477, 52);
             this.filenameGuna2TextBox.Name = "filenameGuna2TextBox";
             this.filenameGuna2TextBox.PasswordChar = '\0';
             this.filenameGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.filenameGuna2TextBox.PlaceholderText = "...";
             this.filenameGuna2TextBox.SelectedText = "";
-            this.filenameGuna2TextBox.ShadowDecoration.Parent = this.filenameGuna2TextBox;
             this.filenameGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.filenameGuna2TextBox.TabIndex = 25;
             // 
@@ -763,22 +705,18 @@
             this.fileVersionGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.fileVersionGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fileVersionGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fileVersionGuna2TextBox.DisabledState.Parent = this.fileVersionGuna2TextBox;
             this.fileVersionGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fileVersionGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.fileVersionGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fileVersionGuna2TextBox.FocusedState.Parent = this.fileVersionGuna2TextBox;
             this.fileVersionGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.fileVersionGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.fileVersionGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fileVersionGuna2TextBox.HoverState.Parent = this.fileVersionGuna2TextBox;
             this.fileVersionGuna2TextBox.Location = new System.Drawing.Point(477, 137);
             this.fileVersionGuna2TextBox.Name = "fileVersionGuna2TextBox";
             this.fileVersionGuna2TextBox.PasswordChar = '\0';
             this.fileVersionGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.fileVersionGuna2TextBox.PlaceholderText = "...";
             this.fileVersionGuna2TextBox.SelectedText = "";
-            this.fileVersionGuna2TextBox.ShadowDecoration.Parent = this.fileVersionGuna2TextBox;
             this.fileVersionGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.fileVersionGuna2TextBox.TabIndex = 25;
             // 
@@ -802,22 +740,18 @@
             this.copyrightGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.copyrightGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.copyrightGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.copyrightGuna2TextBox.DisabledState.Parent = this.copyrightGuna2TextBox;
             this.copyrightGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.copyrightGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.copyrightGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.copyrightGuna2TextBox.FocusedState.Parent = this.copyrightGuna2TextBox;
             this.copyrightGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.copyrightGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.copyrightGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.copyrightGuna2TextBox.HoverState.Parent = this.copyrightGuna2TextBox;
             this.copyrightGuna2TextBox.Location = new System.Drawing.Point(111, 137);
             this.copyrightGuna2TextBox.Name = "copyrightGuna2TextBox";
             this.copyrightGuna2TextBox.PasswordChar = '\0';
             this.copyrightGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.copyrightGuna2TextBox.PlaceholderText = "...";
             this.copyrightGuna2TextBox.SelectedText = "";
-            this.copyrightGuna2TextBox.ShadowDecoration.Parent = this.copyrightGuna2TextBox;
             this.copyrightGuna2TextBox.Size = new System.Drawing.Size(249, 36);
             this.copyrightGuna2TextBox.TabIndex = 23;
             // 
@@ -841,22 +775,18 @@
             this.companyGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.companyGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.companyGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.companyGuna2TextBox.DisabledState.Parent = this.companyGuna2TextBox;
             this.companyGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.companyGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.companyGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.companyGuna2TextBox.FocusedState.Parent = this.companyGuna2TextBox;
             this.companyGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.companyGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.companyGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.companyGuna2TextBox.HoverState.Parent = this.companyGuna2TextBox;
             this.companyGuna2TextBox.Location = new System.Drawing.Point(110, 94);
             this.companyGuna2TextBox.Name = "companyGuna2TextBox";
             this.companyGuna2TextBox.PasswordChar = '\0';
             this.companyGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.companyGuna2TextBox.PlaceholderText = "...";
             this.companyGuna2TextBox.SelectedText = "";
-            this.companyGuna2TextBox.ShadowDecoration.Parent = this.companyGuna2TextBox;
             this.companyGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.companyGuna2TextBox.TabIndex = 21;
             // 
@@ -880,22 +810,18 @@
             this.descriptionGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.descriptionGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.descriptionGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.descriptionGuna2TextBox.DisabledState.Parent = this.descriptionGuna2TextBox;
             this.descriptionGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.descriptionGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.descriptionGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.descriptionGuna2TextBox.FocusedState.Parent = this.descriptionGuna2TextBox;
             this.descriptionGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.descriptionGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.descriptionGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.descriptionGuna2TextBox.HoverState.Parent = this.descriptionGuna2TextBox;
             this.descriptionGuna2TextBox.Location = new System.Drawing.Point(110, 52);
             this.descriptionGuna2TextBox.Name = "descriptionGuna2TextBox";
             this.descriptionGuna2TextBox.PasswordChar = '\0';
             this.descriptionGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.descriptionGuna2TextBox.PlaceholderText = "...";
             this.descriptionGuna2TextBox.SelectedText = "";
-            this.descriptionGuna2TextBox.ShadowDecoration.Parent = this.descriptionGuna2TextBox;
             this.descriptionGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.descriptionGuna2TextBox.TabIndex = 19;
             // 
@@ -919,22 +845,18 @@
             this.trademarksGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.trademarksGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.trademarksGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.trademarksGuna2TextBox.DisabledState.Parent = this.trademarksGuna2TextBox;
             this.trademarksGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.trademarksGuna2TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.trademarksGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.trademarksGuna2TextBox.FocusedState.Parent = this.trademarksGuna2TextBox;
             this.trademarksGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.trademarksGuna2TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.trademarksGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.trademarksGuna2TextBox.HoverState.Parent = this.trademarksGuna2TextBox;
             this.trademarksGuna2TextBox.Location = new System.Drawing.Point(477, 10);
             this.trademarksGuna2TextBox.Name = "trademarksGuna2TextBox";
             this.trademarksGuna2TextBox.PasswordChar = '\0';
             this.trademarksGuna2TextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.trademarksGuna2TextBox.PlaceholderText = "...";
             this.trademarksGuna2TextBox.SelectedText = "";
-            this.trademarksGuna2TextBox.ShadowDecoration.Parent = this.trademarksGuna2TextBox;
             this.trademarksGuna2TextBox.Size = new System.Drawing.Size(250, 36);
             this.trademarksGuna2TextBox.TabIndex = 17;
             // 

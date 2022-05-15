@@ -12,6 +12,31 @@ namespace EagleMonitor.Forms
 {
     public partial class LogForm : FormPattern
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                const int CS_NOCLOSE = 0x200;
+                cp.ClassStyle |= CS_NOCLOSE;
+                return cp;
+            }
+        }
+        protected override void WndProc(ref Message m)
+        {
+
+            switch (m.Msg)
+            {
+                case 0x0010://WM_CLOSE
+                    return;
+
+                case 0x0002://WM_DESTROY
+                    return;
+            }
+            base.WndProc(ref m);
+        }
+
+
         public LogForm()
         {
             InitializeComponent();

@@ -37,15 +37,15 @@ namespace EagleMonitor
             memoryCleaner = new MemoryCleaner(MemCleaner);
             memoryCleaner.BeginInvoke(new AsyncCallback(EndMemoryCleaner), null);
             mainForm = new Main();
-            logForm = new LogForm();
+            //logForm = new LogForm();
             massForm = new MassForm();
-            Program.logForm.Show();
+            //Program.logForm.Show();
             Application.Run(mainForm);
 
         }
 
         internal static MassForm massForm { get; set; }
         internal static Main mainForm { get; set; }
-        internal static LogForm logForm { get; set; }
+        //internal static LogForm logForm { get; set; }
     }
 }

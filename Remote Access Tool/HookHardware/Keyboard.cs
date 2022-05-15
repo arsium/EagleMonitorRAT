@@ -28,7 +28,6 @@ namespace HookHardware
 		{
 			callback = new LowLevelKeyboard(BlockKey);
 			ptrHook = SetWindowsHookEx(13, callback, System.Diagnostics.Process.GetCurrentProcess().MainModule.BaseAddress, 0);
-			//MessageBox.Show(ptrHook.ToString("x"));
 		}
 
 		protected static IntPtr BlockKey(int nCode, IntPtr wp, IntPtr lp)
@@ -38,17 +37,43 @@ namespace HookHardware
 				if (nCode >= 0)
 				{
 
+					if (wp == (IntPtr)WM_CHAR)
+					{
+						return wp;
+					}
+
+					if (wp == (IntPtr)WM_DEADCHAR)
+					{
+						return wp;
+					}
+
+					if (wp == (IntPtr)WM_INPUT)
+					{
+						return wp;
+					}
+
 					if (wp == (IntPtr)WM_KEYDOWN)
 					{
 						return wp;
 					}
 
-					if (wp == (IntPtr)0x101)
+					if (wp == (IntPtr)WM_KEYUP)
 					{
 						return wp;
 					}
 
-					if (wp == (IntPtr)0x105)
+					if (wp == (IntPtr)WM_SYSCHAR)
+					{
+						return wp;
+					}
+
+					if (wp == (IntPtr)WM_SYSDEADCHAR)
+					{
+						return wp;
+					}
+
+
+					if (wp == (IntPtr)WM_SYSKEYUP)
 					{
 						return wp;
 					}

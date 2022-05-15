@@ -33,6 +33,7 @@ namespace PacketLib.Packet
         public string baseIp { get; set; }
         public byte[] plugin { get; set; }
         public PacketType packetType { get; }
+        public PacketState packetState { get; set; }
         public string status { get; set; }
         public string datePacketStatus { get; set; }
 

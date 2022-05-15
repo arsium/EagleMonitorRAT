@@ -17,7 +17,8 @@ namespace EagleMonitor.Networking
     {
         private delegate IPacket PacketParser(IPacket packet, ClientHandler clientHandler);
 
-        private PacketParser packetParser;
+        private readonly PacketParser packetParser;
+
         internal PacketHandler(IPacket packet, ClientHandler clientHandler) 
         {
             packetParser = new PacketParser(ParsePacket);
@@ -40,61 +41,62 @@ namespace EagleMonitor.Networking
                     return;
             }
 
-            Program.logForm.dataGridView1.BeginInvoke((MethodInvoker)(() =>
+            IAsyncResult result = Program.mainForm.dataGridView2.BeginInvoke((MethodInvoker)(() =>
             {
-                int rowId = Program.logForm.dataGridView1.Rows.Add();
-                DataGridViewRow row = Program.logForm.dataGridView1.Rows[rowId];
-                row.Cells["Column1"].Value = packet.HWID;
-                row.Cells["Column2"].Value = packet.baseIp;
-                row.Cells["Column3"].Value = packet.packetType.ToString();
-                row.Cells["Column4"].Style.ForeColor = Color.FromArgb(197, 66, 245);
-                row.Cells["Column4"].Value = packet.status;
-                row.Cells["Column6"].Value = packet.datePacketStatus;
+                int rowId = Program.mainForm.dataGridView2.Rows.Add();
+                DataGridViewRow row = Program.mainForm.dataGridView2.Rows[rowId];
+                row.Cells["Column11"].Value = packet.HWID;
+                row.Cells["Column12"].Value = packet.baseIp;
+                row.Cells["Column13"].Value = packet.packetType.ToString();
+                row.Cells["Column14"].Style.ForeColor = Color.FromArgb(197, 66, 245);
+                row.Cells["Column14"].Value = packet.packetState;
+                row.Cells["Column15"].Value = packet.datePacketStatus;
 
                 switch (packet.packetType)
                 {
                     case PacketType.FM_DOWNLOAD_FILE:
-                        row.Cells["Column5"].Value = ((DownloadFilePacket)packet).fileName;
+                        row.Cells["Column16"].Value = ((DownloadFilePacket)packet).fileName;
                         break;
 
                     case PacketType.FM_DELETE_FILE:
                         if (((DeleteFilePacket)packet).deleted == true)
-                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " DELETED";
+                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " DELETED";
                         else
-                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " NOT DELETED";
+                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " NOT DELETED";
                         break;
 
                     case PacketType.FM_START_FILE:
-                        row.Cells["Column5"].Value = ((StartFilePacket)packet).filePath;
+                        row.Cells["Column16"].Value = ((StartFilePacket)packet).filePath;
                         break;
 
                     case PacketType.FM_GET_FILES_AND_DIRS:
-                        row.Cells["Column5"].Value = ((FileManagerPacket)packet).path;
+                        row.Cells["Column16"].Value = ((FileManagerPacket)packet).path;
                         break;
 
                     case PacketType.CONNECTED:
-                        row.Cells["Column5"].Value = ClientHandler.ClientHandlersList[packet.baseIp].clientStatus;
+                        row.Cells["Column16"].Value = ClientHandler.ClientHandlersList[packet.baseIp].clientStatus;
                         break;
 
                     case PacketType.FM_SHORTCUT_PATH:
-                        row.Cells["Column5"].Value = ((ShortCutFileManagersPacket)packet).shortCuts;
+                        row.Cells["Column16"].Value = ((ShortCutFileManagersPacket)packet).shortCuts;
                         break;
 
                     case PacketType.FM_UPLOAD_FILE:
                         if (((UploadFilePacket)packet).uploaded == true)
-                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " UPLOADED";
+                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " UPLOADED";
                         else
-                            row.Cells["Column5"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " NOT UPLOADED";
+                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " NOT UPLOADED";
                         break;
 
                     case PacketType.CHAT_ON:
-                        row.Cells["Column5"].Value = ((RemoteChatPacket)packet).msg;
+                        row.Cells["Column16"].Value = ((RemoteChatPacket)packet).msg;
                         break;
                 }
-                Program.logForm.dataGridView1.ClearSelection();
-                Program.logForm.dataGridView1.CurrentCell = null;
+                Program.mainForm.dataGridView2.ClearSelection();
+                Program.mainForm.dataGridView2.CurrentCell = null;
                 packet = null;
             }));
+            Program.mainForm.dataGridView2.EndInvoke(result);
         }
 
         private IPacket ParsePacket(IPacket packet, ClientHandler clientHandler)
@@ -221,7 +223,7 @@ namespace EagleMonitor.Networking
                     break;
 
             }
-            packet.status = "RECEIVED";
+            packet.packetState = PacketState.RECEIVED;
             packet.datePacketStatus = DateTime.Now.ToString();
             return packet;
         }

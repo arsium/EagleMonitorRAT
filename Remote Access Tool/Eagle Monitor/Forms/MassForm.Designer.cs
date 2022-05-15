@@ -56,15 +56,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(765, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 5;
             this.closeButton.Text = "╳";
@@ -74,33 +70,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(727, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 4;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(689, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 3;
             this.minimizeButton.Text = "🗕";
@@ -227,14 +215,10 @@
             // 
             this.addPacketGuna2Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addPacketGuna2Button.Animated = true;
-            this.addPacketGuna2Button.CheckedState.Parent = this.addPacketGuna2Button;
-            this.addPacketGuna2Button.CustomImages.Parent = this.addPacketGuna2Button;
             this.addPacketGuna2Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPacketGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.addPacketGuna2Button.HoverState.Parent = this.addPacketGuna2Button;
             this.addPacketGuna2Button.Location = new System.Drawing.Point(254, 14);
             this.addPacketGuna2Button.Name = "addPacketGuna2Button";
-            this.addPacketGuna2Button.ShadowDecoration.Parent = this.addPacketGuna2Button;
             this.addPacketGuna2Button.Size = new System.Drawing.Size(537, 36);
             this.addPacketGuna2Button.TabIndex = 9;
             this.addPacketGuna2Button.Text = "Add Packet";
@@ -249,15 +233,11 @@
             this.packetGuna2ComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.packetGuna2ComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.packetGuna2ComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.packetGuna2ComboBox.FocusedState.Parent = this.packetGuna2ComboBox;
             this.packetGuna2ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.packetGuna2ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.packetGuna2ComboBox.HoverState.Parent = this.packetGuna2ComboBox;
             this.packetGuna2ComboBox.ItemHeight = 30;
-            this.packetGuna2ComboBox.ItemsAppearance.Parent = this.packetGuna2ComboBox;
             this.packetGuna2ComboBox.Location = new System.Drawing.Point(3, 14);
             this.packetGuna2ComboBox.Name = "packetGuna2ComboBox";
-            this.packetGuna2ComboBox.ShadowDecoration.Parent = this.packetGuna2ComboBox;
             this.packetGuna2ComboBox.Size = new System.Drawing.Size(245, 36);
             this.packetGuna2ComboBox.TabIndex = 0;
             // 

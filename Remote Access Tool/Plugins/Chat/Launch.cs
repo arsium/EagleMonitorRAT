@@ -45,7 +45,7 @@ namespace Plugin
         {
             Launch.chatForm = new ChatForm("Eagle Monitor RAT Reborn Chat");
             Launch.chatForm.InitializeComponent();
-            Launch.chatForm.ShowDialog();
+            Application.Run(Launch.chatForm);
         }
 
         internal static void ExitChatForm() 

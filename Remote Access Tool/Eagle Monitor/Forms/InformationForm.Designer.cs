@@ -120,7 +120,6 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(6, 45);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
-            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(273, 387);
             this.guna2GroupBox1.TabIndex = 41;
             this.guna2GroupBox1.Text = "CPU";
@@ -129,12 +128,10 @@
             // 
             this.guna2VScrollBar2.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar2.HoverState.Parent = null;
+            this.guna2VScrollBar2.InUpdate = false;
             this.guna2VScrollBar2.LargeChange = 10;
             this.guna2VScrollBar2.Location = new System.Drawing.Point(252, 91);
-            this.guna2VScrollBar2.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar2.Name = "guna2VScrollBar2";
-            this.guna2VScrollBar2.PressedState.Parent = this.guna2VScrollBar2;
             this.guna2VScrollBar2.ScrollbarSize = 18;
             this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 293);
             this.guna2VScrollBar2.TabIndex = 44;
@@ -264,15 +261,11 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.CheckedState.Parent = this.closeButton;
-            this.closeButton.CustomImages.Parent = this.closeButton;
             this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.HoverState.Parent = this.closeButton;
             this.closeButton.Location = new System.Drawing.Point(1022, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.ShadowDecoration.Enabled = true;
-            this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(32, 32);
             this.closeButton.TabIndex = 40;
             this.closeButton.Text = "╳";
@@ -282,33 +275,25 @@
             // 
             this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeButton.Animated = true;
-            this.maximizeButton.CheckedState.Parent = this.maximizeButton;
-            this.maximizeButton.CustomImages.Parent = this.maximizeButton;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.HoverState.Parent = this.maximizeButton;
             this.maximizeButton.Location = new System.Drawing.Point(984, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.ShadowDecoration.Enabled = true;
-            this.maximizeButton.ShadowDecoration.Parent = this.maximizeButton;
             this.maximizeButton.Size = new System.Drawing.Size(32, 32);
             this.maximizeButton.TabIndex = 39;
-            this.maximizeButton.Text = "🗖";
+            this.maximizeButton.Text = "🗗";
             this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
             // 
             // minimizeButton
             // 
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.Animated = true;
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.HoverState.Parent = this.minimizeButton;
             this.minimizeButton.Location = new System.Drawing.Point(946, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.ShadowDecoration.Enabled = true;
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(32, 32);
             this.minimizeButton.TabIndex = 38;
             this.minimizeButton.Text = "🗕";
@@ -328,7 +313,6 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(6, 38);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
-            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
             this.guna2GroupBox2.Size = new System.Drawing.Size(633, 438);
             this.guna2GroupBox2.TabIndex = 45;
             this.guna2GroupBox2.Text = "Hardware";
@@ -347,7 +331,6 @@
             this.guna2GroupBox3.Location = new System.Drawing.Point(285, 45);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
-            this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
             this.guna2GroupBox3.Size = new System.Drawing.Size(342, 387);
             this.guna2GroupBox3.TabIndex = 45;
             this.guna2GroupBox3.Text = "Other";
@@ -356,12 +339,10 @@
             // 
             this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
+            this.guna2VScrollBar1.InUpdate = false;
             this.guna2VScrollBar1.LargeChange = 10;
             this.guna2VScrollBar1.Location = new System.Drawing.Point(321, 42);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
             this.guna2VScrollBar1.ScrollbarSize = 18;
             this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 342);
             this.guna2VScrollBar1.TabIndex = 44;
@@ -438,7 +419,6 @@
             this.guna2GroupBox4.Location = new System.Drawing.Point(645, 38);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
-            this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
             this.guna2GroupBox4.Size = new System.Drawing.Size(406, 438);
             this.guna2GroupBox4.TabIndex = 46;
             this.guna2GroupBox4.Text = "System";
@@ -458,7 +438,6 @@
             this.guna2GroupBox5.Location = new System.Drawing.Point(6, 45);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
             this.guna2GroupBox5.Padding = new System.Windows.Forms.Padding(3, 42, 3, 3);
-            this.guna2GroupBox5.ShadowDecoration.Parent = this.guna2GroupBox5;
             this.guna2GroupBox5.Size = new System.Drawing.Size(394, 387);
             this.guna2GroupBox5.TabIndex = 45;
             this.guna2GroupBox5.Text = "System";
@@ -467,12 +446,10 @@
             // 
             this.guna2VScrollBar3.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2VScrollBar3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.guna2VScrollBar3.HoverState.Parent = null;
+            this.guna2VScrollBar3.InUpdate = false;
             this.guna2VScrollBar3.LargeChange = 10;
             this.guna2VScrollBar3.Location = new System.Drawing.Point(373, 42);
-            this.guna2VScrollBar3.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar3.Name = "guna2VScrollBar3";
-            this.guna2VScrollBar3.PressedState.Parent = this.guna2VScrollBar3;
             this.guna2VScrollBar3.ScrollbarSize = 18;
             this.guna2VScrollBar3.Size = new System.Drawing.Size(18, 342);
             this.guna2VScrollBar3.TabIndex = 44;
