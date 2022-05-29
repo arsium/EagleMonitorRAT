@@ -142,13 +142,13 @@ Client.EntryClass.Main()
 ## TODO
 
 * Encryption/Decryption for folders and files
+* Rework installation method(s)
 * Wiki to make your own plugins
 * Some code improvements and refractoring
 
 ## Known bugs
 
 * Self destruct method (currently disabled)
-* Bugs with big files (file manager -> download)
 
 ## Interface 
 
