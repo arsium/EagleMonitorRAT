@@ -97,13 +97,13 @@
             // settingsContextMenuStrip
             // 
             this.settingsContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.settingsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.settingsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.settingsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hidePanelToolStripMenuItem,
             this.showPanelToolStripMenuItem,
             this.saveCurrentPcitureToolStripMenuItem});
             this.settingsContextMenuStrip.Name = "customContextMenuStrip1";
-            this.settingsContextMenuStrip.Size = new System.Drawing.Size(193, 118);
+            this.settingsContextMenuStrip.Size = new System.Drawing.Size(193, 128);
             // 
             // hidePanelToolStripMenuItem
             // 
@@ -111,7 +111,7 @@
             this.hidePanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.hidePanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_hide_large_2x;
             this.hidePanelToolStripMenuItem.Name = "hidePanelToolStripMenuItem";
-            this.hidePanelToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
+            this.hidePanelToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.hidePanelToolStripMenuItem.Text = "Hide Settings";
             this.hidePanelToolStripMenuItem.Click += new System.EventHandler(this.hidePanelToolStripMenuItem_Click);
             // 
@@ -121,7 +121,7 @@
             this.showPanelToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.showPanelToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_large_2x;
             this.showPanelToolStripMenuItem.Name = "showPanelToolStripMenuItem";
-            this.showPanelToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
+            this.showPanelToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.showPanelToolStripMenuItem.Text = "Show Settings";
             this.showPanelToolStripMenuItem.Click += new System.EventHandler(this.showPanelToolStripMenuItem_Click);
             // 
@@ -131,7 +131,7 @@
             this.saveCurrentPcitureToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.saveCurrentPcitureToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.window_picture_large_2x;
             this.saveCurrentPcitureToolStripMenuItem.Name = "saveCurrentPcitureToolStripMenuItem";
-            this.saveCurrentPcitureToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
+            this.saveCurrentPcitureToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.saveCurrentPcitureToolStripMenuItem.Text = "Save current picture";
             this.saveCurrentPcitureToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentPcitureToolStripMenuItem_Click);
             // 

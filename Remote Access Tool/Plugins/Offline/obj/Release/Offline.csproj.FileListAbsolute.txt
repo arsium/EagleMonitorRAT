@@ -1,0 +1,16 @@
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\bin\Release\Offline.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\bin\Release\Offline.pdb
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\bin\Release\PacketLib.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.dll
+E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\bin\Release\Offline.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\bin\Release\Offline.pdb
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\bin\Release\PacketLib.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.dll
+D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.pdb

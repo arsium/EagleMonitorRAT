@@ -67,6 +67,7 @@
             this.remoteDesktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteWebcamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteMicrophoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uACToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteCodeExecutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscealleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,6 +87,7 @@
             this.lockWorkstationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hibernateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suspendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getPrivilegeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.builderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tasksConfiguratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,15 +108,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.updateLogRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.uacContextMenuStrip = new EagleMonitor.Controls.CustomContextMenuStrip();
+            this.restorePointtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.clientCustomContextMenuStrip.SuspendLayout();
             this.recoveryContextMenuStrip.SuspendLayout();
@@ -129,8 +133,9 @@
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.uacContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // minimizeButton
@@ -333,6 +338,7 @@
             this.clientCustomContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
+            this.uACToolStripMenuItem,
             this.chatToolStripMenuItem,
             this.remoteCodeExecutionToolStripMenuItem,
             this.miscealleToolStripMenuItem,
@@ -343,7 +349,7 @@
             this.optionsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.clientCustomContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 422);
+            this.clientCustomContextMenuStrip.Size = new System.Drawing.Size(197, 482);
             // 
             // toolStripMenuItem1
             // 
@@ -365,7 +371,6 @@
             this.autofillToolStripMenuItem,
             this.keywordsToolStripMenuItem});
             this.recoveryContextMenuStrip.Name = "customContextMenuStrip1";
-            this.recoveryContextMenuStrip.OwnerItem = this.toolStripMenuItem1;
             this.recoveryContextMenuStrip.Size = new System.Drawing.Size(141, 140);
             // 
             // passwordsToolStripMenuItem
@@ -431,7 +436,6 @@
             this.remoteWebcamToolStripMenuItem,
             this.remoteMicrophoneToolStripMenuItem});
             this.desktopContextMenuStrip.Name = "customContextMenuStrip1";
-            this.desktopContextMenuStrip.OwnerItem = this.toolStripMenuItem2;
             this.desktopContextMenuStrip.Size = new System.Drawing.Size(192, 208);
             // 
             // fileManagerToolStripMenuItem
@@ -493,6 +497,16 @@
             this.remoteMicrophoneToolStripMenuItem.Size = new System.Drawing.Size(191, 34);
             this.remoteMicrophoneToolStripMenuItem.Text = "Remote Microphone";
             this.remoteMicrophoneToolStripMenuItem.Click += new System.EventHandler(this.remoteMicrophoneToolStripMenuItem_Click);
+            // 
+            // uACToolStripMenuItem
+            // 
+            this.uACToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.uACToolStripMenuItem.DropDown = this.uacContextMenuStrip;
+            this.uACToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.uACToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.imageres_781;
+            this.uACToolStripMenuItem.Name = "uACToolStripMenuItem";
+            this.uACToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.uACToolStripMenuItem.Text = "UAC";
             // 
             // chatToolStripMenuItem
             // 
@@ -571,10 +585,10 @@
             this.clientContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeStripMenuItem,
             this.uninstallToolStripMenuItem,
-            this.powerToolStripMenuItem});
+            this.powerToolStripMenuItem,
+            this.getPrivilegeToolStripMenuItem});
             this.clientContextMenuStrip.Name = "customContextMenuStrip1";
-            this.clientContextMenuStrip.OwnerItem = this.clientToolStripMenuItem1;
-            this.clientContextMenuStrip.Size = new System.Drawing.Size(133, 106);
+            this.clientContextMenuStrip.Size = new System.Drawing.Size(152, 140);
             // 
             // closeStripMenuItem
             // 
@@ -582,7 +596,7 @@
             this.closeStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.closeStripMenuItem.Image = global::EagleMonitor.Properties.Resources.close_2x;
             this.closeStripMenuItem.Name = "closeStripMenuItem";
-            this.closeStripMenuItem.Size = new System.Drawing.Size(132, 34);
+            this.closeStripMenuItem.Size = new System.Drawing.Size(151, 34);
             this.closeStripMenuItem.Text = "Close";
             this.closeStripMenuItem.Click += new System.EventHandler(this.closeStripMenuItem_Click);
             // 
@@ -592,7 +606,7 @@
             this.uninstallToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.uninstallToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.trash_2x;
             this.uninstallToolStripMenuItem.Name = "uninstallToolStripMenuItem";
-            this.uninstallToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
+            this.uninstallToolStripMenuItem.Size = new System.Drawing.Size(151, 34);
             this.uninstallToolStripMenuItem.Text = "Uninstall";
             this.uninstallToolStripMenuItem.Click += new System.EventHandler(this.uninstallToolStripMenuItem_Click);
             // 
@@ -603,7 +617,7 @@
             this.powerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.powerToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.event_1_5x;
             this.powerToolStripMenuItem.Name = "powerToolStripMenuItem";
-            this.powerToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
+            this.powerToolStripMenuItem.Size = new System.Drawing.Size(151, 34);
             this.powerToolStripMenuItem.Text = "Power";
             // 
             // powerContextMenuStrip
@@ -619,7 +633,6 @@
             this.hibernateToolStripMenuItem,
             this.suspendToolStripMenuItem});
             this.powerContextMenuStrip.Name = "customContextMenuStrip1";
-            this.powerContextMenuStrip.OwnerItem = this.powerToolStripMenuItem;
             this.powerContextMenuStrip.Size = new System.Drawing.Size(177, 242);
             // 
             // shutdownToolStripMenuItem
@@ -691,6 +704,16 @@
             this.suspendToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
             this.suspendToolStripMenuItem.Text = "Suspend";
             this.suspendToolStripMenuItem.Click += new System.EventHandler(this.suspendToolStripMenuItem_Click);
+            // 
+            // getPrivilegeToolStripMenuItem
+            // 
+            this.getPrivilegeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.getPrivilegeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.getPrivilegeToolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.imageres_781;
+            this.getPrivilegeToolStripMenuItem.Name = "getPrivilegeToolStripMenuItem";
+            this.getPrivilegeToolStripMenuItem.Size = new System.Drawing.Size(151, 34);
+            this.getPrivilegeToolStripMenuItem.Text = "Get privilege";
+            this.getPrivilegeToolStripMenuItem.Click += new System.EventHandler(this.getPrivilegeToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -924,76 +947,6 @@
             this.guna2VScrollBar2.TabIndex = 10;
             this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tabPage3.Controls.Add(this.updateLogRichTextBox);
-            this.tabPage3.Location = new System.Drawing.Point(184, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(969, 461);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Update";
-            // 
-            // updateLogRichTextBox
-            // 
-            this.updateLogRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.updateLogRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.updateLogRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.updateLogRichTextBox.Location = new System.Drawing.Point(3, 3);
-            this.updateLogRichTextBox.Name = "updateLogRichTextBox";
-            this.updateLogRichTextBox.ReadOnly = true;
-            this.updateLogRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.updateLogRichTextBox.Size = new System.Drawing.Size(963, 455);
-            this.updateLogRichTextBox.TabIndex = 13;
-            this.updateLogRichTextBox.Text = "";
-            // 
-            // Column16
-            // 
-            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column16.FillWeight = 35F;
-            this.Column16.HeaderText = "Description";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Date";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column14.FillWeight = 15F;
-            this.Column14.HeaderText = "State";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.FillWeight = 15F;
-            this.Column13.HeaderText = "Packet";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column12.FillWeight = 15F;
-            this.Column12.HeaderText = "IP";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column11.FillWeight = 15F;
-            this.Column11.HeaderText = "HWID";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -1040,6 +993,96 @@
             this.dataGridView2.TabStop = false;
             this.dataGridView2.MouseLeave += new System.EventHandler(this.dataGridView2_MouseLeave);
             // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column11.FillWeight = 15F;
+            this.Column11.HeaderText = "HWID";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column12.FillWeight = 15F;
+            this.Column12.HeaderText = "IP";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.FillWeight = 15F;
+            this.Column13.HeaderText = "Packet";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column14.FillWeight = 15F;
+            this.Column14.HeaderText = "State";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Date";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column16.FillWeight = 35F;
+            this.Column16.HeaderText = "Description";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tabPage3.Controls.Add(this.updateLogRichTextBox);
+            this.tabPage3.Location = new System.Drawing.Point(184, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(969, 461);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Update";
+            // 
+            // updateLogRichTextBox
+            // 
+            this.updateLogRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.updateLogRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.updateLogRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updateLogRichTextBox.Location = new System.Drawing.Point(3, 3);
+            this.updateLogRichTextBox.Name = "updateLogRichTextBox";
+            this.updateLogRichTextBox.ReadOnly = true;
+            this.updateLogRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.updateLogRichTextBox.Size = new System.Drawing.Size(963, 455);
+            this.updateLogRichTextBox.TabIndex = 13;
+            this.updateLogRichTextBox.Text = "";
+            // 
+            // uacContextMenuStrip
+            // 
+            this.uacContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.uacContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.uacContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.restorePointtoolStripMenuItem});
+            this.uacContextMenuStrip.Name = "customContextMenuStrip1";
+            this.uacContextMenuStrip.OwnerItem = this.uACToolStripMenuItem;
+            this.uacContextMenuStrip.Size = new System.Drawing.Size(193, 60);
+            // 
+            // restorePointtoolStripMenuItem
+            // 
+            this.restorePointtoolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.restorePointtoolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.restorePointtoolStripMenuItem.Image = global::EagleMonitor.Properties.Resources.shell32_16741;
+            this.restorePointtoolStripMenuItem.Name = "restorePointtoolStripMenuItem";
+            this.restorePointtoolStripMenuItem.Size = new System.Drawing.Size(192, 34);
+            this.restorePointtoolStripMenuItem.Text = "Restore Points";
+            this.restorePointtoolStripMenuItem.Click += new System.EventHandler(this.restorePointtoolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1078,8 +1121,9 @@
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.uacContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1165,6 +1209,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.ToolStripMenuItem getPrivilegeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uACToolStripMenuItem;
+        private Controls.CustomContextMenuStrip uacContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem restorePointtoolStripMenuItem;
     }
 }
 

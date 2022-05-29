@@ -643,6 +643,16 @@ namespace EagleMonitor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imageres_781 {
+            get {
+                object obj = ResourceManager.GetObject("imageres_781", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imageres_99 {
             get {
                 object obj = ResourceManager.GetObject("imageres_99", resourceCulture);
@@ -806,6 +816,16 @@ namespace EagleMonitor.Properties {
         internal static System.Drawing.Bitmap server_database_2x {
             get {
                 object obj = ResourceManager.GetObject("server-database@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shell32_16741 {
+            get {
+                object obj = ResourceManager.GetObject("shell32_16741", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

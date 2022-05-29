@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PacketLib")]
+[assembly: AssemblyProduct("Eagle Monitor RAT")]
 [assembly: AssemblyCopyright("Arsium © 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

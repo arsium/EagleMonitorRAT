@@ -42,6 +42,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Audio.cs" />
     <Compile Include="Imports.cs" />
     <Compile Include="Launch.cs" />

@@ -100,13 +100,9 @@
       <Project>{81e3752a-0ac1-4eb4-8b5f-81eea8ffb0ff}</Project>
       <Name>PacketLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\OffKeylogger\OfflineKeylogger.csproj">
-      <Project>{a2c534e0-70e1-4229-b6e5-f91ede820789}</Project>
-      <Name>OfflineKeylogger</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\Persistence\Persistence.csproj">
-      <Project>{354d5d01-64ba-40d8-bf97-659feff41efb}</Project>
-      <Name>Persistence</Name>
+    <ProjectReference Include="..\Plugins\Offline\Offline.csproj">
+      <Project>{d317ba4e-5818-4fc4-aa4e-eea824317759}</Project>
+      <Name>Offline</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

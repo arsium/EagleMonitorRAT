@@ -11,8 +11,13 @@ namespace Plugin
 {
     internal static class Imports
     {
-        #region "user32"
-        private const string user32 = "user32.dll";
+		#region "ntdll"
+		private const string ntdll = "ntdll.dll";
+		[DllImport(ntdll)]
+		internal static extern uint NtTerminateProcess(IntPtr hProcess, int errorStatus);
+		#endregion
+		#region "user32"
+		private const string user32 = "user32.dll";
 
         internal const int APPCOMMAND_VOLUME_MUTE =         0x80000;
         internal const int APPCOMMAND_VOLUME_DOWN =         0x90000;

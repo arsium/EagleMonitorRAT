@@ -269,11 +269,7 @@ namespace EagleMonitor.Forms
 
         private void saveCurrentPcitureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\" + "Screenshots") == false)
-                Directory.CreateDirectory(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\" + "Screenshots");
-
             string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
-
             File.WriteAllBytes(ClientHandler.ClientHandlersList[baseIp].clientPath + "\\" + "Screenshots\\" + Date + ".jpeg", PacketLib.Utils.ImageProcessing.ImageToBytes(this.viewerPictureBox.Image));
         }
 

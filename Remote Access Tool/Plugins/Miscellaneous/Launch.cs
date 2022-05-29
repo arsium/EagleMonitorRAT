@@ -49,6 +49,10 @@ namespace Plugin
                     ScreenRotation.Rotate(screenRotationPacket.degrees);
                     break;
 
+                case PacketType.MISC_ASK_ADMIN_RIGHTS:
+                    Admin.AskAdminRight();
+                    break;
+
                 default:
                     return;
             }

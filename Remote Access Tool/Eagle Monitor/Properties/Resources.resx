@@ -130,8 +130,8 @@
   <data name="select-picture@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\select-picture@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upload_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\upload_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="account-statement_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account-statement_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="key-card@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key-card@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +151,9 @@
   <data name="computer-network-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-network-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imageres_781" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_781.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="trash-full@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash-full@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,8 +172,8 @@
   <data name="button-info@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-info@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fill-auto@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fill-auto@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer-network-wireless-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-network-wireless-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="using-namespace@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\using-namespace@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,14 +214,17 @@
   <data name="debug-restart@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\debug-restart@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="folder-vertical-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-vertical-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="camera-2@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camera-2@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="password@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="external-link@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\external-link@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="upload_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upload_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="window-picture_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\window-picture_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,14 +298,8 @@
   <data name="file-list@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-list@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="trash@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="computer-network-wireless-green@2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-network-wireless-green@2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_1008" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_1008.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,11 +316,17 @@
   <data name="dmdskres_372" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dmdskres_372.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fill-auto@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fill-auto@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="external-link@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\external-link@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imageres_110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_110.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-vertical-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-vertical-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="big-data-people@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\big-data-people@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_1023" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_1023.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -364,13 +370,13 @@
   <data name="icons8_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer-network-wireless-green@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-network-wireless-green@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer-network-wireless-green@2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-network-wireless-green@2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="big-data-people@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\big-data-people@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="folder-doc@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-doc@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account-statement_large@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account-statement_large@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shell32_16741" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shell32_16741.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

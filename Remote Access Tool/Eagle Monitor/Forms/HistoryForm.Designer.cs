@@ -94,7 +94,7 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Animated = true;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.Location = new System.Drawing.Point(766, 0);
             this.closeButton.Name = "closeButton";

