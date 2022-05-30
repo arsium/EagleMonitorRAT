@@ -54,7 +54,7 @@ Of course. I plan to add features when I find them interesting to add. Please do
 * Keywords recovery (automatically saved)
 * Remote camera viewer (+ save pictures)
 * Remote microphone (automatically saved)
-* Remote desktop viewer (+ save pictures)
+* Remote desktop control (+ save pictures)
 * Remote keyboard
 * Remote mouse
 * Remote chat
