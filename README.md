@@ -18,23 +18,23 @@ BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
 ## Current features
 
 * Clients written in C# and VB (32 and 64 bit) (dlls + exes)
-* Passwords recovery (automatically saved)
-* History recovery (automatically saved)
-* Autofill recovery (automatically saved)
-* Keywords recovery (automatically saved)
+* Passwords recovery
+* History recovery
+* Autofill recovery
+* Keywords recovery
 * Remote camera viewer (+ save pictures)
-* Remote microphone (automatically saved)
+* Remote microphone (auto saved)
 * Remote desktop control (+ save pictures)
 * Remote keyboard
 * Remote mouse
 * Remote chat
-* Remote DotNet Code Execution
+* Remote DotNet Code Execution (VB + C#)
 * Process manager 
 * Kill process (native techniques)
 * Suspend process (native techniques)
 * Resume process (native techniques)
-* (shellcode) Process injection (NtWriteVirtualMemory + NtCreateThreadEx)
-* (shellcode) Process injection (NtMapViewOfSection + NtCreateThreadEx)
+* ShellCode injection (NtWriteVirtualMemory + NtCreateThreadEx)
+* ShellCode injection (NtMapViewOfSection + NtCreateThreadEx)
 * Shutdown system
 * Reboot system
 * Suspend system
