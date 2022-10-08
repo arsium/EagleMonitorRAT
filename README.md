@@ -1,10 +1,7 @@
 
 # Eagle Monitor RAT Reborn | Open Source & Modern Remote Access Tool
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
-Consider this as an upgrade of HorusEyesRat which was written in Visual Basic .NET.
-As in the old good times, I decided to write a client in Visual Basic .NET.
 <br>
-
 ## Current features
 
 * Clients written in C# and VB (32 and 64 bit) (dlls + exes)
@@ -53,7 +50,6 @@ As in the old good times, I decided to write a client in Visual Basic .NET.
 * Get information (CPU, hardware, system)
 * Shortcuts (download, desktop and documents paths)
 * Logs (automatically saved)
-* Mass Tasks
 
 ## External depencencies
 
@@ -100,7 +96,6 @@ Client.EntryClass.Main()
 * Remote mouse & keyboard : [Quasar](https://github.com/quasar/Quasar/)
 
   
-
 ## Known bugs
 
 * Self destruct method (currently disabled)
