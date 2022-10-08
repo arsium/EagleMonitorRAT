@@ -114,6 +114,11 @@ Client.EntryClass.Main()
 
 * Self destruct method (currently disabled)
 
+## Missing features (relative to previous versions)
+
+* Mass tasks
+* On connect tasks
+
 ## Interface 
 
 ![PIC1](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/1.png?raw=true)
