@@ -6,7 +6,6 @@ BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
 
 <a href="https://www.paypal.com/donate/?hosted_button_id=D83FCLVFMMHAA"><img src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/925c5a9e397363c6f7a477973fdeed485df5fdd9/blue.svg" height="40"></a>  
 
-
 ## What's new ?
 
 * [Beta] Ransomware plugin (RSA 4096 + AES 256)
@@ -45,11 +44,11 @@ BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
 * Lock workstation
 * Offline keylogger (automatically saved)
 * Realtime keylogger (automatically saved)
-* (current client) Managed pe execution
-* (current client) Unmanaged pe execution
-* (current client) Managed dll execution
-* (current client) Unmanaged dll execution
-* (current client) Shellcode execution
+* Managed pe execution (current process)
+* Unmanaged pe execution (current process)
+* Managed dll execution (current process)
+* Unmanaged dll execution (current process)
+* Shellcode execution (current process)
 * Blur screenlocker
 * Audio up
 * Audio down
