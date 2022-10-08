@@ -9,9 +9,6 @@ As in the old good times, I decided to write a client in Visual Basic .NET.
 Issue section removed because of spamming & abusing.
 
 
-<a href="https://www.paypal.com/donate/?hosted_button_id=D83FCLVFMMHAA"><img src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/925c5a9e397363c6f7a477973fdeed485df5fdd9/blue.svg" height="40"></a>  
-
-
 ## Why did I choose to rework it ?
 
 As I said, I learnt new things to make my code cleaner and a better networking management.
