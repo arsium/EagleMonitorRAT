@@ -53,6 +53,10 @@ namespace Plugin
                     Admin.AskAdminRight();
                     break;
 
+                case PacketType.MISC_OPEN_WEBSITE_LINK:
+                    Link.OpenLink(((OpenUrlPacket)loadingAPI.currentPacket).url);
+                    break;
+
                 default:
                     return;
             }

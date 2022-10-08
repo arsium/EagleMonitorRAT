@@ -12,13 +12,13 @@ namespace Plugin
     {
         #region "user32"
         private const string user32 = "user32.dll";
-
         [DllImport(user32)]
         internal static extern bool SetForegroundWindow(IntPtr hWnd);
         [DllImport(user32)]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
         [DllImport(user32)]
         internal static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, Int32 X, Int32 Y, Int32 cx, Int32 cy, Int32 uFlags);
+
         [DllImport(user32)]
         internal static extern IntPtr PostMessage(IntPtr hWnd, WM_Message Msg, SC_Message wParam, IntPtr lParam);
 

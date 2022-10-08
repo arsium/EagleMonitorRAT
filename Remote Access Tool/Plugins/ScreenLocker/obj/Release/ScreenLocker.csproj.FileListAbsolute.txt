@@ -12,3 +12,38 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\ScreenLocker.dll
+C:\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+C:\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+C:\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll
+C:\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\ScreenLocker.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\ScreenLocker.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\ScreenLocker.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\ScreenLocker.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll

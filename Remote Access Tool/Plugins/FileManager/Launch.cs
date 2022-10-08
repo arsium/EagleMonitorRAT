@@ -37,7 +37,7 @@ namespace Plugin
                 case PacketType.FM_DELETE_FILE:
                     filePath = ((DeleteFilePacket)loadingAPI.currentPacket).path;
                     Tuple<string, bool> returnFromFunc = DeleteFile.RemoveFile(filePath);
-                    DeleteFilePacket deleteFilePacket = new DeleteFilePacket(returnFromFunc.Item1, ((DeleteFilePacket)loadingAPI.currentPacket).name, returnFromFunc.Item2, loadingAPI.baseIp, loadingAPI.HWID);
+                    DeleteFilePacket deleteFilePacket = new DeleteFilePacket(returnFromFunc.Item1, ((DeleteFilePacket)loadingAPI.currentPacket).name, returnFromFunc.Item2, loadingAPI.baseIp, loadingAPI.HWID, ((DeleteFilePacket)loadingAPI.currentPacket).fileTicket);
                     ClientSender(loadingAPI.host, loadingAPI.key, deleteFilePacket);
                     break;
 
@@ -79,7 +79,7 @@ namespace Plugin
         private static void ClientFileSender(LoadingAPI loadingAPI) 
         {
             string filePath = ((DownloadFilePacket)loadingAPI.currentPacket).fileName;
-            DownloadClientHandler clientHandler = new DownloadClientHandler(loadingAPI);
+            DownloadClientHandler clientHandler = new DownloadClientHandler(loadingAPI, ((DownloadFilePacket)loadingAPI.currentPacket).fileTicket, ((DownloadFilePacket)loadingAPI.currentPacket).bufferSize);
             clientHandler.ConnectStart();
             while (!clientHandler.Connected)
                 Thread.Sleep(125);

@@ -14,3 +14,38 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.dll
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.CopyComplete
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\Release\Information.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\Information.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+C:\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\Information.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Information.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Information.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Information.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Plugin.Properties.Resources.resources
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.GenerateResource.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.csproj.Fody.CopyLocal.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Information\obj\Release\Information.dll

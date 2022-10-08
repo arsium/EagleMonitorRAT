@@ -14,3 +14,46 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.dll
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Offline\obj\Release\Offline.pdb
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\Offline.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\PacketLib.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\Offline.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\PacketLib.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.dll
+D:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\Offline.dll
+D:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\PacketLib.dll
+D:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+D:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+D:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+D:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\Offline.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\PacketLib.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.ResolveComReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\Offline.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\bin\Release\PacketLib.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Interop.IWshRuntimeLibrary.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.ResolveComReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\bin\Release\Stubs\Offline.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Stubs\Offline.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Stubs\Offline.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Interop.IWshRuntimeLibrary.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.ResolveComReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Offline\obj\Release\Offline.dll

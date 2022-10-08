@@ -2,15 +2,22 @@
 using System.IO;
 using System.Windows.Forms;
 
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
 namespace Offline.Persistence
 {
     internal class SelfDestruct
     {
-        private static void InitiateSelfDestructSequence()
+        internal static void InitiateSelfDestructSequence()
         {
             try
             {
-                string batch = Path.GetTempFileName() + ".bat";
+                /*Process.Start("cmd.exe", "/C choice /C Y /N /D Y /T 5 & Del "
+      + Application.ExecutablePath);*/
+                /*string batch = Path.GetTempFileName() + ".bat";
                 using (StreamWriter sw = new StreamWriter(batch))
                 {
                     sw.WriteLine("@echo off");
@@ -27,7 +34,7 @@ namespace Offline.Persistence
                     ErrorDialog = false,
                     UseShellExecute = false,
                     WindowStyle = ProcessWindowStyle.Hidden
-                });
+                });*/
             }
             catch { }
         }

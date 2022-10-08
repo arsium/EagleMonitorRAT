@@ -23,7 +23,6 @@ namespace Plugin
                     clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
                     clientHandler.ConnectStart();
                     break;
-
                 default:
                     return;
             }

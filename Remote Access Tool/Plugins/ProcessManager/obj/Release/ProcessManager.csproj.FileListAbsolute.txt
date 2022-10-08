@@ -14,3 +14,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\ProcessManager.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\ProcessManager.dll
+C:\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+C:\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\ProcessManager.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\ProcessManager.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\ProcessManager.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.dll

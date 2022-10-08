@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="single_line_text_input_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\single_line_text_input_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Binary_Code_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Binary Code_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forward_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forward_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_video_call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_video_call.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_user.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="video_call_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\video_call_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eagle21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\eagle2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_index" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_index.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_system_task" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_system_task.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imageres_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="send_letter_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\send_letter_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="time_machine_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time_machine_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_microsoft_admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_microsoft_admin.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_wrench" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_wrench.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_keyboard.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="extensions" xml:space="preserve">
+    <value>7Z
+ACE
+ADA
+ADB
+ADS
+AIF
+ANI
+API
+ARC
+ARJ
+ART
+ASC
+ASF
+ASM
+ASP
+ASPX
+ASX
+AU3
+AVI
+BAK
+BAS
+BASH
+BAT
+BFC
+BIN
+BMP
+BUD
+BZ2
+C
+CAB
+CAT
+CBL
+CBT
+CDA
+CDT
+CER
+CFML
+CGI
+CHM
+CLASS
+CLP
+CMAKE
+CMD
+CMF
+COM
+CPL
+CPP
+CS
+CSS
+CSV
+CTY
+CWK
+CWS
+CUR
+D
+DAO
+DAT
+DB
+DBF
+DD
+DEB
+DEV
+DFM
+DIC
+DIF
+DIR
+DLL
+DMG
+DOC
+DOCKERFILE
+DOCM
+DOCX
+DOT
+DOTX
+DPR
+DRV
+DS
+DUN
+DWG
+DXF
+EL
+ELM
+EMACS
+EMF
+EML
+EPS
+EPS2
+ERL
+EVE
+EXE
+EX
+EXS
+FFL
+FFO
+FLA
+FLV
+FON
+FNT
+FS
+FSH
+FSI
+FSX
+GIF
+GID
+GO
+GRP
+GZ
+H
+HEX
+HLP
+HT
+HQX
+HTM
+HTML
+ICL
+ICM
+ICO
+IFF
+IPYNB
+INC
+INF
+INI
+INO
+ISO
+JAR
+JAVA
+JPEG
+JPG
+JS
+JSP
+JSX
+KBM
+KDC
+KIZ
+KQP
+KT
+KTM
+KTS
+L
+LAB
+LESS
+LEX
+LG
+LGO
+LHZ
+LIT
+LL
+LNK
+LOG
+LSP
+LUA
+M
+M3U
+M4A
+M4V
+MAQ
+MAR
+MD
+MDB
+MDL
+MFM
+MHT
+MHTML
+MID
+MM
+MOD
+MOV
+MPA
+MP3
+MP4
+MPG
+MPEG
+MPP
+MSG
+MSI
+NASM
+NCF
+NDX
+NFF
+NFF
+NITF
+NLM
+O
+OBD
+OCX
+ODP
+ODS
+ODT
+OFT
+OGG
+OST
+OTF
+OZ
+PAGES
+PAK
+PAS
+PCL
+PCT
+PDF
+PDR
+PERL
+PHP
+PHTML
+PIF
+PKG
+PL
+PM
+PM3
+PM4
+PM5
+PM6
+PNG
+POL
+POT
+POTM
+POTX
+PPA
+PPAM
+PPD
+PPK
+PPS
+PPSX
+PPSM
+PPT
+PPTX
+PPTM
+PRN
+PS
+PSD
+PSP
+PST
+PY
+PYP
+PYT
+PYW
+PUB
+PWL
+QBB
+QBW
+QIF
+QXD
+RA
+RAM
+RAR
+RAW 
+RDO
+REG
+RM
+RPM
+RSC
+RSS
+RTF
+SAV
+SCALA
+SBT
+SC
+SCR
+SEA
+SGML
+SH 
+SHTML
+SIT
+SLK
+SMD
+SQL
+SVG
+SWF
+SWP
+SYS
+TAR
+TAR.GZ
+TCW
+TEX
+TGA
+THMX
+TIF
+TIFF
+TMP
+TTF
+TXT
+UDF
+UUE
+VB
+VBS
+VBX
+VM
+VXD
+WAV
+WMA
+WMF
+WMV
+WPD
+WPS
+WRI
+WSF
+WSZ
+XCF
+XIF
+XHTML
+XLA
+XLAM
+XLR
+XLS
+XLSB
+XLSM
+XLSX
+XLT
+XLTM
+XLTX
+XLW
+XML
+XPS
+XSL
+YBK
+Z
+ZIP
+ZSH</value>
+  </data>
+  <data name="key_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_key.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_Tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Tools.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_visual_basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_visual_basic.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="microphone_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microphone_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_security_document" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_security_document.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_control_panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_control_panel.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_time_machine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_time_machine.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replay_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replay_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_source_code" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_source_code.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_advanced_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_advanced_search.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_settings.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_informatics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_informatics.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_parcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_parcel.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file_delete_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file_delete_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_mail.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downloads_folder_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downloads_folder_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_private_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_private_folder.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disconnected_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disconnected_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_microphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_microphone.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_chat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_chat.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="broken_link_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\broken_link_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imageres_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_15.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eagle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Logo\eagle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_schedule_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_schedule_mail.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_file_explorer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_file_explorer.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="github@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\github@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="direction_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\direction_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_text_input_form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_text_input_form.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="end_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\end_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_information_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_information_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documents_folder_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documents_folder_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_new_property" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_new_property.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_create" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_create.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pin_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pin_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_signal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_signal.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_Binary_Code" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Binary_Code.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_download.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_todo_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_todo_list.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_computer_virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_computer_virus.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_remote_desktop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_remote_desktop.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_single_line_text_input" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_single_line_text_input.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_imac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_imac.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_question_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_question_mark.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text_input_form_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\text_input_form_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_c_plus_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_c_plus_plus.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="resume_button_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resume_button_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_categorize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_categorize.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_information.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_lock_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_lock_file.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_database_backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_database_backup.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uninstall_programs_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uninstall_programs_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

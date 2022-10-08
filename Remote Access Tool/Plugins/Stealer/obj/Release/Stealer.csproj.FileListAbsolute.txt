@@ -21,3 +21,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\Stealer.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\Stealer.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Stealer.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Stealer.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Stealer.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.dll

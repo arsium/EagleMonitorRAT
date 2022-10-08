@@ -8,3 +8,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteDesktop.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CopyComplete
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.dll
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteDesktop.dll
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteDesktop.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteDesktop.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteDesktop.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteDesktop\obj\Release\RemoteDesktop.dll

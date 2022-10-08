@@ -1,0 +1,31 @@
+<Project ToolsVersion="4.0" DefaultTargets = "Compile" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+    <PropertyGroup>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+        <AssemblyName>Client</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <CSFile Include = "clienttmp.cs"/>
+		<Reference Include = "PacketLib.dll"/>
+		<Reference Include = "Offline.dll"/>
+         <!-- <Reference Include = "mscorlib.dll"/> -->
+	</ItemGroup>
+	
+    <Target Name = "Compile">
+        <!-- Run the Visual C# compilation using input files of type CSFile -->
+        <CSC
+            Sources = "@(CSFile)"
+            OutputAssembly = "$(AssemblyName).exe"
+			References ="@(Reference)"
+			Platform = "anycpu"  
+			TargetType ="winexe"
+			NoLogo ="true"
+            >
+            <!--NoStandardLib = "true" 
+            Optimize = "true"
+             -->
+            <Output TaskParameter = "OutputAssembly" ItemName = "Client" />
+        </CSC>
+    </Target>
+</Project>

@@ -3,3 +3,28 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Admin\obj\Release\Admin.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Admin\obj\Release\Admin.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Admin\obj\Release\Admin.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\Admin.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CopyComplete
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.dll
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\Admin.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Admin.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Admin.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Admin.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Admin\obj\Release\Admin.dll

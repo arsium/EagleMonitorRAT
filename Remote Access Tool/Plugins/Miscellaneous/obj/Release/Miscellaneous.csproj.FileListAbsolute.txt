@@ -8,3 +8,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\Miscellaneous.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\Miscellaneous.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Miscellaneous.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Miscellaneous.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Miscellaneous.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Miscellaneous\obj\Release\Miscellaneous.dll

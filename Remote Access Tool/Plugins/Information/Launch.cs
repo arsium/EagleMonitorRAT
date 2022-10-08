@@ -44,6 +44,7 @@ namespace Plugin
                     informationPacket.information.systemInformation.systemInformation.Add("OS type", Helpers.GetOsType());
                     informationPacket.information.systemInformation.systemInformation.Add("OS manufacturer", Helpers.GetWMIInformation("Manufacturer"));
                     informationPacket.information.systemInformation.systemInformation.Add("OS name", Helpers.GetWMIInformation("Caption"));
+                    informationPacket.information.systemInformation.systemInformation.Add("OS activation key", ActivationKey.GetWindowsProductKeyFromRegistry());
 
                     informationPacket.information.hardwareInformation.hardwareInformation = new Dictionary<string, string>();
                     informationPacket.information.hardwareInformation.hardwareInformation.Add("GPU", Helpers.GetGpuName());

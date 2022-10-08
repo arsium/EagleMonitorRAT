@@ -1,0 +1,14 @@
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\bin\Debug\Eagle Monitor RAT Reborn.exe.config
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\bin\Debug\Eagle Monitor RAT Reborn.exe
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\bin\Debug\Eagle Monitor RAT Reborn.pdb
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\bin\Debug\Guna.UI2.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.csproj.SuggestedBindingRedirects.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle_Monitor_RAT_Reborn.Properties.Resources.resources
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.csproj.GenerateResource.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.csproj.CopyComplete
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.exe
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle Monitor RAT Reborn.pdb
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle_Monitor_RAT_Reborn.Controls.FormPattern.resources
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Debug\Eagle_Monitor_RAT_Reborn.MainForm.resources

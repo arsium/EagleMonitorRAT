@@ -8,3 +8,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\AudioRecording\obj\Release\AudioRecording.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\AudioRecording.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.Fody.CopyLocal.cache
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\AudioRecording.dll
+C:\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.Fody.CopyLocal.cache
+C:\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\AudioRecording.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\AudioRecording.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.Fody.CopyLocal.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\AudioRecording.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.csproj.Fody.CopyLocal.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\AudioRecording\obj\Release\AudioRecording.dll

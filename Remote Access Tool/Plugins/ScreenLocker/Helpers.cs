@@ -10,8 +10,8 @@ using static Plugin.Imports;
 
 namespace Plugin
 {
-    internal static class Helpers
-    {
+	internal static class Helpers
+	{
 		private const string screenLockerName = "BLRSCRL";
 		internal static int SetAero10(IntPtr hwnd)
 		{

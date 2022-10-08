@@ -8,3 +8,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\MemoryExecution.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\MemoryExecution.dll
+C:\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\MemoryExecution.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\MemoryExecution.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\MemoryExecution.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll

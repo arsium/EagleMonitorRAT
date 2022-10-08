@@ -10,3 +10,33 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CopyComplete
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Release\RemoteCamera.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteCamera.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteCamera.dll
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.Fody.CopyLocal.cache
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteCamera.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteCamera.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.Fody.CopyLocal.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\RemoteCamera.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.Fody.CopyLocal.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\RemoteCamera\obj\Release\RemoteCamera.dll

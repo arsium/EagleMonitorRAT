@@ -1,0 +1,1 @@
+{"ports":[9875,7788],"key":"123456789","notificationSound":false,"notificationIcon":false,"autoSaveRecovery":true,"autoRemoveRowWhenFileIsDownloaded":false,"flagsPackName":"FlagsBase","processInjectionMethod":0,"bufferSize":4194304,"autoGenerateRSAKey":false,"hosts":[{"Item1":"127.0.0.1","Item2":"8523"},{"Item1":"127.0.0.1","Item2":"9875"}]}

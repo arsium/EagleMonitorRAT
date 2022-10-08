@@ -13,6 +13,17 @@ namespace Plugin
 {
     internal class GetFilesAndDirs
     {
+        private static long GetFilesSize(string path) 
+        {
+            long sizeDir = 0;
+
+            foreach (string file in Directory.GetFiles(path, "*.*", SearchOption.TopDirectoryOnly))
+            {
+                sizeDir += new FileInfo(file).Length;
+            }
+            return sizeDir;
+        }
+
         internal static Dictionary<ushort, List<object[]>> GetAllFilesAndDirs(string path)
         {
             Dictionary<ushort, List<object[]>> fileManager = new Dictionary<ushort, List<object[]>>
@@ -27,12 +38,14 @@ namespace Plugin
                     try
                     {
                         string nameDir = Path.GetFileName(directory);
-                        fileManager[0].Add(new object[] { nameDir });
+                      
+                        fileManager[0].Add(new object[] { nameDir, GetFilesSize(directory) });
                     }
                     catch (Exception)
                     {
                     }
                 }
+
                 foreach (string file in Directory.GetFiles(path, "*.*", SearchOption.TopDirectoryOnly))
                 {
                     string filePath = Path.GetFileName(file);

@@ -29,7 +29,6 @@ namespace Plugin
         public ConnectAsync connectAsync;
         private readonly SendDataAsync sendDataAsync;
 
-
         public ClientHandler(Host host, string key) : base()
         {
             this.host = host;
@@ -132,11 +131,6 @@ namespace Plugin
         private void SendDataCompleted(IAsyncResult ar)
         {
             int size = sendDataAsync.EndInvoke(ar);
-
-            if (Connected)
-            {      
-
-            }
             this.Dispose();
         }
 

@@ -14,3 +14,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Release\FileManager.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\FileManager.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\FileManager.dll
+C:\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\FileManager.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\FileManager.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\FileManager.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\FileManager\obj\Release\FileManager.dll

