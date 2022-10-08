@@ -53,7 +53,6 @@ As in the old good times, I decided to write a client in Visual Basic .NET.
 * Get information (CPU, hardware, system)
 * Shortcuts (download, desktop and documents paths)
 * Logs (automatically saved)
-* Mass Tasks
 
 ## External depencencies
 
@@ -100,7 +99,6 @@ Client.EntryClass.Main()
 * Remote mouse & keyboard : [Quasar](https://github.com/quasar/Quasar/)
 
   
-
 ## Known bugs
 
 * Self destruct method (currently disabled)
