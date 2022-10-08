@@ -2,6 +2,16 @@
 # Eagle Monitor RAT Reborn | Open Source & Modern Remote Access Tool
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
 <br>
+
+## What's new ?
+
+* [Beta] Ransomware plugin (RSA 4096 + AES 256)
+* Multiple hosts (and support of dynamic hosts)
+* Offline keylogger fully independant
+* Client built with MSBuild + CSC (instead of patching with DnLib)
+* Directory size in file manager (only top files)
+* ...
+
 ## Current features
 
 * Clients written in C# and VB (32 and 64 bit) (dlls + exes)
