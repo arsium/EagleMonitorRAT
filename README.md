@@ -1,18 +1,46 @@
 
 # Eagle Monitor RAT Reborn | Open Source & Modern Remote Access Tool
+# ! Will be updated 10-08-2022 [Beta] !
+
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
+Consider this as an upgrade of HorusEyesRat which was written in Visual Basic .NET.
+As in the old good times, I decided to write a client in Visual Basic .NET.
 <br>
+Issue section removed because of spamming & abusing.
+
+
+## Why did I choose to rework it ?
+
+As I said, I learnt new things to make my code cleaner and a better networking management.
+
+## New things will be added in the future ?
+
+Of course. I plan to add features when I find them interesting to add. Please don't spam issue section with new features. If you really want a specific feature, you will have to add it by yourself. A wiki section will be written to show you how to add your own features.
+
+## What's been reworked ?
+
+* Whole UI (datagridview instead of listview, dark theme...)
+* Packets system
+* All plugins
+* Server side and packets handling
+* Client side and packets handling
+* Native Imports
+* Settings
+* Builder
+* Automation tasks
+* Mass tasks
+* Memory execution
+* Asynchronous operations
+* Use of threads (when needed)
+* Wifi recovery removed
 
 ## What's new ?
 
-* Ransomware (RSA 4096 + AES)
-* Stub automatically obfuscated
-* Multiple hosts for client (+ support hostname)
-* Directory size in file manager (only top files)
-* Auto Save Recovery Option
-* Information retrieves windows activation key
-* New UI
-* ...
+* Logs system
+* Keylogger (offline and realtime)
+* Client writtent both in VB and C#
+* An installer for deployment
+* Notification sound
 
 ## Current features
 
@@ -24,27 +52,30 @@ Fast, lightweight & easily customizable remote access tool written in C# coded f
 * Remote camera viewer (+ save pictures)
 * Remote microphone (automatically saved)
 * Remote desktop control (+ save pictures)
+* Remote keyboard
+* Remote mouse
 * Remote chat
 * Remote DotNet Code Execution
 * Process manager 
-* Kill process (native)
-* Suspend process (native)
-* Resume process (native)
+* Kill process (native techniques)
+* Suspend process (native techniques)
+* Resume process (native techniques)
 * (shellcode) Process injection (NtWriteVirtualMemory + NtCreateThreadEx)
 * (shellcode) Process injection (NtMapViewOfSection + NtCreateThreadEx)
-* Shutdown
-* Reboot
-* Suspend
-* Hibernate
-* Log out
+* Shutdown system
+* Reboot system
+* Suspend system
+* Hibernate system
+* Log out user
 * BSOD
 * Lock workstation
-* Keylogger (fully offline & realtime)
-* (current process) Managed pe execution
-* (current process) Unmanaged pe execution
-* (current process) Managed dll execution
-* (current process) Unmanaged dll execution
-* (current process) Shellcode execution
+* Offline keylogger (automatically saved)
+* Realtime keylogger (automatically saved)
+* (current client) Managed pe execution
+* (current client) Unmanaged pe execution
+* (current client) Managed dll execution
+* (current client) Unmanaged dll execution
+* (current client) Shellcode execution
 * Blur screenlocker
 * Audio up
 * Audio down
@@ -60,14 +91,15 @@ Fast, lightweight & easily customizable remote access tool written in C# coded f
 * Shortcuts (download, desktop and documents paths)
 * Logs (automatically saved)
 * Mass Tasks
-* Logs system
-* Notification sound
 
 ## External depencencies
 
+* MRG.Controls.UI 
+* XanderUI 
 * GunaUI 
 * dnlib 
 * Newtonsoft.Json
+* BouncyCastle
 * NAudio
 
 ## Notes
@@ -75,7 +107,8 @@ Fast, lightweight & easily customizable remote access tool written in C# coded f
 * All saved stuff (logs, passwords...) are saved in csv format except offline keylogger
 * All external dlls used are in folder "DLLs + Package"
 * This remote access tool can also be used as stealer & payloads loader.
-* Build the project in "release mode" only (change x64 bit for Server)
+* Build the project in "release mode" only (change x64 bit for Server and clients)
+* If you update with installer, you will have to backup your configs + logs (.dat, .json, Logs folder)
 * Under license (AGPL)
 
 ## Technical information
@@ -85,6 +118,7 @@ Fast, lightweight & easily customizable remote access tool written in C# coded f
 * Automation tasks saved with binary format
 * Settings saved with JSON format
 * Server .NET 4.8
+* Client .NET 4.5
 * Tested on freshly installed W10 & W11 VM
 
 ## DLLs
@@ -104,10 +138,10 @@ Client.EntryClass.Main()
 
 ## TODO
 
+* Encryption/Decryption for folders and files
+* Rework installation method(s)
 * Wiki to make your own plugins
-* Rewrite the VB Client
-* Themes
-* New persistence methods
+* Some code improvements and refractoring
 
 ## Known bugs
 
@@ -121,6 +155,4 @@ Client.EntryClass.Main()
 
 I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
 
-<a href="https://www.paypal.com/donate/?hosted_button_id=D83FCLVFMMHAA"><img src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/925c5a9e397363c6f7a477973fdeed485df5fdd9/blue.svg" height="40"></a>  
-
-BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
+Want to buy a coffee ? BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
