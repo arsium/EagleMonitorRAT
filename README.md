@@ -1,46 +1,9 @@
 
 # Eagle Monitor RAT Reborn | Open Source & Modern Remote Access Tool
-# ! Will be updated 10-08-2022 [Beta] !
-
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
 Consider this as an upgrade of HorusEyesRat which was written in Visual Basic .NET.
 As in the old good times, I decided to write a client in Visual Basic .NET.
 <br>
-Issue section removed because of spamming & abusing.
-
-
-## Why did I choose to rework it ?
-
-As I said, I learnt new things to make my code cleaner and a better networking management.
-
-## New things will be added in the future ?
-
-Of course. I plan to add features when I find them interesting to add. Please don't spam issue section with new features. If you really want a specific feature, you will have to add it by yourself. A wiki section will be written to show you how to add your own features.
-
-## What's been reworked ?
-
-* Whole UI (datagridview instead of listview, dark theme...)
-* Packets system
-* All plugins
-* Server side and packets handling
-* Client side and packets handling
-* Native Imports
-* Settings
-* Builder
-* Automation tasks
-* Mass tasks
-* Memory execution
-* Asynchronous operations
-* Use of threads (when needed)
-* Wifi recovery removed
-
-## What's new ?
-
-* Logs system
-* Keylogger (offline and realtime)
-* Client writtent both in VB and C#
-* An installer for deployment
-* Notification sound
 
 ## Current features
 
@@ -94,12 +57,9 @@ Of course. I plan to add features when I find them interesting to add. Please do
 
 ## External depencencies
 
-* MRG.Controls.UI 
-* XanderUI 
 * GunaUI 
 * dnlib 
 * Newtonsoft.Json
-* BouncyCastle
 * NAudio
 
 ## Notes
@@ -132,16 +92,14 @@ Client.EntryClass.Main()
 ## Inspirations
 
 * Webcam plugins : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs)
+
 * Keylogger (modded) : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/LimeLogger/LimeLogger/Packet.cs)
+
 * Unmanaged pe and dlls : [schellingb](https://github.com/schellingb/DLLFromMemory-net)
+
 * Remote mouse & keyboard : [Quasar](https://github.com/quasar/Quasar/)
 
-## TODO
-
-* Encryption/Decryption for folders and files
-* Rework installation method(s)
-* Wiki to make your own plugins
-* Some code improvements and refractoring
+  
 
 ## Known bugs
 
@@ -149,10 +107,12 @@ Client.EntryClass.Main()
 
 ## Interface 
 
-![PIC2](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/2.png?raw=true)
-![PIC3](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/6.png?raw=true)
-![PIC4](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/7.png?raw=true)
+![PIC2](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/1.png?raw=true)
+![PIC3](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/2.png?raw=true)
+![PIC4](https://github.com/arsium/EagleMonitorRAT/blob/main/IMG/3.png?raw=true)
 
 I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=D83FCLVFMMHAA"><img src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/925c5a9e397363c6f7a477973fdeed485df5fdd9/blue.svg" height="40"></a>  
 
 Want to buy a coffee ? BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
