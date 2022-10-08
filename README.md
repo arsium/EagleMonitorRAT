@@ -2,7 +2,6 @@
 # Eagle Monitor RAT Reborn | Open Source & Modern Remote Access Tool
 Fast, lightweight & easily customizable remote access tool written in C# coded from scratch.  
 <br>
-
 ## Current features
 
 * Clients written in C# and VB (32 and 64 bit) (dlls + exes)
