@@ -17,7 +17,6 @@ BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
 
 ## Current features
 
-* Clients written in C# and VB (32 and 64 bit) (dlls + exes)
 * Passwords recovery
 * History recovery
 * Autofill recovery
