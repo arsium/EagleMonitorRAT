@@ -33,10 +33,16 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="OraclesBridge">
+      <HintPath>.\OraclesBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="starksoft.aspen, Version=1.1.8.0, Culture=neutral, PublicKeyToken=56b8923a24d03eb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\starksoft.aspen.1.1.8\lib\net45\starksoft.aspen.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugins\Offline\Offline.csproj">

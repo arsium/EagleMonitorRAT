@@ -41,7 +41,7 @@ namespace Eagle_Monitor_RAT_Reborn
 
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.clientDataGridView, this.guna2VScrollBar1, true);
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.logsDataGridView, this.guna2VScrollBar2, true);
-            this.Text = $"[Beta] EM-RAT Reborn V{Misc.Utils.CoreAssembly.Version} By Arsium - [После нас - тишина]";
+            this.Text = $"[Beta] EM-RAT Reborn V{Misc.Utils.CoreAssembly.Version} By Arsium - [After us - silence]";
             this.versionLabel.Text = this.Text;
 
             ImageList tabImageList = new ImageList
@@ -142,6 +142,8 @@ namespace Eagle_Monitor_RAT_Reborn
                 }
                 this.portLabel.Text = this.portLabel.Text.Remove(this.portLabel.Text.Length - 2, 2);
                 this.portLabel.Text += " }";
+                if (Program.settings.torRouting)
+                    this.portLabel.Text += " | Routing { " + Program.settings.torPort + " } through TOR";
             }
         }
 
@@ -422,7 +424,21 @@ namespace Eagle_Monitor_RAT_Reborn
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string p = Microsoft.VisualBasic.Interaction.InputBox("Port :");
+            if (!Program.settings.torRouting)
+            {
+                DialogResult dr = MessageBox.Show("TOR", "Would you like to use this port for TOR?", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                { 
+                    Program.settings.torRouting = true;
+                    Program.settings.torPort = int.Parse(p);
+                }
+            }
             this.portListView.Items.Add(p);
+            foreach (ListViewItem lv in portListView.Items)
+            {
+                if (lv.Text == p)
+                    lv.ForeColor = Color.Orange;
+            }
         }
     }
 }

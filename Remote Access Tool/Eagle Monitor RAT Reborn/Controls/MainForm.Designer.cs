@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainGuna2TabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
@@ -158,6 +158,7 @@
             this.portRemoveStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
             this.onConnectGuna2TabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.guna2VScrollBar3 = new Guna.UI2.WinForms.Guna2VScrollBar();
@@ -177,7 +178,7 @@
             this.versionLabel = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.patchToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label23 = new System.Windows.Forms.Label();
+            this.torRouteCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.mainGuna2TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
@@ -284,14 +285,14 @@
             this.clientDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clientDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.clientDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.clientDataGridView.ColumnHeadersHeight = 36;
             this.clientDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -313,11 +314,12 @@
             this.clientDataGridView.Name = "clientDataGridView";
             this.clientDataGridView.ReadOnly = true;
             this.clientDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.clientDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.clientDataGridView.RowHeadersWidth = 45;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.clientDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.clientDataGridView.RowTemplate.Height = 26;
             this.clientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientDataGridView.Size = new System.Drawing.Size(908, 443);
@@ -328,13 +330,14 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.NullValue = null;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.FillWeight = 12F;
             this.Column1.HeaderText = "Country";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -342,10 +345,11 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.FillWeight = 25F;
             this.Column2.HeaderText = "HWID";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -353,10 +357,11 @@
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.FillWeight = 18F;
             this.Column3.HeaderText = "IP";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -366,6 +371,7 @@
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.FillWeight = 25F;
             this.Column4.HeaderText = "OS";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -375,6 +381,7 @@
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column5.FillWeight = 20F;
             this.Column5.HeaderText = "Username";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -384,6 +391,7 @@
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column6.FillWeight = 20F;
             this.Column6.HeaderText = "RAM";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -393,6 +401,7 @@
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column7.FillWeight = 20F;
             this.Column7.HeaderText = "Region";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
@@ -401,6 +410,7 @@
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column8.FillWeight = 20F;
             this.Column8.HeaderText = "Privilege";
+            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
@@ -409,6 +419,7 @@
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column9.FillWeight = 15F;
             this.Column9.HeaderText = "32/64 bits";
+            this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
@@ -417,6 +428,7 @@
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column10.FillWeight = 15F;
             this.Column10.HeaderText = "Port";
+            this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 
@@ -428,7 +440,7 @@
             this.clientToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.mainContextMenuStrip.Name = "clientContextMenuStrip";
-            this.mainContextMenuStrip.Size = new System.Drawing.Size(120, 106);
+            this.mainContextMenuStrip.Size = new System.Drawing.Size(124, 106);
             // 
             // loginToolStripMenuItem
             // 
@@ -436,7 +448,7 @@
             this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.loginToolStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.login_32px;
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(119, 34);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(123, 34);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
@@ -447,7 +459,7 @@
             this.clientToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.clientToolStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.user_32px;
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            this.clientToolStripMenuItem.Size = new System.Drawing.Size(119, 34);
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(123, 34);
             this.clientToolStripMenuItem.Text = "Client";
             // 
             // clientContextMenuStrip
@@ -460,7 +472,7 @@
             this.test456ToolStripMenuItem});
             this.clientContextMenuStrip.Name = "clientContextMenuStrip";
             this.clientContextMenuStrip.OwnerItem = this.clientToolStripMenuItem;
-            this.clientContextMenuStrip.Size = new System.Drawing.Size(176, 140);
+            this.clientContextMenuStrip.Size = new System.Drawing.Size(187, 140);
             // 
             // closeToolStripMenuItem
             // 
@@ -468,7 +480,7 @@
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.closeToolStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.broken_link_32px;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -478,14 +490,14 @@
             this.closeUninstallToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.closeUninstallToolStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.uninstall_programs_32px;
             this.closeUninstallToolStripMenuItem.Name = "closeUninstallToolStripMenuItem";
-            this.closeUninstallToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
+            this.closeUninstallToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
             this.closeUninstallToolStripMenuItem.Text = "Close + Uninstall";
             this.closeUninstallToolStripMenuItem.Click += new System.EventHandler(this.closeUninstallToolStripMenuItem_Click);
             // 
             // test123ToolStripMenuItem
             // 
             this.test123ToolStripMenuItem.Name = "test123ToolStripMenuItem";
-            this.test123ToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
+            this.test123ToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
             this.test123ToolStripMenuItem.Text = "Test123";
             this.test123ToolStripMenuItem.Visible = false;
             this.test123ToolStripMenuItem.Click += new System.EventHandler(this.test123ToolStripMenuItem_Click);
@@ -493,7 +505,7 @@
             // test456ToolStripMenuItem
             // 
             this.test456ToolStripMenuItem.Name = "test456ToolStripMenuItem";
-            this.test456ToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
+            this.test456ToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
             this.test456ToolStripMenuItem.Text = "Test456";
             this.test456ToolStripMenuItem.Visible = false;
             this.test456ToolStripMenuItem.Click += new System.EventHandler(this.test456ToolStripMenuItem_Click);
@@ -504,7 +516,7 @@
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.aboutToolStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.icons8_information_32;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(119, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(123, 34);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -611,14 +623,14 @@
             this.hostsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.hostsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.hostsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.hostsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.hostsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.hostsDataGridView.ColumnHeadersHeight = 36;
             this.hostsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column22,
@@ -631,11 +643,12 @@
             this.hostsDataGridView.Name = "hostsDataGridView";
             this.hostsDataGridView.ReadOnly = true;
             this.hostsDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.hostsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.hostsDataGridView.RowHeadersWidth = 45;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.hostsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.hostsDataGridView.RowTemplate.Height = 26;
             this.hostsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.hostsDataGridView.Size = new System.Drawing.Size(762, 198);
@@ -646,10 +659,11 @@
             // Column22
             // 
             this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Column22.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Column22.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column22.FillWeight = 18F;
             this.Column22.HeaderText = "Host";
+            this.Column22.MinimumWidth = 6;
             this.Column22.Name = "Column22";
             this.Column22.ReadOnly = true;
             this.Column22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -659,6 +673,7 @@
             this.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column23.FillWeight = 15F;
             this.Column23.HeaderText = "Port";
+            this.Column23.MinimumWidth = 6;
             this.Column23.Name = "Column23";
             this.Column23.ReadOnly = true;
             // 
@@ -668,7 +683,7 @@
             this.hostContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeHostStripMenuItem});
             this.hostContextMenuStrip.Name = "clientContextMenuStrip";
-            this.hostContextMenuStrip.Size = new System.Drawing.Size(130, 38);
+            this.hostContextMenuStrip.Size = new System.Drawing.Size(136, 38);
             // 
             // removeHostStripMenuItem
             // 
@@ -676,7 +691,7 @@
             this.removeHostStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.removeHostStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.minus_32px;
             this.removeHostStripMenuItem.Name = "removeHostStripMenuItem";
-            this.removeHostStripMenuItem.Size = new System.Drawing.Size(129, 34);
+            this.removeHostStripMenuItem.Size = new System.Drawing.Size(135, 34);
             this.removeHostStripMenuItem.Text = "Remove";
             this.removeHostStripMenuItem.Click += new System.EventHandler(this.removeHostStripMenuItem_Click);
             // 
@@ -925,7 +940,7 @@
             this.vbStubGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.vbStubGuna2CheckBox.Location = new System.Drawing.Point(283, 128);
             this.vbStubGuna2CheckBox.Name = "vbStubGuna2CheckBox";
-            this.vbStubGuna2CheckBox.Size = new System.Drawing.Size(111, 17);
+            this.vbStubGuna2CheckBox.Size = new System.Drawing.Size(116, 19);
             this.vbStubGuna2CheckBox.TabIndex = 29;
             this.vbStubGuna2CheckBox.Text = "Visual Basic Stub";
             this.vbStubGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -946,7 +961,7 @@
             this.offKeyloguna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.offKeyloguna2CheckBox.Location = new System.Drawing.Point(73, 128);
             this.offKeyloguna2CheckBox.Name = "offKeyloguna2CheckBox";
-            this.offKeyloguna2CheckBox.Size = new System.Drawing.Size(116, 17);
+            this.offKeyloguna2CheckBox.Size = new System.Drawing.Size(118, 19);
             this.offKeyloguna2CheckBox.TabIndex = 28;
             this.offKeyloguna2CheckBox.Text = "Offline Keylogger";
             this.offKeyloguna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -966,7 +981,7 @@
             this.persistenceGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.persistenceGuna2CheckBox.Location = new System.Drawing.Point(195, 128);
             this.persistenceGuna2CheckBox.Name = "persistenceGuna2CheckBox";
-            this.persistenceGuna2CheckBox.Size = new System.Drawing.Size(82, 17);
+            this.persistenceGuna2CheckBox.Size = new System.Drawing.Size(85, 19);
             this.persistenceGuna2CheckBox.TabIndex = 27;
             this.persistenceGuna2CheckBox.Text = "Persistence";
             this.persistenceGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1374,7 +1389,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.label4.Location = new System.Drawing.Point(3, 379);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(417, 13);
+            this.label4.Size = new System.Drawing.Size(433, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Note : those advanced options are for testing only and could cause client\'s crash" +
     ".";
@@ -1448,7 +1463,7 @@
             this.tosLicenseGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.tosLicenseGuna2CheckBox.Location = new System.Drawing.Point(251, 78);
             this.tosLicenseGuna2CheckBox.Name = "tosLicenseGuna2CheckBox";
-            this.tosLicenseGuna2CheckBox.Size = new System.Drawing.Size(183, 17);
+            this.tosLicenseGuna2CheckBox.Size = new System.Drawing.Size(192, 19);
             this.tosLicenseGuna2CheckBox.TabIndex = 33;
             this.tosLicenseGuna2CheckBox.Text = "Agreements to TOS and license";
             this.tosLicenseGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1463,7 +1478,7 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.label16.Location = new System.Drawing.Point(248, 10);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(413, 65);
+            this.label16.Size = new System.Drawing.Size(431, 75);
             this.label16.TabIndex = 32;
             this.label16.Text = resources.GetString("label16.Text");
             // 
@@ -1511,14 +1526,14 @@
             this.logsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.logsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.logsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.logsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.logsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.logsDataGridView.ColumnHeadersHeight = 36;
             this.logsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column11,
@@ -1536,11 +1551,12 @@
             this.logsDataGridView.Name = "logsDataGridView";
             this.logsDataGridView.ReadOnly = true;
             this.logsDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.logsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.logsDataGridView.RowHeadersWidth = 45;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.logsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.logsDataGridView.RowTemplate.Height = 26;
             this.logsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logsDataGridView.Size = new System.Drawing.Size(908, 443);
@@ -1550,10 +1566,11 @@
             // Column11
             // 
             this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column11.FillWeight = 25F;
             this.Column11.HeaderText = "HWID";
+            this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1561,10 +1578,11 @@
             // Column12
             // 
             this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Column12.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column12.FillWeight = 18F;
             this.Column12.HeaderText = "IP";
+            this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1574,6 +1592,7 @@
             this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column13.FillWeight = 25F;
             this.Column13.HeaderText = "Packet";
+            this.Column13.MinimumWidth = 6;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1581,14 +1600,17 @@
             // Column17
             // 
             this.Column17.HeaderText = "Size";
+            this.Column17.MinimumWidth = 6;
             this.Column17.Name = "Column17";
             this.Column17.ReadOnly = true;
+            this.Column17.Width = 110;
             // 
             // Column14
             // 
             this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column14.FillWeight = 20F;
             this.Column14.HeaderText = "State";
+            this.Column14.MinimumWidth = 6;
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
             this.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1598,6 +1620,7 @@
             this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column15.FillWeight = 20F;
             this.Column15.HeaderText = "Date";
+            this.Column15.MinimumWidth = 6;
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
             this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1607,6 +1630,7 @@
             this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column16.FillWeight = 20F;
             this.Column16.HeaderText = "Description";
+            this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
             this.Column16.ReadOnly = true;
             // 
@@ -1658,6 +1682,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
+            this.guna2Panel4.Controls.Add(this.torRouteCheckBox);
             this.guna2Panel4.Controls.Add(this.label22);
             this.guna2Panel4.Controls.Add(this.notificationIconGuna2CheckBox);
             this.guna2Panel4.Controls.Add(this.ransomKeyGuna2CheckBox);
@@ -1699,9 +1724,9 @@
             this.notificationIconGuna2CheckBox.CheckedState.BorderThickness = 0;
             this.notificationIconGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
             this.notificationIconGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.notificationIconGuna2CheckBox.Location = new System.Drawing.Point(2, 344);
+            this.notificationIconGuna2CheckBox.Location = new System.Drawing.Point(2, 342);
             this.notificationIconGuna2CheckBox.Name = "notificationIconGuna2CheckBox";
-            this.notificationIconGuna2CheckBox.Size = new System.Drawing.Size(110, 17);
+            this.notificationIconGuna2CheckBox.Size = new System.Drawing.Size(116, 19);
             this.notificationIconGuna2CheckBox.TabIndex = 59;
             this.notificationIconGuna2CheckBox.Text = "Notification Icon";
             this.notificationIconGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1719,9 +1744,9 @@
             this.ransomKeyGuna2CheckBox.CheckedState.BorderThickness = 0;
             this.ransomKeyGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
             this.ransomKeyGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.ransomKeyGuna2CheckBox.Location = new System.Drawing.Point(3, 297);
+            this.ransomKeyGuna2CheckBox.Location = new System.Drawing.Point(3, 295);
             this.ransomKeyGuna2CheckBox.Name = "ransomKeyGuna2CheckBox";
-            this.ransomKeyGuna2CheckBox.Size = new System.Drawing.Size(211, 17);
+            this.ransomKeyGuna2CheckBox.Size = new System.Drawing.Size(219, 19);
             this.ransomKeyGuna2CheckBox.TabIndex = 58;
             this.ransomKeyGuna2CheckBox.Text = "Auto create RSA key for ransomware";
             this.ransomKeyGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1778,9 +1803,9 @@
             this.autoRemoveDownloadGuna2CheckBox.CheckedState.BorderThickness = 0;
             this.autoRemoveDownloadGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
             this.autoRemoveDownloadGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.autoRemoveDownloadGuna2CheckBox.Location = new System.Drawing.Point(3, 320);
+            this.autoRemoveDownloadGuna2CheckBox.Location = new System.Drawing.Point(3, 318);
             this.autoRemoveDownloadGuna2CheckBox.Name = "autoRemoveDownloadGuna2CheckBox";
-            this.autoRemoveDownloadGuna2CheckBox.Size = new System.Drawing.Size(240, 17);
+            this.autoRemoveDownloadGuna2CheckBox.Size = new System.Drawing.Size(249, 19);
             this.autoRemoveDownloadGuna2CheckBox.TabIndex = 55;
             this.autoRemoveDownloadGuna2CheckBox.Text = "Auto remove row when file is downloaded";
             this.autoRemoveDownloadGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1833,9 +1858,9 @@
             this.autoSaveRecoveryGuna2CheckBox.CheckedState.BorderThickness = 0;
             this.autoSaveRecoveryGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
             this.autoSaveRecoveryGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.autoSaveRecoveryGuna2CheckBox.Location = new System.Drawing.Point(3, 390);
+            this.autoSaveRecoveryGuna2CheckBox.Location = new System.Drawing.Point(3, 388);
             this.autoSaveRecoveryGuna2CheckBox.Name = "autoSaveRecoveryGuna2CheckBox";
-            this.autoSaveRecoveryGuna2CheckBox.Size = new System.Drawing.Size(127, 17);
+            this.autoSaveRecoveryGuna2CheckBox.Size = new System.Drawing.Size(131, 19);
             this.autoSaveRecoveryGuna2CheckBox.TabIndex = 52;
             this.autoSaveRecoveryGuna2CheckBox.Text = "Auto Save Recovery";
             this.autoSaveRecoveryGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1916,9 +1941,9 @@
             this.notificationSoundGuna2CheckBox.CheckedState.BorderThickness = 0;
             this.notificationSoundGuna2CheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
             this.notificationSoundGuna2CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.notificationSoundGuna2CheckBox.Location = new System.Drawing.Point(3, 367);
+            this.notificationSoundGuna2CheckBox.Location = new System.Drawing.Point(3, 365);
             this.notificationSoundGuna2CheckBox.Name = "notificationSoundGuna2CheckBox";
-            this.notificationSoundGuna2CheckBox.Size = new System.Drawing.Size(121, 17);
+            this.notificationSoundGuna2CheckBox.Size = new System.Drawing.Size(127, 19);
             this.notificationSoundGuna2CheckBox.TabIndex = 49;
             this.notificationSoundGuna2CheckBox.Text = "Notification Sound";
             this.notificationSoundGuna2CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1970,7 +1995,7 @@
             this.portRemoveStripMenuItem,
             this.addToolStripMenuItem});
             this.portContextMenuStrip.Name = "clientContextMenuStrip";
-            this.portContextMenuStrip.Size = new System.Drawing.Size(130, 72);
+            this.portContextMenuStrip.Size = new System.Drawing.Size(136, 72);
             // 
             // portRemoveStripMenuItem
             // 
@@ -1978,7 +2003,7 @@
             this.portRemoveStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.portRemoveStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.minus_32px;
             this.portRemoveStripMenuItem.Name = "portRemoveStripMenuItem";
-            this.portRemoveStripMenuItem.Size = new System.Drawing.Size(129, 34);
+            this.portRemoveStripMenuItem.Size = new System.Drawing.Size(135, 34);
             this.portRemoveStripMenuItem.Text = "Remove";
             this.portRemoveStripMenuItem.Click += new System.EventHandler(this.portRemoveStripMenuItem_Click);
             // 
@@ -1988,7 +2013,7 @@
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.addToolStripMenuItem.Image = global::Eagle_Monitor_RAT_Reborn.Properties.Resources.add_32px;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(129, 34);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(135, 34);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
@@ -2003,6 +2028,18 @@
             this.tabPage10.TabIndex = 5;
             this.tabPage10.Text = "Tasks";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Enabled = false;
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.label23.Location = new System.Drawing.Point(3, 3);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(902, 437);
+            this.label23.TabIndex = 66;
+            this.label23.Text = "Coming soon...";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // onConnectGuna2TabControl
             // 
@@ -2068,14 +2105,14 @@
             this.tasksDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tasksDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tasksDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tasksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tasksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.tasksDataGridView.ColumnHeadersHeight = 36;
             this.tasksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column20,
@@ -2088,11 +2125,12 @@
             this.tasksDataGridView.Name = "tasksDataGridView";
             this.tasksDataGridView.ReadOnly = true;
             this.tasksDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.tasksDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            this.tasksDataGridView.RowHeadersWidth = 45;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.tasksDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.tasksDataGridView.RowTemplate.Height = 26;
             this.tasksDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tasksDataGridView.Size = new System.Drawing.Size(739, 332);
@@ -2104,6 +2142,7 @@
             this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column20.FillWeight = 25F;
             this.Column20.HeaderText = "Packet";
+            this.Column20.MinimumWidth = 6;
             this.Column20.Name = "Column20";
             this.Column20.ReadOnly = true;
             this.Column20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -2113,6 +2152,7 @@
             this.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column21.FillWeight = 20F;
             this.Column21.HeaderText = "Description";
+            this.Column21.MinimumWidth = 6;
             this.Column21.Name = "Column21";
             this.Column21.ReadOnly = true;
             // 
@@ -2247,7 +2287,7 @@
             this.portLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.portLabel.Location = new System.Drawing.Point(3, 12);
             this.portLabel.Name = "portLabel";
-            this.portLabel.Size = new System.Drawing.Size(16, 13);
+            this.portLabel.Size = new System.Drawing.Size(16, 15);
             this.portLabel.TabIndex = 8;
             this.portLabel.Text = "...";
             this.portLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2259,7 +2299,7 @@
             this.versionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.versionLabel.Location = new System.Drawing.Point(42, 9);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(16, 13);
+            this.versionLabel.Size = new System.Drawing.Size(16, 15);
             this.versionLabel.TabIndex = 7;
             this.versionLabel.Text = "...";
             this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2277,21 +2317,29 @@
             this.logoPictureBox.TabStop = false;
             this.logoPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.logoPictureBox_MouseDown);
             // 
-            // label23
+            // torRouteCheckBox
             // 
-            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label23.Enabled = false;
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.label23.Location = new System.Drawing.Point(3, 3);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(902, 437);
-            this.label23.TabIndex = 66;
-            this.label23.Text = "Coming soon...";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.torRouteCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.torRouteCheckBox.Animated = true;
+            this.torRouteCheckBox.AutoSize = true;
+            this.torRouteCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.torRouteCheckBox.CheckedState.BorderRadius = 0;
+            this.torRouteCheckBox.CheckedState.BorderThickness = 0;
+            this.torRouteCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.torRouteCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.torRouteCheckBox.Location = new System.Drawing.Point(278, 295);
+            this.torRouteCheckBox.Name = "torRouteCheckBox";
+            this.torRouteCheckBox.Size = new System.Drawing.Size(163, 19);
+            this.torRouteCheckBox.TabIndex = 61;
+            this.torRouteCheckBox.Text = "Route a port through TOR";
+            this.torRouteCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.torRouteCheckBox.UncheckedState.BorderRadius = 0;
+            this.torRouteCheckBox.UncheckedState.BorderThickness = 0;
+            this.torRouteCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
@@ -2494,6 +2542,7 @@
         private System.Windows.Forms.ToolStripMenuItem portRemoveStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.Label label23;
+        internal Guna.UI2.WinForms.Guna2CheckBox torRouteCheckBox;
     }
 }
 

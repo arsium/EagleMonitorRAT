@@ -23,5 +23,8 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
         public bool autoGenerateRSAKey { get; set; }
         public List<Tuple<string, string>> hosts { get; set; }
         //public List<IPacket> onConnectPackets { get; set; }
+
+        public int torPort { get; set; }
+        public bool torRouting { get; set; }
     }
 }
