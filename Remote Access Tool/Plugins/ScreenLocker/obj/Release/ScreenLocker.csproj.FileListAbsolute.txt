@@ -47,3 +47,10 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Release\Plugins\ScreenLocker.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Release\Plugin.ScreenLocker.resources
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.GenerateResource.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Release\ScreenLocker.dll

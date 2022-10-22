@@ -1,0 +1,16 @@
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\bin\Debug\Admin.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\bin\Debug\Admin.pdb
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\bin\Debug\PacketLib.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.pdb
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\bin\Debug\Admin.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\bin\Debug\Admin.pdb
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\bin\Debug\PacketLib.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.csproj.CopyComplete
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Admin\obj\Debug\Admin.pdb

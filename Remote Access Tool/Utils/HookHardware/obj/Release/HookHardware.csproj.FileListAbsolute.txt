@@ -30,3 +30,7 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Utils\HookHardware\bin\Release\HookHardware.dl
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\HookHardware\obj\Release\HookHardware.csproj.AssemblyReference.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\HookHardware\obj\Release\HookHardware.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\HookHardware\obj\Release\HookHardware.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\bin\Release\HookHardware.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\obj\Release\HookHardware.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\obj\Release\HookHardware.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\obj\Release\HookHardware.dll

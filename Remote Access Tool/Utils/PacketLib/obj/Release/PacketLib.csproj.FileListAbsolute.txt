@@ -46,3 +46,7 @@ E:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.dll
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.csproj.AssemblyReference.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Release\Stubs\PacketLib.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\obj\Release\PacketLib.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\obj\Release\PacketLib.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\obj\Release\PacketLib.dll

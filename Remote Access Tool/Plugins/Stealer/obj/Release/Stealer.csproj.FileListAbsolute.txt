@@ -46,3 +46,8 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.Ass
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\Stealer\obj\Release\Stealer.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Release\Plugins\Stealer.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Stealer\obj\Release\Stealer.dll

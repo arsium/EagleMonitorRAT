@@ -12,3 +12,15 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CopyComplete
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\RemoteCamera.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\RemoteCamera.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.Fody.CopyLocal.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.csproj.CopyComplete
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\RemoteCamera\obj\Debug\RemoteCamera.dll

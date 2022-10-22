@@ -8,3 +8,13 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\Hardware.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\Hardware.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.csproj.Fody.CopyLocal.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Hardware\obj\Debug\Hardware.dll

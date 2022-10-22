@@ -1,5 +1,4 @@
-﻿using Bridge;
-using dnlib;
+﻿using dnlib;
 using PacketLib.Packet;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Bridge;
 
 namespace Eagle_Monitor_RAT_Reborn.Network
 {

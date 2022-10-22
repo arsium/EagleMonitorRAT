@@ -28,3 +28,7 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\PacketLib\obj\Debug\PacketLib.csproj.AssemblyReference.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\PacketLib\obj\Debug\PacketLib.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\PacketLib\obj\Debug\PacketLib.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\bin\Debug\PacketLib.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\obj\Debug\PacketLib.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\obj\Debug\PacketLib.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\PacketLib\obj\Debug\PacketLib.dll

@@ -39,3 +39,8 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessMana
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\ProcessManager\obj\Release\ProcessManager.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Release\Plugins\ProcessManager.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Release\ProcessManager.dll

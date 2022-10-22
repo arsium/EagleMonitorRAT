@@ -23,3 +23,13 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\Keylogger.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\Keylogger.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.csproj.CopyComplete
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\Keylogger\obj\Debug\Keylogger.dll

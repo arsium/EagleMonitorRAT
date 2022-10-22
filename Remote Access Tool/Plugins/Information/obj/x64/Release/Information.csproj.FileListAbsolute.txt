@@ -6,3 +6,10 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\x64\Release\Information.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\bin\Release\Plugins\Information64.dll
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\Information\obj\x64\Release\Information64.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Release\Plugins\Information64.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Information\obj\x64\Release\Information.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Information\obj\x64\Release\Plugin.Properties.Resources.resources
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Information\obj\x64\Release\Information.csproj.GenerateResource.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Information\obj\x64\Release\Information.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Information\obj\x64\Release\Information.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\Information\obj\x64\Release\Information64.dll

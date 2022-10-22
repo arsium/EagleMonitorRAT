@@ -8,3 +8,17 @@ E:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.CoreCompileInputs.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.Fody.CopyLocal.cache
 E:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\ScreenLocker.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\Plugin.ScreenLocker.resources
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.GenerateResource.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\ScreenLocker.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\Plugin.ScreenLocker.resources
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.GenerateResource.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.csproj.Fody.CopyLocal.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ScreenLocker\obj\Debug\ScreenLocker.dll

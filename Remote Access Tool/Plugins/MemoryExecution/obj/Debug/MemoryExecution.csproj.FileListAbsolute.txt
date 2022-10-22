@@ -18,3 +18,13 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\MemoryExecution.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\MemoryExecution.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.csproj.CopyComplete
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\MemoryExecution\obj\Debug\MemoryExecution.dll

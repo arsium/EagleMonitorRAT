@@ -8,3 +8,7 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.dll
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\HookHardware\obj\Debug\HookHardware.pdb
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\bin\Debug\HookHardware.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\obj\Debug\HookHardware.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\obj\Debug\HookHardware.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Utils\HookHardware\obj\Debug\HookHardware.dll

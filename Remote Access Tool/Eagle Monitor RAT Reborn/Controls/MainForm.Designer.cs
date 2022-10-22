@@ -71,6 +71,8 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.builderGuna2TabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dynamicTorLabel = new System.Windows.Forms.Label();
+            this.dynamicTorSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.addHostGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.hostsDataGridView = new System.Windows.Forms.DataGridView();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,6 +140,7 @@
             this.updateLogRichTextBox = new System.Windows.Forms.RichTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.torRouteCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.notificationIconGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.ransomKeyGuna2CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -178,7 +181,6 @@
             this.versionLabel = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.patchToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.torRouteCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.mainGuna2TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
@@ -577,6 +579,8 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.White;
+            this.tabPage6.Controls.Add(this.dynamicTorLabel);
+            this.tabPage6.Controls.Add(this.dynamicTorSwitch);
             this.tabPage6.Controls.Add(this.addHostGuna2Button);
             this.tabPage6.Controls.Add(this.hostsDataGridView);
             this.tabPage6.Controls.Add(this.label5);
@@ -591,6 +595,33 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Network";
             // 
+            // dynamicTorLabel
+            // 
+            this.dynamicTorLabel.AutoSize = true;
+            this.dynamicTorLabel.Location = new System.Drawing.Point(607, 147);
+            this.dynamicTorLabel.Name = "dynamicTorLabel";
+            this.dynamicTorLabel.Size = new System.Drawing.Size(169, 15);
+            this.dynamicTorLabel.TabIndex = 69;
+            this.dynamicTorLabel.Text = "Allow dynamic TOR proxifying";
+            this.patchToolTip.SetToolTip(this.dynamicTorLabel, "CONDITIONS\r\n\r\nEnabled:\r\n        Allows forwarding to a TOR server post-infection\r" +
+        "\nDisabled:\r\n        The code for TOR proxying is removed from build");
+            // 
+            // dynamicTorSwitch
+            // 
+            this.dynamicTorSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dynamicTorSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.dynamicTorSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.dynamicTorSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.dynamicTorSwitch.Location = new System.Drawing.Point(786, 145);
+            this.dynamicTorSwitch.Name = "dynamicTorSwitch";
+            this.dynamicTorSwitch.Size = new System.Drawing.Size(35, 20);
+            this.dynamicTorSwitch.TabIndex = 67;
+            this.dynamicTorSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.dynamicTorSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.dynamicTorSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.dynamicTorSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.dynamicTorSwitch.Click += new System.EventHandler(this.dynamicTorSwitch_Click);
+            // 
             // addHostGuna2Button
             // 
             this.addHostGuna2Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -603,7 +634,7 @@
             this.addHostGuna2Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
             this.addHostGuna2Button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.addHostGuna2Button.ForeColor = System.Drawing.Color.White;
-            this.addHostGuna2Button.Location = new System.Drawing.Point(63, 153);
+            this.addHostGuna2Button.Location = new System.Drawing.Point(63, 178);
             this.addHostGuna2Button.Name = "addHostGuna2Button";
             this.addHostGuna2Button.Size = new System.Drawing.Size(762, 30);
             this.addHostGuna2Button.TabIndex = 35;
@@ -639,7 +670,7 @@
             this.hostsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.hostsDataGridView.EnableHeadersVisualStyles = false;
             this.hostsDataGridView.GridColor = System.Drawing.Color.White;
-            this.hostsDataGridView.Location = new System.Drawing.Point(63, 192);
+            this.hostsDataGridView.Location = new System.Drawing.Point(63, 216);
             this.hostsDataGridView.Name = "hostsDataGridView";
             this.hostsDataGridView.ReadOnly = true;
             this.hostsDataGridView.RowHeadersVisible = false;
@@ -651,7 +682,7 @@
             this.hostsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.hostsDataGridView.RowTemplate.Height = 26;
             this.hostsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.hostsDataGridView.Size = new System.Drawing.Size(762, 198);
+            this.hostsDataGridView.Size = new System.Drawing.Size(762, 171);
             this.hostsDataGridView.TabIndex = 25;
             this.hostsDataGridView.TabStop = false;
             this.hostsDataGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.hostsDataGridView_MouseUp);
@@ -1703,6 +1734,26 @@
             this.guna2Panel4.Size = new System.Drawing.Size(908, 443);
             this.guna2Panel4.TabIndex = 2;
             // 
+            // torRouteCheckBox
+            // 
+            this.torRouteCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.torRouteCheckBox.Animated = true;
+            this.torRouteCheckBox.AutoSize = true;
+            this.torRouteCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.torRouteCheckBox.CheckedState.BorderRadius = 0;
+            this.torRouteCheckBox.CheckedState.BorderThickness = 0;
+            this.torRouteCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.torRouteCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.torRouteCheckBox.Location = new System.Drawing.Point(278, 295);
+            this.torRouteCheckBox.Name = "torRouteCheckBox";
+            this.torRouteCheckBox.Size = new System.Drawing.Size(163, 19);
+            this.torRouteCheckBox.TabIndex = 61;
+            this.torRouteCheckBox.Text = "Route a port through TOR";
+            this.torRouteCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.torRouteCheckBox.UncheckedState.BorderRadius = 0;
+            this.torRouteCheckBox.UncheckedState.BorderThickness = 0;
+            this.torRouteCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            // 
             // label22
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -2317,26 +2368,6 @@
             this.logoPictureBox.TabStop = false;
             this.logoPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.logoPictureBox_MouseDown);
             // 
-            // torRouteCheckBox
-            // 
-            this.torRouteCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.torRouteCheckBox.Animated = true;
-            this.torRouteCheckBox.AutoSize = true;
-            this.torRouteCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
-            this.torRouteCheckBox.CheckedState.BorderRadius = 0;
-            this.torRouteCheckBox.CheckedState.BorderThickness = 0;
-            this.torRouteCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
-            this.torRouteCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.torRouteCheckBox.Location = new System.Drawing.Point(278, 295);
-            this.torRouteCheckBox.Name = "torRouteCheckBox";
-            this.torRouteCheckBox.Size = new System.Drawing.Size(163, 19);
-            this.torRouteCheckBox.TabIndex = 61;
-            this.torRouteCheckBox.Text = "Route a port through TOR";
-            this.torRouteCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.torRouteCheckBox.UncheckedState.BorderRadius = 0;
-            this.torRouteCheckBox.UncheckedState.BorderThickness = 0;
-            this.torRouteCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2371,6 +2402,7 @@
             this.guna2Panel1.ResumeLayout(false);
             this.builderGuna2TabControl.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hostsDataGridView)).EndInit();
             this.hostContextMenuStrip.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
@@ -2543,6 +2575,8 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.Label label23;
         internal Guna.UI2.WinForms.Guna2CheckBox torRouteCheckBox;
+        private System.Windows.Forms.Label dynamicTorLabel;
+        internal Guna.UI2.WinForms.Guna2ToggleSwitch dynamicTorSwitch;
     }
 }
 

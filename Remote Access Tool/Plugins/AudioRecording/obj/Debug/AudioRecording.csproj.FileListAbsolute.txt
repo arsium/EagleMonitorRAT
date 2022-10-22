@@ -1,0 +1,14 @@
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\bin\Debug\AudioRecording.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\bin\Debug\AudioRecording.pdb
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.pdb
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\bin\Debug\AudioRecording.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\bin\Debug\AudioRecording.pdb
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.csproj.Fody.CopyLocal.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\AudioRecording\obj\Debug\AudioRecording.pdb

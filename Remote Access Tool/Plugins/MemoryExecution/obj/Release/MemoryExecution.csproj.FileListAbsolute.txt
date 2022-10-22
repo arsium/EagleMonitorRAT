@@ -33,3 +33,8 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExec
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
 E:\$$$$$\Eagle Monitor RAT Reborn\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Release\Plugins\MemoryExecution.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\MemoryExecution\obj\Release\MemoryExecution.dll

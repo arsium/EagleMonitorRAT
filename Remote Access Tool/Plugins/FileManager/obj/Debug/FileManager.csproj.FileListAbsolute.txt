@@ -34,3 +34,13 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\FileManager.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CopyComplete
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\FileManager.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.csproj.CopyComplete
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\FileManager\obj\Debug\FileManager.dll

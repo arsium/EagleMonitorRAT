@@ -23,3 +23,13 @@ D:\личный\программирование\C#\Eagle Monitor Reborn\Remote 
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.CoreCompileInputs.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.Fody.CopyLocal.cache
 D:\личный\программирование\C#\Eagle Monitor Reborn\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\bin\Debug\Plugins\ProcessManager.dll
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.AssemblyReference.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.CoreCompileInputs.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.Fody.CopyLocal.cache
+E:\Collection\Rats\EagleMonitorRAT-main\EagleMonitorRAT\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\bin\Debug\Plugins\ProcessManager.dll
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.AssemblyReference.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.CoreCompileInputs.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.csproj.Fody.CopyLocal.cache
+D:\Repos\EagleMonitorRAT.OR\Remote Access Tool\Plugins\ProcessManager\obj\Debug\ProcessManager.dll
