@@ -6,6 +6,10 @@ BTC: 1JpBNGLNmYR6MANK7wcY3h1YF2vG92BM4r
 
 <a href="https://www.paypal.com/donate/?hosted_button_id=D83FCLVFMMHAA"><img src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/925c5a9e397363c6f7a477973fdeed485df5fdd9/blue.svg" height="40"></a>  
 
+## Updates
+
+If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/EagleMonitorRAT/wiki/Updates)
+
 ## What's new ?
 
 * [Beta] Ransomware plugin (RSA 4096 + AES 256)
