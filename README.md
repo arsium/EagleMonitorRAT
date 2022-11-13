@@ -19,12 +19,14 @@ If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/Eagle
 * Directory size in file manager (only top files)
 * ...
 
-## Current features
+## Server features
 
 * Passwords recovery
 * History recovery
 * Autofill recovery
 * Keywords recovery
+* Remote Powershell
+* Remore CMD
 * Remote camera viewer (+ save pictures)
 * Remote microphone (auto saved)
 * Remote desktop control (+ save pictures)
@@ -66,6 +68,13 @@ If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/Eagle
 * Get information (CPU, hardware, system)
 * Shortcuts (download, desktop and documents paths)
 * Logs (automatically saved)
+
+## Client Features :
+
+* Anti-Debug (will cause BSOD if debugged)
+* AMSI patching
+* ETW patching
+* Randomize PE from PEB
 
 ## External depencencies
 
