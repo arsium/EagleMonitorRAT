@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HookHardware", "Utils\HookH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacketLib", "Utils\PacketLib\PacketLib.csproj", "{81E3752A-0AC1-4EB4-8B5F-81EEA8FFB0FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteShell", "Plugins\RemoteShell\RemoteShell.csproj", "{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,14 @@ Global
 		{81E3752A-0AC1-4EB4-8B5F-81EEA8FFB0FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{81E3752A-0AC1-4EB4-8B5F-81EEA8FFB0FF}.Release|x64.ActiveCfg = Release|Any CPU
 		{81E3752A-0AC1-4EB4-8B5F-81EEA8FFB0FF}.Release|x64.Build.0 = Release|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Debug|x64.Build.0 = Debug|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Release|x64.ActiveCfg = Release|Any CPU
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -247,6 +257,7 @@ Global
 		{2CC85CB5-442E-4CC2-A905-D6DEDBC1EC32} = {416B39F0-2EF5-42BB-AE33-092AF22ABD95}
 		{8E4B128D-A9A9-4BCC-B87D-5FA50EC07261} = {416B39F0-2EF5-42BB-AE33-092AF22ABD95}
 		{150CA92E-FD24-4518-8B7B-BBECB4CC7578} = {416B39F0-2EF5-42BB-AE33-092AF22ABD95}
+		{417F720D-E20B-4EBD-BB31-FD3E4C630FAD} = {416B39F0-2EF5-42BB-AE33-092AF22ABD95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {746CE693-E252-4E26-88E6-8C484C23D190}

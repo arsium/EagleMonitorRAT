@@ -298,7 +298,7 @@ namespace Eagle_Monitor_RAT_Reborn
             //Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));//C:\Users\Arsium\AppData\Roaming
             //Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));//C:\Users\Arsium\AppData\Local
             //Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Startup));//C:\Users\Arsium\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-            //Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));//dossier utilisateur
+            //Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));//user of current user
             if (tosLicenseGuna2CheckBox.Checked)
             {
                 /*string stubPath = Misc.Utils.StubPath;

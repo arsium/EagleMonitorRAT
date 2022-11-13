@@ -39,10 +39,13 @@ F:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.csproj.Assembl
 F:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.csproj.CoreCompileInputs.cache
 F:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.dll
 F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Stubs\PacketLib.dll
-E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Stubs\PacketLib.dll
 E:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.csproj.AssemblyReference.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\PacketLib\obj\Release\PacketLib.dll
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Stubs\PacketLib.dll
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.csproj.AssemblyReference.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.dll
+F:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.csproj.AssemblyReference.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.csproj.CoreCompileInputs.cache
+F:\$$$$$\Eagle Monitor RAT Reborn\Utils\PacketLib\obj\Release\PacketLib.dll

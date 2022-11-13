@@ -47,6 +47,10 @@
     <Compile Include="LoadingAPI.cs" />
     <Compile Include="Interface\IPacket.cs" />
     <Compile Include="Packet\Ransomware\RansomwareConfirmationPacket.cs" />
+    <Compile Include="Packet\Shell\StdOutShellSessionPacket.cs" />
+    <Compile Include="Packet\Shell\NewCommandShellSessionPacket.cs" />
+    <Compile Include="Packet\Shell\StopShellSessionPacket.cs" />
+    <Compile Include="Packet\Shell\StartShellSessionPacket.cs" />
     <Compile Include="Packet\UAC\AskAdminRightsPacket.cs" />
     <Compile Include="Packet\Recovery\AutofillPacket.cs" />
     <Compile Include="Packet\Client\BaseIpPacket.cs" />
@@ -105,5 +109,6 @@
     <Compile Include="Utils\Native.cs" />
     <Compile Include="Utils\Serializer.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

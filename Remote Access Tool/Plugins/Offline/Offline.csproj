@@ -30,6 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,15 @@
     <Compile Include="Persistence\StartupFolder.cs" />
     <Compile Include="Persistence\TaskScheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Special\AMSI.cs" />
+    <Compile Include="Special\AntiDBG.cs" />
+    <Compile Include="Special\Commons\Enums.cs" />
+    <Compile Include="Special\Commons\Functions.cs" />
+    <Compile Include="Special\Commons\Structures.cs" />
+    <Compile Include="Special\PEFromPEB.cs" />
+    <Compile Include="Special\ETW.cs" />
+    <Compile Include="Special\Parser.cs" />
+    <Compile Include="Special\Resolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">

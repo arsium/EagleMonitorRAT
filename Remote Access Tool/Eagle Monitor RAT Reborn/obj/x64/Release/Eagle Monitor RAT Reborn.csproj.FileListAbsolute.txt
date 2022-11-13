@@ -73,3 +73,4 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\x64\Release\Eagle
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\x64\Release\Eagle Monitor RAT Reborn.csproj.CopyComplete
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\x64\Release\Eagle Monitor RAT Reborn (x64).exe
 E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Eagle Monitor RAT Reborn (x64).exe.config
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Eagle Monitor RAT Reborn (x64).exe.config

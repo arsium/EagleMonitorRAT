@@ -1,6 +1,6 @@
-﻿using PacketLib.Utils;
+﻿using PacketLib;
 using PacketLib.Packet;
-using PacketLib;
+using PacketLib.Utils;
 using System.Threading;
 
 /* 

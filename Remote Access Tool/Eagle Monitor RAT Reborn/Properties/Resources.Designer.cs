@@ -392,6 +392,16 @@ namespace Eagle_Monitor_RAT_Reborn.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
+        internal static System.Drawing.Icon icons8_command_line {
+            get {
+                object obj = ResourceManager.GetObject("icons8_command_line", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
         internal static System.Drawing.Icon icons8_computer_virus {
             get {
                 object obj = ResourceManager.GetObject("icons8_computer_virus", resourceCulture);

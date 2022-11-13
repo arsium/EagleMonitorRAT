@@ -21,7 +21,7 @@ namespace Plugin
 			STATUS_UNKNOWN =                    0xFFFFFFFF
 		}
 
-		internal enum RTL_PRIVILEGES : uint
+        internal enum RTL_PRIVILEGES : uint
 		{
 			SeCreateTokenPrivilege =            1,
 			SeAssignPrimaryTokenPrivilege =     2,

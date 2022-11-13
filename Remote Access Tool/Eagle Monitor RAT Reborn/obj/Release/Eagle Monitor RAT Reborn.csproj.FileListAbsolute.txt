@@ -60,6 +60,7 @@ F:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Mon
 F:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn.csproj.CoreCompileInputs.cache
 F:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn.csproj.CopyComplete
 F:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn (x32).exe
+E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Eagle Monitor RAT Reborn (x32).exe.config
 E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Eagle Monitor RAT Reborn (x32).exe
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn.csproj.AssemblyReference.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn.csproj.SuggestedBindingRedirects.cache
@@ -72,4 +73,4 @@ E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Mon
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn.csproj.CoreCompileInputs.cache
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn.csproj.CopyComplete
 E:\$$$$$\Eagle Monitor RAT Reborn\Eagle Monitor RAT Reborn\obj\Release\Eagle Monitor RAT Reborn (x32).exe
-E:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Eagle Monitor RAT Reborn (x32).exe.config
+F:\$$$$$\Eagle Monitor RAT Reborn\bin\Release\Eagle Monitor RAT Reborn (x32).exe.config

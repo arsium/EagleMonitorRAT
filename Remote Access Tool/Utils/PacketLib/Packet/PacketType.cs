@@ -93,6 +93,10 @@ namespace PacketLib.Packet
         CHAT_OFF =                              63,
 
         UAC_GET_RESTORE_POINT =                 68,
-        UAC_DELETE_RESTORE_POINT =              69
+        UAC_DELETE_RESTORE_POINT =              69,
+
+        SHELL_START =                           73,
+        SHELL_COMMAND =                         74,
+        SHELL_STOP =                            75
     }
 }
