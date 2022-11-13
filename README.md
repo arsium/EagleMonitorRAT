@@ -12,12 +12,7 @@ If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/Eagle
 
 ## What's new ?
 
-* [Beta] Ransomware plugin (RSA 4096 + AES 256)
-* Multiple hosts (and support of dynamic hosts)
-* Offline keylogger fully independant
-* Client built with MSBuild + CSC (instead of patching with DnLib)
-* Directory size in file manager (only top files)
-* ...
+* [Last changelog](https://github.com/arsium/EagleMonitorRAT/releases/tag/3.2.3.0)
 
 ## Server features
 
