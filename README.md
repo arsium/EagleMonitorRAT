@@ -83,8 +83,7 @@ If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/Eagle
 * All saved stuff (logs, passwords...) are saved in csv format except offline keylogger
 * All external dlls used are in folder "DLLs + Package"
 * This remote access tool can also be used as stealer & payloads loader.
-* Build the project in "release mode" only (change x64 bit for Server and clients)
-* If you update with installer, you will have to backup your configs + logs (.dat, .json, Logs folder)
+* Build the project in "release mode" only (change x64 bit for Server)
 * Under license (AGPL)
 
 ## Technical information
