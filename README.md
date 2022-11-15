@@ -115,6 +115,8 @@ Client.EntryClass.Main()
 
 * Remote mouse & keyboard : [Quasar](https://github.com/quasar/Quasar/)
 
+* Remote CMD & Powershell : [Quasar](https://github.com/quasar/Quasar/blob/master/Quasar.Client/IO/Shell.cs)
+
   
 ## Known bugs
 
