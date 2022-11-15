@@ -97,14 +97,6 @@ If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/Eagle
 * Client .NET 4.5
 * Tested on freshly installed W10 & W11 VM
 
-## DLLs
-
-Dlls are same as exe. You have to change the config class.
-The entrypoint should be called as follows :
-
-```csharp
-Client.EntryClass.Main()
-```
 ## Inspirations
 
 * Webcam plugins : [AsyncRat](https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/AsyncRAT-C%23/Plugin/RemoteCamera/RemoteCamera/Packet.cs)
@@ -116,11 +108,6 @@ Client.EntryClass.Main()
 * Remote mouse & keyboard : [Quasar](https://github.com/quasar/Quasar/)
 
 * Remote CMD & Powershell : [Quasar](https://github.com/quasar/Quasar/blob/master/Quasar.Client/IO/Shell.cs)
-
-  
-## Known bugs
-
-* Self destruct method (currently disabled)
 
 ## Missing features (relative to previous versions)
 
