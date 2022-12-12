@@ -20,10 +20,10 @@ namespace Plugin
 
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.CHAT_ON:
-                    clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
+                    clientHandler = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID);
                     clientHandler.ConnectStart();
 
                     while (clientHandler.Connected == false)

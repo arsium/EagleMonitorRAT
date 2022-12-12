@@ -17,9 +17,9 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 if (packet.killed)
                 {
-                    ClientHandler.ClientHandlersList[packet.baseIp].clientForm.processDataGridView.BeginInvoke((MethodInvoker)(() =>
+                    ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.processDataGridView.BeginInvoke((MethodInvoker)(() =>
                     {
-                        ClientHandler.ClientHandlersList[packet.baseIp].clientForm.processDataGridView.Rows.Remove(ClientHandler.ClientHandlersList[packet.baseIp].clientForm.processDataGridView.Rows[packet.rowIndex]);
+                        ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.processDataGridView.Rows.Remove(ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.processDataGridView.Rows[packet.rowIndex]);
                     }));
                 }
             }

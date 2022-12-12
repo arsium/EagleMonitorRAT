@@ -13,7 +13,7 @@ namespace Plugin
     {
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.HDW_KB_OFF:
                     HookHardware.Global.HookKeyboard();

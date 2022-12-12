@@ -14,7 +14,7 @@ namespace PacketLib.Packet
         //server
         public ResumeProcessPacket(int processId, string processName, int rowIndex) : base()
         {   
-            this.packetType = PacketType.PM_RESUME_PROCESS; 
+            this.PacketType = PacketType.PM_RESUME_PROCESS; 
             
             this.processId = processId;
             this.processName = processName;
@@ -24,8 +24,8 @@ namespace PacketLib.Packet
         //client
         public ResumeProcessPacket(bool resumed, int processId, string processName, int rowIndex, string baseIp, string HWID) : base()
         {
-            this.packetType = PacketType.PM_RESUME_PROCESS;
-            this.baseIp = baseIp;
+            this.PacketType = PacketType.PM_RESUME_PROCESS;
+            this.BaseIp = baseIp;
             this.HWID = HWID;     
             
             this.resumed = resumed;
@@ -35,13 +35,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public int rowIndex { get; set; }
         public string processName { get; set; }

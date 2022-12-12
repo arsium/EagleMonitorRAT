@@ -17,13 +17,13 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 try
                 {
-                    ClientHandler.ClientHandlersList[restorePointPacket.baseIp].clientForm.restorePointDataGridView.BeginInvoke((MethodInvoker)(() =>
+                    ClientHandler.ClientHandlersList[restorePointPacket.BaseIp].ClientForm.restorePointDataGridView.BeginInvoke((MethodInvoker)(() =>
                     {
-                        ClientHandler.ClientHandlersList[restorePointPacket.baseIp].clientForm.restorePointDataGridView.Rows.Clear();
+                        ClientHandler.ClientHandlersList[restorePointPacket.BaseIp].ClientForm.restorePointDataGridView.Rows.Clear();
                         foreach (RestorePoint restorePoint in restorePointPacket.restorePoints)
                         {
-                            int rowId = ClientHandler.ClientHandlersList[restorePointPacket.baseIp].clientForm.restorePointDataGridView.Rows.Add();
-                            DataGridViewRow row = ClientHandler.ClientHandlersList[restorePointPacket.baseIp].clientForm.restorePointDataGridView.Rows[rowId];
+                            int rowId = ClientHandler.ClientHandlersList[restorePointPacket.BaseIp].ClientForm.restorePointDataGridView.Rows.Add();
+                            DataGridViewRow row = ClientHandler.ClientHandlersList[restorePointPacket.BaseIp].ClientForm.restorePointDataGridView.Rows[rowId];
                             row.Tag = restorePoint.index;
                             row.Cells["Column42"].Value = restorePoint.index.ToString();
                             row.Cells["Column43"].Value = restorePoint.description;

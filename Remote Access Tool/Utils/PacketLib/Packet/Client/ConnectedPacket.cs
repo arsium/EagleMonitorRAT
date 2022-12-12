@@ -15,9 +15,9 @@ namespace PacketLib.Packet
         //client
         public ConnectedPacket() : base()
         {
-            plugin = null;
+            Plugin = null;
             Microsoft.VisualBasic.Devices.Computer I = new Microsoft.VisualBasic.Devices.Computer();
-            packetType = PacketType.CONNECTED;
+            PacketType = PacketType.CONNECTED;
             Native.GetPhysicallyInstalledSystemMemory(out long lRam);
             RAM = string.Format("{0}Gb", (ulong)((double)lRam / 1024d / 1024d));
             HWID = HwidGen.HWID();
@@ -30,13 +30,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public string RAM { get; }
         public string Is64Bit { get; }

@@ -1,0 +1,31 @@
+﻿using System;
+
+/* 
+|| AUTHOR Arsium ||
+|| github : https://github.com/arsium       ||
+*/
+
+namespace Eagle_Monitor_RAT_Reborn.Network
+{
+    internal class RemoteDesktopHandler : IDisposable
+    {
+        internal ClientHandler ClientHandler { get; set; }
+        internal bool EnabledMouse { get; set; }
+        internal bool EnableKeyboard { get; set; }
+        internal bool HasAlreadyConnected { get; set; }
+        internal int VResol { get; set; }
+        internal int HResol { get; set; }
+        internal string BaseIp { get; set; }
+
+        public void Dispose()
+        {
+            ClientHandler.Socket.Close();
+            if (ClientHandler.Socket != null)
+            {
+                ClientHandler.Socket.Dispose();
+                ClientHandler.Socket = null;
+                ClientHandler = null;
+            }
+        }
+    }
+}

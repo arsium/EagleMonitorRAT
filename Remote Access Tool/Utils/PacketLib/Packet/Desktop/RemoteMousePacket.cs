@@ -25,7 +25,7 @@ namespace PacketLib.Packet
         }
         public RemoteMousePacket(MouseTypeAction mouseTypeAction, int x = 0, int y = 0) : base()
         {
-            this.packetType = PacketType.RM_MOUSE;
+            this.PacketType = PacketType.RM_MOUSE;
 
             this.mouseTypeAction = mouseTypeAction;
             this.x = x;
@@ -33,13 +33,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public MouseTypeAction mouseTypeAction { get; set; }
         public int x { get; set; }  

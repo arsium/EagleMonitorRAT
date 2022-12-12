@@ -12,24 +12,24 @@ namespace PacketLib.Packet
     {
         public RemoteViewerPacket(PacketType packetType) : base()
         {
-            this.packetType = packetType;
+            this.PacketType = packetType;
         }
 
         public RemoteViewerPacket(PacketType packetType, string baseIp, string HWID) : base()
         {
-            this.packetType = packetType;
-            this.baseIp = baseIp;
+            this.PacketType = packetType;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public byte[] desktopPicture { get; set; }
         public int height { get; set; }

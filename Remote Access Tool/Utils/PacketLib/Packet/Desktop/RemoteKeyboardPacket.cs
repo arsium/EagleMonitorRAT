@@ -13,20 +13,20 @@ namespace PacketLib.Packet
     {
         public RemoteKeyboardPacket(byte keyCode, bool isDown) : base()
         {
-            this.packetType = PacketType.RM_KEYBOARD;
+            this.PacketType = PacketType.RM_KEYBOARD;
 
             this.keyCode = keyCode;
             this.isDown = isDown;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public byte keyCode { get; set; }
         public bool isDown { get; set; }

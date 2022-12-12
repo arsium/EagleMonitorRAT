@@ -12,24 +12,24 @@ namespace PacketLib.Packet
     {
         public RemoteCameraCapturePacket(PacketType packetType) : base()
         {
-            this.packetType = packetType;
+            this.PacketType = packetType;
         }
 
         public RemoteCameraCapturePacket(byte[] cameraCapture) : base()
         {
-            this.packetType = PacketType.RC_CAPTURE_ON;
+            this.PacketType = PacketType.RC_CAPTURE_ON;
 
             this.cameraCapture = cameraCapture;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public int quality { get; set; }
         public int index { get; set; }

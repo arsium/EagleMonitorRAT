@@ -14,18 +14,18 @@ namespace PacketLib.Packet
  
         public RansomwareDecryptionPacket(string privateRSAServerKey) : base()
         {
-            this.packetType = PacketType.RANSOMWARE_DECRYPTION;
+            this.PacketType = PacketType.RANSOMWARE_DECRYPTION;
             this.privateRSAServerKey = privateRSAServerKey;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public Algorithm algorithm { get; set; }
         public bool isBlockCipher { get; set; }

@@ -15,13 +15,13 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
         {
             try
             {
-                ClientHandler.ClientHandlersList[deleteRestorePointPacket.baseIp].clientForm.restorePointDataGridView.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[deleteRestorePointPacket.BaseIp].ClientForm.restorePointDataGridView.BeginInvoke((MethodInvoker)(() =>
                 {
-                    foreach (DataGridViewRow row in ClientHandler.ClientHandlersList[deleteRestorePointPacket.baseIp].clientForm.restorePointDataGridView.Rows)
+                    foreach (DataGridViewRow row in ClientHandler.ClientHandlersList[deleteRestorePointPacket.BaseIp].ClientForm.restorePointDataGridView.Rows)
                     {
                         if (int.Parse(row.Cells[0].Value.ToString()) == deleteRestorePointPacket.index)
                         {
-                            ClientHandler.ClientHandlersList[deleteRestorePointPacket.baseIp].clientForm.restorePointDataGridView.Rows.Remove(row);
+                            ClientHandler.ClientHandlersList[deleteRestorePointPacket.BaseIp].ClientForm.restorePointDataGridView.Rows.Remove(row);
                             break;
                         }
                     }

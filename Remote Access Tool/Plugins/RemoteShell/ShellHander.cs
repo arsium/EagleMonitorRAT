@@ -114,7 +114,7 @@ namespace Plugin
 
             StdOutShellSessionPacket stdOutShellSession = new StdOutShellSessionPacket(toSend)
             {
-                baseIp = Launch.clientHandler.baseIp,
+                BaseIp = Launch.clientHandler.baseIp,
                 HWID = Launch.clientHandler.HWID
             };
 

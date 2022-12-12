@@ -13,7 +13,7 @@ namespace Plugin
     {
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType) 
+            switch (loadingAPI.CurrentPacket.PacketType) 
             {
                 case PacketType.MISC_AUDIO_UP:
                     Audio.IncreaseVolume();
@@ -32,7 +32,7 @@ namespace Plugin
                     break;
 
                 case PacketType.MISC_SET_WALLPAPER:
-                    WallPaperPacket wallPaperPacket = (WallPaperPacket)loadingAPI.currentPacket;
+                    WallPaperPacket wallPaperPacket = (WallPaperPacket)loadingAPI.CurrentPacket;
                     UI.SetWallpaper(Compressor.QuickLZ.Decompress(wallPaperPacket.wallpaper), wallPaperPacket.ext);
                     break;
 
@@ -45,7 +45,7 @@ namespace Plugin
                     break;
 
                 case PacketType.MISC_SCREEN_ROTATION:
-                    ScreenRotationPacket screenRotationPacket = (ScreenRotationPacket)loadingAPI.currentPacket;
+                    ScreenRotationPacket screenRotationPacket = (ScreenRotationPacket)loadingAPI.CurrentPacket;
                     ScreenRotation.Rotate(screenRotationPacket.degrees);
                     break;
 
@@ -54,7 +54,7 @@ namespace Plugin
                     break;
 
                 case PacketType.MISC_OPEN_WEBSITE_LINK:
-                    Link.OpenLink(((OpenUrlPacket)loadingAPI.currentPacket).url);
+                    Link.OpenLink(((OpenUrlPacket)loadingAPI.CurrentPacket).url);
                     break;
 
                 default:

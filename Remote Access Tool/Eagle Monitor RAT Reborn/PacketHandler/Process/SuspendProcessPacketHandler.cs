@@ -18,9 +18,9 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 if (suspendProcessPacket.suspended)
                 {
-                    ClientHandler.ClientHandlersList[suspendProcessPacket.baseIp].clientForm.processDataGridView.BeginInvoke((MethodInvoker)(() =>
+                    ClientHandler.ClientHandlersList[suspendProcessPacket.BaseIp].ClientForm.processDataGridView.BeginInvoke((MethodInvoker)(() =>
                     {
-                        ClientHandler.ClientHandlersList[suspendProcessPacket.baseIp].clientForm.processDataGridView.Rows[suspendProcessPacket.rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                        ClientHandler.ClientHandlersList[suspendProcessPacket.BaseIp].ClientForm.processDataGridView.Rows[suspendProcessPacket.rowIndex].DefaultCellStyle.BackColor = Color.Red;
                     }));
                 }
             }

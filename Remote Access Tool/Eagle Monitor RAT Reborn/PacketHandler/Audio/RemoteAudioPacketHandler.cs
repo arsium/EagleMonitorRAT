@@ -13,39 +13,24 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RemoteAudioPacketHandler(RemoteAudioPacket remoteAudioPacket) : base()//, ClientHandler clientHandler) : base()
         {
-
-            try
-            {
-                ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientForm.audioDevicesGuna2ComboBox.BeginInvoke((MethodInvoker)(() =>
-                {
-                    foreach (string device in remoteAudioPacket.audioDevices)
-                    {
-                        ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientForm.audioDevicesGuna2ComboBox.Items.Add(device);
-                    }
-
-                    if (remoteAudioPacket.audioDevices.Count > 0)
-                        ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientForm.audioDevicesGuna2ComboBox.SelectedIndex = 0;
-                }));
-            }
-            catch { }
-            return;
-            /*new Thread(() =>
+            if (ClientHandler.ClientHandlersList[remoteAudioPacket.BaseIp].ClientForm != null)
             {
                 try
                 {
-                    ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientForm.BeginInvoke((MethodInvoker)(() =>
+                    ClientHandler.ClientHandlersList[remoteAudioPacket.BaseIp].ClientForm.audioDevicesGuna2ComboBox.BeginInvoke((MethodInvoker)(() =>
                     {
                         foreach (string device in remoteAudioPacket.audioDevices)
                         {
-                            ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientForm.audioDevicesGuna2ComboBox.Items.Add(device);
+                            ClientHandler.ClientHandlersList[remoteAudioPacket.BaseIp].ClientForm.audioDevicesGuna2ComboBox.Items.Add(device);
                         }
 
                         if (remoteAudioPacket.audioDevices.Count > 0)
-                            ClientHandler.ClientHandlersList[remoteAudioPacket.baseIp].clientForm.audioDevicesGuna2ComboBox.SelectedIndex = 0;
+                            ClientHandler.ClientHandlersList[remoteAudioPacket.BaseIp].ClientForm.audioDevicesGuna2ComboBox.SelectedIndex = 0;
                     }));
                 }
                 catch { }
-            }).Start();*/
+                return;
+            }
         }
     }
 }

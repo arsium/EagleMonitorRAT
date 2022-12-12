@@ -12,20 +12,20 @@ namespace PacketLib.Packet
     {
         public WallPaperPacket(byte[] wallpaper, string ext) : base() 
         {
-            this.packetType = PacketType.MISC_SET_WALLPAPER;
+            this.PacketType = PacketType.MISC_SET_WALLPAPER;
 
             this.wallpaper = wallpaper;
             this.ext = ext;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public byte[] wallpaper { get; set; }
         public string ext { get; set; }

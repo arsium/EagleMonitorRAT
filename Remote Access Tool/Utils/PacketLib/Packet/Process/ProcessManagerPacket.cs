@@ -24,27 +24,27 @@ namespace PacketLib.Packet
     {
         public ProcessManagerPacket() : base() 
         {
-            this.packetType = PacketType.PM_GET_PROCESSES;
+            this.PacketType = PacketType.PM_GET_PROCESSES;
         }
 
         public ProcessManagerPacket(List<Proc> processes, string baseIp, string HWID) : base()
         {
           
-            packetType = PacketType.PM_GET_PROCESSES;
-            this.baseIp = baseIp;
+            PacketType = PacketType.PM_GET_PROCESSES;
+            this.BaseIp = baseIp;
             this.HWID = HWID;  
             
             this.processes = processes;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public List<Proc> processes { get; set; }
     }

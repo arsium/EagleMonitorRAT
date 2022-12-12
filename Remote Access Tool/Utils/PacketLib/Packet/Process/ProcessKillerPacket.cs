@@ -15,7 +15,7 @@ namespace PacketLib.Packet
         public ProcessKillerPacket(int processId, string processName, int rowIndex) : base()
         {
   
-            this.packetType = PacketType.PM_KILL_PROCESS;    
+            this.PacketType = PacketType.PM_KILL_PROCESS;    
             
             this.processId = processId;
             this.processName = processName;
@@ -26,8 +26,8 @@ namespace PacketLib.Packet
         public ProcessKillerPacket(bool killed, int processId, string processName, int rowIndex, string baseIp, string HWID) : base() 
         {
 
-            this.packetType = PacketType.PM_KILL_PROCESS;
-            this.baseIp = baseIp;
+            this.PacketType = PacketType.PM_KILL_PROCESS;
+            this.BaseIp = baseIp;
             this.HWID = HWID;       
             
             this.killed = killed;
@@ -37,13 +37,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public int rowIndex { get; set; }
         public string processName { get; set; }

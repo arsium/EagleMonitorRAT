@@ -27,6 +27,7 @@ namespace Eagle_Monitor_RAT_Reborn
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             this.clientDataGridView.EnableHeadersVisualStyles = false;
             this.clientDataGridView.ClearSelection();
 
@@ -41,63 +42,50 @@ namespace Eagle_Monitor_RAT_Reborn
 
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.clientDataGridView, this.guna2VScrollBar1, true);
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.logsDataGridView, this.guna2VScrollBar2, true);
-            this.Text = $"[Beta] EM-RAT Reborn V{Misc.Utils.CoreAssembly.Version} By Arsium - [После нас - тишина]";
+            this.Text = $"[Beta] EM-RAT Reborn V{Misc.Utils.CoreAssembly.Version} By Arsium - [Nullum crimen sine lege]";
             this.versionLabel.Text = this.Text;
+            Eagle_Monitor_RAT_Reborn.Controls.Utils.SetTotalClients();
 
-            ImageList tabImageList = new ImageList
+            Eagle_Monitor_RAT_Reborn.Controls.Utils.SetTabImage(this.mainGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
-            tabImageList.Images.Add(Properties.Resources.icons8_user);
-            tabImageList.Images.Add(Properties.Resources.icons8_wrench);
-            tabImageList.Images.Add(Properties.Resources.icons8_mail);//icons8_parcel
-            tabImageList.Images.Add(Properties.Resources.icons8_index);
-            tabImageList.Images.Add(Properties.Resources.icons8_settings);
-            tabImageList.Images.Add(Properties.Resources.icons8_schedule_mail);
+                Properties.Resources.icons8_user,
+                Properties.Resources.icons8_wrench,
+                Properties.Resources.icons8_mail,
+                Properties.Resources.icons8_index,
+                Properties.Resources.icons8_settings,
+                Properties.Resources.icons8_schedule_mail
+            });
 
-            this.mainGuna2TabControl.ImageList = tabImageList;
-            this.tabPage1.ImageIndex = 0;
-            this.tabPage2.ImageIndex = 1;
-            this.tabPage3.ImageIndex = 2;
-            this.tabPage4.ImageIndex = 3;
-            this.tabPage5.ImageIndex = 4;
-            this.tabPage10.ImageIndex = 5;
-
-            ImageList tabImageListTasks = new ImageList
+            Eagle_Monitor_RAT_Reborn.Controls.Utils.SetTabImage(this.onConnectGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_todo_list,
+                Properties.Resources.icons8_create
+            });
 
-            tabImageListTasks.Images.Add(Properties.Resources.icons8_todo_list);
-            tabImageListTasks.Images.Add(Properties.Resources.icons8_create);
-            this.onConnectGuna2TabControl.ImageList = tabImageListTasks;
-            this.tabPage11.ImageIndex = 0;
-            this.tabPage12.ImageIndex = 1;
-
-
-            ImageList tabImageListClient = new ImageList
+            Eagle_Monitor_RAT_Reborn.Controls.Utils.SetTabImage(this.builderGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
-            tabImageListClient.Images.Add(Properties.Resources.icons8_signal);
-            tabImageListClient.Images.Add(Properties.Resources.icons8_categorize);
-            tabImageListClient.Images.Add(Properties.Resources.icons8_new_property);
-            tabImageListClient.Images.Add(Properties.Resources.icons8_advanced_search);
-            tabImageListClient.Images.Add(Properties.Resources.icons8_Tools);
-
-            this.builderGuna2TabControl.ImageList = tabImageListClient;
-            this.tabPage6.ImageIndex = 0;
-            this.tabPage7.ImageIndex = 1;
-            this.tabPage8.ImageIndex = 2;
-            this.tabPage13.ImageIndex = 3;
-            this.tabPage9.ImageIndex = 4;
+                Properties.Resources.icons8_signal,
+                Properties.Resources.icons8_categorize,
+                Properties.Resources.icons8_new_property,
+                Properties.Resources.icons8_remote_desktop,
+                Properties.Resources.icons8_advanced_search,
+                Properties.Resources.icons8_Tools
+            });
+            this.ResumeLayout();
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
+            Misc.Utils.ReadSettings();
+            Misc.Utils.StartServers();
+            this.portLabel.Text = "Listening on : { ";
+            foreach (int p in Program.settings.ports)
+            {
+                this.portLabel.Text += p.ToString() + ", ";
+            }
+            this.portLabel.Text = this.portLabel.Text.Remove(this.portLabel.Text.Length - 2, 2);
+            this.portLabel.Text += " }";
+
             try
             {
                 using (HttpRequest httpRequest = new HttpRequest())
@@ -107,8 +95,8 @@ namespace Eagle_Monitor_RAT_Reborn
                     httpRequest.ConnectTimeout = 5000;
                     string request = httpRequest.Get("https://api.github.com/repos/arsium/EagleMonitorRAT/releases").ToString();
 
-                    List<Misc.GitHubAPI> json = JsonConvert.DeserializeObject<List<Misc.GitHubAPI>>(request);
-                    foreach (Misc.GitHubAPI gitHubAPI in json)
+                    List<GitHubAPI> json = JsonConvert.DeserializeObject<List<GitHubAPI>>(request);
+                    foreach (GitHubAPI gitHubAPI in json)
                     {
                         this.updateLogRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
                         this.updateLogRichTextBox.AppendText("Version : " + gitHubAPI.tag_name + "\n\n");
@@ -131,18 +119,6 @@ namespace Eagle_Monitor_RAT_Reborn
                 this.updateLogRichTextBox.SelectionColor = Color.Red;
                 this.updateLogRichTextBox.AppendText(ex.ToString());
             }
-            finally 
-            {
-                Misc.Utils.ReadSettings();
-                Misc.Utils.StartServers();
-                this.portLabel.Text = "Listening on : { ";
-                foreach (int p in Program.settings.ports)
-                {
-                    this.portLabel.Text += p.ToString() + ", ";
-                }
-                this.portLabel.Text = this.portLabel.Text.Remove(this.portLabel.Text.Length - 2, 2);
-                this.portLabel.Text += " }";
-            }
         }
 
         private void closeGuna2ControlBox_Click(object sender, EventArgs e)
@@ -150,7 +126,7 @@ namespace Eagle_Monitor_RAT_Reborn
             Misc.Utils.SaveSettings();
             if(this.logsDataGridView.Rows.Count > 0)
                 Misc.Utils.SaveLogs(this.logsDataGridView);
-            Misc.Imports.NtTerminateProcess((IntPtr)(-1), 0);
+            Imports.NtTerminateProcess((IntPtr)(-1), 0);
         }
 
         private void logoPictureBox_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -239,7 +215,7 @@ namespace Eagle_Monitor_RAT_Reborn
             foreach (DataGridViewRow row in clientDataGridView.SelectedRows)
             {
                 string IP = row.Cells[2].Value.ToString();
-                ClientHandler.ClientHandlersList[IP].SendPacket(closePacket);
+                ClientHandler.StartSendData(ClientHandler.ClientHandlersList[IP], closePacket);
             }
         }
 
@@ -249,7 +225,7 @@ namespace Eagle_Monitor_RAT_Reborn
             foreach (DataGridViewRow row in clientDataGridView.SelectedRows)
             {
                 string IP = row.Cells[2].Value.ToString();
-                ClientHandler.ClientHandlersList[IP].SendPacket(uninstallPacket);
+                ClientHandler.StartSendData(ClientHandler.ClientHandlersList[IP], uninstallPacket);
             }
         }
 

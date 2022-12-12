@@ -40,13 +40,13 @@ namespace PacketLib.Packet
     {
         public InformationPacket() : base()
         {
-            this.packetType = PacketType.MISC_INFORMATION;
+            this.PacketType = PacketType.MISC_INFORMATION;
         }
 
         public InformationPacket(Dictionary<string, List<string>> cpuInformation, string baseIp, string HWID) : base()
         {
-            this.packetType = PacketType.MISC_INFORMATION;
-            this.baseIp = baseIp;
+            this.PacketType = PacketType.MISC_INFORMATION;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
             this.information = new Information();
             this.information.hardwareInformation = new HardwareInformation();
@@ -55,13 +55,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public Information information { get; set; }
     }

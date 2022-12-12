@@ -452,6 +452,26 @@ namespace Eagle_Monitor_RAT_Reborn.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
+        internal static System.Drawing.Icon icons8_electronics {
+            get {
+                object obj = ResourceManager.GetObject("icons8_electronics", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_ethernet_on {
+            get {
+                object obj = ResourceManager.GetObject("icons8_ethernet_on", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
         internal static System.Drawing.Icon icons8_file_explorer {
             get {
                 object obj = ResourceManager.GetObject("icons8_file_explorer", resourceCulture);

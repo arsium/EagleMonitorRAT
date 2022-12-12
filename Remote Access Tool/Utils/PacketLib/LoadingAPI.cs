@@ -9,10 +9,10 @@ namespace PacketLib
 {
     public class LoadingAPI
     {
-        public Host host { get; set; }
-        public string baseIp { get; set; }
+        public Host Host { get; set; }
+        public string BaseIp { get; set; }
         public string HWID { get; set; }
-        public string key { get; set; }
-        public IPacket currentPacket { get; set; }
+        public string Key { get; set; }
+        public IPacket CurrentPacket { get; set; }
     }
 }

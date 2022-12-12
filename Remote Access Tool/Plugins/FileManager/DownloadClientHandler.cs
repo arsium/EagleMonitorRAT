@@ -62,7 +62,7 @@ namespace Plugin
             {
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
-                socket.Connect(loadingAPI.host.host, loadingAPI.host.port);
+                socket.Connect(loadingAPI.Host.host, loadingAPI.Host.port);
                 return true;
             }
             catch { }
@@ -144,7 +144,7 @@ namespace Plugin
 
         private IPacket PacketParser(byte[] BufferPacket)
         {
-            return BufferPacket.DeserializePacket(loadingAPI.key);
+            return BufferPacket.DeserializePacket(loadingAPI.Key);
         }
         public void EndPacketRead(IAsyncResult ar)
         {
@@ -177,7 +177,7 @@ namespace Plugin
                     while ((bytesRead = source.Read(buffer, 0, buffer.Length)) > 0)
                     {
                         Thread.Sleep(100);
-                        DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.baseIp, loadingAPI.HWID, this.fileTicket);
+                        DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.BaseIp, loadingAPI.HWID, this.fileTicket);
                         IAsyncResult ar = sendDataAsync.BeginInvoke(packetFile, null, null);
                         Thread.Sleep(75);
        
@@ -192,7 +192,7 @@ namespace Plugin
                 {
                     buffer = new byte[totalSize];
                     source.Read(buffer, 0, buffer.Length);
-                    DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.baseIp, loadingAPI.HWID, this.fileTicket);
+                    DownloadFilePacket packetFile = new DownloadFilePacket(buffer, filePath, loadingAPI.BaseIp, loadingAPI.HWID, this.fileTicket);
                     IAsyncResult ar = sendDataAsync.BeginInvoke(packetFile, null, null);
                     int size = sendDataAsync.EndInvoke(ar);
                 }
@@ -202,7 +202,7 @@ namespace Plugin
 
         private int SendData(IPacket data)
         {
-            byte[] encryptedData = data.SerializePacket(loadingAPI.key);
+            byte[] encryptedData = data.SerializePacket(loadingAPI.Key);
 
             int total = 0;
             int size = encryptedData.Length;
@@ -215,7 +215,7 @@ namespace Plugin
             header[1] = temp[1];
             header[2] = temp[2];
             header[3] = temp[3];
-            header[4] = (byte)data.packetType;
+            header[4] = (byte)data.PacketType;
 
             lock (socket)
             {

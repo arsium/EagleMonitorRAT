@@ -78,6 +78,9 @@
   <PropertyGroup>
     <ApplicationIcon>eagle2.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="dnlib">
       <HintPath>DLLs\dnlib.dll</HintPath>
@@ -157,15 +160,16 @@
     </Compile>
     <Compile Include="Misc\RandomString.cs" />
     <Compile Include="Misc\Settings.cs" />
-    <Compile Include="Network\ChatHandler.cs" />
+    <Compile Include="Network\SocketHandler\ChatHandler.cs" />
     <Compile Include="Network\ClientHandler.cs" />
-    <Compile Include="Network\RemoteShellHandler.cs" />
-    <Compile Include="Network\KeyloggerHandler.cs" />
+    <Compile Include="Network\SocketHandler\RemoteShellHandler.cs" />
+    <Compile Include="Network\SocketHandler\KeyloggerHandler.cs" />
     <Compile Include="Network\PacketHandler.cs" />
-    <Compile Include="Network\RemoteDesktopHandler.cs" />
-    <Compile Include="Network\RemoteMicrophoneHandler.cs" />
-    <Compile Include="Network\RemoteWebCamHandler.cs" />
+    <Compile Include="Network\SocketHandler\RemoteDesktopHandler.cs" />
+    <Compile Include="Network\SocketHandler\RemoteMicrophoneHandler.cs" />
+    <Compile Include="Network\SocketHandler\RemoteWebCamHandler.cs" />
     <Compile Include="Network\ServerHandler.cs" />
+    <Compile Include="PacketHandler\Miscellaneous\NetworkInformationPacketHandler.cs" />
     <Compile Include="PacketHandler\Ransomware\RansomareEncryptionConfirmationPacketHandler.cs" />
     <Compile Include="PacketHandler\Recovery\AutofillPacketHandler.cs" />
     <Compile Include="PacketHandler\Miscellaneous\ChatPacketHandler.cs" />
@@ -236,6 +240,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eagle2.ico" />
+    <None Include="Resources\icons8_electronics.ico" />
+    <None Include="Resources\icons8_ethernet_on.ico" />
     <None Include="Resources\icons8_command_line.ico" />
     <None Include="Resources\uninstall_programs_32px.png" />
     <None Include="Resources\icons8_signal.ico" />

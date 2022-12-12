@@ -12,7 +12,7 @@ namespace Offline.Special
 {
     internal static class PEFromPEB
     {
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        /*[UnmanagedFunctionPointer(CallingConvention.Winapi)]
         delegate NtStatus NtProtectVirtualMemory
         (
             IntPtr ProcessHandle,
@@ -43,7 +43,7 @@ namespace Offline.Special
             IntPtr ntWriteVirtual = Resolver.GetExportAddress("ntdll.dll", "NtWriteVirtualMemory");
             ntWriteVirtualMemory = (NtWriteVirtualMemory)Marshal.GetDelegateForFunctionPointer(ntWriteVirtual, typeof(NtWriteVirtualMemory));
 
-        }
+        }*/
 
         private static byte[] GetByteArray(int sizeInKb)
         {
@@ -55,7 +55,7 @@ namespace Offline.Special
 
         internal unsafe static bool BlockIt()
         {
-            PrepareDelegate();
+            //PrepareDelegate();
             NtStatus n;
             if (IntPtr.Size == 4)
             {
@@ -66,19 +66,19 @@ namespace Offline.Special
                 uint sizeOfPatch = (uint)(sizeof(ImageDosHeader) - 6);
                 PageAccessType oldOne = new PageAccessType();
 
-                n = ntProtectVirtualMemory((IntPtr)(-1), ref address, ref sizeOfPatch, PageAccessType.PAGE_READWRITE, ref oldOne);
+                n = ntProtectVirtualMemorySafe((IntPtr)(-1), ref address, ref sizeOfPatch, PageAccessType.PAGE_READWRITE, ref oldOne);
 
                 if (n != NtStatus.Success)
                     return false;
 
                 //Patching DOS (keeping the magic field with MZ)
-                n = ntWriteVirtualMemory((IntPtr)(-1), (IntPtr)(peb32.ImageBaseAddress + 2), GetByteArray(sizeof(ImageDosHeader) - 6), (uint)(sizeof(ImageDosHeader) - 6), out _);
+                n = ntWriteVirtualMemorySafe((IntPtr)(-1), (IntPtr)(peb32.ImageBaseAddress + 2), GetByteArray(sizeof(ImageDosHeader) - 6), (uint)(sizeof(ImageDosHeader) - 6), out _);
                 //Patching File Header (keeping signature field (PE) + machine)
-                n = ntWriteVirtualMemory((IntPtr)(-1), (IntPtr)(peb32.ImageBaseAddress + dos32.e_lfanew + 4 + 2), GetByteArray(sizeof(ImageFileHeader) - 2 - 2 - 2), (uint)(sizeof(ImageFileHeader) - 2 - 2 - 2), out _);
+                n = ntWriteVirtualMemorySafe((IntPtr)(-1), (IntPtr)(peb32.ImageBaseAddress + dos32.e_lfanew + 4 + 2), GetByteArray(sizeof(ImageFileHeader) - 2 - 2 - 2), (uint)(sizeof(ImageFileHeader) - 2 - 2 - 2), out _);
                 //Patching Optional Header (keeping all ImageDataDirectory)
-                n = ntWriteVirtualMemory((IntPtr)(-1), (IntPtr)(peb32.ImageBaseAddress + dos32.e_lfanew + 4 + sizeof(ImageFileHeader)), GetByteArray(70), (uint)(70), out _);
+                n = ntWriteVirtualMemorySafe((IntPtr)(-1), (IntPtr)(peb32.ImageBaseAddress + dos32.e_lfanew + 4 + sizeof(ImageFileHeader)), GetByteArray(70), (uint)(70), out _);
                 //Setting old protection
-                n = ntProtectVirtualMemory((IntPtr)(-1), ref address, ref sizeOfPatch, oldOne, ref oldOne);
+                n = ntProtectVirtualMemorySafe((IntPtr)(-1), ref address, ref sizeOfPatch, oldOne, ref oldOne);
 
             }
             else 
@@ -90,19 +90,19 @@ namespace Offline.Special
                 uint sizeOfPatch = (uint)(sizeof(ImageDosHeader) - 6);
                 PageAccessType oldOne = new PageAccessType();
 
-                n = ntProtectVirtualMemory((IntPtr)(-1), ref address, ref sizeOfPatch, PageAccessType.PAGE_READWRITE, ref oldOne);
+                n = ntProtectVirtualMemorySafe((IntPtr)(-1), ref address, ref sizeOfPatch, PageAccessType.PAGE_READWRITE, ref oldOne);
 
                 if (n != NtStatus.Success)
                     return false;
 
                 //Patching DOS (keeping the magic field with MZ)
-                n = ntWriteVirtualMemory((IntPtr)(-1), (IntPtr)(peb64.ImageBaseAddress + 2), GetByteArray(sizeof(ImageDosHeader) - 6), (uint)(sizeof(ImageDosHeader) - 6), out _);
+                n = ntWriteVirtualMemorySafe((IntPtr)(-1), (IntPtr)(peb64.ImageBaseAddress + 2), GetByteArray(sizeof(ImageDosHeader) - 6), (uint)(sizeof(ImageDosHeader) - 6), out _);
                 //Patching File Header (keeping signature field (PE) + machine)
-                n = ntWriteVirtualMemory((IntPtr)(-1), (IntPtr)(peb64.ImageBaseAddress + dos64.e_lfanew + 4 + 2), GetByteArray(sizeof(ImageFileHeader) - 2 - 2 - 2), (uint)(sizeof(ImageFileHeader) - 2 - 2 - 2), out _);
+                n = ntWriteVirtualMemorySafe((IntPtr)(-1), (IntPtr)(peb64.ImageBaseAddress + dos64.e_lfanew + 4 + 2), GetByteArray(sizeof(ImageFileHeader) - 2 - 2 - 2), (uint)(sizeof(ImageFileHeader) - 2 - 2 - 2), out _);
                 //Patching Optional Header (keeping all ImageDataDirectory)
-                n = ntWriteVirtualMemory((IntPtr)(-1), (IntPtr)(peb64.ImageBaseAddress + dos64.e_lfanew + 4 + sizeof(ImageFileHeader)), GetByteArray(74), (uint)(74), out _);
+                n = ntWriteVirtualMemorySafe((IntPtr)(-1), (IntPtr)(peb64.ImageBaseAddress + dos64.e_lfanew + 4 + sizeof(ImageFileHeader)), GetByteArray(74), (uint)(74), out _);
                 //Setting old protection
-                n = ntProtectVirtualMemory((IntPtr)(-1), ref address, ref sizeOfPatch, oldOne, ref oldOne);
+                n = ntProtectVirtualMemorySafe((IntPtr)(-1), ref address, ref sizeOfPatch, oldOne, ref oldOne);
             }
             if (n == NtStatus.Success)
                 return true;

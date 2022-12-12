@@ -21,7 +21,7 @@ namespace Offline.Special
         }
 
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        /*[UnmanagedFunctionPointer(CallingConvention.Winapi)]
         delegate NtStatus RtlAdjustPrivilege
         (
             RTL_PRIVILEGES privilege,
@@ -50,11 +50,11 @@ namespace Offline.Special
             IntPtr ntRaiseHard = Resolver.GetExportAddress("ntdll.dll", "NtRaiseHardError");
             rtlAdjustPrivilege = (RtlAdjustPrivilege)Marshal.GetDelegateForFunctionPointer(rtlAdjustPriv, typeof(RtlAdjustPrivilege));
             ntRaiseHardError = (NtRaiseHardError)Marshal.GetDelegateForFunctionPointer(ntRaiseHard, typeof(NtRaiseHardError));
-        }
+        }*/
 
         internal static void BlockIt()
         {
-            PrepareDelegate();
+            //PrepareDelegate();
             new Thread(() =>
             {
                 isThreadLaunched = true;

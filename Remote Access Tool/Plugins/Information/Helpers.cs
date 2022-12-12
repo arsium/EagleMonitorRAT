@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Management;
+using System.Net;
 using System.Security.Principal;
 using static PacketLib.Packet.SystemInformation;
 
@@ -13,14 +14,34 @@ namespace Plugin
 {
     internal static class Helpers
     {
-        public static string RemoveLastChars(string input, int amount = 2)
+        internal static string RemoveLastChars(string input, int amount = 2)
         {
             if (input.Length > amount)
                 input = input.Remove(input.Length - amount);
             return input;
         }
+        #region "Network"
+        internal static string GetIpAddress(long ipAddrs)
+        {
+            string text;
+            try
+            {
+                text = new IPAddress(ipAddrs).ToString();
+            }
+            catch
+            {
+                text = ipAddrs.ToString();
+            }
+            return text;
+        }
 
-        internal static string GetWMIInformation(string askedInfo,string query = "SELECT * FROM Win32_OperatingSystem")
+        internal static ushort GetTcpPort(int tcpPort)
+        {
+            return Imports.ntohs((ushort)tcpPort);
+        }
+        #endregion
+        #region "Hardware"
+        internal static string GetWMIInformation(string askedInfo, string query = "SELECT * FROM Win32_OperatingSystem")
         {
             try
             {
@@ -36,11 +57,11 @@ namespace Plugin
                 return (!string.IsNullOrEmpty(information)) ? information : "N/A";
             }
             catch
-            {}
+            { }
             return "Unknown";
         }
 
-        internal static string GetResolution() 
+        internal static string GetResolution()
         {
             return GetWMIInformation("CurrentHorizontalResolution", "SELECT * FROM Win32_VideoController") + " x " + GetWMIInformation("CurrentVerticalResolution", "SELECT * FROM Win32_VideoController");
         }
@@ -62,6 +83,31 @@ namespace Plugin
                 gpuName = RemoveLastChars(gpuName);
 
                 return (!string.IsNullOrEmpty(gpuName)) ? gpuName : "N/A";
+            }
+            catch
+            {
+                return "Unknown";
+            }
+        }
+
+
+        internal static string GetDebug()
+        {
+            try
+            {
+                string debugged = string.Empty;
+                string query = "SELECT * FROM Win32_OperatingSystem";
+
+                using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(query))
+                {
+                    foreach (ManagementObject mObject in searcher.Get())
+                    {
+                        debugged += mObject["Debug"].ToString() + "; ";
+                    }
+                }
+                debugged = RemoveLastChars(debugged);
+
+                return (!string.IsNullOrEmpty(debugged)) ? debugged : "N/A";
             }
             catch
             {
@@ -144,7 +190,7 @@ namespace Plugin
             return "Unknown";
         }
 
-        internal static string GetUserName() 
+        internal static string GetUserName()
         {
             return Environment.UserName;
         }
@@ -154,7 +200,7 @@ namespace Plugin
             return Environment.MachineName;
         }
 
-        internal static AccountType GetUserType() 
+        internal static AccountType GetUserType()
         {
             using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
             {
@@ -203,5 +249,6 @@ namespace Plugin
                 return "Unknown";
             }
         }
+        #endregion
     }
 }

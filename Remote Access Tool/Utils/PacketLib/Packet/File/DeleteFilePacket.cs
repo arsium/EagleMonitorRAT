@@ -13,7 +13,7 @@ namespace PacketLib.Packet
         //server
         public DeleteFilePacket(string path, string name, long fileTicket) : base()
         {
-            packetType = PacketType.FM_DELETE_FILE;
+            PacketType = PacketType.FM_DELETE_FILE;
 
             this.path = path;
             this.name = name;
@@ -23,8 +23,8 @@ namespace PacketLib.Packet
         //client
         public DeleteFilePacket(string path, string name, bool deleted, string baseIp, string HWID, long fileTicket) : base()
         {
-            packetType = PacketType.FM_DELETE_FILE;
-            this.baseIp = baseIp;
+            PacketType = PacketType.FM_DELETE_FILE;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
             this.fileTicket = fileTicket;
 
@@ -34,13 +34,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
         public long fileTicket { get; set; }
 
         public string path { get; set; }

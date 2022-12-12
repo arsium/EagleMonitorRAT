@@ -13,7 +13,7 @@ namespace PacketLib.Packet
         //server
         public DownloadFilePacket(string path, long fileTicket) : base()
         {
-            this.packetType = PacketType.FM_DOWNLOAD_FILE;
+            this.PacketType = PacketType.FM_DOWNLOAD_FILE;
             this.fileName = path;
             this.fileTicket = fileTicket;
         }
@@ -21,8 +21,8 @@ namespace PacketLib.Packet
         //client
         public DownloadFilePacket(byte[]file, string fileName, string baseIp, string HWID, long fileTicket) : base() 
         {
-            this.packetType = PacketType.FM_DOWNLOAD_FILE;
-            this.baseIp = baseIp;
+            this.PacketType = PacketType.FM_DOWNLOAD_FILE;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
             this.fileTicket = fileTicket;
 
@@ -31,13 +31,13 @@ namespace PacketLib.Packet
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
         public long fileTicket { get; set; }
 
         public string fileName { get; set; }

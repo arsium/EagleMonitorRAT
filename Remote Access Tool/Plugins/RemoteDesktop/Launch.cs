@@ -16,11 +16,11 @@ namespace Plugin
         internal static RemoteViewerPacket remoteViewerBasePacket;
         public static void Main(LoadingAPI loadingAPI)
         {
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.RM_VIEW_ON:
-                    remoteViewerBasePacket = (RemoteViewerPacket)loadingAPI.currentPacket;
-                    clientHandler = new ClientHandler(loadingAPI.host, loadingAPI.key, loadingAPI.baseIp, loadingAPI.HWID);
+                    remoteViewerBasePacket = (RemoteViewerPacket)loadingAPI.CurrentPacket;
+                    clientHandler = new ClientHandler(loadingAPI.Host, loadingAPI.Key, loadingAPI.BaseIp, loadingAPI.HWID);
                     clientHandler.ConnectStart();
                     break;
                 default:

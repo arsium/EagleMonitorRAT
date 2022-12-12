@@ -14,27 +14,27 @@ namespace PacketLib.Packet
         //server
         public DiskPacket() : base()
         {
-            packetType = PacketType.FM_GET_DISK;
+            PacketType = PacketType.FM_GET_DISK;
         }
 
         //client
         public DiskPacket(List<string> disks, string baseIp, string HWID) : base()
         {
-            packetType = PacketType.FM_GET_DISK;
-            this.baseIp = baseIp;
+            PacketType = PacketType.FM_GET_DISK;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
 
             this.disksList = disks;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public List<string> disksList { get;}
     }

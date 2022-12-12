@@ -14,28 +14,28 @@ namespace PacketLib.Packet
         //server
         public AutofillPacket() : base()
         {
-            packetType = PacketType.RECOVERY_AUTOFILL;
+            PacketType = PacketType.RECOVERY_AUTOFILL;
         }
 
         //client
         public AutofillPacket(List<object[]> autofill, string baseIp, string HWID) : base()
         {
 
-            packetType = PacketType.RECOVERY_AUTOFILL;
-            this.baseIp = baseIp;
+            PacketType = PacketType.RECOVERY_AUTOFILL;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
 
             this.autofillList = autofill;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public List<object[]> autofillList { get; set; }
     }

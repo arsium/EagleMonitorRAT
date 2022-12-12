@@ -398,6 +398,19 @@ namespace Offline.Special
             [FieldOffset(4)] public int HighPartAsInt;
             [FieldOffset(4)] public uint HighPartAsUInt;
         }
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct BIND_OPTS3
+        {
+            public uint cbStruct;
+            public uint grfFlags;
+            public uint grfMode;
+            public uint dwTickCountDeadline;
+            public uint dwTrackFlags;
+            public uint dwClassContext;
+            public int locale;
+            public IntPtr pServerInfo; // will be passing null, so type doesn't matter
+            public IntPtr hwnd;
+        }
         #endregion
         #region "Shutdown"
         internal enum HARDERROR_RESPONSE_OPTION : uint

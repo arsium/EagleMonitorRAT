@@ -13,16 +13,19 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RemoteShellStdOutPacketHandler(StdOutShellSessionPacket stdOutShellSessionPacket) : base()
         {
-            try
+            if (ClientHandler.ClientHandlersList[stdOutShellSessionPacket.BaseIp].ClientForm != null)
             {
-                ClientHandler.ClientHandlersList[stdOutShellSessionPacket.baseIp].clientForm.remoteShellStdOutRichTextBox.BeginInvoke((MethodInvoker)(() =>
+                try
                 {
-                    ClientHandler.ClientHandlersList[stdOutShellSessionPacket.baseIp].clientForm.remoteShellStdOutRichTextBox.AppendText(stdOutShellSessionPacket.shellStdOut);
+                    ClientHandler.ClientHandlersList[stdOutShellSessionPacket.BaseIp].ClientForm.remoteShellStdOutRichTextBox.BeginInvoke((MethodInvoker)(() =>
+                    {
+                        ClientHandler.ClientHandlersList[stdOutShellSessionPacket.BaseIp].ClientForm.remoteShellStdOutRichTextBox.AppendText(stdOutShellSessionPacket.shellStdOut);
 
-                }));
+                    }));
+                }
+                catch { }
+                return;
             }
-            catch { }
-            return;
 
         }
     }

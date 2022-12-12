@@ -158,7 +158,7 @@ namespace Plugin
 
         public void ParsePacket(IPacket packet)
         {
-            switch (packet.packetType)
+            switch (packet.PacketType)
             {
                 case PacketType.CHAT_ON:
                     RemoteChatPacket chatPacket = (RemoteChatPacket)packet;
@@ -197,7 +197,7 @@ namespace Plugin
             header[1] = temp[1];
             header[2] = temp[2];
             header[3] = temp[3];
-            header[4] = (byte)data.packetType;
+            header[4] = (byte)data.PacketType;
 
             lock (socket)
             {

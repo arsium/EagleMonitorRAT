@@ -67,7 +67,9 @@
     <Compile Include="DLLFromMemory.cs" />
     <Compile Include="HardwareInformation.cs" />
     <Compile Include="Helpers.cs" />
+    <Compile Include="Imports.cs" />
     <Compile Include="Launch.cs" />
+    <Compile Include="NetworkInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

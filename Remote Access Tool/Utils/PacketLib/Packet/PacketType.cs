@@ -58,6 +58,7 @@ namespace PacketLib.Packet
         MISC_AUDIO_DOWN =                       31,
         MISC_SET_WALLPAPER =                    32,
         MISC_INFORMATION =                      43,
+        MISC_NETWORK_INFORMATION =              76,
         MISC_SCREENLOCKER_ON =                  44,
         MISC_SCREENLOCKER_OFF =                 45,
         MISC_HIDE_DESKTOP_ICONS =               49,

@@ -12,14 +12,14 @@ namespace PacketLib.Packet
     {
         public KeylogPacket() : base()
         {
-            packetType = PacketType.KEYLOG_ON;
+            PacketType = PacketType.KEYLOG_ON;
         }
 
         public KeylogPacket(string keyStroke, string baseIp, string HWID) : base()
         {
     
-            packetType = PacketType.KEYLOG_ON;
-            this.baseIp = baseIp;
+            PacketType = PacketType.KEYLOG_ON;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
             
             this.keyStroke = keyStroke;
@@ -27,19 +27,19 @@ namespace PacketLib.Packet
 
         public KeylogPacket(string baseIp, string HWID) : base()
         {
-            packetType = PacketType.KEYLOG_OFF;
-            this.baseIp = baseIp;
+            PacketType = PacketType.KEYLOG_OFF;
+            this.BaseIp = baseIp;
             this.HWID = HWID;
         }
 
         public string HWID { get; set; }
-        public string baseIp { get; set; }
-        public byte[] plugin { get; set; }
-        public PacketType packetType { get; }
-        public PacketState packetState { get; set; }
-        public string status { get; set; }
-        public string datePacketStatus { get; set; }
-        public int packetSize { get; set; }
+        public string BaseIp { get; set; }
+        public byte[] Plugin { get; set; }
+        public PacketType PacketType { get; }
+        public PacketState PacketState { get; set; }
+        public string Status { get; set; }
+        public string DatePacketStatus { get; set; }
+        public int PacketSize { get; set; }
 
         public string keyStroke { get; set; }
     }

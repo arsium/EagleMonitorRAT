@@ -9,13 +9,13 @@ namespace PacketLib
 {
     public interface IPacket
     {
-        PacketType packetType { get; }
-        PacketState packetState { get; set; }
-        byte[] plugin { get; set; }
-        string baseIp { get; set; }
+        PacketType PacketType { get; }
+        PacketState PacketState { get; set; }
+        byte[] Plugin { get; set; }
+        string BaseIp { get; set; }
         string HWID { get; set; }
-        string status { get; set; }
-        string datePacketStatus { get; set; }
-        int packetSize { get; set; }
+        string Status { get; set; }
+        string DatePacketStatus { get; set; }
+        int PacketSize { get; set; }
     }
 }

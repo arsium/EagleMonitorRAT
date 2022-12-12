@@ -16,16 +16,16 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
         {
             try
             {
-                ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.BeginInvoke((MethodInvoker)(() =>
+                ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.BeginInvoke((MethodInvoker)(() =>
                 {
-                    ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.Rows.Clear();
+                    ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.Rows.Clear();
 
                     int x = 0;
 
                     foreach (var dir in fileManagerPacket.filesAndDirs[0])
                     {
-                        int rowId = ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.Rows.Add();
-                        DataGridViewRow row = ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.Rows[rowId];
+                        int rowId = ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.Rows.Add();
+                        DataGridViewRow row = ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.Rows[rowId];
                         row.Cells["Column11"].Value = Misc.Utils.ResizeImage(Properties.Resources.imageres_4.ToBitmap(), new Size(26, 26));
                         row.Cells["Column12"].Value = dir[0].ToString();
                         row.Cells["Column13"].Value = "Directory";
@@ -34,14 +34,14 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
 
                     x++;
 
-                    ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.Sort(ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.Column12, System.ComponentModel.ListSortDirection.Ascending);
+                    ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.Sort(ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.Column12, System.ComponentModel.ListSortDirection.Ascending);
 
                     foreach (var file in fileManagerPacket.filesAndDirs[1])
                     {
  
                         Image btm = PacketLib.Utils.ImageProcessing.BytesToImage((byte[])file[1]);
-                        int rowId = ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.Rows.Add();
-                        DataGridViewRow row = ClientHandler.ClientHandlersList[fileManagerPacket.baseIp].clientForm.fileManagerDataGridView.Rows[rowId];
+                        int rowId = ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.Rows.Add();
+                        DataGridViewRow row = ClientHandler.ClientHandlersList[fileManagerPacket.BaseIp].ClientForm.fileManagerDataGridView.Rows[rowId];
                         row.Cells["Column11"].Value = Misc.Utils.ResizeImage(btm, new Size(26, 26));
                         row.Cells["Column12"].Value = file[0].ToString();
                         row.Cells["Column13"].Value = "File";

