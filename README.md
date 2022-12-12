@@ -70,6 +70,7 @@ If you wanna follow what I'm working on : [Wiki](https://github.com/arsium/Eagle
 * AMSI patching
 * ETW patching
 * Randomize PE from PEB
+* Bypass UAC
 
 ## External depencencies
 
